@@ -272,6 +272,7 @@ const orgLists = [
     'https://static.cmereye.com/static/ckjnewsite/org/org-1006.png',
     'https://static.cmereye.com/static/ckjnewsite/org/org-1007.png',
     'https://static.cmereye.com/static/ckjnewsite/org/org-1008.png',
+    'https://statichk.cmermedical.com/ckj/image/org-1009.png',
   ],
   [
     'https://static.cmereye.com/imgs/2024/05/10fa105dea15be81.png',

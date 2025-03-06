@@ -393,6 +393,48 @@ const newsmoduleLists = [
     link: '/news/news-information/152',
   },
 ]
+
+const problemData = {
+  title: '長者醫療券常見問題',
+  lists: [
+    {
+      Q: '什為是長者醫療券？',
+      A: '指由香港政府資助<i>年滿65歲</i>及持有效<i>香港身份證</i>或入境事務處發出的<i>《豁免登記證明書》</i>的長者，選擇私營基層醫療服務。',
+    },
+    {
+      Q: '長者如何獲得醫療券？',
+      A: '長者自踏入65歲的年度起，便於每年1月1日自動存入「醫健通」戶口。現時政府每年派<i>2,000港元</i>，累積金額上限為<i>8,000港元</i>。在牙科醫療服務上，<i>不設金額使用上限</i>。首次使用醫療券長者，可向深圳愛康健口腔醫院提出開設醫療券戶口。',
+    },
+    {
+      Q: '醫療券必須本人使用療程嗎?',
+      A: '是的，必須<i>親身接受醫療服務</i>後才可使用，也不接受由委托人士代為到醫院配藥。',
+    },
+    {
+      Q: '醫療券可以購買抗敏牙膏、電動牙刷、水牙線機、家用牙齒美白儀等產品嗎?',
+      A: '不可以，醫療券不可用以購買物品，如藥物、個人護理用品、食品或其他醫療用品。',
+    },
+    {
+      Q: '什為是配偶共用醫療券？',
+      A: '兩名乎合醫療券資格及有配偶關係的長者，雙方同意下申請<i>雙方戶口連結</i>。當其中一方醫療券戶口內的餘額耗盡後，便可以使用配偶戶口內的醫療券餘額。使用時必須出示<i>配偶最新的香港身份證副本</i>或《豁免登記證明書》副本。首次申請雙方戶口連結時，二人需<i>親身</i>帶同證件到深圳愛康健口腔醫院辦理。',
+    },
+    {
+      Q: '什為是長者醫療券獎賞先導計劃？',
+      A: '獎賞先導計劃是為期3年的短期計劃，至2026年12月31日止。長者在同一年度累計使用至少1,000港元醫療券於特定基層醫療服務，包括<i>牙齒檢查、洗牙、脫牙、補牙</i>等，醫健通會自動發放獎賞<i>500港元</i>一次。3年最多可獲<i>1500港元</i>獎賞。獎賞只可支付特定基層醫療服務費用，包括牙齒檢查、洗牙、脫牙、補牙等。',
+    },
+    {
+      Q: '醫療券涵蓋的牙科服務？',
+      A: '洗牙、補牙、拔牙、杜牙根、牙冠、牙橋、種植牙、活動假牙、牙周病治療等。',
+    },
+    {
+      Q: '牙科服務如何計算匯率？',
+      A: '醫療券是以港幣為單位，而深圳愛康健口腔醫院是以人民幣結算。香港銀行公會每月會定立固定匯率，最後要以四捨五入方式計算最接近整數的港幣金額。<br />例子：人民幣¥200 x 匯率1.127 = 港幣$225.4，四捨五入後金額為$225。',
+    },
+    {
+      Q: '發現醫療券申報金額錯誤怎麼辦？',
+      A: '長者請<i>盡快親身回到深圳愛康健口腔醫院</i>，重新簽署「醫療券使用者使用醫療券同意書」。詳情可致電 (+852) 6933 8128。<br />注意：任何情況下醫療券都不可以兌換成現金作退款。',
+    },
+  ],
+}
 </script>
 
 <template>
@@ -1276,7 +1318,7 @@ const newsmoduleLists = [
           ></iframe>
         </div>
       </div>
-
+      <ServiceProblem :problemData="problemData" />
       <div class="newsmodule smallPageCon">
         <div class="newsmodule-title">
           <div class="index_title">醫療券資訊</div>
@@ -1322,6 +1364,12 @@ const newsmoduleLists = [
   position: relative;
   margin-top: 230px;
   margin-bottom: 0;
+}
+:deep(.problem) {
+  i {
+    font-style: normal !important;
+    color: #43be7f !important;
+  }
 }
 :deep(.header-content .explain_box_mobile) {
   display: none !important;
@@ -1386,7 +1434,7 @@ const newsmoduleLists = [
       margin-bottom: 60px;
       color: var(--Theme-Color, #fc1682);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 30px;
       font-style: normal;
       font-weight: 400;
@@ -1435,7 +1483,7 @@ const newsmoduleLists = [
         padding: clamp(10px, 0.05vw, 30px) 0 15px;
         color: #14a033;
         text-align: center;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 30px;
         font-style: normal;
         font-weight: 500;
@@ -1822,7 +1870,7 @@ const newsmoduleLists = [
         display: flex;
         flex-direction: column;
         span {
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
         }
       }
       & > div:nth-child(2) {
@@ -1878,7 +1926,7 @@ const newsmoduleLists = [
         display: flex;
         flex-direction: column;
         span {
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
         }
       }
       & > div:nth-child(2) {
@@ -1919,7 +1967,7 @@ const newsmoduleLists = [
           font-weight: 500;
           line-height: 160%;
           letter-spacing: 3.2px;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
         }
       }
     }
@@ -1939,7 +1987,7 @@ const newsmoduleLists = [
     align-items: center;
     color: #fff;
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -2002,7 +2050,7 @@ font-family: 'FakePearl-Regular';
       & > div:nth-child(1) {
         color: #fc1682;
         text-align: center;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 36.075px;
         font-style: normal;
         font-weight: 400;
@@ -2128,7 +2176,7 @@ font-family: 'FakePearl-Regular';
   h1 {
     color: #fc1682;
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
@@ -2155,7 +2203,7 @@ font-family: 'FakePearl-Regular';
       justify-content: center;
       flex-direction: column;
       align-items: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 24px;
       font-style: normal;
       font-weight: 500;
@@ -2178,7 +2226,7 @@ font-family: 'FakePearl-Regular';
       & > span {
         display: flex;
         color: #4d4d4d;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 19px;
         font-style: normal;
         font-weight: 400;
@@ -2191,7 +2239,7 @@ font-family: 'FakePearl-Regular';
           border-radius: 50%;
           background: var(--Theme-Color, #fc1682);
           color: #fff;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 24px;
           font-style: normal;
           font-weight: 500;
@@ -2205,7 +2253,7 @@ font-family: 'FakePearl-Regular';
       }
       & > p {
         color: #808080;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 19px;
         font-style: normal;
         font-weight: 400;
@@ -2633,7 +2681,7 @@ font-family: 'FakePearl-Regular';
     }
     color: var(--Theme-Color, #fc1682);
     text-align: justify;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 5.33vw;
     font-style: normal;
     font-weight: 400;
@@ -2722,7 +2770,7 @@ font-family: 'FakePearl-Regular';
           padding: 5.3vw 0 2.65vw;
           color: #14a033;
           text-align: center;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 5.3vw;
           font-style: normal;
           font-weight: 500;
@@ -3214,7 +3262,7 @@ font-family: 'FakePearl-Regular';
       align-items: center;
       color: #fff;
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 14px;
       font-style: normal;
       font-weight: 500;
@@ -3258,7 +3306,7 @@ font-family: 'FakePearl-Regular';
         & > div:nth-child(1) {
           color: #fc1682;
           text-align: center;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 36.075px;
           font-style: normal;
           font-weight: 400;
@@ -3532,7 +3580,7 @@ font-family: 'FakePearl-Regular';
   .new_table_title h1 {
     color: #fc1682;
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 5.33vw;
     font-style: normal;
     font-weight: 400;
@@ -3571,7 +3619,7 @@ font-family: 'FakePearl-Regular';
         text-align: center;
         -webkit-text-stroke-width: 2;
         -webkit-text-stroke-color: #fff;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 15px;
         font-style: normal;
         font-weight: 500;
@@ -3591,7 +3639,7 @@ font-family: 'FakePearl-Regular';
         & > span {
           display: flex;
           color: #4d4d4d;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 12px;
           font-style: normal;
           font-weight: 400;
@@ -3606,7 +3654,7 @@ font-family: 'FakePearl-Regular';
             border-radius: 50%;
             background: var(--Theme-Color, #fc1682);
             color: #fff;
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-size: 16px;
             font-style: normal;
             font-weight: 500;
@@ -3621,7 +3669,7 @@ font-family: 'FakePearl-Regular';
         }
         & > p {
           color: #808080;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 12px;
           font-style: normal;
           font-weight: 400;

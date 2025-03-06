@@ -406,18 +406,18 @@ export default [
       context: '执业医师， 口腔医学本科医学学士， 中华口腔医学会会员。 对口腔常见问题具有敏感和前沿的诊疗理念，积累了丰富的临床操作案例，在口腔种植、美学修复等领域具有较高的造诣，让患者重新绽放健康自信微笑。徐医生秉承责任、协作、服务、分享等服务原则，凭着娴熟的技术，真诚的口腔健康服务，获得顾客及家属的一致好评。曾多次受邀国内大型口腔学术会交流学习，曾以作者身份在美国牙周协会(AAP)牙周期刊(JOP)上发表论文。',
       educated: ''
     },
-    {
-      id: '134',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/05/75e9c3b498b3f889.png',
-      mbImg: 'https://static.cmereye.com/static/ckj/imgs/doctor/Baoan/doctor406.png',
-      name: '吴广学',
-      org: '罗湖区，宝安区 富康门诊，康辉门诊，恒洁门诊，炫雅门诊，颜丽门诊',
-      posts: '',
-      job: '主治医师',
-      skilled: '成人隐形矫治；青少年牙列畸形及发育不良的早期诊断、干预、治疗；牙列及面型前突；反颌等。对改善呼吸相关的面部发育畸形，笑容美学正畸设计有独到的见解。',
-      context: '主治医师， 口腔正畸学硕士， 中华口腔医学会(CSA)会员， 中华口腔医学会正畸专委会(COS)会员， 隐适美Invisalign认证医师， 深圳民营正畸专委会青年委员。 毕业于山东大学口腔医学院，具有丰富的三甲医院临床工作经验。World Federation of Orthodontics认证会员，BioQuick&Smile认证医师。曾赴阿姆斯特丹口腔学术中心(ACTA)交流学习，获美国3M公司「杰出精英医师」奖，多次获得广东省病例大赛正畸组优秀病例奖，曾在三甲医院临床工作多年，多次受邀参加国际国内高端学术会议及论坛，获得国家实用新型专利一项。',
-      educated: '口腔正畸学硕士'
-    },
+    // {
+    //   id: '134',
+    //   imgUrl: 'https://static.cmereye.com/imgs/2023/05/75e9c3b498b3f889.png',
+    //   mbImg: 'https://static.cmereye.com/static/ckj/imgs/doctor/Baoan/doctor406.png',
+    //   name: '吴广学',
+    //   org: '罗湖区，宝安区 富康门诊，康辉门诊，恒洁门诊，炫雅门诊，颜丽门诊',
+    //   posts: '',
+    //   job: '主治医师',
+    //   skilled: '成人隐形矫治；青少年牙列畸形及发育不良的早期诊断、干预、治疗；牙列及面型前突；反颌等。对改善呼吸相关的面部发育畸形，笑容美学正畸设计有独到的见解。',
+    //   context: '主治医师， 口腔正畸学硕士， 中华口腔医学会(CSA)会员， 中华口腔医学会正畸专委会(COS)会员， 隐适美Invisalign认证医师， 深圳民营正畸专委会青年委员。 毕业于山东大学口腔医学院，具有丰富的三甲医院临床工作经验。World Federation of Orthodontics认证会员，BioQuick&Smile认证医师。曾赴阿姆斯特丹口腔学术中心(ACTA)交流学习，获美国3M公司「杰出精英医师」奖，多次获得广东省病例大赛正畸组优秀病例奖，曾在三甲医院临床工作多年，多次受邀参加国际国内高端学术会议及论坛，获得国家实用新型专利一项。',
+    //   educated: '口腔正畸学硕士'
+    // },
     {
       id: '135',
       imgUrl: 'https://static.cmereye.com/imgs/2023/05/a8aa89827051db81.png',
@@ -1229,18 +1229,18 @@ export default [
       context: '执业医师，儿牙医师，全科医师。毕业于广西右江民族医学院，口腔医学学士，从事口腔全科临床诊疗工作多年，曾进修于广西医科大学口腔医院，拥有深厚的专业知识。精益求精的技术追求、热情诚恳的服务态度、认真负责的工作态度，深得患者们的好评。',
       educated: ''
     },
-    {
-      id: '406',
-      imgUrl: 'https://static.cmereye.com/imgs/2023/05/75e9c3b498b3f889.png',
-      mbImg: 'https://static.cmereye.com/static/ckj/imgs/doctor/Baoan/doctor406.png',
-      name: '吴广学',
-      org: '罗湖区，宝安区 富康门诊，康辉门诊，恒洁门诊，炫雅门诊，颜丽门诊',
-      posts: '',
-      job: '主治医师',
-      skilled: '成人隐形矫治；青少年牙列畸形及发育不良的早期诊断、干预、治疗；牙列及面型前突；反颌等。对改善呼吸相关的面部发育畸形，笑容美学正畸设计有独到的见解。',
-      context: '主治医师， 口腔正畸学硕士， 中华口腔医学会(CSA)会员， 中华口腔医学会正畸专委会(COS)会员， 隐适美Invisalign认证医师， 深圳民营正畸专委会青年委员。 毕业于山东大学口腔医学院，具有丰富的三甲医院临床工作经验。World Federation of Orthodontics认证会员，BioQuick&Smile认证医师。曾赴阿姆斯特丹口腔学术中心(ACTA)交流学习，获美国3M公司「杰出精英医师」奖，多次获得广东省病例大赛正畸组优秀病例奖，曾在三甲医院临床工作多年，多次受邀参加国际国内高端学术会议及论坛，获得国家实用新型专利一项。',
-      educated: '口腔正畸学硕士'
-    },
+    // {
+    //   id: '406',
+    //   imgUrl: 'https://static.cmereye.com/imgs/2023/05/75e9c3b498b3f889.png',
+    //   mbImg: 'https://static.cmereye.com/static/ckj/imgs/doctor/Baoan/doctor406.png',
+    //   name: '吴广学',
+    //   org: '罗湖区，宝安区 富康门诊，康辉门诊，恒洁门诊，炫雅门诊，颜丽门诊',
+    //   posts: '',
+    //   job: '主治医师',
+    //   skilled: '成人隐形矫治；青少年牙列畸形及发育不良的早期诊断、干预、治疗；牙列及面型前突；反颌等。对改善呼吸相关的面部发育畸形，笑容美学正畸设计有独到的见解。',
+    //   context: '主治医师， 口腔正畸学硕士， 中华口腔医学会(CSA)会员， 中华口腔医学会正畸专委会(COS)会员， 隐适美Invisalign认证医师， 深圳民营正畸专委会青年委员。 毕业于山东大学口腔医学院，具有丰富的三甲医院临床工作经验。World Federation of Orthodontics认证会员，BioQuick&Smile认证医师。曾赴阿姆斯特丹口腔学术中心(ACTA)交流学习，获美国3M公司「杰出精英医师」奖，多次获得广东省病例大赛正畸组优秀病例奖，曾在三甲医院临床工作多年，多次受邀参加国际国内高端学术会议及论坛，获得国家实用新型专利一项。',
+    //   educated: '口腔正畸学硕士'
+    // },
     {
       id: '407',
       imgUrl: 'https://static.cmereye.com/imgs/2023/05/4ce86d81805a5d72.png',

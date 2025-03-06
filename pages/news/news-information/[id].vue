@@ -275,6 +275,14 @@ onMounted(() => {
   getWindowWidth()
   window.addEventListener('resize', getWindowWidth)
 })
+
+const linkSource = (str) => {
+  if (str.includes('https')) {
+    return str
+  } else {
+    return `https://www.facebook.com/plugins/video.php?&href=https%3A%2F%2Fwww.facebook.com%2Fckjdental.hk%2Fvideos%2F${str}%2F&show_text=false&width=476&t=0`
+  }
+}
 </script>
 
 <template>
@@ -301,10 +309,14 @@ onMounted(() => {
         <span>{{ coverageDeatail.name }}</span>
       </div>
       <div class="articlePage-in" v-if="!errorpage" v-loading="pageLoading">
-        <div class="content-topimg" v-if="coverageDeatail.videos !== ''">
+        <div
+          class="content-topimg"
+          :class="coverageDeatail.id == '423' ? 'content-topimg-423' : ''"
+          v-if="coverageDeatail.videos !== ''"
+        >
           <div class="content-topimg-video">
             <iframe
-              :src="`https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fckjdental.hk%2Fvideos%2F${coverageDeatail.videos}%2F&show_text=false&width=476&t=0`"
+              :src="linkSource(coverageDeatail.videos)"
               width="476"
               height="476"
               style="border: none; overflow: hidden"
@@ -448,7 +460,7 @@ onMounted(() => {
   & > span {
     cursor: pointer;
     color: var(--indexColor1);
-    font-family:  'Noto Sans HK', Serif;
+    font-family: 'Noto Sans HK', Serif;
   }
 }
 .articlePage {
@@ -481,6 +493,18 @@ onMounted(() => {
     }
   }
 }
+.content-topimg-423 {
+  width: 936px;
+  max-width: 100%;
+  margin: 63px auto 0;
+  height: 530px;
+  .content-topimg-video {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 0;
+    position: relative;
+  }
+}
 .content-title {
   width: calc(100% - 60px);
   max-width: 960px;
@@ -488,7 +512,7 @@ onMounted(() => {
   color: var(--indexColor1);
   font-size: 50px;
   & > h1 {
-    font-family:  'Noto Sans HK', Serif;
+    font-family: 'Noto Sans HK', Serif;
   }
 }
 .content {
@@ -524,9 +548,9 @@ onMounted(() => {
   :deep(.content-text) {
     color: var(--textColor);
     font-size: 20px;
-    font-family:  'Noto Sans HK', Serif;
+    font-family: 'Noto Sans HK', Serif;
     span {
-      font-family:  'Noto Sans HK', Serif;
+      font-family: 'Noto Sans HK', Serif;
     }
   }
   :deep(.indexColor) {
@@ -801,6 +825,18 @@ onMounted(() => {
           margin-bottom: 20px;
         }
       }
+    }
+  }
+  .content-topimg-423 {
+    width: 100vw;
+    max-width: 100%;
+    margin: 0 auto;
+    height: 57vw;
+    .content-topimg-video {
+      width: 100%;
+      height: 100%;
+      padding-bottom: 0;
+      position: relative;
     }
   }
 }

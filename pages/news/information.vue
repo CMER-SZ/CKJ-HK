@@ -175,6 +175,15 @@ onMounted(() => {
   getWindowWidth()
   window.addEventListener('resize', getWindowWidth)
 })
+
+// 判断link 归属 如果是 id 部分 则匹配 facebook 输出  如果是全link 则直接输出
+const linkSource = (str) => {
+  if (str.includes('https')) {
+    return str
+  } else {
+    return `https://www.facebook.com/plugins/video.php?&href=https%3A%2F%2Fwww.facebook.com%2Fckjdental.hk%2Fvideos%2F${str}%2F&show_text=false&width=476&t=0`
+  }
+}
 </script>
 
 <template>
@@ -216,7 +225,7 @@ onMounted(() => {
               <div class="lists-in-img">
                 <div class="videos" v-if="item.videos !== ''">
                   <iframe
-                    :src="`https://www.facebook.com/plugins/video.php?&href=https%3A%2F%2Fwww.facebook.com%2Fckjdental.hk%2Fvideos%2F${item.videos}%2F&show_text=false&width=476&t=0`"
+                    :src="linkSource(item.videos)"
                     width="100%"
                     height="100%"
                     style="border: none; overflow: hidden"
