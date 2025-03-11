@@ -47,6 +47,7 @@ let form: any = reactive({
   service: '',
   explain: '',
   careVoucher: route.path == '/health-care-voucher' ? true : false,
+  discountCoupon: false,
 })
 
 const reForm = () => {
@@ -59,6 +60,7 @@ const reForm = () => {
     service: '',
     explain: '',
     careVoucher: route.path == '/health-care-voucher' ? true : false,
+    discountCoupon: false,
   }
 }
 const cityOptions = service.map((item) => item.name)
@@ -260,6 +262,7 @@ const onSubmit = async () => {
   _formData.append('dayOne', _form.dayOne)
   _formData.append('area', _form.area)
   _formData.append('careVoucher', _form.careVoucher ? '是' : '否')
+  _formData.append('discountCoupon', _form.discountCoupon ? '是' : '否')
   // _formData.append('email',_form.email)
   _formData.append('service', _form.service)
   _formData.append('formUrl', `${location.href}`)
@@ -328,6 +331,9 @@ const postData = async (_form, _preferential) => {
   預約日期：${_form.dayOne}
   診症區域：${_form.area}
   使用長者醫療券：${(_form.careVoucher = _form.careVoucher ? '是' : '否')}
+  領取2000元種植牙現金券:${(_form.discountCoupon = _form.discountCoupon
+    ? '是'
+    : '否')}
   提交時間：${new Date().toLocaleString()}
   备注信息：服务器离线由备用服务推送`,
     },
@@ -385,6 +391,8 @@ const errorserver = async (_form, _preferential) => {
         <p>使用長者醫療券：${(_form.careVoucher = _form.careVoucher
           ? '是'
           : '否')}</p>
+        <p<p>領取2000元種植牙現金券:${(_form.discountCoupon =
+          _form.discountCoupon ? '是' : '否')}</p>
         <p>优惠信息：${_preferential ? _preferential.text : '無'}</p><br/>
         <p>提交時間：${new Date().toLocaleString()}</p>
         <p>备注信息：服务器离线由备用服务推送</p>`,
@@ -545,14 +553,30 @@ let privacyPolicy = ref(true)
           </el-form-item>
           <el-form-item>
             <div class="explain_item">
-              <div class="care_voucher">
-                <label for="care_title">使用長者醫療券</label>
-                <input
-                  type="checkbox"
-                  value="true"
-                  id="care_title"
-                  v-model="form.careVoucher"
-                />
+              <div class="explain_item_box_1">
+                <div class="care_voucher">
+                  <label for="care_title">使用長者醫療券</label>
+                  <input
+                    type="checkbox"
+                    value="true"
+                    id="care_title"
+                    v-model="form.careVoucher"
+                  />
+                </div>
+                <div
+                  class="care_voucher"
+                  v-if="route.path === '/dental-service/implant'"
+                >
+                  <label for="care_discount_coupon"
+                    >領取2000元種植牙現金券</label
+                  >
+                  <input
+                    type="checkbox"
+                    value="true"
+                    id="care_discount_coupon"
+                    v-model="form.discountCoupon"
+                  />
+                </div>
               </div>
               <div class="privacyPolicy-label">*為必填</div>
             </div>
@@ -1007,14 +1031,15 @@ li {
     .radio {
       display: flex;
       align-items: center;
-      margin-top: 5px;
+      margin-top: 0;
       cursor: pointer;
+      width: 100%;
       &-in {
         border-radius: 50%;
-        border: 2px solid var(--indexColor1);
+        border: 3px solid var(--indexColor1);
         background: #fff;
-        width: 20px;
-        height: 20px;
+        width: 1.354vw;
+        height: 1.354vw;
         margin-right: 10px;
         margin-top: -2px;
         position: relative;
@@ -1032,8 +1057,9 @@ li {
         }
         &.act {
           &::before {
-            width: 12px;
-            height: 12px;
+            width: 1.004vw;
+            height: 1.004vw;
+            border: 2px solid #ffffff;
           }
         }
       }
@@ -1072,6 +1098,15 @@ li {
         letter-spacing: 5.2px;
         font-size: 16px;
         margin-top: 20px;
+        color: var(--Grey-Mid, #666);
+        text-align: center;
+
+        /* PC/Q&A-Title-PC */
+        font-family: FakePearl;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 38.4px */
         a {
           color: #00aeff;
           text-decoration-line: underline;
@@ -1100,7 +1135,13 @@ li {
       justify-content: space-between;
       width: 100%;
     }
+    .explain_item_box_1 {
+      display: flex;
+      align-items: flex-start;
+      gap: 0 clamp(30px, 3.385vw, 65px);
+    }
     .care_voucher {
+      cursor: pointer;
       display: flex;
       align-items: center;
       flex-direction: row-reverse;
@@ -1114,8 +1155,10 @@ li {
         font-weight: 500;
         font-size: 28px;
         letter-spacing: 5px;
+        cursor: pointer;
       }
       & > input:checked {
+        cursor: pointer;
         content: '';
         color: #fff;
         background-color: #fc1682;
@@ -1406,7 +1449,22 @@ li {
         &-content {
           letter-spacing: 0.2708vw;
           font-size: 14px;
-          margin-top: 1.0417vw;
+          margin-top: 0;
+          position: absolute;
+          top: -20px;
+          color: var(--Grey-Mid, #666);
+          text-align: center;
+
+          /* PC/Q&A-Title-PC */
+          font-family: FakePearl;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 160%; /* 38.4px */
+          & > span:nth-child(1) {
+            position: absolute;
+            bottom: -180px;
+          }
           :deep(.el-radio.el-radio--large .el-radio__label) {
             font-size: 0.8333vw;
           }
@@ -1511,6 +1569,7 @@ li {
       }
       .privacyPolicy {
         margin-top: 0px;
+        position: absolute;
         &-label {
           font-size: 12px;
         }
@@ -1519,6 +1578,17 @@ li {
           line-height: 1.2;
           letter-spacing: 2.4px;
           margin-top: 10px;
+          & > span:nth-child(1) {
+            position: absolute;
+            bottom: -24vw;
+            color: var(--Grey-Mid, #666);
+            font-family: FakePearl;
+            font-size: 3.846vw;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            letter-spacing: 0.284vw;
+          }
           i {
             font-size: 16px;
           }
@@ -1871,6 +1941,9 @@ li {
   }
 
   .contactForm {
+    .explain_item_box_1 {
+      flex-direction: column;
+    }
     &-in {
       :deep(.el-form-item__label) {
         font-size: 3.73vw;
@@ -1892,10 +1965,51 @@ li {
         }
       }
     }
+    &-in {
+      .radio {
+        color: var(--Grey-Mid, #666);
+
+        /* MB/ServiceList-MB */
+        font-family: FakePearl;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        letter-spacing: 1.5px;
+        &-in {
+          width: 4.2vw;
+          height: 4.2vw;
+          &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--indexColor1);
+            transition: all 0.3s;
+            border-radius: 50%;
+          }
+          &.act {
+            &::before {
+              width: 2.8vw;
+              height: 2.8vw;
+              border: 2px solid #ffffff;
+            }
+          }
+        }
+      }
+    }
     .care_voucher {
       & > label {
-        font-size: 5.33vw;
-        line-height: 160%;
+        color: var(---Green, #00a752);
+        font-family: FakePearl;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 24px */
+        letter-spacing: 1.5px;
       }
       & > input:checked {
         width: 4.2vw;

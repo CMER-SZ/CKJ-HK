@@ -22,8 +22,8 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://statichk.cmermedical.com/ckj/service-page-test/invisiblebraces-pc.avif',
-  mbImg: 'https://statichk.cmermedical.com/ckj/service-page-test/invisiblebraces-mb.avif',
+  img: 'https://statichk.cmermedical.com/ckj/image/2025031110483301.webp',
+  mbImg: 'https://statichk.cmermedical.com/ckj/image/2025031110483302.webp',
   bg: '',
   pageName: 'invisalign-test',
   pcText: ['自由．舒適．美觀', '保持自然笑容 牙齒更加美麗動人'],
@@ -502,6 +502,7 @@ onMounted(() => {
   height: 20.83vw;
   width: 55%;
   z-index: 10;
+  display: none !important;
 }
 .banner-content {
   display: flex;

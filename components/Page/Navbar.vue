@@ -258,6 +258,20 @@ onMounted(() => {
           >
             <span>一般諮詢</span>
           </nuxt-link>
+          <nuxt-link
+            class="whatsApp-normal"
+            id="navMbWhatsapp"
+            :to="'https://api.whatsapp.com/send/?phone=85269338128&text=立即領取2000元種植牙現金券'"
+          >
+            <span>種牙現金券</span>
+          </nuxt-link>
+          <nuxt-link
+            class="whatsApp-normal"
+            id="navMbWhatsapp"
+            :to="'https://api.whatsapp.com/send/?phone=85269338128&text=Hello愛康健,想預約超聲波洗牙'"
+          >
+            <span>預約洗牙</span>
+          </nuxt-link>
         </div>
       </div>
       <nuxt-link
@@ -1039,7 +1053,7 @@ onMounted(() => {
           }
           & > span:nth-child(2) {
             color: var(--Grey-Deep, #4d4d4d);
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-size: 15px;
             font-style: normal;
             font-weight: 600;
@@ -1105,7 +1119,7 @@ onMounted(() => {
           background: var(---Green, #00a752);
           color: var(--White, #fff);
           text-align: center;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 15px;
           font-style: normal;
           font-weight: 400;
@@ -1120,7 +1134,7 @@ onMounted(() => {
           text-align: center;
           -webkit-text-stroke-width: 1;
           -webkit-text-stroke-color: var(--White, #fff);
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 15px;
           font-style: normal;
           font-weight: 400;

@@ -24,8 +24,8 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://statichk.cmermedical.com/ckj/service-page-test/periodontal-pc.avif',
-  mbImg: 'https://statichk.cmermedical.com/ckj/service-page-test/periodontal-mb.avif',
+  img: 'https://statichk.cmermedical.com/ckj/image/2025031111062401.webp',
+  mbImg: 'https://statichk.cmermedical.com/ckj/image/2025031111062402.webp',
   bg: '',
   pageName: 'periodontal-test',
   pcText: ['健康牙齒，從牙周病治療開始', '保持清新口氣、牙肉年輕'],
@@ -2266,6 +2266,7 @@ const imgSrcHandel = (i: any) => {
   height: 20.83vw;
   width: 55%;
   z-index: 10;
+  display: none !important;
 }
 .banner-content {
   display: flex;

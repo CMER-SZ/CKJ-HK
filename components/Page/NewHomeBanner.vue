@@ -429,6 +429,9 @@ const getWindowWidth = () => {
           headerConfig.pageName,
         ]"
       >
+        <a class="a-header-content-in" href="#contactUsFormNav"
+          >👏即日起網上預約領取2000元種植牙現金券！</a
+        >
         <div
           ref="headerMenu"
           class="pageCon header-content-in health_max_width"
@@ -551,7 +554,9 @@ const getWindowWidth = () => {
       </div>
       <!-- 水波纹盒子 -->
       <!-- <div class="waterBg" :class="headerConfig.pageName"></div> -->
-      <div class="explain_page_one" style="display: none;">優惠只限於網上及電話預約客戶</div>
+      <div class="explain_page_one" style="display: none">
+        優惠只限於網上及電話預約客戶
+      </div>
     </div>
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
       <div :class="['dialogBox-in', { 'show-in': _bool }]" @click.stop="">
@@ -1106,6 +1111,23 @@ const getWindowWidth = () => {
     z-index: 100;
     box-shadow: 0px 4px 8px var(--indexColor3);
     margin-top: 0 !important;
+    .a-header-content-in {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      background: var(---Green, #00a752);
+      box-sizing: border-box;
+      padding: 6.5px 0;
+      color: var(--White, #fff);
+      text-align: center;
+      font-family: 'Noto Sans Hk';
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 1.1px;
+    }
     .header-content-in {
       align-items: center;
       .logo {
@@ -1140,7 +1162,7 @@ const getWindowWidth = () => {
         clamp(15px, 1.0465vw, 20px) clamp(15px, 1.0465vw, 20px);
       color: #fff;
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: clamp(14px, 1.146vw, 22px);
       font-style: normal;
       font-weight: 400;
@@ -1289,7 +1311,7 @@ const getWindowWidth = () => {
     padding: 2px 4px 2px 6px;
     color: var(--White, #fff);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(10px, 0.7vw, 14px);
     font-style: normal;
     font-weight: 400;
@@ -1301,7 +1323,7 @@ font-family: 'FakePearl-Regular';
   & > span:nth-child(2) {
     color: var(--Grey-Deep, #4d4d4d);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(10px, 0.7vw, 14px);
     font-style: normal;
     font-weight: 400;
@@ -2000,7 +2022,7 @@ font-family: 'FakePearl-Regular';
       background: var(---Green, #00a752);
       color: var(--White, #fff);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2010,7 +2032,7 @@ font-family: 'FakePearl-Regular';
     & > span:nth-child(2) {
       color: var(--Grey-Deep, #4d4d4d);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2334,7 +2356,7 @@ font-family: 'FakePearl-Regular';
       background: var(---Green, #00a752);
       color: var(--White, #fff);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2344,7 +2366,7 @@ font-family: 'FakePearl-Regular';
     & > span:nth-child(2) {
       color: var(--Grey-Deep, #4d4d4d);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;

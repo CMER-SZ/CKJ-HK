@@ -25,8 +25,8 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://statichk.cmermedical.com/ckj/service-page-test/children-dentistry-pc.avif',
-  mbImg: 'https://statichk.cmermedical.com/ckj/service-page-test/children-dentistry-mb.avif',
+  img: 'https://statichk.cmermedical.com/ckj/image/2025031110551501.webp',
+  mbImg: 'https://statichk.cmermedical.com/ckj/image/2025031110551502.webp',
   bg: '',
   pageName: 'scaling-and-polishing-test',
   pcText: [],
@@ -498,6 +498,7 @@ onMounted(() => {
   height: 20.83vw;
   width: 55%;
   z-index: 10;
+  display: none !important;
 }
 .banner-content {
   display: flex;

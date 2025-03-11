@@ -22,9 +22,9 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://statichk.cmermedical.com/ckj/service-page-test/orthodontics-pc.avif',
+  img: 'https://statichk.cmermedical.com/ckj/image/2025031110414602.webp',
   mbImg:
-    'https://statichk.cmermedical.com/ckj/service-page-test/orthodontics-mb.avif',
+    'https://statichk.cmermedical.com/ckj/image/2025031110414601.webp',
   bg: '',
   pageName: 'orthodontics-test',
   pcText: ['追求美學極致，展現最燦爛笑容', '愛康健為愛美的您打造完美面部輪廓'],
@@ -896,6 +896,7 @@ const careData = {
   height: 20.83vw;
   width: 55%;
   z-index: 10;
+  display: none !important;
 }
 .banner-content {
   display: flex;

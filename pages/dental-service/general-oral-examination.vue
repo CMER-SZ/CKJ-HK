@@ -22,9 +22,8 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://statichk.cmermedical.com/ckj/service-page-test/general-oral-examination-pc.avif',
-  mbImg:
-    'https://statichk.cmermedical.com/ckj/service-page-test/general-oral-examination-mb.avif',
+  img: 'https://statichk.cmermedical.com/ckj/image/2025031111084801.webp',
+  mbImg: 'https://statichk.cmermedical.com/ckj/image/2025031111084802.webp',
   bg: '',
   pageName: 'scaling-and-polishing-test',
   pcText: [],
@@ -395,6 +394,7 @@ onMounted(() => {
   height: 20.83vw;
   width: 55%;
   z-index: 10;
+  display: none !important;
 }
 .banner-content {
   display: flex;
@@ -409,7 +409,7 @@ onMounted(() => {
   .content-remark {
     color: var(--White, #fff);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
@@ -421,7 +421,7 @@ font-family: 'FakePearl-Regular';
     text-align: right;
     -webkit-text-stroke-width: 0.5;
     -webkit-text-stroke-color: var(--White, #fff);
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(40px, 5.7vw, 110px);
     font-style: normal;
     font-weight: 600;
@@ -457,7 +457,7 @@ font-family: 'FakePearl-Regular';
   .content-price {
     color: var(--White, #fff);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(20px, 2.9165vw, 56px);
     font-style: normal;
     font-weight: 400;
@@ -471,7 +471,7 @@ font-family: 'FakePearl-Regular';
   .content-subscribe {
     color: var(--Theme-Color, #fc1682);
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(20px, 1.883vw, 40px);
     font-style: normal;
     font-weight: 600;
@@ -1251,7 +1251,7 @@ font-family: 'FakePearl-Regular';
 
     .content-remark {
       color: var(--White, #fff);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 22px;
       font-style: normal;
       font-weight: 400;
@@ -1307,7 +1307,7 @@ font-family: 'FakePearl-Regular';
       bottom: -10px;
       color: var(--Theme-Color, #fc1682);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 20px;
       font-style: normal;
       font-weight: 600;

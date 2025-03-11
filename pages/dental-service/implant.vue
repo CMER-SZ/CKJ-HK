@@ -25,14 +25,13 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://statichk.cmermedical.com/ckj/service-page-test/implant-pc.avif',
-  mbImg:
-    'https://statichk.cmermedical.com/ckj/service-page-test/implant-mb.avif',
+  img: 'https://static.ckjhk.com/ckj-image/2025031011202802.webp',
+  mbImg: 'https://static.ckjhk.com/ckj-image/2025031011202801.webp',
   bg: '',
   pageName: 'implant',
   pcText: ['享受失而復得的喜悅', '重拾完整人生之旅'],
   mbText: ['享受失而復得的喜悅', '重拾完整人生之旅'],
-  linkBtn: `https://wa.me/85269338128?text=取得種植牙免費CT檢查`
+  linkBtn: `https://wa.me/85269338128?text=取得種植牙免費CT檢查`,
 }
 const loading = ref(true)
 const introduceData = {
@@ -909,6 +908,84 @@ const checkGroupPhoto = () => {
           </div>
         </div>
       </div>
+      <div class="step">
+        <div class="step-in">
+          <div class="dentistryServices-title step-title">
+            <div class="dentistryServices-title-in bb step-title-in">
+              植牙6步曲
+            </div>
+          </div>
+          <div class="step-lists" v-if="windowWidth > 768">
+            <div
+              class="step-lists-in"
+              v-for="(stepItem, stepIndex) in stepData.lists"
+              :key="stepIndex"
+            >
+              <div class="step-lists-in-l">
+                <div class="title">
+                  <!-- <img src="@/assets/images/icon_13.png" alt="" /> -->
+                  <!-- {{ stepItem.title }} -->
+                  <div>
+                    <img
+                      src="https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png"
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>0{{ stepIndex + 1 }}</div>
+                </div>
+                <div class="image">
+                  <img :src="stepItem.img" loading="lazy" alt="" />
+                </div>
+                <div class="name">{{ stepItem.name }}</div>
+                <div class="context">{{ stepItem.context }}</div>
+              </div>
+              <div class="step-lists-in-r">
+                <img
+                  src="https://static.cmereye.com/imgs/2024/11/5e6a778026dfcb28.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="mobile-new-step" v-else>
+            <div
+              v-for="(stepItem, stepIndex) in stepData.lists"
+              :key="stepIndex"
+            >
+              <div>
+                <img :src="stepItem.img" loading="lazy" alt="" />
+                <span>{{ stepItem.name }}</span
+                ><br />
+                <span>{{ stepItem.context }}</span>
+              </div>
+              <div><img :src="stepItem.imgNum" loading="lazy" alt="" /></div>
+            </div>
+          </div>
+          <div class="step-bg step-mobile-bg-one" v-if="windowWidth < 767">
+            <img
+              src="https://static.cmereye.com/imgs/2024/07/0f9506f5f2e7252f.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="step-bg step-mobile-bg-two" v-if="windowWidth < 767">
+            <img
+              src="https://static.cmereye.com/imgs/2024/07/6d29b5a6949eb591.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="step-bg step-mobile-bg-three" v-if="windowWidth < 767">
+            <img
+              src="https://static.cmereye.com/imgs/2024/07/2c52c0d9059dac7d.png"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
       <div class="Plant_brand_series" v-if="windowWidth > 768">
         <div class="dentistryServices-title">
           <div class="dentistryServices-title-in bb">植體品牌系列</div>
@@ -1660,7 +1737,10 @@ const checkGroupPhoto = () => {
           </div>
         </div>
         <div class="technology-btn">
-          <PageAnimBtnTypeTwo  :link="`https://wa.me/85269338128?text=取得種植牙免費CT檢查`" str="取得免費口腔CT檢查" />
+          <PageAnimBtnTypeTwo
+            :link="`https://wa.me/85269338128?text=取得種植牙免費CT檢查`"
+            str="取得免費口腔CT檢查"
+          />
         </div>
       </div>
       <!-- <div class="notice" v-if="windowWidth > 767">
@@ -1699,84 +1779,7 @@ const checkGroupPhoto = () => {
         </div>
       </div> -->
       <ServiceReason :reasonData="reasonData" />
-      <div class="step">
-        <div class="step-in">
-          <div class="dentistryServices-title step-title">
-            <div class="dentistryServices-title-in bb step-title-in">
-              植牙6步曲
-            </div>
-          </div>
-          <div class="step-lists" v-if="windowWidth > 768">
-            <div
-              class="step-lists-in"
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-            >
-              <div class="step-lists-in-l">
-                <div class="title">
-                  <!-- <img src="@/assets/images/icon_13.png" alt="" /> -->
-                  <!-- {{ stepItem.title }} -->
-                  <div>
-                    <img
-                      src="https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div>0{{ stepIndex + 1 }}</div>
-                </div>
-                <div class="image">
-                  <img :src="stepItem.img" loading="lazy" alt="" />
-                </div>
-                <div class="name">{{ stepItem.name }}</div>
-                <div class="context">{{ stepItem.context }}</div>
-              </div>
-              <div class="step-lists-in-r">
-                <img
-                  src="https://static.cmereye.com/imgs/2024/11/5e6a778026dfcb28.png"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="mobile-new-step" v-else>
-            <div
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-            >
-              <div>
-                <img :src="stepItem.img" loading="lazy" alt="" />
-                <span>{{ stepItem.name }}</span
-                ><br />
-                <span>{{ stepItem.context }}</span>
-              </div>
-              <div><img :src="stepItem.imgNum" loading="lazy" alt="" /></div>
-            </div>
-          </div>
-          <div class="step-bg step-mobile-bg-one" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/0f9506f5f2e7252f.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="step-bg step-mobile-bg-two" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/6d29b5a6949eb591.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="step-bg step-mobile-bg-three" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/2c52c0d9059dac7d.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
+
       <div class="classify" v-if="windowWidth > 768">
         <div
           class="dentistryServices-title-in bb notice-title-in classify-title"
@@ -1922,7 +1925,7 @@ const checkGroupPhoto = () => {
           <div>傳統植牙</div>
           <div></div>
           <div>
-            <img 
+            <img
               src="https://statichk.cmermedical.com/ckj/image/f662a2c2f358.avif"
               alt=""
               loading="lazy"
@@ -2403,6 +2406,7 @@ const checkGroupPhoto = () => {
   }
 }
 .banner-in-box {
+  display: none !important;
   position: absolute;
   top: 50%;
   left: 0;
@@ -2425,7 +2429,7 @@ const checkGroupPhoto = () => {
   }
 }
 .banner-content {
-  display: flex;
+  display: none !important;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-around;
@@ -2749,7 +2753,7 @@ const checkGroupPhoto = () => {
       rgba(255, 241, 240, 0) 100%
     );
     padding: 98px 0;
-    margin-top: 206px;
+    margin-top: 0;
     &-in {
       width: 100%;
       max-width: 1444px;
@@ -3756,7 +3760,7 @@ const checkGroupPhoto = () => {
         rgba(255, 241, 240, 0) 100%
       );
       padding: 98px 0;
-      margin-top: 206px;
+      margin-top: 0;
       &-in {
         width: 100%;
         max-width: clamp(1000px, 75vw, 1444px);
