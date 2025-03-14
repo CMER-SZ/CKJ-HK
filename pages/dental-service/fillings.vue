@@ -29,9 +29,8 @@ const introduceJY = {
 }
 
 const headerConfig = {
-  img: 'https://static.ckjhk.com/ckj-image/2bd9dad3fafb.webp',
-  mbImg:
-    'https://static.ckjhk.com/ckj-image/04f7c6f31d73.webp',
+  img: 'https://static.ckjhk.com/ckj-image/488fe47b05bd.webp',
+  mbImg: 'https://static.ckjhk.com/ckj-image/b3e5975a2ff2.webp',
   bg: '',
   pageName: 'invisalign-test',
   pcText: [],
@@ -396,14 +395,18 @@ const differData: any = {
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
-            <div class="content-subscribe">網上預約限定優惠</div>
-            <div class="content-title">美國樹脂補牙</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div></div>
-              <div class="price-style">
-                <img src="../../assets/images/2025011015135902.svg" alt="" />
+              <div>美國樹脂補牙</div>
+              <div>
+                <img src="~/assets/images/2025031311165801.svg" alt="" />
               </div>
-              <div>其他物料7折</div>
+            </div>
+            <div class="content-subscribe">
+              <div>其他物料</div>
+              <div>
+                <img src="~/assets/images/2025031311165802.svg" alt="" />
+              </div>
             </div>
           </div>
         </div>
@@ -413,16 +416,27 @@ const differData: any = {
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
+          <div class="banner-image">
+            <img
+              src="https://static.ckjhk.com/ckj-image/f0f71d7dd9c6.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
           <div class="banner-content" style="display: flex">
-            <div class="content-title">美國樹脂補牙</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div></div>
-              <div class="price-style">
-                <img src="../../assets/images/2025011015135902.svg" alt="" />
+              <div>美國樹脂補牙</div>
+              <div>
+                <img src="~/assets/images/2025031311165801.svg" alt="" />
               </div>
-              <div>其他物料7折</div>
             </div>
-            <div class="content-subscribe">網上預約限定優惠</div>
+            <div class="content-subscribe">
+              <div>其他物料</div>
+              <div>
+                <img src="~/assets/images/2025031311165802.svg" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       </template>
@@ -839,21 +853,37 @@ const differData: any = {
 
 <style lang="scss" scoped>
 .banner-in-box {
-  display: none !important;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   height: 20.83vw;
-  width: 55%;
+  width: 100%;
   z-index: 10;
+}
+.banner-image {
+  position: absolute;
+  z-index: 3;
+  top: 3vw;
+  left: 48%;
+  width: 9.0625vw;
+  height: 9.0625vw;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .banner-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 23.9583vw;
+  position: absolute;
+  left: 40%;
+  top: 55%;
+  transform: translate(-50%, -50%);
   & > div {
     display: flex;
     align-items: flex-end;
@@ -863,7 +893,7 @@ const differData: any = {
     text-align: right;
     -webkit-text-stroke-width: 0.5;
     -webkit-text-stroke-color: var(--White, #fff);
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(40px, 5.7vw, 110px);
     font-style: normal;
     font-weight: 600;
@@ -871,80 +901,90 @@ font-family: 'FakePearl-Regular';
     letter-spacing: 6.6px;
     position: relative;
     z-index: 6;
-    bottom: -20px;
-  }
-  .content-title::after {
-    content: '';
-    display: inline-block;
-    width: 98%;
-    height: clamp(10px, 0.7vw, 15px);
-    background: url('../../assets/images/2025010917480102.png') no-repeat;
-    background-size: 100%;
-    position: absolute;
-    bottom: -0.9375vw;
+    bottom: 0;
+
+    border-radius: 0.6942vw 0.6942vw 0px 0px;
+    background: var(
+      --Liner-purple,
+      linear-gradient(
+        269deg,
+        var(--Brand-Color, #fc1682) 10.21%,
+        #710d54 122.73%
+      )
+    );
     box-sizing: border-box;
-    left: 0;
-    right: 0;
-    z-index: 5;
+    padding: 0.859375vw 4.7135vw;
+    color: var(--White, #fff);
+    text-align: center;
+    text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
+    font-family: 'Noto Sans HK';
+    font-size: 1.565vw;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.165vw;
+    width: 100%;
   }
+
   .price-style {
     width: 19.0625vw;
     height: 11.145vw;
     position: relative;
-    right: -70px;
+    right: -3.64583vw;
     & > img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
   }
-  .content-price {
-    color: var(--White, #fff);
-    text-align: right;
-font-family: 'FakePearl-Regular';
-    font-size: clamp(30px, 2.9165vw, 56px);
+  .content-price,
+  .content-subscribe {
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 1.0465vw;
+    display: flex;
+    gap: 0 0.52vw;
+    min-height: 2.68135vw;
+    box-sizing: border-box;
+    padding: 0.52vw;
+    align-items: center;
+    font-family: 'Noto Sans HK';
+    font-size: 1.7442vw;
     font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 89.6px */
-    & > div:not(:nth-child(2)) {
-      padding-bottom: clamp(30px, 2.9165vw, 56px);
+    font-weight: 900;
+    line-height: 2.2222vw; /* 114.286% */
+    letter-spacing: 0.29165vw;
+    justify-content: center;
+    & > div:nth-child(1) {
+      color: var(--Grey-Dark, #333);
+      text-align: right;
+      text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+        1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+        -1.33px -1.333px 1.333px #faeaf2;
+      font-family: 'Noto Sans HK';
+      font-size: 1.744vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 2.2222vw; /* 114.286% */
+      letter-spacing: 0.29165vw;
+      top: -0.9vw;
     }
-    & > div:nth-child(3) {
-      position: relative;
-    }
-    & > div:nth-child(3)::after {
-      position: absolute;
-      left: 0;
-      top: -35%;
-      content: '';
-      background: url('../../assets/images/2025011015135901.svg') no-repeat;
-      width: 200px;
-      height: 30px;
-      background-size: contain;
+
+    & > div:nth-child(2) {
+      width: 3.54165vw;
+      & > svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
   .content-subscribe {
-    color: var(--Theme-Color, #fc1682);
-    text-align: center;
-font-family: 'FakePearl-Regular';
-    font-size: clamp(20px, 2.083vw, 40px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 64px */
     box-sizing: border-box;
-    padding: 0 20px;
-    width: fit-content;
-    background: url('../../assets/images/2025010917480101.png') no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 7;
-    right: 0;
-    bottom: 10px;
+    padding: 0;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--White, #fff);
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
   }
 }
 :deep(.header-content) {
@@ -2408,14 +2448,14 @@ font-family: 'FakePearl-Regular';
         & > div {
           & > span {
             color: var(--Grey-Deep, #4d4d4d);
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-size: 26px;
             font-style: normal;
             font-weight: 600;
             line-height: 160%; /* 41.6px */
             i {
               color: var(--Theme-Color, #fc1682);
-          font-family: 'FakePearl-Regular';
+              font-family: 'FakePearl-Regular';
               font-size: 26px;
               font-style: normal;
               font-weight: 600;
@@ -2584,7 +2624,7 @@ font-family: 'FakePearl-Regular';
       display: flex;
       flex-direction: column;
       color: var(--Grey-Deep, #4d4d4d);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 26px;
       font-style: normal;
       font-weight: 400;
@@ -2720,7 +2760,7 @@ font-family: 'FakePearl-Regular';
             background: transparent;
             white-space: initial;
             color: var(--Theme-Color, #fc1682);
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-size: 4.265vw;
             font-style: normal;
             font-weight: 500;
@@ -2801,7 +2841,7 @@ font-family: 'FakePearl-Regular';
     & > span {
       color: var(--Theme-Color, #fc1682);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 26px;
       font-style: normal;
       font-weight: 600;
@@ -2867,7 +2907,7 @@ font-family: 'FakePearl-Regular';
             background: var(--Theme-Color, #fc1682);
             color: var(--White, #fff);
             text-align: center;
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-size: 15px;
             font-style: normal;
             font-weight: 400;
@@ -2944,7 +2984,6 @@ font-family: 'FakePearl-Regular';
     }
   }
   .banner-in-box {
-    display: none !important;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2952,18 +2991,44 @@ font-family: 'FakePearl-Regular';
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    padding-left: 20px;
+    // padding-left: 20px;
     padding-bottom: 35px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    // display: flex;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+    top: 0;
+    bottom: 0;
+    transform: translateY(0px);
+  }
+  .banner-image {
+    display: none !important;
+    position: absolute;
+    z-index: 10;
+    width: 166px;
+    height: 46px;
+    top: 0;
+    left: 15%;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
   .banner-content {
+    position: relative;
     align-items: flex-start;
     justify-content: flex-end;
+    width: 86.665vw;
+    left: 50%;
+    top: auto;
+    bottom: -65%;
+    border-radius: 10px;
+    transform: translate(-50%, 0%);
     .content-title {
+      display: flex;
+      justify-content: center;
       color: var(--White, #fff);
-      text-align: right;
+      text-align: center;
       font-size: 40px;
       font-style: normal;
       font-weight: 600;
@@ -2972,53 +3037,76 @@ font-family: 'FakePearl-Regular';
       position: relative;
       z-index: 6;
       bottom: 0;
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      background: var(
+        --Liner-purple,
+        linear-gradient(
+          269deg,
+          var(--Brand-Color, #fc1682) 10.21%,
+          #710d54 122.73%
+        )
+      );
+      padding: 16.5px 0;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: 'Noto Sans HK';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 83.333% */
+      letter-spacing: 2.4px;
     }
-    .content-title::after {
-      content: '';
-      display: inline-block;
-      width: 98%;
-      height: clamp(10px, 0.7vw, 15px);
-      background: url('../../assets/images/2025010917480102.png') no-repeat;
-      background-size: 100%;
-      position: absolute;
-      bottom: -3.9375vw;
-      box-sizing: border-box;
-      left: 0;
-      right: 0;
-      z-index: 5;
-    }
-    .content-price {
-      & > div:not(:nth-child(2)) {
-        padding-bottom: 22px;
+    .content-price,
+    .content-subscribe {
+      min-height: 10.665vw;
+      gap: 0 8px;
+      padding: 2.65vw;
+
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 8.533vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 6.23vw;
+        letter-spacing: 1.28vw;
       }
-      & > div:nth-child(3)::after {
-        width: 70.432px;
-        height: 11.461px;
+      & > div:nth-child(2) {
+        width: 9.5vw;
+        height: 8.03vw;
+        & > svg,
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .content-subscribe {
+      box-sizing: border-box;
+      padding: 0;
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
+      & > div:nth-child(1) {
+        font-size: 6.93vw;
+        letter-spacing: 1.065vw;
       }
     }
     .price-style {
-      width: 80px;
+      width: 153px;
       height: 90px;
-      position: relative;
-      right: auto;
-      left: 0;
       & > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-    }
-    .content-subscribe {
-      position: relative;
-      z-index: 10;
-      bottom: -10px;
-      color: var(--Theme-Color, #fc1682);
-      text-align: center;
-  font-family: 'FakePearl-Regular';
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 160%;
     }
   }
 }

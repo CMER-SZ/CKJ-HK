@@ -165,9 +165,9 @@ const menuBar = ref(null)
 }
 @media (min-width: 768px) and (max-width: 1920px) {
   .menuBar{
-    height: 3.4896vw;
+    height: 6.3896vw;
     &-in{
-      height: 3.4896vw;
+      height: 6.3896vw;
       padding: 0 3.125vw;
       .menuBar-box{
         &>img{

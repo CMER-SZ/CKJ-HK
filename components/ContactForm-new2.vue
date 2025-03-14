@@ -563,10 +563,7 @@ let privacyPolicy = ref(true)
                     v-model="form.careVoucher"
                   />
                 </div>
-                <div
-                  class="care_voucher"
-                  v-if="route.path === '/dental-service/implant'"
-                >
+                <div class="care_voucher">
                   <label for="care_discount_coupon"
                     >領取2000元種植牙現金券</label
                   >
@@ -1463,7 +1460,7 @@ li {
           line-height: 160%; /* 38.4px */
           & > span:nth-child(1) {
             position: absolute;
-            bottom: -180px;
+            bottom: -9.375vw;
           }
           :deep(.el-radio.el-radio--large .el-radio__label) {
             font-size: 0.8333vw;

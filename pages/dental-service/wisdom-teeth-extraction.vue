@@ -22,8 +22,8 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://static.ckjhk.com/ckj-image/cf46e3758a4b.webp',
-  mbImg: 'https://static.ckjhk.com/ckj-image/6b6a544c18ea.webp',
+  img: 'https://static.ckjhk.com/ckj-image/9c641fef81cf.webp',
+  mbImg: 'https://static.ckjhk.com/ckj-image/2e2658a013d0.webp',
   bg: '',
   pageName: 'scaling-and-polishing-test',
   pcText: [],
@@ -488,39 +488,39 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" >
+    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
-            <div class="content-subscribe">網上預約限定優惠</div>
-            <div class="content-title">拔牙</div>
-            <div class="content-remark">經驗醫生團隊,舒適拔牙技術</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
               <div>智慧齒拔除</div>
-              <div class="price-style">
-                <img src="../../assets/images/2025011016534901.svg" alt="" />
+              <div>
+                <img src="~/assets/images/2025031317413701.svg" alt="" />
               </div>
-              <div>/顆</div>
             </div>
+            <div class="content-subscribe">經驗醫生團隊，舒適拔牙技術</div>
           </div>
         </div>
       </template>
     </PageHeader>
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig"  btnText="預約免費牙齒檢查" />
+    <PageNewHeaderMenu
+      v-if="windowWidth > 768"
+      :headerConfig="headerConfig"
+      btnText="預約免費牙齒檢查"
+    />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
-            <div class="content-remark">經驗醫生團隊,舒適拔牙技術</div>
-            <div class="content-title">拔牙</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
               <div>智慧齒拔除</div>
-              <div class="price-style">
-                <img src="../../assets/images/2025011016534901.svg" alt="" />
+              <div>
+                <img src="~/assets/images/2025031317413701.svg" alt="" />
               </div>
-              <div>/顆</div>
             </div>
-            <div class="content-subscribe">網上預約限定優惠</div>
+            <div class="content-subscribe">經驗醫生團隊，舒適拔牙技術</div>
           </div>
         </div>
       </template>
@@ -791,41 +791,35 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .banner-in-box {
-  display: none !important;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   height: 20.83vw;
-  width: 55%;
+  width: 100%;
   z-index: 10;
 }
+
 .banner-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 23.9583vw;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   & > div {
     display: flex;
     align-items: flex-end;
-  }
-  .content-remark {
-    color: var(--White, #fff);
-    text-align: right;
-font-family: 'FakePearl-Regular';
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 54.4px */
-    letter-spacing: 3.4px;
   }
   .content-title {
     color: var(--White, #fff);
     text-align: right;
     -webkit-text-stroke-width: 0.5;
     -webkit-text-stroke-color: var(--White, #fff);
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(40px, 5.7vw, 110px);
     font-style: normal;
     font-weight: 600;
@@ -833,67 +827,97 @@ font-family: 'FakePearl-Regular';
     letter-spacing: 6.6px;
     position: relative;
     z-index: 6;
-    bottom: -20px;
-  }
-  .content-title::after {
-    content: '';
-    display: inline-block;
-    width: 98%;
-    height: clamp(10px, 0.7vw, 15px);
-    background: url('../../assets/images/2025010917480102.png') no-repeat;
-    background-size: 100%;
-    position: absolute;
-    bottom: -0.9375vw;
+    bottom: 0;
+
+    border-radius: 0.6942vw 0.6942vw 0px 0px;
+    background: var(
+      --Liner-purple,
+      linear-gradient(
+        269deg,
+        var(--Brand-Color, #fc1682) 10.21%,
+        #710d54 122.73%
+      )
+    );
     box-sizing: border-box;
-    left: 0;
-    right: 0;
-    z-index: 5;
+    padding: 0.859375vw 4.7135vw;
+    color: var(--White, #fff);
+    text-align: center;
+    text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
+    font-family: 'Noto Sans HK';
+    font-size: 1.565vw;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.165vw;
+    width: 100%;
   }
+
   .price-style {
-    width: 12.0625vw;
-    height: 10.145vw;
+    width: 19.0625vw;
+    height: 11.145vw;
+    position: relative;
+    right: -3.64583vw;
     & > img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
   }
-  .content-price {
-    color: var(--White, #fff);
-    text-align: right;
-font-family: 'FakePearl-Regular';
-    font-size: clamp(20px, 2.5165vw, 56px);
+  .content-price,
+  .content-subscribe {
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 1.0465vw;
+    display: flex;
+    gap: 0 0.52vw;
+    min-height: 2.68135vw;
+    box-sizing: border-box;
+    padding: 0.52vw;
+    align-items: center;
+    font-family: 'Noto Sans HK';
+    font-size: 1.927vw;
     font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 89.6px */
-    position: relative;
-    bottom: 5px;
-    & > div:not(:nth-child(2)) {
-      padding-bottom: clamp(20px, 2.5165vw, 56px);
+    font-weight: 900;
+    line-height: 2.2222vw; /* 114.286% */
+    letter-spacing: 0.29165vw;
+    justify-content: center;
+    & > div:nth-child(1) {
+      position: relative;
+      color: var(--Grey-Dark, #333);
+      text-align: right;
+      text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+        1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+        -1.33px -1.333px 1.333px #faeaf2;
+      font-family: 'Noto Sans HK';
+      font-size: 1.927vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 2.2222vw; /* 114.286% */
+      letter-spacing: 0.29165vw;
+      top: auto;
+    }
+
+    & > div:nth-child(2) {
+      width: 10.252083vw;
+      & > svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
   .content-subscribe {
-    color: var(--Theme-Color, #fc1682);
+    box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+    border-radius: 0px 0px 13.333px 13.333px;
+    color: var(--Grey-Dark, #333);
     text-align: center;
-font-family: 'FakePearl-Regular';
-    font-size: clamp(20px, 1.583vw, 40px);
+    text-shadow: 0px 1.111px 1.111px rgba(0, 0, 0, 0.25);
+    font-family: 'Noto Sans HK';
+    font-size: 1.38890625vw;
     font-style: normal;
-    font-weight: 600;
-    line-height: 100%; /* 64px */
-    box-sizing: border-box;
-    padding: 0 20px;
-    width: fit-content;
-    background: url('../../assets/images/2025010917480101.png') no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 7;
-    right: 0;
-    bottom: 10px;
+    font-weight: 900;
+    line-height: 1.157vw; /* 83.333% */
+    letter-spacing: 0.1369vw;
   }
 }
 :deep(.header-content) {
@@ -1502,7 +1526,7 @@ font-family: 'FakePearl-Regular';
         p {
           color: var(--Grey-Deep, #4d4d4d);
           text-align: center;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 16px;
           font-style: normal;
           font-weight: 500;
@@ -1529,7 +1553,7 @@ font-family: 'FakePearl-Regular';
     & > span {
       color: var(--Theme-Color, #fc1682);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 16px;
       font-style: normal;
       font-weight: 600;
@@ -1566,7 +1590,7 @@ font-family: 'FakePearl-Regular';
           h3 {
             color: var(--Theme-Color, #fc1682);
             text-align: justify;
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-size: 4.265vw;
             font-style: normal;
             font-weight: 500;
@@ -1620,7 +1644,7 @@ font-family: 'FakePearl-Regular';
       margin-top: 15px;
       color: var(--Grey-Deep, #4d4d4d);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 16px;
       font-style: normal;
       font-weight: 500;
@@ -1636,7 +1660,7 @@ font-family: 'FakePearl-Regular';
     flex-direction: column;
     color: var(--Theme-Color, #fc1682);
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -1734,7 +1758,7 @@ font-family: 'FakePearl-Regular';
         padding-bottom: 20px;
         .title {
           color: var(--Theme-Color, #fc1682) !important;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 16px !important;
           font-style: normal;
           font-weight: 600 !important;
@@ -1744,7 +1768,7 @@ font-family: 'FakePearl-Regular';
         .text {
           color: var(--Grey-Deep, #4d4d4d) !important;
           text-align: justify;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 4.226vw !important;
           font-style: normal;
           font-weight: 600;
@@ -1759,7 +1783,7 @@ font-family: 'FakePearl-Regular';
       margin-left: 50px;
       color: var(--Grey-Deep, #4d4d4d);
       text-align: justify;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 16px;
       font-style: normal;
       font-weight: 600;
@@ -1819,7 +1843,7 @@ font-family: 'FakePearl-Regular';
     max-width: 56.265vw;
     color: var(--Theme-Color, #fc1682);
     text-align: justify;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 4.265vw;
     font-style: normal;
     font-weight: 500;
@@ -1891,7 +1915,7 @@ font-family: 'FakePearl-Regular';
       width: fit-content;
       position: relative;
       color: var(--Grey-Deep, #4d4d4d);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 20px;
       font-style: normal;
       font-weight: 5.12vw;
@@ -1925,7 +1949,7 @@ font-family: 'FakePearl-Regular';
         flex-direction: column;
         color: var(--Theme-Color, #fc1682);
         text-align: center;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
@@ -1946,7 +1970,7 @@ font-family: 'FakePearl-Regular';
             flex-direction: column;
             & > span:nth-child(1) {
               color: var(--Blue-Deep, #00aeff);
-          font-family: 'FakePearl-Regular';
+              font-family: 'FakePearl-Regular';
               font-size: 5.128vw;
               font-style: normal;
               font-weight: 600;
@@ -1998,7 +2022,6 @@ font-family: 'FakePearl-Regular';
     }
   }
   .banner-in-box {
-    display: none !important;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -2006,29 +2029,30 @@ font-family: 'FakePearl-Regular';
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    padding-left: 20px;
+    // padding-left: 20px;
     padding-bottom: 35px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    // display: flex;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+    top: 0;
+    bottom: 0;
+    transform: translateY(0px);
   }
   .banner-content {
+    position: relative;
     align-items: flex-start;
     justify-content: flex-end;
-    .content-remark {
-      color: var(--White, #fff);
-  font-family: 'FakePearl-Regular';
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 38.4px */
-      letter-spacing: -0.48px;
-      position: relative;
-      bottom: -10px;
-    }
+    width: 86.665vw;
+    left: 50%;
+    top: auto;
+    bottom: -65%;
+    border-radius: 10px;
+    transform: translate(-50%, 0%);
     .content-title {
+      display: flex;
+      justify-content: center;
       color: var(--White, #fff);
-      text-align: right;
+      text-align: center;
       font-size: 40px;
       font-style: normal;
       font-weight: 600;
@@ -2037,46 +2061,74 @@ font-family: 'FakePearl-Regular';
       position: relative;
       z-index: 6;
       bottom: 0;
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      background: var(
+        --Liner-purple,
+        linear-gradient(
+          269deg,
+          var(--Brand-Color, #fc1682) 10.21%,
+          #710d54 122.73%
+        )
+      );
+      padding: 16.5px 0;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: 'Noto Sans HK';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 83.333% */
+      letter-spacing: 2.4px;
     }
-    .content-title::after {
-      content: '';
-      display: inline-block;
-      width: 98%;
-      height: clamp(10px, 0.7vw, 15px);
-      background: url('../../assets/images/2025010917480102.png') no-repeat;
-      background-size: 100%;
-      position: absolute;
-      bottom: -3.9375vw;
-      box-sizing: border-box;
-      left: 0;
-      right: 0;
-      z-index: 5;
-    }
-    .content-price {
-      & > div:not(:nth-child(2)) {
-        padding-bottom: 22px;
+    .content-price,
+    .content-subscribe {
+      min-height: auto;
+      gap: 0 8px;
+      padding: 2.65vw 0 0 0;
+      font-family: 'Noto Sans HK';
+      font-size: 4.265vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 3.73vw;
+      letter-spacing: 0.82vw;
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 5.865vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 6.23vw;
+        letter-spacing: 0.82vw;
+        position: relative;
+      }
+
+      & > div:nth-child(2) {
+        width: 40.265vw;
+        height: auto;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
       }
     }
+    .content-subscribe {
+      padding: 1vw 0 2.65vw 0;
+    }
     .price-style {
-      width: 105px;
+      width: 153px;
       height: 90px;
       & > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-    }
-    .content-subscribe {
-      position: relative;
-      z-index: 10;
-      bottom: -10px;
-      color: var(--Theme-Color, #fc1682);
-      text-align: center;
-  font-family: 'FakePearl-Regular';
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 160%;
     }
   }
 }

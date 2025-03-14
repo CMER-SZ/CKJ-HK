@@ -538,6 +538,9 @@ const hideDiv = () => {
           headerConfig.pageName,
         ]"
       >
+        <a class="a-header-content-in" href="#contactUsFormNav"
+          >👏即日起網上預約領取2000元種植牙現金券！</a
+        >
         <div
           ref="headerMenu"
           class="pageCon header-content-in health_max_width"
@@ -782,6 +785,24 @@ const hideDiv = () => {
     top: 50%;
     opacity: 1;
   }
+}
+.a-header-content-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: 'Noto Sans Hk';
+  font-size: 3.84615vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.3846vw;
+  background: #00a752;
+  box-sizing: border-box;
+  padding: 2.05vw 0;
+  z-index: 40;
 }
 .dialogBox {
   position: fixed;
@@ -1489,7 +1510,7 @@ const hideDiv = () => {
         clamp(15px, 1.0465vw, 20px) clamp(15px, 1.0465vw, 20px);
       color: #fff;
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: clamp(14px, 1.146vw, 22px);
       font-style: normal;
       font-weight: 400;
@@ -1562,7 +1583,7 @@ const hideDiv = () => {
     padding: 2px 4px 2px 6px;
     color: var(--White, #fff);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(10px, 0.7vw, 14px);
     font-style: normal;
     font-weight: 400;
@@ -1574,7 +1595,7 @@ font-family: 'FakePearl-Regular';
   & > span:nth-child(2) {
     color: var(--Grey-Deep, #4d4d4d);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(10px, 0.7vw, 14px);
     font-style: normal;
     font-weight: 400;
@@ -2161,6 +2182,7 @@ font-family: 'FakePearl-Regular';
     &-bgImg-implant {
       position: relative;
       top: 21vw;
+      margin-top: 9.2307vw;
       &.rootCanal-test {
         padding-bottom: 10.65vw;
       }
@@ -2186,7 +2208,7 @@ font-family: 'FakePearl-Regular';
         padding-bottom: 13.33vw;
       }
       &.health-care-voucher {
-        padding-bottom: 37.33vw;
+        padding-bottom: 27.33vw;
       }
       &.coverage {
         padding-bottom: 32vw;
@@ -2287,6 +2309,7 @@ font-family: 'FakePearl-Regular';
       margin: 0;
       padding: 5.3vw 0 5.3vw 5.3vw;
       background: #fff;
+      margin-top: 9.2307vw;
       .logo {
         width: 33.3vw;
         margin-bottom: 0;
@@ -2326,7 +2349,7 @@ font-family: 'FakePearl-Regular';
           background: var(---Green, #00a752);
           color: var(--White, #fff);
           text-align: right;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 3.73vw;
           font-style: normal;
           font-weight: 400;
@@ -2336,7 +2359,7 @@ font-family: 'FakePearl-Regular';
         & > span:nth-child(2) {
           color: var(--Grey-Deep, #4d4d4d);
           text-align: right;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 3.73vw;
           font-style: normal;
           font-weight: 400;
@@ -2540,7 +2563,7 @@ font-family: 'FakePearl-Regular';
       background: var(---Green, #00a752);
       color: var(--White, #fff);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2550,7 +2573,7 @@ font-family: 'FakePearl-Regular';
     & > span:nth-child(2) {
       color: var(--Grey-Deep, #4d4d4d);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2573,7 +2596,7 @@ font-family: 'FakePearl-Regular';
         background: var(---Green, #00a752);
         color: var(--White, #fff);
         text-align: right;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 3.73vw;
         font-style: normal;
         font-weight: 400;
@@ -2583,7 +2606,7 @@ font-family: 'FakePearl-Regular';
       & > span:nth-child(2) {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: right;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 3.73vw;
         font-style: normal;
         font-weight: 400;

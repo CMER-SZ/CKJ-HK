@@ -4,6 +4,10 @@ import { AppSetup } from './utils/app'
 import { ITheme } from './utils/theme'
 import router from './plugins/router'
 // import { zh_init } from '~/assets/js/uselang'
+
+import { useRoute } from 'vue-router';
+import { useHead } from '#imports';
+
 AppSetup()
 const theme = useState<ITheme>('theme.current')
 const locale = useState<string>('locale.setting')
@@ -96,6 +100,15 @@ const isYahoo = () => {
 const checkForYahoo = (inputString) => {
   return inputString.includes('yahoo')
 }
+
+watchEffect(() => {
+  if (route.name === 'error') {
+    useHead({
+      title: 'CKJ愛康健齒科連鎖 | 香港官方網站 | 長者醫療券大灣區試點'
+    });
+  }
+});
+
 </script>
 
 <template>

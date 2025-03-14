@@ -22,8 +22,8 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://statichk.cmermedical.com/ckj/image/2025031111084801.webp',
-  mbImg: 'https://statichk.cmermedical.com/ckj/image/2025031111084802.webp',
+  img: 'https://static.ckjhk.com/ckj-image/a79fdd14de18.webp',
+  mbImg: 'https://static.ckjhk.com/ckj-image/646cc02c4ae1.webp',
   bg: '',
   pageName: 'scaling-and-polishing-test',
   pcText: [],
@@ -175,16 +175,17 @@ onMounted(() => {
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
-            <div class="content-subscribe">網上預約限定優惠</div>
-            <div class="content-title">一般口腔檢查</div>
-            <div class="content-remark">定期做口腔檢查,每天牙齒健康</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div>網上預約及醫療券使用者</div>
-              <div class="price-style">
-                <img src="../../assets/images/2025011016214501.svg" alt="" />
+              <div>口腔檢查</div>
+              <div>
+                <div>網上預約及醫療券使用者</div>
+                <div>
+                  <img src="~/assets/images/2025031409345501.svg" alt="" />
+                </div>
               </div>
-              <div></div>
             </div>
+            <div class="content-subscribe">定期做口腔檢查，每天牙齒健康</div>
           </div>
         </div>
       </template>
@@ -198,16 +199,17 @@ onMounted(() => {
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
-            <div class="content-remark">定期做口腔檢查,每天牙齒健康</div>
-            <div class="content-title">一般口腔檢查</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div>網上預約及醫療券使用者</div>
-              <div class="price-style">
-                <img src="../../assets/images/2025011016214501.svg" alt="" />
+              <div>口腔檢查</div>
+              <div>
+                <div>網上預約及醫療券使用者</div>
+                <div>
+                  <img src="~/assets/images/2025031409345501.svg" alt="" />
+                </div>
               </div>
-              <div></div>
             </div>
-            <div class="content-subscribe">網上預約限定優惠</div>
+            <div class="content-subscribe">定期做口腔檢查，每天牙齒健康</div>
           </div>
         </div>
       </template>
@@ -392,29 +394,22 @@ onMounted(() => {
   left: 0;
   transform: translateY(-50%);
   height: 20.83vw;
-  width: 55%;
+  width: 100%;
   z-index: 10;
-  display: none !important;
 }
 .banner-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 23.9583vw;
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   & > div {
     display: flex;
     align-items: flex-end;
-  }
-  .content-remark {
-    color: var(--White, #fff);
-    text-align: right;
-    font-family: 'FakePearl-Regular';
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 54.4px */
-    letter-spacing: 3.4px;
   }
   .content-title {
     color: var(--White, #fff);
@@ -429,25 +424,35 @@ onMounted(() => {
     letter-spacing: 6.6px;
     position: relative;
     z-index: 6;
-    bottom: -20px;
-  }
-  .content-title::after {
-    content: '';
-    display: inline-block;
-    width: 98%;
-    height: clamp(10px, 0.7vw, 15px);
-    background: url('../../assets/images/2025010917480102.png') no-repeat;
-    background-size: 100%;
-    position: absolute;
-    bottom: -0.9375vw;
+    bottom: 0;
+
+    border-radius: 0.6942vw 0.6942vw 0px 0px;
+    background: var(
+      --Liner-purple,
+      linear-gradient(
+        269deg,
+        var(--Brand-Color, #fc1682) 10.21%,
+        #710d54 122.73%
+      )
+    );
     box-sizing: border-box;
-    left: 0;
-    right: 0;
-    z-index: 5;
+    padding: 0.859375vw 4.7135vw;
+    color: var(--White, #fff);
+    text-align: center;
+    text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
+    font-family: 'Noto Sans HK';
+    font-size: 1.565vw;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 0.165vw;
+    width: 100%;
   }
+
   .price-style {
-    width: 17.0625vw;
-    height: 10.145vw;
+    width: 19.0625vw;
+    height: 11.145vw;
+    position: relative;
+    right: -3.64583vw;
     & > img {
       width: 100%;
       height: 100%;
@@ -455,41 +460,89 @@ onMounted(() => {
     }
   }
   .content-price {
-    color: var(--White, #fff);
-    text-align: right;
-    font-family: 'FakePearl-Regular';
-    font-size: clamp(20px, 2.9165vw, 56px);
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 1.0465vw;
+    display: flex;
+    gap: 0.52vw 0;
+    min-height: 4.78135vw;
+    box-sizing: border-box;
+    padding: 0.52vw;
+    align-items: center;
+    font-family: 'Noto Sans HK';
+    font-size: 1.7442vw;
     font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 89.6px */
-    position: relative;
-    bottom: 5px;
-    & > div:not(:nth-child(2)) {
-      padding-bottom: clamp(20px, 2.9165vw, 56px);
+    font-weight: 900;
+    line-height: 2.2222vw; /* 114.286% */
+    letter-spacing: 0.29165vw;
+    justify-content: center;
+    flex-direction: column;
+    & > div:nth-child(1) {
+      color: var(--Grey-Dark, #333);
+      text-align: right;
+      text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+        1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+        -1.33px -1.333px 1.333px #faeaf2;
+      font-family: 'Noto Sans HK';
+      font-size: 1.744vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal; /* 114.286% */
+      letter-spacing: 0.29165vw;
+    }
+    & > div:nth-child(2) {
+      display: flex;
+      align-items: center;
+      gap: 0 0.52vw;
+      & > div:nth-child(1) {
+        position: relative;
+        color: var(--White, #fff);
+        text-align: right;
+        font-family: 'Noto Sans HK';
+        font-size: 1.188vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 1.15573vw; /* 83.333% */
+        top: 0;
+        box-sizing: border-box;
+        padding: 0.4165vw 0.67vw;
+        border-radius: 0.4165vw;
+        background: linear-gradient(
+          90deg,
+          var(--Purple, #9356ba) 0%,
+          var(--Brand-Color, #fc1682) 100%
+        );
+      }
+
+      & > div:nth-child(2) {
+        width: 3.75vw;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
     }
   }
   .content-subscribe {
-    color: var(--Theme-Color, #fc1682);
-    text-align: center;
-    font-family: 'FakePearl-Regular';
-    font-size: clamp(20px, 1.883vw, 40px);
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%; /* 64px */
+    width: 100%;
+    background: #fff;
     box-sizing: border-box;
-    padding: 5px 20px;
-    width: fit-content;
-    background: url('../../assets/images/2025010917480101.png') no-repeat;
-    background-size: 100%;
-    background-position: center;
-    height: 65px;
+    padding: 1.0465vw;
     display: flex;
+    gap: 0 0.52vw;
+    min-height: auto;
+    box-sizing: border-box;
+    padding: 0.52vw 0.52vw 0.8vw 0.52vw;
     align-items: center;
+    text-shadow: 0px 1.111px 1.111px rgba(0, 0, 0, 0.25);
+    font-family: 'Noto Sans HK';
+    font-size: 1.188vw;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1.15573vw; /* 83.333% */
     justify-content: center;
-    position: relative;
-    z-index: 7;
-    right: 0;
-    bottom: 10px;
   }
 }
 :deep(.header-content) {
@@ -1239,30 +1292,31 @@ onMounted(() => {
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    padding-left: 20px;
+    // padding-left: 20px;
     padding-bottom: 35px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    // display: flex;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+    top: 0;
+    bottom: 0;
+    transform: translateY(0px);
   }
+
   .banner-content {
+    position: relative;
     align-items: flex-start;
     justify-content: flex-end;
-
-    .content-remark {
-      color: var(--White, #fff);
-      font-family: 'FakePearl-Regular';
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 38.4px */
-      letter-spacing: -0.48px;
-      position: relative;
-      bottom: -10px;
-    }
+    width: 86.665vw;
+    left: 50%;
+    top: auto;
+    bottom: -61%;
+    border-radius: 10px;
+    transform: translate(-50%, 0%);
     .content-title {
+      display: flex;
+      justify-content: center;
       color: var(--White, #fff);
-      text-align: right;
+      text-align: center;
       font-size: 40px;
       font-style: normal;
       font-weight: 600;
@@ -1271,47 +1325,96 @@ onMounted(() => {
       position: relative;
       z-index: 6;
       bottom: 0;
-    }
-    .content-title::after {
-      content: '';
-      display: inline-block;
-      width: 98%;
-      height: clamp(10px, 0.7vw, 15px);
-      background: url('../../assets/images/2025010917480102.png') no-repeat;
-      background-size: 100%;
-      position: absolute;
-      bottom: -3.9375vw;
-      box-sizing: border-box;
-      left: 0;
-      right: 0;
-      z-index: 5;
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      background: var(
+        --Liner-purple,
+        linear-gradient(
+          269deg,
+          var(--Brand-Color, #fc1682) 10.21%,
+          #710d54 122.73%
+        )
+      );
+      padding: 16.5px 0;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: 'Noto Sans HK';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 83.333% */
+      letter-spacing: 2.4px;
     }
     .content-price {
-      font-size: clamp(16px, 4.21vw, 24px);
-      & > div:not(:nth-child(2)) {
-        padding-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.63vw 0;
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 5.865vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 6.23vw;
+        letter-spacing: 0.82vw;
+      }
+      & > div:nth-child(2) {
+        min-height: auto;
+        gap: 0 8px;
+        padding: 0;
+        & > div:nth-child(1) {
+          color: #fff;
+          text-align: right;
+          font-family: 'Noto Sans HK';
+          font-size: 4.965vw;
+          font-style: normal;
+          font-weight: 900;
+          line-height: 6.23vw;
+          border-radius: 1.6vw;
+          letter-spacing: 0.82vw;
+          position: relative;
+          box-sizing: border-box;
+          padding: 1.3vw 1.6vw;
+        }
+
+        & > div:nth-child(2) {
+          width: 14.44vw;
+          height: auto;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
       }
     }
     .price-style {
-      width: 150px;
-      height: 64px;
+      width: 153px;
+      height: 90px;
       & > img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
       }
     }
     .content-subscribe {
-      position: relative;
-      z-index: 10;
-      bottom: -10px;
-      color: var(--Theme-Color, #fc1682);
-      text-align: center;
-      font-family: 'FakePearl-Regular';
-      font-size: 20px;
+      box-sizing: border-box;
+      font-family: 'Noto Sans HK';
+      font-size: 4.333vw;
       font-style: normal;
-      font-weight: 600;
-      line-height: 160%;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: 0.82vw;
+      gap: 5px 0;
+      padding: 4px 0 5px;
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
     }
   }
 }

@@ -25,8 +25,8 @@ useHead({
 })
 
 const headerConfig = {
-  img: 'https://static.ckjhk.com/ckj-image/2025031011202802.webp',
-  mbImg: 'https://static.ckjhk.com/ckj-image/2025031011202801.webp',
+  img: 'https://static.ckjhk.com/ckj-image/0ce172efab96.webp',
+  mbImg: 'https://static.ckjhk.com/ckj-image/07c95530a215.webp',
   bg: '',
   pageName: 'implant',
   pcText: ['享受失而復得的喜悅', '重拾完整人生之旅'],
@@ -791,24 +791,22 @@ const checkGroupPhoto = () => {
         <div class="banner-in-box">
           <div class="banner-image">
             <img
-              src="https://statichk.cmermedical.com/ckj/image/2025020613460702.svg"
+              src="https://static.ckjhk.com/ckj-image/ae23253936c1.webp"
               alt=""
               loading="lazy"
             />
           </div>
           <div class="banner-content" style="display: flex">
-            <div class="content-subscribe">網上預約限定優惠</div>
-            <div class="content-title">歐美種植牙</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div>即減</div>
-              <div class="price-style">
-                <img
-                  src="../../assets/images/2025011009501001.svg"
-                  loading="lazy"
-                  alt=""
-                />
+              <div>歐美<br />種植牙</div>
+              <div>
+                <img src="~/assets/images/2025031216072401.svg" alt="" />
               </div>
-              <div>/顆</div>
+            </div>
+            <div class="content-subscribe">
+              <span>星級客戶</span>
+              <span>朱咪咪<i>小姐</i></span>
             </div>
           </div>
         </div>
@@ -820,25 +818,23 @@ const checkGroupPhoto = () => {
         <div class="banner-in-box">
           <div class="banner-image">
             <img
-              src="https://statichk.cmermedical.com/ckj/image/2025020613460701.svg"
+              src="https://static.ckjhk.com/ckj-image/ae23253936c1.webp"
               alt=""
               loading="lazy"
             />
           </div>
           <div class="banner-content" style="display: flex">
-            <div class="content-title">歐美種植牙</div>
+            <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div>即減</div>
-              <div class="price-style">
-                <img
-                  src="../../assets/images/2025011009501001.svg"
-                  loading="lazy"
-                  alt=""
-                />
+              <div>歐美<br />種植牙</div>
+              <div>
+                <img src="~/assets/images/2025031216072401.svg" alt="" />
               </div>
-              <div>/顆</div>
             </div>
-            <div class="content-subscribe">網上預約限定優惠</div>
+            <div class="content-subscribe">
+              <span>星級客戶</span>
+              <span>朱咪咪<i>小姐</i></span>
+            </div>
           </div>
         </div>
       </template>
@@ -2406,7 +2402,7 @@ const checkGroupPhoto = () => {
   }
 }
 .banner-in-box {
-  display: none !important;
+  display: block;
   position: absolute;
   top: 50%;
   left: 0;
@@ -2418,10 +2414,10 @@ const checkGroupPhoto = () => {
 .banner-image {
   position: absolute;
   z-index: 10;
-  width: 296px;
-  height: 79px;
-  top: 0;
-  left: 135%;
+  width: 9.0625vw;
+  height: 9.0625vw;
+  top: 8%;
+  left: 75%;
   & > img {
     width: 100%;
     height: 100%;
@@ -2429,44 +2425,39 @@ const checkGroupPhoto = () => {
   }
 }
 .banner-content {
-  display: none !important;
+  display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: space-around;
-  height: 100%;
-  & > div {
-    display: flex;
-    align-items: flex-end;
-  }
+  border-radius: 0.694vw 0.694vw 0px 0px;
+  background: #fff;
+  width: 23.9583vw;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
   .content-title {
-    color: var(--White, #fff);
-    text-align: right;
-    -webkit-text-stroke-width: 0.5;
-    -webkit-text-stroke-color: var(--White, #fff);
-    font-family: 'FakePearl-Regular';
-    font-size: clamp(40px, 5.7vw, 110px);
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%; /* 176px */
-    letter-spacing: 6.6px;
-    position: relative;
-    z-index: 6;
-    bottom: -20px;
-  }
-  .content-title::after {
-    content: '';
-    display: inline-block;
-    width: 98%;
-    height: clamp(10px, 0.7vw, 15px);
-    background: url('../../assets/images/2025010917480102.png') no-repeat;
-    background-size: 100%;
-    position: absolute;
-    bottom: -0.9375vw;
+    border-radius: 0.694vw 0.694vw 0px 0px;
+    background: var(
+      --Liner-purple,
+      linear-gradient(
+        269deg,
+        var(--Brand-Color, #fc1682) 10.21%,
+        #710d54 122.73%
+      )
+    );
     box-sizing: border-box;
-    left: 0;
-    right: 0;
-    z-index: 5;
+    padding: 0.859375vw 4.7135vw;
+    color: var(--White, #fff);
+    text-align: center;
+    text-shadow: 0px 0.27vw 0.27vw rgba(0, 0, 0, 0.25);
+    font-family: 'Noto Sans HK';
+    font-size: 1.665vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.389vw; /* 83.333% */
+    letter-spacing: 0.1354vw;
+    z-index: 6;
   }
+
   .price-style {
     width: 19.0625vw;
     height: 11.145vw;
@@ -2477,18 +2468,46 @@ const checkGroupPhoto = () => {
     }
   }
   .content-price {
-    color: var(--White, #fff);
-    text-align: right;
-    font-family: 'FakePearl-Regular';
-    font-size: clamp(30px, 2.9165vw, 56px);
+    display: flex;
+    gap: 0 0.52vw;
+    min-height: 5.833vw;
+    box-sizing: border-box;
+    padding: 0.52vw;
+    align-items: center;
+    font-family: 'Noto Sans HK';
+    font-size: 1.7442vw;
     font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 89.6px */
-    & > div:not(:nth-child(2)) {
-      padding-bottom: clamp(30px, 2.9165vw, 56px);
+    font-weight: 900;
+    line-height: 2.2222vw; /* 114.286% */
+    letter-spacing: 0.29165vw;
+    & > div:nth-child(1) {
+      color: var(--Grey-Dark, #333);
+      text-align: right;
+      text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+        1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+        -1.33px -1.333px 1.333px #faeaf2;
+      font-family: 'Noto Sans HK';
+      font-size: 1.744vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 2.2222vw; /* 114.286% */
+      letter-spacing: 0.29165vw;
+    }
+    & > div:nth-child(2) {
+      width: 15.2604vw;
+      & > svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
   .content-subscribe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    position: absolute;
     color: var(--Theme-Color, #fc1682);
     text-align: center;
     font-family: 'FakePearl-Regular';
@@ -2497,19 +2516,48 @@ const checkGroupPhoto = () => {
     font-weight: 400;
     line-height: 100%; /* 64px */
     box-sizing: border-box;
-    padding: 0 20px;
-    width: fit-content;
-    background: url('../../assets/images/2025010917480101.png') no-repeat;
-    background-size: contain;
-    background-position: center;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    padding: 0;
     z-index: 7;
-    right: 0;
+    left: auto;
+    right: -50%;
     bottom: 10px;
+    gap: 7px 0;
+    & > span {
+      color: var(--Grey-Dark, #333);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 23.077px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 27.692px */
+      letter-spacing: 2.308px;
+      i {
+        font-style: normal;
+      }
+    }
+    & > span:nth-child(2) {
+      border-radius: 28.846px;
+      background: var(--New-Theme-Color, #d2337d);
+      box-shadow: 0px 0px 11.538px 0px rgba(0, 0, 0, 0.25);
+      box-sizing: border-box;
+      padding: 5px 14px;
+      color: var(--White, #fff);
+      font-family: 'Noto Sans HK';
+      font-size: 25.962px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 2.596px;
+      i {
+        color: var(--White, #fff);
+        font-family: 'Noto Sans HK';
+        font-size: 23.077px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 34.615px;
+        letter-spacing: 2.308px;
+      }
+    }
   }
 }
 .dentistryServices {
@@ -4436,7 +4484,7 @@ const checkGroupPhoto = () => {
 }
 @media screen and (max-width: 768px) {
   :deep(.problem) {
-    margin-top: 30px !important;
+    margin-top: 8vw !important;
   }
   :deep(.explain_box_mobile) {
     top: 0px !important;
@@ -4451,28 +4499,28 @@ const checkGroupPhoto = () => {
     }
   }
   :deep(.context-in) {
-    font-size: 22px !important;
+    font-size: 5.86vw !important;
   }
   :deep(.servicesCard) {
     grid-gap: 7.205vw 4.6153vw !important;
     & > div:nth-child(7) {
       .servicesCard-in-name {
-        max-width: 45px;
+        max-width: 12vw;
       }
     }
     & > div:nth-child(11) {
       .servicesCard-in-name {
-        max-width: 55px;
+        max-width: 14.656vw;
       }
     }
     & > div:nth-child(12) {
       .servicesCard-in-name {
-        max-width: 55px;
+        max-width: 14.665vw;
       }
     }
     & > div:last-child {
       .servicesCard-in-name {
-        max-width: 70px;
+        max-width: 18.665vw;
       }
     }
   }
@@ -4485,7 +4533,7 @@ const checkGroupPhoto = () => {
       margin: 0 auto !important;
       left: auto;
       right: 0;
-      bottom: -20px;
+      bottom: -5.33vw;
       position: absolute;
       top: auto;
       z-index: 35;
@@ -4509,11 +4557,11 @@ const checkGroupPhoto = () => {
   }
   @keyframes wavea-cbdedece {
     0% {
-      background-position: 0 20px;
+      background-position: 0 5.33vw;
     }
 
     to {
-      background-position: 1080px 20px;
+      background-position: 1080px 5.33vw;
     }
   }
   @keyframes identifier {
@@ -4541,42 +4589,42 @@ const checkGroupPhoto = () => {
     }
   }
   .dentistryServices {
-    padding: 120px 0;
+    padding: 32vw 0;
     .tabNav {
-      padding: 30px;
+      padding: 8vw;
       font-size: 1rem;
       margin-top: 0;
     }
     .Dental_implant_technology {
       display: block;
       &-title {
-        margin-top: 50px;
+        margin-top: 13.333vw;
       }
       &-video {
         margin-bottom: 50px;
       }
       &-context {
-        font-size: 16px;
+        font-size: 4.265vw;
         line-height: 200%;
-        padding: 0 30px;
+        padding: 0 8vw;
         text-align: justify;
-        margin: 20px auto 30px;
+        margin: 5.33vw auto 8vw;
       }
     }
     .plague {
       margin-top: 0;
-      padding: 31px 0 44px;
+      padding: 8.2665vw 0 11.73vw;
       margin: 0 auto;
       &-in {
-        max-width: 403px;
+        max-width: 100vw;
       }
       &-title {
         &-in {
-          font-size: 26px;
+          font-size: 6.93vw;
         }
       }
       &-lists {
-        margin-top: 34px;
+        margin-top: 9.06vw;
         position: relative;
         padding-top: 0;
         & > div {
@@ -4587,8 +4635,8 @@ const checkGroupPhoto = () => {
             }
             position: absolute;
             z-index: 4;
-            top: 70px;
-            left: 30px;
+            top: 18.65vw;
+            left: 8vw;
           }
           &:nth-of-type(2) {
             justify-content: flex-end;
@@ -4596,11 +4644,11 @@ const checkGroupPhoto = () => {
             position: absolute;
             z-index: 4;
             bottom: auto;
-            top: 160px;
-            left: 80px;
+            top: 42.65vw;
+            left: 21.33vw;
           }
           &:nth-of-type(3) {
-            width: 180px;
+            width: 48vw;
             margin: 0 auto 0;
             & > img {
               margin: 0;
@@ -4612,16 +4660,16 @@ const checkGroupPhoto = () => {
             position: absolute;
             z-index: 4;
             left: 30%;
-            top: -15px;
+            top: -4vw;
           }
           &:nth-of-type(5) {
             margin-top: 0;
             padding-right: 0;
             position: absolute;
             z-index: 4;
-            right: 45px;
+            right: 12vw;
             bottom: auto;
-            top: 135px;
+            top: 36vw;
           }
           &:nth-of-type(6) {
             margin-top: 0;
@@ -4630,49 +4678,49 @@ const checkGroupPhoto = () => {
             position: absolute;
             z-index: 4;
             left: 50%;
-            top: 30px;
+            top: 8vw;
           }
           span {
-            width: 110px;
-            height: 25px;
-            font-size: 16px;
-            border-radius: 32px;
+            width: 29.33vw;
+            height: 6.665vw;
+            font-size: 4.265vw;
+            border-radius: 8.53vw;
             width: fit-content;
-            border-radius: 32.963px;
+            border-radius: 8.79vw;
             background: var(--Theme-Color, #fc1682);
             box-shadow: 1.075px 1.075px 4.443px 0px rgba(252, 22, 130, 0.5);
             box-sizing: border-box;
-            padding: 2.5px 14px;
+            padding: 0.65vw 3.73vw;
 
-            font-size: 12.54px;
+            font-size: 3.344vw;
             font-style: normal;
             font-weight: 400;
             line-height: 160%; /* 20.064px */
-            letter-spacing: 2.508px;
+            letter-spacing: 0.6688vw;
           }
           img {
-            width: 180px;
-            height: 180px;
+            width: 48vw;
+            height: 48vw;
             position: relative;
           }
         }
       }
     }
     .note {
-      margin-top: 50px;
+      margin-top: 13.33vw;
       max-width: 100%;
       &-title {
         &-in {
-          font-size: 26px;
+          font-size: 6.933vw;
         }
       }
       .noteCard {
-        margin: 34px auto 0;
-        padding: 0 15px;
+        margin: 9.065vw auto 0;
+        padding: 0 4vw;
         box-sizing: border-box;
         &-in {
           width: calc(100% / 3);
-          padding: 0 5px;
+          padding: 0 1.33vw;
           &-image {
             img {
               max-width: 70%;
@@ -4688,20 +4736,20 @@ const checkGroupPhoto = () => {
             background: var(--indexColor2);
           }
           &-name {
-            height: 30px;
-            line-height: 30px;
-            margin-bottom: 25px;
-            font-size: 14px;
+            height: 8vw;
+            line-height: 8vw;
+            margin-bottom: 6.665vw;
+            font-size: 3.733vw;
           }
         }
       }
     }
     .notice {
       width: auto;
-      margin: 74px 30px 0;
+      margin: 19.73vw 8vw 0;
       &-title {
         &-in {
-          font-size: 26px;
+          font-size: 6.93vw;
           white-space: pre-wrap;
         }
       }
@@ -4710,11 +4758,11 @@ const checkGroupPhoto = () => {
         // padding: 0 30px;
         span {
           display: inline;
-          font-size: 15px;
+          font-size: 4vw;
         }
       }
       &-topText {
-        margin: 31px auto 0;
+        margin: 8.265vw auto 0;
         text-align: center;
         display: block;
       }
@@ -4723,17 +4771,17 @@ const checkGroupPhoto = () => {
       }
       &-in {
         width: 100%;
-        margin: 35px 0 0;
+        margin: 9.33vw 0 0;
         .lists {
-          border-radius: 20px;
+          border-radius: 5.33vw;
           &-in {
             & > div {
-              padding: 30px 10px;
-              font-size: 12px;
-              margin-bottom: 2px;
+              padding: 8vw 2.65vw;
+              font-size: 3.2vw;
+              margin-bottom: 0.53vw;
               &:nth-of-type(1) {
-                font-size: 15px;
-                padding: 0 10px;
+                font-size: 4vw;
+                padding: 0 2.65vw;
               }
               &:nth-of-type(2) {
                 width: 39%;
@@ -4742,12 +4790,12 @@ const checkGroupPhoto = () => {
                 width: 39%;
               }
               &:not(:last-child) {
-                margin-right: 2px;
+                margin-right: 0.53vw;
               }
             }
             &:nth-of-type(1) {
               & > div {
-                font-size: 20px;
+                font-size: 5.33vw;
               }
             }
           }
@@ -4762,21 +4810,21 @@ const checkGroupPhoto = () => {
         rgba(255, 241, 240, 0.7) 81.99%,
         rgba(255, 241, 240, 0) 100%
       );
-      margin-top: 25px;
-      padding: 46px 0;
+      margin-top: 6.6654vw;
+      padding: 12.265vw 0;
       &-title {
         &-in {
-          font-size: 26px;
+          font-size: 6.93vw;
         }
       }
       &-lists {
         width: auto;
-        margin: 57px 40px 0;
+        margin: 15.2vw 10.665vw 0;
         &-in {
           flex-direction: column;
-          margin-bottom: 30px;
+          margin-bottom: 8vw;
           &:nth-of-type(n + 4) {
-            margin-bottom: 30px;
+            margin-bottom: 8vw;
           }
           &:nth-of-type(3) {
             .step-lists-in-r {
@@ -4785,24 +4833,24 @@ const checkGroupPhoto = () => {
           }
           &-l {
             .title {
-              padding: 0 6px;
-              font-size: 26px;
+              padding: 0 1.6vw;
+              font-size: 6.93vw;
             }
             .image {
-              padding: 0 6px;
+              padding: 0 1.6vw;
             }
             .name {
-              margin-top: -25px;
-              font-size: 16px;
+              margin-top: -6.65vw;
+              font-size: 4.265vw;
               clip-path: polygon(0 0, 80% 0, 85% 100%, 0 100%);
-              padding: 8px 70px 8px 15px;
+              padding: 2.13vw 18.65vw 2.13vw 4vw;
             }
             .context {
-              font-size: 16px;
+              font-size: 4.265vw;
             }
           }
           &-r {
-            margin-top: 30px;
+            margin-top: 8vw;
             margin-left: 0;
             display: none !important;
             img {
@@ -4813,15 +4861,15 @@ const checkGroupPhoto = () => {
       }
     }
     .Plant_brand_series {
-      margin-top: 30px;
+      margin-top: 8vw;
       // display: none !important;
       &-tab {
-        padding: 0 30px;
+        padding: 0 8vw;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0;
         & > span {
-          font-size: 15px;
+          font-size: 4vw;
           line-height: 160%;
           & > span {
             display: block;
@@ -4857,7 +4905,7 @@ const checkGroupPhoto = () => {
           border-radius: 0 !important;
           white-space: nowrap;
           box-sizing: border-box;
-          padding: 4px 10px;
+          padding: 1.065vw 2.65vw;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -4867,7 +4915,7 @@ const checkGroupPhoto = () => {
           // border-right: 2px solid var(--indexColor1);
           // border-top: 2px solid var(--indexColor1);
           border-top: 2px solid var(--indexColor1) !important;
-          border-radius: 15px 0 0 0 !important;
+          border-radius: 4vw 0 0 0 !important;
         }
         & > span:nth-child(2) {
           border-top: 2px solid var(--indexColor1) !important;
@@ -4875,18 +4923,18 @@ const checkGroupPhoto = () => {
         & > span:nth-child(3) {
           border-top: 2px solid var(--indexColor1) !important;
           border-right: 2px solid var(--indexColor1) !important;
-          border-radius: 0 15px 0 0 !important;
+          border-radius: 0 4vw 0 0 !important;
         }
         & > span:nth-child(4) {
-          border-radius: 0 0 0 15px !important;
+          border-radius: 0 0 0 4vw !important;
         }
         & > span:nth-child(6) {
           border-right: 2px solid var(--indexColor1) !important;
-          border-radius: 0 0 15px 0 !important;
+          border-radius: 0 0 4vw 0 !important;
         }
       }
       &-content {
-        padding: 0 30px;
+        padding: 0 8vw;
         &-r {
           & > div {
             & > img {
@@ -4894,20 +4942,20 @@ const checkGroupPhoto = () => {
             }
             &:nth-of-type(2) {
               width: 90%;
-              font-size: 15px;
-              padding: 2px 0 2px 15px;
-              margin: 5px 0;
+              font-size: 4vw;
+              padding: 0.53vw 0 0.53vw 4vw;
+              margin: 1.33vw 0;
               clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
             }
             &:nth-of-type(3) {
               span {
-                font-size: 12px;
+                font-size: 3.2vw;
                 &::before {
-                  margin-right: 6px;
-                  font-size: 20px;
+                  margin-right: 1.6vw;
+                  font-size: 5.33vw;
                   line-height: 100%;
                   vertical-align: middle;
-                  margin-top: -2px;
+                  margin-top: -0.53vw;
                 }
               }
             }
@@ -4919,10 +4967,10 @@ const checkGroupPhoto = () => {
       margin-top: 0;
     }
     .implantCase {
-      margin-top: 90px;
+      margin-top: 24vw;
       overflow: hidden;
       &-content {
-        margin-top: 31px;
+        margin-top: 8.53vw;
         background: linear-gradient(
           0deg,
           rgba(255, 241, 240, 0) 0%,
@@ -4930,29 +4978,29 @@ const checkGroupPhoto = () => {
           rgba(255, 241, 240, 0.7) 81.99%,
           rgba(255, 241, 240, 0) 100%
         );
-        padding: 16px 0 27px;
+        padding: 4.265vw 0 7.2vw;
         .implantCaseBoxSwiper {
           .implantCaseText {
             display: block;
             // text-align: center;
-            font-size: 25px;
+            font-size: 6.65vw;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 1.33vw;
             color: var(--indexColor1);
-            padding: 0 44px;
+            padding: 0 11.733vw;
             &.act {
               color: #79828d;
             }
           }
           .implantCaseBox {
-            padding: 0 44px;
+            padding: 0 11.733vw;
             width: 100%;
             box-sizing: border-box;
             &-t {
-              font-size: 26px;
-              margin: 0 44px;
+              font-size: 6.93vw;
+              margin: 0 11.733vw;
               width: auto;
-              border-radius: 15px;
+              border-radius: 4vw;
               div {
                 position: relative;
                 -webkit-touch-callout: none;
@@ -4960,20 +5008,20 @@ const checkGroupPhoto = () => {
               .rightMbIcon {
                 display: block;
                 position: absolute;
-                width: 45px;
+                width: 12vw;
                 height: auto;
-                right: -10px;
-                top: -12px;
+                right: -2.65vw;
+                top: -3.2vw;
               }
               .click_btn {
                 display: none !important;
               }
             }
             &-b {
-              margin-top: 30px;
-              padding: 0 44px;
+              margin-top: 8vw;
+              padding: 0 11.73vw;
               img {
-                border-radius: 20px;
+                border-radius: 5.33vw;
                 margin: 0 auto;
                 &.firstBox {
                   width: 50%;
@@ -4984,37 +5032,38 @@ const checkGroupPhoto = () => {
         }
         .leftBtn {
           top: 20%;
-          left: 13px;
+          left: 3.465vw;
           svg {
-            width: 52px;
-            height: 52px;
+            width: 13.865vw;
+            height: 13.865vw;
+            object-fit: cover;
           }
         }
         .rightBtn {
           top: 20%;
-          right: 13px;
+          right: 3.465vw;
           svg {
-            width: 52px;
-            height: 52px;
+            width: 13.865vw;
+            height: 13.865vw;
           }
         }
         &-line {
-          width: 216px;
-          margin: 30px auto 0;
+          width: 57.6vw;
+          margin: 8vw auto 0;
         }
         &-in {
-          padding-bottom: 40px;
+          padding-bottom: 10.65vw;
           position: relative;
           box-sizing: border-box;
-          padding: 0 15px;
+          padding: 0 4vw;
           .afterBefore {
             display: flex;
             justify-content: center;
-            gap: 0 120px;
-            margin-bottom: 6px;
+            gap: 0 32vw;
+            margin-bottom: 1.6vw;
             & > div {
               font-family: 'FakePearl-Regular';
-              font-size: 20px;
+              font-size: 5.33vw;
               font-style: normal;
               font-weight: 400;
               line-height: 160%; /* 32px */
@@ -5029,11 +5078,11 @@ const checkGroupPhoto = () => {
           .itemImgDetails {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 5.33vw;
             & > div {
-              width: 170px;
-              height: 76.927px;
-              border-radius: 16.21px;
+              width: 45.33vw;
+              height: 20.513vw;
+              border-radius: 4.32vw;
               overflow: hidden;
               & > img {
                 width: 100%;
@@ -5067,28 +5116,28 @@ const checkGroupPhoto = () => {
     }
     .youtobe-video {
       width: 100%;
-      margin: 30px auto 0;
+      margin: 8vw auto 0;
       &-in {
         padding-bottom: calc(315 / 560 * 100%);
       }
     }
     .confidence_ecommendation {
-      margin-top: 60px;
-      padding: 0 30px;
+      margin-top: 16vw;
+      padding: 0 8vw;
       &-in {
         width: 100%;
-        max-width: 1041px;
+        max-width: 100vw;
         display: flex;
-        margin: 34px auto 0;
+        margin: 9.065vw auto 0;
         flex-wrap: wrap;
         justify-content: center;
         & > div {
           width: calc(100% / 3);
           display: flex;
           justify-content: center;
-          margin-bottom: 34px;
+          margin-bottom: 9.065vw;
           align-content: center;
-          padding: 0 10px;
+          padding: 0 2.65vw;
           img {
             width: 100%;
           }
@@ -5096,24 +5145,24 @@ const checkGroupPhoto = () => {
       }
     }
     .technology {
-      padding: 0 30px 50px;
-      margin-top: 14px;
+      padding: 0 8vw 13.33vw;
+      margin-top: 3.733vw;
       &-in {
         &-t {
-          margin-top: 15px;
-          font-size: 16px;
+          margin-top: 4vw;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 400;
           line-height: 200%; /* 32px */
-          letter-spacing: 1.6px;
+          letter-spacing: 0.42vw;
           text-align: justify;
         }
         &-img {
-          margin-top: 18px;
+          margin-top: 2.13vw;
         }
         &-b {
-          margin-top: 25px;
-          font-size: 16px;
+          margin-top: 6.665vw;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 400;
           line-height: 200%; /* 32px */
@@ -5122,12 +5171,12 @@ const checkGroupPhoto = () => {
         }
       }
       &-btn {
-        margin-top: 30px;
+        margin-top: 8vw;
       }
     }
     :deep(.reason-in-l) {
       position: relative;
-      padding-left: 30px;
+      padding-left: 8vw;
       background: linear-gradient(
         180deg,
         rgba(255, 255, 255, 0.3) 2%,
@@ -5141,10 +5190,10 @@ const checkGroupPhoto = () => {
         margin-top: 0;
       }
       .image {
-        max-width: 152px;
+        max-width: 40.53vw;
         width: 30%;
         height: auto;
-        margin: 20px 0 0 20.8333333333%;
+        margin: 5.33vw 0 0 20.8333333333%;
         position: absolute;
         border-radius: 50% 0 0 0;
         overflow: hidden;
@@ -5153,26 +5202,26 @@ const checkGroupPhoto = () => {
       }
     }
     :deep(.reason-in-r) {
-      margin-left: 35px;
+      margin-left: 9.33vw;
       & > div {
         position: relative;
-        margin-bottom: 20px !important;
+        margin-bottom: 5.3vw !important;
         & > .title {
           & > span {
             position: absolute;
-            left: -35px;
-            margin-left: -10px;
-            top: 10px;
+            left: -9.33vw;
+            margin-left: -2.65vw;
+            top: 2.665vw;
           }
           & > span::before {
             right: auto;
             top: 50%;
             bottom: auto;
-            transform: translateY(-10px);
+            transform: translateY(-2.665vw);
           }
         }
         & > .context {
-          font-size: 14px;
+          font-size: 3.733vw;
         }
       }
     }
@@ -5180,19 +5229,19 @@ const checkGroupPhoto = () => {
       margin-top: 0;
     }
     .mobile-new-step {
-      margin: 25px 27px 47px 30px;
+      margin: 6.65vw 7.2vw 12.53vw 8vw;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 30px 28px;
+      gap: 8vw 7.46vw;
       position: relative;
       z-index: 5;
       & > div {
         position: relative;
         & > div:nth-child(1) {
           & > img {
-            border-radius: 14px;
+            border-radius: 3.733vw;
             border: 1px solid var(--Theme-Color, #fc1682);
-            margin-bottom: 6px;
+            margin-bottom: 1.6vw;
           }
           & > span:nth-child(2) {
             color: var(--Theme-Color, #fc1682);
@@ -5215,12 +5264,12 @@ const checkGroupPhoto = () => {
         }
         & > div:last-child {
           position: absolute;
-          top: -6px;
-          left: -6px;
+          top: -1.6vw;
+          left: -1.6vw;
         }
       }
       & > div:nth-child(even) {
-        margin-top: 25px;
+        margin-top: 6.665vw;
       }
     }
     .brand_btn {
@@ -5234,7 +5283,7 @@ const checkGroupPhoto = () => {
     }
   }
   .new_doctor {
-    margin: 52px auto 64px;
+    margin: 13.865vw auto 17.065vw;
   }
   .btn-right-left {
     display: flex;
@@ -5250,17 +5299,17 @@ const checkGroupPhoto = () => {
     & > div {
       display: flex;
       align-items: center;
-      gap: 0 5px;
+      gap: 0 1.3vw;
       & > div:nth-child(1) {
         color: var(--Theme-Color, #fc1682);
         font-family: 'FakePearl-Regular';
-        font-size: 16px;
+        font-size: 4.265vw;
         font-style: normal;
         font-weight: 500;
         line-height: 130%; /* 20.8px */
       }
       & > div:nth-child(2) {
-        max-width: 84px;
+        max-width: 22.4vw;
         height: auto;
         & > img {
           width: 100%;
@@ -5270,17 +5319,17 @@ const checkGroupPhoto = () => {
     }
   }
   .dentistryServices-title {
-    margin-bottom: 25px;
+    margin-bottom: 6.665vw;
   }
   .Plant_brand_series-content {
     & > div:nth-child(2) > span {
       color: var(--Grey-Deep, #4d4d4d);
       font-family: 'FakePearl-Regular';
-      font-size: 15px;
+      font-size: 4vw;
       font-style: normal;
       font-weight: 400;
       line-height: 160%; /* 24px */
-      letter-spacing: 1.5px;
+      letter-spacing: 0.4vw;
     }
   }
   .step-in {
@@ -5291,7 +5340,7 @@ const checkGroupPhoto = () => {
     z-index: 2;
   }
   .step-mobile-bg-one {
-    top: 88px;
+    top: 23.465vw;
     left: 0;
     right: 0;
     & > img {
@@ -5299,7 +5348,7 @@ const checkGroupPhoto = () => {
     }
   }
   .step-mobile-bg-two {
-    top: 330px;
+    top: 88vw;
     right: 0;
     left: 0;
     & > img {
@@ -5316,7 +5365,7 @@ const checkGroupPhoto = () => {
     }
   }
   .contactForm {
-    margin-top: 50px;
+    margin-top: 13.33vw;
   }
   .classify-title {
     width: fit-content;
@@ -5327,7 +5376,7 @@ const checkGroupPhoto = () => {
     width: 100vw;
     margin-top: 0 !important;
     box-sizing: border-box;
-    padding: 0 15px;
+    padding: 0 4vw;
     & > div:nth-child(2) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -5336,12 +5385,12 @@ const checkGroupPhoto = () => {
       overflow: hidden;
       & > div:nth-child(2),
       & > div:nth-child(3) {
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 2.66vw 2.66vw 0px 0px;
         background: var(--Theme-Color, #fc1682);
         color: var(--White, #fff);
         text-align: center;
         font-family: 'FakePearl-Regular';
-        font-size: 16px;
+        font-size: 4.265vw;
         font-style: normal;
         font-weight: 500;
         line-height: 130%; /* 20.8px */
@@ -5350,14 +5399,14 @@ const checkGroupPhoto = () => {
         white-space: nowrap;
       }
       & > div:nth-child(3) {
-        border-radius: 10px 10px 0px 0px;
+        border-radius: 2.665vw 2.665vw 0px 0px;
         background: var(--Blue-Deep, #00aeff);
       }
       & > div:nth-child(7) {
-        border-radius: 10px 0px 0px 0px;
+        border-radius: 2.665vw 0px 0px 0px;
       }
       & > div:nth-child(19) {
-        border-radius: 0px 0px 0px 10px;
+        border-radius: 0px 0px 0px 2.665vw;
       }
       & > div:nth-child(3n + 1):not(:nth-child(1)):not(:nth-child(4)) {
         border: 1px solid var(--White, #fff);
@@ -5366,13 +5415,13 @@ const checkGroupPhoto = () => {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
         font-family: 'FakePearl-Regular';
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 400;
         line-height: 160%; /* 19.2px */
         letter-spacing: 1.2px;
         box-sizing: border-box;
-        padding: 6px 0;
+        padding: 1.6vw 0;
         white-space: nowrap;
         display: flex;
         justify-content: center;
@@ -5388,12 +5437,12 @@ const checkGroupPhoto = () => {
         border: 1px solid var(--Skin, #fff1f0);
         display: flex;
         flex-direction: column;
-        gap: 10px 0;
+        gap: 2.66vw 0;
         box-sizing: border-box;
-        padding: 8px 10px;
+        padding: 2.13vw 2.65vw;
         color: var(--Grey-Deep, #4d4d4d);
         font-family: 'Noto Sans HK';
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 500;
         line-height: 160%; /* 19.2px */
@@ -5402,10 +5451,10 @@ const checkGroupPhoto = () => {
     }
   }
   .classify-item {
-    margin: 30px 0 50px;
+    margin: 8vw 0 13.33vw;
     display: flex !important;
     // flex-direction: column !important;
-    gap: 40px 0 !important;
+    gap: 10.65vw 0 !important;
     & > div {
       position: relative;
       & > div:nth-child(1) {
@@ -5415,23 +5464,23 @@ const checkGroupPhoto = () => {
           color: var(--White, #fff);
           text-align: center;
           font-family: 'FakePearl-Regular';
-          font-size: 16px !important;
+          font-size: 4.2658vw !important;
           font-style: normal;
           font-weight: 500;
           line-height: 130% !important; /* 20.8px */
           box-sizing: border-box;
-          padding: 5px 20px 5px 29px !important;
+          padding: 1.33vw 5.33vw 1.33vw 7.733vw !important;
           width: fit-content;
           margin-left: 0 !important;
         }
         & > div:nth-child(2) {
           display: flex;
-          gap: 0 30px;
-          margin: 10px 30px;
+          gap: 0 8vw;
+          margin: 2.665vw 8vw;
           & > div:nth-child(1) {
             display: flex;
             flex-direction: column;
-            gap: 5px 0 !important;
+            gap: 1.33vw 0 !important;
             margin-left: 0 !important;
             & > p {
               display: flex;
@@ -5439,20 +5488,20 @@ const checkGroupPhoto = () => {
               & > span:nth-child(1) {
                 color: #fc1682;
                 font-family: 'FakePearl-Regular';
-                font-size: 16px !important;
+                font-size: 4.265vw !important;
                 font-style: normal;
                 font-weight: 600;
                 line-height: 130%; /* 20.8px */
-                margin-right: 10px !important;
+                margin-right: 2.665vw !important;
               }
             }
           }
           & > div:nth-child(2) {
             position: absolute;
             top: 0 !important;
-            right: 30px;
-            width: 130px !important;
-            height: 130px !important;
+            right: 8vw;
+            width: 34.665vw !important;
+            height: 34.665vw !important;
             & > img {
               width: 100%;
               height: 100%;
@@ -5461,24 +5510,24 @@ const checkGroupPhoto = () => {
         }
       }
       & > ul {
-        padding-left: 30px !important;
-        padding-right: 30px !important;
+        padding-left: 8vw !important;
+        padding-right: 8vw !important;
         list-style: disc;
-        font-size: 15px !important;
+        font-size: 4vw !important;
         font-style: normal;
         font-weight: 400 !important;
         line-height: 160%; /* 24px */
-        letter-spacing: 1.5px !important;
+        letter-spacing: 0.4vw !important;
       }
     }
   }
   .note-mobile {
-    margin-top: 40px;
-    padding: 0 20px 20px;
+    margin-top: 10.6665vw;
+    padding: 0 5.33vw 5.33vw;
     box-sizing: border-box;
     & > .index_title {
-      margin: 0 30px;
-      padding-left: 30px;
+      margin: 0 8vw;
+      padding-left: 8vw;
       width: fit-content;
       position: relative;
       color: var(--Grey-Deep, #4d4d4d);
@@ -5515,27 +5564,27 @@ const checkGroupPhoto = () => {
         #fee6f1 100%
       );
       align-items: flex-start !important;
-      padding: 0 20px;
+      padding: 0 5.33vw;
 
       & > div:nth-child(1),
       & > div:last-child {
         background: transparent !important;
-        margin-top: 20px;
+        margin-top: 5.33vw;
         display: flex;
         flex-direction: column;
         color: var(--Theme-Color, #fc1682);
         text-align: center;
         font-family: 'FakePearl-Regular';
-        font-size: 20px !important;
+        font-size: 5.33vw !important;
         font-style: normal;
         font-weight: 500 !important;
         line-height: 160% !important; /* 32px */
-        margin: 20px auto !important;
+        margin: 5.33vw auto !important;
       }
       & > div:not(:first-child) {
-        max-width: 290px !important;
+        max-width: 77.333vw !important;
         box-sizing: border-box;
-        padding: 10px 15px !important;
+        padding: 2.665vw 4vw !important;
         background: #fff;
         gap: 0 !important;
         & > div:nth-child(1) {
@@ -5548,7 +5597,7 @@ const checkGroupPhoto = () => {
             & > span:nth-child(1) {
               color: var(--Blue-Deep, #00aeff);
               font-family: 'FakePearl-Regular';
-              font-size: 20px;
+              font-size: 5.33vw;
               font-style: normal;
               font-weight: 400;
               line-height: 160%;
@@ -5560,7 +5609,7 @@ const checkGroupPhoto = () => {
           & > div:nth-child(2) {
             color: var(--Grey-Mid, #666);
             font-family: 'Noto Sans HK';
-            font-size: 12px !important;
+            font-size: 3.2vw !important;
             font-style: normal;
             font-weight: 500;
             line-height: 160%; /* 19.2px */
@@ -5791,13 +5840,17 @@ const checkGroupPhoto = () => {
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    padding-left: 20px;
+    // padding-left: 20px;
     padding-bottom: 35px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    // display: flex;
+    // align-items: flex-start;
+    // justify-content: flex-start;
+    top: 0;
+    bottom: 0;
+    transform: translateY(0px);
   }
   .banner-image {
+    display: none !important;
     position: absolute;
     z-index: 10;
     width: 166px;
@@ -5811,8 +5864,15 @@ const checkGroupPhoto = () => {
     }
   }
   .banner-content {
+    position: relative;
     align-items: flex-start;
     justify-content: flex-end;
+    width: 86.665vw;
+    left: 50%;
+    top: auto;
+    bottom: -65%;
+    border-radius: 10px;
+    transform: translate(-50%, 0%);
     .content-title {
       color: var(--White, #fff);
       text-align: right;
@@ -5824,24 +5884,52 @@ const checkGroupPhoto = () => {
       position: relative;
       z-index: 6;
       bottom: 0;
-    }
-    .content-title::after {
-      content: '';
-      display: inline-block;
-      width: 98%;
-      height: clamp(10px, 0.7vw, 15px);
-      background: url('../../assets/images/2025010917480102.png') no-repeat;
-      background-size: 100%;
-      position: absolute;
-      bottom: -3.9375vw;
-      box-sizing: border-box;
-      left: 0;
-      right: 0;
-      z-index: 5;
+      width: 100%;
+      border-radius: 10px 10px 0px 0px;
+      background: var(
+        --Liner-purple,
+        linear-gradient(
+          269deg,
+          var(--Brand-Color, #fc1682) 10.21%,
+          #710d54 122.73%
+        )
+      );
+      padding: 16.5px 0;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: 'Noto Sans HK';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 20px; /* 83.333% */
+      letter-spacing: 2.4px;
     }
     .content-price {
-      & > div:not(:nth-child(2)) {
-        padding-bottom: 22px;
+      min-height: 22.665vw;
+      gap: 0 8px;
+      padding: 2.65vw;
+
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2, 1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2, -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 5.865vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 6.23vw;
+        letter-spacing: 0.82vw;
+      }
+
+      & > div:nth-child(2) {
+        width: 58.665vw;
+        height: 13.0665vw;
+        & > svg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
     }
     .price-style {
@@ -5854,16 +5942,37 @@ const checkGroupPhoto = () => {
       }
     }
     .content-subscribe {
-      position: relative;
+      left: 0;
+      top: -60%;
+      right: auto;
+      bottom: auto;
+      position: absolute;
       z-index: 10;
-      bottom: -10px;
-      color: var(--Theme-Color, #fc1682);
+      box-sizing: border-box;
+      color: var(--Grey-Dark, #333);
       text-align: center;
-      font-family: 'FakePearl-Regular';
-      font-size: 20px;
+      font-family: 'Noto Sans HK';
+      font-size: 16px;
       font-style: normal;
-      font-weight: 600;
-      line-height: 160%;
+      font-weight: 700;
+      line-height: 120%; /* 19.2px */
+      letter-spacing: 1.6px;
+      gap: 5px 0;
+      padding: 4px 10px;
+      & > span:nth-child(2) {
+        color: var(--White, #fff);
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.8px;
+        & > i {
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 1.6px;
+        }
+      }
     }
   }
 }

@@ -429,6 +429,9 @@ const getWindowWidth = () => {
           headerConfig.pageName,
         ]"
       >
+        <a class="a-header-content-in" href="#contactUsFormNav"
+          >👏即日起網上預約領取2000元種植牙現金券！</a
+        >
         <div
           ref="headerMenu"
           class="pageCon header-content-in health_max_width"
@@ -669,7 +672,9 @@ const getWindowWidth = () => {
       </div>
       <!-- 水波纹盒子 -->
       <!-- <div class="waterBg" :class="headerConfig.pageName"></div> -->
-      <div class="explain_page_one" style="display: none;">優惠只限於網上及電話預約客戶</div>
+      <div class="explain_page_one" style="display: none">
+        優惠只限於網上及電話預約客戶
+      </div>
     </div>
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
       <div :class="['dialogBox-in', { 'show-in': _bool }]" @click.stop="">
@@ -705,6 +710,24 @@ const getWindowWidth = () => {
     top: 50%;
     opacity: 1;
   }
+}
+.a-header-content-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: 'Noto Sans Hk';
+  font-size: 3.84615vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.3846vw;
+  background: #00a752;
+  box-sizing: border-box;
+  padding: 2.05vw 0;
+  z-index: 40;
 }
 .dialogBox {
   position: fixed;
@@ -1258,7 +1281,7 @@ const getWindowWidth = () => {
         clamp(15px, 1.0465vw, 20px) clamp(15px, 1.0465vw, 20px);
       color: #fff;
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: clamp(14px, 1.146vw, 22px);
       font-style: normal;
       font-weight: 400;
@@ -1407,7 +1430,7 @@ const getWindowWidth = () => {
     padding: 2px 4px 2px 6px;
     color: var(--White, #fff);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(10px, 0.7vw, 14px);
     font-style: normal;
     font-weight: 400;
@@ -1419,7 +1442,7 @@ font-family: 'FakePearl-Regular';
   & > span:nth-child(2) {
     color: var(--Grey-Deep, #4d4d4d);
     text-align: right;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: clamp(10px, 0.7vw, 14px);
     font-style: normal;
     font-weight: 400;
@@ -1829,6 +1852,7 @@ font-family: 'FakePearl-Regular';
       position: relative;
       top: 16vw;
       z-index: 1;
+      margin-top: 14.53vw !important;
       &.course-new {
         padding-bottom: 5px;
         margin-top: 20px;
@@ -1918,6 +1942,7 @@ font-family: 'FakePearl-Regular';
       align-items: center;
       margin: 0;
       padding: 5.3vw 0 5.3vw 5.3vw;
+      margin-top: 9.2307vw !important;
       background: #fff;
       .menu {
         display: none;
@@ -2118,7 +2143,7 @@ font-family: 'FakePearl-Regular';
       background: var(---Green, #00a752);
       color: var(--White, #fff);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2128,7 +2153,7 @@ font-family: 'FakePearl-Regular';
     & > span:nth-child(2) {
       color: var(--Grey-Deep, #4d4d4d);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2163,6 +2188,7 @@ font-family: 'FakePearl-Regular';
       position: relative;
       top: 16vw;
       z-index: 1;
+      margin-top: 14.53vw !important;
       &.course-new {
         padding-bottom: 5px;
         margin-top: 10px;
@@ -2252,6 +2278,7 @@ font-family: 'FakePearl-Regular';
       align-items: center;
       margin: 0;
       padding: 5.3vw 0 5.3vw 5.3vw;
+      margin-top: 9.2307vw !important;
       background: #fff;
       .menu {
         display: none;
@@ -2452,7 +2479,7 @@ font-family: 'FakePearl-Regular';
       background: var(---Green, #00a752);
       color: var(--White, #fff);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;
@@ -2462,7 +2489,7 @@ font-family: 'FakePearl-Regular';
     & > span:nth-child(2) {
       color: var(--Grey-Deep, #4d4d4d);
       text-align: right;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 3.73vw;
       font-style: normal;
       font-weight: 400;

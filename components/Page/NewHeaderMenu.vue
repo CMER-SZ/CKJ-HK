@@ -31,7 +31,7 @@ const windowWidth = ref(1920)
 
 onMounted(() => {
   getWindowWidth()
-  console.log(window.innerWidth,'window.innerWidth');
+  console.log(window.innerWidth, 'window.innerWidth')
 
   windowWidth.value = window.innerWidth
   window.addEventListener('resize', () => {
@@ -233,6 +233,9 @@ const changlangsfun = (_type) => {
 
 <template>
   <div class="NewHeaderMenu">
+    <a class="a-header-content-in" href="#contactUsFormNav"
+      >👏即日起網上預約領取2000元種植牙現金券！</a
+    >
     <div :class="[headerConfig.pageName, 'headerBox01']">
       <div ref="headerMenu" class="pc_header_menu">
         <div class="logo">
@@ -377,7 +380,25 @@ const changlangsfun = (_type) => {
     width: 100%;
     background: #fff;
     top: 0;
+    .a-header-content-in {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      background: var(---Green, #00a752);
+      box-sizing: border-box;
+      padding: 6.5px 0;
+      color: var(--White, #fff);
+      text-align: center;
+      font-family: 'Noto Sans Hk';
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 1.1px;
+    }
   }
+
   .pc_header_menu {
     display: flex;
     justify-content: space-between;
@@ -764,6 +785,23 @@ const changlangsfun = (_type) => {
     width: 100%;
     background: #fff;
     top: 0;
+    .a-header-content-in {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      background: var(---Green, #00a752);
+      box-sizing: border-box;
+      padding: 6.5px 0;
+      color: var(--White, #fff);
+      text-align: center;
+      font-family: 'Noto Sans Hk';
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 1.1px;
+    }
   }
   .pc_header_menu {
     display: flex;
