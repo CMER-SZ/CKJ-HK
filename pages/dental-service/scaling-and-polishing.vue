@@ -1219,6 +1219,9 @@ const removeSurroundingParentheses = (str) => {
     line-height: 2.2222vw; /* 114.286% */
     letter-spacing: 0.29165vw;
     justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--White, #fff);
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
     & > div:nth-child(1) {
       position: relative;
       color: var(--Grey-Dark, #333);
@@ -1236,9 +1239,9 @@ const removeSurroundingParentheses = (str) => {
     }
     & > div:nth-child(1)::after {
       content: '';
-      width: 60%;
+      width: 48%;
       height: 2px;
-      background: #c1c1c1;
+      background: #333;
       position: absolute;
       transform: rotate(-5deg);
       bottom: -40%;
@@ -1254,6 +1257,7 @@ const removeSurroundingParentheses = (str) => {
       font-weight: 350;
       line-height: 120%; /* 22.4px */
       position: absolute;
+      letter-spacing: 1px;
       bottom: -55%;
       right: 0;
     }
@@ -3419,7 +3423,9 @@ const removeSurroundingParentheses = (str) => {
       min-height: 22.665vw;
       gap: 0 8px;
       padding: 2.65vw;
-
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
       & > div:nth-child(1) {
         color: var(--Grey-Dark, #333);
         text-align: right;
@@ -3435,13 +3441,13 @@ const removeSurroundingParentheses = (str) => {
         position: relative;
       }
       & > div:nth-child(1)::after {
-        content: '';
-        width: 60%;
+        content: "";
+        width: 55%;
         height: 2px;
-        background: #c1c1c1;
+        background: #333;
         position: absolute;
         transform: rotate(-5deg);
-        bottom: -40%;
+        bottom: -50%;
         right: 0;
       }
       & > div:nth-child(1)::before {
@@ -3453,6 +3459,7 @@ const removeSurroundingParentheses = (str) => {
         font-style: normal;
         font-weight: 350;
         line-height: 120%; /* 16.8px */
+        letter-spacing: 1px;
         position: absolute;
         bottom: -80%;
         right: 0;

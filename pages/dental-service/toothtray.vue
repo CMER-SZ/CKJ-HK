@@ -911,6 +911,9 @@ onMounted(() => {
     line-height: 2.2222vw; /* 114.286% */
     letter-spacing: 0.29165vw;
     justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--White, #fff);
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
     & > div:nth-child(1) {
       position: relative;
       color: var(--Grey-Dark, #333);

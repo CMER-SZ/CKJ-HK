@@ -424,6 +424,18 @@ onMounted(() => {
   getWindowWidth()
   window.addEventListener('resize', getWindowWidth)
   disabledDate(new Date())
+
+  // // 判断如果 设备是iphone
+  // // 获取 id是contactUsFormNav 的元素
+  // if (navigator.userAgent.match(/iPhone/i)) {
+  //   // 获取 id是contactUsFormNav 的元素
+  //   let contactUsFormNav = document.getElementById('contactUsFormNav')
+  //   // 设置元素的样式
+  //   if (contactUsFormNav) {
+  //     contactUsFormNav.style.position = 'fixed'
+  //     contactUsFormNav.style.top = `${12}vh`
+  //   }
+  // }
 })
 
 let areaCode = ref('852')
@@ -1577,7 +1589,7 @@ li {
           margin-top: 10px;
           & > span:nth-child(1) {
             position: absolute;
-            bottom: -24vw;
+            bottom: -26vw;
             color: var(--Grey-Mid, #666);
             font-family: FakePearl;
             font-size: 3.846vw;
@@ -1585,19 +1597,20 @@ li {
             font-weight: 400;
             line-height: 160%;
             letter-spacing: 0.284vw;
+            white-space: nowrap;
           }
           i {
-            font-size: 16px;
+            font-size: 4.1vw;
           }
           :deep(.el-radio.el-radio--large .el-radio__label) {
-            font-size: 12px;
+            font-size: 3.07vw;
           }
           :deep(.el-radio.el-radio--large .el-radio__inner) {
-            width: 16px;
-            height: 16px;
+            width: 4.1vw;
+            height: 4.1vw;
           }
           :deep(.el-radio.el-radio--large) {
-            height: 20px;
+            height: 5.128vw;
           }
         }
       }
@@ -1968,7 +1981,7 @@ li {
 
         /* MB/ServiceList-MB */
         font-family: FakePearl;
-        font-size: 15px;
+        font-size: 3.846vw;
         font-style: normal;
         font-weight: 400;
         line-height: 160%;
@@ -1976,6 +1989,8 @@ li {
         &-in {
           width: 4.2vw;
           height: 4.2vw;
+          min-width: 4.2vw;
+          min-height: 4.2vw;
           &::before {
             content: '';
             width: 0;
@@ -1996,17 +2011,27 @@ li {
             }
           }
         }
+        & > div:nth-child(2) {
+          color: var(--Grey-Mid, #666);
+          font-family: FakePearl;
+          font-size: 3.846vw;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          letter-spacing: 0.284vw;
+          white-space: nowrap;
+        }
       }
     }
     .care_voucher {
       & > label {
         color: var(---Green, #00a752);
         font-family: FakePearl;
-        font-size: 15px;
+        font-size: 3.846vw;
         font-style: normal;
         font-weight: 400;
         line-height: 160%; /* 24px */
-        letter-spacing: 1.5px;
+        letter-spacing: 0.3846vw;
       }
       & > input:checked {
         width: 4.2vw;

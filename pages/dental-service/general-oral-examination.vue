@@ -543,6 +543,9 @@ onMounted(() => {
     font-weight: 900;
     line-height: 1.15573vw; /* 83.333% */
     justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--White, #fff);
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
   }
 }
 :deep(.header-content) {

@@ -680,13 +680,13 @@ const caseLists = [
     }
     & > div:nth-child(1)::after {
       content: '';
-      width: 100%;
+      width: 84%;
       height: 2px;
-      background: #c1c1c1;
+      background: #333;
       position: absolute;
       transform: rotate(-5deg);
       bottom: 10%;
-      right: -120%;
+      right: -110%;
     }
     & > div:nth-child(1)::before {
       content: '原價 ¥3200/顆';
@@ -698,9 +698,10 @@ const caseLists = [
       font-style: normal;
       font-weight: 350;
       line-height: 120%; /* 22.4px */
+      letter-spacing: 1px;
       position: absolute;
       bottom: 0%;
-      right: -120%;
+      right: -110%;
     }
 
     & > div:nth-child(2) {
@@ -1997,14 +1998,14 @@ const caseLists = [
         position: relative;
       }
       & > div:nth-child(1)::after {
-        content: '';
-        width: 120%;
+        content: "";
+        width: 100%;
         height: 2px;
-        background: #c1c1c1;
+        background: #333;
         position: absolute;
         transform: rotate(-4deg);
         bottom: 10%;
-        right: -140%;
+        right: -130%;
       }
       & > div:nth-child(1)::before {
         content: '原價 ¥3200/顆';
@@ -2015,6 +2016,7 @@ const caseLists = [
         font-style: normal;
         font-weight: 350;
         line-height: 120%; /* 16.8px */
+        letter-spacing: 1px;
         position: absolute;
         bottom: 0%;
         right: -140%;

@@ -399,13 +399,13 @@ const differData: any = {
             <div class="content-price">
               <div>美國樹脂補牙</div>
               <div>
-                <img src="~/assets/images/2025031311165801.svg" alt="" />
+                <img src="~/assets/images/2025031311165802.svg" alt="" />
               </div>
             </div>
             <div class="content-subscribe">
               <div>其他物料</div>
               <div>
-                <img src="~/assets/images/2025031311165802.svg" alt="" />
+                <img src="~/assets/images/2025031311165801.svg" alt="" />
               </div>
             </div>
           </div>
@@ -428,13 +428,13 @@ const differData: any = {
             <div class="content-price">
               <div>美國樹脂補牙</div>
               <div>
-                <img src="~/assets/images/2025031311165801.svg" alt="" />
+                <img src="~/assets/images/2025031311165802.svg" alt="" />
               </div>
             </div>
             <div class="content-subscribe">
               <div>其他物料</div>
               <div>
-                <img src="~/assets/images/2025031311165802.svg" alt="" />
+                <img src="~/assets/images/2025031311165801.svg" alt="" />
               </div>
             </div>
           </div>

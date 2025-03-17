@@ -989,9 +989,9 @@ const onSlideChange = (swiper: any) => {
     }
     & > div:nth-child(1)::after {
       content: '';
-      width: 100%;
+      width: 86%;
       height: 2px;
-      background: #c1c1c1;
+      background: #333;
       position: absolute;
       transform: rotate(-5deg);
       bottom: -20%;
@@ -1007,9 +1007,10 @@ const onSlideChange = (swiper: any) => {
       font-style: normal;
       font-weight: 350;
       line-height: 120%; /* 22.4px */
+      right: -110%;
+      letter-spacing: 1px;
       position: absolute;
       bottom: -40%;
-      right: -120%;
     }
 
     & > div:nth-child(2) {
@@ -2776,17 +2777,17 @@ const onSlideChange = (swiper: any) => {
         position: relative;
       }
       & > div:nth-child(1)::after {
-        content: '';
-        width: 120%;
+        content: "";
+        width: 95%;
         height: 2px;
-        background: #c1c1c1;
+        background: #333;
         position: absolute;
         transform: rotate(-4deg);
         bottom: -40%;
-        right: -140%;
+        right: -125%;
       }
       & > div:nth-child(1)::before {
-        content: '原價 ¥3200/顆';
+        content: '原價 ¥1800/次';
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: 'Noto Sans HK';

@@ -2480,6 +2480,9 @@ const checkGroupPhoto = () => {
     font-weight: 900;
     line-height: 2.2222vw; /* 114.286% */
     letter-spacing: 0.29165vw;
+    border-radius: 0px 0px 10px 10px;
+    background: var(--White, #fff);
+    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
     & > div:nth-child(1) {
       color: var(--Grey-Dark, #333);
       text-align: right;
@@ -5909,11 +5912,15 @@ const checkGroupPhoto = () => {
       min-height: 22.665vw;
       gap: 0 8px;
       padding: 2.65vw;
-
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
       & > div:nth-child(1) {
         color: var(--Grey-Dark, #333);
         text-align: right;
-        text-shadow: 1.3px 1.333px 1.333px #faeaf2, 1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2, -1.33px -1.333px 1.333px #faeaf2;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
         font-family: 'Noto Sans HK';
         font-size: 5.865vw;
         font-style: normal;
