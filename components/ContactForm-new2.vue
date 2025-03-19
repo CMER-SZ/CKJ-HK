@@ -1436,7 +1436,7 @@ li {
           line-height: 160%; /* 38.4px */
           & > span:nth-child(1) {
             position: absolute;
-            bottom: -9.375vw;
+            bottom: -10.375vw;
           }
           :deep(.el-radio.el-radio--large .el-radio__label) {
             font-size: 0.8333vw;
@@ -1535,7 +1535,7 @@ li {
         font-size: 16px;
       }
       .formBtn {
-        margin: 12px auto 0;
+        margin: 6vw auto 0;
       }
       .privacyPolicy {
         margin-top: 0px;

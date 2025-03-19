@@ -2164,7 +2164,7 @@
 
 // 分店地址
 .BranchAddress {
-  margin-top: 30px;
+padding-top: 30px;
   &-addressImg {
     width: 100%;
     // max-width: 672px;
@@ -2390,6 +2390,7 @@
 }
 
 .subheading {
+  margin-left: 15px;
   box-sizing: border-box;
   padding-left: 12px;
   border-left: 2px solid var(--Pink-Pale, #ffe9ec);
@@ -2466,6 +2467,9 @@
 
   // 分店地址
   .BranchAddress {
+ 
+    padding-top: 45px;
+    padding-bottom: 45px;
     &-addressImg {
       margin-top: 20px;
     }

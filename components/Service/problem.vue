@@ -176,7 +176,7 @@ const activeNames = ref(0)
   &-in {
     margin-top: 35px;
     width: 100%;
-    max-width: 1224px;
+    max-width: 960px;
     &-title {
       display: flex;
       justify-content: space-between;
@@ -196,6 +196,7 @@ const activeNames = ref(0)
         font-size: 24px;
         color: #505050;
         max-width: calc(100% - 70px);
+        line-height: 1.2;
         flex: 1;
         margin-left: 20px;
         text-align: center;
@@ -252,12 +253,19 @@ const activeNames = ref(0)
 }
 :deep(.el-collapse-item__header.is-active) {
   background: var(--indexColor1);
+
   .problem-in-title > div:nth-of-type(1) {
     color: var(--indexColor2);
   }
   .problem-in-title > div:nth-of-type(2) {
     color: #ffffff;
   }
+}
+.problem-in-title {
+  padding-left: 12px;
+}
+:deep(.el-collapse-item__content) {
+  overflow: none;
 }
 :deep(.problem-in-context) {
   border-radius: 10px;
@@ -271,7 +279,7 @@ const activeNames = ref(0)
     margin-top: 5.1042vw;
     &-in {
       margin-top: 1.8229vw;
-      max-width: 63.75vw;
+      max-width: 960px;
       &-title {
         & > div:nth-of-type(1) {
           font-size: 2.0833vw;
@@ -282,6 +290,7 @@ const activeNames = ref(0)
           font-size: 1.25vw;
           max-width: calc(100% - 3.6458vw);
           margin-left: 1.0417vw;
+          text-align: left;
         }
         & > div:nth-of-type(3) {
           margin-right: 1.6667vw;
@@ -295,7 +304,7 @@ const activeNames = ref(0)
         }
         & > span:last-child {
           font-size: 1.0417vw;
-          padding: 2.3438vw 4.2708vw 1.3542vw 0.9896vw;
+          padding: 2.0438vw 4.2708vw 1.3542vw 2.3438vw;
         }
       }
     }
@@ -330,7 +339,7 @@ const activeNames = ref(0)
     }
   }
   .problem {
-    margin-top: 90px;
+    margin-top: 30px;
     &-title {
       &-in {
         font-size: 26px;
@@ -356,11 +365,12 @@ const activeNames = ref(0)
       }
       &-context {
         & > span:first-child {
-          margin-left: 3px;
+          margin-left: 16px;
           font-size: 26px;
+          line-height: normal;
         }
         & > span:last-child {
-          padding: 20px 17px 1px 14px;
+          padding: 20px 17px 10px 14px;
           font-size: 16px;
         }
       }
@@ -368,8 +378,13 @@ const activeNames = ref(0)
   }
   :deep(.el-collapse-item__header) {
     // height: 43px;
+    border-radius: 10px;
     min-height: 43px;
     box-sizing: border-box;
   }
+}
+:deep(.is-active) {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 </style>
