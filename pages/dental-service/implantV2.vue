@@ -734,7 +734,7 @@ const problemData = {
         </section>
       </div>
     </container>
-    <ServiceProblem :problem-data="problemData" />
+    <ServiceProblem :problem-data="problemData" :v2-versions="true" />
     <!-- 聯絡我們 -->
     <BranchAddress />
     <ContactForm-new2 />
