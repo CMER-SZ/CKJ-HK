@@ -354,73 +354,6 @@ const getWindowWidth = () => {
 <template>
   <header>
     <div class="header-content">
-      <div class="header-content-bgImg" :class="headerConfig.pageName">
-        <img class="imgBgBox pcBox" :src="headerConfig.bg" alt="" />
-        <div class="header-content-bgImg-imgInfo bigPageCon">
-          <img
-            :class="['pcBox', headerConfig.pageName]"
-            :src="headerConfig.img"
-            alt="banner"
-          />
-        </div>
-        <img
-          :class="[
-            'mbBox',
-            'header-content-bgImg-mbImg',
-            headerConfig.pageName,
-          ]"
-          :src="headerConfig.mbImg"
-          alt="banner"
-        />
-      </div>
-      <div class="header-content-bgImg-implant" :class="headerConfig.pageName">
-        <swiper
-          :modules="[Autoplay]"
-          :loop="true"
-          :autoplay="{ delay: 3000 }"
-          :speed="1000"
-          @swiper="setBannerSwiperRef"
-          @slideChange="changebanner"
-        >
-          <SwiperSlide v-for="(item, index) in bannerLists" :key="index">
-            <nuxt-link
-              :to="item.link === '' ? 'javaScript:void(0)' : item.link"
-              :title="item.name"
-              :alt="item.name"
-            >
-              <img
-                :srcset="`${item.mb} 768w, ${item.pc}`"
-                :src="item.pc"
-                :alt="item.name"
-                :title="item.name"
-              />
-            </nuxt-link>
-          </SwiperSlide>
-        </swiper>
-      </div>
-      <div
-        ref="imgBgHeight"
-        class="header-content-bgImgBB pcBox"
-        :class="headerConfig.pageName"
-      >
-        <nuxt-link :to="bannerlink">
-          <img :src="bannerLists[bannerCurrent - 1].pc" alt="" />
-        </nuxt-link>
-      </div>
-      <div class="header-content-btn-implant bannerLine">
-        <div class="bannerLine-in">
-          <PageSwiperPointLine
-            :latestNewsNum="bannerLists.length"
-            :latestNewsCurrent="bannerCurrent"
-            @changeLineCur="handleBannerLineCur"
-          ></PageSwiperPointLine>
-        </div>
-      </div>
-      <!-- <div class="waterBg-implant"></div> -->
-      <div class="header-content-text-implant" :class="headerConfig.pageName">
-        <div>全程式預約一體化診療服務，</div>
-        <div>讓每一位顧客享受 <span>健康微笑之旅。</span></div>
-      </div>
       <!-- pc菜单 -->
       <div
         :class="[
@@ -552,10 +485,46 @@ const getWindowWidth = () => {
           </div>
         </div>
       </div>
-      <!-- 水波纹盒子 -->
-      <!-- <div class="waterBg" :class="headerConfig.pageName"></div> -->
       <div class="explain_page_one" style="display: none">
         優惠只限於網上及電話預約客戶
+      </div>
+      <div class="swiperBox">
+        <swiper
+          :modules="[Autoplay]"
+          :loop="true"
+          :autoplay="{ delay: 3000 }"
+          :speed="1000"
+          @swiper="setBannerSwiperRef"
+          @slideChange="changebanner"
+        >
+          <SwiperSlide v-for="(item, index) in bannerLists" :key="index">
+            <nuxt-link
+              :to="item.link === '' ? 'javaScript:void(0)' : item.link"
+              :title="item.name"
+              :alt="item.name"
+            >
+              <img
+                :srcset="`${item.mb} 768w, ${item.pc}`"
+                :src="item.pc"
+                :alt="item.name"
+                :title="item.name"
+              />
+            </nuxt-link>
+          </SwiperSlide>
+        </swiper>
+      </div>
+      <div class="header-content-btn-implant bannerLine">
+        <div class="bannerLine-in">
+          <PageSwiperPointLine
+            :latestNewsNum="bannerLists.length"
+            :latestNewsCurrent="bannerCurrent"
+            @changeLineCur="handleBannerLineCur"
+          ></PageSwiperPointLine>
+        </div>
+      </div>
+      <div class="header-content-text-implant" :class="headerConfig.pageName">
+        <div>全程式預約一體化診療服務，</div>
+        <div>讓每一位顧客享受 <span>健康微笑之旅。</span></div>
       </div>
     </div>
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
@@ -641,17 +610,7 @@ const getWindowWidth = () => {
     }
   }
 }
-@keyframes btnAnim {
-  0% {
-    clip-path: polygon(-10% 0, 0 0, -10% 100%, -20% 100%);
-  }
-  50% {
-    clip-path: polygon(50% 0, 60% 0, 50% 100%, 40% 100%);
-  }
-  100% {
-    clip-path: polygon(110% 0, 120% 0, 110% 100%, 100% 100%);
-  }
-}
+
 @keyframes animBottomIn {
   from {
   }
@@ -712,9 +671,6 @@ const getWindowWidth = () => {
       }
     }
   }
-  .waterBg-implant {
-    display: none;
-  }
   &-text-implant {
     position: absolute;
     bottom: 100px;
@@ -734,27 +690,6 @@ const getWindowWidth = () => {
     }
     &.course-new {
       display: none;
-    }
-  }
-  &-bgImgBB {
-    position: relative;
-    opacity: 0;
-    &.course-new {
-      max-width: 100%;
-      width: 100%;
-      height: auto;
-      // min-height: calc(580 / 1920 * 100vw);
-      img {
-        width: 100%;
-        height: auto;
-      }
-      & > a {
-        width: 100%;
-        height: auto;
-        display: block;
-        // height: 100%;
-        // overflow: hidden;
-      }
     }
   }
   &-in {
@@ -1066,13 +1001,6 @@ const getWindowWidth = () => {
     }
     background: #fff;
   }
-  .waterBg {
-    position: relative;
-    z-index: 35;
-    &.course-new {
-      bottom: -20px !important;
-    }
-  }
   .explain_page_one {
     position: absolute;
     z-index: 35;
@@ -1171,6 +1099,10 @@ const getWindowWidth = () => {
     }
   }
 }
+
+.swiperBox {
+  margin-top: 6.25vw;
+}
 .headerBox01 {
   position: relative;
   background: #fff;
@@ -1207,27 +1139,7 @@ const getWindowWidth = () => {
     display: flex;
   }
 }
-.waterBg::after {
-  content: '';
-  background-image: url(@/assets/images/back_wave01.png);
-  background-repeat: repeat-x;
-  background-position: center 20px;
-  height: 100px;
-  width: 100%;
-  position: absolute;
-  z-index: 45;
-  left: 0px;
-  bottom: 0px;
-  animation-name: wave1;
-  animation-duration: 20s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: wave1;
-  -webkit-animation-duration: 20s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-}
+
 @keyframes menuIconAnim {
   30% {
     background-position-y: 3px;
@@ -1261,26 +1173,7 @@ const getWindowWidth = () => {
     background-position: 1080px 20px;
   }
 }
-.waterBg::before {
-  content: '';
-  background-image: url(@/assets/images/back_wave03.png);
-  background-repeat: repeat-x;
-  background-position: center bottom;
-  height: 80px;
-  width: 100%;
-  position: absolute;
-  z-index: 45;
-  left: 0px;
-  bottom: 0px;
-  animation-name: wave2;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: wave2;
-  -webkit-animation-duration: 10s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-}
+
 @keyframes wave2 {
   0% {
     background-position: 0px bottom;
@@ -1353,13 +1246,6 @@ const getWindowWidth = () => {
     &-in {
       width: calc(80% + 60px);
     }
-    &-bgImgBB {
-      width: 100%;
-    }
-  }
-  .waterBg::after,
-  .waterBg::before {
-    height: 160px;
   }
 }
 @media (min-width: 1001px) and (max-width: 1452px) {
@@ -1431,18 +1317,11 @@ const getWindowWidth = () => {
         margin: 0 auto;
       }
     }
-    &-bgImgBB {
-      width: 100%;
-    }
     &-btn-implant {
       bottom: 18vw;
     }
   }
-  .waterBg::after,
-  .waterBg::before {
-    height: 120px;
-    bottom: -30px;
-  }
+
   :deep(.bannerLine) {
     bottom: 0 !important;
   }
@@ -1620,21 +1499,7 @@ const getWindowWidth = () => {
         }
       }
     }
-    .waterBg {
-      &.implant,
-      &.rootCanal-test,
-      &.periodontal-test,
-      &.orthodontics-test,
-      &.invisalign-test,
-      &.veneers-test,
-      &.health-care-voucher,
-      &.scaling-and-polishing-test {
-        bottom: 4vw;
-      }
-      &.course-new {
-        bottom: 30px;
-      }
-    }
+
     &-btn-implant {
       bottom: calc(100px + 6vw);
       span {
@@ -1764,51 +1629,7 @@ const getWindowWidth = () => {
         margin-top: 150px;
       }
     }
-    .waterBg-implant {
-      display: block;
-      margin-top: -30px;
-      &::before {
-        content: '';
-        background-image: url(@/assets/images/back_wave03.png);
-        background-repeat: repeat-x;
-        background-position: center bottom;
-        height: 37.2vw;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        left: 0px;
-        bottom: 2.7vw;
-        animation-name: wave2;
-        animation-duration: 10s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: wave2;
-        -webkit-animation-duration: 10s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-      }
-      &::after {
-        content: '';
-        background-image: url(@/assets/images/back_wave01.png);
-        background-repeat: repeat-x;
-        background-position: center 5.3vw;
-        height: 37.2vw;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        left: 0px;
-        bottom: 2.7vw;
-        animation-name: wave1;
-        animation-duration: 20s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: wave1;
-        -webkit-animation-duration: 20s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-        filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-      }
-    }
+
     &-in {
       position: fixed;
       top: 0;
@@ -1861,28 +1682,13 @@ const getWindowWidth = () => {
       right: 30px;
       bottom: 60px;
     }
-    .waterBg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      &.course-new {
-        bottom: auto;
-      }
-    }
+
     .headerBox02 {
       position: relative;
       z-index: 40;
     }
   }
-  .waterBg::after {
-    transform: rotate(180deg);
-    top: -50px;
-  }
-  .waterBg::before {
-    transform: rotate(180deg);
-    top: -60px;
-  }
+
   .menuBox {
     position: fixed;
     top: -100vh;
@@ -2098,51 +1904,7 @@ const getWindowWidth = () => {
         margin-top: 150px;
       }
     }
-    .waterBg-implant {
-      display: block;
-      margin-top: -30px;
-      &::before {
-        content: '';
-        background-image: url(@/assets/images/back_wave03.png);
-        background-repeat: repeat-x;
-        background-position: center bottom;
-        height: 26.2vw;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        left: 0px;
-        bottom: 2.7vw;
-        animation-name: wave2;
-        animation-duration: 10s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: wave2;
-        -webkit-animation-duration: 10s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-      }
-      &::after {
-        content: '';
-        background-image: url(@/assets/images/back_wave01.png);
-        background-repeat: repeat-x;
-        background-position: center 5.3vw;
-        height: 26.2vw;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        left: 0px;
-        bottom: 2.7vw;
-        animation-name: wave1;
-        animation-duration: 20s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: wave1;
-        -webkit-animation-duration: 20s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-        filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-      }
-    }
+
     &-in {
       position: fixed;
       top: 0;
@@ -2195,28 +1957,13 @@ const getWindowWidth = () => {
       right: 30px;
       bottom: 60px;
     }
-    .waterBg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      &.course-new {
-        bottom: auto;
-      }
-    }
+
     .headerBox02 {
       position: relative;
       z-index: 40;
     }
   }
-  .waterBg::after {
-    transform: rotate(180deg);
-    top: -50px;
-  }
-  .waterBg::before {
-    transform: rotate(180deg);
-    top: -60px;
-  }
+
   .menuBox {
     position: fixed;
     top: -100vh;

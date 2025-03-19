@@ -93,13 +93,13 @@ onMounted(() => {
 //   }
 // })
 
-const isYahoo = () => {
-  return checkForYahoo(route.name) ? true : false
-}
+// const isYahoo = () => {
+//   return checkForYahoo(route.name) ? true : false
+// }
 
-const checkForYahoo = (inputString) => {
-  return inputString.includes('yahoo')
-}
+// const checkForYahoo = (inputString) => {
+//   return inputString.includes('yahoo')
+// }
 
 watchEffect(() => {
   if (route.name === 'error') {
@@ -121,8 +121,8 @@ watchEffect(() => {
         id="popup-alert-two"
       ></div>
       <NuxtLayout>
-        <YahooPageMenuBar v-if="isYahoo()" />
-        <PageMenuBar v-else />
+        <!-- <YahooPageMenuBar v-if="isYahoo()" /> -->
+        <PageMenuBar />
         <NuxtPage />
       </NuxtLayout>
       <noscript
