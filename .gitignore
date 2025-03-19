@@ -15,6 +15,7 @@ dist
 dist.zip
 generate_and_zip.sh
 dist_yahoo.zip
+dist_v2Main.zip
 
 # IDE
 .idea

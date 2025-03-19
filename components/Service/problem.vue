@@ -9,13 +9,23 @@ defineProps({
       }
     },
   },
+  v2Versions: {
+    type: Boolean,
+    default: false,
+  },
 })
 const activeNames = ref(0)
 </script>
 
 <template>
   <div class="problem">
-    <div class="dentistryServices-title problem-title">
+    <div
+      class="d-flex flex-row mb-3 align-items-end subheading"
+      v-if="v2Versions"
+    >
+      <span>植牙常見</span><span>問題</span>
+    </div>
+    <div class="dentistryServices-title problem-title" v-else>
       <div class="dentistryServices-title-in bb problem-title-in">
         {{ $t(problemData.title) }}
       </div>
@@ -222,7 +232,7 @@ const activeNames = ref(0)
   border: none;
 }
 :deep(.el-collapse-item) {
-  margin-bottom: 4px;
+  margin-bottom: 15px;
   border: none;
 }
 :deep(.el-collapse-item__wrap) {
@@ -248,6 +258,10 @@ const activeNames = ref(0)
   .problem-in-title > div:nth-of-type(2) {
     color: #ffffff;
   }
+}
+:deep(.problem-in-context) {
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 2px rgba(77, 77, 77, 0.2);
 }
 :deep(.el-icon) {
   display: none;
@@ -289,6 +303,7 @@ const activeNames = ref(0)
   :deep(.el-collapse-item__header) {
     padding: 0.625vw 0;
     min-height: 2.3438vw;
+    border-radius: 10px;
   }
 }
 
