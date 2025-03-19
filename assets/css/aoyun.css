@@ -56,10 +56,13 @@ a {
 a:hover {
   color: inherit;
 }
-img,
-svg {
-  width: auto;
+img
+ {
+  width: 100%;
   vertical-align: middle;
+}
+svg{
+  width:auto;
 }
 a:hover {
   text-decoration: none;
