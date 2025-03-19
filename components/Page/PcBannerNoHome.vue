@@ -19,7 +19,7 @@ defineProps({
     type: String,
     default: '',
   },
-  linkBtn:{
+  linkBtn: {
     type: String,
     default: '',
   },
@@ -83,7 +83,9 @@ const hideShowText = computed(() => {
 
 <template>
   <div class="PcBannerNoHome">
+    <!-- 這裡是 除首页頁面 banner 插槽 -->
     <slot name="xxxxxxxxxxx-home"></slot>
+    <!-- 這裡是 除首页頁面 banner 图 -->
     <div class="pcBox-wrapper" :class="headerConfig.pageName">
       <div>
         <img
@@ -99,7 +101,10 @@ const hideShowText = computed(() => {
       />
     </div>
     <div class="btn-wrapper">
-      <PageAnimBtnTypeTwo :str="btnText || '免費網上預約'" :link="headerConfig.linkBtn" />
+      <PageAnimBtnTypeTwo
+        :str="btnText || '免費網上預約'"
+        :link="headerConfig.linkBtn"
+      />
     </div>
     <div class="text-wrapper" v-if="isShowTextAll">
       <div>
@@ -112,7 +117,6 @@ const hideShowText = computed(() => {
         </div>
       </div>
     </div>
-    <!-- <div class="waterBg"></div> -->
   </div>
 </template>
 
@@ -152,55 +156,8 @@ const hideShowText = computed(() => {
 @media screen and (min-width: 1441px) {
   .PcBannerNoHome {
     position: relative;
-    .waterBg {
-      position: absolute;
-      bottom: 0;
-    }
-    .waterBg::after {
-      content: '';
-      width: 100vw;
-      background-image: url(https://static.cmereye.com/imgs/2024/11/ea200938bd03fcb4.png);
-      background-repeat: repeat-x;
-      background-position: center 20px;
-      height: 120px;
-      // width: 100%;
-      position: absolute;
-      z-index: 35;
-      left: 0px;
-      bottom: -50px;
-      animation-name: wave1;
-      animation-duration: 20s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: wave1;
-      -webkit-animation-duration: 20s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-      left: 0;
-    }
-    .waterBg::before {
-      content: '';
-      background-image: url(https://static.cmereye.com/imgs/2024/11/a3b442741fc16add.png);
-      background-repeat: repeat-x;
-      background-position: center bottom;
-      width: 100vw;
-      height: 110px;
-      // width: 100%;
-      position: absolute;
-      z-index: 35;
-      left: 0px;
-      bottom: -50px;
-      animation-name: wave2;
-      animation-duration: 10s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: wave2;
-      -webkit-animation-duration: 10s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-    }
     .pcBox-wrapper {
+      margin-top: 95px;
       position: relative;
       z-index: 1;
       img {
@@ -259,54 +216,7 @@ const hideShowText = computed(() => {
 @media screen and (min-width: 1041px) and (max-width: 1440px) {
   .PcBannerNoHome {
     position: relative;
-    .waterBg {
-      position: absolute;
-      bottom: 0;
-    }
-    .waterBg::after {
-      content: '';
-      width: 100vw;
-      background-image: url(https://static.cmereye.com/imgs/2024/11/ea200938bd03fcb4.png);
-      background-repeat: repeat-x;
-      background-position: center 20px;
-      height: 120px;
-      // width: 100%;
-      position: absolute;
-      z-index: 35;
-      left: 0px;
-      bottom: -50px;
-      animation-name: wave1;
-      animation-duration: 20s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: wave1;
-      -webkit-animation-duration: 20s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-      left: 0;
-    }
-    .waterBg::before {
-      content: '';
-      background-image: url(https://static.cmereye.com/imgs/2024/11/a3b442741fc16add.png);
-      background-repeat: repeat-x;
-      background-position: center bottom;
-      width: 100vw;
-      height: 110px;
-      // width: 100%;
-      position: absolute;
-      z-index: 35;
-      left: 0px;
-      bottom: -50px;
-      animation-name: wave2;
-      animation-duration: 10s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: wave2;
-      -webkit-animation-duration: 10s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-    }
+
     .pcBox-wrapper {
       position: relative;
       z-index: 1;
@@ -366,54 +276,7 @@ const hideShowText = computed(() => {
 @media screen and (min-width: 768px) and (max-width: 1040px) {
   .PcBannerNoHome {
     position: relative;
-    .waterBg {
-      position: absolute;
-      bottom: 0;
-    }
-    .waterBg::after {
-      content: '';
-      width: 100vw;
-      background-image: url(https://static.cmereye.com/imgs/2024/11/ea200938bd03fcb4.png);
-      background-repeat: repeat-x;
-      background-position: center 20px;
-      height: 120px;
-      // width: 100%;
-      position: absolute;
-      z-index: 35;
-      left: 0px;
-      bottom: -50px;
-      animation-name: wave1;
-      animation-duration: 20s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: wave1;
-      -webkit-animation-duration: 20s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-      filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-      left: 0;
-    }
-    .waterBg::before {
-      content: '';
-      background-image: url(https://static.cmereye.com/imgs/2024/11/a3b442741fc16add.png);
-      background-repeat: repeat-x;
-      background-position: center bottom;
-      width: 100vw;
-      height: 110px;
-      // width: 100%;
-      position: absolute;
-      z-index: 35;
-      left: 0px;
-      bottom: -50px;
-      animation-name: wave2;
-      animation-duration: 10s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-      -webkit-animation-name: wave2;
-      -webkit-animation-duration: 10s;
-      -webkit-animation-timing-function: linear;
-      -webkit-animation-iteration-count: infinite;
-    }
+
     .pcBox-wrapper {
       position: relative;
       z-index: 1;
