@@ -786,24 +786,28 @@ const hideDiv = () => {
     opacity: 1;
   }
 }
-.a-header-content-in {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: var(--White, #fff);
-  text-align: center;
-  font-family: 'Noto Sans Hk';
-  font-size: 3.84615vw;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 0.3846vw;
-  background: #00a752;
-  box-sizing: border-box;
-  padding: 2.05vw 0;
-  z-index: 40;
+
+@media screen and (max-width: 992px) {
+  .a-header-content-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: var(--White, #fff);
+    text-align: center;
+    font-family: 'Noto Sans Hk';
+    font-size: 3.84615vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.3846vw;
+    background: #00a752;
+    box-sizing: border-box;
+    padding: 2.05vw 0;
+    z-index: 40;
+  }
 }
+
 .dialogBox {
   position: fixed;
   top: 0;

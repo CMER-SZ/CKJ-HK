@@ -778,7 +778,7 @@ const changlangsfun = (_type) => {
     }
   }
 }
-@media screen and (min-width: 1041px) and (max-width: 1440px) {
+@media screen and (min-width: 992px) and (max-width: 1440px) {
   .NewHeaderMenu {
     position: fixed;
     z-index: 110;
