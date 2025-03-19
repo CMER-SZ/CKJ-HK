@@ -508,6 +508,7 @@ const getWindowWidth = () => {
                 :src="item.pc"
                 :alt="item.name"
                 :title="item.name"
+                class="w-100"
               />
             </nuxt-link>
           </SwiperSlide>
