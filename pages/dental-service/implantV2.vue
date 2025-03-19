@@ -561,11 +561,11 @@ const problemData = {
       </section>
 
       <div class="affiliation-bg">
-              <div
-        class="affiliation-title d-flex flex-row mb-3 align-items-end subheading"
-      >
-        <span>香港上市醫療公司</span><span>管理</span>
-      </div>
+        <div
+          class="affiliation-title d-flex flex-row mb-3 align-items-end subheading"
+        >
+          <span>香港上市醫療公司</span><span>管理</span>
+        </div>
         <section class="container affiliation">
           <div class="affiliation-context">
             <div>
@@ -1797,7 +1797,7 @@ const problemData = {
 
         & > div:nth-child(1) {
           position: absolute;
-          z-index: 5;
+          z-index: 3;
           top: -1.06vw;
           left: -1.06vw;
           color: var(--White, #fff);
@@ -1855,14 +1855,16 @@ const problemData = {
     .seven-advantages-content {
       background: url(https://static.ckjhk.com/ckj-image/2025031810575101.png)
         no-repeat;
-      background-size: cover;
-      background-position-x: -14vw;
+      background-size: 375px auto;
+      background-position-x: center;
       width: 100%;
       height: 100vw;
       display: flex;
       flex-direction: column;
       box-sizing: border-box;
       padding: 2.65vw 2.65vw 2.65vw 0;
+      max-width: 375px;
+      margin: 0 auto;
 
       & > div {
         width: 100%;
