@@ -5,7 +5,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
   // server side rendering mode
-  
+
   ssr: true,
   // typescripts
   typescript: {
@@ -13,10 +13,10 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   hooks: {
-    'pages:extend' (pages) {
-      let _pages = JSON.parse(JSON.stringify(pages.filter(item=> {
-        let _str = ['404','test','/:id','server-']
-        if(_str.some(str => item.name?.indexOf(str) !== -1)) {
+    'pages:extend'(pages) {
+      let _pages = JSON.parse(JSON.stringify(pages.filter(item => {
+        let _str = ['404', 'test', '/:id', 'server-']
+        if (_str.some(str => item.name?.indexOf(str) !== -1)) {
           return false
         } else {
           return true
@@ -41,14 +41,14 @@ export default defineNuxtConfig({
     }
   },
   // css
-  css: ['~/assets/sass/vendor.scss', '~/assets/sass/app.scss'],
-  
+  css: ["~/assets/css/bootstrap.min.css", '~/assets/sass/vendor.scss', '~/assets/sass/app.scss',],
+
   // plugins
   plugins: ['~/plugins/navbar.ts'],
-  
+
   // build
   build: {
-    transpile: ['@headlessui/vue','gsap']
+    transpile: ['@headlessui/vue', 'gsap']
   },
 
   // modules
@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     'nuxt-windicss',
     'nuxt-swiper'
   ],
-  
+
   // experimental features
   experimental: {
     reactivityTransform: false,
@@ -94,13 +94,13 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
-  
+
   intlify: {
     localeDir: 'locales',
     vueI18n: {
       locale: 'hk',
       fallbackLocale: 'hk',
-      availableLocales: ['hk','zh'],
+      availableLocales: ['hk', 'zh'],
     },
   },
 
@@ -171,7 +171,7 @@ export default defineNuxtConfig({
         prependPath: true,
         changeOrigin: true,
       },
-      "/dingtalk":{
+      "/dingtalk": {
         target: 'https://oapi.dingtalk.com',
         prependPath: true,
         changeOrigin: true,

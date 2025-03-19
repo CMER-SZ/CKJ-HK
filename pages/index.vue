@@ -1239,7 +1239,10 @@ const hideDom = ref(false)
             <div>
               <div>
                 <div>
-                  <img src="https://static.cmereye.com/imgs/2024/07/3a0cf1b5a28d2d34.png" alt="星級客戶" />
+                  <img
+                    src="https://static.cmereye.com/imgs/2024/07/3a0cf1b5a28d2d34.png"
+                    alt="星級客戶"
+                  />
                 </div>
                 <div>
                   <div class="item-date">17/4/24</div>
@@ -1283,7 +1286,7 @@ const hideDom = ref(false)
               </div>
             </div>
           </div>
-          <div class="in-cen"  v-if="hideDom">
+          <div class="in-cen" v-if="hideDom">
             <div
               class="in-cen-box"
               v-for="(caseSharingItem, caseSharingIndex) in caseSharingLists"
@@ -1919,7 +1922,7 @@ svg:hover path {
         overflow: hidden;
         text-overflow: ellipsis;
         padding: 0 20px;
-        font-family:  'Noto Sans HK', Serif;
+        font-family: 'Noto Sans HK', Serif;
       }
       p {
         color: var(--Grey-Mid, #666);
@@ -3027,7 +3030,7 @@ svg:hover path {
             flex-direction: column;
             & > span:nth-child(1) {
               color: var(--Theme-Color, #fc1682);
-          font-family: 'FakePearl-Regular';
+              font-family: 'FakePearl-Regular';
               font-size: 5.12vw;
               font-style: normal;
               font-weight: 600;
@@ -3074,7 +3077,7 @@ svg:hover path {
   }
   .item-title {
     color: var(--Blue-Deep, #00aeff);
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
