@@ -5,13 +5,12 @@ import { useAppState } from '~/stores/appState'
 const route = useRoute()
 const router = useRouter()
 const { t } = useLang()
-// import { smallPhoneNum } from '~/assets/js/common'
 const appState = useAppState()
 
 const props = defineProps({
   service: {
     type: String,
-    default: '洗牙', //種植牙
+    default: '洗牙',
   },
   area: {
     type: String,
@@ -31,19 +30,13 @@ const options = ref([
     value: '南山區',
     label: '南山區',
   },
-  // {
-  //   value: '龍華區',
-  //   label: '龍華區',
-  // },
 ])
 
 let form: any = reactive({
   name: '',
-  // gender: '',
   dayOne: '',
   phone: '',
   area: '羅湖區',
-  // email: '',
   service: '',
   explain: '',
   careVoucher: route.path == '/health-care-voucher' ? true : false,
@@ -54,7 +47,6 @@ const reForm = () => {
   form.value = {
     name: '',
     dayOne: '',
-    // gender: '',
     area: '',
     phone: '',
     service: '',
@@ -104,8 +96,6 @@ const shortcuts = [
   },
 ]
 
-// const timestamp = Date.parse(new Date().toString())
-
 const phoneNumLength = (rule: any, phoneNum: any, callback: any) => {
   if (!phoneNum) {
     return callback(new Error('電話號碼不能爲空'))
@@ -148,7 +138,6 @@ var valiemail = (rule: any, value: any, callback: any) => {
   }
   setTimeout(() => {
     if (mailReg.test(value.trim())) {
-      // this.$refs.ruleForm.validateField('checkemail');
       callback()
     } else {
       callback(new Error('請填寫正確的電郵地址'))
@@ -161,7 +150,6 @@ const rules = reactive<FormRules>({
   name: [{ required: true, message: '請填寫您的姓名', trigger: 'change' }],
   dayOne: [{ required: true, message: '請選擇預約日期', trigger: 'change' }],
   area: [{ required: true, message: '請選擇區域', trigger: 'change' }],
-  // gender: [{ required: true, message: '請選擇稱呼', trigger: 'change' }],
   phone: [
     {
       required: true,
@@ -169,7 +157,6 @@ const rules = reactive<FormRules>({
       trigger: 'blur',
     },
   ],
-  // email: [{ type: 'email', required: true, validator: valiemail, trigger: 'blur' }],
   service: [
     {
       required: true,
@@ -485,31 +472,8 @@ let privacyPolicy = ref(true)
               @handleOpen="handleOpen"
             />
           </el-form-item>
-          <!-- </el-col> -->
-          <!-- <el-col :span="2"></el-col> -->
-          <!-- <el-col :span="9">
-              <el-form-item
-                :label="`${$t('contactUs.contact_form.formItem.gender')}`"
-                prop="gender"
-              >
-                <el-select
-                  v-model="form.gender"
-                  :placeholder="'請選擇'"
-                >
-                  <el-option label="先生" value="先生" />
-                  <el-option label="女士" value="女士" />
-                  <el-option label="小姐" value="小姐" />
-                </el-select>
-              </el-form-item>
-            </el-col> -->
-          <!-- </div> -->
-
-          <!-- <el-form-item :label="`${$t('contactUs.contact_form.formItem.email_address')}：`" prop="email">
-            <el-input v-model="form.email" />
-          </el-form-item> -->
           <el-form-item :label="`診症服務`" prop="service" label-width="100%">
             <span class="service_explain"></span>
-            <!-- <FormCheckboxGroup /> -->
             <div class="checkboxGroup">
               <el-checkbox-group v-model="checkboxGroup1" @change="checkGroup">
                 <el-checkbox-button
@@ -1571,9 +1535,6 @@ li {
         font-size: 16px;
       }
       .formBtn {
-        // width: 137px;
-        // height: 40px;
-        // font-size: 16px;
         margin: 12px auto 0;
       }
       .privacyPolicy {

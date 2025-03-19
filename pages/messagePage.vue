@@ -38,6 +38,7 @@ interface detail {
   careVoucher: boolean
   explain: string
   dayOne: string
+  discountCoupon: boolean
 }
 
 const messageDetail = ref({
@@ -48,6 +49,7 @@ const messageDetail = ref({
   explain: '',
   careVoucher: false,
   dayOne: '2024-XX-XX',
+  discountCoupon: false,
 })
 
 onMounted(() => {
@@ -94,6 +96,7 @@ onMounted(() => {
               <div>WhatsApp電話：</div>
               <div>備註：</div>
               <div>使用長者醫療券：</div>
+              <div>領取2000元種植牙現金券：</div>
             </div>
             <div>
               <div>{{ messageDetail.name }}</div>
@@ -103,6 +106,7 @@ onMounted(() => {
               <div>{{ messageDetail.phone }}</div>
               <div>{{ messageDetail.explain }}</div>
               <div>{{ messageDetail.careVoucher ? '是' : '否' }}</div>
+              <div>{{ messageDetail.discountCoupon ? '是' : '否' }}</div>
             </div>
           </div>
           <div class="contact">
