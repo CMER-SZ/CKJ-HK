@@ -455,25 +455,6 @@ const hideDiv = () => {
       >
         <PageAnimBtnTypeTwo :str="'獲取免費諮詢'" />
       </div>
-      <!-- <div
-        v-if="
-          [
-            'implant',
-            'rootCanal-test',
-            'scaling-and-polishing-test',
-            'index-test',
-            'periodontal-test',
-            'orthodontics-test',
-            'invisalign-test',
-            'veneers-test',
-            'action-message',
-            'course-new',
-            'health-care-voucher',
-            'coverage',
-          ].includes(headerConfig.pageName)
-        "
-        class="waterBg-implant"
-      ></div> -->
       <div
         v-if="
           [
@@ -748,8 +729,6 @@ const hideDiv = () => {
           </div>
         </div>
       </div>
-      <!-- 水波纹盒子 -->
-      <!-- <div class="waterBg" :class="headerConfig.pageName"></div> -->
     </div>
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
       <div :class="['dialogBox-in', { 'show-in': _bool }]" @click.stop="">
@@ -786,24 +765,7 @@ const hideDiv = () => {
     opacity: 1;
   }
 }
-.a-header-content-in {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: var(--White, #fff);
-  text-align: center;
-  font-family: 'Noto Sans Hk';
-  font-size: 3.84615vw;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 0.3846vw;
-  background: #00a752;
-  box-sizing: border-box;
-  padding: 2.05vw 0;
-  z-index: 40;
-}
+
 .dialogBox {
   position: fixed;
   top: 0;
@@ -1065,9 +1027,6 @@ const hideDiv = () => {
     left: 0;
     z-index: 40;
     width: 100%;
-  }
-  .waterBg-implant {
-    display: none;
   }
   .explain_box_mobile {
     font-style: normal;
@@ -1440,20 +1399,7 @@ const hideDiv = () => {
       display: none;
     }
   }
-  .waterBg {
-    position: relative;
-    z-index: 35;
-    &.implant,
-    &.rootCanal-test,
-    &.periodontal-test,
-    &.orthodontics-test,
-    &.invisalign-test,
-    &.veneers-test,
-    &.health-care-voucher,
-    &.scaling-and-polishing-test {
-      bottom: 100px;
-    }
-  }
+
   .pcMenuBox {
     &.implant,
     &.rootCanal-test,
@@ -1603,32 +1549,7 @@ const hideDiv = () => {
     letter-spacing: 1.4px;
   }
 }
-.waterBg::after {
-  content: '';
-  background-image: url(@/assets/images/back_wave01.png);
-  background-repeat: repeat-x;
-  background-position: center 20px;
-  height: 162px;
-  width: 100%;
-  position: absolute;
-  z-index: 35;
-  left: 0px;
-  bottom: 0px;
-  animation-name: wave1;
-  animation-duration: 20s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: wave1;
-  -webkit-animation-duration: 20s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-  height: 178px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  z-index: 35;
-}
+
 @keyframes menuIconAnim {
   30% {
     background-position-y: 3px;
@@ -1662,26 +1583,7 @@ const hideDiv = () => {
     background-position: 1080px 20px;
   }
 }
-.waterBg::before {
-  content: '';
-  background-image: url(@/assets/images/back_wave03.png);
-  background-repeat: repeat-x;
-  background-position: center bottom;
-  height: 162px;
-  width: 100%;
-  position: absolute;
-  z-index: 35;
-  left: 0px;
-  bottom: 0px;
-  animation-name: wave2;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: wave2;
-  -webkit-animation-duration: 10s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-}
+
 @keyframes wave2 {
   0% {
     background-position: 0px bottom;
@@ -1743,18 +1645,7 @@ const hideDiv = () => {
     &-bgImgBB {
       width: 100%;
     }
-    .waterBg {
-      &.implant,
-      &.rootCanal-test,
-      &.periodontal-test,
-      &.orthodontics-test,
-      &.invisalign-test,
-      &.veneers-test,
-      &.health-care-voucher,
-      &.scaling-and-polishing-test {
-        bottom: 60px;
-      }
-    }
+
     .pcMenuBox {
       &.health-care-voucher {
         margin-top: 60px;
@@ -1768,10 +1659,6 @@ const hideDiv = () => {
         color: #666666;
       }
     }
-  }
-  .waterBg::after,
-  .waterBg::before {
-    height: 160px;
   }
 }
 @media (min-width: 1001px) and (max-width: 1452px) {
@@ -1787,18 +1674,6 @@ const hideDiv = () => {
       width: calc(80% + 60px);
       .logo {
         width: clamp(180px, 137.5vw, 200px);
-      }
-    }
-    .waterBg {
-      &.implant,
-      &.rootCanal-test,
-      &.periodontal-test,
-      &.orthodontics-test,
-      &.invisalign-test,
-      &.veneers-test,
-      &.health-care-voucher,
-      &.scaling-and-polishing-test {
-        bottom: 65px;
       }
     }
     &-text-implant {
@@ -2039,21 +1914,7 @@ const hideDiv = () => {
         }
       }
     }
-    .waterBg {
-      &.implant,
-      &.rootCanal-test,
-      &.periodontal-test,
-      &.orthodontics-test,
-      &.invisalign-test,
-      &.veneers-test,
-      &.health-care-voucher,
-      &.scaling-and-polishing-test {
-        bottom: 4vw;
-      }
-      &.course-new {
-        bottom: 30px;
-      }
-    }
+
     &-btn-implant {
       bottom: calc(100px + 5vw);
     }
@@ -2121,6 +1982,24 @@ const hideDiv = () => {
 }
 
 @media screen and (max-width: 768px) {
+  .a-header-content-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: var(--White, #fff);
+    text-align: center;
+    font-family: 'Noto Sans Hk';
+    font-size: 3.84615vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.3846vw;
+    background: #00a752;
+    box-sizing: border-box;
+    padding: 2.05vw 0;
+    z-index: 40;
+  }
   .header-content {
     &-bgImg {
       position: relative;
@@ -2242,50 +2121,7 @@ const hideDiv = () => {
         display: none;
       }
     }
-    .waterBg-implant {
-      display: block;
-      &::before {
-        content: '';
-        background-image: url(@/assets/images/back_wave03.png);
-        background-repeat: repeat-x;
-        background-position: center bottom;
-        height: 43.2vw;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        left: 0px;
-        bottom: -8vw;
-        animation-name: wave2;
-        animation-duration: 10s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: wave2;
-        -webkit-animation-duration: 10s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-      }
-      &::after {
-        content: '';
-        background-image: url(@/assets/images/back_wave01.png);
-        background-repeat: repeat-x;
-        background-position: center 20px;
-        height: 45.33vw;
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        left: 0px;
-        bottom: -8vw;
-        animation-name: wave1;
-        animation-duration: 20s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        -webkit-animation-name: wave1;
-        -webkit-animation-duration: 20s;
-        -webkit-animation-timing-function: linear;
-        -webkit-animation-iteration-count: infinite;
-        filter: drop-shadow(0px -8px 4px rgba(77, 77, 77, 0.15));
-      }
-    }
+
     .explain_box_mobile {
       font-style: normal;
       font-weight: 500;
@@ -2375,22 +2211,7 @@ const hideDiv = () => {
       right: 8vw;
       bottom: 16vw;
     }
-    .waterBg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      &.implant,
-      &.rootCanal-test,
-      &.periodontal-test,
-      &.orthodontics-test,
-      &.invisalign-test,
-      &.veneers-test,
-      &.health-care-voucher,
-      &.scaling-and-polishing-test {
-        bottom: auto;
-      }
-    }
+
     .pcMenuBox {
       &.implant,
       &.rootCanal-test,
@@ -2415,15 +2236,6 @@ const hideDiv = () => {
       }
     }
   }
-  .waterBg::after {
-    transform: rotate(180deg);
-    top: -13.3vw;
-  }
-  .waterBg::before {
-    transform: rotate(180deg);
-    top: -16vw;
-  }
-
   .menuBox {
     position: fixed;
     top: -100vh;
