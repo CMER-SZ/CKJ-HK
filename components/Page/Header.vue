@@ -1981,7 +1981,7 @@ const hideDiv = () => {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .a-header-content-in {
     position: fixed;
     top: 0;
