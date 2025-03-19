@@ -20,7 +20,7 @@ const activeNames = ref(0)
         {{ $t(problemData.title) }}
       </div>
     </div>
-    <div class="problem-in pageCon">
+    <div class="problem-in pageCon ckj-contrain">
       <el-collapse v-model="activeNames" accordion>
         <el-collapse-item
           v-for="(problemItem, problemIndex) in problemData.lists"
@@ -36,7 +36,14 @@ const activeNames = ref(0)
               </div>
             </div>
           </template>
-          <div class="problem-in-context">
+          <div
+            class="problem-in-context"
+            style="
+              box-shadow: 0 2px 4px 2px #4d4d4d33;
+              border-radius: 10px;
+              overflow: hidden;
+            "
+          >
             <span
               :style="{
                 display:
@@ -146,7 +153,7 @@ const activeNames = ref(0)
       margin-top: 7px;
       color: var(--Grey-Deep, #4d4d4d);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 22px;
       font-style: normal;
       font-weight: 600;
@@ -229,6 +236,9 @@ const activeNames = ref(0)
   line-height: 160%;
   height: auto;
   min-height: 45px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0 2px 4px 2px #4d4d4d33;
 }
 :deep(.el-collapse-item__header.is-active) {
   background: var(--indexColor1);
@@ -280,6 +290,11 @@ const activeNames = ref(0)
     padding: 0.625vw 0;
     min-height: 2.3438vw;
   }
+}
+
+.problem-in-context {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 2px #4d4d4d33;
 }
 @media screen and (max-width: 768px) {
   .risk_group {

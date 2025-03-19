@@ -559,12 +559,13 @@ const problemData = {
           </div>
         </div>
       </section>
-      <div
+
+      <div class="affiliation-bg">
+              <div
         class="affiliation-title d-flex flex-row mb-3 align-items-end subheading"
       >
         <span>香港上市醫療公司</span><span>管理</span>
       </div>
-      <div class="affiliation-bg">
         <section class="container affiliation">
           <div class="affiliation-context">
             <div>

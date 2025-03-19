@@ -2,7 +2,7 @@
   <section class="BranchAddress" id="BranchAddress">
     <div class="subheading px-20"><span>分店</span> <span>地址</span></div>
     <img
-      class="BranchAddress-addressImg d-block mx-auto"
+      class="BranchAddress-addressImg ckj-contrain d-block mx-auto"
       src="https://statichk.cmermedical.com/newCKJ/index/BranchAddress/index-address-pc.webp"
       alt=""
     />
@@ -2167,7 +2167,7 @@
   margin-top: 30px;
   &-addressImg {
     width: 100%;
-    max-width: 672px;
+    // max-width: 672px;
     margin-top: 10px;
     // margin: 10px 0;
   }

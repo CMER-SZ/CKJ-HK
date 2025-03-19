@@ -5,8 +5,8 @@ import { ITheme } from './utils/theme'
 import router from './plugins/router'
 // import { zh_init } from '~/assets/js/uselang'
 
-import { useRoute } from 'vue-router';
-import { useHead } from '#imports';
+import { useRoute } from 'vue-router'
+import { useHead } from '#imports'
 
 AppSetup()
 const theme = useState<ITheme>('theme.current')
@@ -19,7 +19,8 @@ useHead({
   meta: [
     {
       name: 'viewport',
-      content: 'width=device-width, initial-scale=1, maximum-scale=1',
+      content:
+        'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
     },
     {
       hid: 'description',
@@ -104,11 +105,10 @@ onMounted(() => {
 watchEffect(() => {
   if (route.name === 'error') {
     useHead({
-      title: 'CKJ愛康健齒科連鎖 | 香港官方網站 | 長者醫療券大灣區試點'
-    });
+      title: 'CKJ愛康健齒科連鎖 | 香港官方網站 | 長者醫療券大灣區試點',
+    })
   }
-});
-
+})
 </script>
 
 <template>
