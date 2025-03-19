@@ -487,7 +487,7 @@ onMounted(() => {
       </div>
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />

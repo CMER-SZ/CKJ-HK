@@ -14,20 +14,24 @@ export default defineNuxtConfig({
   },
   hooks: {
     'pages:extend'(pages) {
-      let _pages = JSON.parse(JSON.stringify(pages.filter(item => {
-        let _str = ['404', 'test', '/:id', 'server-']
-        if (_str.some(str => item.name?.indexOf(str) !== -1)) {
-          return false
-        } else {
-          return true
-        }
-      })))
+      let _pages = JSON.parse(
+        JSON.stringify(
+          pages.filter((item) => {
+            let _str = ['404', 'test', '/:id', 'server-']
+            if (_str.some((str) => item.name?.indexOf(str) !== -1)) {
+              return false
+            } else {
+              return true
+            }
+          })
+        )
+      )
       _pages.forEach((item) => {
         pages.push({
           name: `hk-${item.name}`,
           path: `/hk${item.path}`,
           file: item.file,
-          children: item.children
+          children: item.children,
         })
       })
       _pages.forEach((item) => {
@@ -35,20 +39,25 @@ export default defineNuxtConfig({
           name: `cn-${item.name}`,
           path: `/cn${item.path}`,
           file: item.file,
-          children: item.children
+          children: item.children,
         })
       })
-    }
+    },
   },
   // css
-  css: ["~/assets/css/bootstrap.min.css", '~/assets/sass/vendor.scss', '~/assets/sass/app.scss',],
+  css: [
+    '~/assets/css/bootstrap.min.css',
+    '~/assets/css/aoyun.css',
+    '~/assets/sass/vendor.scss',
+    '~/assets/sass/app.scss',
+  ],
 
   // plugins
   plugins: ['~/plugins/navbar.ts'],
 
   // build
   build: {
-    transpile: ['@headlessui/vue', 'gsap']
+    transpile: ['@headlessui/vue', 'gsap'],
   },
 
   // modules
@@ -64,7 +73,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     // 'nuxt-simple-sitemap',
     'nuxt-windicss',
-    'nuxt-swiper'
+    'nuxt-swiper',
   ],
 
   // experimental features
@@ -73,7 +82,8 @@ export default defineNuxtConfig({
   },
 
   // auto import components
-  components: true,
+  // components: true,
+  components: ['~/components', '~/components-v2'],
 
   // vite plugins
   vite: {
@@ -91,6 +101,15 @@ export default defineNuxtConfig({
 
   // app config
   app: {
+    head: {
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
+          type: 'text/javascript',
+          defer: true,
+        },
+      ],
+    },
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
@@ -146,17 +165,15 @@ export default defineNuxtConfig({
         devtools: true,
       },
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://ckjhk.com',
-    }
+    },
   },
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: [
-        '/'
-      ]
+      routes: ['/'],
     },
     devProxy: {
-      "/api": {
+      '/api': {
         target: 'https://admin.ckjhk.com/',
         prependPath: true,
         changeOrigin: true,
@@ -166,16 +183,16 @@ export default defineNuxtConfig({
       //   prependPath: true,
       //   changeOrigin: true,
       // },
-      "/sendmail": {
+      '/sendmail': {
         target: 'https://api.mailersend.com',
         prependPath: true,
         changeOrigin: true,
       },
-      "/dingtalk": {
+      '/dingtalk': {
         target: 'https://oapi.dingtalk.com',
         prependPath: true,
         changeOrigin: true,
-      }
-    }
+      },
+    },
   },
 })

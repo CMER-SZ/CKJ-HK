@@ -125,7 +125,7 @@ onMounted(() => {
           <!-- <nuxt-link :to="`/news/news-tooth-wiki/102`">测试链接</nuxt-link> -->
         </div>
       </div>
-      <NewAddress />
+      <BranchAddress />
     </div>
     <PageFooter />
     <PageNewNavbarSide v-if="windowWidth > 768" />

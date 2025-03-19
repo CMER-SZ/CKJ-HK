@@ -45,7 +45,7 @@ onMounted(() => {
       </div>
       <brandConcept />
       <AboutUs />
-      <NewAddress />
+      <BranchAddress />
     </div>
     <PageFooter />
     <PageNewNavbarSide v-if="windowWidth > 768" />

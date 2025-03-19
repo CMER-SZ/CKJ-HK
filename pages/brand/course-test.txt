@@ -360,7 +360,7 @@ onMounted(()=>{
           </div>
         </div>
       </div>
-      <NewAddress />
+      <BranchAddress />
     </div>
     <PageFooter />
     <Page

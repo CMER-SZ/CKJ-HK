@@ -478,7 +478,7 @@ onMounted(() => {
       </div>
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <div class="YaNavBox shownav" v-if="shownav_2">

@@ -312,7 +312,7 @@ const linkSource = (str) => {
         </div>
         <div class="lists" v-else>服務異常</div>
       </div>
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />

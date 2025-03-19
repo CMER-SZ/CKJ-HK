@@ -197,14 +197,14 @@ const problemData = {
         <span :title="'聯絡我們'">聯絡我們</span>
       </div>
       <div class="contact_map">
-        <img
+        <!-- <img
           src="https://static.ckjhk.com/ckj-image/2025022416401001.webp"
           alt=""
-        />
+        /> -->
       </div>
       <div class="contactUs_one">
         <a id="contactUs" class="hash_link"></a>
-        <NewAddress />
+        <BranchAddress />
       </div>
       <div class="complain">
         <a id="appeal" class="hash_link"></a>

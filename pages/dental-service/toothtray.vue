@@ -808,7 +808,7 @@ onMounted(() => {
       </div>
       <ServiceProblem :problemData="problemData" class="serviceProblem" />
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />

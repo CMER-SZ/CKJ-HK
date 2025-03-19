@@ -383,7 +383,7 @@ onMounted(() => {
           </span>
         </div>
       </div>
-      <NewAddress />
+      <BranchAddress />
      <ContactForm-new2 />
     </div>
     <PageFooter />
