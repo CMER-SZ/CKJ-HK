@@ -711,6 +711,8 @@ const getWindowWidth = () => {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 768px) {
 .a-header-content-in {
   position: fixed;
   top: 0;
@@ -729,6 +731,8 @@ const getWindowWidth = () => {
   padding: 2.05vw 0;
   z-index: 40;
 }
+}
+
 .dialogBox {
   position: fixed;
   top: 0;
