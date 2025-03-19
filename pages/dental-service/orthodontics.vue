@@ -884,7 +884,7 @@ const careData = {
       </div>
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 class="contactForm" />
     </div>
     <PageFooter />

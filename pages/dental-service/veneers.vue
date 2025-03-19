@@ -548,7 +548,7 @@ const caseLists = [
       <!-- 问题 -->
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />

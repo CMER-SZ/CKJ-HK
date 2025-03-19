@@ -2247,7 +2247,7 @@ const imgSrcHandel = (i: any) => {
       </div>
 
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <div class="contact-box">
         <ContactForm-new2 />
       </div>

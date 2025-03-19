@@ -428,7 +428,7 @@ const handleClick = (event, _id) => {
         </div>
         <div class="lists" v-else></div>
       </div>
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />

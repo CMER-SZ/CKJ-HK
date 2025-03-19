@@ -2,5 +2,6 @@
   "editor.tabSize": 2,
   "i18n-ally.localesPaths": [
     "locales"
-  ]
+  ],
+  "nuxt.isNuxtApp": false
 }

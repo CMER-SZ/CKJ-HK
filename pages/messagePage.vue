@@ -144,7 +144,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <NewAddress />
+      <BranchAddress />
     </div>
     <PageFooter />
     <PageNewNavbarSide v-if="windowWidth > 768" />

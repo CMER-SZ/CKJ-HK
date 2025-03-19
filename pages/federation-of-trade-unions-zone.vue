@@ -299,7 +299,7 @@ onMounted(() => {
           <PageAnimBtnTypeTwo link="https://bit.ly/FTU洗牙" str="立即預約會員洗牙" />
         </div> -->
       </div>
-      <NewAddress />
+      <BranchAddress />
      <ContactForm-new2 />
     </div>
     <PageFooter />

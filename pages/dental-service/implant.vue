@@ -2348,7 +2348,7 @@ const checkGroupPhoto = () => {
         <ContactForm-new2 />
       </div> -->
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />

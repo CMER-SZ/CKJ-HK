@@ -780,7 +780,7 @@ onMounted(() => {
         </div>
       </div>
       <serviceCard />
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />

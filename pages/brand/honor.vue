@@ -281,7 +281,7 @@ onMounted(() => {
           </a>
         </div>
       </div>
-      <NewAddress />
+      <BranchAddress />
       <ContactForm-new2 />
     </div>
     <PageFooter />
