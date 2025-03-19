@@ -103,7 +103,7 @@ const implantStepList = [
   },
   {
     id: 2,
-    title: '註射麻醉藥',
+    title: '注射麻醉藥',
     img: 'https://statichk.cmermedical.com/ckj/image/1fa0c1bed6c1.avif',
   },
   {
@@ -179,6 +179,45 @@ const brandList = [
     kzh: 'https://static.ckjhk.com/ckj-image/cef0a6994955.svg',
   },
 ]
+
+// 常見問題
+const problemData = {
+  title: 'pages.dental-service.implant.problem.title',
+  lists: [
+    {
+      Q: 'pages.dental-service.implant.problem.lists[0].Q',
+      A: 'pages.dental-service.implant.problem.lists[0].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[1].Q',
+      A: 'pages.dental-service.implant.problem.lists[1].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[2].Q',
+      A: 'pages.dental-service.implant.problem.lists[2].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[3].Q',
+      A: 'pages.dental-service.implant.problem.lists[3].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[4].Q',
+      A: 'pages.dental-service.implant.problem.lists[4].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[5].Q',
+      A: 'pages.dental-service.implant.problem.lists[5].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[6].Q',
+      A: 'pages.dental-service.implant.problem.lists[6].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[7].Q',
+      A: 'pages.dental-service.implant.problem.lists[7].A',
+    },
+  ],
+}
 </script>
 
 <template>
@@ -389,40 +428,32 @@ const brandList = [
           <span>植體品牌</span><span>系列</span>
         </div>
         <div class="brand-context" id="brand-context">
-          <div class="brand-item-list" v-for="(item, index) in brandList" :key="index">
+          <div
+            class="brand-item-list"
+            v-for="(item, index) in brandList"
+            :key="index"
+          >
             <div>
-              <img
-                :src="item.img"
-                :alt="item.title"
-              />
+              <img :src="item.img" :alt="item.title" />
             </div>
             <div>{{ item.title }}</div>
             <div>
               <div>
                 <div>性價比</div>
                 <div>
-                  <img
-                    :src="item.xjb"
-                    alt="性價比"
-                  />
+                  <img :src="item.xjb" alt="性價比" />
                 </div>
               </div>
               <div>
                 <div>耐用度</div>
                 <div>
-                  <img
-                    :src="item.nyd"
-                    alt="耐用度"
-                  />
+                  <img :src="item.nyd" alt="耐用度" />
                 </div>
               </div>
               <div>
                 <div>客製化</div>
                 <div>
-                  <img
-                    :src="item.kzh"
-                    alt="客製化"
-                  />
+                  <img :src="item.kzh" alt="客製化" />
                 </div>
               </div>
             </div>
@@ -703,7 +734,10 @@ const brandList = [
         </section>
       </div>
     </container>
-
+    <ServiceProblem :problem-data="problemData" />
+    <!-- 聯絡我們 -->
+    <NewAddress />
+    <ContactForm-new2 />
     <PageFooter />
     <!-- <PageNavbar
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
