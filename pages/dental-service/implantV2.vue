@@ -1215,12 +1215,12 @@ const problemData = {
     background: url('https://static.ckjhk.com/ckj-image/2025031715453001.png')
       no-repeat;
     background-size: cover;
-    width: 30.972vw;
-    height: 21.85vw;
     background-position: center;
     margin: 0 auto;
     justify-content: center;
     background-position-x: -2vw;
+    height: 35.85vw;
+    width: 50vw;
   }
 
   .brand-list {
