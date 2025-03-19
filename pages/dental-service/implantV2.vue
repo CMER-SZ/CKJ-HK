@@ -749,6 +749,9 @@ const problemData = {
 
 <style lang="scss" scoped>
 @media screen and (min-width: 922px) {
+  :deep(.problem) {
+    margin-top: 45px;
+  }
   .banner-in-box {
     display: block;
     position: absolute;
@@ -1066,15 +1069,15 @@ const problemData = {
   }
 
   .implant-step {
-    margin-top: 4.1665vw;
-    margin-bottom: 5.208vw;
+    margin-top: 45px;
+    margin-bottom: 45px;
 
     .implant-step-context {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.823vw 1.5625vw;
       box-sizing: border-box;
-      padding: 1.823vw 0;
+      padding: 30px 0;
     }
 
     .implant-step-item {
@@ -1212,15 +1215,16 @@ const problemData = {
     background: url('https://static.ckjhk.com/ckj-image/2025031715453001.png')
       no-repeat;
     background-size: cover;
-    width: 767.463px;
-    height: 722.937px;
+    width: 30.972vw;
+    height: 21.85vw;
     background-position: center;
     margin: 0 auto;
     justify-content: center;
+    background-position-x: -2vw;
   }
 
   .brand-list {
-    margin: 60px auto 45px;
+    margin: 45px auto;
   }
 
   .brand-context {
@@ -1471,7 +1475,7 @@ const problemData = {
   }
 
   .affiliation-title {
-    margin-top: 80px !important;
+    margin-top: 45px !important;
   }
 
   .affiliation-bg {
@@ -1481,7 +1485,7 @@ const problemData = {
       var(--Pink-Pale, #ffe9ec) 113.4%
     );
 
-    margin: 20px auto 75px;
+    margin: 45px auto;
 
     .affiliation {
       max-width: 960px;
@@ -1545,20 +1549,23 @@ const problemData = {
           }
         }
 
-        & > ul > li {
-          display: flex;
-          align-items: center;
-          gap: 0.26vw 0.44vw;
-          color: var(--Grey-Dark, #333);
+        & > ul {
+          padding-left: 0;
+          li {
+            display: flex;
+            align-items: center;
+            gap: 0.26vw 0.44vw;
+            color: var(--Grey-Dark, #333);
 
-          /* 桌面版/PC-頂部目錄 */
-          font-family: 'Noto Sans TC';
-          font-size: 1.046vw;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 160%;
-          /* 32px */
-          letter-spacing: 2px;
+            /* 桌面版/PC-頂部目錄 */
+            font-family: 'Noto Sans TC';
+            font-size: 1.046vw;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%;
+            /* 32px */
+            letter-spacing: 2px;
+          }
         }
       }
     }
