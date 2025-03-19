@@ -526,12 +526,14 @@ const problemData = {
             <img
               src="https://static.ckjhk.com/ckj-image/2025031717580401.png"
               alt=""
+              style="height: 100%;"
             />
           </div>
           <div>
             <img
               src="https://static.ckjhk.com/ckj-image/2025031717580402.png"
               alt=""
+                style="height: 100%;"
             />
           </div>
           <div>傷口大小</div>
@@ -1303,9 +1305,9 @@ const problemData = {
       }
     }
   }
-.extra-charge{
-  margin: 45px auto;
-}
+  .extra-charge {
+    margin: 45px auto;
+  }
   .extra-charge-context {
     border-radius: 5px;
     margin: 20px auto 0;
@@ -1987,7 +1989,8 @@ const problemData = {
         & > div:nth-child(2) {
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
-          font-size: 4.265vw;
+          font-size: 16px;
+          white-space: nowrap;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
@@ -2170,7 +2173,7 @@ const problemData = {
         display: flex;
         align-items: center;
         justify-content: center;
-        border-top: 1px solid var(--Skin, #fff1f0);
+        // border-top: 1px solid var(--Skin, #fff1f0);
         border-bottom: 1px solid var(--Skin, #fff1f0);
         color: var(--Grey-Deep, #4d4d4d);
         font-family: 'Noto Sans HK';
@@ -2328,10 +2331,20 @@ const problemData = {
     }
   }
 
+  .seven-advantages,
+  .brand-list,
+  .extra-charge,
+  .implant-git,
+  .technical-category {
+    .subheading {
+      margin-left: 0;
+    }
+  }
+
   .subheading {
-    box-sizing: border-box;
-    padding-left: 12px;
-    border-left: 2px solid var(--Pink-Pale, #ffe9ec);
+    // box-sizing: border-box;
+    // padding-left: 12px;
+    // border-left: 2px solid var(--Pink-Pale, #ffe9ec);
 
     span {
       color: var(--Grey-Dark, #333);
@@ -2471,7 +2484,7 @@ const problemData = {
     }
     .content-subscribe {
       left: 0;
-      top: -60%;
+      top: -55%;
       right: auto;
       bottom: auto;
       position: absolute;
@@ -2486,6 +2499,9 @@ const problemData = {
       line-height: 120%; /* 19.2px */
       letter-spacing: 1.6px;
       gap: 5px 0;
+      display: flex;
+      flex-direction: column;
+
       padding: 4px 10px;
       & > span:nth-child(2) {
         color: var(--White, #fff);
@@ -2495,6 +2511,10 @@ const problemData = {
         font-weight: 700;
         line-height: normal;
         letter-spacing: 1.8px;
+        background: var(--New-Theme-Color, #d2337d);
+        border-radius: 28.846px;
+        box-shadow: 0 0 11.538px #00000040;
+        padding: 5px 10px;
         & > i {
           font-size: 16px;
           line-height: 24px;

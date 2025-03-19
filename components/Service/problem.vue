@@ -266,6 +266,7 @@ const activeNames = ref(0)
 }
 :deep(.el-collapse-item__content) {
   overflow: none;
+  padding-bottom: 5px;
 }
 :deep(.problem-in-context) {
   border-radius: 10px;
@@ -370,7 +371,7 @@ const activeNames = ref(0)
           line-height: normal;
         }
         & > span:last-child {
-          padding: 20px 17px 10px 14px;
+          padding: 20px 17px 20px 14px;
           font-size: 16px;
         }
       }
