@@ -1164,12 +1164,9 @@ const problemData = {
     padding-bottom: 45px;
   }
   .seven-advantages-content {
-    display: flex;
-    flex-direction: column;
-
+    border: 0.2px solid red;
     & > div {
-      width: 100%;
-
+      width: 566.434px;
       & > div {
         display: flex;
         align-items: center;
@@ -1221,10 +1218,10 @@ const problemData = {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    max-width: 1320px;
     margin: 0 auto;
     position: relative;
+    align-items: center;
+    justify-content: center;
     &::after {
       content: '';
       width: 100%;
@@ -1232,11 +1229,13 @@ const problemData = {
       display: block;
       position: absolute;
       top: 0;
-      background: url('https://static.ckjhk.com/ckj-image/2025032009523601.webp')
+      background: url('https://static.ckjhk.com/ckj-image/2025032010461401.webp')
         no-repeat;
       background-size: cover;
       background-position: center;
-      opacity: 0.7;
+      width: 1320px;
+      height: 450px;
+      z-index: -1;
     }
   }
 
