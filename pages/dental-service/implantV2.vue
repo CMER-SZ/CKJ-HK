@@ -293,7 +293,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="ckj-container seven-advantages">
+      <section class="container seven-advantages">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>愛康健種植7大</span><span>優勢</span>
         </div>
@@ -917,11 +917,6 @@ const problemData = {
         }
       }
     }
-  }
-
-  .ckj-container  {
-    max-width: 960px !important;
-    margin: 0 auto;
   }
 
   .banner {
