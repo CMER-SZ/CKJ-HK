@@ -275,7 +275,7 @@ const activeNames = ref(0)
     gap: 0 20px;
     box-sizing: border-box;
     padding: 0 28px;
-    height: 50px;
+    min-height: 50px;
     & > div:nth-of-type(2) {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
