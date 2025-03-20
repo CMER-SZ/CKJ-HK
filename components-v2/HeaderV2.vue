@@ -1,7 +1,12 @@
 <script lang="ts" setup>
+import { zh_tran, zh_getLang, getCookie } from '~/assets/js/uselang'
 import { useAppState } from '~/stores/appState'
-import { toWhatsApp } from '~/assets/js/common'
+import { toWhatsApp, smallPhoneNum } from '~/assets/js/common'
+const locale = useState<string>('locale.setting')
+
+const route = useRoute()
 const appState = useAppState()
+
 appState.setDentistryService('scaling-and-polishing-test')
 useHead({
   title: '爱康健',
@@ -20,8 +25,54 @@ useHead({
     },
   ],
 })
+const router = useRouter()
+const glangs = (_type) => {
+  let _a = [
+    {
+      lable: 'hk',
+      value: 't',
+    },
+    {
+      lable: 'cn',
+      value: 's',
+    },
+  ]
+  let _b = _a.find((item) => item.value === _type)
+  let _str = route.path.slice(0, 3)
+  let _arr = [
+    '404',
+    'test',
+    '/news-tooth-wiki',
+    '/news-information',
+    '/article',
+  ]
+  if (_arr.some((str) => route.path?.indexOf(str) !== -1)) {
+    changlangsfun(_type)
+  } else {
+    if (_str === '/cn' || _str === '/hk') {
+      let _url = route.path
+      let _url_new = _url.replace(_url.slice(0, 3), _b ? '/' + _b.lable : '')
+      router.push(_url_new)
+    } else {
+      router.push(`${_b ? '/' + _b.lable : ''}${route.path}`)
+    }
+  }
+}
+const changlangsfun = (_type) => {
+  zh_tran(_type)
+  if (getCookie('zh_choose')) {
+    var zh_choose: any = getCookie('zh_choose')
+    appState.setLangs(zh_choose)
+  }
+}
 
-onMounted(() => {})
+onMounted(() => {
+  setTimeout(() => {
+    if (route.path.includes('/cn')) {
+      changlangsfun('s')
+    }
+  }, 500)
+})
 </script>
 
 <template>
@@ -49,25 +100,31 @@ onMounted(() => {})
       <div class="collapse navbar-collapse d-lg-block" id="navbarNav">
         <ul class="navbar-nav ms-auto d-flex align-items-center">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle">關於愛康健</a>
+            <a class="nav-link dropdown-toggle"
+              >{{ $t('components.header.menuLists.menu_brand.name') }}
+            </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/brand/course#course"
-                  >發展歷程</a
-                >
+                <a class="dropdown-item" href="/brand/course#course">{{
+                  $t('components.header.menuLists.menu_brand.history')
+                }}</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/brand/course#activity"
-                  >最新活動</a
-                >
+                <a class="dropdown-item" href="/brand/course#activity">{{
+                  $t('components.header.menuLists.menu_brand.activity')
+                }}</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/brand/course#honor">品牌榮譽</a>
+                <a class="dropdown-item" href="/brand/course#honor">{{
+                  $t('components.header.menuLists.menu_brand.honor')
+                }}</a>
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link dropdown-toggle">牙科服務</a>
+            <a class="nav-link dropdown-toggle">{{
+              $t('components.header.menuLists.menu_dental_service.name')
+            }}</a>
             <ul class="dropdown-menu">
               <li>
                 <a class="dropdown-item" href="/dental-service/implant"
@@ -152,48 +209,80 @@ onMounted(() => {})
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/health-care-voucher">長者醫療券</a>
+            <a class="nav-link" href="/health-care-voucher">{{
+              $t('components.header.menuLists.health-care-voucher.name')
+            }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/federation-of-trade-unions-zone"
-              >工聯會專區</a
-            >
+            <a class="nav-link" href="/federation-of-trade-unions-zone">{{
+              $t(
+                'components.header.menuLists.federation-of-trade-unions-zone.name'
+              )
+            }}</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle">睇牙新資訊</a>
+            <a class="nav-link dropdown-toggle">{{
+              $t('components.header.menuLists.menu_news.name')
+            }}</a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/news/coverage">媒體報導</a>
+                <a class="dropdown-item" href="/news/coverage">{{
+                  $t('components.header.menuLists.menu_news.coverage')
+                }}</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/news/information">最新資訊</a>
+                <a class="dropdown-item" href="/news/information">{{
+                  $t('components.header.menuLists.menu_news.information')
+                }}</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/news/tooth-wiki">牙齒百科</a>
+                <a class="dropdown-item" href="/news/tooth-wiki">{{
+                  $t('components.header.menuLists.menu_news.tooth-wiki')
+                }}</a>
               </li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle">醫生團隊</a>
+            <a class="nav-link dropdown-toggle">{{
+              $t('components.header.menuLists.menu_medical_team.name')
+            }}</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/medical-team">羅湖區</a></li>
-              <li><a class="dropdown-item" href="/medical-team">福田區</a></li>
-              <li><a class="dropdown-item" href="/medical-team">南山區</a></li>
+              <li>
+                <a class="dropdown-item" href="/medical-team">{{
+                  $t('components.areaTabs.luohu')
+                }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/medical-team">{{
+                  $t('components.areaTabs.futian')
+                }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/medical-team">{{
+                  $t('components.areaTabs.nanshan')
+                }}</a>
+              </li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle">聯絡我們</a>
+            <a class="nav-link dropdown-toggle">{{
+              $t('components.header.menuLists.menu_contactUs.name')
+            }}</a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/contactUs#contactUs"
-                  >來院路線</a
-                >
+                <a class="dropdown-item" href="/contactUs#contactUs">{{
+                  $t('components.header.menuLists.menu_contactUs.come_route')
+                }}</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/contactUs#appeal">申訴途徑</a>
+                <a class="dropdown-item" href="/contactUs#appeal">{{
+                  $t('components.header.menuLists.menu_contactUs.appeal')
+                }}</a>
               </li>
               <li>
-                <a class="dropdown-item" href="/contactUs#Q&A">常見問題</a>
+                <a class="dropdown-item" href="/contactUs#Q&A">{{
+                  $t('components.header.menuLists.menu_contactUs.Q&A')
+                }}</a>
               </li>
             </ul>
           </li>
@@ -258,7 +347,7 @@ onMounted(() => {})
                   id="traditional"
                   class="dropdown-item"
                   href="#"
-                  onclick="zh_tran('t')"
+                  @click="glangs('t')"
                   >繁體</a
                 >
               </li>
@@ -267,7 +356,7 @@ onMounted(() => {})
                   id="simplified"
                   class="dropdown-item"
                   href="#"
-                  onclick="zh_tran('s')"
+                  @click="glangs('s')"
                   >簡體</a
                 >
               </li>
@@ -637,10 +726,10 @@ onMounted(() => {})
             <button
               id="traditional"
               class="changeFontActive"
-              onclick="zh_tran('t')"
+              @click="glangs('t')"
             >
               繁體</button
-            >| <button id="simplified" onclick="zh_tran('s')">簡體</button>
+            >| <button id="simplified" @click="glangs('s')">簡體</button>
           </div>
         </div>
       </div>

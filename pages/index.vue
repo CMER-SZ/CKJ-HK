@@ -645,8 +645,6 @@ const hideDom = ref(false)
 
 <template>
   <div>
-
- 
     <PageNewHomeBanner
       :headerConfig="headerConfigData"
       v-if="windowWidth > 768"
