@@ -41,7 +41,7 @@ const activeNames = ref(0)
             <div class="problem-in-title">
               <div>Q</div>
               <div>{{ $t(problemItem.Q) }}</div>
-              <div>
+              <div class="problem-in-el-icon">
                 <img src="@/assets/images/icon_91.png" alt="" />
               </div>
             </div>
@@ -295,6 +295,16 @@ const activeNames = ref(0)
   .problem-in-title > div:nth-of-type(2) {
     color: #ffffff;
   }
+
+  .problem-in-el-icon {
+    width: 12px;
+    height: 2.4px;
+    background: #fff;
+    transition: all 0.3s;
+    & > img {
+      display: none;
+    }
+  }
 }
 :deep(.el-collapse-item__content) {
   overflow: none;
@@ -303,6 +313,7 @@ const activeNames = ref(0)
 :deep(.problem-in-context) {
   border-radius: 10px;
   box-shadow: 0px 2px 4px 2px rgba(77, 77, 77, 0.2);
+  transition: all 0.3s ease;
 }
 :deep(.el-icon) {
   display: none;
@@ -461,6 +472,9 @@ const activeNames = ref(0)
   :deep(.el-collapse-item) {
     margin-bottom: 1.3vw;
     border: none;
+  }
+  :deep(.el-collapse-item__content) {
+    padding-bottom: 0;
   }
 }
 

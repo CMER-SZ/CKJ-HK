@@ -1924,6 +1924,7 @@ const problemData = {
       flex-direction: column;
       justify-content: space-around;
       margin: 0 auto;
+      top: -10.33vw;
       & > div {
         width: 100%;
         & > div {
@@ -1992,7 +1993,7 @@ const problemData = {
     z-index: -1;
   }
   .brand-list {
-    margin-top: 9.33vw;
+    margin-top: -10.65vw;
 
     .subheading {
       position: relative;

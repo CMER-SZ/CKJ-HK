@@ -2060,7 +2060,7 @@ const hideDiv = () => {
     }
     &-bgImg-implant {
       position: relative;
-      top: 21vw;
+      top: 13.5vw;
       margin-top: 9.2307vw;
       &.rootCanal-test {
         padding-bottom: 10.65vw;
@@ -2081,7 +2081,7 @@ const hideDiv = () => {
         padding-bottom: 16vw;
       }
       &.implant {
-        padding-bottom: 16vw;
+        padding-bottom: 14vw;
       }
       &.course-new {
         padding-bottom: 13.33vw;
@@ -2143,7 +2143,7 @@ const hideDiv = () => {
       justify-content: space-between;
       align-items: center;
       margin: 0;
-      padding: 5.3vw 0 5.3vw 5.3vw;
+      padding: 1.3vw 0 1.3vw 5.3vw;
       background: #fff;
       margin-top: 9.2307vw;
       .logo {
