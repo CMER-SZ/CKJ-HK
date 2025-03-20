@@ -1159,22 +1159,21 @@ const problemData = {
     padding-bottom: 45px;
   }
   .seven-advantages-content {
-    border: 0.2px solid red;
     & > div {
-      width: 566.434px;
+      width: clamp(566.434px, 29.49vw, 566.434px);
       & > div {
         display: flex;
         align-items: center;
-        gap: 0 10px;
+        gap: 0 clamp(10px, 0.52vw, 10px);
 
         & > div:nth-child(2) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
-          font-size: 24.113px;
+          font-size: clamp(24.113px, 1.25vw, 24.113px);
           font-style: normal;
           font-weight: 500;
-          line-height: 60.281px;
-          letter-spacing: 2.411px;
+          line-height: clamp(60.281px, 3.125vw, 60.281px);
+          letter-spacing: clamp(2.4113px, 0.125vw, 2.4113px);
         }
       }
     }
@@ -1185,11 +1184,11 @@ const problemData = {
       align-items: flex-start;
 
       & > div:nth-child(2) {
-        margin-left: 20px;
+        margin-left: clamp(20px, 1.04vw, 20px);
       }
 
       & > div:nth-child(3) {
-        margin-left: 48px;
+        margin-left: clamp(40px, 2.08vw, 40px);
       }
     }
 
@@ -1199,15 +1198,15 @@ const problemData = {
       align-items: flex-end;
 
       & > div:nth-child(2) {
-        margin-right: 30px;
+        margin-right: clamp(30px, 1.56vw, 30px);
       }
 
       & > div:nth-child(3) {
-        margin-right: 64px;
+        margin-right: clamp(64px, 3.33vw, 64px);
       }
 
       & > div:nth-child(4) {
-        margin-right: 80px;
+        margin-right: clamp(80px, 4.16vw, 80px);
       }
     }
 
@@ -1228,8 +1227,8 @@ const problemData = {
         no-repeat;
       background-size: cover;
       background-position: center;
-      width: 1320px;
-      height: 450px;
+      width: clamp(1320px, 68.75vw, 1320px);
+      height: clamp(450px, 23.4375vw, 450px);
       z-index: -1;
     }
   }
@@ -1891,7 +1890,6 @@ const problemData = {
     .seven-advantages-content {
       position: relative;
       height: clamp(93.6vw, 93.6vw, 351px);
-      border: 0.2px solid red;
       box-sizing: border-box;
       padding: 1.33vw;
       display: flex;
