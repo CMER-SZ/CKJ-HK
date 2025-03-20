@@ -181,7 +181,7 @@ const hideShowText = computed(() => {
       z-index: 105;
       display: flex;
       justify-content: flex-end;
-      padding-top: 70px;
+      padding-top: 20px;
       pointer-events: none;
       & > div:nth-child(1) {
         max-width: 1450px;
@@ -220,6 +220,7 @@ const hideShowText = computed(() => {
     .pcBox-wrapper {
       position: relative;
       z-index: 1;
+      margin-top: 95px;
       img {
         width: 100%;
         height: 100%;
@@ -241,7 +242,7 @@ const hideShowText = computed(() => {
       z-index: 105;
       display: flex;
       justify-content: flex-end;
-      padding-top: 120px;
+      padding-top: 20px;
       pointer-events: none;
       & > div:nth-child(1) {
         max-width: 1450px;
@@ -276,7 +277,7 @@ const hideShowText = computed(() => {
 @media screen and (min-width: 768px) and (max-width: 1040px) {
   .PcBannerNoHome {
     position: relative;
-
+    margin-top: 80px;
     .pcBox-wrapper {
       position: relative;
       z-index: 1;
