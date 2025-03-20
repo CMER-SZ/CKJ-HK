@@ -1353,8 +1353,10 @@ const problemData = {
     </div>
     <PageFooter />
     <!-- <PageNavbar :langType="langCur" /> -->
-    <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar :langType="langCur" v-else />
+    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
+    <PageNavbar :langType="langCur" v-else /> -->
+
+    <AsideV2 />
   </div>
 </template>
 

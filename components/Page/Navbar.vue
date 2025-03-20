@@ -221,7 +221,7 @@ onMounted(() => {
       title="預約"
       @click="toContactUs"
     ></div>
-    <div class="navbar-content-in pageTop" @click="toPageTop">
+    <!-- <div class="navbar-content-in pageTop" @click="toPageTop">
       <img
         srcset="
           https://static.cmereye.com/imgs/2024/06/31e5ffd3567a9dd4.png 768w,
@@ -230,7 +230,7 @@ onMounted(() => {
         src="@/assets/images/navIcon_4.png"
         alt="toTop"
       />
-    </div>
+    </div> -->
     <div class="navbar-content-mb">
       <div class="navbar-content-mb-in">
         <div

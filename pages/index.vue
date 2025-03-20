@@ -645,11 +645,14 @@ const hideDom = ref(false)
 
 <template>
   <div>
+
+ 
     <PageNewHomeBanner
       :headerConfig="headerConfigData"
       v-if="windowWidth > 768"
     />
     <PageNewHeader :headerConfig="headerConfigData" v-else />
+
     <div class="indexPage">
       <!-- 最新消息 -->
       <!-- <LatestNews /> -->
@@ -1360,11 +1363,12 @@ const hideDom = ref(false)
     <!-- <PageNavbar
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
     /> -->
-    <PageNewNavbarSide v-if="windowWidth > 768" />
+    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar
       v-else
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
-    />
+    /> -->
+       <AsideV2/>
   </div>
 </template>
 

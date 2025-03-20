@@ -382,8 +382,8 @@ onMounted(() => {
       <ContactForm-new2 />
     </div>
     <PageFooter />
-    <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar v-else />
+    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
+    <PageNavbar v-else /> -->
   </div>
 </template>
 

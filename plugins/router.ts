@@ -31,17 +31,17 @@ export default defineNuxtPlugin((nuxtApp) => {
         var healthCareVoucherPopTop = document.createElement('div')
         const domWidth = window.innerWidth
         healthCareVoucherPopTop.innerHTML = ``
-        if (domWidth < 768) {
-          // 插入节点
-          healthCareVoucherPopTop.innerHTML = `
-                <div class="healthCareVoucherPop">
-                  <div class="close">×</div>
-                  <a href="/health-care-voucher">
-                    <img src="https://static.cmereye.com/imgs/2024/10/4803cecce2a0156d.png"  alt="">
-                  </a>
-              </div>
-              `
-        }
+        // if (domWidth < 768) {
+        //   // 插入节点
+        //   healthCareVoucherPopTop.innerHTML = `
+        //         <div class="healthCareVoucherPop">
+        //           <div class="close">×</div>
+        //           <a href="/health-care-vouhttps://static.cmereye.com/imgs/2024/10/4803cecce2a0156d.pngcher">
+        //             <img src=""  alt="">
+        //           </a>
+        //       </div>
+        //       `
+        // }
         if (container) {
           // container 设置为空 
           container.innerHTML = ''

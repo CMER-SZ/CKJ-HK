@@ -695,8 +695,9 @@ let newsMessageSwiperRef = {
     <!-- <PageNavbar
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
     /> -->
-    <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar v-else />
+    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
+    <PageNavbar v-else /> -->
+    <AsideV2/>
   </div>
 </template>
 

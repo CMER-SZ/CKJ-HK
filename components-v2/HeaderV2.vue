@@ -648,8 +648,6 @@ onMounted(() => {})
   </nav>
 </template>
 
-
-
 <style lang="scss" scoped>
 .navbar {
   background-color: white;
@@ -723,7 +721,7 @@ onMounted(() => {})
     padding-right: 20px;
   }
   .navbar-nav .nav-link[data-bs-toggle='collapse']::after {
-    content: url('/static/toRight.svg');
+    content: url('@/assets/images/toRight.svg');
     transition: transform 0.3s;
   }
   /* 侧边栏 */
@@ -746,7 +744,7 @@ onMounted(() => {})
     width: 20px;
     height: 20px;
     opacity: 1;
-    background-image: url('/static/close.svg');
+    background-image: url('@/assets/images/close.svg');
   }
   .offcanvas-end .offcanvas-body {
     overflow-x: hidden;
@@ -863,9 +861,10 @@ onMounted(() => {})
     width: 20px;
     height: 20px;
   }
-  .offcanvas-backdrop {
+  :deep(.offcanvas-backdrop) {
     background: rgba(200, 51, 137, 0.5);
   }
+
   /* 展开时的动画 */
   .phoneMenu-body .collapse-horizontal.show {
     transform: translateX(0) !important;
@@ -1246,6 +1245,16 @@ onMounted(() => {})
     .dropdown-menu
     .dropdown-item[data-bs-toggle='collapse'].collapsed::after {
     content: '►';
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  .navbar > div {
+    padding-left: clamp(20px, 3.593vw, 69px);
+    padding-right: clamp(20px, 5.72vw, 110px);
+  }
+  .contact-widget {
+    right: 20px;
   }
 }
 </style>

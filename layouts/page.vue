@@ -15,8 +15,9 @@ onMounted(() => {
     <div id="app-before"></div>
     <div class="flex flex-col min-h-screen">
       <slot name="header">
-        <PageNewNavbarSide v-if="windowWidth > 768" />
-        <PageNavbar v-else />
+        <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
+        <PageNavbar v-else /> -->
+              <AsideV2/>
       </slot>
       <div class="flex-1 w-full flex flex-col">
         <div
