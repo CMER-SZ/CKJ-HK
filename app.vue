@@ -116,10 +116,10 @@ watchEffect(() => {
     <Body
       class="antialiased duration-300 transition-colors text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 overscroll-y-none"
     >
-      <div
+      <!-- <div
         v-if="route.path !== '/health-care-voucher'"
         id="popup-alert-two"
-      ></div>
+      ></div> -->
       <NuxtLayout>
         <!-- <YahooPageMenuBar v-if="isYahoo()" /> -->
         <PageMenuBar />
