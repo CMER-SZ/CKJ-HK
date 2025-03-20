@@ -737,6 +737,7 @@ input[type='date']:valid {
   max-width: 960px;
 }
 
+
 /* media */
 @media (min-width: 959px) {
 
@@ -748,7 +749,10 @@ input[type='date']:valid {
     padding-left: 0;
     padding-right: 0;
   }
-
+  .ckj-container{
+    max-width: 960px !important;
+    margin: 0 auto;
+  }
   input[type='date']::before {
     left: 20px;
   }
