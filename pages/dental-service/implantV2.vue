@@ -277,7 +277,7 @@ const problemData = {
     </PagePcBannerNoHome>
     <!-- 内容区 -->
     <container>
-      <section class="container implant-step">
+      <section class="ckj-container implant-step">
         <div class="implant-title-subheading">\ <i>植牙6步曲</i> /</div>
         <div class="implant-step-context ckj-contrain" id="implantStep">
           <div
@@ -423,7 +423,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container brand-list">
+      <section class="ckj-container brand-list">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>植體品牌</span><span>系列</span>
         </div>
@@ -460,7 +460,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container extra-charge">
+      <section class="ckj-container extra-charge">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>額外</span><span>項目</span>
         </div>
@@ -495,7 +495,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container implant-git">
+      <section class="ckj-container implant-git">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>「即刻植牙」</span><span>技術</span>
         </div>
@@ -513,7 +513,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container technical-category">
+      <section class="ckj-container technical-category">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>植牙</span><span>技術及類別</span>
         </div>
@@ -526,14 +526,14 @@ const problemData = {
             <img
               src="https://static.ckjhk.com/ckj-image/2025031717580401.png"
               alt=""
-              style="height: 100%;"
+              style="height: 100%"
             />
           </div>
           <div>
             <img
               src="https://static.ckjhk.com/ckj-image/2025031717580402.png"
               alt=""
-                style="height: 100%;"
+              style="height: 100%"
             />
           </div>
           <div>傷口大小</div>
@@ -568,7 +568,7 @@ const problemData = {
         >
           <span>香港上市醫療公司</span><span>管理</span>
         </div>
-        <section class="container affiliation">
+        <section class="ckj-container affiliation">
           <div class="affiliation-context">
             <div>
               <img
@@ -737,7 +737,7 @@ const problemData = {
         </section>
       </div>
     </container>
-    <ServiceProblem :problem-data="problemData" :v2-versions="true" />
+    <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
     <!-- 聯絡我們 -->
     <BranchAddress />
     <ContactForm-new2 />
@@ -918,11 +918,6 @@ const problemData = {
         }
       }
     }
-  }
-
-  .container {
-    max-width: 960px !important;
-    margin: 0 auto;
   }
 
   .banner {
@@ -1165,25 +1160,21 @@ const problemData = {
     padding-bottom: 45px;
   }
   .seven-advantages-content {
-    display: flex;
-    flex-direction: column;
-
     & > div {
-      width: 100%;
-
+      width: clamp(566.434px, 29.49vw, 566.434px);
       & > div {
         display: flex;
         align-items: center;
-        gap: 0 10px;
+        gap: 0 clamp(10px, 0.52vw, 10px);
 
         & > div:nth-child(2) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
-          font-size: 24.113px;
+          font-size: clamp(24.113px, 1.25vw, 24.113px);
           font-style: normal;
           font-weight: 500;
-          line-height: 60.281px;
-          letter-spacing: 2.411px;
+          line-height: clamp(60.281px, 3.125vw, 60.281px);
+          letter-spacing: clamp(2.4113px, 0.125vw, 2.4113px);
         }
       }
     }
@@ -1194,11 +1185,11 @@ const problemData = {
       align-items: flex-start;
 
       & > div:nth-child(2) {
-        margin-left: 20px;
+        margin-left: clamp(20px, 1.04vw, 20px);
       }
 
       & > div:nth-child(3) {
-        margin-left: 48px;
+        margin-left: clamp(40px, 2.08vw, 40px);
       }
     }
 
@@ -1208,29 +1199,24 @@ const problemData = {
       align-items: flex-end;
 
       & > div:nth-child(2) {
-        margin-right: 30px;
+        margin-right: clamp(30px, 1.56vw, 30px);
       }
 
       & > div:nth-child(3) {
-        margin-right: 64px;
+        margin-right: clamp(64px, 3.33vw, 64px);
       }
 
       & > div:nth-child(4) {
-        margin-right: 80px;
+        margin-right: clamp(80px, 4.16vw, 80px);
       }
     }
 
-    // background: url('https://static.ckjhk.com/ckj-image/2025031715453001.png')
-    //   no-repeat;
-    max-width: 760px;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    justify-content: center;
-    background-position-x: -2vw;
-    height: 30vw;
-    width: 50vw;
     position: relative;
+    align-items: center;
+    justify-content: center;
     &::after {
       content: '';
       width: 100%;
@@ -1238,11 +1224,13 @@ const problemData = {
       display: block;
       position: absolute;
       top: 0;
-      background: url('https://static.ckjhk.com/ckj-image/2025031715453001.png')
+      background: url('https://static.ckjhk.com/ckj-image/2025032010461401.webp')
         no-repeat;
       background-size: cover;
       background-position: center;
-      opacity: 0.7;
+      width: clamp(1320px, 68.75vw, 1320px);
+      height: clamp(450px, 23.4375vw, 450px);
+      z-index: -1;
     }
   }
 
@@ -1409,7 +1397,7 @@ const problemData = {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--Grey-Lightest, #f2f2f2);
+      // border: 1px solid var(--Grey-Lightest, #f2f2f2);
       background: var(--White, #fff);
 
       & > ul {
@@ -1456,8 +1444,24 @@ const problemData = {
     & > div:nth-child(3n + 2) {
       border-left: 3px solid var(--Brand-Color, #f8298a);
       border-right: 3px solid var(--Brand-Color, #f8298a);
+      position: relative;
     }
-
+    & > div:nth-child(3n + 1),
+    & > div:nth-child(3n + 3) {
+      position: relative;
+    }
+    & > div:nth-child(3n + 1)::after,
+    & > div:nth-child(3n + 3)::after,
+    & > div:nth-child(3n + 2)::after {
+      background: var(--Grey-Lightest, #f2f2f2);
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%);
+      width: 100%;
+    }
     & > div:nth-child(3n + 1) {
       max-width: 160px;
       background: #f8298a;
@@ -1496,6 +1500,14 @@ const problemData = {
     & > div:nth-child(6) {
       border-top: none !important;
       border-bottom: none !important;
+    }
+    & > div:nth-child(1)::after,
+    & > div:nth-child(4)::after,
+    & > div:nth-child(2)::after,
+    & > div:nth-child(3)::after,
+    & > div:nth-child(5)::after,
+    & > div:nth-child(6)::after {
+      content: none;
     }
   }
 
@@ -1651,6 +1663,10 @@ const problemData = {
   }
 }
 @media screen and (max-width: 922px) {
+  .ckj-container {
+    box-sizing: border-box;
+    padding: 0 4vw;
+  }
   .banner {
     margin-top: 17.065vw;
     background: url('https://static.ckjhk.com/ckj-image/2025031810002701.png')
@@ -1669,7 +1685,7 @@ const problemData = {
       position: relative;
 
       .banner-content {
-        border-radius: 10px;
+        border-radius: 2.65vw;
         background: #fff;
         overflow: hidden;
         max-width: 86.665vw;
@@ -1678,16 +1694,16 @@ const problemData = {
         .content-title {
           color: var(--White, #fff);
           text-align: center;
-          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          text-shadow: 0px 1.065vw 1.064vw rgba(0, 0, 0, 0.25);
           font-family: 'Noto Sans HK';
-          font-size: 24px;
+          font-size: 6.4vw;
           font-style: normal;
           font-weight: 700;
-          line-height: 20px;
+          line-height: 5.33vw;
           /* 83.333% */
-          letter-spacing: 2.4px;
+          letter-spacing: 0.64vw;
           box-sizing: border-box;
-          padding: 12px 0;
+          padding: 3.2vw 0;
           background: var(
             --Liner-purple,
             linear-gradient(
@@ -1751,38 +1767,38 @@ const problemData = {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.2658vw;
           font-style: normal;
           font-weight: 700;
           line-height: 120%;
           /* 19.2px */
-          letter-spacing: 1.6px;
+          letter-spacing: 0.426vw;
         }
 
         & > span:nth-child(2) {
-          border-radius: 20px;
+          border-radius: 5.33vw;
           background: var(--Brand-Color, #f8298a);
 
           /* 圍邊陰影 */
-          box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 2.133vw 0px rgba(0, 0, 0, 0.25);
           box-sizing: border-box;
           padding: 1.065vw 2.65vw;
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
-          font-size: 18px;
+          font-size: 4.8vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.8px;
+          letter-spacing: 0.48vw;
 
           & > i {
             color: var(--White, #fff);
             font-family: 'Noto Sans HK';
-            font-size: 16px;
+            font-size: 4.2685vw;
             font-style: normal;
             font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 1.6px;
+            line-height: 6.4vw;
+            letter-spacing: 0.426vw;
           }
         }
       }
@@ -1790,7 +1806,7 @@ const problemData = {
   }
 
   .implant-step {
-    margin-top: 30px;
+    margin-top: 8vw;
     display: flex;
     flex-direction: column;
 
@@ -1800,21 +1816,21 @@ const problemData = {
       & > i {
         color: var(--Brand-Color, #f8298a);
         font-family: 'Noto Sans HK';
-        font-size: 18px;
+        font-size: 4.8vw;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 1.8px;
+        letter-spacing: 0.48vw;
       }
 
       color: var(--Grey-Mid, #666);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 18px;
+      font-size: 4.8vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      letter-spacing: 1.8px;
+      letter-spacing: 0.48vw;
     }
 
     .implant-step-context {
@@ -1832,11 +1848,11 @@ const problemData = {
           left: -1.06vw;
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
-          font-size: 18px;
+          font-size: 4.8vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.8px;
+          letter-spacing: 0.48vw;
           background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
             no-repeat;
           background-size: cover;
@@ -1846,34 +1862,52 @@ const problemData = {
           align-items: center;
           justify-content: center;
         }
-
+        & > div:nth-child(2) {
+          position: relative;
+        }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 2.93vw;
+          height: 6.4vw;
+          background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
+            no-repeat;
+          background-size: cover;
+          right: -2.8vw;
+          top: 50%;
+          transform: translateY(-50%);
+        }
         & > div:nth-child(3) {
           color: var(--Grey-Dark, #333);
           /* 手機版/MB-Small Text */
           font-family: 'Noto Sans HK';
-          font-size: 14px;
+          font-size: 3.73vw;
           font-style: normal;
           font-weight: 350;
-          line-height: 120%;
+          line-height: 5.33vw;
           margin-top: 0.1vw;
+        }
+      }
+      .implant-step-item:last-child {
+        & > div:nth-child(2)::after {
+          content: none;
         }
       }
     }
   }
 
   .seven-advantages {
-    margin-top: 25px;
-
+    margin-top: 6.665vw;
+    max-width: 100% !important;
     .subheading {
       position: relative;
     }
 
     .subheading::after {
-      // content: 'Superiorities';
       position: absolute;
       color: var(--Grey-Light, #e6e6e6);
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.265vw;
       font-style: normal;
       font-weight: 500;
       line-height: 150%;
@@ -1883,48 +1917,38 @@ const problemData = {
     }
 
     .seven-advantages-content {
-      // background: url(https://static.ckjhk.com/ckj-image/2025031810575101.png)
-      //   no-repeat;
-      background-size: 375px auto;
-      background-position-x: center;
-      width: 100%;
-      height: 75vw;
+      position: relative;
+      height: clamp(93.6vw, 93.6vw, 351px);
+      box-sizing: border-box;
+      padding: 1.33vw;
       display: flex;
       flex-direction: column;
-      box-sizing: border-box;
-      padding: 2.65vw 2.65vw 2.65vw 0;
-      max-width: 375px;
+      justify-content: space-around;
       margin: 0 auto;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url(https://static.ckjhk.com/ckj-image/2025031810575101.png)
-          no-repeat;
-        background-size: 375px auto;
-        background-position-x: right;
-        opacity: 0.6;
-      }
-
+      top: -10.33vw;
       & > div {
         width: 100%;
-
         & > div {
           display: flex;
           align-items: center;
           gap: 0 1.6vw;
-
+          & > div:nth-child(1) {
+            width: clamp(6.13vw, 6.13vw, 23px);
+            height: clamp(6.13vw, 6.13vw, 23px);
+            & > svg {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
           & > div:nth-child(2) {
             color: var(--Grey-Dark, #333);
             font-family: 'Noto Sans HK';
-            font-size: 16px;
+            font-size: clamp(4.265vw, 4.265vw, 16px);
             font-style: normal;
             font-weight: 500;
-            line-height: 40px;
-            letter-spacing: 1.6px;
+            line-height: 200%;
+            letter-spacing: 0.4265vw;
           }
         }
       }
@@ -1955,9 +1979,22 @@ const problemData = {
       }
     }
   }
-
+  .seven-advantages-content::after {
+    content: '';
+    position: absolute;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+    background: url(https://static.ckjhk.com/ckj-image/2025032009523601.webp)
+      no-repeat;
+    background-size: cover;
+    background-position: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
   .brand-list {
-    margin-top: 9.33vw;
+    margin-top: -10.65vw;
 
     .subheading {
       position: relative;
@@ -1990,7 +2027,7 @@ const problemData = {
         & > div:nth-child(2) {
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.265vw;
           white-space: nowrap;
           font-style: normal;
           font-weight: 700;
@@ -2010,7 +2047,7 @@ const problemData = {
           & > div {
             display: flex;
             gap: 0 1.865vw;
-
+            align-items: center;
             & > div:nth-child(2) {
               width: 22.4vw;
               height: 4.265vw;
@@ -2144,9 +2181,9 @@ const problemData = {
     .technical-category-table {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-
+      box-sizing: border-box;
       & > div:nth-child(3n + 1) {
-        max-width: 18.6vw;
+        // max-width: 18.6vw;
         background: var(--Theme-Color, #fc1682);
         box-sizing: border-box;
         padding: 2.13vw 0;
@@ -2174,14 +2211,24 @@ const problemData = {
         display: flex;
         align-items: center;
         justify-content: center;
-        // border-top: 1px solid var(--Skin, #fff1f0);
-        border-bottom: 1px solid var(--Skin, #fff1f0);
+        // border-bottom: 1px solid var(--Skin, #fff1f0);
         color: var(--Grey-Deep, #4d4d4d);
         font-family: 'Noto Sans HK';
         font-size: 3.2vw;
         font-style: normal;
         font-weight: 350;
         line-height: 150%;
+        position: relative;
+      }
+      & > div:nth-child(3n + 2)::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: var(--Skin, #fff1f0);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       & > div:nth-child(3n + 3) {
@@ -2248,6 +2295,11 @@ const problemData = {
       & > div:nth-child(3),
       & > div:nth-child(6) {
         border: 0px !important;
+      }
+      & > div:nth-child(2)::after,
+      & > div:nth-child(3)::after,
+      & > div:nth-child(6)::after {
+        background: none !important;
       }
     }
   }
@@ -2343,29 +2395,25 @@ const problemData = {
   }
 
   .subheading {
-    // box-sizing: border-box;
-    // padding-left: 12px;
-    // border-left: 2px solid var(--Pink-Pale, #ffe9ec);
-
     span {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
-      font-size: 18px;
+      font-size: 4.8vw;
       font-style: normal;
       font-weight: 500;
       line-height: 170%;
-      letter-spacing: 1.8px;
+      letter-spacing: 0.48vw;
     }
 
     span:not(:last-child) {
       color: var(--New-Theme-Color, #d2337d);
       font-family: 'Noto Sans HK';
-      font-size: 21px;
+      font-size: 5.6vw;
       font-style: normal;
       font-weight: 700;
       line-height: 150%;
       /* 31.5px */
-      letter-spacing: 2.1px;
+      letter-spacing: 0.56vw;
     }
   }
 
@@ -2377,7 +2425,7 @@ const problemData = {
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    padding-bottom: 35px;
+    padding-bottom: 9.33vw;
     top: 0;
     bottom: 0;
     transform: translateY(0px);
@@ -2386,8 +2434,8 @@ const problemData = {
     display: none !important;
     position: absolute;
     z-index: 10;
-    width: 166px;
-    height: 46px;
+    width: 44.265vw;
+    height: 12.665vw;
     top: 0;
     left: 15%;
     & > img {
@@ -2410,16 +2458,16 @@ const problemData = {
     .content-title {
       color: var(--White, #fff);
       text-align: right;
-      font-size: 40px;
+      font-size: 10.655vw;
       font-style: normal;
       font-weight: 600;
       line-height: 100%; /* 72px */
-      letter-spacing: 2.7px;
+      letter-spacing: 0.72vw;
       position: relative;
       z-index: 6;
       bottom: 0;
       width: 100%;
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 2.65vw 2.65vw 0px 0px;
       background: var(
         --Liner-purple,
         linear-gradient(
@@ -2428,26 +2476,26 @@ const problemData = {
           #710d54 122.73%
         )
       );
-      padding: 16.5px 0;
+      padding: 4.4vw 0;
       color: var(--White, #fff);
       text-align: center;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      text-shadow: 0px 1.065vw 1.065vw rgba(0, 0, 0, 0.25);
       font-family: 'Noto Sans HK';
-      font-size: 24px;
+      font-size: 6.4vw;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px; /* 83.333% */
-      letter-spacing: 2.4px;
+      line-height: 5.33vw; /* 83.333% */
+      letter-spacing: 0.64vw;
     }
     .content-price {
       min-height: 22.665vw;
-      gap: 0 8px;
+      gap: 0 2.13vw;
       width: 100%;
 
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0px 0px 10px 10px;
+      border-radius: 0px 0px 1.065vw 1.065vw;
       background: var(--White, #fff);
       box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
       & > div:nth-child(1) {
@@ -2475,8 +2523,8 @@ const problemData = {
       }
     }
     .price-style {
-      width: 153px;
-      height: 90px;
+      width: 40.8vw;
+      height: 24vw;
       & > img {
         width: 100%;
         height: 100%;
@@ -2494,32 +2542,32 @@ const problemData = {
       color: var(--Grey-Dark, #333);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.2658vw;
       font-style: normal;
       font-weight: 700;
       line-height: 120%; /* 19.2px */
-      letter-spacing: 1.6px;
-      gap: 5px 0;
+      letter-spacing: 0.4265vw;
+      gap: 1.33vw 0;
       display: flex;
       flex-direction: column;
 
-      padding: 4px 10px;
+      padding: 1.065vw 2.65vw;
       & > span:nth-child(2) {
         color: var(--White, #fff);
         font-family: 'Noto Sans HK';
-        font-size: 18px;
+        font-size: 4.8vw;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 1.8px;
+        letter-spacing: 0.48vw;
         background: var(--New-Theme-Color, #d2337d);
-        border-radius: 28.846px;
-        box-shadow: 0 0 11.538px #00000040;
-        padding: 5px 10px;
+        border-radius: 7.269vw;
+        box-shadow: 0 0 3.0768vw #00000040;
+        padding: 1.065vw 2.65vw;
         & > i {
-          font-size: 16px;
-          line-height: 24px;
-          letter-spacing: 1.6px;
+          font-size: 4.265vw;
+          line-height: 6.4vw;
+          letter-spacing: 0.42vw;
         }
       }
     }
