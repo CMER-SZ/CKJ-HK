@@ -277,7 +277,7 @@ const problemData = {
     </PagePcBannerNoHome>
     <!-- 内容区 -->
     <container>
-      <section class="container implant-step">
+      <section class="ckj-container implant-step">
         <div class="implant-title-subheading">\ <i>植牙6步曲</i> /</div>
         <div class="implant-step-context ckj-contrain" id="implantStep">
           <div
@@ -293,7 +293,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container seven-advantages">
+      <section class="ckj-container seven-advantages">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>愛康健種植7大</span><span>優勢</span>
         </div>
@@ -423,7 +423,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container brand-list">
+      <section class="ckj-container brand-list">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>植體品牌</span><span>系列</span>
         </div>
@@ -460,7 +460,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container extra-charge">
+      <section class="ckj-container extra-charge">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>額外</span><span>項目</span>
         </div>
@@ -495,7 +495,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container implant-git">
+      <section class="ckj-container implant-git">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>「即刻植牙」</span><span>技術</span>
         </div>
@@ -513,7 +513,7 @@ const problemData = {
           </div>
         </div>
       </section>
-      <section class="container technical-category">
+      <section class="ckj-container technical-category">
         <div class="d-flex flex-row mb-3 align-items-end subheading">
           <span>植牙</span><span>技術及類別</span>
         </div>
@@ -526,14 +526,14 @@ const problemData = {
             <img
               src="https://static.ckjhk.com/ckj-image/2025031717580401.png"
               alt=""
-              style="height: 100%;"
+              style="height: 100%"
             />
           </div>
           <div>
             <img
               src="https://static.ckjhk.com/ckj-image/2025031717580402.png"
               alt=""
-                style="height: 100%;"
+              style="height: 100%"
             />
           </div>
           <div>傷口大小</div>
@@ -568,7 +568,7 @@ const problemData = {
         >
           <span>香港上市醫療公司</span><span>管理</span>
         </div>
-        <section class="container affiliation">
+        <section class="ckj-container affiliation">
           <div class="affiliation-context">
             <div>
               <img
@@ -919,7 +919,7 @@ const problemData = {
     }
   }
 
-  .container {
+  .ckj-container  {
     max-width: 960px !important;
     margin: 0 auto;
   }
@@ -1219,16 +1219,11 @@ const problemData = {
       }
     }
 
-    // background: url('https://static.ckjhk.com/ckj-image/2025031715453001.png')
-    //   no-repeat;
-    max-width: 760px;
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    background-position-x: -2vw;
-    height: 30vw;
-    width: 50vw;
+    max-width: 1320px;
+    margin: 0 auto;
     position: relative;
     &::after {
       content: '';
@@ -1237,7 +1232,7 @@ const problemData = {
       display: block;
       position: absolute;
       top: 0;
-      background: url('https://static.ckjhk.com/ckj-image/2025031715453001.png')
+      background: url('https://static.ckjhk.com/ckj-image/2025032009523601.webp')
         no-repeat;
       background-size: cover;
       background-position: center;
@@ -1668,7 +1663,7 @@ const problemData = {
       position: relative;
 
       .banner-content {
-        border-radius: 10px;
+        border-radius: 2.65vw;
         background: #fff;
         overflow: hidden;
         max-width: 86.665vw;
@@ -1677,16 +1672,16 @@ const problemData = {
         .content-title {
           color: var(--White, #fff);
           text-align: center;
-          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          text-shadow: 0px 1.065vw 1.064vw rgba(0, 0, 0, 0.25);
           font-family: 'Noto Sans HK';
-          font-size: 24px;
+          font-size: 6.4vw;
           font-style: normal;
           font-weight: 700;
-          line-height: 20px;
+          line-height: 5.33vw;
           /* 83.333% */
-          letter-spacing: 2.4px;
+          letter-spacing: 0.64vw;
           box-sizing: border-box;
-          padding: 12px 0;
+          padding: 3.2vw 0;
           background: var(
             --Liner-purple,
             linear-gradient(
@@ -1750,38 +1745,38 @@ const problemData = {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.2658vw;
           font-style: normal;
           font-weight: 700;
           line-height: 120%;
           /* 19.2px */
-          letter-spacing: 1.6px;
+          letter-spacing: 0.426vw;
         }
 
         & > span:nth-child(2) {
-          border-radius: 20px;
+          border-radius: 5.33vw;
           background: var(--Brand-Color, #f8298a);
 
           /* 圍邊陰影 */
-          box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 2.133vw 0px rgba(0, 0, 0, 0.25);
           box-sizing: border-box;
           padding: 1.065vw 2.65vw;
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
-          font-size: 18px;
+          font-size: 4.8vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.8px;
+          letter-spacing: 0.48vw;
 
           & > i {
             color: var(--White, #fff);
             font-family: 'Noto Sans HK';
-            font-size: 16px;
+            font-size: 4.2685vw;
             font-style: normal;
             font-weight: 400;
-            line-height: 24px;
-            letter-spacing: 1.6px;
+            line-height: 6.4vw;
+            letter-spacing: 0.426vw;
           }
         }
       }
@@ -1789,7 +1784,7 @@ const problemData = {
   }
 
   .implant-step {
-    margin-top: 30px;
+    margin-top: 8vw;
     display: flex;
     flex-direction: column;
 
@@ -1799,21 +1794,21 @@ const problemData = {
       & > i {
         color: var(--Brand-Color, #f8298a);
         font-family: 'Noto Sans HK';
-        font-size: 18px;
+        font-size: 4.8vw;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 1.8px;
+        letter-spacing: 0.48vw;
       }
 
       color: var(--Grey-Mid, #666);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 18px;
+      font-size: 4.8vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      letter-spacing: 1.8px;
+      letter-spacing: 0.48vw;
     }
 
     .implant-step-context {
@@ -1831,11 +1826,11 @@ const problemData = {
           left: -1.06vw;
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
-          font-size: 18px;
+          font-size: 4.8vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.8px;
+          letter-spacing: 0.48vw;
           background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
             no-repeat;
           background-size: cover;
@@ -1845,34 +1840,52 @@ const problemData = {
           align-items: center;
           justify-content: center;
         }
-
+        & > div:nth-child(2) {
+          position: relative;
+        }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 2.93vw;
+          height: 6.4vw;
+          background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
+            no-repeat;
+          background-size: cover;
+          right: -2.8vw;
+          top: 50%;
+          transform: translateY(-50%);
+        }
         & > div:nth-child(3) {
           color: var(--Grey-Dark, #333);
           /* 手機版/MB-Small Text */
           font-family: 'Noto Sans HK';
-          font-size: 14px;
+          font-size: 3.73vw;
           font-style: normal;
           font-weight: 350;
-          line-height: 120%;
+          line-height: 5.33vw;
           margin-top: 0.1vw;
+        }
+      }
+      .implant-step-item:last-child {
+        & > div:nth-child(2)::after {
+          content: none;
         }
       }
     }
   }
 
   .seven-advantages {
-    margin-top: 25px;
-
+    margin-top: 6.665vw;
+    max-width: 100% !important;
     .subheading {
       position: relative;
     }
 
     .subheading::after {
-      // content: 'Superiorities';
       position: absolute;
       color: var(--Grey-Light, #e6e6e6);
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.265vw;
       font-style: normal;
       font-weight: 500;
       line-height: 150%;
@@ -1882,48 +1895,38 @@ const problemData = {
     }
 
     .seven-advantages-content {
-      // background: url(https://static.ckjhk.com/ckj-image/2025031810575101.png)
-      //   no-repeat;
-      background-size: 375px auto;
-      background-position-x: center;
-      width: 100%;
-      height: 75vw;
+      position: relative;
+      height: clamp(93.6vw, 93.6vw, 351px);
+      border: 0.2px solid red;
+      box-sizing: border-box;
+      padding: 1.33vw;
       display: flex;
       flex-direction: column;
-      box-sizing: border-box;
-      padding: 2.65vw 2.65vw 2.65vw 0;
-      max-width: 375px;
+      justify-content: space-around;
       margin: 0 auto;
-      position: relative;
-
-      &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: url(https://static.ckjhk.com/ckj-image/2025031810575101.png)
-          no-repeat;
-        background-size: 375px auto;
-        background-position-x: right;
-        opacity: 0.6;
-      }
-
       & > div {
         width: 100%;
-
         & > div {
           display: flex;
           align-items: center;
           gap: 0 1.6vw;
-
+          & > div:nth-child(1) {
+            width: clamp(6.13vw, 6.13vw, 23px);
+            height: clamp(6.13vw, 6.13vw, 23px);
+            & > svg {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
           & > div:nth-child(2) {
             color: var(--Grey-Dark, #333);
             font-family: 'Noto Sans HK';
-            font-size: 16px;
+            font-size: clamp(4.265vw, 4.265vw, 16px);
             font-style: normal;
             font-weight: 500;
-            line-height: 40px;
-            letter-spacing: 1.6px;
+            line-height: 200%;
+            letter-spacing: 0.4265vw;
           }
         }
       }
@@ -1954,7 +1957,20 @@ const problemData = {
       }
     }
   }
-
+  .seven-advantages-content::after {
+    content: '';
+    position: absolute;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+    background: url(https://static.ckjhk.com/ckj-image/2025032009523601.webp)
+      no-repeat;
+    background-size: cover;
+    background-position: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
   .brand-list {
     margin-top: 9.33vw;
 
@@ -1989,7 +2005,7 @@ const problemData = {
         & > div:nth-child(2) {
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.265vw;
           white-space: nowrap;
           font-style: normal;
           font-weight: 700;
@@ -2009,7 +2025,7 @@ const problemData = {
           & > div {
             display: flex;
             gap: 0 1.865vw;
-
+            align-items: center;
             & > div:nth-child(2) {
               width: 22.4vw;
               height: 4.265vw;
@@ -2349,7 +2365,7 @@ const problemData = {
     span {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
-      font-size: 18px;
+      font-size: 4.8vw;
       font-style: normal;
       font-weight: 500;
       line-height: 170%;
@@ -2506,7 +2522,7 @@ const problemData = {
       & > span:nth-child(2) {
         color: var(--White, #fff);
         font-family: 'Noto Sans HK';
-        font-size: 18px;
+        font-size: 4.8vw;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
