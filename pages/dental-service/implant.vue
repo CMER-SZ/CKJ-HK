@@ -276,7 +276,7 @@ const problemData = {
       </template>
     </PagePcBannerNoHome>
     <!-- 内容区 -->
-    <container>
+    <div>
       <section class="ckj-container implant-step">
         <div class="implant-title-subheading">\ <i>植牙6步曲</i> /</div>
         <div class="implant-step-context ckj-contrain" id="implantStep">
@@ -736,7 +736,7 @@ const problemData = {
           </div>
         </section>
       </div>
-    </container>
+    </div>
     <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
     <!-- 聯絡我們 -->
     <BranchAddress />

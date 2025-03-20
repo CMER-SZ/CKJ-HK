@@ -104,7 +104,7 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          src: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js',
+          src: 'https://statichk.cmermedical.com/ckj/common-js/bootstrap.bundle.min.js',
           type: 'text/javascript',
           defer: true,
         },

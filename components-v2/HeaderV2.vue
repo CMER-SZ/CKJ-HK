@@ -322,7 +322,7 @@ onMounted(() => {})
                 fill="white"
               />
             </svg> </a
-          ><a href="/#contactUsFormNav"
+          ><a href="#contactUsFormNav"
             ><svg
               width="43"
               height="43"

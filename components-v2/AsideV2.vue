@@ -71,7 +71,7 @@ const toPageTop = () => {
             </svg>
           </div> </a
         ><a
-          href="/#contactUsFormNav"
+          href="#contactUsFormNav"
           id="PC-makeAppointment"
           class="contact-button contact-button-number"
         >
