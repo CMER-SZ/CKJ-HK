@@ -737,7 +737,7 @@ const problemData = {
         </section>
       </div>
     </container>
-    <ServiceProblem :problem-data="problemData" :v2-versions="true" />
+    <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
     <!-- 聯絡我們 -->
     <BranchAddress />
     <ContactForm-new2 />
@@ -1638,6 +1638,10 @@ const problemData = {
   }
 }
 @media screen and (max-width: 922px) {
+  .ckj-container {
+    box-sizing: border-box;
+    padding: 0 4vw;
+  }
   .banner {
     margin-top: 17.065vw;
     background: url('https://static.ckjhk.com/ckj-image/2025031810002701.png')
@@ -2151,9 +2155,9 @@ const problemData = {
     .technical-category-table {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-
+      box-sizing: border-box;
       & > div:nth-child(3n + 1) {
-        max-width: 18.6vw;
+        // max-width: 18.6vw;
         background: var(--Theme-Color, #fc1682);
         box-sizing: border-box;
         padding: 2.13vw 0;
@@ -2181,14 +2185,24 @@ const problemData = {
         display: flex;
         align-items: center;
         justify-content: center;
-        // border-top: 1px solid var(--Skin, #fff1f0);
-        border-bottom: 1px solid var(--Skin, #fff1f0);
+        // border-bottom: 1px solid var(--Skin, #fff1f0);
         color: var(--Grey-Deep, #4d4d4d);
         font-family: 'Noto Sans HK';
         font-size: 3.2vw;
         font-style: normal;
         font-weight: 350;
         line-height: 150%;
+        position: relative;
+      }
+      & > div:nth-child(3n + 2)::after{
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: var(--Skin, #fff1f0);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       & > div:nth-child(3n + 3) {
@@ -2255,6 +2269,11 @@ const problemData = {
       & > div:nth-child(3),
       & > div:nth-child(6) {
         border: 0px !important;
+      }
+      & > div:nth-child(2)::after,
+      & > div:nth-child(3)::after,
+      & > div:nth-child(6)::after {
+        background: none !important;
       }
     }
   }
@@ -2350,10 +2369,6 @@ const problemData = {
   }
 
   .subheading {
-    // box-sizing: border-box;
-    // padding-left: 12px;
-    // border-left: 2px solid var(--Pink-Pale, #ffe9ec);
-
     span {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
@@ -2361,18 +2376,18 @@ const problemData = {
       font-style: normal;
       font-weight: 500;
       line-height: 170%;
-      letter-spacing: 1.8px;
+      letter-spacing: 0.48vw;
     }
 
     span:not(:last-child) {
       color: var(--New-Theme-Color, #d2337d);
       font-family: 'Noto Sans HK';
-      font-size: 21px;
+      font-size: 5.6vw;
       font-style: normal;
       font-weight: 700;
       line-height: 150%;
       /* 31.5px */
-      letter-spacing: 2.1px;
+      letter-spacing: 0.56vw;
     }
   }
 
@@ -2384,7 +2399,7 @@ const problemData = {
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    padding-bottom: 35px;
+    padding-bottom: 9.33vw;
     top: 0;
     bottom: 0;
     transform: translateY(0px);
@@ -2393,8 +2408,8 @@ const problemData = {
     display: none !important;
     position: absolute;
     z-index: 10;
-    width: 166px;
-    height: 46px;
+    width: 44.265vw;
+    height: 12.665vw;
     top: 0;
     left: 15%;
     & > img {
@@ -2417,16 +2432,16 @@ const problemData = {
     .content-title {
       color: var(--White, #fff);
       text-align: right;
-      font-size: 40px;
+      font-size: 10.655vw;
       font-style: normal;
       font-weight: 600;
       line-height: 100%; /* 72px */
-      letter-spacing: 2.7px;
+      letter-spacing: 0.72vw;
       position: relative;
       z-index: 6;
       bottom: 0;
       width: 100%;
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 2.65vw 2.65vw 0px 0px;
       background: var(
         --Liner-purple,
         linear-gradient(
@@ -2435,26 +2450,26 @@ const problemData = {
           #710d54 122.73%
         )
       );
-      padding: 16.5px 0;
+      padding: 4.4vw 0;
       color: var(--White, #fff);
       text-align: center;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      text-shadow: 0px 1.065vw 1.065vw rgba(0, 0, 0, 0.25);
       font-family: 'Noto Sans HK';
-      font-size: 24px;
+      font-size: 6.4vw;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px; /* 83.333% */
-      letter-spacing: 2.4px;
+      line-height: 5.33vw; /* 83.333% */
+      letter-spacing: 0.64vw;
     }
     .content-price {
       min-height: 22.665vw;
-      gap: 0 8px;
+      gap: 0 2.13vw;
       width: 100%;
 
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 0px 0px 10px 10px;
+      border-radius: 0px 0px 1.065vw 1.065vw;
       background: var(--White, #fff);
       box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
       & > div:nth-child(1) {
@@ -2482,8 +2497,8 @@ const problemData = {
       }
     }
     .price-style {
-      width: 153px;
-      height: 90px;
+      width: 40.8vw;
+      height: 24vw;
       & > img {
         width: 100%;
         height: 100%;
@@ -2501,16 +2516,16 @@ const problemData = {
       color: var(--Grey-Dark, #333);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.2658vw;
       font-style: normal;
       font-weight: 700;
       line-height: 120%; /* 19.2px */
-      letter-spacing: 1.6px;
-      gap: 5px 0;
+      letter-spacing: 0.4265vw;
+      gap: 1.33vw 0;
       display: flex;
       flex-direction: column;
 
-      padding: 4px 10px;
+      padding: 1.065vw 2.65vw;
       & > span:nth-child(2) {
         color: var(--White, #fff);
         font-family: 'Noto Sans HK';
@@ -2518,15 +2533,15 @@ const problemData = {
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 1.8px;
+        letter-spacing: 0.48vw;
         background: var(--New-Theme-Color, #d2337d);
-        border-radius: 28.846px;
-        box-shadow: 0 0 11.538px #00000040;
-        padding: 5px 10px;
+        border-radius: 7.269vw;
+        box-shadow: 0 0 3.0768vw #00000040;
+        padding: 1.065vw 2.65vw;
         & > i {
-          font-size: 16px;
-          line-height: 24px;
-          letter-spacing: 1.6px;
+          font-size: 4.265vw;
+          line-height: 6.4vw;
+          letter-spacing: 0.42vw;
         }
       }
     }
