@@ -33,341 +33,8 @@ const headerConfig = {
   mbText: ['享受失而復得的喜悅', '重拾完整人生之旅'],
   linkBtn: `https://wa.me/85269338128?text=取得種植牙免費CT檢查`,
 }
-const loading = ref(true)
-const introduceData = {
-  title: 'pages.dental-service.implant.introduce.title',
-  content: 'pages.dental-service.implant.introduce.content',
-  mbImg: 'https://static.cmereye.com/imgs/2023/05/2bc3a5d449c9b42e.jpg',
-  pcImg: 'https://static.cmereye.com/imgs/2023/05/611a2ada62c8fa55.jpg',
-  tabNavName: 'pages.dental-service.implant.introduce.tabNavName',
-}
-
-const introduceJY = {
-  title: 'pages.dental-service.implant.introduce.title',
-  content: 'pages.dental-service.implant.introduce.content',
-  mbImg: 'https://statichk.cmermedical.com/ckj/image/937cb2532ba2.avif',
-  pcImg: 'https://static.cmereye.com/imgs/2024/02/212030a5fca0b0de.png',
-}
-
-const featuresData = {
-  title: 'pages.dental-service.implant.features.title',
-  featuresLists: [
-    'pages.dental-service.implant.features.lists[0].context',
-    'pages.dental-service.implant.features.lists[1].context',
-    'pages.dental-service.implant.features.lists[2].context',
-    'pages.dental-service.implant.features.lists[3].context',
-  ],
-}
-
-const noteLists = [
-  {
-    name: 'pages.dental-service.implant.note.lists[0].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/786842c578839f96.png',
-  },
-  {
-    name: 'pages.dental-service.implant.note.lists[1].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/375325d1f47a3eef.png',
-  },
-  {
-    name: 'pages.dental-service.implant.note.lists[2].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/d2d6a05ff3b7bedc.png',
-  },
-  {
-    name: 'pages.dental-service.implant.note.lists[3].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/b9bffb9d0a93caf8.png',
-  },
-  {
-    name: 'pages.dental-service.implant.note.lists[4].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/e263a699e37bb71a.png',
-  },
-  {
-    name: 'pages.dental-service.implant.note.lists[5].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/e8d6a6c148d1a0ac.png',
-  },
-  {
-    name: 'pages.dental-service.implant.note.lists[6].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/eeb2f6a620511833.png',
-  },
-  {
-    name: 'pages.dental-service.implant.note.lists[7].name',
-    img: 'https://static.cmereye.com/imgs/2023/05/00405fd84dde1a1d.png',
-  },
-]
-
-const stepData = {
-  title: '認識種植牙的六個步驟',
-  remark:
-    '種植牙於現在是較常見的牙科手術之一，病人最少需要 2 至 3 次的覆診來完成整個種牙程序，整個程序或需要 3 至 6 個月時間。',
-  stepLists: [
-    [
-      {
-        title: 'Step 1',
-        text: '進行全面口腔檢查、X光或3D電腦掃描，確定植體的安裝位置，需確認患者的身體狀況及病歷',
-      },
-      {
-        title: 'Step 2',
-        text: '注射麻醉藥',
-      },
-      {
-        title: 'Step 3',
-        text: '翻開牙齦在適合安裝的位置鑽孔，植入植體，作為假牙的牙根，有需要時可以利用手術導航系統輔助植入理想位置，再縫合傷口',
-      },
-    ],
-    [
-      {
-        title: 'Step 4',
-        text: '等待2至3個月後，當牙骨與植體癒合，牙醫會安放癒合帽',
-      },
-      {
-        title: 'Step 5',
-        text: '牙齦癒合後，再進行下一階段的療程進行掃描式印模，再由牙科技師製作義齒',
-      },
-      {
-        title: 'Step 6',
-        text: '將義齒固定在植體上，補上缺去的牙齒',
-      },
-    ],
-  ],
-  lists: [
-    {
-      title: '第1步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/e0feaceff214278b.png',
-      img: 'https://statichk.cmermedical.com/ckj/image/c73d9b16c9e4.avif',
-      name: '全面口腔檢查及建立個人化方案',
-      context:
-        '進行全面口腔檢查、X光或3D電腦掃描，確定植體的安裝位置，需確認患者的身體狀況及病歷',
-    },
-    {
-      title: '第2步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/120738fb56a5d759.png',
-      img: 'https://statichk.cmermedical.com/ckj/image/1fa0c1bed6c1.avif',
-      name: '注射麻醉藥',
-      context: '',
-    },
-    {
-      title: '第3步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/59c210a9e06a8624.png',
-      img: 'https://statichk.cmermedical.com/ckj/image/c15bae966799.avif',
-      name: '把植體植入顎骨',
-      context:
-        '翻開牙齦在適合安裝的位置鑽孔，植入植體，作為假牙的牙根，有需要時可以利用手術導航系統輔助植入理想位置，再縫合傷口',
-    },
-    {
-      title: '第4步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/dabb11b53d7c5e07.png',
-      img: 'https://statichk.cmermedical.com/ckj/image/3895c8fc526e.avif',
-      name: '安裝臨時假牙',
-      context: '確保植體與牙骨處於良好狀況後，根據客人實際情況，安裝臨時假牙。',
-    },
-    {
-      title: '第5步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/9b5323760b492f54.png',
-      img: 'https://statichk.cmermedical.com/ckj/image/943073b1e2ce.avif',
-      name: '套上牙冠及微調',
-      context:
-        '確認植體在顎骨已穩固，套上客人心儀的牙色牙冠，作最後全體牙齒微調。',
-    },
-    {
-      title: '第6步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/90802da91d96398f.png',
-      img: 'https://statichk.cmermedical.com/ckj/image/125ad30de23a.avif',
-      name: '定期覆診',
-      context: '根據客人情況，定期覆診跟進情況。',
-    },
-  ],
-}
-
-const reasonData = {
-  title: 'pages.dental-service.implant.reason.title',
-  text: `種植牙<span>5</span>大優點`,
-  imgUrl: 'https://static.cmereye.com/imgs/2023/05/bab7e2cd0e553a7f.jpg',
-  pageName: 'implant',
-  reasonLists: [
-    {
-      title: '修補缺牙的情況',
-      context: '提供接近真牙的功能和外觀，耐用美觀',
-    },
-    {
-      title: '恢復咀嚼功能',
-      context: '療程後能夠正常咀嚼食物，恢復咬合功能',
-    },
-    {
-      title: '保護相鄰牙齒',
-      context: '不需要磨損鄰近的牙齒來支撐，保護了相鄰牙齒的健康',
-    },
-    {
-      title: '改善口腔美觀',
-      context:
-        '會根據患者的牙齒形狀、顏色和咬合情況進行定制，實現自然的外觀方案',
-    },
-    {
-      title: '有助於保持骨質',
-      context: '能防止牙槽骨的進一步萎縮，有助於保持骨質的生長',
-    },
-  ],
-}
-
-const noticeData = {
-  title: 'pages.dental-service.implant.notice.title',
-  topText: [
-    'pages.dental-service.implant.notice.topText[0].context',
-    'pages.dental-service.implant.notice.topText[1].context',
-  ],
-  dataLists: [
-    {
-      name: '',
-      merit: '微創植牙',
-      shortcoming: '傳統植牙',
-    },
-    {
-      name: '原理',
-      merit:
-        '微創植牙搭配電腦導航技術 ， 可以不用開刀縫針，直接透過手術導板穿透軟組織將植牙放到牙骨裡面',
-      shortcoming:
-        '在植入牙齒的位置進行切口，手術後等待數月的時間，讓植牙的骨頭組織與人體結合為一個穩固的基礎，再安裝人造牙齒',
-    },
-    {
-      name: '手術創傷',
-      merit: '傷口微小，不需縫合',
-      shortcoming: '以傳統手術刀切割，傷口較大，需縫合',
-    },
-    {
-      name: '出血和腫脹',
-      merit: '手術時間短，減少感染機會，降低術後腫痛現象',
-      shortcoming: '會引起較多的出血和腫脹',
-    },
-    {
-      name: '恢復時間',
-      merit: '創傷較小，能夠在短時間內康復',
-      shortcoming: '需要較長的恢復時間，以便顎骨充分癒合和牙齦康復',
-    },
-    {
-      name: '牙骨修復需求',
-      merit: '利用現有的顎骨結構進行植牙',
-      shortcoming: '如果顎骨密度不足或有缺陷，可能需要進行額外的補骨手術',
-    },
-  ],
-  bottomText: [
-    'pages.dental-service.implant.notice.bottomText[0].context',
-    'pages.dental-service.implant.notice.bottomText[1].context',
-    'pages.dental-service.implant.notice.bottomText[2].context',
-  ],
-}
-
-const detailData = {
-  title: 'pages.dental-service.implant.detail.title',
-  detailTableCol: [
-    'pages.dental-service.implant.detail.tableCol[0].text',
-    'pages.dental-service.implant.detail.tableCol[1].text',
-    'pages.dental-service.implant.detail.tableCol[2].text',
-    'pages.dental-service.implant.detail.tableCol[3].text',
-  ],
-  detailTable: [
-    {
-      service: '服務',
-      price: '',
-      discountedPrice: '優惠價 (單隻)',
-    },
-    {
-      service: 'OSSTEM (韓國）奧齒泰親水種植體植入術',
-      price: '原價 ¥13800',
-      discountedPrice: '¥8800',
-    },
-    {
-      service: 'ANKYLOS（德國）種植體植入術',
-      price: '原價 ¥15800',
-      discountedPrice: '¥12800',
-    },
-    {
-      service: 'Straumann（瑞士SLA）悅鋯非親水種植體植入術',
-      price: '原價 ¥18800',
-      discountedPrice: '¥14800',
-    },
-    {
-      service: 'Straumann（瑞士）Roxolid瑞鋯親水  SLAcitive種植體植入術',
-      price: '原價 ¥26000',
-      discountedPrice: '¥18800',
-    },
-  ],
-  remark: 'pages.dental-service.implant.detail.remark',
-}
-
-const problemData = {
-  title: 'pages.dental-service.implant.problem.title',
-  lists: [
-    {
-      Q: 'pages.dental-service.implant.problem.lists[0].Q',
-      A: 'pages.dental-service.implant.problem.lists[0].A',
-    },
-    {
-      Q: 'pages.dental-service.implant.problem.lists[1].Q',
-      A: 'pages.dental-service.implant.problem.lists[1].A',
-    },
-    {
-      Q: 'pages.dental-service.implant.problem.lists[2].Q',
-      A: 'pages.dental-service.implant.problem.lists[2].A',
-    },
-    {
-      Q: 'pages.dental-service.implant.problem.lists[3].Q',
-      A: 'pages.dental-service.implant.problem.lists[3].A',
-    },
-    {
-      Q: 'pages.dental-service.implant.problem.lists[4].Q',
-      A: 'pages.dental-service.implant.problem.lists[4].A',
-    },
-    {
-      Q: 'pages.dental-service.implant.problem.lists[5].Q',
-      A: 'pages.dental-service.implant.problem.lists[5].A',
-    },
-    {
-      Q: 'pages.dental-service.implant.problem.lists[6].Q',
-      A: 'pages.dental-service.implant.problem.lists[6].A',
-    },
-    {
-      Q: 'pages.dental-service.implant.problem.lists[7].Q',
-      A: 'pages.dental-service.implant.problem.lists[7].A',
-    },
-  ],
-}
-
-const plagueData = {
-  title: '是否有以下的缺牙困擾？',
-  lists: [
-    {
-      type: 'text',
-      context: '影響臉型',
-    },
-    {
-      type: 'text',
-      context: '咀嚼不順',
-    },
-    {
-      type: 'img',
-      context: 'https://static.cmereye.com/imgs/2024/11/cc9f357a0cf06ce0.png',
-    },
-    {
-      type: 'text',
-      context: '牙槽骨流失',
-    },
-    {
-      type: 'text',
-      context: '容易蛀牙',
-    },
-    {
-      type: 'text',
-      context: '說話漏風',
-    },
-  ],
-}
-
-let noticeCurrent = ref(1)
-
-const onSlideChange = (swiper: any) => {
-  noticeCurrent.value = swiper.realIndex + 1
-}
 
 let windowWidth = ref(1920)
-let showYaAnim = ref(false)
 
 onMounted(() => {
   getWindowWidth()
@@ -416,108 +83,6 @@ const handleProcessBtn = (_type: string) => {
   implantCaseSwiperRef[_type]()
 }
 
-const implantCaseData = [
-  {
-    dataLists: [
-      {
-        title: '療程前',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-654.6nh16b1gl8o0.jpg',
-        ],
-      },
-      {
-        title: '療程後',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-655.3e6w9ehoi4g0.jpg',
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-429.60d0faxtxq00.jpg',
-        ],
-      },
-    ],
-  },
-  {
-    dataLists: [
-      {
-        title: '療程前',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-656.1sruabv8hag0.jpg',
-        ],
-      },
-      {
-        title: '療程後',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-657.46aijuwwb940.jpg',
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-658.1kva3b5gd928.jpg',
-        ],
-      },
-    ],
-  },
-  {
-    dataLists: [
-      {
-        title: '療程前',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-659.77ltqq7eplg0.jpg',
-        ],
-      },
-      {
-        title: '療程後',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-660.4vvjppol91q0.jpg',
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-661.3hny19y4e0g0.jpg',
-        ],
-      },
-    ],
-  },
-  {
-    dataLists: [
-      {
-        title: '療程前',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-662.4ftyh9pdkhe0.jpg',
-        ],
-      },
-      {
-        title: '療程後',
-        imgs: [
-          'https://raw.gitmirror.com/CMER-SZ/picx-images-hosting/master/ckjhk/Rectangle-663.5ss61sod3qk0.jpg',
-        ],
-      },
-    ],
-  },
-]
-
-const caseList = [
-  [
-    'https://statichk.cmermedical.com/ckj/image/fd5c9be2f67c.avif',
-    'https://statichk.cmermedical.com/ckj/image/68369a186871.avif',
-    '',
-    'https://statichk.cmermedical.com/ckj/image/782e38399fdb.avif',
-  ],
-  [
-    'https://statichk.cmermedical.com/ckj/image/44206182e74b.avif',
-    'https://statichk.cmermedical.com/ckj/image/bb1575aaa523.avif',
-    '',
-    'https://statichk.cmermedical.com/ckj/image/318b905eb6a9.avif',
-  ],
-  [
-    'https://statichk.cmermedical.com/ckj/image/d01df20587d8.avif',
-    'https://statichk.cmermedical.com/ckj/image/a39f91f126c1.avif',
-    '',
-    'https://statichk.cmermedical.com/ckj/image/92aff26ec699.avif',
-  ],
-  [
-    'https://statichk.cmermedical.com/ckj/image/8d7594d7f374.avif',
-    'https://statichk.cmermedical.com/ckj/image/a39f91f126c1.avif',
-    '',
-    'https://statichk.cmermedical.com/ckj/image/e7e481d32375.avif',
-  ],
-  [
-    'https://statichk.cmermedical.com/ckj/image/67e8e433e933.avif',
-    'https://statichk.cmermedical.com/ckj/image/4076f4f20383.avif',
-    '',
-    'https://statichk.cmermedical.com/ckj/image/e5858b632521.avif',
-  ],
-]
 let yaImgCurrtNum = ref(6)
 const yaImgFu = (_idx, _type) => {
   if (_type) {
@@ -529,259 +94,130 @@ const yaImgFu = (_idx, _type) => {
   }
 }
 
-const showMark = ref(false)
-const showImg = () => {
-  showMark.value = !showMark.value
-}
-
-let Plant_brand_series_cur = ref(0)
-
-const Plant_brand_series_data = [
+// 植牙6步曲
+const implantStepList = [
   {
-    id: '1106',
-    name: ['瑞士', '士卓曼BLX'],
-    img: 'https://static.cmereye.com/imgs/2024/11/d0491768aa6c1cff.png',
-    logo: 'https://static.cmereye.com/imgs/2024/02/c35e7ba905606dd0.png',
-    compare: [
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc4star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
-    ],
-    nation: 'https://static.cmereye.com/imgs/2024/11/37d07a7454f419a0.png',
-    lists: [
-      '· 獨特植體保留更多骨頭，創傷更小',
-      '· 親水性抗發炎，加快骨細胞與植體結合',
-      '· 癒合時間最短，最快3-4週完成',
-      '· 大量長期文獻支持',
-      '· 原廠全球終身保養',
-    ],
+    id: 1,
+    title: '全面口腔檢查',
+    img: '	https://statichk.cmermedical.com/ckj/image/c73d9b16c9e4.avif',
   },
   {
-    id: '1101',
-    name: ['美國', '皓聖'],
-    img: 'https://static.cmereye.com/imgs/2024/11/e2ccb31ba455256e.png',
-    logo: 'https://static.cmereye.com/imgs/2024/02/9badffc6183d36ba.png',
-    compare: [
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc3star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc3star.svg',
-    ],
-    nation: 'https://static.cmereye.com/imgs/2024/11/5c90f4f3ff45a33b.png',
-    lists: [
-      '· 經濟實惠，全球暢銷',
-      '· 純鈦材料，親和力強',
-      '· 特殊螺紋設計，適合即剝即種',
-    ],
+    id: 2,
+    title: '注射麻醉藥',
+    img: 'https://statichk.cmermedical.com/ckj/image/1fa0c1bed6c1.avif',
   },
   {
-    id: '1102',
-    name: ['韓國', '奧齒泰'],
-    img: 'https://static.cmereye.com/imgs/2024/11/1eed57cea099bec0.png',
-    logo: 'https://static.cmereye.com/imgs/2024/02/3f53e24f1f9ce65a.png',
-    compare: [
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc3star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc3star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc3star.svg',
-    ],
-    nation: 'https://static.cmereye.com/imgs/2024/11/660585dbc09dd5a2.png',
-    lists: [
-      '· 亞洲人種植首選',
-      '· 獲FDA、CE、SFDA三認證',
-      '· 體積小，譽為適合亞洲人的植體',
-    ],
+    id: 3,
+    title: '把植體植入顎骨',
+    img: 'https://statichk.cmermedical.com/ckj/image/c15bae966799.avif',
   },
   {
-    id: '1103',
-    name: ['瑞士', '拓美親水'],
-    img: 'https://static.cmereye.com/imgs/2024/11/da0e4aad3f154fc4.png',
-    logo: 'https://static.cmereye.com/imgs/2024/02/1ed372ab9936505f.png',
-    compare: [
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc4star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc4star.svg',
-    ],
-    nation: 'https://static.cmereye.com/imgs/2024/12/4b192ecf9a3770ba.png',
-    lists: [
-      '· 穩固耐用',
-      '· 超親水表面處理，長期穩定',
-      '· 調節性能高，適用不同情況',
-    ],
+    id: 4,
+    title: '安裝臨時假牙',
+    img: '	https://statichk.cmermedical.com/ckj/image/3895c8fc526e.avif',
   },
   {
-    id: '1104',
-    name: ['德國', '植體'],
-    img: 'https://static.cmereye.com/imgs/2024/11/7ecab30696d065c6.png',
-    logo: 'https://static.cmereye.com/imgs/2024/02/0db21351ca26a0a7.png',
-    compare: [
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc3star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc4star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
-    ],
-    nation: 'https://static.cmereye.com/imgs/2024/11/dc15500df8e7b2c7.png',
-    lists: [
-      '· 專利精密設計，穩定出眾，終身保養',
-      '· 個人化美學設計，滿意度高',
-      '· 完美保存牙骨及組織',
-    ],
+    id: 5,
+    title: '套上牙冠及微調',
+    img: '	https://statichk.cmermedical.com/ckj/image/943073b1e2ce.avif',
   },
   {
-    id: '1105',
-    name: ['瑞士', '士卓曼'],
-    img: 'https://static.cmereye.com/imgs/2024/11/0b1034cc09108979.png',
-    logo: 'https://static.cmereye.com/imgs/2024/02/c35e7ba905606dd0.png',
-    compare: [
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc4star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
-      'https://static.cmereye.com/static/ckj/imgs/svg/pc4star.svg',
-    ],
-    nation: 'https://static.cmereye.com/imgs/2024/11/315093faa529d0f8.png',
-    lists: [
-      '· 國際頂級植體，價格平香港1/3',
-      '· 國際口腔植牙協會推薦',
-      '· 癒合時間短，最快4週完成',
-      '· 煙酒及糖尿病人士適用',
-      '· 全球終身保養',
-    ],
+    id: 6,
+    title: '定期覆診及跟進',
+    img: 'https://statichk.cmermedical.com/ckj/image/125ad30de23a.avif',
   },
 ]
 
-const plant_brand_series_ref = ref({
-  slideToLoop: (a) => {},
-  slidePrev: () => {},
-  slideNext: () => {},
-})
-const set_plant_brand_series_ref = (swiper: any) => {
-  plant_brand_series_ref.value = swiper
-}
-const on_plant_brand_series_change = (swiper: any) => {
-  // plant_brand_series_ref.value.slideToLoop(swiper.realIndex)
-  Plant_brand_series_cur.value = swiper.realIndex
-}
-const handle_lant_brand_series_tab = (_idx: number) => {
-  plant_brand_series_ref.value.slideToLoop(_idx)
-}
+// 植體品牌
+const brandList = [
+  {
+    id: 1,
+    title: '瑞士士卓曼BLX',
+    img: 'https://static.ckjhk.com/ckj-image/a3c3dd1d9b89.png',
+    xjb: 'https://static.ckjhk.com/ckj-image/337cc6af4d75.svg',
+    nyd: 'https://static.ckjhk.com/ckj-image/6b8759325963.svg',
+    kzh: 'https://static.ckjhk.com/ckj-image/6b8759325963.svg',
+  },
+  {
+    id: 2,
+    title: '瑞士士卓曼',
+    img: 'https://static.ckjhk.com/ckj-image/4aefa31d905c.png',
+    xjb: 'https://static.ckjhk.com/ckj-image/ccd5fcee8b34.svg',
+    nyd: 'https://static.ckjhk.com/ckj-image/6b8759325963.svg',
+    kzh: 'https://static.ckjhk.com/ckj-image/cef0a6994955.svg',
+  },
+  {
+    id: 3,
+    title: '瑞典尼奧斯',
+    img: 'https://static.ckjhk.com/ckj-image/7246be98610d.png',
+    xjb: 'https://static.ckjhk.com/ckj-image/ccd5fcee8b34.svg',
+    nyd: 'https://static.ckjhk.com/ckj-image/6b8759325963.svg',
+    kzh: 'https://static.ckjhk.com/ckj-image/cef0a6994955.svg',
+  },
+  {
+    id: 4,
+    title: '韓國奧齒泰',
+    img: 'https://static.ckjhk.com/ckj-image/730c9574c435.png',
+    xjb: 'https://static.ckjhk.com/ckj-image/ccd5fcee8b34.svg',
+    nyd: 'https://static.ckjhk.com/ckj-image/cef0a6994955.svg',
+    kzh: 'https://static.ckjhk.com/ckj-image/cef0a6994955.svg',
+  },
+  {
+    id: 5,
+    title: '美國皓聖',
+    img: 'https://static.ckjhk.com/ckj-image/800c5f942ba4.png',
+    xjb: 'https://static.ckjhk.com/ckj-image/337cc6af4d75.svg',
+    nyd: 'https://static.ckjhk.com/ckj-image/5e8b8a261b54.svg',
+    kzh: 'https://static.ckjhk.com/ckj-image/5e8b8a261b54.svg',
+  },
+  {
+    id: 6,
+    title: '德國Ankylos',
+    img: 'https://static.ckjhk.com/ckj-image/2b1c97492ca5.png',
+    xjb: 'https://static.ckjhk.com/ckj-image/ccd5fcee8b34.svg',
+    nyd: 'https://static.ckjhk.com/ckj-image/cef0a6994955.svg',
+    kzh: 'https://static.ckjhk.com/ckj-image/cef0a6994955.svg',
+  },
+]
 
-const brand_btn = (_type: string) => {
-  plant_brand_series_ref.value[_type]()
-}
-
-const doctorData = {
-  title: '種植專科團隊',
+// 常見問題
+const problemData = {
+  title: 'pages.dental-service.implant.problem.title',
   lists: [
     {
-      id: '101',
-      name: '李川',
-      job: '院長',
-      addressType: '101',
-      addressname: '羅湖區',
-      text: '即刻植牙、微創植牙、牙齒美容修復、前牙全瓷美學修復等。',
-      img: 'https://static.cmereye.com/imgs/2024/02/a24233463dca40da.png',
+      Q: 'pages.dental-service.implant.problem.lists[0].Q',
+      A: 'pages.dental-service.implant.problem.lists[0].A',
     },
     {
-      id: '102',
-      name: '盧勇輝',
-      job: '院長',
-      addressType: '101',
-      addressname: '羅湖區',
-      text: '微創植牙、即剝即種及種植牙美容修復，各種複雜拔牙、植骨術。 在口腔種植及修復方面有豐富的臨床經驗。',
-      img: 'https://static.cmereye.com/imgs/2024/02/5965b5326d696a98.png',
+      Q: 'pages.dental-service.implant.problem.lists[1].Q',
+      A: 'pages.dental-service.implant.problem.lists[1].A',
     },
     {
-      id: '103',
-      name: '鞏賢平',
-      job: '院長',
-      addressType: '101',
-      addressname: '羅湖區',
-      text: '植牙修復，微創美觀修復，全口咬合重建等；熟練應用口腔顯微鏡並在顯微放大設備下進行植牙手術、牙周美觀手術及各類修復操作。',
-      img: 'https://static.cmereye.com/imgs/2024/02/d515b22a846b996e.png',
+      Q: 'pages.dental-service.implant.problem.lists[2].Q',
+      A: 'pages.dental-service.implant.problem.lists[2].A',
     },
     {
-      id: '104',
-      name: '劉鑫',
-      job: '院長',
-      addressType: '102',
-      addressname: '福田區',
-      text: '各種疑難植牙、穿顴穿翼、全口無牙顎、上顎竇增高、複雜的軟硬組織移植、即時植牙即刻修復、前牙美觀、數位化和植牙導航等諸多領域。',
-      img: 'https://static.cmereye.com/imgs/2024/02/0762d56bee690392.png',
+      Q: 'pages.dental-service.implant.problem.lists[3].Q',
+      A: 'pages.dental-service.implant.problem.lists[3].A',
     },
     {
-      id: '105',
-      name: '周小明',
-      job: '院長',
-      addressType: '102',
-      addressname: '福田區',
-      text: '各類口腔疾病診斷與治療、熟練進行微創植牙、即剝即種即刻修復等尖端技術。',
-      img: 'https://static.cmereye.com/imgs/2024/02/169059476e4803ff.png',
+      Q: 'pages.dental-service.implant.problem.lists[4].Q',
+      A: 'pages.dental-service.implant.problem.lists[4].A',
     },
     {
-      id: '106',
-      name: '馮曉瑛',
-      job: '院長',
-      addressType: '103',
-      addressname: '南山區',
-      text: '複雜病例整體診療方案的設計、數位植牙修復技術等，對齒槽骨嚴重吸收的病例，全口活動義齒修復方面有深厚的技術功底及累積。',
-      img: 'https://static.cmereye.com/imgs/2024/02/211667de3a4ffa59.png',
+      Q: 'pages.dental-service.implant.problem.lists[5].Q',
+      A: 'pages.dental-service.implant.problem.lists[5].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[6].Q',
+      A: 'pages.dental-service.implant.problem.lists[6].A',
+    },
+    {
+      Q: 'pages.dental-service.implant.problem.lists[7].Q',
+      A: 'pages.dental-service.implant.problem.lists[7].A',
     },
   ],
 }
-
-const confidence_ecommendation_lists = [
-  'https://static.cmereye.com/imgs/2024/05/9f5332b53eaf9f2c.png',
-  'https://static.cmereye.com/imgs/2024/04/7e45b30e9d208462.png',
-  'https://static.cmereye.com/imgs/2024/04/92da0e78f2e38668.png',
-  'https://static.cmereye.com/imgs/2024/04/84aa355621c9685d.png',
-  'https://static.cmereye.com/imgs/2024/04/068ec100a33952ea.png',
-  'https://statichk.cmermedical.com/ckj/image/2024122710023601.png',
-]
-
-const doctorTeam = ref(null)
-const { top, bottom } = useElementBounding(doctorTeam)
-const { height } = useWindowSize()
-const checkId = ref('101')
-const groupPhoto = ref([
-  'https://statichk.cmermedical.com/ckj/image/ffca67be82b4.avif',
-  'https://static.cmereye.com/imgs/2024/11/533cd5d2e1944a98.jpg',
-  'https://static.cmereye.com/imgs/2024/11/dce268191178f65d.jpg',
-  '',
-  'https://static.cmereye.com/imgs/2024/11/43f7fdfa344a8b78.jpg',
-  'https://static.cmereye.com/imgs/2024/11/1877a39445db8018.jpg',
-  '',
-])
-
-const checkGroupPhoto = () => {
-  switch (checkId.value) {
-    case '101':
-      return groupPhoto.value[0]
-    case '102':
-      return groupPhoto.value[1]
-    case '103':
-      return groupPhoto.value[2]
-    case '104':
-      return groupPhoto.value[3]
-    case '105':
-      return groupPhoto.value[4]
-    case '106':
-      return groupPhoto.value[5]
-    case '107':
-      return groupPhoto.value[6]
-
-    default:
-      return groupPhoto.value[0]
-  }
-}
-// // 请求 banner 数据
-// const getBannerImg = async () => {
-//   const response = await fetch('/api/api.php/cms/sort/scode/21', {
-//     headers: { 'Content-Type': 'application/json' },
-//     method: 'GET',
-//   })
-//   const data = await response.json()
-//   if (data.code === 1) {
-//     headerConfig.value.img = `https://admin.ckjhk.com/${data.data.pic}`
-//     headerConfig.value.mbImg = `https://admin.ckjhk.com/${data.data.ico}`
-//   }
-// }
-//
 </script>
 
 <template>
@@ -839,1518 +275,472 @@ const checkGroupPhoto = () => {
         </div>
       </template>
     </PagePcBannerNoHome>
-    <div class="dentistryServices">
-      <div class="index_title pageCon">
-        {{ $t('pages.dental-service.title') }}
-      </div>
-      <!-- <div class="tabNav pageCon">
-        <nuxt-link :to="'/'" title="深圳愛康健口腔醫院" alt="深圳愛康健口腔醫院"
-          ><span>{{ $t('pages.index.title') }}</span></nuxt-link
-        >
-        <nuxt-link
-          :to="'/dental-service'"
-          :title="$t('pages.dental-service.title')"
-          :alt="'pages.dental-service.title'"
-          ><span>{{ $t('pages.dental-service.title') }}</span></nuxt-link
-        >
-        <span :title="$t(introduceData.tabNavName)">{{
-          $t(introduceData.tabNavName)
-        }}</span>
-      </div> -->
-      <!--
-      <div class="plague" v-if="windowWidth > 768">
-        <div class="plague-in">
-          <div class="dentistryServices-title plague-title">
-            <div class="dentistryServices-title-in bb plague-title-in">
-              {{ plagueData.title }}
-            </div>
-          </div>
-          <div class="plague-lists">
-            <div
-              v-for="(plagueItem, plagueIndex) in plagueData.lists"
-              :key="plagueIndex"
-            >
-              <span v-if="plagueItem.type === 'text'">{{
-                plagueItem.context
-              }}</span>
-              <img v-else :src="plagueItem.context" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-      -->
-      <div class="Dental_implant_technology">
-        <div class="dentistryServices-title Dental_implant_technology-title">
-          <div class="dentistryServices-title-in bb">種植牙技術</div>
-        </div>
-        <div class="Dental_implant_technology-context" v-if="windowWidth < 768">
-          利用鈦金屬等物料製作成植體，然後植入進行牙槽骨當中，代替牙根以作支撐，然後在上面植入假牙、牙橋或假牙托來填補空缺的牙齒。隨着醫療技術的進步，現在不僅有傳統的植牙方式，還有微創植牙。
-        </div>
-        <div class="Dental_implant_technology-context" style="display: none">
-          為了提供精准化的種植牙服務，運用先進電腦圖形影像技術，對客戶進行定制化分析。根據口腔內CT掃描和光學掃描的數據，在電腦上重建下顎骨立體模型，旨在確保每次種植的精準性和成功率。
-        </div>
-        <div class="Dental_implant_technology-video" v-if="windowWidth > 768">
-          <div class="youtobe-video">
-            <div class="youtobe-video-in">
-              <iframe
-                width="560"
-                src="https://www.youtube.com/embed/WCbVfokM-iU?si=FBsi3CnSYRK31JwB"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-in">
-          <div class="dentistryServices-title step-title">
-            <div class="dentistryServices-title-in bb step-title-in">
-              植牙6步曲
-            </div>
-          </div>
-          <div class="step-lists" v-if="windowWidth > 768">
-            <div
-              class="step-lists-in"
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-            >
-              <div class="step-lists-in-l">
-                <div class="title">
-                  <!-- <img src="@/assets/images/icon_13.png" alt="" /> -->
-                  <!-- {{ stepItem.title }} -->
-                  <div>
-                    <img
-                      src="https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div>0{{ stepIndex + 1 }}</div>
-                </div>
-                <div class="image">
-                  <img :src="stepItem.img" loading="lazy" alt="" />
-                </div>
-                <div class="name">{{ stepItem.name }}</div>
-                <div class="context">{{ stepItem.context }}</div>
-              </div>
-              <div class="step-lists-in-r">
-                <img
-                  src="https://static.cmereye.com/imgs/2024/11/5e6a778026dfcb28.png"
-                  alt=""
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="mobile-new-step" v-else>
-            <div
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-            >
-              <div>
-                <img :src="stepItem.img" loading="lazy" alt="" />
-                <span>{{ stepItem.name }}</span
-                ><br />
-                <span>{{ stepItem.context }}</span>
-              </div>
-              <div><img :src="stepItem.imgNum" loading="lazy" alt="" /></div>
-            </div>
-          </div>
-          <div class="step-bg step-mobile-bg-one" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/0f9506f5f2e7252f.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="step-bg step-mobile-bg-two" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/6d29b5a6949eb591.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="step-bg step-mobile-bg-three" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/2c52c0d9059dac7d.png"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="Plant_brand_series" v-if="windowWidth > 768">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">植體品牌系列</div>
-        </div>
-        <div class="Plant_brand_series-tab" v-if="windowWidth > 768">
-          <span
-            :class="{ active: Plant_brand_series_cur === tabIndex }"
-            v-for="(tabItem, tabIndex) in Plant_brand_series_data"
-            :key="tabIndex"
-            @click="handle_lant_brand_series_tab(tabIndex)"
+    <!-- 内容区 -->
+    <container>
+      <section class="ckj-container implant-step">
+        <div class="implant-title-subheading">\ <i>植牙6步曲</i> /</div>
+        <div class="implant-step-context ckj-contrain" id="implantStep">
+          <div
+            class="implant-step-item"
+            v-for="(item, index) in implantStepList"
+            :key="index"
           >
-            <span
-              v-for="(tabspanitem, tabspanindex) in tabItem.name"
-              :key="tabspanindex"
-            >
-              {{ tabspanitem }}
-            </span>
-          </span>
-        </div>
-        <Swiper
-          :loop="true"
-          :modules="[Autoplay]"
-          :autoplay="{
-            delay: 3000,
-          }"
-          @swiper="set_plant_brand_series_ref"
-          @slideChange="on_plant_brand_series_change"
-        >
-          <Swiper-slide
-            v-for="(
-              plant_brand_series_item, plant_brand_series_index
-            ) in Plant_brand_series_data"
-            :key="plant_brand_series_index"
-          >
-            <div class="Plant_brand_series-content">
-              <div>
-                <div class="Plant_brand_series-content-l">
-                  <div>
-                    <img
-                      :src="plant_brand_series_item.img"
-                      loading="lazy"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="Plant_brand_series-content-r">
-                  <div>
-                    <div>
-                      <img
-                        :src="plant_brand_series_item.logo"
-                        loading="lazy"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        :src="plant_brand_series_item.nation"
-                        loading="lazy"
-                        alt=""
-                      />
-                    </div>
-                    <div class="item_compare">
-                      <div>
-                        <div>性價比</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[0]"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div>耐用度</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[1]"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div>客製化</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[2]"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <span
-                  v-for="(item, index) in plant_brand_series_item.lists"
-                  :key="index"
-                >
-                  {{ item }}
-                </span>
-              </div>
+            <div>{{ item.id }}</div>
+            <div>
+              <img :src="item.img" :alt="item.title" />
             </div>
-          </Swiper-slide>
-        </Swiper>
-        <div class="brand_btn">
-          <div class="brand_btn_left" @click="brand_btn('slidePrev')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1167_2367)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M59.0859 69.3037L38.999 51.4994L59.0859 33.695"
-                stroke="#FC1682"
-                stroke-width="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1167_2367"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1167_2367"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1167_2367"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-          <div class="brand_btn_right" @click="brand_btn('slideNext')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1166_2259)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M43 31L65.6154 51.4878L43 73"
-                stroke="#FC1682"
-                stroke-width="9.69231"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1166_2259"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1166_2259"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1166_2259"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
+            <div>{{ item.title }}</div>
           </div>
         </div>
-      </div>
-      <ServiceIntroduceJY
-        :introduceData="introduceJY"
-        v-if="windowWidth > 768"
-      />
-      <div class="Dental_implant_technology-video" v-if="windowWidth < 768">
-        <div class="youtobe-video">
-          <div class="youtobe-video-in">
-            <iframe
-              width="560"
-              src="https://www.youtube.com/embed/WCbVfokM-iU?si=FBsi3CnSYRK31JwB"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
+      </section>
+      <section class="container seven-advantages">
+        <div class="d-flex flex-row mb-3 align-items-end subheading">
+          <span>愛康健種植7大</span><span>優勢</span>
         </div>
-      </div>
-      <div class="Plant_brand_series" v-if="windowWidth < 768">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">植體品牌系列</div>
-        </div>
-        <div class="Plant_brand_series-tab" v-if="windowWidth < 768">
-          <span
-            :class="{ active: Plant_brand_series_cur === tabIndex }"
-            v-for="(tabItem, tabIndex) in Plant_brand_series_data"
-            :key="tabIndex"
-            @click="handle_lant_brand_series_tab(tabIndex)"
-          >
-            <span
-              v-for="(tabspanitem, tabspanindex) in tabItem.name"
-              :key="tabspanindex"
-            >
-              {{ tabspanitem }}
-            </span>
-          </span>
-        </div>
-        <div class="Plant_brand_series-tab" v-if="windowWidth > 768">
-          <span
-            :class="{ active: Plant_brand_series_cur === tabIndex }"
-            v-for="(tabItem, tabIndex) in Plant_brand_series_data"
-            :key="tabIndex"
-            @click="handle_lant_brand_series_tab(tabIndex)"
-          >
-            <span
-              v-for="(tabspanitem, tabspanindex) in tabItem.name"
-              :key="tabspanindex"
-            >
-              {{ tabspanitem }}
-            </span>
-          </span>
-        </div>
-        <Swiper
-          :loop="true"
-          :modules="[Autoplay]"
-          :autoplay="{
-            delay: 3000,
-          }"
-          @swiper="set_plant_brand_series_ref"
-          @slideChange="on_plant_brand_series_change"
-        >
-          <Swiper-slide
-            v-for="(
-              plant_brand_series_item, plant_brand_series_index
-            ) in Plant_brand_series_data"
-            :key="plant_brand_series_index"
-          >
-            <div class="Plant_brand_series-content">
-              <div>
-                <div class="Plant_brand_series-content-l">
-                  <div>
-                    <img
-                      :src="plant_brand_series_item.img"
-                      loading="lazy"
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="Plant_brand_series-content-r">
-                  <div>
-                    <div>
-                      <img
-                        :src="plant_brand_series_item.logo"
-                        loading="lazy"
-                        alt=""
-                      />
-                    </div>
-                    <div>
-                      <img
-                        :src="plant_brand_series_item.nation"
-                        loading="lazy"
-                        alt=""
-                      />
-                    </div>
-                    <div class="item_compare">
-                      <div>
-                        <div>性價比</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[0]"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div>耐用度</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[1]"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div>客製化</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[2]"
-                            alt=""
-                            loading="lazy"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <span
-                  v-for="(item, index) in plant_brand_series_item.lists"
-                  :key="index"
-                >
-                  {{ item }}
-                </span>
-              </div>
-            </div>
-          </Swiper-slide>
-          <div class="btn-right-left">
-            <div @click="brand_btn('slidePrev')">
-              <img
-                src="https://statichk.cmermedical.com/ckj/image/2024122411123501.png"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-            <div @click="brand_btn('slideNext')">
-              <img
-                src="https://statichk.cmermedical.com/ckj/image/2024122411125201.png"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </Swiper>
-        <div class="brand_btn">
-          <div class="brand_btn_left" @click="brand_btn('slidePrev')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1167_2367)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M59.0859 69.3037L38.999 51.4994L59.0859 33.695"
-                stroke="#FC1682"
-                stroke-width="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1167_2367"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1167_2367"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1167_2367"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-          <div class="brand_btn_right" @click="brand_btn('slideNext')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1166_2259)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M43 31L65.6154 51.4878L43 73"
-                stroke="#FC1682"
-                stroke-width="9.69231"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1166_2259"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1166_2259"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1166_2259"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="technology" v-if="windowWidth < 768">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">「即剝即種」技術</div>
-        </div>
-        <div class="technology-in">
-          <div class="technology-in-t">
-            植牙流程需要經歷一段中長期的骨整合與復原，患者可能因為工作狀況或條件不允許，所以無法執行完整的植牙流程，我們會建議患者可以執行即剝即種植牙。
-          </div>
-          <div class="technology-in-img">
-            <img
-              src="https://static.cmereye.com/imgs/2024/04/bd2194046affe383.gif"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="technology-in-b">
-            此效果會根據個人健康狀況有所差異，需經過專業的療程評估
-          </div>
-        </div>
-        <div class="technology-btn">
-          <PageAnimBtnTypeTwo
-            :link="`https://wa.me/85269338128?text=取得種植牙免費CT檢查`"
-            str="取得預約口腔CT檢查"
-          />
-        </div>
-      </div>
-      <!-- <div class="Plant_brand_series" v-if="windowWidth > 768">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">植體品牌系列</div>
-        </div>
-        <div class="Plant_brand_series-tab" v-if="windowWidth > 768">
-          <span
-            :class="{ active: Plant_brand_series_cur === tabIndex }"
-            v-for="(tabItem, tabIndex) in Plant_brand_series_data"
-            :key="tabIndex"
-            @click="handle_lant_brand_series_tab(tabIndex)"
-          >
-            <span
-              v-for="(tabspanitem, tabspanindex) in tabItem.name"
-              :key="tabspanindex"
-            >
-              {{ tabspanitem }}
-            </span>
-          </span>
-        </div>
-        <Swiper
-          :loop="true"
-          :modules="[Autoplay]"
-          :autoplay="{
-            delay: 3000,
-          }"
-          @swiper="set_plant_brand_series_ref"
-          @slideChange="on_plant_brand_series_change"
-        >
-          <Swiper-slide
-            v-for="(
-              plant_brand_series_item, plant_brand_series_index
-            ) in Plant_brand_series_data"
-            :key="plant_brand_series_index"
-          >
-            <div class="Plant_brand_series-content">
-              <div>
-                <div class="Plant_brand_series-content-l">
-                  <div><img :src="plant_brand_series_item.img" alt="" /></div>
-                </div>
-                <div class="Plant_brand_series-content-r">
-                  <div>
-                    <div>
-                      <img :src="plant_brand_series_item.logo" alt="" />
-                    </div>
-                    <div>
-                      <img :src="plant_brand_series_item.nation" alt="" />
-                    </div>
-                    <div class="item_compare">
-                      <div>
-                        <div>性價比</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[0]"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div>耐用度</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[1]"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div>客製化</div>
-                        <div>
-                          <img
-                            :src="plant_brand_series_item.compare[2]"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <span
-                  v-for="(item, index) in plant_brand_series_item.lists"
-                  :key="index"
-                >
-                  {{ item }}
-                </span>
-              </div>
-            </div>
-          </Swiper-slide>
-        </Swiper>
-        <div class="brand_btn">
-          <div class="brand_btn_left" @click="brand_btn('slidePrev')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1167_2367)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M59.0859 69.3037L38.999 51.4994L59.0859 33.695"
-                stroke="#FC1682"
-                stroke-width="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1167_2367"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1167_2367"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1167_2367"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-          <div class="brand_btn_right" @click="brand_btn('slideNext')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1166_2259)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M43 31L65.6154 51.4878L43 73"
-                stroke="#FC1682"
-                stroke-width="9.69231"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1166_2259"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1166_2259"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1166_2259"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-        </div>
-      </div> -->
-      <div class="technology" v-if="windowWidth > 767">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">「即剝即種」技術</div>
-        </div>
-        <div class="technology-in">
-          <div class="technology-in-t">
-            植牙流程需要經歷一段中長期的骨整合與復原，患者可能因為工作狀況或條件不允許，所以無法執行完整的植牙流程，我們會建議患者可以執行即剝即種植牙。
-          </div>
-          <div class="technology-in-img">
-            <img
-              src="https://static.cmereye.com/imgs/2024/04/bd2194046affe383.gif"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="technology-in-b">
-            此效果會根據個人健康狀況有所差異，需經過專業的療程評估
-          </div>
-        </div>
-        <div class="technology-btn">
-          <PageAnimBtnTypeTwo
-            :link="`https://wa.me/85269338128?text=取得種植牙免費CT檢查`"
-            str="取得免費口腔CT檢查"
-          />
-        </div>
-      </div>
-      <!-- <div class="notice" v-if="windowWidth > 767">
-        <div class="dentistryServices-title notice-title">
-          <div class="dentistryServices-title-in bb notice-title-in">
-            <span>傳統植牙和</span>
-            <span>微創植牙的區別？</span>
-          </div>
-        </div>
-        <div class="notice-topText">
-          <span
-            v-for="(topTextItem, topTextIndex) in noticeData.topText"
-            :key="topTextIndex"
-            >{{ $t(topTextItem) }}</span
-          >
-        </div>
-        <div class="notice-in">
-          <div class="lists">
-            <div
-              class="lists-in"
-              v-for="(noticeItem, noticeIndex) in noticeData.dataLists"
-              :key="noticeIndex"
-            >
-              <div class="name">{{ noticeItem.name }}</div>
-              <div class="merit">{{ noticeItem.merit }}</div>
-              <div class="shortcoming">{{ noticeItem.shortcoming }}</div>
-            </div>
-          </div>
-        </div>
-        <div class="notice-bottomText pcBox">
-          <span
-            v-for="(bottomTextItem, bottomTextIndex) in noticeData.bottomText"
-            :key="bottomTextIndex"
-            >{{ $t(bottomTextItem) }}</span
-          >
-        </div>
-      </div> -->
-      <ServiceReason :reasonData="reasonData" />
-
-      <div class="classify" v-if="windowWidth > 768">
-        <div
-          class="dentistryServices-title-in bb notice-title-in classify-title"
-        >
-          <span>植牙技術及類別</span>
-        </div>
-        <div class="classify-item">
+        <div class="seven-advantages-content">
           <div>
             <div>
-              <div>微創植牙</div>
               <div>
-                <div>
-                  <p>
-                    <span>傷口大小</span>
-                    <span
-                      ><img
-                        style="padding-left: 3px"
-                        src="../../assets/images/2blood.svg"
-                        alt=""
-                        loading="lazy"
-                    /></span>
-                  </p>
-                  <p>
-                    <span>腫脹不適</span>
-                    <span
-                      ><img
-                        style="padding-left: 3px"
-                        src="../../assets/images/2blood.svg"
-                        alt=""
-                        loading="lazy"
-                    /></span>
-                  </p>
-                  <p>
-                    <span>手術速度</span>
-                    <span
-                      ><img
-                        src="../../assets/images/5star.svg"
-                        loading="lazy"
-                        alt=""
-                    /></span>
-                  </p>
-                  <p>
-                    <span>復原速度</span>
-                    <span
-                      ><img
-                        src="../../assets/images/5star.svg"
-                        loading="lazy"
-                        alt=""
-                    /></span>
-                  </p>
-                </div>
-                <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/11/bcd3ee26b3fa9cef.png"
-                    alt="微創植牙"
-                    loading="lazy"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="36"
+                  viewBox="0 0 35 36"
+                  fill="none"
+                >
+                  <path
+                    d="M34.6618 17.6861C21 19.7159 19.3606 21.3553 17.3309 35.017C15.3011 21.3553 13.6617 19.7159 0 17.6861C13.6617 15.6564 15.3011 14.017 17.3309 0.355225C19.3606 14.017 21 15.6564 34.6618 17.6861Z"
+                    fill="#F8298A"
                   />
-                </div>
+                </svg>
               </div>
+              <div>種植專家方案</div>
             </div>
-            <ul>
-              <li>電腦導航，直接透過手術導板穿透軟組織將植牙放到牙骨裡面</li>
-              <li>可以不用開刀縫針，減低感染風險</li>
-              <li>直接種植於現有顎骨結構，補骨需求小</li>
-            </ul>
+            <div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="36"
+                  viewBox="0 0 35 36"
+                  fill="none"
+                >
+                  <path
+                    d="M34.6618 17.6861C21 19.7159 19.3606 21.3553 17.3309 35.017C15.3011 21.3553 13.6617 19.7159 0 17.6861C13.6617 15.6564 15.3011 14.017 17.3309 0.355225C19.3606 14.017 21 15.6564 34.6618 17.6861Z"
+                    fill="#00AEFF"
+                  />
+                </svg>
+              </div>
+              <div>個性化定制</div>
+            </div>
+            <div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="36"
+                  viewBox="0 0 35 36"
+                  fill="none"
+                >
+                  <path
+                    d="M34.6618 17.6861C21 19.7159 19.3606 21.3553 17.3309 35.017C15.3011 21.3553 13.6617 19.7159 0 17.6861C13.6617 15.6564 15.3011 14.017 17.3309 0.355225C19.3606 14.017 21 15.6564 34.6618 17.6861Z"
+                    fill="#F8298A"
+                  />
+                </svg>
+              </div>
+              <div>自選植體</div>
+            </div>
           </div>
           <div>
             <div>
-              <div>傳統植牙</div>
               <div>
-                <div>
-                  <p>
-                    <span>傷口大小</span>
-                    <span
-                      ><img
-                        style="padding-left: 3px"
-                        src="../../assets/images/5blood.svg"
-                        alt=""
-                        loading="lazy"
-                    /></span>
-                  </p>
-                  <p>
-                    <span>腫脹不適</span>
-                    <span
-                      ><img
-                        style="padding-left: 3px"
-                        src="../../assets/images/4blood.svg"
-                        alt=""
-                        loading="lazy"
-                    /></span>
-                  </p>
-                  <p>
-                    <span>手術速度</span>
-                    <span
-                      ><img
-                        src="../../assets/images/3star.svg"
-                        loading="lazy"
-                        alt=""
-                    /></span>
-                  </p>
-                  <p>
-                    <span>復原速度</span>
-                    <span
-                      ><img
-                        src="../../assets/images/2star.svg"
-                        loading="lazy"
-                        alt=""
-                    /></span>
-                  </p>
-                </div>
-                <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/11/4591094d74d5db03.png"
-                    alt="傳統植牙"
-                    loading="lazy"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="36"
+                  viewBox="0 0 35 36"
+                  fill="none"
+                >
+                  <path
+                    d="M34.6618 17.6861C21 19.7159 19.3606 21.3553 17.3309 35.017C15.3011 21.3553 13.6617 19.7159 0 17.6861C13.6617 15.6564 15.3011 14.017 17.3309 0.355225C19.3606 14.017 21 15.6564 34.6618 17.6861Z"
+                    fill="#00AEFF"
                   />
+                </svg>
+              </div>
+              <div>自選牙冠顏色</div>
+            </div>
+            <div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="36"
+                  viewBox="0 0 35 36"
+                  fill="none"
+                >
+                  <path
+                    d="M34.6618 17.6861C21 19.7159 19.3606 21.3553 17.3309 35.017C15.3011 21.3553 13.6617 19.7159 0 17.6861C13.6617 15.6564 15.3011 14.017 17.3309 0.355225C19.3606 14.017 21 15.6564 34.6618 17.6861Z"
+                    fill="#F8298A"
+                  />
+                </svg>
+              </div>
+              <div>微創無痛舒適</div>
+            </div>
+            <div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="36"
+                  viewBox="0 0 35 36"
+                  fill="none"
+                >
+                  <path
+                    d="M34.6618 17.6861C21 19.7159 19.3606 21.3553 17.3309 35.017C15.3011 21.3553 13.6617 19.7159 0 17.6861C13.6617 15.6564 15.3011 14.017 17.3309 0.355225C19.3606 14.017 21 15.6564 34.6618 17.6861Z"
+                    fill="#00AEFF"
+                  />
+                </svg>
+              </div>
+              <div>香港醫療品質</div>
+            </div>
+            <div>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="35"
+                  height="36"
+                  viewBox="0 0 35 36"
+                  fill="none"
+                >
+                  <path
+                    d="M34.6618 17.6861C21 19.7159 19.3606 21.3553 17.3309 35.017C15.3011 21.3553 13.6617 19.7159 0 17.6861C13.6617 15.6564 15.3011 14.017 17.3309 0.355225C19.3606 14.017 21 15.6564 34.6618 17.6861Z"
+                    fill="#F8298A"
+                  />
+                </svg>
+              </div>
+              <div>一站式售後保障</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container brand-list">
+        <div class="d-flex flex-row mb-3 align-items-end subheading">
+          <span>植體品牌</span><span>系列</span>
+        </div>
+        <div class="brand-context" id="brand-context">
+          <div
+            class="brand-item-list"
+            v-for="(item, index) in brandList"
+            :key="index"
+          >
+            <div>
+              <img :src="item.img" :alt="item.title" />
+            </div>
+            <div>{{ item.title }}</div>
+            <div>
+              <div>
+                <div>性價比</div>
+                <div>
+                  <img :src="item.xjb" alt="性價比" />
+                </div>
+              </div>
+              <div>
+                <div>耐用度</div>
+                <div>
+                  <img :src="item.nyd" alt="耐用度" />
+                </div>
+              </div>
+              <div>
+                <div>客製化</div>
+                <div>
+                  <img :src="item.kzh" alt="客製化" />
                 </div>
               </div>
             </div>
-            <ul>
-              <li>
-                以傳統手術刀切口，手術後需等待數個月讓植牙組織與人體結合為一個穩固的基礎，方可安裝人造牙齒
-              </li>
-              <li>傷口較大需縫合、療合時間較長</li>
-              <li>如顎骨密度不足或有缺陷，或需進行額外的補骨手術</li>
-            </ul>
           </div>
-          <!-- <div>
-            <span>*每個人的實際情況存在差異，</span>
-            <span>建議諮詢您的牙醫了解最適合方案。</span>
-          </div> -->
         </div>
-      </div>
-      <div class="classify" v-if="windowWidth < 768">
-        <div
-          class="dentistryServices-title-in bb notice-title-in classify-title"
-        >
-          <span>植牙技術及類別</span>
+      </section>
+      <section class="ckj-container extra-charge">
+        <div class="d-flex flex-row mb-3 align-items-end subheading">
+          <span>額外</span><span>項目</span>
         </div>
-        <div class="">
+        <div class="extra-charge-context">
+          <div>
+            <div>項目</div>
+            <div>價錢</div>
+          </div>
+          <div>
+            <div>牙齦移植術</div>
+            <div>￥3000</div>
+          </div>
+          <div>
+            <div>3D數碼種植導板</div>
+            <div>￥1500/顆</div>
+          </div>
+          <div>
+            <div>上頜竇底提升術</div>
+            <div>￥5000起</div>
+          </div>
+          <div>
+            <div>植體取出術</div>
+            <div>￥1000/顆</div>
+          </div>
+          <div>
+            <div>植體牙周維護</div>
+            <div>￥300/顆</div>
+          </div>
+          <div>
+            <div>馬龍橋種植支架</div>
+            <div>￥10000/半口</div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container implant-git">
+        <div class="d-flex flex-row mb-3 align-items-end subheading">
+          <span>「即刻植牙」</span><span>技術</span>
+        </div>
+        <div class="implant-git-image">
+          <div>
+            <img
+              src="https://static.cmereye.com/imgs/2024/04/bd2194046affe383.gif"
+              alt=""
+            />
+          </div>
+          <div>
+            是一種先進技術，在拔除患牙同時，立即將植體放入拔牙窩內，<span
+              >可縮短50%的骨癒合時間。</span
+            >
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container technical-category">
+        <div class="d-flex flex-row mb-3 align-items-end subheading">
+          <span>植牙</span><span>技術及類別</span>
+        </div>
+        <div class="technical-category-table">
           <div></div>
           <div>微創植牙</div>
           <div>傳統植牙</div>
           <div></div>
           <div>
             <img
-              src="https://statichk.cmermedical.com/ckj/image/f662a2c2f358.avif"
+              src="https://static.ckjhk.com/ckj-image/2025031717580401.png"
               alt=""
-              loading="lazy"
+              style="height: 100%"
             />
           </div>
           <div>
             <img
-              src="https://statichk.cmermedical.com/ckj/image/7086304752d3.avif"
+              src="https://static.ckjhk.com/ckj-image/2025031717580402.png"
               alt=""
-              loading="lazy"
+              style="height: 100%"
             />
           </div>
           <div>傷口大小</div>
-          <div>
-            <img
-              src="https://statichk.cmermedical.com/smile/2024122414595601.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <img
-              src="https://statichk.cmermedical.com/smile/2024122415001001.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
+          <div>很小</div>
+          <div>較大</div>
           <div>腫脹不適</div>
-          <div>
-            <img
-              src="https://statichk.cmermedical.com/smile/2024122414595601.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <img
-              src="https://statichk.cmermedical.com/smile/2024122415001001.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
+          <div>很小</div>
+          <div>較大</div>
           <div>手術速度</div>
-          <div>
-            <img
-              src="https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <img
-              src="https://static.cmereye.com/static/ckj/imgs/svg/pc3star.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
+          <div>非常快</div>
+          <div>緩慢</div>
           <div>復原速度</div>
-          <div>
-            <img
-              src="https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <img
-              src="https://static.cmereye.com/static/ckj/imgs/svg/pc2star.svg"
-              alt=""
-              loading="lazy"
-            />
-          </div>
+          <div>非常快</div>
+          <div>緩慢</div>
           <div>特點</div>
           <div>
-            <span>電腦導航，直接透過手術導板穿透軟組織將植牙放到牙骨裡面</span>
-            <span>可以不用開刀縫針，減低感染風險</span>
-            <span>直接種植於現有顎骨結構，補骨需求小</span>
+            <ul>
+              <li>透過電腦導航將植牙放到牙骨裡面</li>
+              <li>不用開刀縫針，減低感染風險</li>
+              <li>補骨需求小</li>
+            </ul>
           </div>
           <div>
-            <span
-              >以傳統手術刀切口，手術後需等數個月讓植牙組織與人體結合為一個穩固的基礎，方可安裝人造牙齒</span
-            >
-            <span> 傷口較大需縫合、療合時間較長 </span>
-            <span>如顎骨密度不足或有缺陷，或需進行額外的補骨手術 </span>
+            以傳統刀切口，需等待數個月植牙組織與人體結合傷口大需縫合，癒合時間較長
           </div>
         </div>
-      </div>
-      <div class="Dental_implant_technology-img">
-        <img
-          src="https://static.cmereye.com/imgs/2024/02/889bd45e5e2ee385.png"
-          alt=""
-          loading="lazy"
-        />
-      </div>
-      <!-- <div class="doctorTeam" v-if="windowWidth > 768" ref="doctorTeam">
-        <ServiceSpecializedTeam :doctorData="doctorData" />
-        <ServiceSpecializedTeamNew :doctorData="doctorData" />
-      </div> -->
-      <div class="new_doctor">
-        <div class="implantCase-title dentistryServices-title">
-          <div class="dentistryServices-title-in bb implantCase-title-in">
-            種植專科團隊
-          </div>
+      </section>
+
+      <div class="affiliation-bg">
+        <div
+          class="affiliation-title d-flex flex-row mb-3 align-items-end subheading"
+        >
+          <span>香港上市醫療公司</span><span>管理</span>
         </div>
-        <div class="group_photo" v-if="checkGroupPhoto()">
-          <img :src="checkGroupPhoto()" loading="lazy" alt="" />
-        </div>
-        <div class="team_doctor_everybody">
-          <NewDoctor :id="checkId" />
-        </div>
-      </div>
-      <div class="implantCase">
-        <div class="implantCase-title dentistryServices-title">
-          <div class="dentistryServices-title-in bb implantCase-title-in">
-            植牙案例
-          </div>
-        </div>
-        <div class="implantCase-content" style="display: none !important">
-          <swiper
-            class="implantCaseBoxSwiper"
-            :loop="true"
-            :autoplay="{
-              delay: 4000,
-            }"
-            @swiper="setImplantCaseSwiperRef"
-            @slideChange="onSlideImplantCaseChange"
-          >
-            <swiper-slide
-              v-for="(implantCaseItem, implantCaseIndex) in implantCaseData"
-              :key="implantCaseIndex"
-            >
-              <div class="implantCase-content-in">
-                <div
-                  :class="[
-                    'implantCaseText',
-                    { act: yaImgCurrtNum === implantCaseIndex },
-                  ]"
-                >
-                  {{ yaImgCurrtNum === implantCaseIndex ? '手術前' : '手術後' }}
-                </div>
-                <div class="implantCaseBox-t">
-                  <div
-                    :style="{
-                      background: `url(${implantCaseItem.dataLists[0].imgs[0]})`,
-                      'background-size': '100% 100%',
-                    }"
-                    :key="implantCaseIndex"
-                  >
-                    <!-- :style="{
-                        opacity: yaImgCurrtNum === implantCaseIndex ? 0 : 1,
-                      }" -->
-                    <img
-                      class="ya"
-                      :src="
-                        showMark
-                          ? implantCaseItem.dataLists[1].imgs[0]
-                          : implantCaseItem.dataLists[0].imgs[0]
-                      "
-                      alt=""
-                      loading="lazy"
-                      v-if="windowWidth > 768"
-                    />
-                    <img
-                      v-else
-                      class="ya"
-                      alt=""
-                      :style="{
-                        opacity: yaImgCurrtNum === implantCaseIndex ? 0 : 1,
-                      }"
-                      :src="implantCaseItem.dataLists[1].imgs[0]"
-                      loading="lazy"
-                    />
-                    <img
-                      class="rightMbIcon"
-                      src="https://static.cmereye.com/imgs/2024/02/6f085bb1a3aef878.png"
-                      alt=""
-                      @touchstart="yaImgFu(implantCaseIndex, true)"
-                      @touchend="yaImgFu(implantCaseIndex, false)"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div
-                    v-if="windowWidth > 768"
-                    class="click_btn"
-                    @click="showImg()"
-                  >
-                    <img
-                      src="https://static.cmereye.com/imgs/2024/11/a6ee3442fce7e3e6.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <!-- <div>
-                    <img :src="implantCaseItem.dataLists[1].imgs[0]">
-                  </div> -->
-                </div>
-                <div class="implantCaseBox-b">
-                  <img
-                    :class="{ firstBox: implantCaseIndex === 0 }"
-                    :src="implantCaseItem.dataLists[1].imgs[1]"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </swiper-slide>
-          </swiper>
-          <div class="implantCase-content-line">
-            <PageSwiperPointLine
-              :latestNewsNum="implantCaseData.length"
-              :latestNewsCurrent="implantCaseCurrent"
-              @changeLineCur="handleLineCur"
-            ></PageSwiperPointLine>
-          </div>
-        </div>
-        <div class="implantCase-content">
-          <swiper
-            class="implantCaseBoxSwiper"
-            :loop="true"
-            :autoplay="{
-              delay: 4000,
-            }"
-            @swiper="setImplantCaseSwiperRefMb"
-            @slideChange="onSlideImplantCaseChangeMb"
-          >
-            <swiper-slide v-for="(item, index) in caseList" :key="index">
-              <div class="implantCase-content-in">
-                <div class="afterBefore">
-                  <div>手術前</div>
-                  <div>手術後</div>
-                </div>
-                <div class="itemImgDetails">
-                  <div v-for="(e, i) in item" :key="i">
-                    <img v-if="e" :src="e" alt="" loading="lazy" />
-                  </div>
-                </div>
-              </div>
-            </swiper-slide>
-          </swiper>
-          <div class="btnImgCase">
-            <div class="leftBtn" @click="handleProcessBtn('slidePrev')">
+        <section class="ckj-container affiliation">
+          <div class="affiliation-context">
+            <div>
               <img
-                src="https://statichk.cmermedical.com/ckj/image/2024122411123501.png"
+                src="https://static.ckjhk.com/ckj-image/2025031809094001.png"
                 alt=""
-                loading="lazy"
               />
             </div>
-            <div class="rightBtn" @click="handleProcessBtn('slideNext')">
-              <img
-                src="https://statichk.cmermedical.com/ckj/image/2024122411125201.png"
-                alt=""
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div class="implantCase-content-line">
-            <PageSwiperPointLine
-              :latestNewsNum="caseList.length"
-              :latestNewsCurrent="implantCaseCurrentMb"
-              @changeLineCur="handleLineCur"
-            ></PageSwiperPointLine>
-          </div>
-        </div>
-      </div>
-      <div class="confidence_ecommendation" v-if="windowWidth > 768">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">香港媒體信心推薦</div>
-        </div>
-        <div class="confidence_ecommendation-in">
-          <div
-            v-for="(item, index) in confidence_ecommendation_lists"
-            :key="index"
-          >
-            <img :src="item" alt="" loading="lazy" />
-          </div>
-        </div>
-      </div>
-      <div class="youtobe-video" v-if="windowWidth > 768">
-        <div class="youtobe-video-in">
-          <iframe
-            width="560"
-            src="https://www.youtube.com/embed/Q7sHcjs6oCs?si=qlzP3TG-3iLk_po6"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-      <div class="note" v-if="windowWidth > 768">
-        <div class="dentistryServices-title note-title">
-          <div class="dentistryServices-title-in bb note-title-in">
-            {{ $t('pages.dental-service.implant.note.title') }}
-          </div>
-        </div>
-        <div class="noteCard pageCon">
-          <div
-            class="noteCard-in"
-            v-for="(note, noteIndex) in noteLists"
-            :key="noteIndex"
-          >
-            <div class="noteCard-in-image">
-              <img :src="note.img" loading="lazy" alt="" />
-            </div>
-            <div class="noteCard-in-name">{{ $t(note.name) }}</div>
-          </div>
-        </div>
-      </div>
-      <!-- <ServiceCase v-if="windowWidth > 768" /> -->
-      <div class="note-mobile">
-        <div class="index_title" v-if="windowWidth > 768">客戶分享</div>
-        <div class="note-bg-mobile">
-          <div>
-            <span v-if="windowWidth > 768">締造自信燦爛笑顏</span>
-            <span v-if="windowWidth > 768">我只揀愛康健！</span>
-          </div>
-          <div>
             <div>
-              <div>
-                <span>王先生</span>
-                <span>種植牙療程客戶</span>
-              </div>
-              <div>18/12/23</div>
-            </div>
-            <div>
-              十年前開始上邊的牙不停掉，每次食東西都好麻煩。經朋友介紹去了愛康健做種牙，現在的牙好實好齊，終於食到肉。
+              <p>
+                香港醫療制度監督，臨床5年以上牙醫種牙，<span>成功率超過98%</span>。具備龐大經驗實力牙醫專科院長把關，已具備完善一站式售後服務。
+              </p>
+              <p>
+                <img
+                  src="https://static.ckjhk.com/ckj-image/2025031809230501.svg"
+                  alt=""
+                />
+              </p>
+              <ul>
+                <li>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="23"
+                      viewBox="0 0 22 23"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.7108 5.75487C10.7108 5.75487 6.7306 5.53346 5.42693 3.90162C4.12326 2.26977 5.38579 1.35681 6.67575 1.57822C7.9657 1.79963 9.53054 2.98897 10.7108 5.75487Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.7354 5.75487C10.7354 5.75487 14.9487 5.53346 16.2523 3.90162C17.556 2.26977 16.2935 1.35681 15.0035 1.57822C13.7136 1.79963 11.9156 2.98897 10.7354 5.75487Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19.2261 9.40967H2.24219V21.5455H19.2261V9.40967Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20.47 5.76245H1V9.4096H20.47V5.76245Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.7354 21.5454V5.75488"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div>預約即享免費CT檢查</div>
+                </li>
+                <li>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="23"
+                      viewBox="0 0 22 23"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.7108 5.75487C10.7108 5.75487 6.7306 5.53346 5.42693 3.90162C4.12326 2.26977 5.38579 1.35681 6.67575 1.57822C7.9657 1.79963 9.53054 2.98897 10.7108 5.75487Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.7354 5.75487C10.7354 5.75487 14.9487 5.53346 16.2523 3.90162C17.556 2.26977 16.2935 1.35681 15.0035 1.57822C13.7136 1.79963 11.9156 2.98897 10.7354 5.75487Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19.2261 9.40967H2.24219V21.5455H19.2261V9.40967Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20.47 5.76245H1V9.4096H20.47V5.76245Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.7354 21.5454V5.75488"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div>免費拔鬆動牙</div>
+                </li>
+                <li>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="23"
+                      viewBox="0 0 22 23"
+                      fill="none"
+                    >
+                      <path
+                        d="M10.7108 5.75487C10.7108 5.75487 6.7306 5.53346 5.42693 3.90162C4.12326 2.26977 5.38579 1.35681 6.67575 1.57822C7.9657 1.79963 9.53054 2.98897 10.7108 5.75487Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.7354 5.75487C10.7354 5.75487 14.9487 5.53346 16.2523 3.90162C17.556 2.26977 16.2935 1.35681 15.0035 1.57822C13.7136 1.79963 11.9156 2.98897 10.7354 5.75487Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M19.2261 9.40967H2.24219V21.5455H19.2261V9.40967Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M20.47 5.76245H1V9.4096H20.47V5.76245Z"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M10.7354 21.5454V5.75488"
+                        stroke="#F8298A"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <div>領取2000元進口種植牙現金券</div>
+                </li>
+              </ul>
             </div>
           </div>
-          <div>
-            <div>
-              <div>
-                <span>古女士</span>
-                <span>種植牙療程客戶</span>
-              </div>
-              <div>5/6/24</div>
-            </div>
-            <div>甩左一隻門牙好快就安排到做手術😄客服答得好詳細👍</div>
-          </div>
-          <div>
-            <div>
-              <div>
-                <span>陳先生</span>
-                <span>種植牙療程客戶</span>
-              </div>
-              <div>14/3/24</div>
-            </div>
-            <div>
-              之前對植牙非常抗拒，但愛康健的醫生非常專業，醫植牙效果很好！特別感謝李美京醫生和顧主任，他們十分用心幫助我，讓我感覺很放心。整體來說，這次植牙體驗非常好，推薦給需要植牙的朋友們！😀
-            </div>
-          </div>
-          <div v-if="windowWidth < 768">
-            <span>締造自信燦爛笑顏</span>
-            <span>我只揀愛康健！</span>
-          </div>
-        </div>
+        </section>
       </div>
-      <div v-if="windowWidth < 768" class="confidence_ecommendation">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">香港媒體信心推薦</div>
-        </div>
-        <div class="confidence_ecommendation-in">
-          <div
-            v-for="(item, index) in confidence_ecommendation_lists"
-            :key="index"
-          >
-            <img :src="item" loading="lazy" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="youtobe-video" v-if="windowWidth < 768">
-        <div class="youtobe-video-in">
-          <iframe
-            width="560"
-            src="https://www.youtube.com/embed/u1wuly-2FGA?si=sQaXBCB8NzH482Dm"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-      <div class="note" v-if="windowWidth < 768">
-        <div class="dentistryServices-title note-title">
-          <div class="dentistryServices-title-in bb note-title-in">
-            {{ $t('pages.dental-service.implant.note.title') }}
-          </div>
-        </div>
-        <div class="noteCard pageCon">
-          <div
-            class="noteCard-in"
-            v-for="(note, noteIndex) in noteLists"
-            :key="noteIndex"
-          >
-            <div class="noteCard-in-image">
-              <img :src="note.img" loading="lazy" alt="" />
-            </div>
-            <div class="noteCard-in-name">{{ $t(note.name) }}</div>
-          </div>
-        </div>
-      </div>
-      <div class="plague">
-        <div class="plague-in">
-          <div class="dentistryServices-title plague-title">
-            <div class="dentistryServices-title-in bb plague-title-in">
-              {{ plagueData.title }}
-            </div>
-          </div>
-          <div class="plague-lists">
-            <div
-              v-for="(plagueItem, plagueIndex) in plagueData.lists"
-              :key="plagueIndex"
-            >
-              <span v-if="plagueItem.type === 'text'">{{
-                plagueItem.context
-              }}</span>
-              <img v-else :src="plagueItem.context" loading="lazy" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <ServiceProblem :problemData="problemData" />
-      <!-- <div class="contactForm">
-        <ContactForm-new2 />
-      </div> -->
-      <serviceCard />
-      <BranchAddress />
-      <ContactForm-new2 />
-    </div>
+    </container>
+    <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
+    <!-- 聯絡我們 -->
+    <BranchAddress />
+    <ContactForm-new2 />
     <PageFooter />
     <!-- <PageNavbar
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
@@ -2362,3480 +752,1671 @@ const checkGroupPhoto = () => {
 </template>
 
 <style lang="scss" scoped>
-:deep(.header-content) {
-  .explain_box_mobile {
-    background: transparent !important;
+@media screen and (min-width: 922px) {
+  :deep(.problem) {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .banner-in-box {
+    display: block;
     position: absolute;
-    bottom: 70px;
-    z-index: 38;
-    right: 0;
+    top: 50%;
     left: 0;
-    top: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin: 0 auto !important;
+    transform: translateY(-50%);
+    height: 20.83vw;
+    width: 55%;
+    z-index: 10;
   }
-}
-:deep(.implantCase-title) {
-  align-items: center !important;
-}
-.new_doctor {
-  margin: 62px auto 50px;
-  .group_photo {
-    margin: 62px auto 50px;
-    max-width: 860px;
-  }
-  .team_doctor_everybody {
-    box-sizing: border-box;
-    display: grid;
-    gap: 0 94px;
-    grid-template-columns: repeat(3, 1fr);
-    margin: 64px auto 100px;
-    max-width: 1000px;
-    padding: 0;
-    width: 100%;
-  }
-}
-@media (min-width: 1001px) and (max-width: 1452px) {
-  :deep(.header-content-text-implant) {
-    bottom: 100px;
-  }
-}
-.banner-in-box {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 20.83vw;
-  width: 55%;
-  z-index: 10;
-}
-.banner-image {
-  position: absolute;
-  z-index: 10;
-  width: 9.0625vw;
-  height: 9.0625vw;
-  top: 8%;
-  left: 75%;
-  & > img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-}
-.banner-content {
-  display: flex;
-  flex-direction: column;
-  border-radius: 0.694vw 0.694vw 0px 0px;
-  background: #fff;
-  width: 23.9583vw;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-  .content-title {
-    border-radius: 0.694vw 0.694vw 0px 0px;
-    background: var(
-      --Liner-purple,
-      linear-gradient(
-        269deg,
-        var(--Brand-Color, #fc1682) 10.21%,
-        #710d54 122.73%
-      )
-    );
-    box-sizing: border-box;
-    padding: 0.859375vw 4.7135vw;
-    color: var(--White, #fff);
-    text-align: center;
-    text-shadow: 0px 0.27vw 0.27vw rgba(0, 0, 0, 0.25);
-    font-family: 'Noto Sans HK';
-    font-size: 1.665vw;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.389vw; /* 83.333% */
-    letter-spacing: 0.1354vw;
-    z-index: 6;
-  }
-
-  .price-style {
-    width: 19.0625vw;
-    height: 11.145vw;
+  .banner-image {
+    position: absolute;
+    z-index: 10;
+    width: 9.0625vw;
+    height: 9.0625vw;
+    top: 8%;
+    left: 75%;
     & > img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
   }
-  .content-price {
+  .banner-content {
     display: flex;
-    gap: 0 0.52vw;
-    min-height: 5.833vw;
-    box-sizing: border-box;
-    padding: 0.52vw;
-    align-items: center;
-    font-family: 'Noto Sans HK';
-    font-size: 1.7442vw;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 2.2222vw; /* 114.286% */
-    letter-spacing: 0.29165vw;
-    border-radius: 0px 0px 10px 10px;
-    background: var(--White, #fff);
-    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
-    & > div:nth-child(1) {
-      color: var(--Grey-Dark, #333);
-      text-align: right;
-      text-shadow: 1.3px 1.333px 1.333px #faeaf2,
-        1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
-        -1.33px -1.333px 1.333px #faeaf2;
+    flex-direction: column;
+    border-radius: 0.694vw 0.694vw 0px 0px;
+    background: #fff;
+    width: 23.9583vw;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    .content-title {
+      border-radius: 0.694vw 0.694vw 0px 0px;
+      background: var(
+        --Liner-purple,
+        linear-gradient(
+          269deg,
+          var(--Brand-Color, #fc1682) 10.21%,
+          #710d54 122.73%
+        )
+      );
+      box-sizing: border-box;
+      padding: 0.859375vw 4.7135vw;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 0.27vw 0.27vw rgba(0, 0, 0, 0.25);
       font-family: 'Noto Sans HK';
-      font-size: 1.744vw;
+      font-size: 1.665vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.389vw; /* 83.333% */
+      letter-spacing: 0.1354vw;
+      z-index: 6;
+    }
+
+    .price-style {
+      width: 19.0625vw;
+      height: 11.145vw;
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .content-price {
+      display: flex;
+      gap: 0 0.52vw;
+      min-height: 5.833vw;
+      box-sizing: border-box;
+      padding: 0.52vw;
+      align-items: center;
+      font-family: 'Noto Sans HK';
+      font-size: 1.7442vw;
       font-style: normal;
       font-weight: 900;
       line-height: 2.2222vw; /* 114.286% */
       letter-spacing: 0.29165vw;
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 1.744vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 2.2222vw; /* 114.286% */
+        letter-spacing: 0.29165vw;
+      }
+      & > div:nth-child(2) {
+        width: 15.2604vw;
+        & > svg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
     }
-    & > div:nth-child(2) {
-      width: 15.2604vw;
-      & > svg {
+    .content-subscribe {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content;
+      position: absolute;
+      color: var(--Theme-Color, #fc1682);
+      text-align: center;
+      font-family: 'FakePearl-Regular';
+      font-size: clamp(20px, 2.083vw, 40px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%; /* 64px */
+      box-sizing: border-box;
+      padding: 0;
+      z-index: 7;
+      left: auto;
+      right: -50%;
+      bottom: 10px;
+      gap: 7px 0;
+      & > span {
+        color: var(--Grey-Dark, #333);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 23.077px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 27.692px */
+        letter-spacing: 2.308px;
+        i {
+          font-style: normal;
+        }
+      }
+      & > span:nth-child(2) {
+        border-radius: 28.846px;
+        background: var(--New-Theme-Color, #d2337d);
+        box-shadow: 0px 0px 11.538px 0px rgba(0, 0, 0, 0.25);
+        box-sizing: border-box;
+        padding: 5px 14px;
+        color: var(--White, #fff);
+        font-family: 'Noto Sans HK';
+        font-size: 25.962px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 2.596px;
+        i {
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 23.077px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 34.615px;
+          letter-spacing: 2.308px;
+        }
+      }
+    }
+  }
+
+  .banner {
+    background: url(https://static.ckjhk.com/ckj-image/0ce172efab96.webp)
+      no-repeat;
+    background-size: cover;
+    height: 20.833vw;
+    width: 100%;
+    margin-top: 70px;
+    position: relative;
+  }
+
+  .banner-context {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    // margin-top: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .banner-image {
+      position: absolute;
+      width: 10.9375vw;
+      height: 10.9375vw;
+      top: 0.3625vw;
+      right: 7vw;
+
+      & > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
-  }
-  .content-subscribe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
-    position: absolute;
-    color: var(--Theme-Color, #fc1682);
-    text-align: center;
-    font-family: 'FakePearl-Regular';
-    font-size: clamp(20px, 2.083vw, 40px);
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%; /* 64px */
-    box-sizing: border-box;
-    padding: 0;
-    z-index: 7;
-    left: auto;
-    right: -50%;
-    bottom: 10px;
-    gap: 7px 0;
-    & > span {
-      color: var(--Grey-Dark, #333);
-      text-align: center;
-      font-family: 'Noto Sans HK';
-      font-size: 23.077px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 120%; /* 27.692px */
-      letter-spacing: 2.308px;
-      i {
-        font-style: normal;
-      }
-    }
-    & > span:nth-child(2) {
-      border-radius: 28.846px;
-      background: var(--New-Theme-Color, #d2337d);
-      box-shadow: 0px 0px 11.538px 0px rgba(0, 0, 0, 0.25);
-      box-sizing: border-box;
-      padding: 5px 14px;
-      color: var(--White, #fff);
-      font-family: 'Noto Sans HK';
-      font-size: 25.962px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      letter-spacing: 2.596px;
-      i {
-        color: var(--White, #fff);
-        font-family: 'Noto Sans HK';
-        font-size: 23.077px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 34.615px;
-        letter-spacing: 2.308px;
-      }
-    }
-  }
-}
-.dentistryServices {
-  background: #fff;
-  padding: clamp(30px, 3.125vw, 60px) 0 0;
-  position: relative;
-  z-index: 1;
-  .tabNav {
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 160%;
-    color: #cbcbcb;
-    margin-top: 20px;
-    a {
-      &:not(:last-child)::after {
-        content: '';
-        width: 20px;
-        height: 2px;
-        margin: 0 10px;
-        background: #cbcbcb;
-        display: inline-block;
-        vertical-align: middle;
-        margin-top: -4px;
-      }
-    }
-    & > span {
-      cursor: pointer;
-      color: var(--indexColor1);
-    }
-  }
-  .plague {
-    width: 100%;
-    margin: 150px auto 150px;
-    // background: linear-gradient(
-    //   135deg,
-    //   rgba(255, 241, 240, 0.25) 0%,
-    //   rgba(255, 221, 218, 0.25) 100%
-    // );
-    // background: linear-gradient(
-    //   110deg,
-    //   rgba(252, 22, 130, 0.1) -0.92%,
-    //   rgba(255, 168, 198, 0) 100%
-    // );
-    // padding: 98px 0;
-    margin-top: 30px;
-    &-in {
-      width: 100%;
-      max-width: 803px;
-      margin: 0 auto;
-    }
-    &-lists {
-      padding-top: 98px;
+
+    .banner-content {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-      & > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        span {
-          padding: 6px 45px;
-          width: max-content;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: var(--White, #fff);
-          text-align: center;
-          font-family: 'FakePearl-Regular';
-          font-size: 35px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 56px */
-          letter-spacing: 7px;
-          white-space: nowrap;
-          border-radius: 86.165px;
-          background: var(--Theme-Color, #fc1682);
-          box-shadow: 2.81px 2.81px 11.613px 0px rgba(252, 22, 130, 0.5);
-        }
-        img {
-          width: 468px;
-          height: 468px;
-          border-radius: 50%;
-        }
-      }
-      & > div:not(:nth-of-type(3)) {
-        position: absolute;
-      }
-      & > div:nth-child(6) {
-        top: 210px;
-        right: 30px;
-      }
-      & > div:nth-child(5) {
-        top: 460px;
-        right: -10px;
-      }
-      & > div:nth-child(4) {
-        top: 50px;
-        margin-right: 100px;
-      }
-      & > div:nth-child(2) {
-        top: 500px;
-        left: 100px;
-      }
-      & > div:nth-child(1) {
-        top: 290px;
-        left: 0;
-      }
-    }
-  }
-  .Dental_implant_technology {
-    margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    &-title {
-      order: 1;
-      margin: 0 auto;
-      margin-top: 75px;
-      margin-bottom: 30px;
-    }
-    &-video {
-      order: 3;
-      // margin: 20px auto 50px;
-      margin-bottom: 40px;
-      .youtobe-video {
-        margin-top: 0;
-        margin-bottom: 80px;
-      }
-    }
-    &-context {
-      width: 100%;
-      max-width: 1006px;
-      margin: -20px auto 30px;
-      font-size: 20px;
-      line-height: 160%;
-      text-align: center;
-      order: 2;
-      color: var(--Grey-Deep, #4d4d4d);
-      text-align: center;
-      font-family: 'Noto Sans HK';
-      font-size: 23px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 36.8px */
-      letter-spacing: 4.6px;
-    }
-    &-img {
-      width: 100%;
-      max-width: 1038px;
-      margin: 0 auto;
-      order: 4;
-    }
-  }
-  .notice {
-    width: 100%;
-    max-width: 1450px;
-    margin: 200px auto 0;
-    &-topText,
-    &-bottomText {
-      width: 100%;
-      span {
-        display: block;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        text-align: center;
-        color: #666666;
-      }
-    }
-    &-topText {
-      margin: 35px auto 0;
-      display: none;
-    }
-    &-bottomText {
-      margin: 54px auto 0;
-    }
-    &-in {
-      width: 90%;
-      margin: 54px auto 0;
-      .lists {
-        border-radius: 60px;
-        overflow: hidden;
-        &-in {
-          display: flex;
-          & > div {
-            background: var(--indexColor2);
-            margin-bottom: 8px;
-            padding: 50px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: #666666;
-            &:nth-of-type(1) {
-              padding: 0;
-              flex: 1;
-              color: var(--indexColor);
-              font-weight: 900;
-            }
-            &:nth-of-type(2) {
-              width: 43.5%;
-            }
-            &:nth-of-type(3) {
-              width: 43.5%;
-            }
-            &:not(:last-child) {
-              margin-right: 8px;
-            }
-          }
-          &:nth-of-type(1) {
-            & > div {
-              padding: 13px 0;
-              font-size: 28px;
-              font-weight: 600;
-              color: #fff;
-              background: var(--indexColor);
-              margin-bottom: 0;
-            }
-          }
-          &:last-child {
-            & > div {
-              margin-bottom: 0;
-            }
-          }
-        }
-      }
-    }
-    &-line {
-      width: 83px;
-      margin: 22px auto;
-    }
-  }
-  .step {
-    width: 100%;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 241, 240, 0) 0%,
-      rgba(255, 241, 240, 0.7) 12.5%,
-      rgba(255, 241, 240, 0.7) 81.99%,
-      rgba(255, 241, 240, 0) 100%
-    );
-    padding: 98px 0;
-    margin-top: 0;
-    &-in {
-      width: 100%;
-      max-width: 1444px;
-      margin: 0 auto;
-    }
-    &-lists {
-      margin-top: 98px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      &-in {
-        display: flex;
-        align-items: center;
-        margin-bottom: 60px;
-        position: relative;
-        &:nth-of-type(n + 4) {
-          margin-bottom: 0;
-        }
-        &:nth-of-type(3),
-        &:nth-of-type(6) {
-          .step-lists-in-r {
-            display: none;
-          }
-        }
-        &-l {
-          width: 100%;
-          max-width: clamp(200px, 20.83vw, 400px);
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          position: relative;
-          .title {
-            display: flex;
-            align-items: center;
-            font-size: 35px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: #666666;
-            position: relative;
-            width: fit-content;
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            & > div:nth-child(2) {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              color: var(--White, #fff);
-              text-align: center;
-              font-family: 'FakePearl-Regular';
-              font-size: 35px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 56px */
-            }
-          }
-          .image {
-            width: 100%;
-            img {
-              width: 100%;
-              border-radius: 0;
-            }
-          }
-          .name {
-            margin-top: 16px;
-            margin-bottom: 8px;
-            // padding: 8px 0;
-            // clip-path: polygon(0 0, 80% 0, 85% 100%, 0 100%);
-            color: var(--Theme-Color, #fc1682);
-            font-family: 'FakePearl-Regular';
-            font-size: 28px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 44.8px */
-          }
-          .context {
-            color: var(--Grey-Deep, #4d4d4d);
-            font-family: 'Noto Sans HK';
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 32px */
-            letter-spacing: 4px;
-          }
-          z-index: 5;
-        }
-        &-r {
-          margin-left: 0;
-          position: absolute;
-          z-index: 1;
-          right: -35%;
-          top: 25%;
-        }
-      }
-    }
-  }
-  .classify {
-    max-width: 1490px;
-    margin: 165px auto 45px;
-    .classify-title {
-      width: fit-content;
-      margin: 0 auto 60px;
-    }
-    .classify-item {
-      display: grid;
-      gap: 0 105px;
-      grid-template-columns: repeat(2, 1fr);
-      & > div:nth-child(1),
-      & > div:nth-child(2) {
-        position: relative;
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
-            border-radius: var(--Count, 0px) 37.406px 37.406px var(--Count, 0px);
-            background: var(--Theme-Color, #fc1682);
-            width: fit-content;
-            padding: 8px 60px;
-            color: var(--White, #fff);
-            text-align: center;
-            font-family: 'FakePearl-Regular';
-            font-size: 35px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 56px */
-            letter-spacing: 7px;
-            margin-bottom: 25px;
-          }
-          & > div:nth-child(2) {
-            display: flex;
-            & > div:nth-child(1) {
-              margin-left: 60px;
-              & > p {
-                display: flex;
-                align-items: center;
-                gap: 0 20px;
-                & > span:nth-child(1) {
-                  color: #fc1682;
-                  font-family: 'FakePearl-Regular';
-                  font-size: 30px;
-                  font-style: normal;
-                  font-weight: 500;
-                  line-height: 160%; /* 48px */
-                  letter-spacing: 3px;
-                }
-                & > span:nth-child(2) {
-                  transform: scale(1.2);
-                }
-              }
-            }
-            & > div:nth-child(2) {
-              position: absolute;
-              top: 27px;
-              right: 8px;
-            }
-          }
-        }
-        & > ul {
-          margin-top: 30px;
-          color: var(--Grey-Deep, #4d4d4d);
-          font-family: 'FakePearl-Regular';
-          font-size: 26px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 160%; /* 41.6px */
-          letter-spacing: 2.6px;
-          & > li {
-            list-style: disc;
-          }
-        }
-      }
-      & > div:nth-child(2) {
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
-            background: #00aeff;
-          }
-        }
-      }
-      & > div:nth-child(3) {
-        grid-column: 1 / 3;
-        margin: 120px auto 0;
-        color: var(--Theme-Color, #fc1682);
-        text-align: center;
-        font-family: 'FakePearl-Regular';
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 160%; /* 41.6px */
-        letter-spacing: 2.6px;
-        max-width: 460px;
-      }
-      .implantCaseBoxSwiper {
-        overflow: visible;
-      }
-    }
-  }
-  .Plant_brand_series {
-    margin-top: 80px;
-    position: relative;
-    & > div {
+      flex-direction: column;
       align-items: center;
-    }
-    &-tab {
-      width: 100%;
-      max-width: 864px;
-      margin: 30px auto;
-      display: flex;
-      & > span {
-        flex: 1;
-        color: var(--indexColor1);
-        font-size: 22px;
-        border-top: 2px solid var(--indexColor1);
-        border-bottom: 2px solid var(--indexColor1);
-        border-left: 2px solid var(--indexColor1);
-        padding: 7px 20px;
-        width: fit-content;
-        white-space: nowrap;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s;
-        &:first-child {
-          border-radius: 5px 0 0 5px;
-        }
-        &:last-child {
-          border-radius: 0 5px 5px 0;
-          border-right: 2px solid var(--indexColor1);
-        }
-        &:hover,
-        &.active {
-          background: var(--indexColor1);
-          color: #fff;
-        }
-      }
-    }
-    .brand_btn {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      display: flex;
-      z-index: 10;
-      justify-content: space-around;
-      .brand_btn_left {
-        position: absolute;
-        left: calc((100% - 562px - 495px) / 2);
-        top: 25%;
-        cursor: pointer;
-        z-index: 2;
-      }
-      .brand_btn_right {
-        position: absolute;
-        right: calc((100% - 562px - 495px) / 2);
-        top: 25%;
-        cursor: pointer;
-        z-index: 2;
-      }
-    }
-    &-content {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      & > div:nth-child(1) {
-        display: flex;
-        justify-content: space-between;
-        &-l {
-          width: calc(300 / 700 * 100%);
-          margin-right: calc(30 / 695 * 100%);
-          img {
-            width: 100%;
-          }
-        }
-        &-r {
-          flex: 1;
-          & > div {
-            & > img {
-              max-width: 100%;
-            }
-            &:nth-of-type(2) {
-              width: 70%;
-              color: #fff;
-              background: var(--indexColor1);
-              font-size: 30px;
-              line-height: 160%;
-              padding-left: 17px;
-              clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
-              margin: 10px 0;
-            }
-            &:nth-of-type(3) {
-              display: flex;
-              flex-direction: column;
-              span {
-                font-size: 26px;
-                line-height: 1.6;
-                &::before {
-                  content: '·';
-                  display: inline-block;
-                  margin-right: 10px;
-                }
-              }
-            }
-          }
-        }
-      }
-      & > div:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        color: var(--Grey-Deep, #4d4d4d);
-        font-family: 'FakePearl-Regular';
-        font-size: 26px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 160%; /* 41.6px */
-        letter-spacing: 2.6px;
-      }
-    }
-  }
-  .doctorTeam {
-    margin-top: 80px;
-  }
-  .note {
-    margin-top: 100px;
-    .noteCard {
-      display: flex;
-      flex-wrap: wrap;
-      margin: 54px auto 0;
-      width: 100%;
-      max-width: 1090px;
-      &-in {
-        cursor: pointer;
-        width: 25%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0 45px;
-        box-sizing: border-box;
-        &-image {
-          width: 100%;
-          height: 0;
-          padding-top: 100%;
-          position: relative;
-          background: var(--indexColor2);
-          border-radius: 10px;
-          img {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 90%;
-            max-height: 90%;
-          }
-        }
-        &:nth-of-type(1) > &-image,
-        &:nth-of-type(3) > &-image,
-        &:nth-of-type(6) > &-image,
-        &:nth-of-type(8) > &-image {
-          background: #fff1f0;
-        }
-        &-name {
-          height: 64px;
-          line-height: 64px;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 24px;
-          color: #666666;
-          text-align: center;
-        }
-      }
-    }
-  }
-  .implantCase {
-    margin-top: 112px;
-    // overflow-x: hidden;
-    position: relative;
-    &-content {
-      margin-top: 40px;
-      padding: 127px 0;
-      background: linear-gradient(
-        269deg,
-        rgba(255, 241, 240, 0) 0.53%,
-        rgba(255, 241, 240, 0.7) 12.92%,
-        rgba(255, 241, 240, 0.7) 81.78%,
-        rgba(255, 241, 240, 0) 99.62%
-      );
-      width: 100%;
-      position: relative;
-      // cursor: url(@/assets/images/icon_17.svg) 54 54, auto;
-      .implantCaseBoxSwiper {
-        width: 100%;
-        margin: 0 auto;
-        overflow: visible;
-        .implantCaseText {
-          display: none;
-        }
-        .implantCaseBox {
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-          width: max-content;
-          margin: 0 auto;
-
-          &-t {
-            width: 100%;
-            max-width: 562px;
-            margin: 0 auto;
-            color: #4d4d4d;
-            font-size: 35px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 160%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            border-radius: 30px;
-            // overflow: hidden;
-            transition: all 0.3s;
-            // cursor: url(@/assets/images/icon_18.svg) 54 54, auto;
-            div {
-              width: 100%;
-            }
-            img {
-              width: 100%;
-              transition: all 0.3s;
-            }
-            .rightMbIcon {
-              display: none;
-            }
-          }
-          &:not(:first-child) {
-            .implantCaseBox-t {
-              margin-top: 59px;
-            }
-          }
-          &-b {
-            margin-top: 60px;
-            img {
-              border-radius: 0;
-              margin: 0 auto;
-            }
-            // div{
-            //   img{
-            //     border-radius: 30px;
-            //     margin: 0 auto;
-            //   }
-            //   &:not(:first-child){
-            //     margin-top: 33px;
-            //   }
-            // }
-          }
-        }
-      }
-      .leftBtn {
-        position: absolute;
-        left: calc((100% - 562px - 495px) / 2);
-        top: 25%;
-        cursor: pointer;
-        z-index: 2;
-      }
-      .rightBtn {
-        position: absolute;
-        right: calc((100% - 562px - 495px) / 2);
-        top: 25%;
-        cursor: pointer;
-        z-index: 2;
-      }
-      &-line {
-        width: 326px;
-        margin: 60px auto 0;
-      }
-    }
-    .click_btn {
-      display: flex !important;
-      width: fit-content !important;
-      position: absolute;
-      right: -30px;
-      top: -40px;
-      z-index: 5;
-    }
-  }
-  .youtobe-video {
-    width: 80%;
-    max-width: 960px;
-    margin: 80px auto 0;
-    &-in {
-      width: 100%;
-      height: 0;
-      padding-bottom: calc(316 / 560 * 100%);
-      position: relative;
-      & > iframe {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-  .confidence_ecommendation {
-    margin-top: 144px;
-    &-in {
-      width: 100%;
-      max-width: 1041px;
-      display: flex;
-      margin: 54px auto 0;
-      flex-wrap: wrap;
       justify-content: center;
-      & > div {
-        width: calc(100% / 3);
-        display: flex;
-        justify-content: center;
-        margin-bottom: 60px;
-        // align-content: center;
-        align-items: center;
-        flex-wrap: nowrap;
-        img {
-          height: auto;
-        }
-      }
-      & > div:last-child {
-        & > img {
-          width: 60%;
-          object-fit: contain;
-        }
-      }
-    }
-  }
-  .technology {
-    width: 100%;
-    max-width: 1016px;
-    margin: 144px auto 0;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    & > div:nth-child(1) {
-      align-items: center;
-    }
-    &-in {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      &-img {
-        width: 100%;
-        max-width: 552px;
-        margin-top: 34px;
-        img {
-          margin: 0 auto;
-        }
-      }
-      &-t {
-        margin-top: 23px;
-        text-align: center;
-        color: var(--textColor);
-        font-family: 'Noto Sans HK';
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 32px */
-        letter-spacing: 4px;
-      }
-      &-b {
-        margin-top: 34px;
-        /* Content-PC */
-        color: var(--textColor);
-        font-family: 'Noto Sans HK';
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 32px */
-        letter-spacing: 4px;
-      }
-    }
-    &-btn {
-      display: flex;
-      justify-content: center;
-      margin-top: 50px;
-    }
-  }
-}
-.item_compare {
-  margin-top: 14px;
-  & > div {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 0 12px;
-    color: var(--Theme-Color, #fc1682);
-    font-family: 'FakePearl-Regular';
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 160%; /* 41.6px */
-    letter-spacing: 2.6px;
-  }
-}
-:deep(.dentistryServices-title) {
-  align-items: center;
-}
-.contactForm {
-  margin-top: 100px;
-}
-@keyframes btnAnim {
-  0% {
-    clip-path: polygon(-10% 0, 0 0, -10% 100%, -20% 100%);
-  }
-  50% {
-    clip-path: polygon(50% 0, 60% 0, 50% 100%, 40% 100%);
-  }
-  100% {
-    clip-path: polygon(110% 0, 120% 0, 110% 100%, 100% 100%);
-  }
-}
-
-.note-mobile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 135px;
-  background: linear-gradient(180deg, rgba(255, 241, 240, 0) 0%, #fee6f1 100%);
-  padding-bottom: 80px;
-  & > div:nth-child(2) {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0 16px;
-    & > div:nth-child(1) {
-      grid-column: 1 / 4;
-      color: var(--Theme-Color, #fc1682);
-      text-align: center;
-      font-family: 'FakePearl-Regular';
-      font-size: 35px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 56px */
-      letter-spacing: 7px;
-      margin: 55px auto;
-      display: flex;
-      flex-direction: column;
-    }
-    & > div:not(:nth-of-type(1)) {
-      display: flex;
-      width: 515px;
-      padding: 30px;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 12px 0;
-      background: #fff;
-      box-sizing: border-box;
-      height: fit-content;
-      & > div:nth-child(1) {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        & > div:nth-child(1) {
-          display: flex;
-          flex-direction: column;
-          & > span:nth-child(1) {
-            color: var(--Blue-Deep, #00aeff);
-            font-family: 'FakePearl-Regular';
-            font-size: 28px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 160%; /* 44.8px */
-          }
-          & > span:nth-child(2) {
-            color: var(--Grey-Pale, #aaa);
-            font-family: 'Noto Sans HK';
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 32px */
-            letter-spacing: 4px;
-          }
-        }
-        & > div:nth-child(2) {
-          color: var(--Grey-Mid, #666);
-          font-family: 'Noto Sans HK';
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 32px */
-          letter-spacing: 4px;
-        }
-      }
-      & > div:nth-child(2) {
-        color: var(--Grey-Deep, #4d4d4d);
-        font-family: 'Noto Sans HK';
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 32px */
-        letter-spacing: 3.5px;
-        width: 100%;
-      }
-    }
-    & > div:nth-of-type(3) {
-      margin-top: 60px;
-      & > div:nth-child(1) {
-        & > div:nth-child(1) {
-          & > span:nth-child(1) {
-            color: var(--Theme-Color, #fc1682);
-          }
-        }
-      }
-    }
-  }
-}
-:deep(.introduce) {
-  .introduce-in {
-    width: fit-content;
-    margin: 20px auto;
-  }
-}
-.afterBefore {
-  display: flex;
-  justify-content: center;
-  gap: 0 500px;
-  margin-bottom: 20px;
-  & > div {
-    color: var(--Blue-Deep, #00aeff);
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 48px */
-    letter-spacing: 3px;
-  }
-  & > div:nth-child(2) {
-    color: var(--Theme-Color, #fc1682);
-  }
-}
-.itemImgDetails {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 1140px;
-  justify-items: center;
-  margin: 0 auto;
-  & > div {
-    width: 560px;
-    height: 254px;
-    & > img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-.btnImgCase {
-  position: absolute;
-  top: 45%;
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-  width: 100%;
-}
-.rightBtn {
-  position: absolute;
-  right: calc((100% - 1040px - 495px) / 2);
-  top: 25%;
-  cursor: pointer;
-  z-index: 2;
-}
-@media (min-width: 768px) and (max-width: 1920px) {
-  .dentistryServices {
-    background: #fff;
-    padding: 120px 0;
-    position: relative;
-    z-index: 1;
-    .tabNav {
-      font-weight: 400;
-      font-size: 1.25rem;
-      line-height: 160%;
-      color: #cbcbcb;
-      margin-top: clamp(10px, 1.0416vw, 20px);
-      a {
-        &:not(:last-child)::after {
-          content: '';
-          width: clamp(10px, 1.0416vw, 20px);
-          height: 2px;
-          margin: 0 10px;
-          background: #cbcbcb;
-          display: inline-block;
-          vertical-align: middle;
-          margin-top: -4px;
-        }
-      }
-      & > span {
-        cursor: pointer;
-        color: var(--indexColor1);
-      }
-    }
-    .plague {
-      width: 100%;
-      margin: clamp(120px, 7.8125vw, 150px) auto clamp(120px, 7.8125vw, 150px);
-      // background: linear-gradient(
-      //   135deg,
-      //   rgba(255, 241, 240, 0.25) 0%,
-      //   rgba(255, 221, 218, 0.25) 100%
-      // );
-      // background: linear-gradient(
-      //   110deg,
-      //   rgba(252, 22, 130, 0.1) -0.92%,
-      //   rgba(255, 168, 198, 0) 100%
-      // );
-      // padding: 98px 0;
-      margin-top: 30px;
-      &-in {
-        width: 100%;
-        max-width: 803px;
-        margin: 0 auto;
-      }
-      &-lists {
-        padding-top: 98px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        position: relative;
-        & > div {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          span {
-            padding: 6px 45px;
-            width: max-content;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--White, #fff);
-            text-align: center;
-            font-family: 'FakePearl-Regular';
-            font-size: 35px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 56px */
-            letter-spacing: 7px;
-            white-space: nowrap;
-            border-radius: 86.165px;
-            background: var(--Theme-Color, #fc1682);
-            box-shadow: 2.81px 2.81px 11.613px 0px rgba(252, 22, 130, 0.5);
-          }
-          img {
-            width: 468px;
-            height: 468px;
-            border-radius: 50%;
-          }
-        }
-        & > div:not(:nth-of-type(3)) {
-          position: absolute;
-        }
-        & > div:nth-child(6) {
-          top: 210px;
-          right: 30px;
-        }
-        & > div:nth-child(5) {
-          top: 460px;
-          right: -10px;
-        }
-        & > div:nth-child(4) {
-          top: 50px;
-          margin-right: 100px;
-        }
-        & > div:nth-child(2) {
-          top: 500px;
-          left: 100px;
-        }
-        & > div:nth-child(1) {
-          top: 290px;
-          left: 0;
-        }
-      }
-    }
-    .Dental_implant_technology {
-      margin-top: 0px;
-      display: flex;
-      flex-direction: column;
-      &-title {
-        order: 1;
-        margin: 0 auto;
-        margin-top: 74px;
-        margin-bottom: 50px;
-      }
-      &-video {
-        order: 3;
-        // margin: 20px auto 50px;
-        margin-bottom: 40px;
-        .youtobe-video {
-          margin-top: 0;
-          margin-bottom: 80px;
-        }
-      }
-      &-context {
-        width: 100%;
-        max-width: 1006px;
-        margin: -20px auto 30px;
-        font-size: clamp(10px, 1.0416vw, 20px);
-        line-height: 160%;
-        text-align: center;
-        order: 2;
-        color: var(--Grey-Deep, #4d4d4d);
-        text-align: center;
-        font-family: 'Noto Sans HK';
-        font-size: 23px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 36.8px */
-        letter-spacing: 4.6px;
-      }
-      &-img {
-        width: 100%;
-        max-width: 1038px;
-        margin: 0 auto;
-        order: 4;
-      }
-    }
-    .notice {
-      width: 100%;
-      max-width: 1450px;
-      margin: 200px auto 0;
-      &-topText,
-      &-bottomText {
-        width: 100%;
-        span {
-          display: block;
-          font-style: normal;
-          font-weight: 600;
-          font-size: clamp(10px, 1.0416vw, 20px);
-          line-height: 160%;
-          text-align: center;
-          color: #666666;
-        }
-      }
-      &-topText {
-        margin: 35px auto 0;
-        display: none;
-      }
-      &-bottomText {
-        margin: 54px auto 0;
-      }
-      &-in {
-        width: 90%;
-        margin: 54px auto 0;
-        .lists {
-          border-radius: 60px;
-          overflow: hidden;
-          &-in {
-            display: flex;
-            & > div {
-              background: var(--indexColor2);
-              margin-bottom: 8px;
-              padding: 50px 40px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: clamp(10px, 1.0416vw, 20px);
-              color: #666666;
-              &:nth-of-type(1) {
-                padding: 0;
-                flex: 1;
-                color: var(--indexColor);
-                font-weight: 900;
-              }
-              &:nth-of-type(2) {
-                width: 43.5%;
-              }
-              &:nth-of-type(3) {
-                width: 43.5%;
-              }
-              &:not(:last-child) {
-                margin-right: 8px;
-              }
-            }
-            &:nth-of-type(1) {
-              & > div {
-                padding: 13px 0;
-                font-size: 28px;
-                font-weight: 600;
-                color: #fff;
-                background: var(--indexColor);
-                margin-bottom: 0;
-              }
-            }
-            &:last-child {
-              & > div {
-                margin-bottom: 0;
-              }
-            }
-          }
-        }
-      }
-      &-line {
-        width: 83px;
-        margin: 22px auto;
-      }
-    }
-    .step {
-      width: 100%;
-      background: linear-gradient(
-        90deg,
-        rgba(255, 241, 240, 0) 0%,
-        rgba(255, 241, 240, 0.7) 12.5%,
-        rgba(255, 241, 240, 0.7) 81.99%,
-        rgba(255, 241, 240, 0) 100%
-      );
-      padding: 98px 0;
-      margin-top: 0;
-      &-in {
-        width: 100%;
-        max-width: clamp(1000px, 75vw, 1444px);
-        margin: 0 auto;
-      }
-      &-lists {
-        margin-top: 98px;
-        // display: flex;
-        // flex-wrap: wrap;
-        // justify-content: space-between;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        &-in {
-          display: flex;
-          align-items: center;
-          margin-bottom: 60px;
-          position: relative;
-          &:nth-of-type(n + 4) {
-            margin-bottom: 0;
-          }
-          &:nth-of-type(3),
-          &:nth-of-type(6) {
-            .step-lists-in-r {
-              display: none;
-            }
-          }
-          &-l {
-            width: 100%;
-            max-width: clamp(200px, 20.83vw, 400px);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            .title {
-              display: flex;
-              align-items: center;
-              font-size: 35px;
-              font-weight: 700;
-              margin-bottom: 15px;
-              color: #666666;
-              position: relative;
-              width: fit-content;
-              position: absolute;
-              top: -8px;
-              left: -8px;
-              & > div:nth-child(2) {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: var(--White, #fff);
-                text-align: center;
-                font-family: 'FakePearl-Regular';
-                font-size: 35px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 160%; /* 56px */
-              }
-            }
-            .image {
-              width: 100%;
-              img {
-                width: 100%;
-                border-radius: 0;
-              }
-            }
-            .name {
-              margin-top: 16px;
-              margin-bottom: 8px;
-              // padding: 8px 0;
-              // clip-path: polygon(0 0, 80% 0, 85% 100%, 0 100%);
-              color: var(--Theme-Color, #fc1682);
-              font-family: 'FakePearl-Regular';
-              font-size: clamp(18px, 1.4583vw, 28px);
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 44.8px */
-            }
-            .context {
-              color: var(--Grey-Deep, #4d4d4d);
-              font-family: 'Noto Sans HK';
-              font-size: clamp(14px, 1.041583vw, 20px);
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 32px */
-              letter-spacing: 4px;
-            }
-            z-index: 5;
-          }
-          &-r {
-            margin-left: 0;
-            position: absolute;
-            z-index: 1;
-            right: clamp(-45px, -8.25vw, -160px);
-            top: 22%;
-          }
-        }
-      }
-    }
-    .classify {
-      max-width: clamp(100px, 77.6vw, 1490px);
-      margin: clamp(120px, 8.59375vw, 165px) auto clamp(120px, 7.8125vw, 150px);
-      .classify-title {
-        width: fit-content;
-        margin: 0 auto 60px;
-      }
-      .classify-item {
-        display: grid;
-        gap: 0 clamp(75px, 5.46875vw, 105px);
-        grid-template-columns: repeat(2, 1fr);
-        & > div:nth-child(1),
-        & > div:nth-child(2) {
-          position: relative;
-          & > div:nth-child(1) {
-            & > div:nth-child(1) {
-              border-radius: var(--Count, 0px) 37.406px 37.406px
-                var(--Count, 0px);
-              background: var(--Theme-Color, #fc1682);
-              width: fit-content;
-              padding: 8px clamp(20px, 3.125vw, 60px);
-              color: var(--White, #fff);
-              text-align: center;
-              font-family: 'FakePearl-Regular';
-              font-size: clamp(25px, 1.8229vw, 35px);
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 56px */
-              letter-spacing: 7px;
-              margin-bottom: 25px;
-            }
-            & > div:nth-child(2) {
-              display: flex;
-              & > div:nth-child(1) {
-                margin-left: clamp(20px, 3.125vw, 60px);
-                & > p {
-                  display: flex;
-                  align-items: center;
-                  gap: 0 20px;
-                  & > span:nth-child(1) {
-                    color: #fc1682;
-                    font-family: 'FakePearl-Regular';
-                    font-size: clamp(10px, 1.5625vw, 30px);
-                    font-style: normal;
-                    font-weight: 500;
-                    line-height: 160%; /* 48px */
-                    letter-spacing: 3px;
-                  }
-                  & > span:nth-child(2) {
-                    transform: scale(1.2);
-                  }
-                }
-              }
-              & > div:nth-child(2) {
-                position: absolute;
-                top: 27px;
-                right: 8px;
-                width: 14.15vw;
-                height: 14.15vw;
-                & > img {
-                  width: 100%;
-                  height: 100%;
-                }
-              }
-            }
-          }
-          & > ul {
-            margin-top: clamp(10px, 1.5625vw, 30px);
-            color: var(--Grey-Deep, #4d4d4d);
-            font-family: 'FakePearl-Regular';
-            font-size: clamp(14px, 1.354vw, 26px);
-            font-style: normal;
-            font-weight: 500;
-            line-height: 160%; /* 41.6px */
-            letter-spacing: 2.6px;
-            & > li {
-              list-style: disc;
-            }
-          }
-        }
-        & > div:nth-child(2) {
-          & > div:nth-child(1) {
-            & > div:nth-child(1) {
-              background: #00aeff;
-            }
-          }
-        }
-        & > div:nth-child(3) {
-          grid-column: 1 / 3;
-          margin: clamp(80px, 6.25vw, 120px) auto 0;
-          color: var(--Theme-Color, #fc1682);
-          text-align: center;
-          font-family: 'FakePearl-Regular';
-          font-size: clamp(14px, 1.354vw, 26px);
-          font-style: normal;
-          font-weight: 500;
-          line-height: 160%; /* 41.6px */
-          letter-spacing: 2.6px;
-          max-width: clamp(320px, 23.95vw, 460px);
-        }
-        .implantCaseBoxSwiper {
-          overflow: visible;
-        }
-      }
-    }
-    .Plant_brand_series {
-      margin-top: 80px;
-      position: relative;
-      & > div {
-        align-items: center;
-      }
-      &-tab {
-        width: 100%;
-        max-width: 864px;
-        margin: 30px auto;
-        display: flex;
-        & > span {
-          flex: 1;
-          color: var(--indexColor1);
-          font-size: 22px;
-          border-top: 2px solid var(--indexColor1);
-          border-bottom: 2px solid var(--indexColor1);
-          border-left: 2px solid var(--indexColor1);
-          padding: 7px 0;
-          text-align: center;
-          cursor: pointer;
-          transition: all 0.3s;
-          &:first-child {
-            border-radius: 5px 0 0 5px;
-          }
-          &:last-child {
-            border-radius: 0 5px 5px 0;
-            border-right: 2px solid var(--indexColor1);
-          }
-          &:hover,
-          &.active {
-            background: var(--indexColor1);
-            color: #fff;
-          }
-        }
-      }
-      .brand_btn {
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        display: flex;
-        z-index: 10;
-        justify-content: space-around;
-        .brand_btn_left {
-          position: absolute;
-          left: calc((100% - 562px - 495px) / 2);
-          top: 25%;
-          cursor: pointer;
-          z-index: 2;
-        }
-        .brand_btn_right {
-          position: absolute;
-          right: calc((100% - 562px - 495px) / 2);
-          top: 25%;
-          cursor: pointer;
-          z-index: 2;
-        }
-      }
-      &-content {
-        width: 100%;
-        max-width: 700px;
-        margin: 0 auto;
-        display: flex;
-        &-l {
-          width: calc(300 / 700 * 100%);
-          margin-right: calc(30 / 695 * 100%);
-          img {
-            width: 100%;
-          }
-        }
-        &-r {
-          flex: 1;
-          & > div {
-            & > img {
-              max-width: 100%;
-            }
-            &:nth-of-type(2) {
-              width: 70%;
-              color: #fff;
-              background: var(--indexColor1);
-              font-size: 30px;
-              line-height: 160%;
-              padding-left: 17px;
-              clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
-              margin: 10px 0;
-            }
-            &:nth-of-type(3) {
-              display: flex;
-              flex-direction: column;
-              span {
-                font-size: 26px;
-                line-height: 1.6;
-                &::before {
-                  content: '·';
-                  display: inline-block;
-                  margin-right: 10px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    .doctorTeam {
-      margin-top: 80px;
-    }
-    .note {
-      margin-top: 100px;
-      .noteCard {
-        // display: flex;
-        // flex-wrap: wrap;
-        margin: clamp(26px, 2.8125vw, 54px) auto 0;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: clamp(35px, 3.645vw, 70px) clamp(45px, 4.6875vw, 90px);
-        // justify-content: space-between;
-        max-width: 1040px;
-        &-in {
-          cursor: pointer;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          padding: 0;
-          box-sizing: border-box;
-          &-image {
-            width: clamp(110px, 9.583vw, 184px);
-            height: clamp(110px, 9.583vw, 184px);
-            padding-top: 0;
-            position: relative;
-            background: var(--indexColor2);
-            border-radius: 10px;
-            img {
-              position: absolute;
-              left: 50%;
-              top: 50%;
-              transform: translate(-50%, -50%);
-              max-width: 90%;
-              max-height: 90%;
-            }
-          }
-          &:nth-of-type(1) > &-image,
-          &:nth-of-type(3) > &-image,
-          &:nth-of-type(6) > &-image,
-          &:nth-of-type(8) > &-image {
-            background: #fff1f0;
-          }
-          &-name {
-            height: auto;
-            line-height: 100%;
-            font-style: normal;
-            font-weight: 600;
-            font-size: clamp(12px, 1.25vw, 24px);
-            color: #666666;
-            text-align: center;
-            margin-top: 12px;
-          }
-        }
-      }
-    }
-    .implantCase {
-      margin-top: 112px;
-      // overflow-x: hidden;
-      position: relative;
-      &-content {
-        margin-top: 40px;
-        padding: 127px 0;
-        background: linear-gradient(
-          269deg,
-          rgba(255, 241, 240, 0) 0.53%,
-          rgba(255, 241, 240, 0.7) 12.92%,
-          rgba(255, 241, 240, 0.7) 81.78%,
-          rgba(255, 241, 240, 0) 99.62%
-        );
-        width: 100%;
-        position: relative;
-        // cursor: url(@/assets/images/icon_17.svg) 54 54, auto;
-        .implantCaseBoxSwiper {
-          width: 100%;
-          margin: 0 auto;
-          .implantCaseText {
-            display: none;
-          }
-          .implantCaseBox {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            width: max-content;
-            margin: 0 auto;
-
-            &-t {
-              width: 100%;
-              max-width: 562px;
-              margin: 0 auto;
-              color: #4d4d4d;
-              font-size: 35px;
-              font-style: normal;
-              font-weight: 700;
-              line-height: 160%;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              position: relative;
-              border-radius: 30px;
-              // overflow: hidden;
-              transition: all 0.3s;
-              // cursor: url(@/assets/images/icon_18.svg) 54 54, auto;
-              div {
-                width: 100%;
-              }
-              img {
-                width: 100%;
-                transition: all 0.3s;
-              }
-              .rightMbIcon {
-                display: none;
-              }
-            }
-            &:not(:first-child) {
-              .implantCaseBox-t {
-                margin-top: 59px;
-              }
-            }
-            &-b {
-              margin-top: 60px;
-              img {
-                border-radius: 0;
-                margin: 0 auto;
-              }
-              // div{
-              //   img{
-              //     border-radius: 30px;
-              //     margin: 0 auto;
-              //   }
-              //   &:not(:first-child){
-              //     margin-top: 33px;
-              //   }
-              // }
-            }
-          }
-        }
-        .leftBtn {
-          position: absolute;
-          left: calc((100% - 862px - 495px) / 2);
-          top: 25%;
-          cursor: pointer;
-          z-index: 2;
-        }
-        .rightBtn {
-          position: absolute;
-          right: calc((100% - 862px - 495px) / 2);
-          top: 25%;
-          cursor: pointer;
-          z-index: 2;
-        }
-        &-line {
-          width: 326px;
-          margin: 60px auto 0;
-        }
-      }
-      .click_btn {
-        display: flex !important;
-        width: fit-content !important;
-        position: absolute;
-        right: -30px;
-        top: -40px;
-        z-index: 5;
-      }
-    }
-    .youtobe-video {
-      width: 80%;
-      max-width: 960px;
-      margin: 80px auto 0;
-      &-in {
-        width: 100%;
-        height: 0;
-        padding-bottom: calc(316 / 560 * 100%);
-        position: relative;
-        & > iframe {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-    .confidence_ecommendation {
-      margin-top: 144px;
-      &-in {
-        width: 100%;
-        max-width: 1041px;
-        display: flex;
-        margin: 54px auto 0;
-        flex-wrap: wrap;
-        justify-content: center;
-        & > div {
-          width: calc(100% / 3);
-          display: flex;
-          justify-content: center;
-          margin-bottom: 60px;
-          // align-content: center;
-          align-items: center;
-          flex-wrap: nowrap;
-          img {
-            height: auto;
-          }
-        }
-      }
-    }
-    .technology {
-      width: 100%;
-      max-width: 1016px;
-      margin: 144px auto 0;
-      padding-bottom: 50px;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      & > div:nth-child(1) {
-        align-items: center;
-      }
-      &-in {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        &-img {
-          width: 100%;
-          max-width: 552px;
-          margin-top: 34px;
-          img {
-            margin: 0 auto;
-          }
-        }
-        &-t {
-          margin-top: 23px;
-          text-align: center;
-          color: var(--textColor);
-          font-family: 'Noto Sans HK';
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 32px */
-          letter-spacing: 4px;
-        }
-        &-b {
-          margin-top: 34px;
-          /* Content-PC */
-          color: var(--textColor);
-          font-family: 'Noto Sans HK';
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 32px */
-          letter-spacing: 4px;
-        }
-      }
-      &-btn {
-        display: flex;
-        justify-content: center;
-        margin-top: 50px;
-      }
-    }
-  }
-  :deep(.dentistryServices-title) {
-    align-items: center;
-  }
-  .note-mobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 135px;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 241, 240, 0) 0%,
-      #fee6f1 100%
-    );
-    padding-bottom: 80px;
-    & > div:nth-child(2) {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0 16px;
-      & > div:nth-child(1) {
-        grid-column: 1 / 4;
-        color: var(--Theme-Color, #fc1682);
-        text-align: center;
-        font-family: 'FakePearl-Regular';
-        font-size: 35px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 56px */
-        letter-spacing: 7px;
-        margin: 55px auto;
-        display: flex;
-        flex-direction: column;
-      }
-      & > div:not(:nth-of-type(1)) {
-        display: flex;
-        width: 26.82vw;
-        padding: 1.5625vw;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.625vw 0;
-        background: #fff;
-        box-sizing: border-box;
-        height: fit-content;
-        & > div:nth-child(1) {
-          display: flex;
-          justify-content: space-between;
-          width: 100%;
-          & > div:nth-child(1) {
-            display: flex;
-            flex-direction: column;
-            & > span:nth-child(1) {
-              color: var(--Blue-Deep, #00aeff);
-              font-family: 'FakePearl-Regular';
-              font-size: clamp(14px, 1.453vw, 26px);
-              font-style: normal;
-              font-weight: 500;
-              line-height: 160%; /* 44.8px */
-            }
-            & > span:nth-child(2) {
-              color: var(--Grey-Pale, #aaa);
-              font-family: 'Noto Sans HK';
-              font-size: 1.0465vw;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 32px */
-              letter-spacing: 4px;
-            }
-          }
-          & > div:nth-child(2) {
-            color: var(--Grey-Mid, #666);
-            font-family: 'Noto Sans HK';
-            font-size: 1.0465vw;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 32px */
-            letter-spacing: 4px;
-          }
-        }
-        & > div:nth-child(2) {
-          color: var(--Grey-Deep, #4d4d4d);
-          font-family: 'Noto Sans HK';
-          font-size: 1.0465vw;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 32px */
-          letter-spacing: 3.5px;
-          width: 100%;
-        }
-      }
-      & > div:nth-of-type(3) {
-        margin-top: 3.125vw;
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
-            & > span:nth-child(1) {
-              color: var(--Theme-Color, #fc1682);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 768px) {
-  :deep(.problem) {
-    margin-top: 8vw !important;
-  }
-  :deep(.explain_box_mobile) {
-    top: 0px !important;
-    margin-left: 0 !important;
-  }
-  :deep(.header-content-in) {
-    width: 100vw;
-  }
-  :deep(.logo) {
-    .health_care_voucher {
-      display: none !important;
-    }
-  }
-  :deep(.context-in) {
-    font-size: 5.86vw !important;
-  }
-  :deep(.servicesCard) {
-    grid-gap: 7.205vw 4.6153vw !important;
-    & > div:nth-child(7) {
-      .servicesCard-in-name {
-        max-width: 12vw;
-      }
-    }
-    & > div:nth-child(11) {
-      .servicesCard-in-name {
-        max-width: 14.656vw;
-      }
-    }
-    & > div:nth-child(12) {
-      .servicesCard-in-name {
-        max-width: 14.665vw;
-      }
-    }
-    & > div:last-child {
-      .servicesCard-in-name {
-        max-width: 18.665vw;
-      }
-    }
-  }
-  :deep(.header-content) {
-    .explain_box_mobile {
-      align-items: flex-end;
-      background: transparent !important;
-      display: flex;
-      justify-content: flex-end;
-      margin: 0 auto !important;
-      left: auto;
-      right: 0;
-      bottom: -5.33vw;
-      position: absolute;
-      top: auto;
-      z-index: 35;
-    }
-    .waterBg-implant {
-      width: 100vw;
-    }
-
-    .waterBg::after,
-    .waterBg::before {
-      bottom: -8vw;
-      width: 100vw;
-    }
-    .waterBg-implant::after {
-      height: 23.33vw;
-    }
-    .waterBg-implant::before {
-      height: 20.33vw;
-      animation: wavea-cbdedece 10s linear infinite;
-    }
-  }
-  @keyframes wavea-cbdedece {
-    0% {
-      background-position: 0 5.33vw;
-    }
-
-    to {
-      background-position: 1080px 5.33vw;
-    }
-  }
-  @keyframes identifier {
-    0% {
-      background: url(https://static.cmereye.com/imgs/2024/02/ea9a267c45465e86.png);
-      background-size: 100% 100%;
-    }
-    50% {
-      background: url(https://static.cmereye.com/imgs/2024/02/265b194eda50c574.png);
-      background-size: 100% 100%;
-    }
-    95% {
-      background: url(https://static.cmereye.com/imgs/2024/02/b56183c6f0ad64b9.png);
-      background-size: 100% 100%;
-    }
-    to {
-      background: url(https://static.cmereye.com/imgs/2024/02/ea9a267c45465e86.png);
-      background-size: 100% 100%;
-    }
-  }
-  .new_doctor {
-    .team_doctor_everybody {
-      display: flex;
-      justify-content: center;
-    }
-  }
-  .dentistryServices {
-    padding: 32vw 0;
-    .tabNav {
-      padding: 8vw;
-      font-size: 1rem;
-      margin-top: 0;
-    }
-    .Dental_implant_technology {
-      display: block;
-      &-title {
-        margin-top: 13.333vw;
-      }
-      &-video {
-        margin-bottom: 50px;
-      }
-      &-context {
-        font-size: 4.265vw;
-        line-height: 200%;
-        padding: 0 8vw;
-        text-align: justify;
-        margin: 5.33vw auto 8vw;
-      }
-    }
-    .plague {
-      margin-top: 0;
-      padding: 8.2665vw 0 11.73vw;
-      margin: 0 auto;
-      &-in {
-        max-width: 100vw;
-      }
-      &-title {
-        &-in {
-          font-size: 6.93vw;
-        }
-      }
-      &-lists {
-        margin-top: 9.06vw;
-        position: relative;
-        padding-top: 0;
-        & > div {
-          &:nth-of-type(1) {
-            width: fit-content;
-            span {
-              margin-bottom: 0;
-            }
-            position: absolute;
-            z-index: 4;
-            top: 18.65vw;
-            left: 8vw;
-          }
-          &:nth-of-type(2) {
-            justify-content: flex-end;
-            align-items: center;
-            position: absolute;
-            z-index: 4;
-            bottom: auto;
-            top: 42.65vw;
-            left: 21.33vw;
-          }
-          &:nth-of-type(3) {
-            width: 48vw;
-            margin: 0 auto 0;
-            & > img {
-              margin: 0;
-            }
-          }
-          &:nth-of-type(4) {
-            justify-content: flex-start;
-            align-items: center;
-            position: absolute;
-            z-index: 4;
-            left: 30%;
-            top: -4vw;
-          }
-          &:nth-of-type(5) {
-            margin-top: 0;
-            padding-right: 0;
-            position: absolute;
-            z-index: 4;
-            right: 12vw;
-            bottom: auto;
-            top: 36vw;
-          }
-          &:nth-of-type(6) {
-            margin-top: 0;
-            padding-left: 0;
-            justify-content: center;
-            position: absolute;
-            z-index: 4;
-            left: 50%;
-            top: 8vw;
-          }
-          span {
-            width: 29.33vw;
-            height: 6.665vw;
-            font-size: 4.265vw;
-            border-radius: 8.53vw;
-            width: fit-content;
-            border-radius: 8.79vw;
-            background: var(--Theme-Color, #fc1682);
-            box-shadow: 1.075px 1.075px 4.443px 0px rgba(252, 22, 130, 0.5);
-            box-sizing: border-box;
-            padding: 0.65vw 3.73vw;
-
-            font-size: 3.344vw;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 20.064px */
-            letter-spacing: 0.6688vw;
-          }
-          img {
-            width: 48vw;
-            height: 48vw;
-            position: relative;
-          }
-        }
-      }
-    }
-    .note {
-      margin-top: 13.33vw;
-      max-width: 100%;
-      &-title {
-        &-in {
-          font-size: 6.933vw;
-        }
-      }
-      .noteCard {
-        margin: 9.065vw auto 0;
-        padding: 0 4vw;
-        box-sizing: border-box;
-        &-in {
-          width: calc(100% / 3);
-          padding: 0 1.33vw;
-          &-image {
-            img {
-              max-width: 70%;
-              max-height: 70%;
-            }
-          }
-          &:nth-of-type(5) > &-image,
-          &:nth-of-type(7) > &-image {
-            background: #fff1f0;
-          }
-          &:nth-of-type(6) > &-image,
-          &:nth-of-type(8) > &-image {
-            background: var(--indexColor2);
-          }
-          &-name {
-            height: 8vw;
-            line-height: 8vw;
-            margin-bottom: 6.665vw;
-            font-size: 3.733vw;
-          }
-        }
-      }
-    }
-    .notice {
-      width: auto;
-      margin: 19.73vw 8vw 0;
-      &-title {
-        &-in {
-          font-size: 6.93vw;
-          white-space: pre-wrap;
-        }
-      }
-      &-topText,
-      &-bottomText {
-        // padding: 0 30px;
-        span {
-          display: inline;
-          font-size: 4vw;
-        }
-      }
-      &-topText {
-        margin: 8.265vw auto 0;
-        text-align: center;
-        display: block;
-      }
-      &-bottomText {
-        display: none;
-      }
-      &-in {
-        width: 100%;
-        margin: 9.33vw 0 0;
-        .lists {
-          border-radius: 5.33vw;
-          &-in {
-            & > div {
-              padding: 8vw 2.65vw;
-              font-size: 3.2vw;
-              margin-bottom: 0.53vw;
-              &:nth-of-type(1) {
-                font-size: 4vw;
-                padding: 0 2.65vw;
-              }
-              &:nth-of-type(2) {
-                width: 39%;
-              }
-              &:nth-of-type(3) {
-                width: 39%;
-              }
-              &:not(:last-child) {
-                margin-right: 0.53vw;
-              }
-            }
-            &:nth-of-type(1) {
-              & > div {
-                font-size: 5.33vw;
-              }
-            }
-          }
-        }
-      }
-    }
-    .step {
-      background: linear-gradient(
-        0deg,
-        rgba(255, 241, 240, 0) 0%,
-        rgba(255, 241, 240, 0.7) 12.5%,
-        rgba(255, 241, 240, 0.7) 81.99%,
-        rgba(255, 241, 240, 0) 100%
-      );
-      margin-top: 6.6654vw;
-      padding: 12.265vw 0;
-      &-title {
-        &-in {
-          font-size: 6.93vw;
-        }
-      }
-      &-lists {
-        width: auto;
-        margin: 15.2vw 10.665vw 0;
-        &-in {
-          flex-direction: column;
-          margin-bottom: 8vw;
-          &:nth-of-type(n + 4) {
-            margin-bottom: 8vw;
-          }
-          &:nth-of-type(3) {
-            .step-lists-in-r {
-              display: block;
-            }
-          }
-          &-l {
-            .title {
-              padding: 0 1.6vw;
-              font-size: 6.93vw;
-            }
-            .image {
-              padding: 0 1.6vw;
-            }
-            .name {
-              margin-top: -6.65vw;
-              font-size: 4.265vw;
-              clip-path: polygon(0 0, 80% 0, 85% 100%, 0 100%);
-              padding: 2.13vw 18.65vw 2.13vw 4vw;
-            }
-            .context {
-              font-size: 4.265vw;
-            }
-          }
-          &-r {
-            margin-top: 8vw;
-            margin-left: 0;
-            display: none !important;
-            img {
-              // transform: rotate(90deg);
-            }
-          }
-        }
-      }
-    }
-    .Plant_brand_series {
-      margin-top: 8vw;
-      // display: none !important;
-      &-tab {
-        padding: 0 8vw;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-        & > span {
-          font-size: 4vw;
-          line-height: 160%;
-          & > span {
-            display: block;
-          }
-          // &:nth-of-type(1) {
-          //   flex: 1;
-          // }
-          // &:nth-of-type(2) {
-          //   flex: 1.2;
-          // }
-          // &:nth-of-type(3) {
-          //   flex: 1.4;
-          // }
-          // &:nth-of-type(4) {
-          //   flex: 1;
-          // }
-          // &:nth-of-type(5) {
-          //   flex: 1.2;
-          // }
-          border-left: 2px solid var(--indexColor1);
-          width: 100%;
-          border-bottom: 2px solid var(--indexColor1);
-          &:hover {
-            background: none;
-            color: var(--indexColor1);
-          }
-          &.active {
-            background: var(--indexColor1);
-            color: #fff;
-          }
-          border-top: none !important;
-          border-right: none !important;
-          border-radius: 0 !important;
-          white-space: nowrap;
-          box-sizing: border-box;
-          padding: 1.065vw 2.65vw;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        // 选择后3个span
-        & > span:nth-child(1) {
-          // border-right: 2px solid var(--indexColor1);
-          // border-top: 2px solid var(--indexColor1);
-          border-top: 2px solid var(--indexColor1) !important;
-          border-radius: 4vw 0 0 0 !important;
-        }
-        & > span:nth-child(2) {
-          border-top: 2px solid var(--indexColor1) !important;
-        }
-        & > span:nth-child(3) {
-          border-top: 2px solid var(--indexColor1) !important;
-          border-right: 2px solid var(--indexColor1) !important;
-          border-radius: 0 4vw 0 0 !important;
-        }
-        & > span:nth-child(4) {
-          border-radius: 0 0 0 4vw !important;
-        }
-        & > span:nth-child(6) {
-          border-right: 2px solid var(--indexColor1) !important;
-          border-radius: 0 0 4vw 0 !important;
-        }
-      }
-      &-content {
-        padding: 0 8vw;
-        &-r {
-          & > div {
-            & > img {
-              max-width: 80%;
-            }
-            &:nth-of-type(2) {
-              width: 90%;
-              font-size: 4vw;
-              padding: 0.53vw 0 0.53vw 4vw;
-              margin: 1.33vw 0;
-              clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
-            }
-            &:nth-of-type(3) {
-              span {
-                font-size: 3.2vw;
-                &::before {
-                  margin-right: 1.6vw;
-                  font-size: 5.33vw;
-                  line-height: 100%;
-                  vertical-align: middle;
-                  margin-top: -0.53vw;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    .doctorTeam {
-      margin-top: 0;
-    }
-    .implantCase {
-      margin-top: 24vw;
       overflow: hidden;
-      &-content {
-        margin-top: 8.53vw;
-        background: linear-gradient(
-          0deg,
-          rgba(255, 241, 240, 0) 0%,
-          rgba(255, 241, 240, 0.7) 12.5%,
-          rgba(255, 241, 240, 0.7) 81.99%,
-          rgba(255, 241, 240, 0) 100%
+      border-radius: 13.333px;
+      width: 23.9583vw;
+      height: 8.9533vw;
+      background: #fff;
+      margin-right: 14vw;
+      box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+
+      .content-title {
+        background: var(
+          --Liner-purple,
+          linear-gradient(
+            269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%
+          )
         );
-        padding: 4.265vw 0 7.2vw;
-        .implantCaseBoxSwiper {
-          .implantCaseText {
-            display: block;
-            // text-align: center;
-            font-size: 6.65vw;
-            font-weight: 600;
-            margin-bottom: 1.33vw;
-            color: var(--indexColor1);
-            padding: 0 11.733vw;
-            &.act {
-              color: #79828d;
-            }
-          }
-          .implantCaseBox {
-            padding: 0 11.733vw;
-            width: 100%;
-            box-sizing: border-box;
-            &-t {
-              font-size: 6.93vw;
-              margin: 0 11.733vw;
-              width: auto;
-              border-radius: 4vw;
-              div {
-                position: relative;
-                -webkit-touch-callout: none;
-              }
-              .rightMbIcon {
-                display: block;
-                position: absolute;
-                width: 12vw;
-                height: auto;
-                right: -2.65vw;
-                top: -3.2vw;
-              }
-              .click_btn {
-                display: none !important;
-              }
-            }
-            &-b {
-              margin-top: 8vw;
-              padding: 0 11.73vw;
-              img {
-                border-radius: 5.33vw;
-                margin: 0 auto;
-                &.firstBox {
-                  width: 50%;
-                }
-              }
-            }
-          }
+        color: var(--White, #fff);
+        text-align: center;
+        text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
+        font-family: 'Noto Sans HK';
+        font-size: 1.665vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.388vw;
+        letter-spacing: 3.2px;
+        box-sizing: border-box;
+        padding: 0.8645vw 0;
+        width: 100%;
+        min-height: 3.1353125vw;
+      }
+
+      .content-price {
+        display: flex;
+        gap: 0 0.52vw;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0.52vw;
+
+        & > div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          font-size: 1.744vw;
+          text-align: right;
+          text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+            1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+            -1.33px -1.333px 1.333px #faeaf2;
         }
-        .leftBtn {
-          top: 20%;
-          left: 3.465vw;
-          svg {
-            width: 13.865vw;
-            height: 13.865vw;
+
+        & > div:nth-child(2) {
+          width: 15.2604vw;
+
+          & > img {
+            width: 100%;
+            height: auto;
             object-fit: cover;
           }
         }
-        .rightBtn {
-          top: 20%;
-          right: 3.465vw;
-          svg {
-            width: 13.865vw;
-            height: 13.865vw;
-          }
-        }
-        &-line {
-          width: 57.6vw;
-          margin: 8vw auto 0;
-        }
-        &-in {
-          padding-bottom: 10.65vw;
-          position: relative;
-          box-sizing: border-box;
-          padding: 0 4vw;
-          .afterBefore {
-            display: flex;
-            justify-content: center;
-            gap: 0 32vw;
-            margin-bottom: 1.6vw;
-            & > div {
-              font-family: 'FakePearl-Regular';
-              font-size: 5.33vw;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 32px */
-            }
-            & > div:nth-child(1) {
-              color: var(--Blue-Deep, #00aeff);
-            }
-            & > div:nth-child(2) {
-              color: var(--Theme-Color, #fc1682);
-            }
-          }
-          .itemImgDetails {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 5.33vw;
-            & > div {
-              width: 45.33vw;
-              height: 20.513vw;
-              border-radius: 4.32vw;
-              overflow: hidden;
-              & > img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-              }
-            }
-          }
-          // &:after {
-          //   content: '';
-          //   display: inline-block;
-          //   width: 17px;
-          //   height: 28px;
-          //   position: absolute;
-          //   top: 0px;
-          //   right: 60px;
-          //   -webkit-animation: identifier 0.9s infinite;
-          //   animation: identifier 0.9s infinite;
-          // }
-        }
-        position: relative;
-        .btnImgCase {
-          position: absolute;
-          top: 40%;
-          display: flex;
-          justify-content: space-between;
-          z-index: 10;
-          width: 100%;
-        }
       }
-    }
-    .youtobe-video {
-      width: 100%;
-      margin: 8vw auto 0;
-      &-in {
-        padding-bottom: calc(315 / 560 * 100%);
-      }
-    }
-    .confidence_ecommendation {
-      margin-top: 16vw;
-      padding: 0 8vw;
-      &-in {
-        width: 100%;
-        max-width: 100vw;
-        display: flex;
-        margin: 9.065vw auto 0;
-        flex-wrap: wrap;
-        justify-content: center;
-        & > div {
-          width: calc(100% / 3);
-          display: flex;
-          justify-content: center;
-          margin-bottom: 9.065vw;
-          align-content: center;
-          padding: 0 2.65vw;
-          img {
-            width: 100%;
-          }
-        }
-      }
-    }
-    .technology {
-      padding: 0 8vw 13.33vw;
-      margin-top: 3.733vw;
-      &-in {
-        &-t {
-          margin-top: 4vw;
-          font-size: 4.265vw;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 200%; /* 32px */
-          letter-spacing: 0.42vw;
-          text-align: justify;
-        }
-        &-img {
-          margin-top: 2.13vw;
-        }
-        &-b {
-          margin-top: 6.665vw;
-          font-size: 4.265vw;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 200%; /* 32px */
-          letter-spacing: 1.6px;
-          text-align: justify;
-        }
-      }
-      &-btn {
-        margin-top: 8vw;
-      }
-    }
-    :deep(.reason-in-l) {
-      position: relative;
-      padding-left: 8vw;
-      background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.3) 2%,
-        #fee6f1 75%
-      );
-      width: 100vw;
-      .text_one {
-        margin-top: 0;
-      }
-      .text_two {
-        margin-top: 0;
-      }
-      .image {
-        max-width: 40.53vw;
-        width: 30%;
-        height: auto;
-        margin: 5.33vw 0 0 20.8333333333%;
+
+      .content-subscribe {
         position: absolute;
-        border-radius: 50% 0 0 0;
-        overflow: hidden;
-        bottom: 0;
-        right: 0;
-      }
-    }
-    :deep(.reason-in-r) {
-      margin-left: 9.33vw;
-      & > div {
-        position: relative;
-        margin-bottom: 5.3vw !important;
-        & > .title {
-          & > span {
-            position: absolute;
-            left: -9.33vw;
-            margin-left: -2.65vw;
-            top: 2.665vw;
-          }
-          & > span::before {
-            right: auto;
-            top: 50%;
-            bottom: auto;
-            transform: translateY(-2.665vw);
-          }
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        right: 2vw;
+        top: 40%;
+        gap: 0.364vw 0;
+
+        & > span:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 23.077px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%;
+          /* 27.692px */
+          letter-spacing: 2.308px;
         }
-        & > .context {
-          font-size: 3.733vw;
-        }
-      }
-    }
-    :deep(.introduce) {
-      margin-top: 0;
-    }
-    .mobile-new-step {
-      margin: 6.65vw 7.2vw 12.53vw 8vw;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8vw 7.46vw;
-      position: relative;
-      z-index: 5;
-      & > div {
-        position: relative;
-        & > div:nth-child(1) {
-          & > img {
-            border-radius: 3.733vw;
-            border: 1px solid var(--Theme-Color, #fc1682);
-            margin-bottom: 1.6vw;
-          }
-          & > span:nth-child(2) {
-            color: var(--Theme-Color, #fc1682);
-            font-family: 'FakePearl-Regular';
-            font-size: 4.1vw;
+
+        & > span:nth-child(2) {
+          border-radius: 28.846px;
+          background: var(--Brand-Color, #f8298a);
+          box-shadow: 0px 0px 11.538px 0px rgba(0, 0, 0, 0.25);
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 25.962px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.596px;
+
+          & > i {
+            color: var(--White, #fff);
+            font-family: 'Noto Sans HK';
+            font-size: 23.077px;
             font-style: normal;
-            font-weight: 600;
-            line-height: 130%; /* 20.8px */
+            font-weight: 400;
+            line-height: 34.615px;
+            letter-spacing: 2.308px;
           }
-          & > span:nth-child(4) {
-            color: var(--Grey-Deep, #4d4d4d);
-            text-align: justify;
-            font-family: 'FakePearl-Regular';
-            font-size: 3.07vw;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 160%; /* 19.2px */
-            letter-spacing: 1.2px;
-          }
-        }
-        & > div:last-child {
-          position: absolute;
-          top: -1.6vw;
-          left: -1.6vw;
-        }
-      }
-      & > div:nth-child(even) {
-        margin-top: 6.665vw;
-      }
-    }
-    .brand_btn {
-      display: none !important;
-      .brand_btn_left {
-        display: none;
-      }
-      .brand_btn_right {
-        display: none;
-      }
-    }
-  }
-  .new_doctor {
-    margin: 13.865vw auto 17.065vw;
-  }
-  .btn-right-left {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 35%;
-    width: 100%;
-    z-index: 10;
-  }
-  .item_compare {
-    display: flex;
-    flex-direction: column;
-    & > div {
-      display: flex;
-      align-items: center;
-      gap: 0 1.3vw;
-      & > div:nth-child(1) {
-        color: var(--Theme-Color, #fc1682);
-        font-family: 'FakePearl-Regular';
-        font-size: 4.265vw;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%; /* 20.8px */
-      }
-      & > div:nth-child(2) {
-        max-width: 22.4vw;
-        height: auto;
-        & > img {
-          width: 100%;
-          height: auto;
+
+          box-sizing: border-box;
+          padding: 0.3125vw 0.729165vw;
         }
       }
     }
   }
-  .dentistryServices-title {
-    margin-bottom: 6.665vw;
-  }
-  .Plant_brand_series-content {
-    & > div:nth-child(2) > span {
-      color: var(--Grey-Deep, #4d4d4d);
-      font-family: 'FakePearl-Regular';
-      font-size: 4vw;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 24px */
-      letter-spacing: 0.4vw;
-    }
-  }
-  .step-in {
-    position: relative;
-  }
-  .step-bg {
-    position: absolute;
-    z-index: 2;
-  }
-  .step-mobile-bg-one {
-    top: 23.465vw;
-    left: 0;
-    right: 0;
-    & > img {
-      width: 100%;
-    }
-  }
-  .step-mobile-bg-two {
-    top: 88vw;
-    right: 0;
-    left: 0;
-    & > img {
-      width: 100%;
-    }
-  }
-  .step-mobile-bg-three {
-    bottom: 31.46vw;
-    left: 0;
-    right: 0;
-    // width: 85%;
-    & > img {
-      width: 100%;
-    }
-  }
-  .contactForm {
-    margin-top: 13.33vw;
-  }
-  .classify-title {
-    width: fit-content;
-    margin: 0 auto;
-  }
-  .classify {
-    max-width: 100vw !important;
-    width: 100vw;
-    margin-top: 0 !important;
-    box-sizing: border-box;
-    padding: 0 4vw;
-    & > div:nth-child(2) {
+
+  .implant-step {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .implant-step-context {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 1.823vw 1.5625vw;
+      box-sizing: border-box;
+      padding: 30px 0;
+    }
+
+    .implant-step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       position: relative;
-      max-width: 89.74vw;
-      overflow: hidden;
-      & > div:nth-child(2),
-      & > div:nth-child(3) {
-        border-radius: 2.66vw 2.66vw 0px 0px;
-        background: var(--Theme-Color, #fc1682);
-        color: var(--White, #fff);
-        text-align: center;
-        font-family: 'FakePearl-Regular';
-        font-size: 4.265vw;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 130%; /* 20.8px */
-        box-sizing: border-box;
-        padding: 5px 0;
-        white-space: nowrap;
-      }
-      & > div:nth-child(3) {
-        border-radius: 2.665vw 2.665vw 0px 0px;
-        background: var(--Blue-Deep, #00aeff);
-      }
-      & > div:nth-child(7) {
-        border-radius: 2.665vw 0px 0px 0px;
-      }
-      & > div:nth-child(19) {
-        border-radius: 0px 0px 0px 2.665vw;
-      }
-      & > div:nth-child(3n + 1):not(:nth-child(1)):not(:nth-child(4)) {
-        border: 1px solid var(--White, #fff);
-        border-right: 0 !important;
-        background: var(--Pink-Pale, #fee6f1);
-        color: var(--Grey-Deep, #4d4d4d);
-        text-align: center;
-        font-family: 'FakePearl-Regular';
-        font-size: 3.2vw;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 19.2px */
-        letter-spacing: 1.2px;
-        box-sizing: border-box;
-        padding: 1.6vw 0;
-        white-space: nowrap;
+
+      & > div:nth-child(1) {
+        background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
+          no-repeat;
+        background-size: cover;
+        width: 3.4375vw;
+        height: 3.4375vw;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        color: var(--White, #fff);
+        font-family: 'Noto Sans HK';
+        font-size: 1.771vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 3.4px;
+        position: absolute;
+        top: -0.49vw;
+        left: -0.49vw;
+        z-index: 5;
       }
-      & > div:nth-child(3n + 2):not(:nth-child(2)):not(:nth-child(5)),
-      & > div:nth-child(3n + 3):not(:nth-child(3)):not(:nth-child(6)) {
+
+      & > div:nth-child(2) {
         & > img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
         }
-        border: 1px solid var(--Skin, #fff1f0);
+      }
+
+      & > div:nth-child(3) {
+        margin-top: 0.52vw;
+        width: 100%;
+        color: var(--Grey-Dark, #333);
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        /* 32px */
+        letter-spacing: 4px;
+      }
+    }
+  }
+
+  .implant-title-subheading {
+    & > i {
+      color: var(--Brand-Color, #f8298a);
+
+      /* 桌面版/PC-H2 */
+      font-family: 'Noto Sans HK';
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 3px;
+    }
+
+    color: var(--Grey-Deep, #4d4d4d);
+    text-align: center;
+
+    /* 桌面版/PC-H2 */
+    font-family: 'Noto Sans HK';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3px;
+  }
+  .seven-advantages {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+  .seven-advantages-content {
+    & > div {
+      width: clamp(566.434px, 29.49vw, 566.434px);
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 0 clamp(10px, 0.52vw, 10px);
+
+        & > div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          font-family: 'Noto Sans HK';
+          font-size: clamp(24.113px, 1.25vw, 24.113px);
+          font-style: normal;
+          font-weight: 500;
+          line-height: clamp(60.281px, 3.125vw, 60.281px);
+          letter-spacing: clamp(2.4113px, 0.125vw, 2.4113px);
+        }
+      }
+    }
+
+    & > div:nth-child(1) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      & > div:nth-child(2) {
+        margin-left: clamp(20px, 1.04vw, 20px);
+      }
+
+      & > div:nth-child(3) {
+        margin-left: clamp(40px, 2.08vw, 40px);
+      }
+    }
+
+    & > div:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      & > div:nth-child(2) {
+        margin-right: clamp(30px, 1.56vw, 30px);
+      }
+
+      & > div:nth-child(3) {
+        margin-right: clamp(64px, 3.33vw, 64px);
+      }
+
+      & > div:nth-child(4) {
+        margin-right: clamp(80px, 4.16vw, 80px);
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    &::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      top: 0;
+      background: url('https://static.ckjhk.com/ckj-image/2025032010461401.webp')
+        no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: clamp(1320px, 68.75vw, 1320px);
+      height: clamp(450px, 23.4375vw, 450px);
+      z-index: -1;
+    }
+  }
+
+  .brand-list {
+    margin: 0px auto;
+  }
+
+  .brand-context {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 40px;
+  }
+
+  .brand-item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > div:nth-child(2) {
+      color: var(--White, #fff);
+      text-align: center;
+
+      /* 桌面版/PC-H3 */
+      font-family: 'Noto Sans HK';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 2.4px;
+      border-radius: 40px;
+      background: var(--Brand-Color, #f8298a);
+      box-sizing: border-box;
+      padding: 6px 40px;
+      margin: 5px auto 10px;
+    }
+
+    & > div:nth-child(3) {
+      display: flex;
+      flex-direction: column;
+
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 0 20px;
+
+        & > div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          font-family: 'Noto Sans HK';
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
+        }
+      }
+
+      & > div:nth-child(1) {
+        & > div:nth-child(1) {
+          color: #01a853;
+        }
+      }
+    }
+  }
+  .extra-charge {
+    margin: 45px auto;
+  }
+  .extra-charge-context {
+    border-radius: 5px;
+    margin: 20px auto 0;
+    overflow: hidden;
+
+    & > div {
+      box-sizing: border-box;
+      padding: 18px 35px;
+      display: flex;
+      justify-content: space-between;
+
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        font-family: 'Noto Sans HK';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 2.4px;
+      }
+
+      & > div:nth-child(2) {
+        color: var(--Brand-Color, #f8298a);
+        text-align: right;
+        font-family: 'Noto Sans HK';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 2.4px;
+      }
+    }
+
+    & > div:first-child {
+      background: var(--Brand-Color, #f8298a);
+
+      & > div {
+        color: #fff;
+      }
+    }
+
+    & > div:nth-child(odd):not(:first-child) {
+      background-color: #fff7f8;
+    }
+
+    & > div:nth-child(even):not(:first-child) {
+      background-color: #fff;
+    }
+  }
+
+  .implant-git {
+    margin: 45px auto;
+  }
+
+  .implant-git-image {
+    & > div:nth-child(1) {
+      max-width: 552px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    & > div:nth-child(2) {
+      color: var(--Grey-Mid, #666);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 200%;
+      letter-spacing: 1.8px;
+
+      span {
+        color: var(--Brand-Color, #f8298a);
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%;
+        letter-spacing: 1.8px;
+      }
+    }
+  }
+
+  .technical-category-table {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    & > div {
+      color: var(--Grey-Deep, #4d4d4d);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 200%;
+      /* 36px */
+      letter-spacing: 1.8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // border: 1px solid var(--Grey-Lightest, #f2f2f2);
+      background: var(--White, #fff);
+
+      & > ul {
         display: flex;
         flex-direction: column;
-        gap: 2.66vw 0;
+        align-items: flex-start;
+
+        li {
+          list-style: revert-layer;
+        }
+      }
+    }
+
+    & > div:nth-child(2),
+    & > div:nth-child(3) {
+      border-radius: 10px 10px 0px 0px;
+      border-top: 3px solid var(--Brand-Color, #f8298a);
+      color: var(--White, #fff);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 2.4px;
+      box-sizing: border-box;
+      padding: 10px 0;
+      background: #f8298a;
+      width: 400px;
+      border-top: none !important;
+      border-bottom: none !important;
+    }
+
+    & > div:nth-child(3) {
+      border-radius: 10px 10px 0px 0px;
+      background: var(--Blue-Deep, #00aeff);
+      border-top: 3px solid var(--Blue-Deep, #00aeff);
+    }
+
+    & > div:nth-child(20) {
+      border-bottom: 3px solid var(--Brand-Color, #f8298a);
+    }
+
+    & > div:nth-child(3n + 2) {
+      border-left: 3px solid var(--Brand-Color, #f8298a);
+      border-right: 3px solid var(--Brand-Color, #f8298a);
+      position: relative;
+    }
+    & > div:nth-child(3n + 1),
+    & > div:nth-child(3n + 3) {
+      position: relative;
+    }
+    & > div:nth-child(3n + 1)::after,
+    & > div:nth-child(3n + 3)::after,
+    & > div:nth-child(3n + 2)::after {
+      background: var(--Grey-Lightest, #f2f2f2);
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%);
+      width: 100%;
+    }
+    & > div:nth-child(3n + 1) {
+      max-width: 160px;
+      background: #f8298a;
+      color: var(--White, #fff);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 200%;
+      /* 36px */
+      letter-spacing: 1.8px;
+      box-sizing: border-box;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+    }
+
+    & > div:nth-child(19) {
+      border-radius: 0px 0px 0 10px;
+    }
+
+    & > div:nth-child(21) {
+      box-sizing: border-box;
+      padding: 10px 20px;
+    }
+
+    & > div:nth-child(1),
+    & > div:nth-child(4) {
+      background: #fff !important;
+    }
+
+    & > div:nth-child(5),
+    & > div:nth-child(6) {
+      border-top: none !important;
+      border-bottom: none !important;
+    }
+    & > div:nth-child(1)::after,
+    & > div:nth-child(4)::after,
+    & > div:nth-child(2)::after,
+    & > div:nth-child(3)::after,
+    & > div:nth-child(5)::after,
+    & > div:nth-child(6)::after {
+      content: none;
+    }
+  }
+
+  .affiliation-title {
+    margin-top: 45px !important;
+  }
+
+  .affiliation-bg {
+    background: linear-gradient(
+      189deg,
+      rgba(255, 255, 255, 0) 0.34%,
+      var(--Pink-Pale, #ffe9ec) 113.4%
+    );
+
+    margin: 45px auto;
+
+    .affiliation {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .affiliation-context {
+      display: flex;
+      margin: 20px 0 0;
+      justify-content: center;
+      align-items: center;
+      gap: 0 1.77vw;
+
+      & > div:nth-child(1) {
+        height: auto;
+        max-width: 553px;
+        flex-shrink: 0;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      & > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        max-width: 25.53vw;
+
+        & > p:nth-child(1) {
+          color: var(--Grey-Mid, #666);
+          text-align: justify;
+          font-family: 'Noto Sans HK';
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          letter-spacing: 4px;
+
+          & > span {
+            color: var(--Brand-Color, #f8298a);
+            font-family: 'Noto Sans HK';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%;
+            letter-spacing: 4px;
+          }
+        }
+
+        & > p:nth-child(2) {
+          margin: 30px 0;
+          width: 13.75vw;
+          height: 1.875vw;
+
+          & > svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        & > ul {
+          padding-left: 0;
+          li {
+            display: flex;
+            align-items: center;
+            gap: 0.26vw 0.44vw;
+            color: var(--Grey-Dark, #333);
+
+            /* 桌面版/PC-頂部目錄 */
+            font-family: 'Noto Sans TC';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%;
+            /* 32px */
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  .subheading {
+    margin-left: 0;
+    box-sizing: border-box;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 10px;
+    position: relative;
+    background: #fff;
+
+    span {
+      position: relative;
+      z-index: 10;
+      color: var(--Grey-Dark, #333);
+
+      /* 桌面版/PC-H3 */
+      font-family: 'Noto Sans HK';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 2.4px;
+    }
+
+    span:not(:last-child) {
+      color: var(--New-Theme-Color, #d2337d);
+
+      /* 桌面版/PC-H2 */
+      font-family: 'Noto Sans HK';
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 3px;
+    }
+  }
+
+  .subheading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180%;
+    height: 2px;
+    background: var(--Pink-Pale, #ffe9ec);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+}
+:deep(.el-collapse-item__wrap) {
+  overflow: visible;
+  .problem-in-context {
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+  }
+}
+@media screen and (max-width: 922px) {
+  .ckj-container {
+    box-sizing: border-box;
+    padding: 0 4vw;
+  }
+  .banner {
+    margin-top: 17.065vw;
+    background: url('https://static.ckjhk.com/ckj-image/2025031810002701.png')
+      no-repeat;
+    width: 100vw;
+    height: 100vw;
+    background-size: cover;
+
+    .banner-context {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      position: relative;
+
+      .banner-content {
+        border-radius: 2.65vw;
+        background: #fff;
+        overflow: hidden;
+        max-width: 86.665vw;
+        margin: 0 auto 4vw;
+
+        .content-title {
+          color: var(--White, #fff);
+          text-align: center;
+          text-shadow: 0px 1.065vw 1.064vw rgba(0, 0, 0, 0.25);
+          font-family: 'Noto Sans HK';
+          font-size: 6.4vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 5.33vw;
+          /* 83.333% */
+          letter-spacing: 0.64vw;
+          box-sizing: border-box;
+          padding: 3.2vw 0;
+          background: var(
+            --Liner-purple,
+            linear-gradient(
+              269deg,
+              var(--Brand-Color, #fc1682) 10.21%,
+              #710d54 122.73%
+            )
+          );
+        }
+
+        .content-price {
+          display: flex;
+          gap: 0 2.13vw;
+          align-items: center;
+          box-sizing: border-box;
+          padding: 2.65vw;
+
+          & > div:nth-child(1) {
+            color: var(--Grey-Dark, #333);
+            text-align: right;
+            font-family: 'Noto Sans HK';
+            font-style: normal;
+            font-weight: 900;
+            line-height: 8.53vw;
+            letter-spacing: 4.2px;
+            color: var(--Grey-Dark, #333);
+            font-size: 7.465vw;
+            text-align: right;
+            text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+              1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+              -1.33px -1.333px 1.333px #faeaf2;
+          }
+
+          & > div:nth-child(2) {
+            width: 50.665vw;
+            height: 11.065vw;
+
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .banner-image {
+        display: none;
+        opacity: 0;
+      }
+
+      .content-subscribe {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 45vw;
+        left: 12vw;
+
+        & > span:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 4.2658vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 120%;
+          /* 19.2px */
+          letter-spacing: 0.426vw;
+        }
+
+        & > span:nth-child(2) {
+          border-radius: 5.33vw;
+          background: var(--Brand-Color, #f8298a);
+
+          /* 圍邊陰影 */
+          box-shadow: 0px 0px 2.133vw 0px rgba(0, 0, 0, 0.25);
+          box-sizing: border-box;
+          padding: 1.065vw 2.65vw;
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 4.8vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.48vw;
+
+          & > i {
+            color: var(--White, #fff);
+            font-family: 'Noto Sans HK';
+            font-size: 4.2685vw;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 6.4vw;
+            letter-spacing: 0.426vw;
+          }
+        }
+      }
+    }
+  }
+
+  .implant-step {
+    margin-top: 8vw;
+    display: flex;
+    flex-direction: column;
+
+    .implant-title-subheading {
+      margin-bottom: 5.865vw;
+
+      & > i {
+        color: var(--Brand-Color, #f8298a);
+        font-family: 'Noto Sans HK';
+        font-size: 4.8vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.48vw;
+      }
+
+      color: var(--Grey-Mid, #666);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 4.8vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.48vw;
+    }
+
+    .implant-step-context {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7.2vw 4.8vw;
+
+      .implant-step-item {
+        position: relative;
+
+        & > div:nth-child(1) {
+          position: absolute;
+          z-index: 3;
+          top: -1.06vw;
+          left: -1.06vw;
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 4.8vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.48vw;
+          background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
+            no-repeat;
+          background-size: cover;
+          width: 8vw;
+          height: 8vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        & > div:nth-child(2) {
+          position: relative;
+        }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 2.93vw;
+          height: 6.4vw;
+          background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
+            no-repeat;
+          background-size: cover;
+          right: -2.8vw;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        & > div:nth-child(3) {
+          color: var(--Grey-Dark, #333);
+          /* 手機版/MB-Small Text */
+          font-family: 'Noto Sans HK';
+          font-size: 3.73vw;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 5.33vw;
+          margin-top: 0.1vw;
+        }
+      }
+      .implant-step-item:last-child {
+        & > div:nth-child(2)::after {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .seven-advantages {
+    margin-top: 6.665vw;
+    max-width: 100% !important;
+    .subheading {
+      position: relative;
+    }
+
+    .subheading::after {
+      position: absolute;
+      color: var(--Grey-Light, #e6e6e6);
+      font-family: 'Noto Sans HK';
+      font-size: 4.265vw;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 65%;
+    }
+
+    .seven-advantages-content {
+      position: relative;
+      height: clamp(93.6vw, 93.6vw, 351px);
+      box-sizing: border-box;
+      padding: 1.33vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin: 0 auto;
+      top: -10.33vw;
+      & > div {
+        width: 100%;
+        & > div {
+          display: flex;
+          align-items: center;
+          gap: 0 1.6vw;
+          & > div:nth-child(1) {
+            width: clamp(6.13vw, 6.13vw, 23px);
+            height: clamp(6.13vw, 6.13vw, 23px);
+            & > svg {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          & > div:nth-child(2) {
+            color: var(--Grey-Dark, #333);
+            font-family: 'Noto Sans HK';
+            font-size: clamp(4.265vw, 4.265vw, 16px);
+            font-style: normal;
+            font-weight: 500;
+            line-height: 200%;
+            letter-spacing: 0.4265vw;
+          }
+        }
+      }
+
+      & > div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: fit-content;
+      }
+
+      & > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        & > div:nth-child(2) {
+          margin-right: 5.86vw;
+        }
+
+        & > div:nth-child(3) {
+          margin-right: 11.2vw;
+        }
+
+        & > div:nth-child(4) {
+          margin-right: 14.2vw;
+        }
+      }
+    }
+  }
+  .seven-advantages-content::after {
+    content: '';
+    position: absolute;
+    max-width: 100vw;
+    width: 100%;
+    height: 100%;
+    background: url(https://static.ckjhk.com/ckj-image/2025032009523601.webp)
+      no-repeat;
+    background-size: cover;
+    background-position: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+  .brand-list {
+    margin-top: -10.65vw;
+
+    .subheading {
+      position: relative;
+    }
+
+    .subheading::after {
+      // content: 'Brand';
+      color: var(--Grey-Light, #e6e6e6);
+      font-family: 'Noto Sans HK';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 45%;
+    }
+
+    .brand-context {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4vw 6.4vw;
+
+      .brand-item-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & > div:nth-child(2) {
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 4.265vw;
+          white-space: nowrap;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.4265vw;
+          box-sizing: border-box;
+          padding: 0.53vw 5.33vw;
+          border-radius: 20px;
+          background: var(--Brand-Color, #f8298a);
+          margin-bottom: 1.865vw;
+        }
+
+        & > div:nth-child(3) {
+          display: flex;
+          flex-direction: column;
+
+          & > div {
+            display: flex;
+            gap: 0 1.865vw;
+            align-items: center;
+            & > div:nth-child(2) {
+              width: 22.4vw;
+              height: 4.265vw;
+
+              & > svg {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .extra-charge {
+    margin-top: 30px;
+
+    .extra-charge-context {
+      background: var(--White, #fff);
+      border-radius: 10px;
+      box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+      overflow: hidden;
+
+      & > div {
+        display: flex;
+        justify-content: space-between;
         box-sizing: border-box;
-        padding: 2.13vw 2.65vw;
-        color: var(--Grey-Deep, #4d4d4d);
+        padding: 2.65vw 8.8vw;
+
+        & > div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          font-family: 'Noto Sans HK';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 1.6px;
+        }
+
+        & > div:nth-child(2) {
+          color: var(--Brand-Color, #f8298a);
+          text-align: right;
+          font-family: 'Noto Sans HK';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.8px;
+        }
+      }
+
+      & > div:nth-child(1) {
+        background: var(--Brand-Color, #f8298a);
+
+        & > div {
+          color: #fff;
+        }
+      }
+
+      & > div:nth-child(odd):not(:first-child) {
+        background-color: #fff7f8;
+      }
+
+      & > div:nth-child(even):not(:first-child) {
+        background-color: #fff;
+      }
+    }
+  }
+
+  .implant-git {
+    margin-top: 30px;
+
+    .implant-git-image {
+      & > div:nth-child(1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46.13vw;
+        height: 46.13vw;
+        margin: 5.33vw auto;
+      }
+
+      & > div:nth-child(2) {
+        box-sizing: border-box;
+        padding: 0 2.65vw;
+        color: var(--Grey-Mid, #666);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+
+        /* 21px */
+        & > span {
+          color: var(--Brand-Color, #f8298a);
+          font-family: 'Noto Sans HK';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+
+  .technical-category {
+    margin-top: 8.53vw;
+
+    .subheading {
+      position: relative;
+    }
+
+    .subheading::after {
+      // content: 'Types';
+      color: var(--Grey-Light, #e6e6e6);
+      font-family: 'Noto Sans HK';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 1.6px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 50%;
+    }
+
+    .technical-category-table {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      box-sizing: border-box;
+      & > div:nth-child(3n + 1) {
+        // max-width: 18.6vw;
+        background: var(--Theme-Color, #fc1682);
+        box-sizing: border-box;
+        padding: 2.13vw 0;
+        color: var(--White, #fff);
+        text-align: center;
         font-family: 'Noto Sans HK';
         font-size: 3.2vw;
         font-style: normal;
         font-weight: 500;
-        line-height: 160%; /* 19.2px */
-        letter-spacing: 1.2px;
+        line-height: 120%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      & > div:nth-child(1),
+      & > div:nth-child(4) {
+        background: transparent !important;
+      }
+
+      & > div:nth-child(3n + 2) {
+        width: 37.465vw;
+        border-right: 4px solid var(--Brand-Color, #f8298a) !important;
+        border-left: 4px solid var(--Brand-Color, #f8298a) !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // border-bottom: 1px solid var(--Skin, #fff1f0);
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'Noto Sans HK';
+        font-size: 3.2vw;
+        font-style: normal;
+        font-weight: 350;
+        line-height: 150%;
+        position: relative;
+      }
+      & > div:nth-child(3n + 2)::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: var(--Skin, #fff1f0);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      & > div:nth-child(3n + 3) {
+        width: 37.465vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid var(--Skin, #fff1f0);
+        border-bottom: 1px solid var(--Skin, #fff1f0);
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'Noto Sans HK';
+        font-size: 3.2vw;
+        font-style: normal;
+        font-weight: 350;
+        line-height: 150%;
+      }
+
+      & > div:nth-child(20) {
+        border-bottom: 4px solid var(--Brand-Color, #f8298a);
+        box-sizing: border-box;
+        padding: 2.66vw 0.6vw 2.66vw 6.66vw;
+
+        ul > li {
+          color: var(--Grey-Deep, #4d4d4d);
+          font-family: 'Noto Sans HK';
+          font-size: 3.2vw;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 150%;
+          list-style: disc;
+        }
+      }
+
+      & > div:nth-child(21) {
+        padding: 2.66vw;
+      }
+
+      & > div:nth-child(2),
+      & > div:nth-child(3) {
+        border-radius: 10px 10px 0px 0px;
+        background: var(--Theme-Color, #fc1682);
+        box-sizing: border-box;
+        padding: 1.3vw 0;
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 4.265vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.4265vw;
+      }
+
+      & > div:nth-child(3) {
+        background: var(--Blue-Deep, #00aeff);
+      }
+
+      & > div:nth-child(7) {
+        border-radius: 10px 0px 0px 0px;
+        background: var(--Brand-Color, #f8298a);
+      }
+
+      & > div:nth-child(2),
+      & > div:nth-child(3),
+      & > div:nth-child(6) {
+        border: 0px !important;
+      }
+      & > div:nth-child(2)::after,
+      & > div:nth-child(3)::after,
+      & > div:nth-child(6)::after {
+        background: none !important;
       }
     }
   }
-  .classify-item {
-    margin: 8vw 0 13.33vw;
-    display: flex !important;
-    // flex-direction: column !important;
-    gap: 10.65vw 0 !important;
-    & > div {
-      position: relative;
-      & > div:nth-child(1) {
-        & > div:nth-child(1) {
-          border-radius: var(--Count, 0px) 20px 20px var(--Count, 0px) !important;
-          background: var(--Theme-Color, #fc1682);
-          color: var(--White, #fff);
-          text-align: center;
-          font-family: 'FakePearl-Regular';
-          font-size: 4.2658vw !important;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 130% !important; /* 20.8px */
-          box-sizing: border-box;
-          padding: 1.33vw 5.33vw 1.33vw 7.733vw !important;
-          width: fit-content;
-          margin-left: 0 !important;
-        }
+
+  .affiliation-title {
+    margin-top: 30px;
+    margin-left: 3.2vw;
+  }
+
+  .affiliation-bg {
+    .affiliation {
+      padding: 0;
+
+      .affiliation-context {
         & > div:nth-child(2) {
           display: flex;
-          gap: 0 8vw;
-          margin: 2.665vw 8vw;
-          & > div:nth-child(1) {
-            display: flex;
-            flex-direction: column;
-            gap: 1.33vw 0 !important;
-            margin-left: 0 !important;
-            & > p {
-              display: flex;
-              align-items: center;
-              & > span:nth-child(1) {
-                color: #fc1682;
-                font-family: 'FakePearl-Regular';
-                font-size: 4.265vw !important;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 130%; /* 20.8px */
-                margin-right: 2.665vw !important;
-              }
+          flex-direction: column;
+          margin-top: 3.2vw;
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0) 53.61%,
+            var(--Pink-Pale, #ffe9ec) 101.8%
+          );
+          align-items: center;
+          padding-bottom: 4.26vw;
+
+          & > p:nth-child(1) {
+            box-sizing: border-box;
+            padding: 0 8vw;
+            color: var(--Grey-Mid, #666);
+            text-align: justify;
+            font-family: 'Noto Sans HK';
+            font-size: 3.2vw;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+
+            & > span {
+              color: var(--Brand-Color, #f8298a);
+              font-family: 'Noto Sans HK';
+              font-size: 3.2vw;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 150%;
             }
           }
-          & > div:nth-child(2) {
-            position: absolute;
-            top: 0 !important;
-            right: 8vw;
-            width: 34.665vw !important;
-            height: 34.665vw !important;
+
+          & > p:nth-child(2) {
+            box-sizing: border-box;
+            margin: 1.865vw 0;
+            width: 43.413vw;
+            height: 5.96vw;
+
             & > img {
               width: 100%;
               height: 100%;
+              object-fit: cover;
             }
           }
-        }
-      }
-      & > ul {
-        padding-left: 8vw !important;
-        padding-right: 8vw !important;
-        list-style: disc;
-        font-size: 4vw !important;
-        font-style: normal;
-        font-weight: 400 !important;
-        line-height: 160%; /* 24px */
-        letter-spacing: 0.4vw !important;
-      }
-    }
-  }
-  .note-mobile {
-    margin-top: 10.6665vw;
-    padding: 0 5.33vw 5.33vw;
-    box-sizing: border-box;
-    & > .index_title {
-      margin: 0 8vw;
-      padding-left: 8vw;
-      width: fit-content;
-      position: relative;
-      color: var(--Grey-Deep, #4d4d4d);
-      font-family: 'FakePearl-Regular';
-      font-size: 5.12vw;
-      font-style: normal;
-      line-height: 160%; /* 32px */
-      font-weight: 600;
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      &::before {
-        content: '';
-        height: 3px;
-        border-radius: 1.5px;
-        width: 100%;
-        display: inline-block;
-        background: url('../../assets/images/indexTitle_bg_3.png') no-repeat;
-        background-position: 0px 3px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-      }
-    }
-    & > .note-bg-mobile {
-      display: flex !important;
-      flex-direction: column;
-      box-sizing: border-box;
-      align-items: center !important;
-      width: 100vw;
-      background: linear-gradient(
-        180deg,
-        rgba(255, 241, 240, 0) 0%,
-        #fee6f1 100%
-      );
-      align-items: flex-start !important;
-      padding: 0 5.33vw;
 
-      & > div:nth-child(1),
-      & > div:last-child {
-        background: transparent !important;
-        margin-top: 5.33vw;
-        display: flex;
-        flex-direction: column;
-        color: var(--Theme-Color, #fc1682);
-        text-align: center;
-        font-family: 'FakePearl-Regular';
-        font-size: 5.33vw !important;
-        font-style: normal;
-        font-weight: 500 !important;
-        line-height: 160% !important; /* 32px */
-        margin: 5.33vw auto !important;
-      }
-      & > div:not(:first-child) {
-        max-width: 77.333vw !important;
-        box-sizing: border-box;
-        padding: 2.665vw 4vw !important;
-        background: #fff;
-        gap: 0 !important;
-        & > div:nth-child(1) {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          & > div:nth-child(1) {
+          ul {
             display: flex;
             flex-direction: column;
-            & > span:nth-child(1) {
-              color: var(--Blue-Deep, #00aeff);
-              font-family: 'FakePearl-Regular';
-              font-size: 5.33vw;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%;
-            }
-            & > span:nth-child(2) {
-              display: none !important;
-            }
-          }
-          & > div:nth-child(2) {
-            color: var(--Grey-Mid, #666);
-            font-family: 'Noto Sans HK';
-            font-size: 3.2vw !important;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 160%; /* 19.2px */
-            letter-spacing: 1.2px !important;
-          }
-        }
-        & > div:nth-child(2) {
-          margin-top: 8px;
-          color: var(--Grey-Deep, #4d4d4d);
-          text-align: justify !important;
-          font-family: 'Noto Sans HK';
-          font-size: 12px !important;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 160%; /* 19.2px */
-          letter-spacing: 1.2px !important;
-        }
-      }
-      & > div:not(:first-child):nth-child(odd) {
-        margin: 35px 0 35px auto;
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
-            & > span:nth-child(1) {
-              color: var(--Theme-Color, #fc1682);
-            }
-          }
-        }
-      }
-    }
-  }
-  .brand_mobile {
-    margin: 45px auto 55px;
-  }
-  .brand_mobile_items {
-    margin-top: 25px;
-    & > div {
-      & > div:nth-child(1) {
-        display: flex;
-        justify-content: space-between;
-        padding-left: 25px;
-        & > div:nth-child(1) {
-          width: 150px;
-          height: 150px;
-          & > img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
-        }
-        & > div:nth-child(2) {
-          & > div:nth-child(1) {
-            display: flex;
-            justify-content: center;
-          }
-          & > div:nth-child(2) {
-            position: relative;
-            margin-top: 10px;
-            margin-bottom: 5px;
-            border-radius: 20px var(--Count, 0px) var(--Count, 0px) 20px;
-            background: var(--Theme-Color, #fc1682);
-            color: var(--White, #fff);
-            text-align: right;
-            font-family: 'FakePearl-Regular';
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 130%; /* 20.8px */
-            padding: 5px 30px;
-            box-sizing: border-box;
-          }
-          & > div:nth-child(3) {
-            padding-right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 5px 0;
-            & > p {
+            gap: 2.65vw 0;
+
+            li {
               display: flex;
+              gap: 0 1.73vw;
               align-items: center;
-              gap: 0 8px;
-              & > span:nth-child(1) {
-                color: var(--Theme-Color, #fc1682);
-                font-family: 'FakePearl-Regular';
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 130%; /* 20.8px */
-              }
+              color: var(--Grey-Dark, #333);
+              font-family: 'Noto Sans HK';
+              font-size: 3.73vw;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 6.4vw;
+              /* 171.429% */
+              letter-spacing: 0.37vw;
             }
-          }
-        }
-      }
-      & > ul {
-        margin-top: 4px;
-        padding-left: 40px;
-        list-style: disc;
-        color: var(--Grey-Deep, #4d4d4d);
-        font-family: 'FakePearl-Regular';
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 24px */
-        letter-spacing: 1.5px;
-      }
-    }
-    & > div:nth-child(even) {
-      background: linear-gradient(
-        0deg,
-        rgba(255, 241, 240, 0) 0%,
-        rgba(255, 241, 240, 0.7) 12.5%,
-        rgba(255, 241, 240, 0.7) 81.99%,
-        rgba(255, 241, 240, 0) 100%
-      );
-      box-sizing: border-box;
-      padding: 20px 0;
-      & > div:nth-child(1) {
-        & > div:nth-child(2) {
-          & > div:nth-child(2) {
-            background: var(--Blue-Deep, #00aeff);
-          }
-        }
-      }
-    }
-    & > div:nth-child(1) {
-      & > div:nth-child(1) {
-        & > div:nth-child(2) {
-          & > div:nth-child(2)::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 0;
-            background: url('https://static.cmereye.com/imgs/2024/07/198339eee2be5cc6.png')
-              no-repeat;
-            width: 42px;
-            height: 30px;
-          }
-        }
-      }
-    }
-    & > div:nth-child(2) {
-      & > div:nth-child(1) {
-        & > div:nth-child(2) {
-          & > div:nth-child(2)::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 0;
-            background: url('https://static.cmereye.com/imgs/2024/07/058357b4acafa6dc.png')
-              no-repeat;
-            width: 42px;
-            height: 30px;
-          }
-        }
-      }
-    }
-    & > div:nth-child(3) {
-      & > div:nth-child(1) {
-        & > div:nth-child(2) {
-          & > div:nth-child(2)::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 0;
-            background: url('https://static.cmereye.com/imgs/2024/07/54e87029351758e6.png')
-              no-repeat;
-            width: 42px;
-            height: 30px;
-          }
-        }
-      }
-    }
-    & > div:nth-child(4) {
-      & > div:nth-child(1) {
-        & > div:nth-child(2) {
-          & > div:nth-child(2)::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 0;
-            background: url('https://static.cmereye.com/imgs/2024/07/932c4c1cd464100b.png')
-              no-repeat;
-            width: 42px;
-            height: 30px;
-          }
-        }
-      }
-    }
-    & > div:nth-child(5) {
-      & > div:nth-child(1) {
-        & > div:nth-child(2) {
-          & > div:nth-child(2)::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 0;
-            background: url('https://static.cmereye.com/imgs/2024/07/0f4222f2b8594d57.png')
-              no-repeat;
-            width: 42px;
-            height: 30px;
-          }
-        }
-      }
-    }
-    & > div:nth-child(6) {
-      & > div:nth-child(1) {
-        & > div:nth-child(2) {
-          & > div:nth-child(2) {
-            background: var(--Theme-Color, #fc1682);
-          }
-          & > div:nth-child(2)::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 0;
-            background: url('https://static.cmereye.com/imgs/2024/07/0f4222f2b8594d57.png')
-              no-repeat;
-            width: 42px;
-            height: 30px;
           }
         }
       }
     }
   }
+
+  .seven-advantages,
+  .brand-list,
+  .extra-charge,
+  .implant-git,
+  .technical-category {
+    .subheading {
+      margin-left: 0;
+    }
+  }
+
+  .subheading {
+    span {
+      color: var(--Grey-Dark, #333);
+      font-family: 'Noto Sans HK';
+      font-size: 4.8vw;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 170%;
+      letter-spacing: 0.48vw;
+    }
+
+    span:not(:last-child) {
+      color: var(--New-Theme-Color, #d2337d);
+      font-family: 'Noto Sans HK';
+      font-size: 5.6vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+      /* 31.5px */
+      letter-spacing: 0.56vw;
+    }
+  }
+
   .banner-in-box {
     position: absolute;
     bottom: 0;
@@ -5844,11 +2425,7 @@ const checkGroupPhoto = () => {
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    // padding-left: 20px;
-    padding-bottom: 35px;
-    // display: flex;
-    // align-items: flex-start;
-    // justify-content: flex-start;
+    padding-bottom: 9.33vw;
     top: 0;
     bottom: 0;
     transform: translateY(0px);
@@ -5857,8 +2434,8 @@ const checkGroupPhoto = () => {
     display: none !important;
     position: absolute;
     z-index: 10;
-    width: 166px;
-    height: 46px;
+    width: 44.265vw;
+    height: 12.665vw;
     top: 0;
     left: 15%;
     & > img {
@@ -5870,6 +2447,7 @@ const checkGroupPhoto = () => {
   .banner-content {
     position: relative;
     align-items: flex-start;
+    flex-direction: column;
     justify-content: flex-end;
     width: 86.665vw;
     left: 50%;
@@ -5880,16 +2458,16 @@ const checkGroupPhoto = () => {
     .content-title {
       color: var(--White, #fff);
       text-align: right;
-      font-size: 40px;
+      font-size: 10.655vw;
       font-style: normal;
       font-weight: 600;
       line-height: 100%; /* 72px */
-      letter-spacing: 2.7px;
+      letter-spacing: 0.72vw;
       position: relative;
       z-index: 6;
       bottom: 0;
       width: 100%;
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 2.65vw 2.65vw 0px 0px;
       background: var(
         --Liner-purple,
         linear-gradient(
@@ -5898,22 +2476,26 @@ const checkGroupPhoto = () => {
           #710d54 122.73%
         )
       );
-      padding: 16.5px 0;
+      padding: 4.4vw 0;
       color: var(--White, #fff);
       text-align: center;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      text-shadow: 0px 1.065vw 1.065vw rgba(0, 0, 0, 0.25);
       font-family: 'Noto Sans HK';
-      font-size: 24px;
+      font-size: 6.4vw;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px; /* 83.333% */
-      letter-spacing: 2.4px;
+      line-height: 5.33vw; /* 83.333% */
+      letter-spacing: 0.64vw;
     }
     .content-price {
       min-height: 22.665vw;
-      gap: 0 8px;
-      padding: 2.65vw;
-      border-radius: 0px 0px 10px 10px;
+      gap: 0 2.13vw;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0px 0px 1.065vw 1.065vw;
       background: var(--White, #fff);
       box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
       & > div:nth-child(1) {
@@ -5941,8 +2523,8 @@ const checkGroupPhoto = () => {
       }
     }
     .price-style {
-      width: 153px;
-      height: 90px;
+      width: 40.8vw;
+      height: 24vw;
       & > img {
         width: 100%;
         height: 100%;
@@ -5951,7 +2533,7 @@ const checkGroupPhoto = () => {
     }
     .content-subscribe {
       left: 0;
-      top: -60%;
+      top: -55%;
       right: auto;
       bottom: auto;
       position: absolute;
@@ -5960,38 +2542,32 @@ const checkGroupPhoto = () => {
       color: var(--Grey-Dark, #333);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.2658vw;
       font-style: normal;
       font-weight: 700;
       line-height: 120%; /* 19.2px */
-      letter-spacing: 1.6px;
-      gap: 5px 0;
-      padding: 4px 10px;
+      letter-spacing: 0.4265vw;
+      gap: 1.33vw 0;
+      display: flex;
+      flex-direction: column;
+
+      padding: 1.065vw 2.65vw;
       & > span:nth-child(2) {
         color: var(--White, #fff);
         font-family: 'Noto Sans HK';
-        font-size: 18px;
+        font-size: 4.8vw;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 1.8px;
+        letter-spacing: 0.48vw;
+        background: var(--New-Theme-Color, #d2337d);
+        border-radius: 7.269vw;
+        box-shadow: 0 0 3.0768vw #00000040;
+        padding: 1.065vw 2.65vw;
         & > i {
-          font-size: 16px;
-          line-height: 24px;
-          letter-spacing: 1.6px;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 360px) {
-  .dentistryServices {
-    .note {
-      .noteCard {
-        &-in {
-          &-name {
-            font-size: 15px;
-          }
+          font-size: 4.265vw;
+          line-height: 6.4vw;
+          letter-spacing: 0.42vw;
         }
       }
     }
