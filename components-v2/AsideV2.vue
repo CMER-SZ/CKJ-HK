@@ -189,7 +189,7 @@ const toPageTop = () => {
 // pc侧边栏
 .contact-widget {
   position: fixed;
-  right: 20px;
+  right: 118px;
   // right: clamp(50px, 9.79vw, 188px);
   bottom: 70px;
   z-index: 120;
