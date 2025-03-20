@@ -1,12 +1,9 @@
 <script lang="ts" setup>
 const toPageTop = () => {
-  let top = document.documentElement.scrollTop || document.body.scrollTop
-  const timeTop = setInterval(() => {
-    document.body.scrollTop = document.documentElement.scrollTop = top -= 50
-    if (top <= 0) {
-      clearInterval(timeTop)
-    }
-  }, 10)
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 }
 </script>
 <template>
