@@ -31,7 +31,7 @@ onMounted(() => {})
         class="navbar-brand d-flex align-items-center justify-content-between"
       >
         <a href="/" class="websiteLOGO"
-          ><img src="/static/LOGO-PC.svg" alt="" /> </a
+          ><img src="@/assets/images/LOGO-PC.svg" alt="" /> </a
         ><i class="d-none d-lg-block" style="font-style: normal">|</i>
         <div class="governmentPoint">
           <span>香港長者醫療券</span>
@@ -384,7 +384,7 @@ onMounted(() => {})
       >
         <div class="offcanvas-header">
           <a href="/" class="offcanvas-title" id="offcanvasNavbarLabel"
-            ><img src="/static/LOGO-PC.svg" alt="" /> </a
+            ><img src="@/assets/images/LOGO-PC.svg" alt="" /> </a
           ><button
             type="button"
             class="btn-close text-reset offcanvas-btn"
@@ -707,7 +707,7 @@ onMounted(() => {})
       span {
         width: 20px;
         height: 20px;
-        background-image: url('/static/menu-icon.svg');
+        background-image: url('@/assets/images/menu-icon.svg');
       }
     }
   }
@@ -722,10 +722,164 @@ onMounted(() => {})
     padding-left: 20px;
     padding-right: 20px;
   }
-
   .navbar-nav .nav-link[data-bs-toggle='collapse']::after {
     content: url('/static/toRight.svg');
     transition: transform 0.3s;
+  }
+  /* 侧边栏 */
+  .offcanvas-end {
+    width: 90% !important;
+    border: none !important;
+    /* 侧边栏顶部样式 */
+    /* 移动端侧边栏底部功能 */
+  }
+  .offcanvas-end .offcanvas-header {
+    box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
+    padding: 17px 24px;
+  }
+  .offcanvas-end .offcanvas-header .offcanvas-title {
+    display: block;
+    max-width: 123px;
+  }
+  .offcanvas-end .offcanvas-header .offcanvas-btn {
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    background-image: url('/static/close.svg');
+  }
+  .offcanvas-end .offcanvas-body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 16px 0px 16px 0;
+    transition: all 0.3s linear;
+  }
+  .offcanvas-end .offcanvas-body .navbar-nav .nav-item .nav-link {
+    color: var(--Grey-Dark, #333);
+    font-family: 'Noto Sans HK';
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    padding: 10px 0;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .offcanvas-end
+    .offcanvas-body
+    .navbar-nav
+    .nav-item
+    .nav-link[aria-expanded='true'] {
+    background: var(--New-Theme-Color, #d2337d);
+    color: var(--White, #fff) !important;
+  }
+  .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: var(--New-Theme-Color, #d2337d);
+    padding: 10px 10px;
+    width: 50%;
+    height: 100%;
+    overflow-y: auto;
+    display: block;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+  }
+  .offcanvas-end
+    .offcanvas-body
+    .navbar-nav
+    .nav-item
+    .secondaryMenu
+    .navbar-nav
+    .nav-item
+    .nav-link {
+    color: var(--White, #fff);
+    font-family: 'Noto Sans HK';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.5;
+    letter-spacing: 1.6px;
+    padding: 0;
+  }
+  .offcanvas-end .offcanvas-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+    padding: 10px 24px 21px 24px;
+  }
+  .offcanvas-end .offcanvas-footer .fontSizeEdit span {
+    color: var(--New-Theme-Color, #d2337d);
+    text-align: center;
+    font-family: 'Noto Sans HK';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+  }
+  .offcanvas-end .offcanvas-footer .fontSizeEdit button {
+    border: none;
+    background: none;
+    padding: 0 4px;
+    color: var(--Grey-Dark, #333);
+    text-align: center;
+    font-family: 'Noto Sans HK';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .offcanvas-end .offcanvas-footer .fontSizeEdit > button:nth-child(3) {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 4.8px;
+  }
+  .offcanvas-end .offcanvas-footer .changeFont {
+    color: var(--Grey-Dark, #333);
+  }
+  .offcanvas-end .offcanvas-footer .changeFont button {
+    border: none;
+    background: none;
+    color: var(--Grey-Dark, #333);
+    text-align: center;
+    font-family: 'Noto Sans HK';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 1.6px;
+  }
+  .offcanvas-end .offcanvas-footer .changeFont .changeFontActive {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--New-Theme-Color, #d2337d);
+  }
+  .offcanvas-end .offcanvas-footer .changeFont .changeFontActive::before {
+    content: url('https://statichk.cmermedical.com/newCKJ/static/fontChange.svg');
+    width: 20px;
+    height: 20px;
+  }
+  .offcanvas-backdrop {
+    background: rgba(200, 51, 137, 0.5);
+  }
+  /* 展开时的动画 */
+  .phoneMenu-body .collapse-horizontal.show {
+    transform: translateX(0) !important;
+  }
+  /* 关闭时的动画 */
+  .collapse-horizontal.collapsing {
+    transition: all 0.3s linear;
+  }
+  .BranchAddress {
+    margin-top: 12vw;
+  }
+  .BranchAddress .subheading {
+    margin-left: 20px;
+    margin-bottom: 5.33vw;
   }
 }
 /* PC端菜单样式 */
@@ -882,7 +1036,8 @@ onMounted(() => {})
 
           &:hover {
             .dropdown-toggle::after {
-              background: url('/static/hearderDown-white.svg') no-repeat;
+              background: url('https://statichk.cmermedical.com/newCKJ/static/hearderDown-white.svg')
+                no-repeat;
             }
 
             background: var(--New-Theme-Color, #d2337d);
@@ -1010,7 +1165,8 @@ onMounted(() => {})
           }
 
           & > .dropdown-toggle::after {
-            background: url('/static/hearderDown.svg') no-repeat;
+            background: url('https://statichk.cmermedical.com/newCKJ/static/hearderDown.svg')
+              no-repeat;
             background-size: cover;
             width: 18px;
             height: 12px;

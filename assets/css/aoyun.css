@@ -745,7 +745,7 @@ input[type='date']:valid {
   .container-xl,
   .container-xxl,
   .container {
-    max-width: 960px;
+    max-width: 1320px;
     padding-left: 0;
     padding-right: 0;
   }
