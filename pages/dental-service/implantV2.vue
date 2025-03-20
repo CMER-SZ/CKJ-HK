@@ -1396,7 +1396,7 @@ const problemData = {
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--Grey-Lightest, #f2f2f2);
+      // border: 1px solid var(--Grey-Lightest, #f2f2f2);
       background: var(--White, #fff);
 
       & > ul {
@@ -1443,8 +1443,24 @@ const problemData = {
     & > div:nth-child(3n + 2) {
       border-left: 3px solid var(--Brand-Color, #f8298a);
       border-right: 3px solid var(--Brand-Color, #f8298a);
+      position: relative;
     }
-
+    & > div:nth-child(3n + 1),
+    & > div:nth-child(3n + 3) {
+      position: relative;
+    }
+    & > div:nth-child(3n + 1)::after,
+    & > div:nth-child(3n + 3)::after,
+    & > div:nth-child(3n + 2)::after {
+      background: var(--Grey-Lightest, #f2f2f2);
+      bottom: 0;
+      content: '';
+      height: 1px;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%);
+      width: 100%;
+    }
     & > div:nth-child(3n + 1) {
       max-width: 160px;
       background: #f8298a;
@@ -1483,6 +1499,14 @@ const problemData = {
     & > div:nth-child(6) {
       border-top: none !important;
       border-bottom: none !important;
+    }
+    & > div:nth-child(1)::after,
+    & > div:nth-child(4)::after,
+    & > div:nth-child(2)::after,
+    & > div:nth-child(3)::after,
+    & > div:nth-child(5)::after,
+    & > div:nth-child(6)::after {
+      content: none;
     }
   }
 
@@ -2194,7 +2218,7 @@ const problemData = {
         line-height: 150%;
         position: relative;
       }
-      & > div:nth-child(3n + 2)::after{
+      & > div:nth-child(3n + 2)::after {
         position: absolute;
         content: '';
         width: 100%;
