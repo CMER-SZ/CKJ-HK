@@ -433,7 +433,14 @@ const problemData = {
             v-for="(item, index) in brandList"
             :key="index"
           >
-            <div>
+            <div v-if="item.id == 1">
+              <img
+                :src="'https://static.ckjhk.com/ckj-image/2025032111350501.png'"
+                :srcset="`https://static.ckjhk.com/ckj-image/a3c3dd1d9b89.png 768w, https://static.ckjhk.com/ckj-image/2025032111350501.png`"
+                :alt="item.title"
+              />
+            </div>
+            <div v-else>
               <img :src="item.img" :alt="item.title" />
             </div>
             <div>{{ item.title }}</div>
@@ -1175,6 +1182,7 @@ const problemData = {
     position: relative;
     padding: 50px 0 35px;
     height: 450px;
+    justify-content: flex-start;
     & > div {
       width: clamp(566.434px, 29.49vw, 566.434px);
       & > div {
@@ -1265,7 +1273,15 @@ const problemData = {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    & > div:nth-child(1) {
+      max-height: 175px;
+      min-height: 175px;
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
     & > div:nth-child(2) {
       color: var(--White, #fff);
       text-align: center;
@@ -1982,6 +1998,8 @@ const problemData = {
         flex-direction: column;
         align-items: flex-end;
         width: fit-content;
+        position: relative;
+        top: 9vw;
       }
 
       & > div:nth-child(2) {
@@ -2104,7 +2122,7 @@ const problemData = {
       border-radius: 10px;
       box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
       overflow: hidden;
-
+      margin-top: 14px;
       & > div {
         display: flex;
         justify-content: space-between;
@@ -2214,6 +2232,7 @@ const problemData = {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       box-sizing: border-box;
+      margin-top: 14px;
       & > div:nth-child(3n + 1) {
         // max-width: 18.6vw;
         background: var(--Theme-Color, #fc1682);

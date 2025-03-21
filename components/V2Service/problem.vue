@@ -449,7 +449,7 @@ const activeNames = ref(0)
     .problem-in-context {
       padding: 2.13vw 2.65vw;
       box-sizing: border-box;
-      gap: 0 4vw;
+      gap: 0 4.9vw;
       & > span:nth-child(1) {
         color: var(--Brand-Color, #f8298a);
         text-align: center;
