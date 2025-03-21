@@ -38,7 +38,11 @@ const glangs = (_type) => {
     },
   ]
   let _b = _a.find((item) => item.value === _type)
+  console.log(_b)
+
   let _str = route.path.slice(0, 3)
+  console.log(_str)
+
   let _arr = [
     '404',
     'test',
@@ -46,14 +50,21 @@ const glangs = (_type) => {
     '/news-information',
     '/article',
   ]
+
   if (_arr.some((str) => route.path?.indexOf(str) !== -1)) {
     changlangsfun(_type)
   } else {
     if (_str === '/cn' || _str === '/hk') {
       let _url = route.path
       let _url_new = _url.replace(_url.slice(0, 3), _b ? '/' + _b.lable : '')
+      console.log(_url_new)
+
       router.push(_url_new)
     } else {
+      console.log(_b)
+      console.log(_b.lable)
+      console.log(route.path)
+
       router.push(`${_b ? '/' + _b.lable : ''}${route.path}`)
     }
   }
@@ -487,7 +498,9 @@ onMounted(() => {
             id="accordionMenu"
           >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">主頁</a>
+              <a class="nav-link active" aria-current="page" href="/">{{
+                $t('components.header.menuLists.menu_index.name')
+              }}</a>
             </li>
             <li class="nav-item">
               <a
@@ -495,7 +508,7 @@ onMounted(() => {
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExample1"
                 aria-expanded="false"
-                >關於愛康健</a
+                >{{ $t('components.header.menuLists.menu_brand.name') }}</a
               >
               <div
                 class="collapse collapse-horizontal secondaryMenu"
@@ -504,15 +517,19 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/brand/course#course">發展歷程</a>
+                    <a class="nav-link" href="/brand/course#course">{{
+                      $t('components.header.menuLists.menu_brand.history')
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/brand/course#activity"
-                      >最新活動</a
-                    >
+                    <a class="nav-link" href="/brand/course#activity">{{
+                      $t('components.header.menuLists.menu_brand.activity')
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/brand/course#honor">品牌榮譽</a>
+                    <a class="nav-link" href="/brand/course#honor">{{
+                      $t('components.header.menuLists.menu_brand.honor')
+                    }}</a>
                   </li>
                 </ul>
               </div>
@@ -523,7 +540,9 @@ onMounted(() => {
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExample2"
                 aria-expanded="false"
-                >牙科服務</a
+                >{{
+                  $t('components.header.menuLists.menu_dental_service.name')
+                }}</a
               >
               <div
                 class="collapse collapse-horizontal secondaryMenu"
@@ -616,14 +635,20 @@ onMounted(() => {
               <a
                 href="/health-care-voucher"
                 class="nav-link d-flex justify-content-between"
-                >長者醫療券</a
+                >{{
+                  $t('components.header.menuLists.health-care-voucher.name')
+                }}</a
               >
             </li>
             <li class="nav-item">
               <a
                 href="/federation-of-trade-unions-zone"
                 class="nav-link d-flex justify-content-between"
-                >工聯會專區</a
+                >{{
+                  $t(
+                    'components.header.menuLists.federation-of-trade-unions-zone.name'
+                  )
+                }}</a
               >
             </li>
             <li class="nav-item">
@@ -633,7 +658,7 @@ onMounted(() => {
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExamplehead2"
                 aria-expanded="false"
-                >北上睇牙資訊</a
+                >{{ $t('components.header.menuLists.menu_news.name') }}</a
               >
               <div
                 class="collapse collapse-horizontal secondaryMenu"
@@ -642,13 +667,19 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/news/coverage">媒體報導</a>
+                    <a class="nav-link" href="/news/coverage">{{
+                      $t('components.header.menuLists.menu_news.coverage')
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/news/information">最新資訊</a>
+                    <a class="nav-link" href="/news/information">{{
+                      $t('components.header.menuLists.menu_news.information')
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/news/tooth-wiki">牙齒百科</a>
+                    <a class="nav-link" href="/news/tooth-wiki">{{
+                      $t('components.header.menuLists.menu_news.tooth-wiki')
+                    }}</a>
                   </li>
                 </ul>
               </div>
@@ -660,7 +691,9 @@ onMounted(() => {
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExamplehead3"
                 aria-expanded="false"
-                >醫生團隊</a
+                >{{
+                  $t('components.header.menuLists.menu_medical_team.name')
+                }}</a
               >
               <div
                 class="collapse collapse-horizontal secondaryMenu"
@@ -669,13 +702,19 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/medical-team">羅湖區</a>
+                    <a class="nav-link" href="/medical-team">{{
+                      $t('components.areaTabs.luohu')
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/medical-team">福田區</a>
+                    <a class="nav-link" href="/medical-team">{{
+                      $t('components.areaTabs.futian')
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/medical-team">南山區</a>
+                    <a class="nav-link" href="/medical-team">{{
+                      $t('components.areaTabs.nanshan')
+                    }}</a>
                   </li>
                 </ul>
               </div>
@@ -684,7 +723,9 @@ onMounted(() => {
               <a
                 class="nav-link d-flex justify-content-between"
                 href="#BranchAddress"
-                >分店地址</a
+                >{{
+                  $t('components.header.menuLists.menu_medical_team.name')
+                }}</a
               >
             </li>
             <li class="nav-item">
@@ -693,7 +734,7 @@ onMounted(() => {
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExamplehead4"
                 aria-expanded="false"
-                >聯絡我們</a
+                >{{ $t('components.header.menuLists.menu_contactUs.name') }}</a
               >
               <div
                 class="collapse collapse-horizontal secondaryMenu"
@@ -702,13 +743,21 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/contactUs#contactUs">來院路線</a>
+                    <a class="nav-link" href="/contactUs#contactUs">{{
+                      $t(
+                        'components.header.menuLists.menu_contactUs.come_route'
+                      )
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/contactUs#appeal">申訴途徑</a>
+                    <a class="nav-link" href="/contactUs#appeal">{{
+                      $t('components.header.menuLists.menu_contactUs.appeal')
+                    }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/contactUs#Q&A">常見問題</a>
+                    <a class="nav-link" href="/contactUs#Q&A">{{
+                      $t('components.header.menuLists.menu_contactUs.Q&A')
+                    }}</a>
                   </li>
                 </ul>
               </div>
