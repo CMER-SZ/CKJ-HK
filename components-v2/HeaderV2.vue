@@ -38,10 +38,8 @@ const glangs = (_type) => {
     },
   ]
   let _b = _a.find((item) => item.value === _type)
-  console.log(_b)
 
   let _str = route.path.slice(0, 3)
-  console.log(_str)
 
   let _arr = [
     '404',
@@ -57,14 +55,9 @@ const glangs = (_type) => {
     if (_str === '/cn' || _str === '/hk') {
       let _url = route.path
       let _url_new = _url.replace(_url.slice(0, 3), _b ? '/' + _b.lable : '')
-      console.log(_url_new)
 
       router.push(_url_new)
     } else {
-      console.log(_b)
-      console.log(_b.lable)
-      console.log(route.path)
-
       router.push(`${_b ? '/' + _b.lable : ''}${route.path}`)
     }
   }
