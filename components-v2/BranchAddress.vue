@@ -2161,10 +2161,9 @@
 
 
 <style lang="scss" scope>
-
 // 分店地址
 .BranchAddress {
-padding-top: 30px;
+  margin-top: 45px;
   &-addressImg {
     width: 100%;
     // max-width: 672px;
@@ -2467,9 +2466,8 @@ padding-top: 30px;
 
   // 分店地址
   .BranchAddress {
- 
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-top: 0;
+    padding-bottom: 0;
     &-addressImg {
       margin-top: 20px;
     }
@@ -2477,7 +2475,7 @@ padding-top: 30px;
   .BranchAddress {
     .BranchAddress-Box {
       padding-top: 20px;
-      padding-bottom: 40px;
+      padding-bottom: 30px;
 
       &-pc {
         &-navTab {

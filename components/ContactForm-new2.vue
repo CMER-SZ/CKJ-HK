@@ -1340,7 +1340,7 @@ li {
   }
 
   .contactForm {
-    margin-top: 2.8125vw;
+    margin-top: clamp(45px,2.34375vw,45px);
     &-bg {
       padding: 3.6979vw 0 3.9063vw;
     }
