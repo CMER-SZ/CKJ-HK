@@ -645,7 +645,7 @@ const hideDom = ref(false)
 
 <template>
   <div>
-    <!-- <HeaderV2/> -->
+    <!-- <AppointmentForm/> -->
     <PageNewHomeBanner
       :headerConfig="headerConfigData"
       v-if="windowWidth > 768"
@@ -1372,6 +1372,7 @@ const hideDom = ref(false)
 </template>
 
 <style lang="scss" scoped>
+
 @keyframes numAnim {
   100% {
     // transform: translateY(calc((100% - 96px) * -1));

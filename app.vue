@@ -137,6 +137,22 @@ watchEffect(() => {
 </template>
 
 <style lang="scss">
+.uwy {
+  .userway_buttons_wrapper {
+    left: calc(100vw - 35px) !important;
+    bottom: 100px !important;
+  }
+}
+
+:deep(.userway_buttons_wrapper) {
+  top: auto;
+  bottom: 100px !important;
+  left: 34px !important;
+  right: auto;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
 #popup-alert-two {
   & > div {
     position: fixed;
