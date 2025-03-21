@@ -276,7 +276,7 @@ const problemData = {
       </template>
     </PagePcBannerNoHome>
     <!-- 内容区 -->
-    <div>
+    <div class="big-container">
       <section class="ckj-container implant-step">
         <div class="implant-title-subheading">\ <i>植牙6步曲</i> /</div>
         <div class="implant-step-context ckj-contrain" id="implantStep">
@@ -294,7 +294,7 @@ const problemData = {
         </div>
       </section>
       <section class="container seven-advantages">
-        <div class="d-flex flex-row mb-3 align-items-end subheading">
+        <div class="d-flex flex-row align-items-end subheading">
           <span>愛康健種植7大</span><span>優勢</span>
         </div>
         <div class="seven-advantages-content">
@@ -424,7 +424,7 @@ const problemData = {
         </div>
       </section>
       <section class="ckj-container brand-list">
-        <div class="d-flex flex-row mb-3 align-items-end subheading">
+        <div class="d-flex flex-row align-items-end subheading">
           <span>植體品牌</span><span>系列</span>
         </div>
         <div class="brand-context" id="brand-context">
@@ -461,7 +461,7 @@ const problemData = {
         </div>
       </section>
       <section class="ckj-container extra-charge">
-        <div class="d-flex flex-row mb-3 align-items-end subheading">
+        <div class="d-flex flex-row align-items-end subheading">
           <span>額外</span><span>項目</span>
         </div>
         <div class="extra-charge-context">
@@ -496,7 +496,7 @@ const problemData = {
         </div>
       </section>
       <section class="ckj-container implant-git">
-        <div class="d-flex flex-row mb-3 align-items-end subheading">
+        <div class="d-flex flex-row align-items-end subheading">
           <span>「即刻植牙」</span><span>技術</span>
         </div>
         <div class="implant-git-image">
@@ -514,7 +514,7 @@ const problemData = {
         </div>
       </section>
       <section class="ckj-container technical-category">
-        <div class="d-flex flex-row mb-3 align-items-end subheading">
+        <div class="d-flex flex-row align-items-end subheading">
           <span>植牙</span><span>技術及類別</span>
         </div>
         <div class="technical-category-table">
@@ -561,13 +561,10 @@ const problemData = {
           </div>
         </div>
       </section>
-
+      <div class="affiliation-title d-flex flex-row align-items-end subheading">
+        <span>香港上市醫療公司</span><span>管理</span>
+      </div>
       <div class="affiliation-bg">
-        <div
-          class="affiliation-title d-flex flex-row mb-3 align-items-end subheading"
-        >
-          <span>香港上市醫療公司</span><span>管理</span>
-        </div>
         <section class="ckj-container affiliation">
           <div class="affiliation-context">
             <div>
@@ -747,15 +744,39 @@ const problemData = {
     /> -->
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 
 <style lang="scss" scoped>
 @media screen and (min-width: 922px) {
+  .big-container {
+    & > section {
+      margin-top: 45px !important;
+      margin-bottom: 45px !important;
+      box-sizing: border-box;
+      border: 0.2px solid red;
+
+      & > div {
+        border: 0.2px solid skyblue;
+      }
+    }
+    :deep(section) {
+      margin-top: 45px !important;
+      margin-bottom: 45px !important;
+      box-sizing: border-box;
+      border: 0.2px solid red;
+
+      & > div {
+        border: 0.2px solid skyblue;
+      }
+    }
+  }
   :deep(.problem) {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    box-sizing: border-box;
+    padding: 30px 0;
   }
   .banner-in-box {
     display: block;
@@ -780,6 +801,7 @@ const problemData = {
       object-fit: contain;
     }
   }
+
   .banner-content {
     display: flex;
     flex-direction: column;
@@ -1077,7 +1099,7 @@ const problemData = {
       grid-template-columns: repeat(3, 1fr);
       gap: 1.823vw 1.5625vw;
       box-sizing: border-box;
-      padding: 30px 0;
+      padding: 35px 0 45px;
     }
 
     .implant-step-item {
@@ -1156,10 +1178,13 @@ const problemData = {
     letter-spacing: 3px;
   }
   .seven-advantages {
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-top: 21.5px;
+    padding-bottom: 0;
   }
   .seven-advantages-content {
+    position: relative;
+    padding: 50px 0 35px;
+    height: 450px;
     & > div {
       width: clamp(566.434px, 29.49vw, 566.434px);
       & > div {
@@ -1197,7 +1222,8 @@ const problemData = {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-
+      position: absolute;
+      bottom: 20px;
       & > div:nth-child(2) {
         margin-right: clamp(30px, 1.56vw, 30px);
       }
@@ -1242,6 +1268,7 @@ const problemData = {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px 40px;
+    padding-top: 20px;
   }
 
   .brand-item-list {
@@ -1352,6 +1379,7 @@ const problemData = {
   }
 
   .implant-git-image {
+    margin-top: 6px;
     & > div:nth-child(1) {
       max-width: 552px;
       width: 100%;
@@ -1383,7 +1411,8 @@ const problemData = {
   .technical-category-table {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-
+    padding-top: 20px;
+    padding-bottom: 35px;
     & > div {
       color: var(--Grey-Deep, #4d4d4d);
       text-align: center;
@@ -1509,6 +1538,9 @@ const problemData = {
     & > div:nth-child(6)::after {
       content: none;
     }
+    & > div:nth-child(7) {
+      border-radius: 10px 0px 0px 0;
+    }
   }
 
   .affiliation-title {
@@ -1517,16 +1549,17 @@ const problemData = {
 
   .affiliation-bg {
     background: linear-gradient(
-      189deg,
+      180deg,
       rgba(255, 255, 255, 0) 0.34%,
       var(--Pink-Pale, #ffe9ec) 113.4%
     );
+    margin-top: 20px !important;
 
     margin: 45px auto;
 
     .affiliation {
       max-width: 960px;
-      margin: 0 auto;
+      margin: 20px auto 45px !important;
     }
 
     .affiliation-context {
@@ -1885,7 +1918,8 @@ const problemData = {
           font-style: normal;
           font-weight: 350;
           line-height: 5.33vw;
-          margin-top: 0.1vw;
+          margin-top: 5px;
+          text-align: center;
         }
       }
       .implant-step-item:last-child {
@@ -2023,7 +2057,15 @@ const problemData = {
         display: flex;
         flex-direction: column;
         align-items: center;
-
+        & > div:nth-child(1) {
+          min-height: 26.133vw;
+          max-height: 26.933vw;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
         & > div:nth-child(2) {
           color: var(--White, #fff);
           font-family: 'Noto Sans HK';
@@ -2300,6 +2342,11 @@ const problemData = {
       & > div:nth-child(3)::after,
       & > div:nth-child(6)::after {
         background: none !important;
+      }
+
+      & > div:nth-child(19) {
+        border-radius: 0px 0px 0px 10px;
+        border-bottom: 0;
       }
     }
   }

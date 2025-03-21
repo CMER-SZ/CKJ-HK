@@ -148,9 +148,9 @@ onMounted(() => {
 <template>
   <div>
     <div class="mobile-sider d-flex flex-column align-items-end">
-      <a href="/health-care-voucher" class="vertical-text"
-        ><span>醫療券</span>專區</a
-      >
+      <nuxt-link to="/health-care-voucher" class="vertical-text">
+        <span>醫療券</span>專區
+      </nuxt-link>
       <div
         id="scrollToTopBtn"
         class="scrollToTopBtn d-flex align-items-center"

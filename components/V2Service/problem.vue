@@ -179,7 +179,7 @@ const activeNames = ref(0)
 .problem {
   margin-top: 98px;
   &-in {
-    margin-top: 35px;
+    margin-top: 20px;
     width: 100%;
     max-width: 960px;
     &-title {
@@ -213,11 +213,13 @@ const activeNames = ref(0)
     &-context {
       display: flex;
       & > span:first-child {
+        color: var(--Brand-Color, #f8298a);
+        text-align: center;
+        font-family: 'Helvetica Neue';
+        font-size: 30px;
         font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 160%;
-        color: var(--indexColor1);
+        font-weight: 400;
+        line-height: 130%;
         margin-left: 0;
         margin-top: 0;
       }
@@ -247,7 +249,7 @@ const activeNames = ref(0)
     box-sizing: border-box;
     padding: 10px 28px;
     display: flex;
-    gap: 0 19px;
+    gap: 0 23px;
     & > span:nth-child(2) {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
@@ -266,8 +268,7 @@ const activeNames = ref(0)
   box-sizing: initial;
   line-height: 160%;
   height: auto;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   box-shadow: 0 2px 4px 2px #4d4d4d33;
   .problem-in-title {
     display: flex;
@@ -284,6 +285,7 @@ const activeNames = ref(0)
       font-weight: 700;
       line-height: normal;
       letter-spacing: 2.4px;
+      text-align: left;
     }
   }
 }
@@ -318,7 +320,7 @@ const activeNames = ref(0)
 :deep(.el-icon) {
   display: none;
 }
-@media (min-width: 768px) and (max-width: 1920px) {
+@media (min-width: 992) {
   .problem {
     margin-top: 5.1042vw;
     &-in {
@@ -356,7 +358,7 @@ const activeNames = ref(0)
   border-radius: 10px;
   box-shadow: 0 2px 4px 2px #4d4d4d33;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .risk_group {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
