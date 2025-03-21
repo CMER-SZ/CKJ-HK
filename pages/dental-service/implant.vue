@@ -746,11 +746,6 @@ const problemData = {
     <BranchAddress />
     <ContactForm-new2 />
     <PageFooter />
-    <!-- <PageNavbar
-      :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
-    /> -->
-    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar v-else /> -->
     <AsideV2 />
   </div>
 </template>
@@ -1241,7 +1236,6 @@ const problemData = {
     margin: 0 auto;
     position: relative;
     align-items: center;
-    justify-content: center;
     &::after {
       content: '';
       width: 100%;
