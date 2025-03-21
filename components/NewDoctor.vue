@@ -269,7 +269,7 @@ const itemList = () => {
           color: #fff;
           text-align: center;
           text-shadow: 0px 4px 4px #fc1682;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 45px;
           font-style: normal;
           font-weight: 400;
@@ -281,7 +281,7 @@ const itemList = () => {
           & > span {
             color: #fff;
             text-align: center;
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-size: 25px;
             font-style: normal;
             font-weight: 400;
@@ -294,7 +294,7 @@ const itemList = () => {
       .item_title_tag {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 26px;
         font-style: normal;
         font-weight: 500;
@@ -311,7 +311,7 @@ const itemList = () => {
       }
     }
   }
-  .TwoDoctor{
+  .TwoDoctor {
     display: flex;
     justify-content: center;
     gap: 0 94px;
@@ -322,13 +322,13 @@ const itemList = () => {
   .NewDoctor {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0 16px;
+    gap: 0 4.2665vw;
     margin: 24px auto;
     width: 100%;
     max-width: 100%;
-    padding: 0 18px;
+    padding: 0 4.8vw;
     box-sizing: border-box;
-    margin-bottom: 100px;
+    margin-bottom: 26.65vw;
     & > div {
       display: flex;
       flex-direction: column;
@@ -341,8 +341,8 @@ const itemList = () => {
             no-repeat;
           background-size: cover;
           background-position: center center;
-          width: 102px;
-          height: 134px;
+          width: 27.2vw;
+          height: 35.73vw;
           overflow: hidden;
           display: flex;
           justify-content: center;
@@ -353,19 +353,19 @@ const itemList = () => {
         .item_name {
           position: absolute;
           bottom: 0;
-          padding-left: 5px;
+          padding-left: 1.33vw;
           padding-bottom: 2px;
           background: linear-gradient(
             180deg,
             rgba(252, 22, 130, 0) 0%,
             rgba(252, 22, 130, 0.85) 100%
           );
-          min-height: 54px;
+          min-height: 14.4vw;
           color: var(--White, #fff);
           text-align: center;
           text-shadow: 0px 4px 2px #fc1682;
-      font-family: 'FakePearl-Regular';
-          font-size: 18.75px;
+          font-family: 'FakePearl-Regular';
+          font-size: 5vw;
           font-style: normal;
           font-weight: 400;
           line-height: 130%; /* 24.375px */
@@ -376,21 +376,21 @@ const itemList = () => {
           & > span {
             color: #fff;
             text-align: center;
-        font-family: 'FakePearl-Regular';
-            font-size: 9.375px;
+            font-family: 'FakePearl-Regular';
+            font-size: 2.5vw;
             font-style: normal;
             font-weight: 400;
             line-height: 160%; /* 40px */
             padding-bottom: 3px;
-            padding-left: 5px;
+            padding-left: 1.33vw;
           }
         }
       }
       .item_title_tag {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
-    font-family: 'FakePearl-Regular';
-        font-size: 9.75px;
+        font-family: 'FakePearl-Regular';
+        font-size: 2.5vw;
         font-style: normal;
         font-weight: 500;
         line-height: 160%; /* 15.6px */
@@ -404,21 +404,21 @@ const itemList = () => {
         justify-content: center;
         :deep(.animbtntypetwo-in) {
           span {
-            font-size: 12px;
+            font-size: 3.2vw;
             font-style: normal;
             font-weight: 400;
             line-height: 160%; /* 18px */
             letter-spacing: 1.125px;
-            padding: 7px 18px;
+            padding: 7px 4.8vw;
           }
         }
       }
     }
   }
-  .TwoDoctor{
+  .TwoDoctor {
     display: flex;
     justify-content: center;
-    gap: 0 16px;
+    gap: 0 4.65vw;
     margin: 24px auto;
   }
 }
