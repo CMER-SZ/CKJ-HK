@@ -1856,7 +1856,7 @@ const getWindowWidth = () => {
       position: relative;
       top: 16vw;
       z-index: 1;
-      margin-top: 14.53vw !important;
+      margin-top: 7.53vw !important;
       &.course-new {
         padding-bottom: 5px;
         margin-top: 20px;
@@ -1945,7 +1945,7 @@ const getWindowWidth = () => {
       justify-content: space-between;
       align-items: center;
       margin: 0;
-      padding: 5.3vw 0 5.3vw 5.3vw;
+      padding: 1.3vw 0 1.3vw 5.3vw;
       margin-top: 9.2307vw !important;
       background: #fff;
       .menu {

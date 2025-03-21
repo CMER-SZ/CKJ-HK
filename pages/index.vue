@@ -1366,7 +1366,7 @@ const hideDom = ref(false)
       v-else
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
     /> -->
-       <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 
@@ -2654,7 +2654,7 @@ svg:hover path {
     &-tab1 {
       :deep(.areaTab) {
         div {
-          font-size: 16px;
+          font-size: 4.265vw;
         }
       }
     }
@@ -2667,7 +2667,9 @@ svg:hover path {
         border: 1px solid #00aeff;
         border-radius: 5px;
         & > div {
-          font-size: 16px;
+          font-size: 4.265vw;
+          padding: 1.33vw 0;
+          letter-spacing: 0.8vw;
           border: none;
           &:not(:nth-of-type(n + 4)) {
             border-right: 1px solid #00aeff;
@@ -2866,7 +2868,8 @@ svg:hover path {
       max-width: calc(100% - 60px);
       margin-top: 30px;
       &-in {
-        font-size: 16px;
+        font-size: 4.265vw;
+        padding: 1.33vw;
       }
     }
     &-content {
