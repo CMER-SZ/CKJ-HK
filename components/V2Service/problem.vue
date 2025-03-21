@@ -377,14 +377,14 @@ const activeNames = ref(0)
     }
   }
   .problem {
-    margin-top: 30px;
+    margin-top: 20px;
     &-title {
       &-in {
         font-size: 26px;
       }
     }
     &-in {
-      margin-top: 30px;
+      margin-top: 20px;
       width: calc(100% - 60px);
       &-title {
         & > div:nth-of-type(1) {
