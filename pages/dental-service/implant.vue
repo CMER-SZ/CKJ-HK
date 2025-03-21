@@ -1175,11 +1175,12 @@ const problemData = {
     letter-spacing: 3px;
   }
   .seven-advantages {
-    padding-top: 21.5px;
+    // padding-top: 21.5px;
     padding-bottom: 0;
   }
   .seven-advantages-content {
     position: relative;
+    margin-top: 15px;
     padding: 50px 0 35px;
     height: 450px;
     justify-content: flex-start;
