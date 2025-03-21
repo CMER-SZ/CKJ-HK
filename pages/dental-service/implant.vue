@@ -755,21 +755,11 @@ const problemData = {
       margin-top: 45px !important;
       margin-bottom: 45px !important;
       box-sizing: border-box;
-      border: 0.2px solid red;
-
-      & > div {
-        border: 0.2px solid skyblue;
-      }
     }
     :deep(section) {
       margin-top: 45px !important;
       margin-bottom: 45px !important;
       box-sizing: border-box;
-      border: 0.2px solid red;
-
-      & > div {
-        border: 0.2px solid skyblue;
-      }
     }
   }
   :deep(.problem) {
