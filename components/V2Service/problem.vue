@@ -22,14 +22,14 @@ const activeNames = ref(0)
     <div
       class="d-flex flex-row mb-3 align-items-end subheading"
       v-if="v2Versions"
+      v-html="problemData.title"
     >
-      <span>植牙常見</span><span>問題</span>
     </div>
-    <div class="dentistryServices-title problem-title" v-else>
+    <!-- <div class="dentistryServices-title problem-title" v-else>
       <div class="dentistryServices-title-in bb problem-title-in">
         {{ $t(problemData.title) }}
       </div>
-    </div>
+    </div> -->
     <div class="problem-in pageCon ckj-contrain">
       <el-collapse v-model="activeNames" accordion>
         <el-collapse-item
@@ -48,11 +48,6 @@ const activeNames = ref(0)
           </template>
           <div
             class="problem-in-context"
-            style="
-              box-shadow: 0 2px 4px 2px #4d4d4d33;
-              border-radius: 10px;
-              overflow: hidden;
-            "
           >
             <span
               :style="{
@@ -244,7 +239,9 @@ const activeNames = ref(0)
   border: none;
 }
 :deep(.el-collapse-item__wrap) {
-  border: none;
+  box-shadow: rgba(77, 77, 77, 0.2) 0px 2px 4px 1px;
+  border-radius: 0 0 10px 10px;
+  transition: all 0.3s ease;
   .problem-in-context {
     box-sizing: border-box;
     padding: 10px 28px;
@@ -313,8 +310,6 @@ const activeNames = ref(0)
   padding-bottom: 5px;
 }
 :deep(.problem-in-context) {
-  border-radius: 10px;
-  box-shadow: 0px 2px 4px 2px rgba(77, 77, 77, 0.2);
   transition: all 0.3s ease;
 }
 :deep(.el-icon) {
@@ -354,10 +349,6 @@ const activeNames = ref(0)
   }
 }
 
-.problem-in-context {
-  border-radius: 10px;
-  box-shadow: 0 2px 4px 2px #4d4d4d33;
-}
 @media screen and (max-width: 991px) {
   .risk_group {
     display: grid;

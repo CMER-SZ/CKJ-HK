@@ -73,7 +73,7 @@ const reasonData = {
 }
 
 const problemData = {
-  title: 'pages.dental-service.scaling-and-polishing.problem.title',
+  title: '<span>洗牙常見</span><span>問題</span>',
   lists: [
     {
       Q: '定期洗牙頻率是多久？診所洗牙與家中刷牙分別？',
@@ -110,260 +110,11 @@ const problemData = {
   ],
 }
 
-const differenceData = {
-  title: '洗牙技術及過程的區別？',
-  tables: [
-    {
-      a: '',
-      b: '超聲波洗牙',
-      c: '含鹽洗牙',
-      d: '無鹽洗牙',
-    },
-    {
-      a: '所需時間',
-      b: '20 分鐘',
-      c: '30分鐘',
-      d: '30 分鐘',
-    },
-    {
-      a: '菌斑染色定位',
-      b: 'n',
-      c: 'n',
-      d: 'y',
-    },
-    {
-      a: '超聲波技術',
-      b: 'y',
-      c: 'y',
-      d: 'y',
-    },
-    {
-      a: '噴砂技術',
-      b: 'n',
-      c: '含鹽',
-      d: '無鹽',
-    },
-    {
-      a: '氟化物',
-      b: 'y',
-      c: 'y',
-      d: 'y',
-    },
-    {
-      a: '拋光護理',
-      b: 'y',
-      c: 'y',
-      d: 'y',
-    },
-  ],
-}
-
-const chargeData = {
-  title: '項目收費詳情',
-  tables: [
-    {
-      a: '服務',
-      b: '價格',
-    },
-    {
-      a: '超聲波洗牙',
-      b: '¥88',
-      c: '原價 ¥180',
-    },
-    {
-      a: '菌斑導向專業洗牙（含鹽）',
-      b: '¥168',
-      c: '原價 ¥350',
-    },
-    {
-      a: '菌斑導向專業洗牙（無鹽）',
-      b: '¥550',
-      c: '',
-    },
-  ],
-}
-const careData = {
-  title: '洗牙後注意事項',
-  lists: [
-    {
-      img: 'https://static.cmereye.com/imgs/2023/10/9ee1140fe832c40d.png',
-      text: `避免過度<br class="pc" />清潔口腔`,
-    },
-    {
-      img: 'https://static.cmereye.com/imgs/2023/10/29723aa73549d385.png',
-      text: '注意清潔牙縫',
-    },
-    {
-      img: 'https://static.cmereye.com/imgs/2023/10/fa97affc4ee443a6.png',
-      text: `避免吃冰冷、<br  class="pc"  />酸、甜的食物`,
-    },
-    {
-      img: 'https://static.cmereye.com/imgs/2023/10/b00b6fbbd953800a.png',
-      text: `避免喝酒和<br  class="pc"  />吸煙`,
-    },
-    {
-      img: 'https://static.cmereye.com/imgs/2023/10/b681fad6412d727b.png',
-      text: `使用防敏感<br class="pc" />牙膏`,
-    },
-    {
-      img: 'https://static.cmereye.com/imgs/2023/10/678fdab4c186e0d6.png',
-      text: `定期覆診檢查`,
-    },
-  ],
-}
-const stepData = {
-  title: '洗牙6步曲',
-  lists: [
-    {
-      title: '第1步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/e0feaceff214278b.png',
-      img: 'https://static.cmereye.com/imgs/2024/02/6731dba434edd53f.jpg',
-      name: '口腔檢查',
-      context: '洗牙前，醫師會對全口的口腔狀況進行檢查',
-    },
-    {
-      title: '第2步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/120738fb56a5d759.png',
-      img: 'https://static.cmereye.com/imgs/2024/02/c8aa8929874fd251.jpg',
-      name: '消毒',
-      context:
-        '使用漱口水漱口，此過程能夠降低唾液中細菌的含量，從而減少細菌感染',
-    },
-    {
-      title: '第3步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/59c210a9e06a8624.png',
-      img: 'https://static.cmereye.com/imgs/2024/02/ea678899b066c7cb.jpg',
-      name: '牙石去除',
-      context: '以手工或超音波的方式進行去除牙結石',
-    },
-    {
-      title: '第4步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/dabb11b53d7c5e07.png',
-      img: 'https://static.cmereye.com/imgs/2024/02/e134fd577d7f9467.jpg',
-      name: '噴砂',
-      context: '透過特製的鹽加上高壓水為牙齒做進一步的清洗',
-    },
-    {
-      title: '第5步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/9b5323760b492f54.png',
-      img: 'https://static.cmereye.com/imgs/2024/02/58ba4fa2a7ff9ffa.jpg',
-      name: '拋光',
-      context:
-        '透過拋光可以使牙齒光亮，牙面更光滑，從而減輕牙菌斑及色素的附著和牙石的生成',
-    },
-    {
-      title: '第6步',
-      imgNum: 'https://static.cmereye.com/imgs/2024/07/90802da91d96398f.png',
-      img: 'https://static.cmereye.com/imgs/2024/02/c881f0c09986279f.jpg',
-      name: '牙周保護',
-      context: '洗牙完成後，我們為牙齒周邊塗抹藥物進行牙肉保護',
-    },
-  ],
-}
-const doctorData = {
-  title: '專業醫療團隊',
-  lists: [
-    {
-      id: '101',
-      name: '曾紅艷',
-      job: '主任醫生',
-      addressType: '101',
-      addressname: '羅湖區',
-      text: '牙潔治技術、各種牙周疾病的專業治療及手術治療（翻瓣術及牙周引導骨組織再造術、齦切除術）以及種植體周圍感染疾病的治療。',
-      img: 'https://static.cmereye.com/imgs/2024/02/50b761413772724d.png',
-    },
-    {
-      id: '102',
-      name: '李洪偉',
-      job: '醫生',
-      addressType: '101',
-      addressname: '羅湖區',
-      text: '牙齒美容修復，各類牙列缺損的固定及活動義齒的修復、鑄造支架式可摘局部義齒、 數字化修復、種植上部義齒修復等。在口腔數字化修復、口腔色度學、口腔仿生材料等領域進行過深入研究，成績顯著。',
-      img: 'https://static.cmereye.com/imgs/2024/02/2f77790cc4d81a82.png',
-    },
-    {
-      id: '103',
-      name: '周小明',
-      job: '院長',
-      addressType: '102',
-      addressname: '福田區',
-      text: '各類口腔疾病診斷與治療、熟練開展微創種植、即拔即種即刻修復等前沿技術，在各類口腔複雜案例多學科聯合診療方面有獨到的診療思路及技術經驗，積累案例數千例。',
-      img: 'https://static.cmereye.com/imgs/2024/02/e88238abad82c427.png',
-    },
-    {
-      id: '104',
-      name: '曹小蘭',
-      job: '醫生',
-      addressType: '102',
-      addressname: '福田區',
-      text: '牙周病系統性治療、輕中重度四環素牙、牙體牙髓病治療、牙體缺損修復、根管治療及其他各種疑難著色牙的美白治療。',
-      img: 'https://static.cmereye.com/imgs/2024/02/fdb9c21dfd4b91d4.png',
-    },
-    {
-      id: '105',
-      name: '趙董博',
-      job: '醫生',
-      addressType: '103',
-      addressname: '南山區',
-      text: '牙周病的診斷及序列治療，前後牙的美學樹脂充填，牙體牙髓疾病及根尖週疾病的診治，前牙貼面及後牙嵌體、全冠的修復，口腔常見多發疾病的預防及保健。',
-      img: 'https://static.cmereye.com/imgs/2024/02/45665cefc05c177a.png',
-    },
-    {
-      id: '106',
-      name: '朱艷秀',
-      job: '醫生',
-      addressType: '104',
-      addressname: '寶安區',
-      text: '各類牙周、牙髓疾病的診斷治療，牙體缺損的修復、各類牙齒的外科拔除。',
-      img: 'https://static.cmereye.com/imgs/2024/02/1551fb960998a5a8.png',
-    },
-    {
-      id: '107',
-      name: '韋秋紅',
-      job: '院長',
-      addressType: '105',
-      addressname: '龍華區',
-      text: '複雜修復設計及齲病、牙體牙髓和牙周病的治療，尤其在美學修復有較深的造詣，熟練運用MICD微創牙科及DSD數字微笑設計理念。',
-      img: 'https://static.cmereye.com/imgs/2024/02/07f09b9fd1ccf36f.png',
-    },
-  ],
-}
-
-const doctorTeam = ref(null)
-const { top, bottom } = useElementBounding(doctorTeam)
-const { height } = useWindowSize()
-
-let windowWidth = ref(390)
-const getWindowWidth = () => {
-  windowWidth.value = window.innerWidth
-}
-
-let Plant_brand_series_cur = ref(0)
-const plant_brand_series_ref = ref({
-  slideToLoop: (a) => {},
-  slidePrev: () => {},
-  slideNext: () => {},
-})
-const set_plant_brand_series_ref = (swiper: any) => {
-  plant_brand_series_ref.value = swiper
-}
-const on_plant_brand_series_change = (swiper: any) => {
-  // plant_brand_series_ref.value.slideToLoop(swiper.realIndex)
-  Plant_brand_series_cur.value = swiper.realIndex
-}
-const handle_lant_brand_series_tab = (_idx: number) => {
-  plant_brand_series_ref.value.slideToLoop(_idx)
-}
-
-const brand_btn = (_type: string) => {
-  plant_brand_series_ref.value[_type]()
-}
 const Plant_brand_series_data = [
   {
     id: '1101',
-    name: ['基礎專業', '洗牙'],
+    name: ['基礎洗牙'],
     price: '88',
-    // price: '68', // 圣诞价格
     oldPrice: '180',
     img: 'https://static.cmereye.com/imgs/2024/11/01fd99a1cf216221.png',
     compare: [
@@ -377,12 +128,15 @@ const Plant_brand_series_data = [
       '· 有效預防牙周炎、細菌引起的牙齒疾病',
       '· 有拋光處理',
     ],
+    listsM: ['超聲波技術清除牙石', '預防牙患', '牙齒拋光處理'],
+    cleanScore: 4,
+    whiteningScore: 3,
+    comfortScore: 4,
   },
   {
     id: '1102',
-    name: ['菌斑導向專業洗牙', '(含鹽)'],
+    name: ['菌斑導向<i class="d-none d-lg-block">專業</i>洗牙', '含鹽'],
     price: '168',
-    // price: '128', // 圣诞价格
     oldPrice: '350',
     img: 'https://static.cmereye.com/imgs/2024/11/7d36488bc41e7ad6.png',
     compare: [
@@ -397,12 +151,20 @@ const Plant_brand_series_data = [
       '· 減少一般超聲波洗牙引致的痛楚不適',
       '· 有效清除牙齒上煙、茶、咖啡漬',
     ],
+    listsM: [
+      '包含菌斑染色+噴砂清洗+超聲波+拋光',
+      '分析客人刷牙盲點',
+      '噴砂清潔牙縫有效去漬',
+    ],
+    cleanScore: 3,
+    whiteningScore: 2,
+    comfortScore: 3,
   },
   {
     id: '1103',
-    name: ['菌斑導向專業洗牙', '(無鹽)'],
-    price: '550',
-    oldPrice: '',
+    name: ['菌斑導向<i class="d-none d-lg-block">專業</i>洗牙', '無鹽'],
+    price: '168',
+    oldPrice: '550',
     img: 'https://static.cmereye.com/imgs/2024/11/958f0c3e3acf223f.png',
     compare: [
       'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
@@ -410,19 +172,74 @@ const Plant_brand_series_data = [
       'https://static.cmereye.com/static/ckj/imgs/svg/pc5star.svg',
       'https://static.cmereye.com/static/ckj/imgs/svg/pc4star.svg',
     ],
-    lists: ['· 能減緩牙石積聚速度', '· 略帶薄荷清香，無鹽不帶咸味'],
+    lists: [
+      '· 包含菌斑染色+噴砂清洗+超聲波+拋光',
+      '· 分析客人刷牙盲點',
+      '· 噴砂清潔牙縫有效去漬',
+      '· 無鹽噴砂更舒適',
+    ],
+    listsM: [
+      '包含菌斑染色+噴砂清洗+超聲波+拋光',
+      '分析客人刷牙盲點',
+      '噴砂清潔牙縫有效去漬',
+      '無鹽噴砂更舒適',
+    ],
+    cleanScore: 5,
+    whiteningScore: 5,
+    comfortScore: 5,
   },
 ]
 
+let windowWidth = ref(1920)
+
 onMounted(() => {
   getWindowWidth()
-  window.addEventListener('resize', getWindowWidth)
+  window.addEventListener('resize', () => {
+    getWindowWidth()
+    windowWidth.value = window.innerWidth
+  })
+  window.addEventListener('contextmenu', function (e) {
+    e.preventDefault()
+  })
+  getWindowWidth()
+  windowWidth.value = window.innerWidth
 })
-
-const removeSurroundingParentheses = (str) => {
-  // 直接尝试移除括号，如果没有括号则不会改变原字符串
-  return str.replace(/^\((.*)\)$/, '$1')
+const getWindowWidth = () => {
+  windowWidth.value = window.innerWidth
 }
+
+const cleaningStepList = [
+  {
+    id: 1,
+    title: '口腔檢查',
+    img: 'https://static.cmereye.com/imgs/2024/02/6731dba434edd53f.jpg',
+  },
+  {
+    id: 2,
+    title: '口腔消毒',
+    img: 'https://static.cmereye.com/imgs/2024/02/c8aa8929874fd251.jpg',
+  },
+  {
+    id: 3,
+    title: '牙石去除',
+    img: 'https://static.cmereye.com/imgs/2024/02/ea678899b066c7cb.jpg',
+  },
+  {
+    id: 4,
+    title: '噴砂',
+    img: 'https://static.cmereye.com/imgs/2024/02/e134fd577d7f9467.jpg',
+  },
+  {
+    id: 5,
+    title: '拋光',
+    img: 'https://static.cmereye.com/imgs/2024/02/58ba4fa2a7ff9ffa.jpg',
+  },
+  {
+    id: 6,
+    title: '牙周保護',
+    img: 'https://static.cmereye.com/imgs/2024/02/c881f0c09986279f.jpg',
+  },
+]
 </script>
 
 <template>
@@ -473,537 +290,173 @@ const removeSurroundingParentheses = (str) => {
         </div>
       </template>
     </PagePcBannerNoHome>
-    <div class="pageIn whitebgColor">
-      <div class="index_title pageCon">
-        {{ $t('pages.dental-service.title') }}
-      </div>
-      <div class="Plant_brand_series" v-if="windowWidth > 768">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">洗牙技術及類別</div>
+    <div>
+      <section class="ckj-container type-technology">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>洗牙技術及</span><span>種類</span>
         </div>
-        <div class="Plant_brand_series-tab" v-if="windowWidth > 768">
-          <span
-            :class="{ active: Plant_brand_series_cur === tabIndex }"
-            v-for="(tabItem, tabIndex) in Plant_brand_series_data"
-            :key="tabIndex"
-            @click="handle_lant_brand_series_tab(tabIndex)"
-          >
-            <span
-              v-for="(tabspanitem, tabspanindex) in tabItem.name"
-              :key="tabspanindex"
-            >
-              {{ tabspanitem }}
-            </span>
-          </span>
-        </div>
-        <Swiper
-          :loop="true"
-          :modules="[Autoplay]"
-          :autoplay="{
-            delay: 3000,
-          }"
-          @swiper="set_plant_brand_series_ref"
-          @slideChange="on_plant_brand_series_change"
-        >
-          <Swiper-slide
-            v-for="(
-              plant_brand_series_item, plant_brand_series_index
-            ) in Plant_brand_series_data"
-            :key="plant_brand_series_index"
-          >
-            <div class="Plant_brand_series-content">
-              <div>
-                <div>
-                  <span>{{ plant_brand_series_item.name[0] }}</span>
-                  <span>{{
-                    removeSurroundingParentheses(
-                      plant_brand_series_item.name[1]
-                    )
-                  }}</span>
-                </div>
-                <div>
-                  <span v-if="plant_brand_series_item.oldPrice"
-                    >原價￥{{ plant_brand_series_item.oldPrice }}</span
-                  >
-                  <span v-else></span>
-                  <span
-                    ><i>￥</i>{{ plant_brand_series_item.price }}
-                    <!-- <i class="icon-emoji">🎅</i> -->
-                  </span>
-                </div>
-              </div>
-              <div>
-                <div class="Plant_brand_series-content-r">
-                  <div class="item_compare">
-                    <div>
-                      <div>潔淨度</div>
-                      <div>
-                        <img :src="plant_brand_series_item.compare[0]" alt="" />
-                      </div>
-                    </div>
-                    <div>
-                      <div>美白度</div>
-                      <div>
-                        <img :src="plant_brand_series_item.compare[1]" alt="" />
-                      </div>
-                    </div>
-                    <div>
-                      <div>舒適度</div>
-                      <div>
-                        <img :src="plant_brand_series_item.compare[2]" alt="" />
-                      </div>
-                    </div>
-                    <div>
-                      <div>性價比</div>
-                      <div>
-                        <img :src="plant_brand_series_item.compare[3]" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="Plant_brand_series-content-l">
-                  <img :src="plant_brand_series_item.img" alt="" />
-                </div>
-              </div>
-              <div>
-                <span
-                  v-for="(item, index) in plant_brand_series_item.lists"
-                  :key="index"
-                >
-                  {{ item }}
-                </span>
-              </div>
-            </div>
-          </Swiper-slide>
-        </Swiper>
-        <div class="brand_btn">
-          <div class="brand_btn_left" @click="brand_btn('slidePrev')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1167_2367)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M59.0859 69.3037L38.999 51.4994L59.0859 33.695"
-                stroke="#FC1682"
-                stroke-width="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1167_2367"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1167_2367"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1167_2367"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-          <div class="brand_btn_right" @click="brand_btn('slideNext')">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="107"
-              height="107"
-              viewBox="0 0 107 107"
-              fill="none"
-            >
-              <g filter="url(#filter0_d_1166_2259)">
-                <circle cx="51.5" cy="51.5" r="49.5" fill="white" />
-              </g>
-              <path
-                d="M43 31L65.6154 51.4878L43 73"
-                stroke="#FC1682"
-                stroke-width="9.69231"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <defs>
-                <filter
-                  id="filter0_d_1166_2259"
-                  x="0"
-                  y="0"
-                  width="107"
-                  height="107"
-                  filterUnits="userSpaceOnUse"
-                  color-interpolation-filters="sRGB"
-                >
-                  <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                  <feColorMatrix
-                    in="SourceAlpha"
-                    type="matrix"
-                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                    result="hardAlpha"
-                  />
-                  <feOffset dx="2" dy="2" />
-                  <feGaussianBlur stdDeviation="2" />
-                  <feComposite in2="hardAlpha" operator="out" />
-                  <feColorMatrix
-                    type="matrix"
-                    values="0 0 0 0 0.988235 0 0 0 0 0.0862745 0 0 0 0 0.509804 0 0 0 0.24 0"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in2="BackgroundImageFix"
-                    result="effect1_dropShadow_1166_2259"
-                  />
-                  <feBlend
-                    mode="normal"
-                    in="SourceGraphic"
-                    in2="effect1_dropShadow_1166_2259"
-                    result="shape"
-                  />
-                </filter>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div class="bottom_info">
-          <div>
-            <span>把握限時優惠</span>
-            <span>現在就來預約我們的洗牙服務吧！</span>
-          </div>
-          <div class="charge-btn">
-            <PageAnimBtnTypeTwo
-              :str="'預約檢查及諮詢'"
-              :link="`https://wa.me/85269338128?text=Hello愛康健我想預約洗牙`"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="brand_mobile" v-if="windowWidth < 768">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">洗牙技術及類別</div>
-        </div>
-        <div class="brand_mobile_items">
-          <div class="mobile_item_lien">
+        <div class="type-technology-content">
+          <div class="service-cards">
             <div
-              v-for="(item_mobile, index) in Plant_brand_series_data"
+              v-for="(item, index) in Plant_brand_series_data"
               :key="index"
+              class="service-card"
             >
-              <div>
-                <div>
-                  <span>{{ item_mobile.name[0] }}</span>
-                  <span>{{
-                    removeSurroundingParentheses(item_mobile.name[1])
-                  }}</span>
-                </div>
-                <div>
-                  <span v-if="item_mobile.oldPrice"
-                    >原價￥{{ item_mobile.oldPrice }}</span
+              <div class="card-image">
+                <img :src="item.img" :alt="item.name[0]" />
+              </div>
+              <div class="card-content">
+                <div class="card-content-left">
+                  <div
+                    class="card-content-left-title"
+                    :class="index !== 0 ? `title-${item.id}` : ''"
                   >
-                  <span v-else></span>
-                  <span><i>￥</i>{{ item_mobile.price }}<i></i></span>
-                </div>
-              </div>
-              <div>
-                <div>
-                  <div>
-                    <div>
-                      <div>潔淨度</div>
-                      <div>
-                        <img :src="item_mobile.compare[0]" alt="" />
+                    <span
+                      v-for="(e, i) in item.name"
+                      :key="i"
+                      v-html="e"
+                    ></span>
+                  </div>
+                  <div class="rating-row">
+                    <div class="rating-item">
+                      <span>潔淨度</span>
+                      <div class="stars">
+                        <img
+                          :src="`https://static.ckjhk.com/ckj-image/stars${item.cleanScore}.png`"
+                          alt=""
+                        />
                       </div>
                     </div>
-                    <div>
-                      <div>美白度</div>
-                      <div>
-                        <img :src="item_mobile.compare[1]" alt="" />
+                    <div class="rating-item">
+                      <span>美白度</span>
+                      <div class="stars">
+                        <img
+                          :src="`https://static.ckjhk.com/ckj-image/stars${item.whiteningScore}.png`"
+                          alt=""
+                        />
                       </div>
                     </div>
-                    <div>
-                      <div>舒適度</div>
-                      <div>
-                        <img :src="item_mobile.compare[2]" alt="" />
-                      </div>
-                    </div>
-                    <div>
-                      <div>性價比</div>
-                      <div>
-                        <img :src="item_mobile.compare[3]" alt="" />
+                    <div class="rating-item">
+                      <span>舒適度</span>
+                      <div class="stars">
+                        <img
+                          :src="`https://static.ckjhk.com/ckj-image/stars${item.comfortScore}.png`"
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div>
-                  <img :src="item_mobile.img" alt="" />
-                </div>
-              </div>
-              <div>
-                <span v-for="(item, index) in item_mobile.lists" :key="index">
-                  {{ item }}
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bottom_info">
-          <div>
-            <span>把握限時優惠</span>
-            <span>現在就來預約我們的洗牙服務吧！</span>
-          </div>
-          <div class="charge-btn">
-            <PageAnimBtnTypeTwo :str="'預約檢查及諮詢'" />
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-in">
-          <div class="dentistryServices-title step-title">
-            <div class="dentistryServices-title-in bb step-title-in">
-              {{ stepData.title }}
-            </div>
-          </div>
-          <div class="step-lists" v-if="windowWidth > 767">
-            <div
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-              class="step-lists-in"
-            >
-              <div class="step-lists-in-l">
-                <div class="title">
-                  <div>
-                    <img
-                      src="https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png"
-                      alt=""
-                    />
+                <div class="card-content-right">
+                  <div class="price">
+                    <div v-if="item.id === '1101'" :class="`price-${item.id}`">
+                      <img
+                        src="https://static.ckjhk.com/ckj-image/882025032115375801.png"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      v-else-if="item.id === '1102'"
+                      :class="`price-${item.id}`"
+                    >
+                      <img
+                        src="https://static.ckjhk.com/ckj-image/1682025032115382001.png"
+                        alt=""
+                      />
+                    </div>
+                    <div
+                      v-else-if="item.id === '1103'"
+                      :class="`price-${item.id}`"
+                    >
+                      <img
+                        src="https://static.ckjhk.com/ckj-image/1682025032115383201.png"
+                        alt=""
+                      />
+                    </div>
+                    <div>
+                      <span class="original-price"
+                        >原價¥{{ item.oldPrice }}</span
+                      >
+                    </div>
                   </div>
-                  <div>0{{ stepIndex + 1 }}</div>
+                  <div class="features" v-if="windowWidth > 768">
+                    <p v-for="(feature, fIndex) in item.lists" :key="fIndex">
+                      {{ feature }}
+                    </p>
+                  </div>
+                  <ul class="features" v-if="windowWidth < 768">
+                    <li
+                      v-for="(featureM, fIndexM) in item.listsM"
+                      :key="fIndexM"
+                    >
+                      {{ featureM }}
+                    </li>
+                  </ul>
                 </div>
-                <div class="image"><img :src="stepItem.img" alt="" /></div>
-                <div class="name">{{ stepItem.name }}</div>
-                <div class="context">{{ stepItem.context }}</div>
-              </div>
-              <div class="step-lists-in-r">
-                <img
-                  src="https://static.cmereye.com/imgs/2024/11/5e6a778026dfcb28.png"
-                  alt=""
-                />
               </div>
             </div>
           </div>
-          <div class="mobile-new-step" v-else>
-            <div
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-            >
-              <div>
-                <img :src="stepItem.img" alt="" />
-                <span>{{ stepItem.name }}</span
-                ><br />
-                <span>{{ stepItem.context }}</span>
-              </div>
-              <div><img :src="stepItem.imgNum" alt="" /></div>
-            </div>
+          <div class="type-technology-message">
+            <p>*長者優惠只限深圳愛康健口腔醫院使用</p>
+            <p>
+              把握限時優惠，<br class="d-lg-none" />立即預約愛康健專業洗牙服務！
+            </p>
           </div>
-          <div class="step-bg step-mobile-bg-one" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/0f9506f5f2e7252f.png"
-              alt=""
-            />
-          </div>
-          <div class="step-bg step-mobile-bg-two" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/6d29b5a6949eb591.png"
-              alt=""
-            />
-          </div>
-          <div class="step-bg step-mobile-bg-three" v-if="windowWidth < 767">
-            <img
-              src="https://static.cmereye.com/imgs/2024/07/2c52c0d9059dac7d.png"
-              alt=""
-            />
+          <div class="type-technology-btn">
+            <PageAnimBtnTypeTwoV2 :str="'WhatsApp預約洗牙'" />
           </div>
         </div>
-      </div>
-      <div class="charge" style="display: none !important">
-        <div class="dentistryServices-title charge-title">
-          <div class="dentistryServices-title-in bb charge-title-in">
-            {{ chargeData.title }}
-          </div>
-        </div>
-        <div class="charge-tables">
-          <div class="charge-tables-in">
-            <div
-              v-for="(chargeItem, chargeIndex) in chargeData.tables"
-              :key="chargeIndex"
-              class="charge-tables-item"
-            >
-              <div class="item-in">{{ chargeItem.a }}</div>
-              <div class="item-in">
-                <span>{{ chargeItem.b }}</span>
-                <span>{{ chargeItem.c }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="charge-text">
-          <span>把握限時優惠</span>
-          <span>，</span>
-          <span>現在就來預約我們的洗牙服務吧！</span>
-        </div>
-        <div class="charge-btn">
-          <PageAnimBtnTypeTwo :str="'預約檢查及諮詢'" />
-        </div>
-      </div>
-      <div class="Medical_sterilization_equipment">
-        <div class="dentistryServices-title plague-title">
-          <div class="dentistryServices-title-in bb plague-title-in">
-            醫療滅菌設備
-          </div>
-        </div>
-        <div
-          class="Medical_sterilization_equipment-in pageCon"
-          v-if="windowWidth > 767"
-        >
-          <div class="Medical_sterilization_equipment-in-box">
-            <img
-              src="https://static.cmereye.com/imgs/2024/02/30f4f16be7ec0112.jpg"
-              alt=""
-            />
-            <div>
-              <span
-                >瑞士EMS超音波科技採用光學數位掃描，高頻聲納定位，作用於清潔牙結石，預防牙周病和蛀牙。</span
-              >
-            </div>
-          </div>
-          <div class="Medical_sterilization_equipment-in-box">
-            <div>
-              <span
-                >以「一醫一診室」、「一機一用一消毒」的無菌治療模式，避免交叉感染機會。</span
-              >
-            </div>
-            <img
-              src="https://static.cmereye.com/imgs/2024/02/166a2c06cc4acf88.jpg"
-              alt=""
-            />
-          </div>
-        </div>
-        <div v-else style="margin: 20px 30px">
-          <Swiper
-            :loop="true"
-            :modules="[Autoplay]"
-            :autoplay="{
-              delay: 0,
-            }"
-            :spaceBetween="20"
-            :speed="6000"
-            :slidesPerView="1"
-          >
-            <SwiperSlide class="equipment-item">
-              <div class="equipment-img">
-                <img
-                  src="https://static.cmereye.com/imgs/2024/07/975a459555d529a8.png"
-                  alt="瑞士EMS超音波科技採用光學數位掃描"
-                />
-              </div>
-              <div class="equipment-bg equipment-one">
-                瑞士EMS超音波科技採用光學數位掃描，高頻聲納定位，作用於清潔牙結石，預防牙周病和蛀牙。
-              </div>
-            </SwiperSlide>
-            <SwiperSlide class="equipment-item">
-              <div class="equipment-img">
-                <img
-                  src="https://static.cmereye.com/imgs/2024/07/83c4a9219458e923.png"
-                  alt="無菌治療模式"
-                />
-              </div>
-              <div class="equipment-bg equipment-two">
-                以「一醫一診室」、「一機一用一消毒」的無菌治療模式，避免交叉感染機會。
-              </div>
-            </SwiperSlide>
-            <SwiperSlide class="equipment-item">
-              <div class="equipment-img">
-                <img
-                  src="https://static.cmereye.com/imgs/2024/07/975a459555d529a8.png"
-                  alt="瑞士EMS超音波科技採用光學數位掃描"
-                />
-              </div>
-              <div class="equipment-bg equipment-one">
-                瑞士EMS超音波科技採用光學數位掃描，高頻聲納定位，作用於清潔牙結石，預防牙周病和蛀牙。
-              </div>
-            </SwiperSlide>
-            <SwiperSlide class="equipment-item">
-              <div class="equipment-img">
-                <img
-                  src="https://static.cmereye.com/imgs/2024/07/83c4a9219458e923.png"
-                  alt="無菌治療模式"
-                />
-              </div>
-              <div class="equipment-bg equipment-two">
-                以「一醫一診室」、「一機一用一消毒」的無菌治療模式，避免交叉感染機會。
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      </div>
-      <div class="doctorTeam" ref="doctorTeam">
-        <ServiceSpecializedTeam :doctorData="doctorData" />
-      </div>
-      <div class="care">
-        <div class="dentistryServices-title care-title">
-          <div class="dentistryServices-title-in bb care-title-in">
-            {{ careData.title }}
-          </div>
-        </div>
-        <div class="care-lists">
+      </section>
+      <section class="ckj-container cleaning-step">
+        <div class="cleaning-step-subheading">\ <i>洗牙6步曲</i> /</div>
+        <div class="cleaning-step-context" id="implantStep">
           <div
-            v-for="(careItem, careIndex) in careData.lists"
-            :key="careIndex"
-            class="care-lists-item"
+            class="cleaning-step-item"
+            v-for="(item, index) in cleaningStepList"
+            :key="index"
           >
+            <div>{{ item.id }}</div>
             <div>
-              <div class="image">
-                <div class="image-in">
-                  <img :src="careItem.img" :alt="careItem.text" />
-                </div>
-              </div>
-              <div class="text" v-html="careItem.text"></div>
+              <img :src="item.img" :alt="item.title" />
             </div>
+            <div>{{ item.title }}</div>
           </div>
         </div>
+      </section>
+      <div class="cleaning-video-bg">
+        <section class="ckj-container cleaning-video">
+          <div class="d-flex flex-row align-items-end subheading">
+            <span>專業消毒</span><span>流程</span>
+          </div>
+          <div class="cleaning-video-content">
+            <div class="cleaning-video-content-iframe">
+              <iframe
+                width="100%"
+                height="100%"
+                src="https://www.youtube.com/embed/5rKokT9WBLw?si=kZmC7NGQvwZPNE9f"
+                frameborder="0"
+              ></iframe>
+            </div>
+            <div class="cleaning-video-content-text">
+              <p>
+                以「一醫一診室」、「一機一用一消毒」的無菌治療模式，避免交叉感染機會。
+              </p>
+              <p>
+                瑞士EMS超音波科技採用光學數位掃描，高頻聲納定位，作用於清潔牙結石，預防牙周病和蛀牙。
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-      <V2ServiceProblem :problem-data="problemData" :v2-versions="true"  />
-      <serviceCard />
+      <section class="ckj-container">
+        <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
+      </section>
       <BranchAddress />
       <ContactForm-new2 />
     </div>
-    <PageFooter />
-    <AsideV2/>
+    <FooterV2 />
+    <!-- <PageFooter /> -->
+    <AsideV2 />
   </div>
 </template>
 
@@ -1021,7 +474,7 @@ const removeSurroundingParentheses = (str) => {
   position: absolute;
   z-index: 3;
   top: 1vw;
-  left: 40%;
+  left: 42%;
   width: 9.0625vw;
   height: 9.0625vw;
   & > img {
@@ -1220,1931 +673,455 @@ const removeSurroundingParentheses = (str) => {
     }
   }
 }
-@font-face {
-  font-family: 'Noto Color Emoji';
-  src: url(https://statichk.cmermedical.com/ckj/font/NotoColorEmoji.woff2)
-    format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-.icon-emoji {
-  font-family: Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
-    'Noto Color Emoji';
-}
-:deep(.header-content) {
-  .explain_box_mobile {
-    background: transparent !important;
-    position: absolute;
-    bottom: 70px;
-    z-index: 38;
-    right: 0;
-    left: 0;
-    top: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin: 0 auto !important;
+
+@media screen and (min-width: 922px) {
+  .type-technology {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
-}
-.tabNav {
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 160%;
-  color: #cbcbcb;
-  margin-top: 20px;
-  a {
-    &:not(:last-child)::after {
-      content: '';
-      width: 20px;
-      height: 2px;
-      margin: 0 10px;
-      background: #cbcbcb;
-      display: inline-block;
-      vertical-align: middle;
-      margin-top: -4px;
-    }
-  }
-  & > span {
-    cursor: pointer;
-    color: var(--indexColor1);
-  }
-}
-.introduceJY {
-  margin-top: 140px;
-}
-.reason {
-  margin-top: 20px;
-  &-lists {
-    width: 100%;
-    max-width: 1656px;
-    display: flex;
-    margin: 116px auto 0;
-    &-item {
-      padding: 0 45px;
-      .image {
-        position: relative;
-        img {
-          width: 100%;
-        }
-        div {
-          position: absolute;
-          top: -29px;
-          left: -13px;
-          width: 110px;
-          height: 113px;
-          color: #fff;
-          text-align: center;
-          font-size: 50px;
-          font-style: normal;
-          font-weight: 900;
-          background: url(https://static.cmereye.com/imgs/2023/10/d9a06b8771bc917a.png)
-            no-repeat;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-      .text {
-        color: #fc1682;
-        font-size: 35px;
-        font-style: normal;
-        font-weight: 900;
-        line-height: 160%;
-        text-align: center;
-        margin-top: 35px;
-      }
-    }
-  }
-}
-.new-reason-lists {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 55px auto 0;
-  .bg_new_reason {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 725.458px;
-    height: 725.458px;
-    flex-shrink: 0;
-    border-radius: var(--Count, 725.458px);
-    border: var(--Count, 138px) solid var(--Theme-Color, #fc1682);
-    opacity: 0.3;
-  }
-  .item-list {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(2, 1fr);
-    z-index: 10;
-    gap: 0 180px;
-    position: relative;
-    width: fit-content;
-    & > div:nth-child(1) {
-      grid-column: 1 / 3;
-    }
-    & > div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: fit-content;
-    }
-  }
-}
-.Plant_brand_series {
-  margin-top: 80px;
-  position: relative;
-  & > div {
-    align-items: center;
-  }
-  :deep(.swiper) {
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      #fff5f4 12%,
-      #fff5f4 78%,
-      transparent 100%
-    );
-    .swiper-slide:nth-child(2),
-    .swiper-slide:nth-child(3) {
-      .Plant_brand_series-content {
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
-            position: relative;
-            & > span:nth-child(2) {
-              background: #00aeff !important;
-              position: absolute;
-              width: 80px;
-              height: 80px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border-radius: 50%;
-              border: 5px solid #b9d9fc;
-              color: var(--White, #fff);
-              text-align: center;
-              font-family: var(--indexFontFamily);
-              font-size: 28px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 44.8px */
-              letter-spacing: 2.8px;
-              right: -10%;
-              top: 50%;
-              transform: translateY(-50%);
-            }
-          }
-        }
-      }
-    }
-    .swiper-slide:nth-child(3) {
-      .Plant_brand_series-content {
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
-            position: relative;
-            & > span:nth-child(2) {
-              background: #f90 !important;
-              position: absolute;
-              width: 80px;
-              height: 80px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              border-radius: 50%;
-              border: 5px solid #ffcd81;
-              color: var(--White, #fff);
-              text-align: center;
-              font-family: var(--indexFontFamily);
-              font-size: 28px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 160%; /* 44.8px */
-              letter-spacing: 2.8px;
-              right: -10%;
-              top: 50%;
-              transform: translateY(-50%);
-            }
-          }
-        }
-      }
-    }
-  }
-  &-tab {
-    width: 100%;
-    max-width: 864px;
-    margin: 30px auto;
-    display: flex;
-    & > span {
-      flex: 1;
-      color: var(--indexColor1);
-      font-size: 22px;
-      border-top: 2px solid var(--indexColor1);
-      border-bottom: 2px solid var(--indexColor1);
-      border-left: 2px solid var(--indexColor1);
-      padding: 7px 20px;
-      width: fit-content;
-      white-space: nowrap;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      &:first-child {
-        border-radius: 5px 0 0 5px;
-      }
-      &:last-child {
-        border-radius: 0 5px 5px 0;
-        border-right: 2px solid var(--indexColor1);
-      }
-      &:hover,
-      &.active {
-        background: var(--indexColor1);
-        color: #fff;
-      }
-    }
-  }
-  .brand_btn {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    display: flex;
-    z-index: 10;
-    justify-content: space-around;
-    .brand_btn_left {
-      position: absolute;
-      left: calc((100% - 562px - 495px) / 2);
-      top: 25%;
-      cursor: pointer;
-      z-index: 2;
-    }
-    .brand_btn_right {
-      position: absolute;
-      right: calc((100% - 562px - 495px) / 2);
-      top: 25%;
-      cursor: pointer;
-      z-index: 2;
-    }
-  }
-  .bottom_info {
+  .type-technology-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    & > div:nth-child(1) {
+    margin-top: 17px;
+    .service-cards {
       display: flex;
       flex-direction: column;
-      color: var(--Theme-Color, #fc1682);
-      text-align: center;
-      font-family: 'FakePearl-Regular';
-      font-size: 30px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 160%; /* 48px */
-      letter-spacing: 3px;
-    }
-  }
-  &-content {
-    width: 100%;
-    max-width: 625px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 20px 0;
-    & > div:nth-child(1) {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      & > div:nth-child(1) {
-        border-radius: 40px;
-        background: var(--Theme-Color, #fc1682);
-        color: var(--White, #fff);
-        font-family: 'FakePearl-Regular';
-        font-size: 28px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 160%; /* 44.8px */
-        box-sizing: border-box;
-        padding: 5px 60px;
-      }
-      & > div:nth-child(2) {
-        display: flex;
-        align-items: center;
-        & > span:nth-child(1) {
-          position: relative;
-          color: var(--Grey-Deep, #4d4d4d);
-          text-align: center;
-          font-family: var(--indexFontFamily);
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 160%; /* 32px */
-        }
-        & > span:nth-child(1)::before {
-          content: '';
-          position: absolute;
+      gap: 50px 0;
+      box-sizing: border-box;
+      padding: 0 40.5px;
+
+      .card-image {
+        width: 170px;
+        height: 170px;
+        & > img {
           width: 100%;
-          display: inline-block;
-          height: 0.7px;
-          background: #4d4d4d;
-          transform: rotate(-7deg) translateY(-50%);
-          top: 50%;
+          height: 100%;
+          object-fit: cover;
         }
-        & > span:nth-child(2) {
-          color: var(--Theme-Color, #fc1682);
-          font-family: var(--indexFontFamily);
-          font-size: 36px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%;
-          margin-left: 18px;
-          & > i {
-            color: var(--Theme-Color, #fc1682);
-            font-family: var(--indexFontFamily);
+      }
+      .service-card {
+        display: flex;
+        gap: 0 22px;
+      }
+      .card-content {
+        display: flex;
+        gap: 0 40px;
+      }
+      .card-content-left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px 0;
+        .card-content-left-title {
+          box-sizing: border-box;
+          padding: 10px 30px;
+          border-radius: 10px;
+          background: var(--Blue-Deep, #00aeff);
+          width: fit-content;
+          position: relative;
+          & > span:nth-child(1) {
+            color: var(--White, #fff);
+            text-align: center;
+            font-family: 'Noto Sans HK';
             font-size: 24px;
             font-style: normal;
-            font-weight: 500;
-            line-height: 160%; /* 44.8px */
-            position: relative;
-            bottom: 2px;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 2.4px;
+          }
+          & > span:nth-child(2) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -55px;
+            color: var(--Grey-Dark, #333);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 2.4px;
+            width: 80px;
+            height: 80px;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #ffe9ec;
           }
         }
-      }
-    }
-    & > div:nth-child(2) {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 0 65px;
-      // flex-direction: column;
-      color: var(--Grey-Deep, #4d4d4d);
-      font-family: var(--indexFontFamily);
-      font-size: 26px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 160%; /* 41.6px */
-      letter-spacing: 2.6px;
-      .item_compare {
-        margin-top: 14px;
-        & > div {
-          margin-bottom: 10px;
+        .title-1102 {
+          background: #f8298a;
+        }
+        .title-1103 {
+          background: #01a853;
+          & > span:nth-child(2) {
+            background: #b3e5cc;
+          }
+        }
+        .rating-row {
+          padding-left: 30px;
+          & > div {
+            display: flex;
+            align-items: center;
+            gap: 0 15px;
+          }
           display: flex;
-          align-items: center;
-          gap: 0 12px;
-          color: var(--Theme-Color, #fc1682);
-          font-family: var(--indexFontFamily);
-          font-size: 26px;
-          font-style: normal;
-          font-weight: 500;
-          line-height: 160%; /* 41.6px */
-          letter-spacing: 2.6px;
-        }
-      }
-    }
-    & > div:nth-child(3) {
-      display: flex;
-      flex-direction: column;
-      color: var(--Grey-Deep, #4d4d4d);
-      font-family: var(--indexFontFamily);
-      font-size: 26px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 160%; /* 41.6px */
-      letter-spacing: 2.6px;
-      margin: 10px 0;
-    }
-  }
-}
-.charge {
-  margin-top: 206px;
-  &-tables {
-    width: 100%;
-    max-width: 1491px;
-    margin: 54px auto 0;
-    position: relative;
-    &-in {
-      width: auto;
-      max-width: 1091px;
-      margin: 0 200px;
-      border-radius: 60px;
-      overflow: hidden;
-    }
-    &-item {
-      display: flex;
-      width: 100%;
-      height: 130px;
-      margin-bottom: 8px;
-      .item-in {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        background: var(--indexColor2);
-        color: #4d4d4d;
-        font-size: 24px;
-        font-weight: 600;
-        span {
-          font-size: 37px;
-          font-weight: 700;
-          color: var(--indexColor);
-          &:nth-of-type(2) {
-            color: #4c4c4c;
-            font-size: 16px;
-            position: relative;
-            &::before {
-              content: '';
-              width: 100%;
-              height: 1px;
-              background: #4c4c4c;
-              position: absolute;
-              top: 55%;
-              left: 50%;
-              transform: translate(-50%, -50%) rotate(5deg);
+          flex-direction: column;
+          gap: 6px 0;
+          .rating-item {
+            & > span:nth-child(1) {
+              color: var(--Grey-Mid, #666);
+              font-family: 'Noto Sans TC';
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 160%; /* 32px */
+              letter-spacing: 2px;
             }
-          }
-        }
-        &:nth-of-type(1) {
-          flex: 2;
-        }
-        &:not(:last-child) {
-          margin-right: 8px;
-        }
-      }
-      &:nth-of-type(1) {
-        height: 70px;
-        margin-bottom: 0;
-        .item-in {
-          color: #fff;
-          font-size: 28px;
-          font-weight: 700;
-          background: var(--indexColor);
-          span {
-            color: #fff;
-          }
-        }
-      }
-      &:nth-of-type(3) {
-        .item-in {
-          background: #fdd3e3;
-          font-size: 28px;
-          font-weight: 900;
-          span {
-            font-size: 37px;
-            line-height: 1.2;
-            &:nth-of-type(2) {
-              color: #4c4c4c;
-              font-size: 16px;
-              position: relative;
-              &::before {
-                content: '';
+            .stars {
+              width: 136px;
+              height: 24px;
+              & > img {
                 width: 100%;
-                height: 1px;
-                background: #4c4c4c;
-                position: absolute;
-                top: 55%;
-                left: 50%;
-                transform: translate(-50%, -50%) rotate(5deg);
+                height: 100%;
+                object-fit: contain;
               }
             }
           }
         }
       }
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-  &-text {
-    color: var(--indexColor1);
-    font-size: 35px;
-    font-weight: 700;
-    line-height: 160%;
-    text-align: center;
-    margin: 54px auto 34px;
-  }
-  &-btn {
-    margin-top: 35px;
-    display: flex;
-    justify-content: center;
-  }
-}
-.doctorTeam {
-  margin-top: 140px;
-}
-.step {
-  width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 241, 240, 0) 0%,
-    rgba(255, 241, 240, 0.7) 12.5%,
-    rgba(255, 241, 240, 0.7) 81.99%,
-    rgba(255, 241, 240, 0) 100%
-  );
-  padding: 61px 0 99px;
-  margin-top: 140px;
-  &-in {
-    width: 100%;
-    max-width: calc(1444px + 122px);
-    margin: 0 auto;
-  }
-  &-lists {
-    margin-top: 98px;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    &-in {
-      display: flex;
-      align-items: center;
-      margin-bottom: 92px;
-      padding: 0 calc((61 / (1444 + 122)) * 100%);
-      width: calc(100% / 3);
-      position: relative;
-      z-index: 5;
-      &:nth-of-type(4),
-      &:nth-of-type(5) {
-        margin-bottom: 0;
-      }
-      &:nth-of-type(3),
-      &:nth-of-type(6) {
-        .step-lists-in-l {
-          .image {
-            &::after {
-              display: none;
-            }
-          }
-        }
-      }
-      &-l {
-        width: 100%;
-        max-width: 400px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        .title {
-          z-index: 5;
-          position: absolute;
-          left: -8px;
-          top: -8px;
+      .card-content-right {
+        min-width: 371px;
+        .price {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          gap: 0 28px;
           & > div:nth-child(1) {
-            position: relative;
-            width: 66px;
-            height: 66px;
-            img {
+            & > img {
               width: 100%;
               height: 100%;
+              object-fit: contain;
             }
           }
           & > div:nth-child(2) {
-            color: var(--White, #fff);
-            text-align: center;
-            font-family: var(--indexFontFamily);
-            font-size: 35px;
+            color: var(--Grey-Deep, #4d4d4d);
+            text-align: right;
+            font-family: 'Noto Sans HK';
+            font-size: 24px;
             font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 56px */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            font-weight: 700;
+            line-height: 160%; /* 38.4px */
+            padding-bottom: 5px;
+            position: relative;
           }
-        }
-        .image {
-          width: 100%;
-          img {
-            width: 100%;
-            border-radius: 30px;
-          }
-          position: relative;
-          &::after {
+          & > div:nth-child(2)::before {
             content: '';
             position: absolute;
-            right: -52.5%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background: url(https://static.cmereye.com/imgs/2024/11/5e6a778026dfcb28.png);
-            background-size: 100% 100%;
-            width: 148px;
-            height: 50px;
-            z-index: -1;
+            width: 100%;
+            height: 2px;
+            background: #4d4d4d;
+            bottom: 50%;
+            left: 0;
+            transform: rotate(350deg) translateY(-50%);
           }
         }
-        .name {
-          color: var(--Theme-Color, #fc1682);
-          font-family: var(--indexFontFamily);
-          font-size: 28px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 44.8px */
-          margin-top: 16px;
-          margin-bottom: 8px;
-          padding: 0;
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-          background: transparent;
-        }
-        .context {
-          font-size: 20px;
-          font-weight: 700;
-          color: #4d4d4d;
-          padding: 0;
-          color: var(--Grey-Deep, #4d4d4d);
-          font-family: 'Noto Sans HK';
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 32px */
-          letter-spacing: 4px;
-        }
-      }
-      &-r {
-        display: none;
-        img {
-          width: 15px;
+        .price-1101 {
+          width: 104px;
           height: auto;
         }
-      }
-      &:nth-of-type(6) {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        .lastBox-t {
-          // display: flex;
-          // align-items: flex-end;
-          & > div {
-            color: var(--indexColor1);
-            font-size: 55px;
-            font-weight: 700;
-            text-align: center;
-            span {
-              font-size: 85px;
-              line-height: 120%;
-              display: block;
-            }
-            &:nth-of-type(1) {
-              display: flex;
-              justify-content: center;
-              width: 100%;
-              margin-bottom: 15px;
-            }
-          }
-        }
-        .lastBox-b {
-          margin-top: 20px;
-          .bigBan {
-            font-size: 44px;
-            line-height: 1.2;
-          }
-        }
-      }
-    }
-  }
-}
-.care {
-  margin-top: 30px;
-  padding-bottom: 108px;
-  &-lists {
-    // display: flex;
-    // flex-wrap: wrap;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px 89px;
-    width: 100%;
-    max-width: 819px;
-    margin: 54px auto 0;
-    &-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      & > div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .image {
-          width: 100%;
+        .price-1102,
+        .price-1103 {
+          width: 143px;
+          height: auto;
           position: relative;
-          // padding: 0 calc((89px / 273px) * 100% / 2);
-          padding: 0;
-          max-width: 184px;
-          &-in {
-            width: 100%;
-            height: 0;
-            padding-bottom: 100%;
-            background: #fff1f0;
-            margin-bottom: 13px;
-            border-radius: 10px;
-            position: relative;
-            img {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              max-width: 70%;
-              max-height: 70%;
-            }
-          }
         }
-        .text {
-          color: var(--Grey-Deep, #4d4d4d);
+        .price-1102::before {
+          content: '\\性價比之選/';
+          color: var(--Brand-Color, #f8298a);
           text-align: center;
-          font-family: var(--indexFontFamily);
-          font-size: 22px;
+          font-family: 'Noto Sans HK';
+          font-size: 24px;
           font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 35.2px */
-          :deep(.pc) {
-            display: none;
-          }
-        }
-      }
-      &:nth-of-type(n + 4) {
-        margin-top: 0;
-      }
-      &:nth-of-type(2n + 2) {
-        & > div {
-          .image {
-            &-in {
-              background: #fee6f1;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.Medical_sterilization_equipment {
-  // background: ;
-  // background: linear-gradient(
-  //   90deg,
-  //   rgba(255, 241, 240, 0) 0%,
-  //   rgba(255, 241, 240, 0.7) 12.5%,
-  //   rgba(255, 241, 240, 0.7) 81.99%,
-  //   rgba(255, 241, 240, 0) 100%
-  // );
-  margin-top: 0;
-  padding: 50px 0 10px;
-  &-in {
-    margin-top: 60px;
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    &-box {
-      width: 100%;
-      max-width: 1205px;
-      display: flex;
-      margin-bottom: 40px;
-      img {
-        width: calc(696 / 1205 * 100%);
-        border-radius: 20px;
-      }
-      & > div {
-        font-size: 28px;
-        line-height: 160%;
-        color: #fff;
-        margin-top: calc(50 / 1205 * 100%);
-        display: inline-block;
-        height: max-content;
-        text-align: justify;
-        border-radius: 20px;
-        position: relative;
-        span {
-          position: relative;
-          z-index: 1;
-        }
-        &::after {
-          content: '';
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
           position: absolute;
-          display: block;
-          top: 0;
-          width: calc(100% + 30px);
-          height: 100%;
-          z-index: 0;
-          border-radius: 20px;
+          top: -40px;
+          left: 65%;
+          transform: translateX(-50%);
+          white-space: nowrap;
         }
-      }
-      &:nth-of-type(1) {
-        & > div {
-          padding: 30px 30px 30px 0;
-          &::after {
-            background: var(--indexColor1);
-            left: -30px;
-          }
-        }
-      }
-      &:nth-of-type(2) {
-        & > div {
-          padding: 30px 0 30px 30px;
-          &::after {
-            background: #00aeff;
-            right: -30px;
-          }
-        }
-      }
-    }
-  }
-}
-:deep(.problem) {
-  margin-top: 0;
-}
-// @media (min-width: 768px) and (max-width: 1300px) {
-//   .step {
-//     &-lists {
-//       &-in{
-//         &:nth-of-type(6) {
-//           .lastBox-t {
-//             &>div{
-//               font-size: 35px;
-//               span{
-//                 font-size: 60px;
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// @media (min-width: 768px) and (max-width: 1200px) {
-//   .reason {
-//     &-lists {
-//       &-item {
-//         .image {
-//           div {
-//             font-size: 4vw;
-//             width: 9vw;
-//             height: calc(9vw + 3px);
-//             background-size: 100% 100%;
-//           }
-//         }
-//         .text {
-//           font-size: 3vw;
-//         }
-//       }
-//     }
-//   }
-//   .charge {
-//     &-tables {
-//       &-in {
-//         margin: 0 150px;
-//       }
-//     }
-//   }
-//   .step {
-//     &-lists {
-//       &-in{
-//         width: calc(100% / 2);
-//       }
-//     }
-//   }
-// }
-// @media (min-width: 768px) and (max-width: 1100px) {
-//   .step {
-//     &-lists {
-//       &-in{
-//         // padding: 0 calc((61 / ( 1444 + 122 )) * 100%);
-//         &-l {
-//           .image{
-//             &::after{
-//               right: -10%;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-@media (min-width: 768px) and (max-width: 1920px) {
-  .introduceJY {
-    margin-top: 7.2917vw;
-  }
-  .reason {
-    margin-top: 9.7917vw;
-    &-lists {
-      max-width: 86.25vw;
-      margin: 6.0417vw auto 0;
-      &-item {
-        padding: 0 2.3438vw;
-        .image {
-          div {
-            top: -1.5104vw;
-            left: -0.6771vw;
-            width: 5.7292vw;
-            height: 5.8854vw;
-            font-size: 2.6042vw;
-          }
-        }
-        .text {
-          font-size: 1.8229vw;
-          margin-top: 1.8229vw;
-        }
-      }
-    }
-  }
-  .step {
-    padding: 3.1771vw 0 5.1563vw;
-    margin-top: 7.2917vw;
-    &-in {
-      max-width: calc(75.2083vw + 6.3542vw);
-    }
-    &-lists {
-      margin-top: 5.1042vw;
-      padding: 0 1.0417vw;
-      &-in {
-        margin-bottom: 4.7917vw;
-        &-l {
-          max-width: 20.8333vw;
-          .title {
-            font-size: 1.8229vw;
-            margin-bottom: 0.7813vw;
-            img {
-              margin-right: 0.7813vw;
-            }
-          }
-          .image {
-            img {
-              border-radius: 1.5625vw;
-            }
-            &::after {
-              content: '';
-              position: absolute;
-              left: 115%;
-              top: 50%;
-              transform: translate(-50%);
-              background: url(https://static.cmereye.com/imgs/2024/11/5e6a778026dfcb28.png);
-              background-size: 100% 100%;
-              width: 148px;
-              height: 50px;
-              z-index: -1;
-            }
-          }
-          .name {
-            font-size: 1.0417vw;
-            margin-top: 1.25vw;
-            margin-bottom: 0.7813vw;
-            padding: 0.4167vw 0.7813vw;
-          }
-          .context {
-            font-size: 1.0417vw;
-            padding: 0 0.7813vw;
-          }
-        }
-        &-r {
-          img {
-            width: 0.7813vw;
-          }
-        }
-        &:nth-of-type(6) {
-          .lastBox-t {
-            & > div {
-              font-size: 2.8646vw;
-              span {
-                font-size: 4.4271vw;
-              }
-              &:nth-of-type(1) {
-                margin-bottom: 0.7813vw;
-              }
-            }
-          }
-          .lastBox-b {
-            margin-top: 1.0417vw;
-            .bigBan {
-              font-size: 2.2917vw;
-            }
-          }
-        }
-      }
-    }
-  }
-  .charge {
-    margin-top: 10.7292vw;
-    &-tables {
-      max-width: 77.6563vw;
-      margin: 2.8125vw auto 0;
-      &-in {
-        max-width: 56.8229vw;
-        margin: 0 10.4167vw;
-        border-radius: 3.125vw;
-      }
-      &-item {
-        height: 6.7708vw;
-        margin-bottom: 0.4167vw;
-        .item-in {
-          font-size: 1.25vw;
-          span {
-            font-size: 1.9271vw;
-            &:nth-of-type(2) {
-              font-size: 0.8333vw;
-            }
-          }
-          &:not(:last-child) {
-            margin-right: 0.4167vw;
-          }
-        }
-        &:nth-of-type(1) {
-          height: 3.6458vw;
-          .item-in {
-            font-size: 1.9271vw;
-          }
-        }
-        &:nth-of-type(3) {
-          .item-in {
-            font-size: 1.4583vw;
-            span {
-              font-size: 1.9271vw;
-              &:nth-of-type(2) {
-                font-size: 0.8333vw;
-              }
-            }
-          }
-        }
-      }
-    }
-    &-text {
-      font-size: 1.8229vw;
-      margin: 2.8125vw auto 1.7708vw;
-    }
-    &-btn {
-      margin-top: 1.8229vw;
-    }
-  }
-  .Medical_sterilization_equipment {
-    margin-top: 7.2917vw;
-    padding: 2.6042vw 0 0.5208vw;
-    &-in {
-      margin-top: 3.125vw;
-      &-box {
-        max-width: 62.7604vw;
-        margin-bottom: 2.0833vw;
-        img {
-          border-radius: 1.0417vw;
-        }
-        & > div {
-          font-size: 1.4583vw;
-          border-radius: 1.0417vw;
-          &::after {
-            width: calc(100% + 1.5625vw);
-            border-radius: 1.0417vw;
-          }
-        }
-        &:nth-of-type(1) {
-          & > div {
-            padding: 1.5625vw 1.5625vw 1.5625vw 0;
-            &::after {
-              left: -1.5625vw;
-            }
-          }
-        }
-        &:nth-of-type(2) {
-          & > div {
-            padding: 1.5625vw 0 1.5625vw 1.5625vw;
-            &::after {
-              right: -1.5625vw;
-            }
-          }
-        }
-      }
-    }
-  }
-  .doctorTeam {
-    margin-top: 7.2917vw;
-  }
-  .care {
-    margin-top: 10.7292vw;
-    padding-bottom: 5.625vw;
-    &-lists {
-      max-width: 42.6563vw;
-      margin: 2.8125vw auto 0;
-      &-item {
-        & > div {
-          .image {
-            &-in {
-              margin-bottom: 0.6771vw;
-              border-radius: 0.5208vw;
-            }
-          }
-          .text {
-            font-size: 1.25vw;
-          }
-        }
-        &:nth-of-type(n + 4) {
-          margin-top: 3.125vw;
-        }
-      }
-    }
-  }
-  .Plant_brand_series {
-    margin-top: 80px;
-    position: relative;
-    & > div {
-      align-items: center;
-    }
-    &-tab {
-      width: 100%;
-      max-width: 864px;
-      margin: 30px auto;
-      display: flex;
-      & > span {
-        flex: 1;
-        color: var(--indexColor1);
-        font-size: 22px;
-        border-top: 2px solid var(--indexColor1);
-        border-bottom: 2px solid var(--indexColor1);
-        border-left: 2px solid var(--indexColor1);
-        padding: 7px 0;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s;
-        &:first-child {
-          border-radius: 5px 0 0 5px;
-        }
-        &:last-child {
-          border-radius: 0 5px 5px 0;
-          border-right: 2px solid var(--indexColor1);
-        }
-        &:hover,
-        &.active {
-          background: var(--indexColor1);
-          color: #fff;
-        }
-      }
-    }
-    .brand_btn {
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      display: flex;
-      z-index: 10;
-      justify-content: space-around;
-      .brand_btn_left {
-        position: absolute;
-        left: calc((100% - 562px - 495px) / 2);
-        top: 25%;
-        cursor: pointer;
-        z-index: 2;
-      }
-      .brand_btn_right {
-        position: absolute;
-        right: calc((100% - 562px - 495px) / 2);
-        top: 25%;
-        cursor: pointer;
-        z-index: 2;
-      }
-    }
-    &-content {
-      width: 100%;
-      max-width: 700px;
-      margin: 0 auto;
-      display: flex;
-      &-l {
-        width: calc(300 / 700 * 100%);
-        margin-right: calc(30 / 695 * 100%);
-        img {
-          width: 100%;
-        }
-      }
-      &-r {
-        flex: 1;
-        & > div {
-          & > img {
-            max-width: 100%;
-          }
-          &:nth-of-type(2) {
-            width: 70%;
-            color: #fff;
-            background: var(--indexColor1);
-            font-size: 30px;
-            line-height: 160%;
-            padding-left: 17px;
-            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
-            margin: 10px 0;
-          }
-          &:nth-of-type(3) {
-            display: flex;
-            flex-direction: column;
-            span {
-              font-size: 26px;
-              line-height: 1.6;
-              &::before {
-                content: '·';
-                display: inline-block;
-                margin-right: 10px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  :deep(.problem) {
-    margin-top: 45px;
-  }
-  :deep(.header-content) {
-    .explain_box_mobile {
-      margin-right: auto;
-      margin-left: 0;
-      top: 0px;
-      z-index: 35px;
-    }
-  }
-  :deep(.index_title) {
-    margin-top: 30px;
-  }
-  :deep(.header-content) {
-    .explain_box_mobile {
-      align-items: flex-end;
-      background: transparent !important;
-      display: flex;
-      justify-content: flex-end;
-      margin: 0 auto !important;
-      left: auto;
-      right: 0;
-      bottom: -20px;
-      position: absolute;
-      top: auto;
-      z-index: 35;
-    }
-    .waterBg-implant::after,
-    .waterBg-implant::before {
-      bottom: -28vw;
-    }
-  }
-  .reason-lists {
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-  }
-  .tabNav {
-    padding: 30px;
-    font-size: 1rem;
-    margin-top: 0;
-  }
-  .introduceJY {
-    margin-top: 60px;
-  }
-  .reason {
-    margin-top: 0;
-    &-title {
-      &-in {
-        font-size: 26px;
-      }
-    }
-    &-lists {
-      margin: 72px auto 0;
-      &-item {
-        padding: 0;
-        width: 40%;
-        .image {
-          div {
-            top: -18px;
-            left: -8px;
-            width: 64px;
-            height: 66px;
-            background-size: 100% 100%;
-            font-size: 34px;
-          }
-        }
-        .text {
-          font-size: 20px;
-          margin-top: 20px;
-        }
-        &:not(:last-child) {
-          margin-bottom: 53px;
-        }
-      }
-    }
-  }
-  .new-reason-lists {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 55px auto 0;
-    .bg_new_reason {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 231.743px;
-      height: 231.743px;
-      flex-shrink: 0;
-      border-radius: var(--Count, 725.458px);
-      border: var(--Count, 38px) solid var(--Theme-Color, #fc1682);
-      opacity: 0.3;
-    }
-    .item-list {
-      display: grid;
-      justify-items: center;
-      grid-template-columns: repeat(2, 1fr);
-      z-index: 10;
-      gap: 0 60px;
-      position: relative;
-      width: fit-content;
-      & > div:nth-child(1) {
-        grid-column: 1 / 3;
-      }
-      & > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: fit-content;
-        width: 126.608px;
-        height: 127.009px;
-        & > img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-    }
-  }
-  .step {
-    background: linear-gradient(
-      0deg,
-      rgba(255, 241, 240, 0) 0%,
-      rgba(255, 241, 240, 0.7) 12.5%,
-      rgba(255, 241, 240, 0.7) 81.99%,
-      rgba(255, 241, 240, 0) 100%
-    );
-    margin-top: 60px;
-    padding: 46px 0;
-    &-title {
-      &-in {
-        font-size: 26px;
-      }
-    }
-    &-lists {
-      width: auto;
-      margin: 57px 40px 0;
-      padding: 0;
-      &-in {
-        flex-direction: column;
-        margin-bottom: 30px;
-        width: 100%;
-        padding: 0;
-        &:nth-of-type(n + 5) {
-          margin-bottom: 30px;
-        }
-        &:nth-of-type(6) {
-          .step-lists-in-r {
-            display: none;
-          }
-        }
-        &-l {
-          .title {
-            padding: 0 6px;
-            font-size: 26px;
-          }
-          .image {
-            padding: 0 6px;
-            &::after {
-              display: none;
-            }
-          }
-          .name {
-            margin-top: -25px;
-            font-size: 16px;
-            clip-path: polygon(0 0, 80% 0, 85% 100%, 0 100%);
-          }
-          .context {
-            font-size: 16px;
-          }
-        }
-        &-r {
-          display: block;
-          margin-top: 30px;
-          margin-left: 0;
-          img {
-            transform: rotate(90deg);
-          }
-        }
-        &:nth-of-type(6) {
-          margin-top: 15px;
-          .lastBox-t {
-            & > div {
-              font-size: 16px;
-              span {
-                font-size: 24px;
-                display: inline-block;
-                &::before {
-                  content: '，';
-                  font-size: 16px;
-                  font-family: var(--contextFamily);
-                }
-              }
-              img {
-                width: 20px;
-                height: 22px;
-              }
-              &:nth-of-type(1) {
-                display: none;
-              }
-              &:nth-of-type(2) {
-                // display: none;
-                &::before,
-                &::after {
-                  content: '';
-                  display: inline-block;
-                  width: 20px;
-                  height: 22px;
-                  margin: 0 9px;
-                  background: url(@/assets/images/icon_13.png);
-                  background-size: 100% 100%;
-                }
-              }
-              // &:nth-of-type(3) {
-              //   padding-bottom: 5px;
-              //   margin-left: 7px;
-              // }
-            }
-          }
-          .lastBox-b {
-            margin-top: 30px;
-            .bigBan {
-              font-size: 28px;
-            }
-          }
-        }
-      }
-    }
-  }
-  .charge {
-    margin-top: 40px;
-    &-title {
-      &-in {
-        font-size: 26px;
-      }
-    }
-    &-tables {
-      margin: 28px auto 0;
-      &-in {
-        // margin: 0 50px 0 30px;
-        margin: 0 30px;
-        border-radius: 20px;
-      }
-      &-item {
-        height: 68px;
-        margin-bottom: 2px;
-        .item-in {
-          font-size: 15px;
-          span {
-            font-size: 20px;
-            &:nth-of-type(2) {
-              font-size: 9px;
-              font-weight: 500;
-            }
-          }
-          &:nth-of-type(1) {
-            flex: 1;
-          }
-          &:not(:last-child) {
-            margin-right: 2px;
-            padding: 0 20px;
-          }
-        }
-        &:nth-of-type(1) {
-          height: 40px;
-          margin-bottom: 0;
-          .item-in {
-            font-size: 20px;
-          }
-        }
-        &:nth-of-type(3) {
-          height: 96px;
-          .item-in {
-            font-size: 16px;
-            span {
-              font-size: 20px;
-              &:nth-of-type(2) {
-                font-size: 9px;
-                font-weight: 500;
-              }
-            }
-          }
-        }
-      }
-    }
-    &-text {
-      font-size: 16px;
-      margin: 14px auto 25px;
-      span {
-        display: block;
-        &:nth-of-type(2) {
-          display: none;
-        }
-      }
-    }
-    &-btn {
-      margin-top: 0;
-      // .btn {
-      //   margin-top: 0;
-      //   span {
-      //     font-size: 20px;
-      //     padding: 5px 70px;
-      //     box-shadow: 0px 3.70444px 7.40887px 0px rgba(252, 22, 130, 0.38);
-      //   }
-      // }
-    }
-    // &-rightBox {
-    //   width: 84px;
-    //   height: 84px;
-    //   .a {
-    //     font-size: 9.803px;
-    //   }
-    //   .b {
-    //     font-size: 11.168px;
-    //     span {
-    //       font-size: 15.464px;
-    //     }
-    //   }
-    //   .c {
-    //     font-size: 6.033px;
-    //   }
-    // }
-  }
-  .doctorTeam {
-    margin-top: 60px;
-  }
-  .care {
-    margin-top: 80px;
-    padding-bottom: 0px;
-    max-width: 100%;
-    &-title {
-      &-in {
-        font-size: 26px;
-      }
-    }
-    &-lists {
-      // width: auto;
-      // margin: 34px 15px 0;
-      gap: 30px 10px;
-      box-sizing: border-box;
-      padding: 0 30px;
-      &-item {
-        width: 100%;
-        & > div {
-          width: 100%;
-          .image {
-            padding: 0;
-          }
-          .text {
-            // white-space: pre-wrap;
-            padding: 0 !important;
-            color: var(--Grey-Deep, #4d4d4d);
-            text-align: center;
-            font-family: var(--indexFontFamily);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 130%; /* 20.8px */
-            :deep(.pc) {
-              display: flex;
-              flex-direction: column;
-            }
-          }
-        }
-      }
-    }
-  }
-  .Medical_sterilization_equipment {
-    // padding: 30px 0 10px;
-    margin-top: 0px;
-    padding-top: 0;
-    background: transparent;
-    &-in {
-      margin-top: 40px;
-      &-box {
-        flex-direction: column;
-        img {
-          width: 100%;
-          border-radius: 0;
-        }
-        & > div {
-          width: calc(100% - 60px);
-          font-size: 16px;
-          margin: -20px auto 0;
-          &::after {
-            width: 100%;
-            border-radius: 8px;
-          }
-        }
-        &:nth-of-type(1) {
-          & > div {
-            padding: 20px;
-            &::after {
-              left: 0;
-            }
-          }
-        }
-        &:nth-of-type(2) {
-          img {
-            order: 1;
-          }
-          & > div {
-            order: 2;
-            padding: 20px;
-            &::after {
-              right: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-  .step-in {
-    position: relative;
-  }
-  .step-bg {
-    position: absolute;
-    z-index: 2;
-  }
-  .step-mobile-bg-one {
-    top: 88px;
-    left: 0;
-    right: 0;
-    & > img {
-      width: 100%;
-    }
-  }
-  .step-mobile-bg-two {
-    top: 330px;
-    right: 0;
-    left: 0;
-    & > img {
-      width: 100%;
-    }
-  }
-  .step-mobile-bg-three {
-    bottom: 31.46vw;
-    left: 0;
-    right: 0;
-    // width: 85%;
-    & > img {
-      width: 100%;
-    }
-  }
-  .mobile-new-step {
-    margin: 25px 27px 47px 30px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px 28px;
-    position: relative;
-    z-index: 5;
-    & > div {
-      position: relative;
-      & > div:nth-child(1) {
-        & > img {
-          border-radius: 12px;
-          border: 1px solid var(--Theme-Color, #fc1682);
-          margin-bottom: 6px;
-        }
-        & > span:nth-child(2) {
-          color: var(--Theme-Color, #fc1682);
-          font-family: 'FakePearl-Regular';
-          font-size: 4.1vw;
-          font-style: normal;
-          font-weight: 600;
-          line-height: 130%; /* 20.8px */
-        }
-        & > span:nth-child(4) {
-          color: var(--Grey-Deep, #4d4d4d);
-          text-align: justify;
-          font-family: 'FakePearl-Regular';
-          font-size: 3.07vw;
-          font-style: normal;
-          font-weight: 600;
-          line-height: 160%; /* 19.2px */
-          letter-spacing: 1.2px;
-        }
-      }
-      & > div:last-child {
-        position: absolute;
-        top: -6px;
-        left: -6px;
-      }
-    }
-    & > div:nth-child(even) {
-      margin-top: 25px;
-    }
-  }
-  .equipment-img {
-    margin: auto;
-    & > img {
-      width: 100%;
-    }
-  }
-  .equipment-bg {
-    border-radius: 5px;
-    max-width: 243px;
-    margin: 0 auto;
-    padding: 11px 15px;
-    color: var(--White, #fff);
-    text-align: justify;
-    font-family: 'FakePearl-Regular';
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 19.2px */
-    letter-spacing: 1.2px;
-    box-sizing: border-box;
-    position: relative;
-    z-index: 5;
-    top: -10px;
-  }
-  .equipment-one {
-    background: var(--Theme-Color, #fc1682);
-  }
-  .equipment-two {
-    background: var(--Blue-Deep, #00aeff);
-  }
-  .Plant_brand_series {
-    margin-top: 30px;
-    display: none !important;
-    &-tab {
-      padding: 0 30px;
-      & > span {
-        font-size: 15px;
-        line-height: 160%;
-        & > span {
-          display: block;
-        }
-        &:nth-of-type(1) {
-          flex: 1;
-        }
-        &:nth-of-type(2) {
-          flex: 1.2;
-        }
-        &:nth-of-type(3) {
-          flex: 1.4;
-        }
-        &:nth-of-type(4) {
-          flex: 1;
-        }
-        &:nth-of-type(5) {
-          flex: 1.2;
-        }
-        &:hover {
-          background: none;
-          color: var(--indexColor1);
-        }
-        &.active {
-          background: var(--indexColor1);
-          color: #fff;
-        }
-      }
-    }
-    &-content {
-      padding: 0 30px;
-      &-r {
-        & > div {
-          & > img {
-            max-width: 80%;
-          }
-          &:nth-of-type(2) {
-            width: 90%;
-            font-size: 15px;
-            padding: 2px 0 2px 15px;
-            margin: 5px 0;
-            clip-path: polygon(0 0, 87% 0, 100% 100%, 0 100%);
-          }
-          &:nth-of-type(3) {
-            span {
-              font-size: 12px;
-              &::before {
-                margin-right: 6px;
-                font-size: 20px;
-                line-height: 100%;
-                vertical-align: middle;
-                margin-top: -2px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  .brand_mobile {
-    margin: 45px auto 55px;
-  }
-  .mobile_item_lien {
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    & > div {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 35px;
-      & > div {
-        display: flex;
-        justify-content: space-between;
-      }
-      & > div:nth-child(1) {
-        display: flex;
-        align-items: center;
-        & > div:nth-child(1) {
-          border-radius: var(--Count, 0px) 20px 20px var(--Count, 0px);
-          background: var(--Theme-Color, #fc1682);
-          color: var(--White, #fff);
+        .price-1103::before {
+          content: '長者優惠*';
+          color: var(--GHV-Green, #01a853);
           text-align: center;
-          font-family: var(--indexFontFamily);
-          font-size: 16px;
+          font-family: 'Noto Sans HK';
+          font-size: 24px;
           font-style: normal;
-          font-weight: 500;
-          line-height: 130%; /* 20.8px */
-          box-sizing: border-box;
-          padding: 5px 20px 5px 30px;
-          position: relative;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
+          position: absolute;
+          top: -40px;
+          left: 65%;
+          transform: translateX(-50%);
+          white-space: nowrap;
         }
-        & > div:nth-child(2) {
-          position: relative;
-          & > span:nth-child(1) {
-            position: relative;
+        .features {
+          p {
             color: var(--Grey-Deep, #4d4d4d);
-            text-align: center;
-            font-family: var(--indexFontFamily);
-            font-size: 9px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 160%; /* 14.4px */
-            z-index: 5;
-            right: 15px;
-            bottom: -5px;
-          }
-          & > span:nth-child(1)::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            display: inline-block;
-            height: 0.7px;
-            transform: rotate(-7deg);
-            background: #4d4d4d;
-            right: 0;
-            top: 50%;
-          }
-          & > span:nth-child(2) {
-            margin-left: 10px;
-            color: var(--Theme-Color, #fc1682);
-            font-family: var(--indexFontFamily);
-            font-size: 26px;
+            font-family: 'Noto Sans HK';
+            font-size: 18px;
             font-style: normal;
             font-weight: 400;
-            line-height: 160%;
-            & > i {
-              color: var(--Theme-Color, #fc1682);
-              font-family: var(--indexFontFamily);
-              font-size: 20px;
-              font-style: normal;
-              font-weight: 500;
-              line-height: 160%; /* 32px */
-            }
-            position: relative;
-            right: 20px;
-            z-index: 5;
-            bottom: -5px;
+            line-height: 200%; /* 36px */
+            letter-spacing: 1.8px;
           }
         }
-        & > div:nth-child(2)::after {
-          content: '';
-          width: 77px;
-          height: 10px;
-          border-radius: 4px var(--Count, 0px) var(--Count, 0px) 4px;
-          background: var(--Skin, #fff1f0);
-          position: absolute;
-          right: 0;
-          bottom: 0;
+      }
+    }
+    .type-technology-message {
+      display: flex;
+      flex-direction: column;
+      gap: 8px 0;
+      margin-top: 17px;
+      p:nth-child(1) {
+        color: var(--Grey-Mid, #666);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%; /* 36px */
+        letter-spacing: 1.8px;
+      }
+      p:nth-child(2) {
+        color: var(--Theme-Color, #fc1682);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+      }
+    }
+    .type-technology-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 37px;
+    }
+  }
+  .cleaning-step {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .cleaning-step-subheading {
+      & > i {
+        color: var(--Brand-Color, #f8298a);
+
+        /* 桌面版/PC-H2 */
+        font-family: 'Noto Sans HK';
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 3px;
+      }
+
+      color: var(--Grey-Deep, #4d4d4d);
+      text-align: center;
+
+      /* 桌面版/PC-H2 */
+      font-family: 'Noto Sans HK';
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 3px;
+    }
+    .cleaning-step-context {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      box-sizing: border-box;
+      padding: 30px 0 0;
+    }
+    .cleaning-step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      & > div:nth-child(1) {
+        background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
+          no-repeat;
+        background-size: cover;
+        width: 3.4375vw;
+        height: 3.4375vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--White, #fff);
+        font-family: 'Noto Sans HK';
+        font-size: 1.771vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 3.4px;
+        position: absolute;
+        top: -0.49vw;
+        left: -0.49vw;
+        z-index: 5;
+      }
+
+      & > div:nth-child(2) {
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
-      & > div:nth-child(2) {
-        box-sizing: border-box;
-        padding: 7px 30px 0;
-        align-items: center;
-        & > div:nth-child(1) {
-          & > div {
-            display: flex;
-            flex-direction: column;
-            & > div {
-              display: flex;
-              color: var(--Theme-Color, #fc1682);
-              font-family: var(--indexFontFamily);
-              font-size: 16px;
+
+      & > div:nth-child(3) {
+        margin-top: 9px;
+        width: 100%;
+        color: var(--Grey-Dark, #333);
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        /* 32px */
+        letter-spacing: 4px;
+        text-align: center;
+      }
+    }
+  }
+  .cleaning-video-bg {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      var(--Pink-Pale, #ffe9ec) 100%
+    );
+  }
+  .cleaning-video {
+    margin-bottom: 30px;
+    padding-top: 30px;
+    .cleaning-video-content-iframe {
+      width: 672px;
+      height: 380px;
+      margin: 30px auto 0;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .cleaning-video-content-text {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24.35px;
+      padding-bottom: 26.65px;
+      p {
+        color: var(--Grey-Dark, #333);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%; /* 36px */
+        letter-spacing: 1.8px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .type-technology {
+    margin-top: 35px;
+    margin-bottom: 40px;
+    .type-technology-content {
+      margin-top: 20px;
+      .service-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 34px 0;
+      }
+      .card-content {
+        display: flex;
+        justify-content: space-between;
+        .card-content-left {
+          display: flex;
+          flex-direction: column;
+          gap: 10px 0;
+          .card-content-left-title {
+            color: var(--White, #fff);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.8px;
+            box-sizing: border-box;
+            padding: 5px 15px 5px 25px;
+            border-radius: 0px 5px 5px 0px;
+            background: var(--Blue-Deep, #00aeff);
+            position: relative;
+            & > span:nth-child(2) {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: -40px;
+              color: var(--Grey-Dark, #333);
+              text-align: center;
+              font-family: 'Noto Sans HK';
+              font-size: 15px;
               font-style: normal;
               font-weight: 500;
-              line-height: 130%; /* 20.8px */
-              & > div:nth-child(2) {
-                width: 84px;
-                margin-left: 7px;
+              line-height: 160%; /* 24px */
+              letter-spacing: 1.5px;
+              width: 50px;
+              height: 50px;
+              border: 3px solid #fff;
+              border-radius: 50%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background: #ffe9ec;
+            }
+          }
+          .title-1102 {
+            background: #f8298a;
+          }
+          .title-1103 {
+            background: #01a853;
+            & > span:nth-child(2) {
+              background: #b3e5cc;
+            }
+          }
+          .rating-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px 0;
+            .rating-item {
+              display: flex;
+              gap: 0 7px;
+              align-items: center;
+              & > span:nth-child(1) {
+                color: var(--Grey-Mid, #666);
+                font-family: 'Noto Sans HK';
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 120%; /* 16.8px */
+              }
+              .stars {
+                width: 64px;
+                height: 12px;
                 & > img {
                   width: 100%;
                   height: 100%;
@@ -3154,71 +1131,249 @@ const removeSurroundingParentheses = (str) => {
             }
           }
         }
-        & > div:nth-child(2) {
-          width: 130px;
-          height: 130px;
-          & > img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .card-content-right {
+          display: flex;
+          flex-direction: column;
+          gap: 10px 0;
+          width: 173px;
+          .price {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 18px;
+            gap: 0 4px;
+            & > div:nth-child(1) {
+              & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+            & > div:nth-child(2) {
+              position: relative;
+            }
+            & > div:nth-child(2)::before {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 1px;
+              background: #4d4d4d;
+              bottom: 50%;
+              left: 0;
+              transform: rotate(350deg) translateY(-50%);
+            }
+            .price-1101 {
+              width: 52px;
+              height: auto;
+            }
+            .price-1102,
+            .price-1103 {
+              width: 72px;
+              height: auto;
+              position: relative;
+            }
+            .price-1102::before {
+              content: '\\性價比之選/';
+              color: var(--Brand-Color, #f8298a);
+              text-align: center;
+              font-family: 'Noto Sans HK';
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 700;
+              position: absolute;
+              top: -20px;
+              left: 55%;
+              transform: translateX(-50%);
+              white-space: nowrap;
+            }
+            .price-1103::before {
+              content: '長者優惠*';
+              color: var(--GHV-Green, #01a853);
+              text-align: center;
+              font-family: 'Noto Sans HK';
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 120%; /* 14.4px */
+              position: absolute;
+              top: -15px;
+              left: 60%;
+              transform: translateX(-50%);
+              white-space: nowrap;
+            }
+          }
+          .features {
+            padding-right: 30px;
+            position: relative;
+            left: -10px;
+            li {
+              color: var(--Grey-Deep, #4d4d4d);
+              font-family: 'Noto Sans HK';
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 170%; /* 20.4px */
+              list-style: disc;
+            }
           }
         }
       }
-      & > div:nth-child(3) {
-        display: flex;
-        flex-direction: column;
+      .card-image {
+        display: none;
+      }
+    }
+    .type-technology-message {
+      margin-top: 10px;
+      & > p:nth-child(1) {
+        color: var(--Grey-Mid, #666);
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 350;
+        line-height: 120%; /* 14.4px */
+        margin-left: 20px;
+      }
+      & > p:nth-child(2) {
+        color: var(--Theme-Color, #fc1682);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        margin: 30px auto 0;
+      }
+    }
+    .type-technology-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      & > div:nth-child(1) {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+      }
+    }
+  }
+  .cleaning-step-subheading {
+    margin-bottom: 5.865vw;
+
+    & > i {
+      color: var(--Brand-Color, #f8298a);
+      font-family: 'Noto Sans HK';
+      font-size: 4.8vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.48vw;
+    }
+
+    color: var(--Grey-Mid, #666);
+    text-align: center;
+    font-family: 'Noto Sans HK';
+    font-size: 4.8vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.48vw;
+  }
+  .cleaning-step {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .cleaning-step-context {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px 24px;
+      padding: 0 20px;
+      .cleaning-step-item {
+        position: relative;
         box-sizing: border-box;
-        padding: 0 15px;
-        & > p {
-          color: var(--Grey-Deep, #4d4d4d);
-          font-family: var(--indexFontFamily);
-          font-size: 15px;
+
+        & > div:nth-child(1) {
+          position: absolute;
+          z-index: 3;
+          top: -1.06vw;
+          left: -1.06vw;
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 4.8vw;
           font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 24px */
-          letter-spacing: 1.5px;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.48vw;
+          background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
+            no-repeat;
+          background-size: cover;
+          width: 8vw;
+          height: 8vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        & > div:nth-child(2) {
+          position: relative;
+        }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 2.93vw;
+          height: 6.4vw;
+          background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
+            no-repeat;
+          background-size: cover;
+          right: -2.8vw;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        & > div:nth-child(3) {
+          color: var(--Grey-Dark, #333);
+          /* 手機版/MB-Small Text */
+          font-family: 'Noto Sans HK';
+          font-size: 3.73vw;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 5.33vw;
+          margin-top: 5px;
+          text-align: center;
+        }
+      }
+      .implant-step-item:last-child {
+        & > div:nth-child(2)::after {
+          content: none;
         }
       }
     }
-    & > div:nth-child(2) {
-      & > div:nth-child(1) {
-        & > div:nth-child(1) {
-          & > span:nth-child(2) {
-            position: absolute;
-            background: var(--Blue-Deep, #00aeff);
-            border: 5px solid var(--Blue-Light, #b9d9fc);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            border-radius: 50%;
-            justify-content: center;
-            align-items: center;
-            right: -20%;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-        }
+  }
+  .cleaning-video {
+    .cleaning-video-content {
+      padding-bottom: 20px;
+      background: linear-gradient(
+        181deg,
+        rgba(255, 255, 255, 0) 0.52%,
+        var(--Pink-Pale, #ffe9ec) 102.02%
+      );
+      .cleaning-video-content-iframe {
+        width: 272px;
+        height: 152px;
+        margin: 15px auto 30px;
       }
     }
-    & > div:nth-child(3) {
-      & > div:nth-child(1) {
-        & > div:nth-child(1) {
-          & > span:nth-child(2) {
-            position: absolute;
-            background: var(--Orange, #f90);
-            border: 5px solid #ffcd81;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            border-radius: 50%;
-            justify-content: center;
-            align-items: center;
-            right: -20%;
-            top: 50%;
-            transform: translateY(-50%);
-          }
-        }
+    .cleaning-video-content-text {
+      box-sizing: border-box;
+      padding: 0 30px;
+      p {
+        color: var(--Grey-Dark, #333);
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 18px */
       }
+      display: flex;
+      flex-direction: column;
+      gap: 10px 0;
     }
   }
   .bottom_info {
@@ -3332,7 +1487,7 @@ const removeSurroundingParentheses = (str) => {
         position: relative;
       }
       & > div:nth-child(1)::after {
-        content: "";
+        content: '';
         width: 55%;
         height: 2px;
         background: #333;

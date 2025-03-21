@@ -182,7 +182,7 @@ const brandList = [
 
 // 常見問題
 const problemData = {
-  title: 'pages.dental-service.implant.problem.title',
+  title: '<span>植牙常見</span><span>問題</span>',
   lists: [
     {
       Q: 'pages.dental-service.implant.problem.lists[0].Q',
@@ -745,7 +745,7 @@ const problemData = {
     <!-- 聯絡我們 -->
     <BranchAddress />
     <ContactForm-new2 />
-    <PageFooter />
+    <FooterV2 />
     <AsideV2 />
   </div>
 </template>
