@@ -253,6 +253,41 @@ const toggleService = (service) => {
   }
 }
 
+const servicePreferential = [
+  {
+    name: '洗牙',
+    text: `-----\n【备注信息： 洁牙中心诉求 |  告知客人，费用不止88一种，医生视情况确定费用细节，以免与一线人员产生价格误会】\n超聲波洗牙--優惠價：¥88、原價 ¥ -- ；\n菌斑導向專業洗牙（含鹽）--優惠價：¥168、原價 ¥350；\n菌斑導向專業洗牙（無鹽）--價格：¥550；`,
+  },
+  {
+    name: '種植牙',
+    text: `春日感謝限定優惠：歐美種植牙 即減￥2,000/顆`,
+  },
+  {
+    name: '矯齒(箍牙)',
+    text: `春日感謝限定優惠：即減￥3,000`,
+  },
+  {
+    name: '隱形矯正',
+    text: `春日感謝限定優惠：即減￥5,000`,
+  },
+  {
+    name: '兒童牙科',
+    text: `-----\n兒童洗牙：¥150；\n兒童補牙：¥500/顆；\n牙齒塗氟：¥200/全口；\n乳齒拔除：¥300/顆；\n窩溝封閉：¥300/顆。`,
+  },
+  {
+    name: '補牙',
+    text: `美國樹脂補牙：首颗7折，第二颗起8折(非牙髓治疗，原价300元/颗)`,
+  },
+  {
+    name: '全瓷貼片',
+    text: `春日感謝限定優惠：E.MAX￥1,980/顆`,
+  },
+  {
+    name: '牙齒美白',
+    text: `藍光美白：￥980/次`,
+  },
+]
+
 const submitForm = async () => {
   wasValidated.value = true
   showServiceError.value = selectedServices.value.length === 0
@@ -290,6 +325,16 @@ const submitForm = async () => {
   bodyData.append('discountCoupon', formData.value.discountCoupon ? '是' : '否')
   bodyData.append('explain', formData.value.notes)
 
+  let _preferential = servicePreferential.find((item) =>
+    formattedSelectedServices.includes(item.name)
+  )
+
+  if (_preferential) {
+    bodyData.append('preferential', _preferential.text)
+  } else {
+    bodyData.append('preferential', `無`)
+  }
+
   const formNew = {
     name: formData.value.name,
     phone: fullPhoneNumber,
@@ -318,10 +363,8 @@ const submitForm = async () => {
         type: 'success',
         duration: 0,
       })
-
-      window.location.href = `/messagePage`
-      postData(formNew, formattedSelectedServices)
-      // router.push('/SuccessfulForm')
+      localStorage.setItem('contactForm', JSON.stringify(formNew))
+      router.push({ path: `/messagePage?c=${response.status}` })
     } else {
       ElMessage({
         showClose: true,
@@ -329,17 +372,13 @@ const submitForm = async () => {
         type: 'error',
       })
     }
-  }  catch (error) {
+  } catch (error) {
+    postData(formNew, _preferential)
+    errorserver(formNew, _preferential)
     console.error('Error:', error)
   }
-  // else {
-  //   postData(_form, _preferential)
-  //   errorserver(_form, _preferential)
-  // }
-  // isLoading.value = false
-  // appState.setIsShowForm(false)
+  isLoading.value = false
 }
-
 
 const postData = async (_form, _preferential) => {
   let _message = {
@@ -383,6 +422,55 @@ const postData = async (_form, _preferential) => {
   }
 }
 
+const errorserver = async (_form, _preferential) => {
+  let emailLists = [
+    'vikim_lee@outlook.com',
+    'jamie_chung@cmermedical.com',
+    'info@ckjhk.com',
+    'joanna.choi@cmermedical.com',
+    'hazel.ho@cmermedical.com',
+    '1934019260@qq.com',
+  ]
+  let _EmailformData = []
+  for (var i = 0; i < emailLists.length; i++) {
+    let _message = {
+      to: [
+        {
+          email: emailLists[i],
+        },
+      ],
+      from: {
+        email: 'MS_mCYizS@trial-pq3enl6ymv5g2vwr.mlsender.net',
+        name: 'ckjhk.com',
+      },
+      subject: '来自ckjhk.com的預約表單信息-备用服务',
+      html: `<p>名称：${_form.name}</p>
+        <p>联系方式：${areaCode.value} ${_form.phone}</p>
+        <p>服务：${_form.service}</p>
+        <p>来源：${location.href}</p>
+        <p>預約日期：${_form.dayOne}</p>
+        <p>診症區域：${_form.area}</p>
+        <p>使用長者醫療券：${(_form.careVoucher = _form.careVoucher
+          ? '是'
+          : '否')}</p>
+        <p<p>領取2000元種植牙現金券:${(_form.discountCoupon =
+          _form.discountCoupon ? '是' : '否')}</p>
+        <p>优惠信息：${_preferential ? _preferential.text : '無'}</p><br/>
+        <p>提交時間：${new Date().toLocaleString()}</p>
+        <p>备注信息：服务器离线由备用服务推送</p>`,
+    }
+    _EmailformData.push(_message)
+  }
+  const { data } = await useFetch('/sendmail/v1/bulk-email', {
+    method: 'post',
+    headers: {
+      Authorization:
+        'Bearer mlsn.af3269665a0933f2eb9ec9cbf7d1aca61448d23387c688190873b6e3fa19274c',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(_EmailformData),
+  })
+}
 
 onMounted(() => {
   const today = new Date().toISOString().split('T')[0]
