@@ -585,10 +585,7 @@ const problemData = {
                 香港醫療制度監督，臨床5年以上牙醫種牙，<span>成功率超過98%</span>。具備龐大經驗實力牙醫專科院長把關，已具備完善一站式售後服務。
               </p>
               <p>
-                <img
-                  src="https://static.ckjhk.com/ckj-image/2025031809230501.svg"
-                  alt=""
-                />
+                <span><i>立即預約牙科服務</i></span>
               </p>
               <ul>
                 <li>
@@ -1609,13 +1606,61 @@ const problemData = {
 
         & > p:nth-child(2) {
           margin: 30px 0;
-          width: 13.75vw;
-          height: 1.875vw;
-
-          & > svg {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+          & > span {
+            position: relative;
+            i {
+              position: relative;
+              z-index: 10;
+              text-align: center;
+              font-family: 'Noto Sans HK';
+              font-size: 30px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 3px;
+              background: linear-gradient(
+                90deg,
+                var(--Purple, #9356ba) 0%,
+                var(--Brand-Color, #f8298a)
+              );
+              background-clip: text;
+              color: transparent;
+              display: inline-block;
+              white-space: nowrap;
+            }
+          }
+          & > span::after {
+            content: '立即預約牙科服務';
+            white-space: nowrap;
+            position: absolute;
+            z-index: 3;
+            color: khaki;
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 3px;
+            left: 0;
+            text-shadow: -2px 2px #f72a8a, 2px -2px #f72a8a, -2px -2px #f72a8a,
+              2px 0 #f72a8a;
+          }
+          & > span::before {
+            content: '立即預約牙科服務';
+            white-space: nowrap;
+            position: absolute;
+            z-index: 5;
+            left: 0;
+            text-shadow: -1px 1px #fff, 1px -1px #fff, -1px -1px #fff,
+              1px 0 #fff;
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 3px;
           }
         }
 
@@ -2403,11 +2448,58 @@ const problemData = {
             margin: 1.865vw 0;
             width: 43.413vw;
             height: 5.96vw;
-
-            & > img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
+            & > span {
+              position: relative;
+              i {
+                position: relative;
+                z-index: 10;
+                text-align: center;
+                font-family: 'Noto Sans HK';
+                font-size: 17.76px;
+                font-style: normal;
+                font-weight: 900;
+                line-height: normal; /* 83.333% */
+                letter-spacing: 2.864px;
+                background: linear-gradient(
+                  90deg,
+                  var(--Purple, #9356ba) 0%,
+                  var(--Brand-Color, #f8298a)
+                );
+                background-clip: text;
+                color: transparent;
+                display: inline-block;
+              }
+            }
+            & > span::after {
+              content: '立即預約牙科服務';
+              position: absolute;
+              z-index: 3;
+              color: khaki;
+              text-align: center;
+              font-family: 'Noto Sans HK';
+              font-size: 17.76px;
+              font-style: normal;
+              font-weight: 900;
+              line-height: normal; /* 83.333% */
+              letter-spacing: 2.864px;
+              left: 0;
+              text-shadow: -2px 2px #f72a8a, 2px -2px #f72a8a, -2px -2px #f72a8a,
+                2px 0 #f72a8a;
+            }
+            & > span::before {
+              content: '立即預約牙科服務';
+              position: absolute;
+              z-index: 5;
+              left: 0;
+              text-shadow: -1px 1px #fff, 1px -1px #fff, -1px -1px #fff,
+                1px 0 #fff;
+              text-align: center;
+              font-family: 'Noto Sans HK';
+              font-size: 17.76px;
+              font-style: normal;
+              font-weight: 900;
+              line-height: normal; /* 83.333% */
+              letter-spacing: 2.864px;
             }
           }
 
