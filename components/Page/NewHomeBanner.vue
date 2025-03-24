@@ -1613,7 +1613,7 @@ const getWindowWidth = () => {
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;
@@ -1888,7 +1888,7 @@ const getWindowWidth = () => {
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;

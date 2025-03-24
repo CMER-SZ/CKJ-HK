@@ -322,12 +322,15 @@ const submitForm = async () => {
         type: 'error',
       })
     }
-  } else {
-    postData(_form, _preferential)
-    errorserver(_form, _preferential)
+  }  catch (error) {
+    console.error('Error:', error)
   }
-  isLoading.value = false
-  appState.setIsShowForm(false)
+  // else {
+  //   postData(_form, _preferential)
+  //   errorserver(_form, _preferential)
+  // }
+  // isLoading.value = false
+  // appState.setIsShowForm(false)
 }
 
 
@@ -373,47 +376,6 @@ const postData = async (_form, _preferential) => {
   }
 }
 
-const postData = async (_form, _preferential) => {
-  let _message = {
-    msgtype: 'text',
-    text: {
-      content: `名称：${_form.name}
-  聯繫方式：${areaCode.value} ${_form.phone}
-  服務：${_form.service}
-  來源：${location.href}
-  優惠信息：${_preferential ? _preferential.text : '無'}
-  預約日期：${_form.dayOne}
-  診症區域：${_form.area}
-  使用長者醫療券：${(_form.careVoucher = _form.careVoucher ? '是' : '否')}
-  領取2000元種植牙現金券:${(_form.discountCoupon = _form.discountCoupon
-    ? '是'
-    : '否')}
-  提交時間：${new Date().toLocaleString()}
-  备注信息：服务器离线由备用服务推送`,
-    },
-  }
-  let { data } = await useFetch(
-    '/dingtalk/robot/send?access_token=29f5dd6fd3019078bea0734c5dcfdea2e9b1792e238860a907faf486ae17ba55',
-    {
-      method: 'post',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify(_message),
-    }
-  )
-  if (data) {
-    localStorage.setItem('contactForm', JSON.stringify(_form))
-    reForm()
-    window.location.href = `/messagePage`
-  } else {
-    ElMessage({
-      showClose: true,
-      message: '服務異常，請稍後重試',
-      type: 'error',
-    })
-  }
-}
 
 onMounted(() => {
   const today = new Date().toISOString().split('T')[0]

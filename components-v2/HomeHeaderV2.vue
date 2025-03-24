@@ -1682,13 +1682,13 @@ const implantItem = [
 }
 
 @media screen and (max-width: 768px) {
-  .header-content .a-header-content-in{
+  .header-content .a-header-content-in {
     font-size: 16px !important;
   }
 }
 
 .swiperBox {
-  // margin-top: 5.25vw;
+  margin-top: 115px;
 }
 .headerBox01 {
   position: relative;
@@ -2194,7 +2194,7 @@ const implantItem = [
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;
@@ -2469,7 +2469,7 @@ const implantItem = [
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;
@@ -2776,9 +2776,9 @@ const implantItem = [
   body {
     padding-bottom: 48px;
   }
-.offcanvas{
-  padding-bottom: 54px;
-}
+  .offcanvas {
+    padding-bottom: 54px;
+  }
   .navbar {
     padding-left: 20px;
     padding-right: 20px;
@@ -2848,10 +2848,10 @@ const implantItem = [
     transition: all 0.3s ease;
     transform: translateX(100%);
   }
- .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover{
-  background: white;
-  color: var(--New-Theme-Color, #d2337d) !important;
- }
+  .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover {
+    background: white;
+    color: var(--New-Theme-Color, #d2337d) !important;
+  }
 
   .offcanvas-end
     .offcanvas-body
@@ -2951,6 +2951,9 @@ const implantItem = [
 }
 /* PC端菜单样式 */
 @media (min-width: 992px) {
+  .swiperBox {
+    margin-top: 115px;
+  }
   .navbar {
     padding: 0;
     box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
@@ -3200,7 +3203,7 @@ const implantItem = [
           &:nth-child(8):hover {
             background: none;
           }
-  &:nth-child(9):hover {
+          &:nth-child(9):hover {
             background: none;
           }
           .nav-link {
