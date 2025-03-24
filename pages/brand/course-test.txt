@@ -362,7 +362,7 @@ onMounted(()=>{
       </div>
       <BranchAddress />
     </div>
-    <PageFooter />
+    <FooterV2 />
     <Page
      />
   </div>

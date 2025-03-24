@@ -474,8 +474,8 @@ if (process.server) {
       <BranchAddress />
       <ContactForm-new2 />
     </div>
-    <PageFooter />
-    <PageNewNavbarSide />
+    <FooterV2 />
+    <AsideV2 />
   </div>
 </template>
 

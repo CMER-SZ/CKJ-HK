@@ -27,7 +27,7 @@ onMounted(() => {
         </div>
       </div>
       <slot name="footer">
-        <PageFooter />
+        <FooterV2 />
       </slot>
     </div>
     <slot name="app-after" />

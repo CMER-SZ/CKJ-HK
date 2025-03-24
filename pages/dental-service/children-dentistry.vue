@@ -508,7 +508,7 @@ onMounted(() => {
         </div>
       </nuxt-link>
     </div>
-    <PageFooter />
+    <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
     <AsideV2/>

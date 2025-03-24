@@ -455,7 +455,7 @@ const cleaningStepList = [
       <ContactForm-new2 />
     </div>
     <FooterV2 />
-    <!-- <PageFooter /> -->
+    <!-- <FooterV2 /> -->
     <AsideV2 />
   </div>
 </template>

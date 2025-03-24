@@ -424,7 +424,7 @@ const problemData = {
         </div>
       </div>
     </div>
-    <PageFooter />
+    <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
           <AsideV2/>

@@ -386,7 +386,7 @@ onMounted(() => {
       <BranchAddress />
      <ContactForm-new2 />
     </div>
-    <PageFooter />
+    <FooterV2 />
     <!-- <PageNavbar :langType="langCur" /> -->
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
         <PageNavbar :langType="langCur"  v-else /> -->

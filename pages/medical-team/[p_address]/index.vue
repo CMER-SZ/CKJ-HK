@@ -304,7 +304,7 @@ onMounted(() => {
       <BranchAddress />
       <ContactForm-new2 />
     </div>
-    <PageFooter />
+    <FooterV2 />
     <!-- <PageNavbar :showDialogBox="(top<(height / 3 * 2)) && (bottom > (height / 3))" /> -->
     <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar :showDialogBox="(top<(height / 3 * 2)) && (bottom > (height / 3))" v-else />

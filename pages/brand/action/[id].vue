@@ -455,7 +455,7 @@ onMounted(() => {
       <!-- <div @click="handlegetData">獲取數據</div> -->
       <BranchAddress />
     </div>
-    <PageFooter />
+    <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
     <AsideV2/>
