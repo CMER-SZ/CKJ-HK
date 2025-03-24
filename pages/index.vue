@@ -645,10 +645,8 @@ const hideDom = ref(false)
 
 <template>
   <div>
-   
-   <HomeHeaderV2   :headerConfig="headerConfigData"
-       />
-<!-- 
+    <HomeHeaderV2 :headerConfig="headerConfigData" />
+    <!-- 
     <PageNewHeader :headerConfig="headerConfigData" v-else /> -->
 
     <!-- <PageNewHomeBanner
@@ -658,9 +656,6 @@ const hideDom = ref(false)
     <PageNewHeader :headerConfig="headerConfigData" v-else /> -->
 
     <div class="indexPage">
-
-
-
       <!-- 最新消息 -->
       <!-- <LatestNews /> -->
       <!-- 牙科服務 -->
@@ -1362,8 +1357,7 @@ const hideDom = ref(false)
       <ServiceProblem :problem-data="problemData" />
       <!-- 聯絡我們 -->
       <BranchAddress />
-      <AppointmentFormV2/>
-      
+      <AppointmentFormV2 />
     </div>
     <!-- <div style="position: fixed; top: 50%; left: 0;z-index: 9999;">{{top}} --- {{bottom}} --- {{(top<(height / 3 * 2)) && (bottom > 0)}}</div> -->
     <!-- <PageAdbox /> -->
@@ -1381,7 +1375,6 @@ const hideDom = ref(false)
 </template>
 
 <style lang="scss" scoped>
-
 @keyframes numAnim {
   100% {
     // transform: translateY(calc((100% - 96px) * -1));
