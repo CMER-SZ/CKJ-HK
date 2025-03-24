@@ -312,7 +312,14 @@ const submitForm = async () => {
     )
 
     if (response.ok) {
-      window.location.href = '/SuccessfulForm'
+      ElMessage({
+        showClose: true,
+        message: '表單提交成功！我們會盡快回覆閣下。',
+        type: 'success',
+        duration: 0,
+      })
+
+      window.location.href = `/messagePage`
       postData(formNew, formattedSelectedServices)
       // router.push('/SuccessfulForm')
     } else {
