@@ -235,7 +235,7 @@ const goToPage = (index: number) => {
   gap: 0 17px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   transition: transform 0.5s ease-in-out;
 }
 

@@ -623,6 +623,13 @@ const carouselItems = [
     title: '顏麗口腔診所',
     address: '深圳市羅湖區羅湖口岸商業城1091號',
     href: '/contactUs#contactUs'
+  },
+    {
+    hasCoupon: false,
+    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc7.avif',
+    title: '恒樂口腔診所',
+    address: '深圳市羅湖區羅湖口岸商業城1091號',
+    href: '/contactUs#contactUs'
   }
 ];
 </script>

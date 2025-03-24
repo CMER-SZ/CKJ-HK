@@ -289,10 +289,13 @@ const submitForm = async () => {
   bodyData.append('explain', formData.value.notes)
 
   try {
-    const response = await fetch('https://admin.ckjhk.com/api.php/cms/addmsg', {
-      method: 'POST',
-      body: bodyData,
-    })
+    const response = await fetch(
+      'https://admin.ckjhk.com/api.php/cms/addform/fcode/3',
+      {
+        method: 'POST',
+        body: bodyData,
+      }
+    )
 
     if (response.ok) {
       window.location.href = '/SuccessfulForm'
