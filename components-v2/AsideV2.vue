@@ -397,9 +397,9 @@ onMounted(() => {
 // pc侧边栏
 .contact-widget {
   position: fixed;
-  right: 118px;
+  right: 37px;
   // right: clamp(50px, 9.79vw, 188px);
-  bottom: 70px;
+  top: 341px;
   z-index: 120;
   display: flex;
   flex-direction: column;
@@ -503,7 +503,8 @@ onMounted(() => {
     position: fixed;
     z-index: 920;
     right: 0;
-    bottom: 40%;
+    top: 600px;
+    bottom: auto;
 
     span {
       writing-mode: vertical-rl;

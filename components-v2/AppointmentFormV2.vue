@@ -275,8 +275,6 @@ const submitForm = async () => {
   const fullPhoneNumber = formData.value.areaCode + formData.value.phoneNumber
   const formattedSelectedServices = selectedServices.value.join(',')
 
-  console.log(formData.value)
-
   const bodyData = new FormData()
   bodyData.append('contact_name', formData.value.name)
   bodyData.append('phone', fullPhoneNumber)
@@ -287,6 +285,18 @@ const submitForm = async () => {
   bodyData.append('careVoucher', formData.value.careVoucher ? '是' : '否')
   bodyData.append('discountCoupon', formData.value.discountCoupon ? '是' : '否')
   bodyData.append('explain', formData.value.notes)
+
+  const formNew = {
+    name: formData.value.name,
+    phone: fullPhoneNumber,
+    service: formattedSelectedServices,
+    formUrl: window.location.href,
+    area: formData.value.area,
+    dayOne: formData.value.appointmentDate,
+    careVoucher: formData.value.careVoucher ? '是' : '否',
+    discountCoupon: formData.value.discountCoupon ? '是' : '否',
+    explain: formData.value.notes,
+  }
 
   try {
     const response = await fetch(
@@ -299,6 +309,7 @@ const submitForm = async () => {
 
     if (response.ok) {
       window.location.href = '/SuccessfulForm'
+      postData(formNew, formattedSelectedServices)
       // router.push('/SuccessfulForm')
     } else {
       alert('提交失败，请检查输入的信息')
@@ -307,6 +318,48 @@ const submitForm = async () => {
     alert('网络错误，请稍后再试')
   } finally {
     isLoading.value = false
+  }
+}
+
+const postData = async (_form, _preferential) => {
+  let _message = {
+    msgtype: 'text',
+    text: {
+      content: `名称：${_form.name}
+  聯繫方式：${areaCode.value} ${_form.phone}
+  服務：${_form.service}
+  來源：${location.href}
+  優惠信息：${_preferential ? _preferential.text : '無'}
+  預約日期：${_form.dayOne}
+  診症區域：${_form.area}
+  使用長者醫療券：${(_form.careVoucher = _form.careVoucher ? '是' : '否')}
+  領取2000元種植牙現金券:${(_form.discountCoupon = _form.discountCoupon
+    ? '是'
+    : '否')}
+  提交時間：${new Date().toLocaleString()}
+  备注信息：服务器离线由备用服务推送`,
+    },
+  }
+  let { data } = await useFetch(
+    '/dingtalk/robot/send?access_token=29f5dd6fd3019078bea0734c5dcfdea2e9b1792e238860a907faf486ae17ba55',
+    {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(_message),
+    }
+  )
+  if (data) {
+    localStorage.setItem('contactForm', JSON.stringify(_form))
+    reForm()
+    window.location.href = `/messagePage`
+  } else {
+    ElMessage({
+      showClose: true,
+      message: '服務異常，請稍後重試',
+      type: 'error',
+    })
   }
 }
 
@@ -677,6 +730,7 @@ onMounted(() => {
   top: 2rem;
   border: 1px solid #ebeef5;
   margin: 0 auto;
+  z-index: 99;
   transition: opacity 0.3s, transform 0.4s, top 0.4s;
 }
 

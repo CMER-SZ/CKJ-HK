@@ -41,7 +41,12 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageNewHeader :headerConfig="headerConfigData" />
+    <!-- <PageNewHeader :headerConfig="headerConfigData" /> -->
+
+<HomeHeaderV2   :headerConfig="headerConfigData"
+       />
+
+
     <div class="disclaimer">
       <div class="disclaimer-title">免責條款</div>
       <div class="disclaimer-context">
