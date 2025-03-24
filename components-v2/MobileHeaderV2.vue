@@ -2996,7 +2996,7 @@ const implantItem = [
   }
    .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover{
   background: white;
-  color: var(--New-Theme-Color, #d2337d);;
+  color: var(--New-Theme-Color, #d2337d) !important;
  }
   .offcanvas-end
     .offcanvas-body
@@ -3390,7 +3390,7 @@ const implantItem = [
           }
 
           &:first-child .nav-link {
-            padding-left: 0;
+            // padding-left: 0;
           }
 
           &:last-child .nav-link {

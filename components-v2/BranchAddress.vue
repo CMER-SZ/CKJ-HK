@@ -1072,7 +1072,9 @@ const carouselItems = [
               max-width: 190px;
               flex-shrink: 0;
               img {
+                min-width: 190px;
                 height: 100%;
+                max-height: 143px;
               }
             }
 
