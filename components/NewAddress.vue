@@ -691,7 +691,7 @@ watch(appState, (n, o) => {
 }
 @media screen and (max-width: 768px) {
   .index-contactUs {
-    padding: 90px 0 0;
+    padding: 30px 0 0;
     &-t {
       flex-direction: column;
     }

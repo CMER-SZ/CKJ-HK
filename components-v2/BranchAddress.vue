@@ -2156,6 +2156,7 @@
         </div>
       </div>
     </div>
+    <NewAddress class="d-lg-none" />
   </section>
 </template>
 
