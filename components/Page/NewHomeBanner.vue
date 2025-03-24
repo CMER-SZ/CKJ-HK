@@ -1107,7 +1107,7 @@ const getWindowWidth = () => {
 }
 
 .swiperBox {
-  margin-top: 5.25vw;
+  // margin-top: 5.25vw;
 }
 .headerBox01 {
   position: relative;

@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <section class="v2-footer">
-    <div class="v2-footer-in container">
+  <section class="v2-footer ">
+    <div class="v2-footer-in ckj-container">
       <div class="v2-footer-in-left">
         <div>
           <svg
@@ -221,8 +221,10 @@
             }
           }
           .wechat-active-show {
+            border: 1px solid red;
+            z-index: 1;
             display: none;
-            width: 200px;
+            width: 300px;
             height: auto;
             position: absolute;
             bottom: 100%;

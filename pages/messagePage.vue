@@ -67,25 +67,15 @@ onMounted(() => {
 
 <template>
   <div>
-    <!-- <PageHeader
-      v-if="windowWidth < 768"
-      :headerConfig="headerConfig"
-      :isPageNoBanner="true"
-    />
-    <PageNewHeaderMenu
-      v-if="windowWidth > 768"
-      :headerConfig="headerConfig"
-      :isPageNoBanner="true"
-    />
-    <PagePcBannerNoHome
-      v-if="windowWidth > 768"
-      :headerConfig="headerConfig"
-      :isPageNoBanner="true"
-    /> -->
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" :isPageNoBanner="true"  />
+    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" :isPageNoBanner="true"  />
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" :isPageNoBanner="true"  /> -->
 
-    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig"        :isPageNoBanner="true"/>
-    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig"       :isPageNoBanner="true" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig"       :isPageNoBanner="true" />
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
+
+
     <div class="main">
       <div class="index_title smallPageCon">聯絡我們</div>
       <div class="tabNav noTitle smallPageCon">

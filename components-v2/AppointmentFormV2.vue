@@ -290,23 +290,31 @@ const submitForm = async () => {
   bodyData.append('discountCoupon', formData.value.discountCoupon ? '是' : '否')
   bodyData.append('explain', formData.value.notes)
 
-  const host = ref('https://admin.ckjhk.com/api.php/cms/addform/fcode/3')
-  const { data } = await useFetch(host, {
-    method: 'post',
-    body: bodyData,
-  })
-  let res = JSON.parse(data.value)
-  if (res) {
-    if (res.code) {
-      ElMessage({
-        showClose: true,
-        message: '表單提交成功！我們會盡快回覆閣下。',
-        type: 'success',
-        duration: 0,
-      })
-      localStorage.setItem('contactForm', JSON.stringify(_form))
-      reForm()
-      router.push({ path: `/messagePage?c=${res.code}` })
+  const formNew = {
+    name: formData.value.name,
+    phone: fullPhoneNumber,
+    service: formattedSelectedServices,
+    formUrl: window.location.href,
+    area: formData.value.area,
+    dayOne: formData.value.appointmentDate,
+    careVoucher: formData.value.careVoucher ? '是' : '否',
+    discountCoupon: formData.value.discountCoupon ? '是' : '否',
+    explain: formData.value.notes,
+  }
+
+  try {
+    const response = await fetch(
+      'https://admin.ckjhk.com/api.php/cms/addform/fcode/3',
+      {
+        method: 'POST',
+        body: bodyData,
+      }
+    )
+
+    if (response.ok) {
+      window.location.href = '/SuccessfulForm'
+      postData(formNew, formattedSelectedServices)
+      // router.push('/SuccessfulForm')
     } else {
       ElMessage({
         showClose: true,
@@ -365,55 +373,48 @@ const postData = async (_form, _preferential) => {
   }
 }
 
-const errorserver = async (_form, _preferential) => {
-  let emailLists = [
-    'vikim_lee@outlook.com',
-    'jamie_chung@cmermedical.com',
-    'info@ckjhk.com',
-    'joanna.choi@cmermedical.com',
-    'hazel.ho@cmermedical.com',
-    '1934019260@qq.com',
-  ]
-  let _EmailformData = []
-  for (var i = 0; i < emailLists.length; i++) {
-    let _message = {
-      to: [
-        {
-          email: emailLists[i],
-        },
-      ],
-      from: {
-        email: 'MS_mCYizS@trial-pq3enl6ymv5g2vwr.mlsender.net',
-        name: 'ckjhk.com',
-      },
-      subject: '来自ckjhk.com的預約表單信息-备用服务',
-      html: `<p>名称：${_form.name}</p>
-        <p>联系方式：${areaCode.value} ${_form.phone}</p>
-        <p>服务：${_form.service}</p>
-        <p>来源：${location.href}</p>
-        <p>預約日期：${_form.dayOne}</p>
-        <p>診症區域：${_form.area}</p>
-        <p>使用長者醫療券：${(_form.careVoucher = _form.careVoucher
-          ? '是'
-          : '否')}</p>
-        <p<p>領取2000元種植牙現金券:${(_form.discountCoupon =
-          _form.discountCoupon ? '是' : '否')}</p>
-        <p>优惠信息：${_preferential ? _preferential.text : '無'}</p><br/>
-        <p>提交時間：${new Date().toLocaleString()}</p>
-        <p>备注信息：服务器离线由备用服务推送</p>`,
-    }
-    _EmailformData.push(_message)
-  }
-  const { data } = await useFetch('/sendmail/v1/bulk-email', {
-    method: 'post',
-    headers: {
-      Authorization:
-        'Bearer mlsn.af3269665a0933f2eb9ec9cbf7d1aca61448d23387c688190873b6e3fa19274c',
-      'Content-Type': 'application/json',
+const postData = async (_form, _preferential) => {
+  let _message = {
+    msgtype: 'text',
+    text: {
+      content: `名称：${_form.name}
+  聯繫方式：${areaCode.value} ${_form.phone}
+  服務：${_form.service}
+  來源：${location.href}
+  優惠信息：${_preferential ? _preferential.text : '無'}
+  預約日期：${_form.dayOne}
+  診症區域：${_form.area}
+  使用長者醫療券：${(_form.careVoucher = _form.careVoucher ? '是' : '否')}
+  領取2000元種植牙現金券:${(_form.discountCoupon = _form.discountCoupon
+    ? '是'
+    : '否')}
+  提交時間：${new Date().toLocaleString()}
+  备注信息：服务器离线由备用服务推送`,
     },
-    body: JSON.stringify(_EmailformData),
-  })
+  }
+  let { data } = await useFetch(
+    '/dingtalk/robot/send?access_token=29f5dd6fd3019078bea0734c5dcfdea2e9b1792e238860a907faf486ae17ba55',
+    {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(_message),
+    }
+  )
+  if (data) {
+    localStorage.setItem('contactForm', JSON.stringify(_form))
+    reForm()
+    window.location.href = `/messagePage`
+  } else {
+    ElMessage({
+      showClose: true,
+      message: '服務異常，請稍後重試',
+      type: 'error',
+    })
+  }
 }
+
 onMounted(() => {
   const today = new Date().toISOString().split('T')[0]
   appointmentDate.value.setAttribute('min', today)
@@ -781,6 +782,7 @@ onMounted(() => {
   top: 2rem;
   border: 1px solid #ebeef5;
   margin: 0 auto;
+  z-index: 99;
   transition: opacity 0.3s, transform 0.4s, top 0.4s;
 }
 

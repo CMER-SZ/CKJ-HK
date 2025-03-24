@@ -139,19 +139,24 @@ watchEffect(() => {
 <style lang="scss">
 .uwy {
   .userway_buttons_wrapper {
-    left: calc(100vw - 80px) !important;
-    bottom: 100px !important;
+    left: calc(100vw - 50px) !important;
+    // bottom: 100px !important;
+    bottom: auto !important;
+    top: 110px !important;
+    .userway_dark {
+      background: #f8298a !important;
+    }
   }
 }
 
-:deep(.userway_buttons_wrapper) {
-  top: auto;
-  bottom: 100px !important;
-  left: 34px !important;
-  right: auto;
-  -ms-flex-pack: end;
-  justify-content: end;
-}
+// :deep(.userway_buttons_wrapper) {
+//   top: auto;
+//   bottom: 100px !important;
+//   left: 34px !important;
+//   right: auto;
+//   -ms-flex-pack: end;
+//   justify-content: end;
+// }
 
 #popup-alert-two {
   & > div {

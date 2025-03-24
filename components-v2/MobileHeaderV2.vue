@@ -2958,6 +2958,9 @@ const implantItem = [
     padding-bottom: 48px;
   }
 
+.offcanvas{
+  padding-bottom: 54px;
+}
   .navbar {
     padding-left: 20px;
     padding-right: 20px;
@@ -3027,6 +3030,10 @@ const implantItem = [
     transition: all 0.3s ease;
     transform: translateX(100%);
   }
+   .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover{
+  background: white;
+  color: var(--New-Theme-Color, #d2337d) !important;
+ }
   .offcanvas-end
     .offcanvas-body
     .navbar-nav
@@ -3371,11 +3378,13 @@ const implantItem = [
             }
           }
 
-          &:nth-child(8):hover,
-          &:nth-child(9):hover {
-            background: white;
+          &:nth-child(8):hover{
+            background: none;
           }
 
+    &:nth-child(9):hover {
+            background: none;
+          }
           .nav-link {
             anchor-name: var(--anchor);
             text-decoration: none;
@@ -3417,7 +3426,7 @@ const implantItem = [
           }
 
           &:first-child .nav-link {
-            padding-left: 0;
+            // padding-left: 0;
           }
 
           &:last-child .nav-link {
@@ -3495,8 +3504,8 @@ const implantItem = [
     padding-left: clamp(20px, 3.593vw, 69px);
     padding-right: clamp(20px, 5.72vw, 110px);
   }
-  .contact-widget {
-    right: 20px;
-  }
+  // .contact-widget {
+  //   right: 20px;
+  // }
 }
 </style>

@@ -357,20 +357,12 @@ onMounted(() => {
             ></a>
             <ul class="dropdown-menu">
               <li>
-                <a
-                  id="traditional"
-                  class="dropdown-item"
-            
-                  @click="glangs('t')"
+                <a id="traditional" class="dropdown-item" @click="glangs('t')"
                   >繁體</a
                 >
               </li>
               <li>
-                <a
-                  id="simplified"
-                  class="dropdown-item"
-               
-                  @click="glangs('s')"
+                <a id="simplified" class="dropdown-item" @click="glangs('s')"
                   >簡體</a
                 >
               </li>
@@ -591,7 +583,9 @@ onMounted(() => {
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExamplehead2"
                 aria-expanded="false"
-                >{{ $t('components.header.menuLists.menu_news.name') }}</nuxt-link
+                >{{
+                  $t('components.header.menuLists.menu_news.name')
+                }}</nuxt-link
               >
               <div
                 class="collapse collapse-horizontal secondaryMenu"
@@ -651,7 +645,7 @@ onMounted(() => {
                 </ul>
               </div>
             </li>
- 
+
             <li class="nav-item">
               <a
                 class="nav-link d-flex justify-content-between"
@@ -1195,7 +1189,9 @@ onMounted(() => {
           &:nth-child(9):hover {
             background: white;
           }
-
+          &:nth-child(9):hover {
+            background: none;
+          }
           .nav-link {
             anchor-name: var(--anchor);
             text-decoration: none;
