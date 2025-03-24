@@ -182,8 +182,11 @@ const problemData = {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
+         <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="contactUs">
       <div class="tabNav noTitle smallPageCon">
@@ -377,7 +380,7 @@ const problemData = {
         <a id="Q&A" class="hash_link"></a>
         <ServiceProblem :problem-data="problemData" />
       </div>
-      <ContactForm-new2 />
+      <AppointmentFormV2/>
       <div class="environment">
         <div class="environment-title">
           <div class="index_title">

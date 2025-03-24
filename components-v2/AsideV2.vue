@@ -36,9 +36,11 @@ const navFormClose = () => {
 }
 
 const toContactUs = () => {
-  const el = document.getElementById('contactUsFormNav')
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
+  if (process.client) {
+    const el = document.getElementById('contactUsFormNav')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
   }
 }
 onMounted(() => {
@@ -46,23 +48,25 @@ onMounted(() => {
   // window.addEventListener('scroll', hidePopupAlertNew)
 })
 const hiddenPopupAlert = () => {
-  const popupAlert = document.getElementById('popup-alert-two')
-  if (!popupAlert) return // Early exit if popupAlert is not found
-  const contactForm = ref<HTMLElement | null>(null)
-  contactForm.value = document.querySelector('.contactForm')
-  if (!contactForm.value) return // Early exit if contactForm is not found
+  if (process.client) {
+    const popupAlert = document.getElementById('popup-alert-two')
+    if (!popupAlert) return // Early exit if popupAlert is not found
+    const contactForm = ref<HTMLElement | null>(null)
+    contactForm.value = document.querySelector('.contactForm')
+    if (!contactForm.value) return // Early exit if contactForm is not found
 
-  const scrollTop =
-    document.documentElement.scrollTop || document.body.scrollTop
-  const contactFormTop = contactForm.value.offsetTop
-  const targetHeight = contactForm.value.offsetHeight
-  const windowHeight =
-    window.innerHeight || document.documentElement.clientHeight
-  const isInView =
-    contactFormTop < scrollTop + windowHeight &&
-    contactFormTop + targetHeight > scrollTop
+    const scrollTop =
+      document.documentElement.scrollTop || document.body.scrollTop
+    const contactFormTop = contactForm.value.offsetTop
+    const targetHeight = contactForm.value.offsetHeight
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight
+    const isInView =
+      contactFormTop < scrollTop + windowHeight &&
+      contactFormTop + targetHeight > scrollTop
 
-  popupAlert.style.display = isInView ? 'none' : 'flex'
+    popupAlert.style.display = isInView ? 'none' : 'flex'
+  }
 }
 
 // const hidePopupAlertNew = () => {
@@ -320,7 +324,7 @@ onMounted(() => {
 // 手机侧边样式
 .mobile-sider {
   position: fixed;
-  z-index: 8;
+  z-index: 920;
   right: 0;
   bottom: 70px;
 
@@ -497,7 +501,7 @@ onMounted(() => {
   // 侧边栏
   .mobile-sider {
     position: fixed;
-    z-index: 8;
+    z-index: 920;
     right: 0;
     bottom: 40%;
 

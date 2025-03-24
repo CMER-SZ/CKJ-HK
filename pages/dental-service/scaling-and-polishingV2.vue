@@ -73,7 +73,8 @@ const reasonData = {
 }
 
 const problemData = {
-  title: '<span class="d-md-block">洗牙</span><span>常見</span><span>問題</span>',
+  title:
+    '<span class="d-md-block">洗牙</span><span>常見</span><span>問題</span>',
   lists: [
     {
       Q: '定期洗牙頻率是多久？診所洗牙與家中刷牙分別？',
@@ -250,7 +251,7 @@ const cleaningStepList = [
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
@@ -295,7 +296,55 @@ const cleaningStepList = [
           </div>
         </div>
       </template>
+    </PagePcBannerNoHome> -->
+
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>超聲波洗牙</div>
+              <div>
+                <img src="~/assets/images/2025031309501301.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">
+              <span>星級客戶</span>
+              <span>朱咪咪<i>小姐</i></span>
+            </div>
+          </div>
+        </div>
+      </template>
+    </MobileHeaderV2>
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-image">
+            <img
+              src="https://static.ckjhk.com/ckj-image/e007cc40d522.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>超聲波洗牙</div>
+              <div>
+                <img src="~/assets/images/2025031309501301.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">
+              <span>星級客戶</span>
+              <span>朱咪咪<i>小姐</i></span>
+            </div>
+          </div>
+        </div>
+      </template>
     </PagePcBannerNoHome>
+
     <div>
       <section class="ckj-container type-technology">
         <div class="d-flex flex-row align-items-end subheading">

@@ -645,14 +645,22 @@ const hideDom = ref(false)
 
 <template>
   <div>
-    <!-- <AppointmentForm/> -->
-    <PageNewHomeBanner
+   
+   <HomeHeaderV2   :headerConfig="headerConfigData"
+       />
+<!-- 
+    <PageNewHeader :headerConfig="headerConfigData" v-else /> -->
+
+    <!-- <PageNewHomeBanner
       :headerConfig="headerConfigData"
       v-if="windowWidth > 768"
     />
-    <PageNewHeader :headerConfig="headerConfigData" v-else />
+    <PageNewHeader :headerConfig="headerConfigData" v-else /> -->
 
     <div class="indexPage">
+
+
+
       <!-- 最新消息 -->
       <!-- <LatestNews /> -->
       <!-- 牙科服務 -->
@@ -1354,7 +1362,8 @@ const hideDom = ref(false)
       <ServiceProblem :problem-data="problemData" />
       <!-- 聯絡我們 -->
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2/>
+      
     </div>
     <!-- <div style="position: fixed; top: 50%; left: 0;z-index: 9999;">{{top}} --- {{bottom}} --- {{(top<(height / 3 * 2)) && (bottom > 0)}}</div> -->
     <!-- <PageAdbox /> -->

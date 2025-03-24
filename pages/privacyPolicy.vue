@@ -90,7 +90,7 @@ onMounted(() => {
       <div class="privacyPolicy-btn" @click="goBack">
         <span>{{ '<' }}返回</span>
       </div>
-      <ContactForm-new2 />
+      <AppointmentFormV2/>
     </div>
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />

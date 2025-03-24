@@ -445,7 +445,9 @@ const removeSurroundingParentheses = (str) => {
 
 <template>
   <div>
-    <PageHeader :header-config="headerConfig" />
+    <!-- <PageHeader :header-config="headerConfig" /> -->
+    <PageHeaderV2 :headerConfig="headerConfig" />
+
     <div class="pageIn whitebgColor">
       <div class="index_title pageCon">
         {{ $t('pages.dental-service.title') }}
@@ -1035,7 +1037,7 @@ const removeSurroundingParentheses = (str) => {
       <ServiceProblem :problem-data="problemData" />
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
     <!-- <PageNavbar
@@ -1043,7 +1045,7 @@ const removeSurroundingParentheses = (str) => {
     /> -->
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 
@@ -1312,7 +1314,7 @@ const removeSurroundingParentheses = (str) => {
       flex-direction: column;
       color: var(--Theme-Color, #fc1682);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 30px;
       font-style: normal;
       font-weight: 400;
@@ -1336,7 +1338,7 @@ const removeSurroundingParentheses = (str) => {
         border-radius: 40px;
         background: var(--Theme-Color, #fc1682);
         color: var(--White, #fff);
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 28px;
         font-style: normal;
         font-weight: 500;
@@ -2725,7 +2727,7 @@ const removeSurroundingParentheses = (str) => {
         }
         & > span:nth-child(2) {
           color: var(--Theme-Color, #fc1682);
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 4.1vw;
           font-style: normal;
           font-weight: 600;
@@ -2734,7 +2736,7 @@ const removeSurroundingParentheses = (str) => {
         & > span:nth-child(4) {
           color: var(--Grey-Deep, #4d4d4d);
           text-align: justify;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 3.07vw;
           font-style: normal;
           font-weight: 600;
@@ -2765,7 +2767,7 @@ const removeSurroundingParentheses = (str) => {
     padding: 11px 15px;
     color: var(--White, #fff);
     text-align: justify;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;

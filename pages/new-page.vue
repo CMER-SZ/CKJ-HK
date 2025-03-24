@@ -21,6 +21,6 @@ useHead({
 
 <template>
   <div>
-    <ContactForm-new2 />
+    <AppointmentFormV2/>
   </div>
 </template>

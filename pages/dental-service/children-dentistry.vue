@@ -218,7 +218,12 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2
+      v-if="windowWidth < 768"
+      :headerConfig="headerConfig"
+      btnText="預約免費牙齒檢查"
+    >
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
@@ -243,12 +248,7 @@ onMounted(() => {
           </div>
         </div>
       </template>
-    </PageHeader>
-    <PageNewHeaderMenu
-      v-if="windowWidth > 768"
-      :headerConfig="headerConfig"
-      btnText="預約免費牙齒檢查"
-    />
+    </MobileHeaderV2>
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
@@ -282,6 +282,7 @@ onMounted(() => {
         </div>
       </template>
     </PagePcBannerNoHome>
+
     <div class="pageIn whitebgColor">
       <div class="index_title pageCon">
         {{ $t('pages.dental-service.title') }}
@@ -479,7 +480,7 @@ onMounted(() => {
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <div class="YaNavBox shownav" v-if="shownav_2">
       <img
@@ -511,7 +512,7 @@ onMounted(() => {
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 

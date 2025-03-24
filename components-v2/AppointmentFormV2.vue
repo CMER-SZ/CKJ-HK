@@ -2,8 +2,8 @@
   <div>
     <!-- 表单提示 -->
     <div class="popover-container">
-      <div id="submit-popover" popover>
-        <p>請勾選私隱政策以繼續提交。</p>
+      <div ref="submitPopover" popover>
+        <p>{{ tipShow }}</p>
       </div>
     </div>
 
@@ -13,7 +13,7 @@
         <span> <i>AI智能</i>預約及查詢系統 </span>
       </div>
       <form
-        id="appointmentForm"
+        ref="appointmentForm"
         class="needs-validation"
         :class="{ 'was-validated': wasValidated }"
         novalidate
@@ -40,6 +40,7 @@
             <div class="form-group position-relative">
               <label for="appointment-date">預約日期:</label>
               <input
+                ref="appointmentDate"
                 class="form-control"
                 placeholder="請填寫"
                 type="date"
@@ -144,7 +145,7 @@
                 <input
                   class="form-check-input custom-radio"
                   type="checkbox"
-                  v-model="formData.cashCoupon"
+                  v-model="formData.discountCoupon"
                 />
                 <span class="form-check-label">領取2000元種植牙現金券</span>
               </label>
@@ -178,7 +179,7 @@
 
     <!-- Spinner 加载动画 -->
     <div
-      id="overlay"
+      ref="overlay"
       class="position-fixed top-0 start-0 w-100 h-100 bg-white"
       :class="{ 'd-none': !isLoading }"
       style="z-index: 99"
@@ -194,7 +195,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-
+const route = useRoute()
+const router = useRouter()
 const services = ref([
   '種植牙',
   '活動假牙及牙橋',
@@ -212,7 +214,7 @@ const services = ref([
   '口腔檢查',
   '長者牙科',
 ])
-
+const tipShow = ref('請勾選私隱政策以繼續提交。')
 const selectedServices = ref([])
 const formData = ref({
   name: '',
@@ -222,13 +224,19 @@ const formData = ref({
   phoneNumber: '',
   notes: '',
   careVoucher: false,
-  cashCoupon: false,
+  discountCoupon: false,
   acknowledge: false,
 })
 
 const wasValidated = ref(false)
 const showServiceError = ref(false)
 const isLoading = ref(false)
+
+// 使用 ref 获取 DOM 节点
+const submitPopover = ref(null)
+const appointmentForm = ref(null)
+const appointmentDate = ref(null)
+const overlay = ref(null)
 
 const toggleService = (service) => {
   const index = selectedServices.value.indexOf(service)
@@ -239,6 +247,7 @@ const toggleService = (service) => {
     selectedServices.value.push(service)
   } else {
     selectedServices.value.splice(index, 1)
+    return
   }
 }
 
@@ -247,14 +256,17 @@ const submitForm = async () => {
   showServiceError.value = selectedServices.value.length === 0
 
   if (!formData.value.acknowledge) {
-    document.getElementById('submit-popover').showPopover()
+    tipShow.value = '請勾選私隱政策以繼續提交。'
+    submitPopover.value.showPopover()
     return
   }
 
   if (
     selectedServices.value.length === 0 ||
-    !document.getElementById('appointmentForm').checkValidity()
+    !appointmentForm.value.checkValidity()
   ) {
+    tipShow.value = '請選擇診症服務'
+    submitPopover.value.showPopover()
     return
   }
 
@@ -263,30 +275,35 @@ const submitForm = async () => {
   const fullPhoneNumber = formData.value.areaCode + formData.value.phoneNumber
   const formattedSelectedServices = selectedServices.value.join(',')
 
+  console.log(formData.value)
+
   const bodyData = new FormData()
-  bodyData.append('name', formData.value.name)
-  bodyData.append('appointmentDate', formData.value.appointmentDate)
-  bodyData.append('area', formData.value.area)
+  bodyData.append('contact_name', formData.value.name)
   bodyData.append('phone', fullPhoneNumber)
   bodyData.append('service', formattedSelectedServices)
-  bodyData.append('notes', formData.value.notes)
+  bodyData.append('formUrl', window.location.href)
+  bodyData.append('area', formData.value.area)
+  bodyData.append('dayOne', formData.value.appointmentDate)
   bodyData.append('careVoucher', formData.value.careVoucher ? '是' : '否')
-  bodyData.append('cashCoupon', formData.value.cashCoupon ? '是' : '否')
-  bodyData.append('source', window.location.href)
+  bodyData.append('discountCoupon', formData.value.discountCoupon ? '是' : '否')
+  bodyData.append('explain', formData.value.notes)
 
   try {
-    const response = await fetch('https://admin.ckjhk.com/api.php/cms/addmss', {
-      method: 'POST',
-      body: bodyData,
-    })
+    const response = await fetch(
+      'https://admin.ckjhk.com/api.php/cms/addform/fcode/3',
+      {
+        method: 'POST',
+        body: bodyData,
+      }
+    )
 
     if (response.ok) {
-      window.location.href = '/SuccessfulForm.html'
+      window.location.href = '/SuccessfulForm'
+      // router.push('/SuccessfulForm')
     } else {
       alert('提交失败，请检查输入的信息')
     }
   } catch (error) {
-    console.error('Error:', error)
     alert('网络错误，请稍后再试')
   } finally {
     isLoading.value = false
@@ -295,11 +312,60 @@ const submitForm = async () => {
 
 onMounted(() => {
   const today = new Date().toISOString().split('T')[0]
-  document.getElementById('appointment-date').setAttribute('min', today)
+  appointmentDate.value.setAttribute('min', today)
+
+  if (appointmentDate.value) {
+    appointmentDate.value.addEventListener('click', () => {
+      appointmentDate.value.showPicker()
+    })
+  }
 })
 </script>
 
 <style lang="scss" scoped>
+@keyframes btntestafterAnima {
+  0% {
+    border: 7px solid var(--Blue-Light, #b9d9fc);
+    height: 110%;
+    width: 110%;
+  }
+
+  19% {
+    border: 7px solid rgba(185, 217, 252, 0.5);
+    height: calc(100% + 28px);
+    width: calc(100% + 28px);
+  }
+
+  24% {
+    height: calc(100% + 28px);
+    width: calc(100% + 28px);
+  }
+
+  29% {
+    border: 0 solid rgba(185, 217, 252, 0);
+    height: calc(100% + 28px);
+    width: calc(100% + 28px);
+  }
+
+  to {
+    border: 0 solid rgba(185, 217, 252, 0);
+    height: calc(100% + 28px);
+    width: calc(100% + 28px);
+  }
+}
+
+@keyframes btntestAnima-btn {
+  5% {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+  }
+
+  8% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
 // 表单
 .appointmentForm-table {
   padding-top: 30px;
@@ -362,7 +428,8 @@ onMounted(() => {
       input,
       textarea {
         border-radius: 5px;
-        background: var(--Grey-Lightest, #f2f2f2);
+        border: none;
+        background: var(--Palest-Pink, #fff7f8);
         color: var(--Grey-Dark, #333);
         font-family: 'Noto Sans HK';
         font-size: 15px;
@@ -394,7 +461,7 @@ onMounted(() => {
         .area-address {
           padding-left: 8px;
           border: none;
-          background: var(--Grey-Lightest, #f2f2f2);
+          background: var(--Palest-Pink, #fff7f8);
           color: var(--Grey-Dark, #333);
           border-radius: 5px;
           background-image: none;
@@ -432,7 +499,7 @@ onMounted(() => {
             padding-left: 8px;
             padding-right: 8px;
             border-radius: 5px;
-            background: var(--Grey-Lightest, #f2f2f2);
+            background: var(--Palest-Pink, #fff7f8);
             color: var(--Grey-Dark, #333);
             font-family: 'Noto Sans HK';
             font-size: 15px;
@@ -538,7 +605,6 @@ onMounted(() => {
   // 提交按钮
   .Appointment-form-btn {
     max-width: 184px;
-    margin-top: 21px;
     border: none;
     padding: 8px 0;
     border-radius: 35px;
@@ -585,49 +651,6 @@ onMounted(() => {
       z-index: 0;
     }
   }
-
-  // @keyframes btntestafterAnima {
-  //   0% {
-  //     border: 7px solid var(--Blue-Light, #b9d9fc);
-  //     height: 110%;
-  //     width: 110%;
-  //   }
-
-  //   19% {
-  //     border: 7px solid rgba(185, 217, 252, 0.5);
-  //     height: calc(100% + 28px);
-  //     width: calc(100% + 28px);
-  //   }
-
-  //   24% {
-  //     height: calc(100% + 28px);
-  //     width: calc(100% + 28px);
-  //   }
-
-  //   29% {
-  //     border: 0 solid rgba(185, 217, 252, 0);
-  //     height: calc(100% + 28px);
-  //     width: calc(100% + 28px);
-  //   }
-
-  //   to {
-  //     border: 0 solid rgba(185, 217, 252, 0);
-  //     height: calc(100% + 28px);
-  //     width: calc(100% + 28px);
-  //   }
-  // }
-
-  // @keyframes btntestAnima-btn {
-  //   5% {
-  //     transform: scale(0.95);
-  //     -webkit-transform: scale(0.95);
-  //   }
-
-  //   8% {
-  //     transform: scale(1);
-  //     -webkit-transform: scale(1);
-  //   }
-  // }
 
   // 提示
   .form-mobile-tip {
@@ -681,7 +704,7 @@ onMounted(() => {
   .service-button {
     display: inline-block;
     border-radius: 5px;
-    background: var(--Grey-Lightest, #f2f2f2);
+    background: var(--Palest-Pink, #fff7f8);
     padding: 5px 13px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -724,6 +747,37 @@ onMounted(() => {
 }
 
 @media screen and (min-width: 960px) {
+  @keyframes btntestafterAnima {
+    0% {
+      border: 12px solid var(--Blue-Light, #b9d9fc);
+      height: 150%;
+      width: 110%;
+    }
+
+    19% {
+      border: 9px solid rgba(185, 217, 252, 0.5);
+      height: calc(100% + 50px);
+      width: calc(100% + 50px);
+    }
+
+    24% {
+      height: calc(100% + 28px);
+      width: calc(100% + 28px);
+    }
+
+    29% {
+      border: 0 solid rgba(185, 217, 252, 0);
+      height: calc(100% + 28px);
+      width: calc(100% + 28px);
+    }
+
+    to {
+      border: 0 solid rgba(185, 217, 252, 0);
+      height: calc(100% + 28px);
+      width: calc(100% + 28px);
+    }
+  }
+
   .appointmentForm-table {
     // max-width: 1100px;
     margin: 0 auto;
@@ -860,7 +914,7 @@ onMounted(() => {
               padding-left: 0;
               padding-right: 20px;
               border-radius: 5px;
-              background: var(--Grey-Lightest, #f2f2f2);
+              background: var(--Palest-Pink, #fff7f8);
               color: var(--Grey-Dark, #333);
               font-family: 'Noto Sans HK';
               font-family: FakePearl;
@@ -946,7 +1000,7 @@ onMounted(() => {
 
     .Appointment-form-btn {
       max-width: 250px;
-      margin-top: 30px;
+      margin-top: 10px;
       font-size: 30px;
       font-weight: 700;
       letter-spacing: 3px;
@@ -993,8 +1047,8 @@ onMounted(() => {
     .service-button {
       display: inline-block;
       border-radius: 10px;
-      border: 2px solid var(--Grey-Lightest, #f2f2f2);
-      background: var(--Grey-Lightest, #f2f2f2);
+      border: 2px solid var(--Palest-Pink, #fff7f8);
+      background: var(--Palest-Pink, #fff7f8);
       padding: 6px 32px;
       font-size: 22px;
       font-style: normal;

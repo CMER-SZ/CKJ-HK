@@ -365,9 +365,10 @@ const getWindowWidth = () => {
         <a class="a-header-content-in" href="#contactUsFormNav"
           >👏即日起網上預約領取2000元種植牙現金券！</a
         >
+
         <div
           ref="headerMenu"
-          class="pageCon header-content-in health_max_width"
+          class="pageCon header-content-in health_max_width d-none"
         >
           <div class="logo">
             <nuxt-link
@@ -484,6 +485,9 @@ const getWindowWidth = () => {
             </div>
           </div>
         </div>
+
+
+
       </div>
       <div class="explain_page_one" style="display: none">
         優惠只限於網上及電話預約客戶
@@ -528,6 +532,7 @@ const getWindowWidth = () => {
         <div>讓每一位顧客享受 <span>健康微笑之旅。</span></div>
       </div>
     </div>
+
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
       <div :class="['dialogBox-in', { 'show-in': _bool }]" @click.stop="">
         <div class="title">WeChat ID已複製</div>
