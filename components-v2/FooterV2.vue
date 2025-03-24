@@ -89,7 +89,7 @@
         target="_blank"
       >
         <img
-          src="https://static.cmereye.com/imgs/2024/10/87ad0da43715eae9.png"
+          src="~/assets/images/2025032416102004.svg"
           alt=""
         />
       </a>
@@ -99,7 +99,7 @@
         target="_blank"
       >
         <img
-          src="https://static.cmereye.com/imgs/2024/10/ac7851b9dd66bb63.png"
+          src="~/assets/images/2025032416102003.svg"
           alt=""
         />
       </a>
@@ -109,13 +109,13 @@
         target="_blank"
       >
         <img
-          src="https://static.cmereye.com/imgs/2024/10/2d3aba1b6cb227c0.png"
+          src="~/assets/images/2025032416102002.svg"
           alt=""
         />
       </a>
       <a class="wechat-media">
         <img
-          src="https://static.cmereye.com/imgs/2024/10/1bea0c6a70890bf6.png"
+          src="~/assets/images/2025032416102001.svg"
           alt=""
         />
         <div class="wechat-active-show">
@@ -289,6 +289,7 @@
       display: flex;
       gap: 0 4.53vw;
       align-items: center;
+      margin-bottom: 15px;
     }
     .v2-mobile-footer-bottom {
       width: 100%;

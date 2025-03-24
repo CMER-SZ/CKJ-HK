@@ -41,12 +41,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <!-- <PageNewHeader :headerConfig="headerConfigData" /> -->
-
-<HomeHeaderV2   :headerConfig="headerConfigData"
-       />
-
-
+    <HomeHeaderV2 :headerConfig="headerConfigData" />
     <div class="disclaimer">
       <div class="disclaimer-title">免責條款</div>
       <div class="disclaimer-context">
@@ -77,12 +72,12 @@ onMounted(() => {
       <div class="disclaimer-btn" @click="goBack">
         <span>{{ '<' }}返回</span>
       </div>
-      <AppointmentFormV2/>
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-          <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 

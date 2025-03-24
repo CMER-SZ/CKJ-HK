@@ -48,14 +48,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <!-- <PageNewHomeBanner :headerConfig="headerConfigData" v-if="windowWidth > 768" />
-    <PageNewHeader :headerConfig="headerConfigData" v-else /> -->
-
-    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
-
-
+    <HomeHeaderV2 :headerConfig="headerConfigData" />
     <div class="privacyPolicy">
       <div class="privacyPolicy-title">私隱政策</div>
       <div class="privacyPolicy-context">
