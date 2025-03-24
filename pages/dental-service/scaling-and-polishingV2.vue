@@ -73,7 +73,7 @@ const reasonData = {
 }
 
 const problemData = {
-  title: '<span>洗牙常見</span><span>問題</span>',
+  title: '<span class="d-md-block">洗牙</span><span>常見</span><span>問題</span>',
   lists: [
     {
       Q: '定期洗牙頻率是多久？診所洗牙與家中刷牙分別？',

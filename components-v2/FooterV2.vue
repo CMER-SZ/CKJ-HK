@@ -81,6 +81,74 @@
       >
     </div>
   </section>
+  <section class="v2-mobile-footer">
+    <div class="v2-mobile-footer-top">
+      <a
+        class="facebook-media"
+        href="https://www.facebook.com/ckjdental.hk/"
+        target="_blank"
+      >
+        <img
+          src="https://static.cmereye.com/imgs/2024/10/87ad0da43715eae9.png"
+          alt=""
+        />
+      </a>
+      <a
+        class="instagram-media"
+        href="https://www.instagram.com/ckj_hk/"
+        target="_blank"
+      >
+        <img
+          src="https://static.cmereye.com/imgs/2024/10/ac7851b9dd66bb63.png"
+          alt=""
+        />
+      </a>
+      <a
+        class="youtube-media"
+        href="https://www.youtube.com/channel/UC4AQD5eeOiHIGd3QYFGK4aA"
+        target="_blank"
+      >
+        <img
+          src="https://static.cmereye.com/imgs/2024/10/2d3aba1b6cb227c0.png"
+          alt=""
+        />
+      </a>
+      <a class="wechat-media">
+        <img
+          src="https://static.cmereye.com/imgs/2024/10/1bea0c6a70890bf6.png"
+          alt=""
+        />
+        <div class="wechat-active-show">
+          <div class="weChat-img">
+            <img
+              src="https://static.cmereye.com/imgs/2023/09/a43a869a1fc07eea.jpg"
+              alt="二维码"
+            />
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="v2-mobile-footer-bottom">
+      <div>
+        <div>
+          <div><img src="~/assets/images/2025032411104001.svg" alt="" /></div>
+          <div>深圳市醫保定點醫院</div>
+        </div>
+        <div>
+          <div><img src="~/assets/images/2025032411104002.svg" alt="" /></div>
+          <div>深圳二級口腔醫院</div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <nuxt-link to="/privacyPolicy">私隱政策</nuxt-link>
+          <i>&</i>
+          <nuxt-link to="/disclaimer">免責條款</nuxt-link>
+        </div>
+        <div>©2025 CKJ愛康健齒科版權所有</div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -198,7 +266,72 @@
       }
     }
   }
+  .v2-mobile-footer {
+    display: none;
+    opacity: 0;
+  }
 }
 @media screen and (max-width: 991px) {
+  .v2-footer {
+    opacity: 0;
+    display: none;
+  }
+  .v2-mobile-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding-top: 2.665vw;
+    padding-bottom: 13.33vw;
+    .v2-mobile-footer-top {
+      display: flex;
+      gap: 0 4.53vw;
+      align-items: center;
+    }
+    .v2-mobile-footer-bottom {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f8298a;
+      box-sizing: border-box;
+      padding: 4vw 0;
+      gap: 4vw 0;
+      & > div:nth-child(1) {
+        display: flex;
+        align-items: center;
+        gap: 0 4vw;
+        & > div {
+          display: flex;
+          align-items: center;
+          gap: 0 0.8vw;
+          color: var(--White, #fff);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 3.5008vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 160%; /* 21.004px */
+        }
+      }
+      & > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--White, #fff);
+        text-align: center;
+        text-shadow: 0px 0px 1.065vw rgba(255, 120, 117, 0.45);
+        font-family: 'Noto Sans HK';
+        font-size: 3.2vw;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 19.2px */
+        letter-spacing: 0.32vw;
+      }
+    }
+    .wechat-active-show {
+      display: none;
+    }
+  }
 }
 </style>
