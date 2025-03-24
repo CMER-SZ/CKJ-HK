@@ -135,7 +135,10 @@ const Plant_brand_series_data = [
   },
   {
     id: '1102',
-    name: ['菌斑導向<i class="d-none d-lg-block">專業</i>洗牙', '含鹽'],
+    name: [
+      '菌斑導向<i class="d-none d-lg-block" style="font-style: normal;">專業</i>洗牙',
+      '含鹽',
+    ],
     price: '168',
     oldPrice: '350',
     img: 'https://static.cmereye.com/imgs/2024/11/7d36488bc41e7ad6.png',
@@ -162,7 +165,10 @@ const Plant_brand_series_data = [
   },
   {
     id: '1103',
-    name: ['菌斑導向<i class="d-none d-lg-block">專業</i>洗牙', '無鹽'],
+    name: [
+      '菌斑導向<i class="d-none d-lg-block" style="font-style: normal;">專業</i>洗牙',
+      '無鹽',
+    ],
     price: '168',
     oldPrice: '550',
     img: 'https://static.cmereye.com/imgs/2024/11/958f0c3e3acf223f.png',
@@ -727,6 +733,7 @@ const cleaningStepList = [
             font-weight: 700;
             line-height: normal;
             letter-spacing: 2.4px;
+            display: flex;
           }
           & > span:nth-child(2) {
             position: absolute;
@@ -1036,6 +1043,12 @@ const cleaningStepList = [
         letter-spacing: 1.8px;
       }
     }
+  }
+  :deep(.problem) {
+    margin-top: 30px;
+  }
+  :deep(.BranchAddress) {
+    margin-top: 60px;
   }
 }
 

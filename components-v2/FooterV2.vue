@@ -57,16 +57,16 @@
               alt=""
             />
           </a>
-          <a class="wechat-media"
-            ><img src="~/assets/images/navIcon_3.png" alt="" />
-            <!-- <div class="wechat-active-show">
+          <a class="wechat-media">
+            <img src="~/assets/images/navIcon_3.png" alt="" />
+            <div class="wechat-active-show">
               <div class="weChat-img">
                 <img
                   src="https://static.cmereye.com/imgs/2023/09/a43a869a1fc07eea.jpg"
                   alt="二维码"
                 />
               </div>
-            </div> -->
+            </div>
           </a>
         </div>
       </div>
@@ -95,6 +95,15 @@
         display: flex;
         align-items: center;
         gap: 0 35px;
+        & > div:nth-child(1) {
+          width: clamp(210px, 15.573vw, 299px);
+          height: clamp(42px, 3.125vw, 59.841px);
+          & > svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
         & > div:nth-child(2) {
           display: flex;
           gap: 5px 0;
@@ -103,11 +112,11 @@
             color: var(--White, #fff);
             text-shadow: 0px 0px 4px rgba(255, 120, 117, 0.45);
             font-family: 'Noto Sans HK';
-            font-size: 20px;
+            font-size: clamp(14px, 1.0415vw, 20px);
             font-style: normal;
             font-weight: 500;
             line-height: 120.162%; /* 24.032px */
-            letter-spacing: 2px;
+            letter-spacing: clamp(1.4px, 0.0015625vw, 2px);
           }
         }
       }
@@ -121,25 +130,45 @@
           text-align: right;
           text-shadow: 0px 0px 4px rgba(255, 120, 117, 0.45);
           font-family: 'Noto Sans HK';
-          font-size: 20px;
+          font-size: clamp(14px, 1.0415vw, 20px);
           font-style: normal;
           font-weight: 500;
           line-height: normal;
-          letter-spacing: 2px;
+          letter-spacing: clamp(1.4px, 0.0015625vw, 2px);
         }
         & > div:nth-child(2) {
           display: flex;
-          gap: 0 25px;
+          gap: 0 1.302vw;
           & > a {
-            width: 26px;
-            height: 26px;
+            width: clamp(18.2px, 1.354vw, 26px);
+            height: clamp(18.2px, 1.354vw, 26px);
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
             & > img {
               width: 100%;
               height: 100%;
-              object-fit: cover;
+              object-fit: contain;
+            }
+          }
+          .wechat-active-show {
+            display: none;
+            width: 200px;
+            height: auto;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .wechat-media:hover {
+            .wechat-active-show {
+              display: flex;
             }
           }
         }
@@ -155,11 +184,11 @@
       color: var(--Grey-Dark, #333);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 18px;
+      font-size: clamp(12.6px, 0.9375vw, 18px);
       font-style: normal;
       font-weight: 400;
       line-height: 200%; /* 36px */
-      letter-spacing: 1.8px;
+      letter-spacing: clamp(1.26px, 0.009375vw, 1.8px);
       & > a {
         text-decoration: underline;
       }
