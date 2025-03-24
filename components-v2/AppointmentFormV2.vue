@@ -314,7 +314,7 @@ const submitForm = async () => {
         type: 'success',
         duration: 0,
       })
-      
+
       window.location.href = `/messagePage`
       postData(formNew, formattedSelectedServices)
       // router.push('/SuccessfulForm')
