@@ -2207,7 +2207,7 @@ const implantItem = [
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
 
@@ -2482,7 +2482,7 @@ const implantItem = [
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
 

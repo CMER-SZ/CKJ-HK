@@ -142,7 +142,7 @@ const pageDetail: any = {
         // 'https://static.cmereye.com/imgs/2024/06/3333f1a2e79eeb16.webp',
         // 'https://static.cmereye.com/imgs/2024/09/4229166f41cc2c28.jpg',
         // "https://static.cmereye.com/imgs/2024/11/61472517a1c6f9c1.jpg"
-        "https://statichk.cmermedical.com/ckj/image/2ec9eaa43305.webp"
+        'https://statichk.cmermedical.com/ckj/image/2ec9eaa43305.webp',
       ],
       className: 'imgone',
     },
@@ -217,10 +217,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
-         <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="health-care-voucher pageIn whitebgColor">

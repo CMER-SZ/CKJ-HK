@@ -1893,7 +1893,7 @@ const getWindowWidth = () => {
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
     .waterBg-implant {
@@ -2229,7 +2229,7 @@ const getWindowWidth = () => {
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
     .waterBg-implant {

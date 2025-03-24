@@ -182,10 +182,7 @@ const problemData = {
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
-         <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="contactUs">
@@ -380,7 +377,7 @@ const problemData = {
         <a id="Q&A" class="hash_link"></a>
         <ServiceProblem :problem-data="problemData" />
       </div>
-      <AppointmentFormV2/>
+      <AppointmentFormV2 />
       <div class="environment">
         <div class="environment-title">
           <div class="index_title">
@@ -430,7 +427,7 @@ const problemData = {
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-          <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 
@@ -593,7 +590,7 @@ const problemData = {
   justify-content: center;
   & > div:nth-child(1) {
     color: var(--Grey-Deep, #4d4d4d);
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
@@ -639,7 +636,7 @@ font-family: 'FakePearl-Regular';
   & > div:nth-child(7) {
     width: fit-content;
     color: var(--Grey-Deep, #4d4d4d);
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
@@ -674,7 +671,7 @@ font-family: 'FakePearl-Regular';
       padding: 12px 60px;
       box-sizing: border-box;
       color: var(--Grey-Deep, #4d4d4d);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 30px;
       font-style: normal;
       font-weight: 400;
@@ -707,7 +704,7 @@ font-family: 'FakePearl-Regular';
       padding: 12px 50px;
       color: var(--Grey-Deep, #4d4d4d);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 30px;
       font-style: normal;
       font-weight: 400;
@@ -764,7 +761,7 @@ font-family: 'FakePearl-Regular';
       box-sizing: border-box;
       padding: 12px 30px;
       color: var(--Grey-Deep, #4d4d4d);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 30px;
       font-style: normal;
       font-weight: 400;
@@ -786,7 +783,7 @@ font-family: 'FakePearl-Regular';
       box-sizing: border-box;
       padding: 12px 30px;
       color: var(--Grey-Deep, #4d4d4d);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 30px;
       font-style: normal;
       font-weight: 400;
@@ -873,7 +870,7 @@ font-family: 'FakePearl-Regular';
     & > div:nth-child(7) {
       width: fit-content;
       color: var(--Grey-Deep, #4d4d4d);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 4vw;
       font-style: normal;
       font-weight: 400;
@@ -912,7 +909,7 @@ font-family: 'FakePearl-Regular';
       padding-right: 0;
       & > div {
         color: var(--Grey-Deep, #4d4d4d);
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 4vw;
         font-style: normal;
         font-weight: 400;
@@ -953,7 +950,7 @@ font-family: 'FakePearl-Regular';
         padding: 1.33vw 2.2665vw;
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 3.733vw;
         font-style: normal;
         font-weight: 400;
@@ -1033,7 +1030,7 @@ font-family: 'FakePearl-Regular';
         box-sizing: border-box;
         padding: 1.33vw 2.2265vw;
         color: var(--Grey-Deep, #4d4d4d);
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 3.75vw;
         font-style: normal;
         font-weight: 400;
@@ -1055,7 +1052,7 @@ font-family: 'FakePearl-Regular';
         box-sizing: border-box;
         padding: 1.33vw 2.133vw;
         color: var(--Grey-Deep, #4d4d4d);
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 3.733vw;
         font-style: normal;
         font-weight: 400;
@@ -1071,7 +1068,7 @@ font-family: 'FakePearl-Regular';
     padding: 0 2.665vw;
     & > div:nth-child(1) {
       color: var(--Grey-Deep, #4d4d4d);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 5.33vw;
       font-style: normal;
       font-weight: 400;

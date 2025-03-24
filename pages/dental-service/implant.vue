@@ -2510,6 +2510,7 @@ const problemData = {
             height: 5.96vw;
             & > span {
               position: relative;
+              z-index: 1;
               i {
                 position: relative;
                 z-index: 10;
@@ -2528,6 +2529,7 @@ const problemData = {
                 background-clip: text;
                 color: transparent;
                 display: inline-block;
+                white-space: nowrap;
               }
             }
             & > span::after {
@@ -2545,6 +2547,7 @@ const problemData = {
               left: 0;
               text-shadow: -2px 2px #f72a8a, 2px -2px #f72a8a, -2px -2px #f72a8a,
                 2px 0 #f72a8a;
+              white-space: nowrap;
             }
             & > span::before {
               content: '立即預約牙科服務';
@@ -2560,6 +2563,7 @@ const problemData = {
               font-weight: 900;
               line-height: normal; /* 83.333% */
               letter-spacing: 2.864px;
+              white-space: nowrap;
             }
           }
 

@@ -439,10 +439,6 @@ const problemData = {
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
-    <!-- <HeaderV2 /> -->
     <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />

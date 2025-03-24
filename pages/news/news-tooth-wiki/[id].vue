@@ -311,10 +311,7 @@ if (process.server) {
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
-         <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="pageIn whitebgColor articlePage">
@@ -475,7 +472,7 @@ if (process.server) {
       </div>
       <!-- <div @click="handlegetData">獲取數據</div> -->
       <BranchAddress />
-      <AppointmentFormV2/>
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
     <AsideV2 />
@@ -604,7 +601,7 @@ if (process.server) {
     .twenty-three-container-header-one {
       color: var(--White, #fff);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 35px;
       font-style: normal;
       font-weight: 400;
@@ -625,7 +622,7 @@ if (process.server) {
     .twenty-three-container-header-two-three {
       color: var(--White, #fff);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 35px;
       font-style: normal;
       font-weight: 400;
@@ -649,7 +646,7 @@ if (process.server) {
     .twenty-three-container-content-one {
       flex: 2;
       color: var(--Theme-Color, #fc1682);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 22px;
       font-style: normal;
       font-weight: 400;

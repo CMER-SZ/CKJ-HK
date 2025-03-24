@@ -646,15 +646,6 @@ const hideDom = ref(false)
 <template>
   <div>
     <HomeHeaderV2 :headerConfig="headerConfigData" />
-    <!-- 
-    <PageNewHeader :headerConfig="headerConfigData" v-else /> -->
-
-    <!-- <PageNewHomeBanner
-      :headerConfig="headerConfigData"
-      v-if="windowWidth > 768"
-    />
-    <PageNewHeader :headerConfig="headerConfigData" v-else /> -->
-
     <div class="indexPage">
       <!-- 最新消息 -->
       <!-- <LatestNews /> -->

@@ -1632,7 +1632,7 @@ const getWindowWidth = () => {
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
 
@@ -1907,7 +1907,7 @@ const getWindowWidth = () => {
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
 
