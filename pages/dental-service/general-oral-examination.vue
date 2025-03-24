@@ -171,7 +171,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
@@ -213,7 +213,52 @@ onMounted(() => {
           </div>
         </div>
       </template>
+    </PagePcBannerNoHome> -->
+
+    <PageHeaderV2
+      v-if="windowWidth > 768"
+      :headerConfig="headerConfig"
+      btnText="預約免費牙齒檢查"
+    />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>口腔檢查</div>
+              <div>
+                <div>網上預約及醫療券使用者</div>
+                <div>
+                  <img src="~/assets/images/2025031409345501.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="content-subscribe">定期做口腔檢查，每天牙齒健康</div>
+          </div>
+        </div>
+      </template>
+    </MobileHeaderV2>
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>口腔檢查</div>
+              <div>
+                <div>網上預約及醫療券使用者</div>
+                <div>
+                  <img src="~/assets/images/2025031409345501.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="content-subscribe">定期做口腔檢查，每天牙齒健康</div>
+          </div>
+        </div>
+      </template>
     </PagePcBannerNoHome>
+
     <div class="pageIn whitebgColor">
       <div class="index_title pageCon">
         {{ $t('pages.dental-service.title') }}
@@ -377,12 +422,12 @@ onMounted(() => {
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 

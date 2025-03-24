@@ -305,7 +305,7 @@ const caseLists = [
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
@@ -344,7 +344,49 @@ const caseLists = [
           </div>
         </div>
       </template>
+    </PagePcBannerNoHome> -->
+
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>E.MAX<br />全瓷貼片</div>
+              <div>
+                <img src="~/assets/images/2025031314264101.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">擁有明星般閃耀笑容</div>
+          </div>
+        </div>
+      </template>
+    </MobileHeaderV2>
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-image">
+            <img
+              src="https://static.ckjhk.com/ckj-image/5d75a3c6beb4.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>E.MAX<br />全瓷貼片</div>
+              <div>
+                <img src="~/assets/images/2025031314264101.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">擁有明星般閃耀笑容</div>
+          </div>
+        </div>
+      </template>
     </PagePcBannerNoHome>
+
     <div class="pageIn whitebgColor">
       <div class="index_title pageCon">
         {{ $t('pages.dental-service.title') }}
@@ -549,12 +591,12 @@ const caseLists = [
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 
@@ -1999,7 +2041,7 @@ const caseLists = [
         position: relative;
       }
       & > div:nth-child(1)::after {
-        content: "";
+        content: '';
         width: 100%;
         height: 2px;
         background: #333;

@@ -139,7 +139,7 @@ watchEffect(() => {
 <style lang="scss">
 .uwy {
   .userway_buttons_wrapper {
-    left: calc(100vw - 35px) !important;
+    left: calc(100vw - 80px) !important;
     bottom: 100px !important;
   }
 }

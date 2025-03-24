@@ -354,6 +354,10 @@ const getWindowWidth = () => {
 <template>
   <header>
     <div class="header-content">
+
+
+
+
       <div class="header-content-bgImg" :class="headerConfig.pageName">
         <img class="imgBgBox pcBox" :src="headerConfig.bg" alt="" />
         <div class="header-content-bgImg-imgInfo bigPageCon">
@@ -373,6 +377,10 @@ const getWindowWidth = () => {
           alt="banner"
         />
       </div>
+
+
+
+
       <div class="header-content-bgImg-implant" :class="headerConfig.pageName">
         <swiper
           :modules="[Autoplay]"
