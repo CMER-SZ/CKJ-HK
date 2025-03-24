@@ -222,7 +222,7 @@ const problemData = {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-image">
@@ -274,7 +274,62 @@ const problemData = {
           </div>
         </div>
       </template>
+    </PagePcBannerNoHome> -->
+
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-image">
+            <img
+              src="https://static.ckjhk.com/ckj-image/ae23253936c1.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>歐美<br />種植牙</div>
+              <div>
+                <img src="~/assets/images/2025031216072401.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">
+              <span>星級客戶</span>
+              <span>朱咪咪<i>小姐</i></span>
+            </div>
+          </div>
+        </div>
+      </template>
+    </MobileHeaderV2>
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-image">
+            <img
+              src="https://static.ckjhk.com/ckj-image/ae23253936c1.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>歐美<br />種植牙</div>
+              <div>
+                <img src="~/assets/images/2025031216072401.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">
+              <span>星級客戶</span>
+              <span>朱咪咪<i>小姐</i></span>
+            </div>
+          </div>
+        </div>
+      </template>
     </PagePcBannerNoHome>
+
     <!-- 内容区 -->
     <div>
       <section class="ckj-container implant-step">
@@ -740,14 +795,14 @@ const problemData = {
     <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
     <!-- 聯絡我們 -->
     <BranchAddress />
-    <ContactForm-new2 />
+    <AppointmentFormV2 />
     <PageFooter />
     <!-- <PageNavbar
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
     /> -->
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 

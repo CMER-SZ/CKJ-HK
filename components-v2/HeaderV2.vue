@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { zh_tran, zh_getLang, getCookie } from '~/assets/js/uselang'
 import { useAppState } from '~/stores/appState'
-import { toWhatsApp, smallPhoneNum } from '~/assets/js/common'
 const locale = useState<string>('locale.setting')
 
 const route = useRoute()
@@ -69,6 +68,93 @@ const changlangsfun = (_type) => {
   }
 }
 
+const implantItem = [
+  {
+    name: 'service.implant',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/08337fb0f04440b4.png',
+    link: '/dental-service/implant',
+    isHot: true,
+  },
+  {
+    name: 'service.scaling_and_polishing',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/8f5e55aae2f7c830.png',
+    link: '/dental-service/scaling-and-polishing',
+    isHot: true,
+  },
+  {
+    name: 'service.fillings',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/554ebbcbec3aa2e4.png',
+    link: '/dental-service/fillings',
+    isHot: true,
+  },
+  {
+    name: 'service.veneers',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/06/bcb673f2ee240eaa.png',
+    link: '/dental-service/veneers',
+    isHot: true,
+  },
+  {
+    name: 'service.toothtray',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/06/1e6c96d45a76e78c.png',
+    link: '/dental-service/toothtray',
+    isHot: true,
+  },
+  {
+    name: 'service.rootCanal',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/bf608a98bf395702.png',
+    link: '/dental-service/rootCanal',
+    isHot: false,
+  },
+  {
+    name: 'service.orthodontics',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/6297f1d28f28b4ba.png',
+    link: '/dental-service/orthodontics',
+    isHot: false,
+  },
+  {
+    name: 'service.invisalign',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/3313f092cb1a16cb.png',
+    link: '/dental-service/invisiblebraces',
+    isHot: false,
+  },
+  {
+    name: 'service.all_ceramic_crowns',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/608c309d37f7c06f.png',
+    link: '/dental-service/all-ceramic-crowns',
+    isHot: false,
+  },
+  {
+    name: 'service.children_dentistry',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/07/4feb204172b310b6.png',
+    link: '/dental-service/children-dentistry',
+    isHot: false,
+  },
+  {
+    name: 'service.wisdom_teeth_extraction',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/2b1b8835b0d80c94.png',
+    link: '/dental-service/wisdom-teeth-extraction',
+    isHot: false,
+  },
+  {
+    name: 'service.periodontal',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/c67f78f4d7d88590.png',
+    link: '/dental-service/periodontal',
+    isHot: false,
+  },
+  {
+    name: 'service.teeth_whitening',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/20ade6f1ba75d122.png',
+    link: '/dental-service/teeth-whitening',
+    isHot: false,
+  },
+  {
+    name: 'service.general_oral_examination',
+    imgUrl: 'https://static.cmereye.com/imgs/2024/03/62b3b73436691753.png',
+    link: '/dental-service/general-oral-examination',
+    isHot: false,
+  },
+]
+
 onMounted(() => {
   setTimeout(() => {
     if (route.path.includes('/cn')) {
@@ -84,8 +170,8 @@ onMounted(() => {
       <div
         class="navbar-brand d-flex align-items-center justify-content-between"
       >
-        <a href="/" class="websiteLOGO"
-          ><img src="@/assets/images/LOGO-PC.svg" alt="" /> </a
+        <nuxt-link to="/" class="websiteLOGO"
+          ><img src="@/assets/images/LOGO-PC.svg" alt="" /> </nuxt-link
         ><i class="d-none d-lg-block" style="font-style: normal">|</i>
         <div class="governmentPoint">
           <span>香港長者醫療券</span>
@@ -108,19 +194,19 @@ onMounted(() => {
             </a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/brand/course#course">{{
+                <nuxt-link class="dropdown-item" to="/brand/course#course">{{
                   $t('components.header.menuLists.menu_brand.history')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/brand/course#activity">{{
+                <nuxt-link class="dropdown-item" to="/brand/course#activity">{{
                   $t('components.header.menuLists.menu_brand.activity')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/brand/course#honor">{{
+                <nuxt-link class="dropdown-item" to="/brand/course#honor">{{
                   $t('components.header.menuLists.menu_brand.honor')
-                }}</a>
+                }}</nuxt-link>
               </li>
             </ul>
           </li>
@@ -129,99 +215,24 @@ onMounted(() => {
               $t('components.header.menuLists.menu_dental_service.name')
             }}</a>
             <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="/dental-service/implant"
-                  >種植牙</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/dental-service/scaling-and-polishing"
-                  >洗牙</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/fillings"
-                  >補牙</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/veneers"
-                  >全瓷貼片</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/toothtray"
-                  >牙托</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/rootCanal"
-                  >根管治療</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/orthodontics"
-                  >矯齒(箍牙)</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/invisiblebraces"
-                  >隱形矯正</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/dental-service/all-ceramic-crowns"
-                  >全瓷牙冠</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/dental-service/children-dentistry"
-                  >兒童牙科</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/dental-service/wisdom-teeth-extraction"
-                  >拔牙智慧齒脫除</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/periodontal"
-                  >牙周病治療</a
-                >
-              </li>
-              <li>
-                <a class="dropdown-item" href="/dental-service/teeth-whitening"
-                  >牙齒美白</a
-                >
-              </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="/dental-service/general-oral-examination"
-                  >一般口腔檢查</a
+              <li v-for="(item, index) in implantItem" key="index">
+                <nuxt-link class="dropdown-item" :to="item.link">
+                  {{ $t(item.name) }}</nuxt-link
                 >
               </li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/health-care-voucher">{{
+            <nuxt-link class="nav-link" to="/health-care-voucher">{{
               $t('components.header.menuLists.health-care-voucher.name')
-            }}</a>
+            }}</nuxt-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/federation-of-trade-unions-zone">{{
+            <nuxt-link class="nav-link" to="/federation-of-trade-unions-zone">{{
               $t(
                 'components.header.menuLists.federation-of-trade-unions-zone.name'
               )
-            }}</a>
+            }}</nuxt-link>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle">{{
@@ -229,19 +240,19 @@ onMounted(() => {
             }}</a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/news/coverage">{{
+                <nuxt-link class="dropdown-item" to="/news/coverage">{{
                   $t('components.header.menuLists.menu_news.coverage')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/news/information">{{
+                <nuxt-link class="dropdown-item" to="/news/information">{{
                   $t('components.header.menuLists.menu_news.information')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/news/tooth-wiki">{{
+                <nuxt-link class="dropdown-item" to="/news/tooth-wiki">{{
                   $t('components.header.menuLists.menu_news.tooth-wiki')
-                }}</a>
+                }}</nuxt-link>
               </li>
             </ul>
           </li>
@@ -251,19 +262,19 @@ onMounted(() => {
             }}</a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/medical-team">{{
+                <nuxt-link class="dropdown-item" to="/medical-team">{{
                   $t('components.areaTabs.luohu')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/medical-team">{{
+                <nuxt-link class="dropdown-item" to="/medical-team">{{
                   $t('components.areaTabs.futian')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/medical-team">{{
+                <nuxt-link class="dropdown-item" to="/medical-team">{{
                   $t('components.areaTabs.nanshan')
-                }}</a>
+                }}</nuxt-link>
               </li>
             </ul>
           </li>
@@ -273,19 +284,19 @@ onMounted(() => {
             }}</a>
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="/contactUs#contactUs">{{
+                <nuxt-link class="dropdown-item" to="/contactUs#contactUs">{{
                   $t('components.header.menuLists.menu_contactUs.come_route')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/contactUs#appeal">{{
+                <nuxt-link class="dropdown-item" to="/contactUs#appeal">{{
                   $t('components.header.menuLists.menu_contactUs.appeal')
-                }}</a>
+                }}</nuxt-link>
               </li>
               <li>
-                <a class="dropdown-item" href="/contactUs#Q&A">{{
+                <nuxt-link class="dropdown-item" to="/contactUs#Q&A">{{
                   $t('components.header.menuLists.menu_contactUs.Q&A')
-                }}</a>
+                }}</nuxt-link>
               </li>
             </ul>
           </li>
@@ -349,7 +360,7 @@ onMounted(() => {
                 <a
                   id="traditional"
                   class="dropdown-item"
-                  href="#"
+            
                   @click="glangs('t')"
                   >繁體</a
                 >
@@ -358,7 +369,7 @@ onMounted(() => {
                 <a
                   id="simplified"
                   class="dropdown-item"
-                  href="#"
+               
                   @click="glangs('s')"
                   >簡體</a
                 >
@@ -414,7 +425,7 @@ onMounted(() => {
                 fill="white"
               />
             </svg> </a
-          ><a href="#contactUsFormNav"
+          ><nuxt-link to="#contactUsFormNav"
             ><svg
               width="43"
               height="43"
@@ -465,7 +476,7 @@ onMounted(() => {
                   xlink:href="data:image/png;base64,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"
                 />
               </defs></svg
-          ></a>
+          ></nuxt-link>
         </div>
       </div>
       <div
@@ -475,8 +486,8 @@ onMounted(() => {
         aria-labelledby="offcanvasNavbarLabel"
       >
         <div class="offcanvas-header">
-          <a href="/" class="offcanvas-title" id="offcanvasNavbarLabel"
-            ><img src="@/assets/images/LOGO-PC.svg" alt="" /> </a
+          <nuxt-link to="/" class="offcanvas-title" id="offcanvasNavbarLabel"
+            ><img src="@/assets/images/LOGO-PC.svg" alt="" /> </nuxt-link
           ><button
             type="button"
             class="btn-close text-reset offcanvas-btn"
@@ -490,9 +501,9 @@ onMounted(() => {
             id="accordionMenu"
           >
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">{{
+              <nuxt-link class="nav-link active" aria-current="page" to="/">{{
                 $t('components.header.menuLists.menu_index.name')
-              }}</a>
+              }}</nuxt-link>
             </li>
             <li class="nav-item">
               <a
@@ -509,19 +520,19 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/brand/course#course">{{
+                    <nuxt-link class="nav-link" to="/brand/course#course">{{
                       $t('components.header.menuLists.menu_brand.history')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/brand/course#activity">{{
+                    <nuxt-link class="nav-link" to="/brand/course#activity">{{
                       $t('components.header.menuLists.menu_brand.activity')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/brand/course#honor">{{
+                    <nuxt-link class="nav-link" to="/brand/course#honor">{{
                       $t('components.header.menuLists.menu_brand.honor')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                 </ul>
               </div>
@@ -542,115 +553,45 @@ onMounted(() => {
                 data-bs-parent="#accordionMenu"
               >
                 <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/implant"
-                      >種植牙</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="/dental-service/scaling-and-polishing"
-                      >洗牙</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/fillings">補牙</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/veneers"
-                      >全瓷貼片</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/toothtray"
-                      >牙托</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/rootCanal"
-                      >根管治療</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/orthodontics"
-                      >矯齒(箍牙)</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/invisiblebraces"
-                      >隱形矯正</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="/dental-service/all-ceramic-crowns"
-                      >全瓷牙冠</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="/dental-service/children-dentistry"
-                      >兒童牙科</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="/dental-service/wisdom-teeth-extraction"
-                      >拔牙智慧齒脫除</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/periodontal"
-                      >牙周病治療</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/dental-service/teeth-whitening"
-                      >牙齒美白</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      class="nav-link"
-                      href="/dental-service/general-oral-examination"
-                      >一般口腔檢查</a
+                  <li
+                    class="nav-item"
+                    v-for="(item, index) in implantItem"
+                    key="index"
+                  >
+                    <nuxt-link class="nav-link" :to="item.link">
+                      {{ $t(item.name) }}</nuxt-link
                     >
                   </li>
                 </ul>
               </div>
             </li>
             <li class="nav-item">
-              <a
-                href="/health-care-voucher"
+              <nuxt-link
+                to="/health-care-voucher"
                 class="nav-link d-flex justify-content-between"
                 >{{
                   $t('components.header.menuLists.health-care-voucher.name')
-                }}</a
+                }}</nuxt-link
               >
             </li>
             <li class="nav-item">
-              <a
-                href="/federation-of-trade-unions-zone"
+              <nuxt-link
+                to="/federation-of-trade-unions-zone"
                 class="nav-link d-flex justify-content-between"
                 >{{
                   $t(
                     'components.header.menuLists.federation-of-trade-unions-zone.name'
                   )
-                }}</a
+                }}</nuxt-link
               >
             </li>
             <li class="nav-item">
-              <a
+              <nuxt-link
                 class="nav-link d-flex justify-content-between"
-                href="#"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExamplehead2"
                 aria-expanded="false"
-                >{{ $t('components.header.menuLists.menu_news.name') }}</a
+                >{{ $t('components.header.menuLists.menu_news.name') }}</nuxt-link
               >
               <div
                 class="collapse collapse-horizontal secondaryMenu"
@@ -659,19 +600,19 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/news/coverage">{{
+                    <nuxt-link class="nav-link" to="/news/coverage">{{
                       $t('components.header.menuLists.menu_news.coverage')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/news/information">{{
+                    <nuxt-link class="nav-link" to="/news/information">{{
                       $t('components.header.menuLists.menu_news.information')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/news/tooth-wiki">{{
+                    <nuxt-link class="nav-link" to="/news/tooth-wiki">{{
                       $t('components.header.menuLists.menu_news.tooth-wiki')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                 </ul>
               </div>
@@ -679,7 +620,6 @@ onMounted(() => {
             <li class="nav-item">
               <a
                 class="nav-link d-flex justify-content-between"
-                href="#"
                 data-bs-toggle="collapse"
                 data-bs-target="#collapseExamplehead3"
                 aria-expanded="false"
@@ -694,32 +634,24 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/medical-team">{{
+                    <nuxt-link class="nav-link" to="/medical-team">{{
                       $t('components.areaTabs.luohu')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/medical-team">{{
+                    <nuxt-link class="nav-link" to="/medical-team">{{
                       $t('components.areaTabs.futian')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/medical-team">{{
+                    <nuxt-link class="nav-link" to="/medical-team">{{
                       $t('components.areaTabs.nanshan')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link d-flex justify-content-between"
-                href="#BranchAddress"
-                >{{
-                  $t('components.header.menuLists.menu_medical_team.name')
-                }}</a
-              >
-            </li>
+ 
             <li class="nav-item">
               <a
                 class="nav-link d-flex justify-content-between"
@@ -735,21 +667,21 @@ onMounted(() => {
               >
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="/contactUs#contactUs">{{
+                    <nuxt-link class="nav-link" to="/contactUs#contactUs">{{
                       $t(
                         'components.header.menuLists.menu_contactUs.come_route'
                       )
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/contactUs#appeal">{{
+                    <nuxt-link class="nav-link" to="/contactUs#appeal">{{
                       $t('components.header.menuLists.menu_contactUs.appeal')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/contactUs#Q&A">{{
+                    <nuxt-link class="nav-link" to="/contactUs#Q&A">{{
                       $t('components.header.menuLists.menu_contactUs.Q&A')
-                    }}</a>
+                    }}</nuxt-link>
                   </li>
                 </ul>
               </div>

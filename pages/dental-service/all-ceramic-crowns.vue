@@ -181,7 +181,14 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" >
+
+
+    <PageHeaderV2
+      v-if="windowWidth > 768"
+      :headerConfig="headerConfig"
+      btnText="預約免費牙齒檢查"
+    />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
@@ -196,9 +203,8 @@ onMounted(() => {
           </div>
         </div>
       </template>
-    </PageHeader>
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" btnText="預約免費牙齒檢查" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" >
+    </MobileHeaderV2>
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-image">
@@ -221,6 +227,7 @@ onMounted(() => {
         </div>
       </template>
     </PagePcBannerNoHome>
+
     <div class="pageIn whitebgColor">
       <div class="index_title pageCon">
         {{ $t('pages.dental-service.title') }}
@@ -379,7 +386,7 @@ onMounted(() => {
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <PageFooter />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
@@ -581,7 +588,7 @@ onMounted(() => {
         h3 {
           color: var(--indexColor1);
           text-align: center;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 23px;
           font-style: normal;
           font-weight: 500;

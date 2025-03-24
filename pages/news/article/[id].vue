@@ -377,8 +377,11 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
+         <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="pageIn whitebgColor articlePage">
       <div class="index_title pageCon articlePage-title">
@@ -608,7 +611,7 @@ onMounted(() => {
       </div>
       <!-- <div @click="handlegetData">獲取數據</div> -->
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2/>
     </div>
     <PageFooter />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />

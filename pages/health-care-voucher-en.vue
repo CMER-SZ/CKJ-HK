@@ -312,7 +312,8 @@ onMounted(() => {
 
 <template>
   <div>
-    <PageHeader :headerConfig="headerConfig" /> 
+    <PageHeaderV2 :headerConfig="headerConfig"/>
+
     <div class="health-care-voucher pageIn whitebgColor">
       <div class="smallPageCon health-care-voucher-top">
         <div class="index_title health-care-voucher-title">{{$t('components.header.menuLists.health-care-voucher.name')}}</div>
@@ -384,7 +385,7 @@ onMounted(() => {
         </div>
       </div>
       <BranchAddress />
-     <ContactForm-new2 />
+     <AppointmentFormV2/>
     </div>
     <PageFooter />
     <!-- <PageNavbar :langType="langCur" /> -->

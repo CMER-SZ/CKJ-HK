@@ -282,7 +282,7 @@ onMounted(() => {
         </div>
       </div>
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2/>
     </div>
     <PageFooter />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />

@@ -333,7 +333,7 @@ const onSlideChange = (swiper: any) => {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
@@ -372,7 +372,54 @@ const onSlideChange = (swiper: any) => {
           </div>
         </div>
       </template>
+    </PagePcBannerNoHome> -->
+
+
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>藍光美白</div>
+              <div>
+                <img src="~/assets/images/2025031317574101.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">讓牙齒更加整齊、美觀、舒適</div>
+          </div>
+        </div>
+      </template>
+    </MobileHeaderV2>
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
+     <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-image">
+            <img
+              src="https://static.ckjhk.com/ckj-image/f096366f7478.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">網上預約限定優惠</div>
+            <div class="content-price">
+              <div>藍光美白</div>
+              <div>
+                <img src="~/assets/images/2025031317574101.svg" alt="" />
+              </div>
+            </div>
+            <div class="content-subscribe">讓牙齒更加整齊、美觀、舒適</div>
+          </div>
+        </div>
+      </template>
     </PagePcBannerNoHome>
+
+
+
+
+
     <div class="pageIn whitebgColor">
       <div class="index_title pageCon" v-if="windowWidth < 768">
         {{ $t('pages.dental-service.title') }}
@@ -858,7 +905,7 @@ const onSlideChange = (swiper: any) => {
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2/>
     </div>
     <PageFooter />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />

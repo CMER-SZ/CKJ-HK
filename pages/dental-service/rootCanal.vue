@@ -363,7 +363,7 @@ let newsMessageSwiperRef = {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-content" style="display: flex">
@@ -394,7 +394,41 @@ let newsMessageSwiperRef = {
           </div>
         </div>
       </template>
+    </PagePcBannerNoHome> -->
+
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">與你一齊守護健康牙齒</div>
+            <div class="content-price">
+              <div>杜牙根</div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </MobileHeaderV2>
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
+      <template #xxxxxxxxxxx-home>
+        <div class="banner-in-box">
+          <div class="banner-image">
+            <img
+              src="https://static.ckjhk.com/ckj-image/a1ed0bfa1d61.webp"
+              alt=""
+              loading="lazy"
+            />
+          </div>
+          <div class="banner-content" style="display: flex">
+            <div class="content-title">與你一齊守護健康牙齒</div>
+            <div class="content-price">
+              <div>杜牙根</div>
+            </div>
+          </div>
+        </div>
+      </template>
     </PagePcBannerNoHome>
+
     <div class="pageIn whitebgColor">
       <div class="index_title pageCon">
         {{ $t('pages.dental-service.title') }}
@@ -689,7 +723,7 @@ let newsMessageSwiperRef = {
       <!-- <ServiceProblem :problem-data="problemData" /> -->
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <PageFooter />
     <!-- <PageNavbar
@@ -697,7 +731,7 @@ let newsMessageSwiperRef = {
     /> -->
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 

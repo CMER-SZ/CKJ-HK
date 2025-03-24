@@ -439,8 +439,12 @@ const problemData = {
 
 <template>
   <div>
-    <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
+    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
+    <!-- <HeaderV2 /> -->
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="health-care-voucher pageIn whitebgColor">
       <div class="smallPageCon health-care-voucher-top">
@@ -1349,7 +1353,7 @@ const problemData = {
         </div>
       </div>
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <PageFooter />
     <!-- <PageNavbar :langType="langCur" /> -->
