@@ -515,7 +515,7 @@ const implantItem = [
                     $t('components.header.menuLists.menu_dental_service.name')
                   }}</a>
                   <ul class="dropdown-menu">
-                    <li v-for="(item, index) in implantItem" key="index">
+                    <li v-for="item in implantItem" :key="item.name">
                       <nuxt-link class="dropdown-item" :to="item.link">
                         {{ $t(item.name) }}</nuxt-link
                       >
@@ -894,8 +894,8 @@ const implantItem = [
                       <ul class="navbar-nav">
                         <li
                           class="nav-item"
-                          v-for="(item, index) in implantItem"
-                          key="index"
+                          v-for="item in implantItem"
+                          :key="item.name"
                         >
                           <nuxt-link class="nav-link" :to="item.link">
                             {{ $t(item.name) }}</nuxt-link
@@ -1687,9 +1687,6 @@ const implantItem = [
   }
 }
 
-.swiperBox {
-  margin-top: 115px;
-}
 .headerBox01 {
   position: relative;
   background: #fff;
@@ -2271,7 +2268,7 @@ const implantItem = [
     }
 
     .headerBox02 {
-      position: relative;
+      position: fixed;
       z-index: 40;
     }
   }
@@ -2773,6 +2770,9 @@ const implantItem = [
 }
 
 @media (max-width: 991.98px) {
+  .swiperBox {
+    margin-top: 101px;
+  }
   body {
     padding-bottom: 48px;
   }

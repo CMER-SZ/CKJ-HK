@@ -320,6 +320,7 @@ watch(appState, (n, o) => {
       &-info {
         position: relative;
         display: flex;
+        z-index: 1;
         div:nth-child(2) {
           box-sizing: border-box;
           font-size: 25px;
@@ -427,6 +428,8 @@ watch(appState, (n, o) => {
       &-btn {
         display: flex;
         padding: 0 30px;
+        position: relative;
+        z-index: 2;
         & > div {
           filter: drop-shadow(0 3px 5px var(--indexColor3));
           -webkit-filter: drop-shadow(0 3px 5px var(--indexColor3));
