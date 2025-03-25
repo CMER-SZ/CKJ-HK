@@ -2721,7 +2721,7 @@ const implantItem = [
 
           &:nth-child(8):hover,
           &:nth-child(9):hover {
-            background: white;
+            background: none;
           }
 
           .nav-link {
