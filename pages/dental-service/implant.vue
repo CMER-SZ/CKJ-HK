@@ -2518,7 +2518,7 @@ const problemData = {
                 text-align: center;
                 font-family: 'Noto Sans HK';
                 font-style: normal;
-                font-weight: 900;
+                font-weight: 500;
                 line-height: normal; /* 83.333% */
                 background: linear-gradient(
                   90deg,
