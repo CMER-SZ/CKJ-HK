@@ -586,14 +586,14 @@ const problemData = {
           <div></div>
           <div>
             <img
-              src="https://static.ckjhk.com/ckj-image/2025031717580401.png"
+              src="https://static.ckjhk.com/ckj-image/2025032515375502.png"
               alt=""
               style="height: 100%"
             />
           </div>
           <div>
             <img
-              src="https://static.ckjhk.com/ckj-image/2025031717580402.png"
+              src="https://static.ckjhk.com/ckj-image/2025032515375501.png"
               alt=""
               style="height: 100%"
             />
@@ -2518,7 +2518,7 @@ const problemData = {
                 text-align: center;
                 font-family: 'Noto Sans HK';
                 font-style: normal;
-                font-weight: 500;
+                font-weight: 900;
                 line-height: normal; /* 83.333% */
                 background: linear-gradient(
                   90deg,
@@ -2529,10 +2529,10 @@ const problemData = {
                 color: transparent;
                 display: inline-block;
                 white-space: nowrap;
-                left: -5vw;
-                top: -1.19vw;
-                font-size: 5.536vw;
-                letter-spacing: 1.427vw;
+                left: -7.6vw;
+                top: -0.718vw;
+                font-size: 6.336vw;
+                letter-spacing: 1.627vw;
               }
             }
             & > span::before {
@@ -2546,13 +2546,14 @@ const problemData = {
               font-style: normal;
               font-weight: 900;
               line-height: normal;
-              letter-spacing: 0.707vw;
+              letter-spacing: 1vw;
               white-space: nowrap;
               top: -3.858vw;
-              left: -5.3vw;
-              color: #ffffff;
-              text-shadow: -0.5vw 0 1px #f8298a, 0 -0.5vw 1px #f8298a,
-                0.5vw 0 1px #f8298a, 0 0.5vw 1px #f8298a;
+              left: -4.9vw;
+              color: #fff;
+              transform: scale(1.1);
+              text-shadow: -0.5vw -0.5vw 1px #f8298a, 0.5vw -0.5vw 1px #f8298a,
+                0.5vw 0.5vw 1px #f8298a, -0.5vw 0.5vw 1px #f8298a;
             }
           }
 
@@ -2560,7 +2561,7 @@ const problemData = {
             display: flex;
             flex-direction: column;
             gap: 2.65vw 0;
-
+            margin-top: 1.8vw;
             li {
               display: flex;
               gap: 0 1.73vw;

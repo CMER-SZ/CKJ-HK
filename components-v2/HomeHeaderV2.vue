@@ -1046,7 +1046,7 @@ const implantItem = [
               <div
                 class="offcanvas-footer d-flex justify-content-between align-items-center"
               >
-                <div class="fontSizeEdit">
+                <div class="fontSizeEdit" id="accessibilityWidget" tabindex="0">
                   <span>字體大小</span> <button id="fontDecrease">A</button>
                   <button id="fontIncrease">A</button>
                 </div>

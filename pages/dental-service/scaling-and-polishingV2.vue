@@ -1109,6 +1109,8 @@ const cleaningStepList = [
       align-items: center;
       gap: 0 13px;
       padding-bottom: 30px;
+      position: relative;
+      z-index: 1;
       & > div:nth-child(1) {
         width: 221px;
         height: 213px;
@@ -1268,6 +1270,7 @@ const cleaningStepList = [
             justify-content: flex-end;
             padding-right: 18px;
             gap: 0 4px;
+            padding-top: 5px;
             & > div:nth-child(1) {
               & > img {
                 width: 100%;
@@ -1357,7 +1360,8 @@ const cleaningStepList = [
         font-style: normal;
         font-weight: 350;
         line-height: 120%; /* 14.4px */
-        margin-left: 20px;
+        // margin-left: 20px;
+        text-align: center;
       }
       & > p:nth-child(2) {
         color: var(--Theme-Color, #fc1682);
@@ -1508,6 +1512,8 @@ const cleaningStepList = [
       justify-content: center;
       align-items: center;
       gap: 0 10px;
+      position: relative;
+      z-index: 1;
       & > div:nth-child(1) {
         width: 107px;
         height: 103px;
