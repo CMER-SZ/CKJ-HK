@@ -75,7 +75,6 @@ onMounted(() => {
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
 
-
     <div class="main">
       <div class="index_title smallPageCon">聯絡我們</div>
       <div class="tabNav noTitle smallPageCon">
@@ -326,6 +325,7 @@ onMounted(() => {
   .main {
     background: #fff;
     padding-top: 0;
+    margin-top: 30px;
   }
   .mbShow {
     display: block;
@@ -340,7 +340,7 @@ onMounted(() => {
   }
   :deep(.index_title) {
     position: relative;
-    z-index: 10;
+    z-index: 3;
   }
   .tabNav {
     padding: 0 30px;
@@ -378,21 +378,23 @@ onMounted(() => {
         color: var(--Theme-Color, #fc1682);
         text-align: right;
         font-family: 'Noto Sans HK';
-        font-size: 4.265vw;
         font-style: normal;
         font-weight: 700;
         line-height: 200%; /* 32px */
-        letter-spacing: 1.6px;
+        font-size: 3.865vw;
+        font-style: normal;
+        letter-spacing: 1px;
       }
       & > div:nth-child(2) {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: justify;
         font-family: 'Noto Sans HK';
-        font-size: 4.265vw;
         font-style: normal;
         font-weight: 400;
         line-height: 200%; /* 32px */
-        letter-spacing: 1.6px;
+        font-size: 3.865vw;
+        font-style: normal;
+        letter-spacing: 1px;
       }
     }
 
