@@ -323,132 +323,6 @@ const implantItem = [
     <a class="a-header-content-in" href="#contactUsFormNav"
       >👏即日起網上預約領取2000元種植牙現金券！</a
     >
-    <!-- <div :class="[headerConfig.pageName, 'headerBox01']">
-    
-    
-    
-      <div ref="headerMenu" class="pc_header_menu">
-        <div class="logo">
-          <nuxt-link
-            :to="'/'"
-            title="深圳愛康健口腔醫院"
-            alt="深圳愛康健口腔醫院"
-            ><img src="@/assets/images/logo_11.svg" alt=""
-          /></nuxt-link>
-          <div v-if="windowWidth > 768" class="health_care_voucher">
-            <span>香港長者醫療券</span>
-            <span>政府指定預約網站</span>
-          </div>
-        </div>
-        <div class="menu">
-          <div>
-            <div
-              v-for="(menuItem, menuIndex) in menuLists"
-              :key="menuIndex"
-              class="menuItem"
-            >
-              <nuxt-link
-                :class="[
-                  menuItem.child.length ? 'triangleIcon' : '',
-                  {
-                    'health-care-voucher':
-                      menuItem.link === '/health-care-voucher',
-                  },
-                  {
-                    'federation-of-trade-unions-zone':
-                      menuItem.link === '/federation-of-trade-unions-zone',
-                  },
-                ]"
-                :to="
-                  ['/news', '/dental-service'].includes(menuItem.link)
-                    ? 'javaScript:void(0)'
-                    : menuItem.link
-                "
-                :title="$t(menuItem.name)"
-              >
-                <span>{{ $t(menuItem.name) }}</span>
-                <svg
-                  v-if="menuItem.child.length"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="13"
-                  height="10"
-                  viewBox="0 0 13 10"
-                  fill="none"
-                >
-                  <path d="M13 0H0.5L6.75 10L13 0Z" fill="#4D4D4D" />
-                </svg>
-              </nuxt-link>
-              <div
-                v-if="menuItem.child.length"
-                class="menuChild"
-                :class="{
-                  serviceCard: menuItem.link.includes('/dental-service'),
-                }"
-              >
-                <div
-                  v-for="(menuChildItem, menuChildIndex) in menuItem.child"
-                  :key="menuChildIndex"
-                  :class="[
-                    'menuChild-item',
-                    classNamefilter(menuChildItem, menuChildIndex),
-                  ]"
-                  @click.stop="handleMenuChild(menuItem, menuChildIndex)"
-                >
-                  <nuxt-link
-                    :to="menuChildItem.link"
-                    :class="{ hot: menuChildItem.isHot }"
-                  >
-                    {{
-                      menuChildItem.link ===
-                      '/dental-service/wisdom-teeth-extraction'
-                        ? '拔牙\n'
-                        : ''
-                    }}
-                    {{ $t(menuChildItem.name) }}
-                  </nuxt-link>
-                </div>
-              </div>
-            </div>
-            <div class="menuItem langItem">
-              <img src="@/assets/images/icon_26.svg" alt="" />
-              <div class="menuChild">
-                <div
-                  :class="[
-                    'menuChild-item',
-                    { 'langItem-act': appState.langs === 't' },
-                  ]"
-                >
-                  <span class="zh_click" @click="glangs('t')">繁體</span>
-                </div>
-                <div
-                  :class="[
-                    'menuChild-item',
-                    { 'langItem-act': appState.langs === 's' },
-                  ]"
-                >
-                  <span class="zh_click" @click="glangs('s')">簡體</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="pc_menu_tel">
-            <a
-              href="tel: +852 6933 8128"
-              target="_blank"
-              rel="noopener noreferrer"
-              >香港真人熱線電話：(852) 6933 8128</a
-            >
-          </div>
-        </div>
-      </div>
-
-
-
-
-
-
-    </div> -->
-
     <nav class="navbar navbar-expand-lg navbar-light w-100">
       <div class="container-fluid position-relative">
         <div
@@ -503,7 +377,7 @@ const implantItem = [
                 $t('components.header.menuLists.menu_dental_service.name')
               }}</a>
               <ul class="dropdown-menu">
-                <li v-for="(item, index) in implantItem" key="index">
+                <li v-for="item in implantItem" :key="item.name">
                   <nuxt-link class="dropdown-item" :to="item.link">
                     {{ $t(item.name) }}</nuxt-link
                   >
@@ -842,8 +716,8 @@ const implantItem = [
                   <ul class="navbar-nav">
                     <li
                       class="nav-item"
-                      v-for="(item, index) in implantItem"
-                      key="index"
+                      v-for="item in implantItem"
+                      :key="item.name"
                     >
                       <nuxt-link class="nav-link" :to="item.link">
                         {{ $t(item.name) }}</nuxt-link

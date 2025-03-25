@@ -465,6 +465,7 @@ const linkSource = (str) => {
   }
 }
 .articlePage {
+  margin-top: 30px;
   &-err {
     padding: 100px 0;
     text-align: center;

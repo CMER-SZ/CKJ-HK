@@ -282,22 +282,6 @@ onMounted(() => {
   }, 3000)
 })
 
-// const articlePage = ref()
-// const articlePageIn = ref()
-// onUpdated(() => {
-//   articlePageIn.value = document.querySelector('.articlePage-in')
-//   articlePage.value = document.querySelector('.articlePage')
-
-//   window.addEventListener('scroll', function () {
-//     let scrollTop =
-//       document.documentElement.scrollTop || document.body.scrollTop
-//     let documentHeight = articlePageIn.value.offsetHeight - scrollTop - 440
-//     if (documentHeight < 200) {
-//       getDetail(coverageDeatail.value.preId)
-//     }
-//   })
-// })
-
 let imgcur = ref(0)
 
 const handlegetData = async () => {
@@ -481,6 +465,9 @@ if (process.server) {
 
 
 <style lang="scss" scoped>
+.articlePage {
+  margin-top: 30px;
+}
 @keyframes btntestAnima {
   5% {
     transform: scale(0.95);

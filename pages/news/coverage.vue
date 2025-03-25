@@ -278,6 +278,9 @@ onMounted(() => {
 
 
 <style lang="scss" scoped>
+.coveragePage {
+  margin-top: 30px;
+}
 .tabNav {
   font-weight: 400;
   font-size: 1.25rem;

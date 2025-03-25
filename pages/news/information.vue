@@ -324,6 +324,10 @@ const linkSource = (str) => {
 
 
 <style lang="scss" scoped>
+.informationPage {
+  margin-top: 30px;
+  padding: 30px 0 0;
+}
 .tabNav {
   font-weight: 400;
   font-size: 1.25rem;

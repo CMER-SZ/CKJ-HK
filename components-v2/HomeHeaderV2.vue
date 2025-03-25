@@ -1102,10 +1102,6 @@ const implantItem = [
           ></PageSwiperPointLine>
         </div>
       </div>
-      <div class="header-content-text-implant" :class="headerConfig.pageName">
-        <div>全程式預約一體化診療服務，</div>
-        <div>讓每一位顧客享受 <span>健康微笑之旅。</span></div>
-      </div>
     </div>
 
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
@@ -1683,7 +1679,7 @@ const implantItem = [
 
 @media screen and (max-width: 768px) {
   .header-content .a-header-content-in {
-    font-size: 16px !important;
+    font-size: 4.265vw !important;
   }
 }
 
@@ -2191,7 +2187,7 @@ const implantItem = [
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: 0px;
+        bottom: -20px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;

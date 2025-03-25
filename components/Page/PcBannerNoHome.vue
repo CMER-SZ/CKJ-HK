@@ -156,8 +156,9 @@ const hideShowText = computed(() => {
 @media screen and (min-width: 1441px) {
   .PcBannerNoHome {
     position: relative;
+    margin-top: 115px;
     .pcBox-wrapper {
-      margin-top: 95px;
+      // margin-top: 95px;
       position: relative;
       z-index: 1;
       img {
@@ -216,11 +217,11 @@ const hideShowText = computed(() => {
 @media screen and (min-width: 1041px) and (max-width: 1440px) {
   .PcBannerNoHome {
     position: relative;
-
+    margin-top: 115px;
     .pcBox-wrapper {
       position: relative;
       z-index: 1;
-      margin-top: 95px;
+      // margin-top: 95px;
       img {
         width: 100%;
         height: 100%;

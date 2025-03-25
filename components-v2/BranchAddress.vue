@@ -66,7 +66,7 @@
             role="tabpanel"
             aria-labelledby="luohu-tab"
           >
-           <Carousel :slideItems="carouselItems" :itemsPerPage="4" />
+            <Carousel :slideItems="carouselItems" :itemsPerPage="4" />
           </div>
           <div
             class="tab-pane fade"
@@ -74,12 +74,7 @@
             role="tabpanel"
             aria-labelledby="futian-tab"
           >
-
-
-
-
-
-            <div class="w-100  d-flex flex-wrap justify-content-start">
+            <div class="w-100 d-flex flex-wrap justify-content-start">
               <div
                 class="BranchAddress-Box-pc-content-item position-relative d-flex"
               >
@@ -579,59 +574,67 @@
 </template>
 
 <script setup lang="ts">
-
-
 const carouselItems = [
   {
     hasCoupon: true,
-    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc1.avif',
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc1.avif',
     title: '深圳愛康健口腔醫院',
     address: '深圳市羅湖區火車站大廈C區1-8樓',
-    href: '/contactUs#contactUs'
+    href: '/contactUs#contactUs',
   },
   {
     hasCoupon: false,
-    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc2.avif',
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc2.avif',
     title: '深圳希華愛康健醫院',
-    address: '深圳市羅湖區南湖街道和平社區和平路火車西站二層G區2層部分、3 - 7層',
-    href: '/contactUs#contactUs'
+    address:
+      '深圳市羅湖區南湖街道和平社區和平路火車西站二層G區2層部分、3 - 7層',
+    href: '/contactUs#contactUs',
   },
   {
     hasCoupon: false,
-    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc3.avif',
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc3.avif',
     title: '恒潔口腔門診部',
-    address: '深圳市羅湖區桂園街道新圍社區深南東路5015號金豐城大廈B座1602、1603',
-    href: '/contactUs#contactUs'
+    address:
+      '深圳市羅湖區桂園街道新圍社區深南東路5015號金豐城大廈B座1602、1603',
+    href: '/contactUs#contactUs',
   },
   {
     hasCoupon: false,
-    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc4.avif',
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc4.avif',
     title: '康輝口腔門診部',
-    address: '深圳市羅湖區建設路深圳火車站皮帶走廊A12-A15.B11-B14及夾層B8--3號鋪',
-    href: '/contactUs#contactUs'
+    address:
+      '深圳市羅湖區建設路深圳火車站皮帶走廊A12-A15.B11-B14及夾層B8--3號鋪',
+    href: '/contactUs#contactUs',
   },
   {
     hasCoupon: false,
-    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc5.avif',
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc5.avif',
     title: '富康口腔門診部',
     address: '深圳市火車站南端二樓走廊(火車站大酒店左側)',
-    href: '/contactUs#contactUs'
+    href: '/contactUs#contactUs',
   },
   {
     hasCoupon: false,
-    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc6.avif',
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc6.avif',
     title: '顏麗口腔診所',
     address: '深圳市羅湖區羅湖口岸商業城1091號',
-    href: '/contactUs#contactUs'
+    href: '/contactUs#contactUs',
   },
-    {
+  {
     hasCoupon: false,
-    imageUrl: 'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc7.avif',
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc7.avif',
     title: '恒樂口腔診所',
     address: '深圳市羅湖區羅湖口岸商業城1091號',
-    href: '/contactUs#contactUs'
-  }
-];
+    href: '/contactUs#contactUs',
+  },
+]
 </script>
 
 <style lang="scss" scope>
@@ -866,8 +869,7 @@ const carouselItems = [
   margin-left: 15px;
   box-sizing: border-box;
   padding-left: 12px;
-  border-left: 2px solid var(--Pink-Pale, #ffe9ec);
-
+  border-left: 2px solid var(--New-Theme-Color, #d2337d);
   span {
     color: var(--Grey-Dark, #333);
     font-family: 'Noto Sans HK';
@@ -898,7 +900,7 @@ const carouselItems = [
     padding: 0 10px;
     position: relative;
     background: #fff;
-
+    border-left: none;
     span {
       position: relative;
       z-index: 10;
@@ -929,7 +931,7 @@ const carouselItems = [
   .subheading::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     width: 180%;
     height: 2px;
@@ -940,7 +942,6 @@ const carouselItems = [
 
   // 分店地址
   .BranchAddress {
- 
     padding-top: 45px;
     padding-bottom: 30px;
     &-addressImg {

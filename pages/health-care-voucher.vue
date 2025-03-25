@@ -133,38 +133,6 @@ const pageDetail: any = {
         },
       ],
     },
-    // {
-    //   type: 'h3',
-    //   text: 'health-care-voucher.pageDetail.content_1.list_10.text',
-    //   className: 'nob',
-    // },
-    // {
-    //   type: 'ul',
-    //   list: [
-    //     'health-care-voucher.pageDetail.content_1.list_11.text_1',
-    //     'health-care-voucher.pageDetail.content_1.list_11.text_2',
-    //     'health-care-voucher.pageDetail.content_1.list_11.text_3',
-    //   ],
-    //   className: 'nob',
-    // },
-    // {
-    //   type: 'img',
-    //   list: [
-    //     'https://static.cmereye.com/imgs/2024/02/f3dd07a845186d32.webp',
-    //     'https://static.cmereye.com/imgs/2024/02/5f756747940bec34.webp',
-    //     'https://static.cmereye.com/imgs/2024/02/2fb9546a9917caae.webp',
-    //   ],
-    //   className: 'imgListsMB imgLists nob',
-    // },
-    // {
-    //   type: 'p',
-    //   list: [
-    //     {
-    //       type: 'defule',
-    //       text: 'health-care-voucher.pageDetail.content_1.list_12.text',
-    //     },
-    //   ],
-    // },
     {
       type: 'h2',
       text: 'health-care-voucher.pageDetail.content_1.list_13.text',
@@ -184,44 +152,9 @@ const pageDetail: any = {
       type: 'img',
       list: [
         'https://static.cmereye.com/imgs/2024/07/af47792c9813ef40.webp',
-        // 'https://static.cmereye.com/imgs/2024/02/079da74dd10b39ac.webp'
       ],
       className: 'imgLists nob imgStyle',
     },
-    // {
-    //   type: 'p',
-    //   list: [
-    //     {
-    //       type: 'defule',
-    //       text: 'health-care-voucher.pageDetail.content_1.list_15.text',
-    //     },
-    //   ],
-    // },
-    // {
-    //   type: 'p',
-    //   list: [
-    //     {
-    //       type: 'defule',
-    //       text: 'health-care-voucher.pageDetail.content_1.list_16.text_1',
-    //     },
-    //     {
-    //       type: 'indexColor',
-    //       text: 'health-care-voucher.pageDetail.content_1.list_16.text_2',
-    //     },
-    //     {
-    //       type: 'defule',
-    //       text: 'health-care-voucher.pageDetail.content_1.list_16.text_3',
-    //     },
-    //     {
-    //       type: 'indexColor',
-    //       text: 'health-care-voucher.pageDetail.content_1.list_16.text_4',
-    //     },
-    //     {
-    //       type: 'defule',
-    //       text: 'health-care-voucher.pageDetail.content_1.list_16.text_5',
-    //     },
-    //   ],
-    // },
     {
       type: 'p',
       list: [
@@ -2000,9 +1933,7 @@ const problemData = {
   grid-row: 2 / span 3;
   grid-column: 3 / span 1;
 }
-// .navbar-content {
-//   display: none;
-// }
+
 .health-care-voucher-top {
   display: flex;
   justify-content: space-between;
@@ -2269,6 +2200,7 @@ const problemData = {
   }
 }
 .health-care-voucher {
+  margin-top: 30px;
   padding-top: 100px;
 }
 .tabNav {

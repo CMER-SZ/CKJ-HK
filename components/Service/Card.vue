@@ -208,7 +208,7 @@ const servicesCardPageData = {
           padding: 0 6px;
           &-name {
             font-weight: 600;
-            font-size: 15px;
+            font-size: 4vw;
             line-height: 160%;
             padding: 8px 0;
             height: auto;

@@ -200,7 +200,6 @@ onMounted(() => {
     <div class="doctorPage">
       <div class="doctorPage-in smallPageCon">
         <div class="index_title">{{ $t('pages.medical_team.title') }}</div>
-        <!-- <div class="doctorPage-in-text">{{$t('pages.medical_team.text')}}</div> -->
 
         <div class="doctorPage-in-tabNav">
           <div class="doctorPage-in-tabNav-l">
@@ -208,9 +207,6 @@ onMounted(() => {
             <span>{{ $t('pages.medical_team.title') }}</span>
             <span>{{ $t(appState.areaTabs[appState.areaTabCurNum]) }}</span>
           </div>
-          <!-- <div>
-            <AreaTab />
-          </div> -->
         </div>
         <div class="doctorPage-in-content">
           <span>{{ $t('pages.medical_team.content.span_1') }}</span
@@ -302,7 +298,6 @@ onMounted(() => {
                     </span>
                   </div>
                   <div class="detail-6">
-                    <!-- <span @click="toWhatsApp">線上咨詢</span> -->
                     <PageAnimBtnTypeTwo str="線上咨詢" />
                   </div>
                 </div>
@@ -315,11 +310,6 @@ onMounted(() => {
       <AppointmentFormV2 />
     </div>
     <FooterV2 />
-    <!-- <PageNavbar
-      :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
-    /> -->
-    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar v-else /> -->
     <AsideV2 />
   </div>
 </template>
@@ -327,14 +317,14 @@ onMounted(() => {
 <style lang="scss" scoped>
 .doctorPage {
   background: #fff;
-  // padding-bottom: 143px;
   position: relative;
   z-index: 1;
+  margin-top: 30px;
   .index_title {
     z-index: 1;
   }
   &-in {
-    padding-top: 143px;
+    padding-top: 45px;
     &-text {
       font-weight: 700;
       font-size: 1.75rem;
@@ -619,9 +609,8 @@ onMounted(() => {
 }
 @media (min-width: 768px) and (max-width: 1920px) {
   .doctorPage {
-    // padding-bottom: 7.4479vw;
     &-in {
-      padding-top: 7.4479vw;
+      padding-top: 1.4479vw;
       &-text {
         font-size: 1.4583vw;
         margin-top: 2.2917vw;
