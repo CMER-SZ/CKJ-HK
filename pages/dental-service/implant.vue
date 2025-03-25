@@ -1666,7 +1666,7 @@ const problemData = {
         }
 
         & > p:nth-child(2) {
-          margin: 30px 0;
+          margin: 30px 0 10px;
           & > span {
             position: relative;
             i {

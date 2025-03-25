@@ -132,7 +132,7 @@ const Plant_brand_series_data = [
     listsM: ['超聲波技術清除牙石', '預防牙患', '牙齒拋光處理'],
     cleanScore: 4,
     whiteningScore: 3,
-    comfortScore: 4,
+    comfortScore: 3,
   },
   {
     id: '1102',
@@ -160,9 +160,9 @@ const Plant_brand_series_data = [
       '分析客人刷牙盲點',
       '噴砂清潔牙縫有效去漬',
     ],
-    cleanScore: 3,
-    whiteningScore: 2,
-    comfortScore: 3,
+    cleanScore: 5,
+    whiteningScore: 5,
+    comfortScore: 4,
   },
   {
     id: '1103',
