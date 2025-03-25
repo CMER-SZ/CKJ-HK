@@ -2530,9 +2530,9 @@ const problemData = {
                 display: inline-block;
                 white-space: nowrap;
                 left: -5vw;
-        top: -1.19vw;
-        font-size: 5.536vw;
-        letter-spacing: 1.427vw;
+                top: -1.19vw;
+                font-size: 5.536vw;
+                letter-spacing: 1.427vw;
               }
             }
             & > span::before {
