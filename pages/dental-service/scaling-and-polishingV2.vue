@@ -500,6 +500,17 @@ const cleaningStepList = [
                 瑞士EMS超音波科技採用光學數位掃描，高頻聲納定位，作用於清潔牙結石，預防牙周病和蛀牙。
               </p>
             </div>
+            <div class="cleaning-video-content-equipment">
+              <div class="equipment-img">
+                <img
+                  src="https://static.ckjhk.com/ckj-image/2025032514003801.png"
+                  alt="瑞士EMS超音波科技"
+                />
+              </div>
+              <div>
+                採用光學數位掃描，高頻聲納定位，作用於清潔牙結石，預防牙周病和蛀牙。
+              </div>
+            </div>
           </div>
         </section>
       </div>
@@ -1092,6 +1103,59 @@ const cleaningStepList = [
         letter-spacing: 1.8px;
       }
     }
+    .cleaning-video-content-equipment {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 13px;
+      padding-bottom: 30px;
+      & > div:nth-child(1) {
+        width: 221px;
+        height: 213px;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: relative;
+          z-index: 5;
+        }
+      }
+      .equipment-img {
+        position: relative;
+      }
+      .equipment-img::after {
+        content: '瑞士EMS超音波科技';
+        position: absolute;
+        width: fit-content;
+        padding: 5px 20px 5px 50px;
+        color: var(--White, #fff);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 2px;
+        left: auto;
+        top: 44px;
+        right: -235px;
+        border-radius: 0px 20px 20px 0px;
+        background: var(--Brand-Color, #f8298a);
+        white-space: nowrap;
+      }
+      & > div:nth-child(2) {
+        max-width: 503px;
+        color: var(--Grey-Dark, #333);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%; /* 36px */
+        letter-spacing: 1.8px;
+        padding-top: 25px;
+      }
+    }
   }
   :deep(.problem) {
     margin-top: 30px;
@@ -1436,6 +1500,59 @@ const cleaningStepList = [
       display: flex;
       flex-direction: column;
       gap: 10px 0;
+    }
+    .cleaning-video-content-equipment {
+      box-sizing: border-box;
+      padding: 10px 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0 10px;
+      & > div:nth-child(1) {
+        width: 107px;
+        height: 103px;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          position: relative;
+          z-index: 5;
+        }
+      }
+      .equipment-img {
+        position: relative;
+      }
+      .equipment-img::after {
+        content: '瑞士EMS超音波科技';
+        position: absolute;
+        width: fit-content;
+        padding: 3px 14.5px 3px 36px;
+        color: var(--White, #fff);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 18px */
+        left: auto;
+        top: 20px;
+        right: -135px;
+        border-radius: 0px 20px 20px 0px;
+        background: var(--Brand-Color, #f8298a);
+        white-space: nowrap;
+      }
+      & > div:nth-child(2) {
+        max-width: 204.004px;
+        color: var(--Grey-Dark, #333);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 18px */
+        letter-spacing: 0px;
+        padding-top: 28px;
+      }
     }
   }
   .bottom_info {

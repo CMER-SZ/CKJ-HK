@@ -900,7 +900,7 @@ const carouselItems = [
     padding: 0 10px;
     position: relative;
     background: #fff;
-
+    border-left: none;
     span {
       position: relative;
       z-index: 10;
