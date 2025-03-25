@@ -518,7 +518,7 @@ const cleaningStepList = [
         <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
       </section>
       <BranchAddress />
-      <ContactForm-new2 />
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
     <!-- <FooterV2 /> -->
