@@ -515,7 +515,7 @@ const implantItem = [
                     $t('components.header.menuLists.menu_dental_service.name')
                   }}</a>
                   <ul class="dropdown-menu">
-                    <li v-for="(item, index) in implantItem" key="index">
+                    <li v-for="item in implantItem" :key="item.name">
                       <nuxt-link class="dropdown-item" :to="item.link">
                         {{ $t(item.name) }}</nuxt-link
                       >
@@ -894,8 +894,8 @@ const implantItem = [
                       <ul class="navbar-nav">
                         <li
                           class="nav-item"
-                          v-for="(item, index) in implantItem"
-                          key="index"
+                          v-for="item in implantItem"
+                          :key="item.name"
                         >
                           <nuxt-link class="nav-link" :to="item.link">
                             {{ $t(item.name) }}</nuxt-link
@@ -1682,14 +1682,11 @@ const implantItem = [
 }
 
 @media screen and (max-width: 768px) {
-  .header-content .a-header-content-in{
+  .header-content .a-header-content-in {
     font-size: 16px !important;
   }
 }
 
-.swiperBox {
-  // margin-top: 5.25vw;
-}
 .headerBox01 {
   position: relative;
   background: #fff;
@@ -2194,7 +2191,7 @@ const implantItem = [
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;
@@ -2213,7 +2210,7 @@ const implantItem = [
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
 
@@ -2271,7 +2268,7 @@ const implantItem = [
     }
 
     .headerBox02 {
-      position: relative;
+      position: fixed;
       z-index: 40;
     }
   }
@@ -2469,7 +2466,7 @@ const implantItem = [
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;
@@ -2488,7 +2485,7 @@ const implantItem = [
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
 
@@ -2773,12 +2770,15 @@ const implantItem = [
 }
 
 @media (max-width: 991.98px) {
+  .swiperBox {
+    margin-top: 101px;
+  }
   body {
     padding-bottom: 48px;
   }
-.offcanvas{
-  padding-bottom: 54px;
-}
+  .offcanvas {
+    padding-bottom: 54px;
+  }
   .navbar {
     padding-left: 20px;
     padding-right: 20px;
@@ -2848,10 +2848,10 @@ const implantItem = [
     transition: all 0.3s ease;
     transform: translateX(100%);
   }
- .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover{
-  background: white;
-  color: var(--New-Theme-Color, #d2337d) !important;
- }
+  .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover {
+    background: white;
+    color: var(--New-Theme-Color, #d2337d) !important;
+  }
 
   .offcanvas-end
     .offcanvas-body
@@ -2951,6 +2951,9 @@ const implantItem = [
 }
 /* PC端菜单样式 */
 @media (min-width: 992px) {
+  .swiperBox {
+    margin-top: 115px;
+  }
   .navbar {
     padding: 0;
     box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
@@ -3200,7 +3203,7 @@ const implantItem = [
           &:nth-child(8):hover {
             background: none;
           }
-  &:nth-child(9):hover {
+          &:nth-child(9):hover {
             background: none;
           }
           .nav-link {

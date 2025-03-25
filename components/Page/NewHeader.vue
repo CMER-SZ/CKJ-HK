@@ -1874,7 +1874,7 @@ const getWindowWidth = () => {
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;
@@ -1893,7 +1893,7 @@ const getWindowWidth = () => {
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
     .waterBg-implant {
@@ -2210,7 +2210,7 @@ const getWindowWidth = () => {
     &-btn-implant {
       &.bannerLine {
         position: relative;
-        bottom: -100px;
+        bottom: 0px;
         z-index: 2;
         .bannerLine-in {
           width: 150px;
@@ -2229,7 +2229,7 @@ const getWindowWidth = () => {
       }
       &.course-new {
         display: block;
-        margin-top: 150px;
+        margin-top: 30px;
       }
     }
     .waterBg-implant {

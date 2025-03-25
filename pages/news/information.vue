@@ -188,10 +188,7 @@ const linkSource = (str) => {
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
-         <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="pageIn whitebgColor informationPage">
@@ -316,12 +313,12 @@ const linkSource = (str) => {
         <div class="lists" v-else>服務異常</div>
       </div>
       <BranchAddress />
-      <AppointmentFormV2/>
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 

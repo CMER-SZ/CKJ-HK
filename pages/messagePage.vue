@@ -155,7 +155,7 @@ onMounted(() => {
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
     <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 
@@ -251,7 +251,7 @@ onMounted(() => {
   letter-spacing: 2.6px;
   a {
     color: var(--Theme-Color, #fc1682);
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 26px;
     font-style: normal;
     font-weight: 500;
@@ -273,7 +273,7 @@ font-family: 'FakePearl-Regular';
     ul {
       color: var(--Theme-Color, #fc1682);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 28px;
       font-style: normal;
       font-weight: 500;
@@ -362,7 +362,7 @@ font-family: 'FakePearl-Regular';
     margin-top: 30px;
     color: var(--Grey-Deep, #4d4d4d);
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -399,7 +399,7 @@ font-family: 'FakePearl-Regular';
     .contact {
       color: var(--Grey-Deep, #4d4d4d);
       text-align: center;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 4vw;
       font-style: normal;
       font-weight: 400;
@@ -407,7 +407,7 @@ font-family: 'FakePearl-Regular';
       letter-spacing: 1.5px;
       a {
         color: var(--Theme-Color, #fc1682);
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 15px;
         font-style: normal;
         font-weight: 400;
@@ -421,7 +421,7 @@ font-family: 'FakePearl-Regular';
         ul {
           color: var(--Theme-Color, #fc1682);
           text-align: center;
-      font-family: 'FakePearl-Regular';
+          font-family: 'FakePearl-Regular';
           font-size: 16px;
           font-style: normal;
           font-weight: 500;

@@ -797,7 +797,8 @@ const problemData = {
     <!-- 聯絡我們 -->
     <BranchAddress />
     <AppointmentFormV2 />
-    <PageFooter />
+    <!-- <PageFooter /> -->
+    <FooterV2 />
     <!-- <PageNavbar
       :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
     /> -->
@@ -2024,7 +2025,7 @@ const problemData = {
           font-style: normal;
           font-weight: 350;
           line-height: 5.33vw;
-          margin-top: 5px;
+          margin-top: 1.33vw;
           text-align: center;
         }
       }
@@ -2146,7 +2147,7 @@ const problemData = {
       // content: 'Brand';
       color: var(--Grey-Light, #e6e6e6);
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.265vw;
       font-style: normal;
       font-weight: 500;
       line-height: 150%;
@@ -2215,14 +2216,14 @@ const problemData = {
   }
 
   .extra-charge {
-    margin-top: 30px;
+    margin-top: 8vw;
 
     .extra-charge-context {
       background: var(--White, #fff);
-      border-radius: 10px;
-      box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+      border-radius: 2.65vw;
+      box-shadow: 0px 1.065vw 1.065vw 0px rgba(77, 77, 77, 0.2);
       overflow: hidden;
-      margin-top: 14px;
+      margin-top: 3.73vw;
       & > div {
         display: flex;
         justify-content: space-between;
@@ -2232,22 +2233,22 @@ const problemData = {
         & > div:nth-child(1) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.6px;
+          letter-spacing: 0.4265vw;
         }
 
         & > div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
           text-align: right;
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 0.8px;
+          letter-spacing: 0.213vw;
         }
       }
 
@@ -2270,7 +2271,7 @@ const problemData = {
   }
 
   .implant-git {
-    margin-top: 30px;
+    margin-top: 8vw;
 
     .implant-git-image {
       & > div:nth-child(1) {
@@ -2297,7 +2298,7 @@ const problemData = {
         & > span {
           color: var(--Brand-Color, #f8298a);
           font-family: 'Noto Sans HK';
-          font-size: 14px;
+          font-size: 3.73vw;
           font-style: normal;
           font-weight: 700;
           line-height: 150%;
@@ -2317,11 +2318,11 @@ const problemData = {
       // content: 'Types';
       color: var(--Grey-Light, #e6e6e6);
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.265vw;
       font-style: normal;
       font-weight: 500;
       line-height: 150%;
-      letter-spacing: 1.6px;
+      letter-spacing: 0.4265vw;
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
@@ -2332,7 +2333,7 @@ const problemData = {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       box-sizing: border-box;
-      margin-top: 14px;
+      margin-top: 3.73vw;
       & > div:nth-child(3n + 1) {
         // max-width: 18.6vw;
         background: var(--Theme-Color, #fc1682);
@@ -2357,8 +2358,8 @@ const problemData = {
 
       & > div:nth-child(3n + 2) {
         width: 37.465vw;
-        border-right: 4px solid var(--Brand-Color, #f8298a) !important;
-        border-left: 4px solid var(--Brand-Color, #f8298a) !important;
+        border-right: 1.065vw solid var(--Brand-Color, #f8298a) !important;
+        border-left: 1.065vw solid var(--Brand-Color, #f8298a) !important;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2398,7 +2399,7 @@ const problemData = {
       }
 
       & > div:nth-child(20) {
-        border-bottom: 4px solid var(--Brand-Color, #f8298a);
+        border-bottom: 1.065vw solid var(--Brand-Color, #f8298a);
         box-sizing: border-box;
         padding: 2.66vw 0.6vw 2.66vw 6.66vw;
 
@@ -2510,16 +2511,17 @@ const problemData = {
             height: 5.96vw;
             & > span {
               position: relative;
+              z-index: 1;
               i {
                 position: relative;
                 z-index: 10;
                 text-align: center;
                 font-family: 'Noto Sans HK';
-                font-size: 17.76px;
+                font-size: 4.736vw;
                 font-style: normal;
                 font-weight: 900;
                 line-height: normal; /* 83.333% */
-                letter-spacing: 2.864px;
+                letter-spacing: 0.7637vw;
                 background: linear-gradient(
                   90deg,
                   var(--Purple, #9356ba) 0%,
@@ -2528,38 +2530,43 @@ const problemData = {
                 background-clip: text;
                 color: transparent;
                 display: inline-block;
+                white-space: nowrap;
               }
             }
             & > span::after {
               content: '立即預約牙科服務';
               position: absolute;
               z-index: 3;
-              color: khaki;
               text-align: center;
               font-family: 'Noto Sans HK';
-              font-size: 17.76px;
+              font-size: 4.736vw;
               font-style: normal;
               font-weight: 900;
               line-height: normal; /* 83.333% */
-              letter-spacing: 2.864px;
+              letter-spacing: 0.7637vw;
               left: 0;
-              text-shadow: -2px 2px #f72a8a, 2px -2px #f72a8a, -2px -2px #f72a8a,
-                2px 0 #f72a8a;
+              text-shadow: -0.53vw 0.53vw #f72a8a, 0.53vw -0.53vw #f72a8a,
+                -0.53vw -0.53vw #f72a8a, 0.53vw 0 #f72a8a;
+              white-space: nowrap;
+              top: -1.33vw;
             }
             & > span::before {
               content: '立即預約牙科服務';
               position: absolute;
               z-index: 5;
               left: 0;
-              text-shadow: -1px 1px #fff, 1px -1px #fff, -1px -1px #fff,
-                1px 0 #fff;
+              text-shadow: -0.265vw 0.265vw #fff, 0.265vw -0.265vw #fff,
+                -0.265vw -0.265vw #fff, 0.265vw 0 #fff;
               text-align: center;
               font-family: 'Noto Sans HK';
-              font-size: 17.76px;
+              font-size: 4.736vw;
               font-style: normal;
               font-weight: 900;
               line-height: normal; /* 83.333% */
-              letter-spacing: 2.864px;
+              letter-spacing: 0.7637vw;
+              white-space: nowrap;
+              top: -1.33vw;
+              color: #fff;
             }
           }
 

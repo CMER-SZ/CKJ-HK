@@ -363,10 +363,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" /> -->
-         <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="pageIn whitebgColor">
@@ -405,136 +402,6 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <!--       
-      <div class="course-action">
-        <div class="course-action-in">
-          <div class="course-action-in-l">
-            <img loading="lazy" src="https://static.cmereye.com/imgs/2024/01/84dc48aa55e716a2.jpg" alt="">
-          </div>
-          <div class="course-action-in-r">
-            <div class="t">
-              <div class=t-t>
-                <div class="title">香港工聯會參觀交流</div>
-                <div class="time">2023年12月15日</div>
-              </div>
-              <div class="context">接待香港工聯會代表團，交流牙科醫療服務發展及趨勢</div>
-            </div>
-            <div class="b">
-              <div class="btn">
-                <a href="/brand/action-message">查看全文</a>
-              </div>
-              <div class="text">團體交流</div>
-            </div>
-          </div>
-        </div>
-        <div class="course-action-in">
-          <div class="course-action-in-l">
-            <img loading="lazy" src="https://static.cmereye.com/imgs/2024/06/b487c07b1769be56.jpg" alt="">
-          </div>
-          <div class="course-action-in-r">
-            <div class="t">
-              <div class=t-t>
-                <div class="title">香港華人牙醫公會參觀交流</div>
-                <div class="time">2024年5月30日</div>
-              </div>
-              <div class="context">我們接待了香港華人牙醫公會的訪問團隊，此次訪問旨在進一步加強與香港在口腔醫療領域的學習與交流。</div>
-            </div>
-            <div class="b">
-              <div class="btn">
-                <a href="/brand/visit-and-exchange-with-the-Hong-Kong-chinese-dental-association">查看全文</a>
-              </div>
-              <div class="text">團體交流</div>
-            </div>
-          </div>
-        </div>
-        <div class="course-action-in">
-          <div class="course-action-in-l">
-            <img loading="lazy" src="https://static.cmereye.com/imgs/2024/06/7ea5e8d2d7e2be8c.jpg" alt="">
-          </div>
-          <div class="course-action-in-r">
-            <div class="t">
-              <div class=t-t>
-                <div class="title">愛心洗牙啟動禮公益活動</div>
-                <div class="time">2024年5月30日</div>
-              </div>
-              <div class="context">與立法會議員、香港中旅集團及社福團體，為過千位長者及有需要人士提供免費基層牙科醫療及交通接送服務</div>
-            </div>
-            <div class="b">
-              <div class="btn">
-                <a href="/brand/love-teeth-wash-launching-ceremony-public-welfare-activity">查看全文</a>
-              </div>
-              <div class="text">公益活動</div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- <div class="course">
-        <div class="course-title dentistryServices-title">
-          <div class="course-title-in dentistryServices-title-in bb">
-            {{$t(courseData.title)}}
-          </div>
-        </div>
-        <div class="course-in">
-          <div class="historyNode-pc">
-            <div class="historyNode-pc-t">
-              <swiper
-                :slidesPerView="1"
-                class="courseSwiperT"
-                :modules="[Controller]"
-                :width="145"
-                :translate="145"
-                @swiper="setFirstSwiper"
-                @click="handleFirstSwiper"
-                @slideChange="changeSwiper"
-                :controller="{ control: secondSwiper }"
-              >
-                <swiper-slide :class="['swiper-slide']" v-for="(courseItem,courseIndex) in newCourseLists" :key="courseIndex">
-                  <div class="timeNode">{{courseItem.timeNode}}</div>
-                </swiper-slide>
-              </swiper>
-            </div>
-            <div class="historyNode-pc-line">
-              <div class="historyNode-pc-line-in"></div>
-            </div>
-            <div class="historyNode-pc-b">
-              <swiper
-                class="courseSwiperB"
-                :modules="[Controller]"
-                @swiper="setSecondSwiper"
-                @click="handleFirstSwiper"
-                :controller="{ control: firstSwiper }"
-              >
-                <swiper-slide :class="['swiper-slide']" v-for="(courseItem,courseIndex) in newCourseLists" :key="courseIndex">
-                  <div class="courseBox">
-                    <div class="courseBox-line">
-                      <div class="round" :class="{currtNumRound: currtNum >= courseIndex}"></div>
-                    </div>
-                    <div class="courseBox-in">
-                      <div class="courseBox-in-lists">
-                        <div class="courseBox-in-listItem" v-for="(courseTimeNodeItem,courseTimeNodeIndex) in courseItem.events" :key="courseTimeNodeIndex">
-                          <div class="month">{{courseTimeNodeItem.month}}</div>
-                          <div class="context">{{$t(courseTimeNodeItem.context)}}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </swiper-slide>
-              </swiper>
-            </div>
-          </div>
-          <div class="historyNode-mb">
-            <div class="historyNode-in" v-for="(courseItem,courseIndex) in courseData.lists" :key="courseIndex">
-              <div :class="['historyNode-box',{'act-historyNode-box': currtNum === courseIndex}]" >
-                <div class="year" @click="currtNum = courseIndex">{{courseItem.timeNode}}</div>
-                <div :class="['eventsItem',{'act-eventsItem': currtNum === courseIndex}]" v-for="(eventsItem,eventsIndex) in courseItem.events" :key="eventsIndex">
-                  <div class="month">{{eventsItem.month}}</div>
-                  <div class="context">{{$t(eventsItem.context)}}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
       <div class="new_course_bg">
         <a id="course" class="hash_link"></a>
         <div class="new_course">
@@ -818,12 +685,10 @@ onMounted(() => {
         </div>
       </div>
       <BranchAddress />
-      <AppointmentFormV2/>
+      <AppointmentFormV2 />
     </div>
     <FooterV2 />
-    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar v-else /> -->
-    <AsideV2/>
+    <AsideV2 />
   </div>
 </template>
 
@@ -1035,7 +900,7 @@ onMounted(() => {
     margin-bottom: 45px;
     color: #fc1682;
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 50px;
     font-style: normal;
     font-weight: 400;
@@ -1224,7 +1089,7 @@ font-family: 'FakePearl-Regular';
   &-new_text {
     color: var(--Black, #4d4d4d);
     text-align: center;
-font-family: 'FakePearl-Regular';
+    font-family: 'FakePearl-Regular';
     font-size: 28px;
     font-style: normal;
     font-weight: 500;
@@ -1429,7 +1294,7 @@ font-family: 'FakePearl-Regular';
       }
       & > div:nth-child(2) {
         color: var(--Grey-Deep, #4d4d4d);
-    font-family: 'FakePearl-Regular';
+        font-family: 'FakePearl-Regular';
         font-size: 26px;
         font-style: normal;
         font-weight: 500;
@@ -1545,7 +1410,7 @@ font-family: 'FakePearl-Regular';
       margin-top: 60px;
       margin-bottom: 15px;
       color: var(--Theme-Color, #fc1682);
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 26px;
       font-style: normal;
       font-weight: 400;
@@ -1553,7 +1418,7 @@ font-family: 'FakePearl-Regular';
     }
     .new_node_time {
       color: #fc1682;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 20px;
       font-style: normal;
       font-weight: 600;
@@ -1604,7 +1469,7 @@ font-family: 'FakePearl-Regular';
     & > div:nth-child(1) {
       color: var(--Theme-Color, #fc1682);
       text-align: justify;
-  font-family: 'FakePearl-Regular';
+      font-family: 'FakePearl-Regular';
       font-size: 20px;
       font-style: normal;
       font-weight: 400;
@@ -1967,7 +1832,7 @@ font-family: 'FakePearl-Regular';
           & > span {
             display: inline;
             color: var(--Grey-Deep, #4d4d4d);
-        font-family: 'FakePearl-Regular';
+            font-family: 'FakePearl-Regular';
             font-style: normal;
           }
         }
