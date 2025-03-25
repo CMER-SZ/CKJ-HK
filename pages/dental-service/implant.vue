@@ -2517,11 +2517,9 @@ const problemData = {
                 z-index: 10;
                 text-align: center;
                 font-family: 'Noto Sans HK';
-                font-size: 4.736vw;
                 font-style: normal;
                 font-weight: 900;
                 line-height: normal; /* 83.333% */
-                letter-spacing: 0.7637vw;
                 background: linear-gradient(
                   90deg,
                   var(--Purple, #9356ba) 0%,
@@ -2531,42 +2529,30 @@ const problemData = {
                 color: transparent;
                 display: inline-block;
                 white-space: nowrap;
+                left: -5vw;
+        top: -1.19vw;
+        font-size: 5.536vw;
+        letter-spacing: 1.427vw;
               }
-            }
-            & > span::after {
-              content: '立即預約牙科服務';
-              position: absolute;
-              z-index: 3;
-              text-align: center;
-              font-family: 'Noto Sans HK';
-              font-size: 4.736vw;
-              font-style: normal;
-              font-weight: 900;
-              line-height: normal; /* 83.333% */
-              letter-spacing: 0.7637vw;
-              left: 0;
-              text-shadow: -0.53vw 0.53vw #f72a8a, 0.53vw -0.53vw #f72a8a,
-                -0.53vw -0.53vw #f72a8a, 0.53vw 0 #f72a8a;
-              white-space: nowrap;
-              top: -1.33vw;
             }
             & > span::before {
               content: '立即預約牙科服務';
               position: absolute;
               z-index: 5;
               left: 0;
-              text-shadow: -0.265vw 0.265vw #fff, 0.265vw -0.265vw #fff,
-                -0.265vw -0.265vw #fff, 0.265vw 0 #fff;
               text-align: center;
               font-family: 'Noto Sans HK';
-              font-size: 4.736vw;
+              font-size: 6.236vw;
               font-style: normal;
               font-weight: 900;
-              line-height: normal; /* 83.333% */
-              letter-spacing: 0.7637vw;
+              line-height: normal;
+              letter-spacing: 0.707vw;
               white-space: nowrap;
-              top: -1.33vw;
-              color: #fff;
+              top: -3.858vw;
+              left: -5.3vw;
+              color: #ffffff;
+              text-shadow: -0.5vw 0 1px #f8298a, 0 -0.5vw 1px #f8298a,
+                0.5vw 0 1px #f8298a, 0 0.5vw 1px #f8298a;
             }
           }
 
