@@ -542,66 +542,6 @@ const implantItem = [
       >
         <PageAnimBtnTypeTwo :str="'獲取免費諮詢'" />
       </div>
-      <div
-        v-if="
-          [
-            'implant',
-            'rootCanal-test',
-            'scaling-and-polishing-test',
-            'health-care-voucher',
-          ].includes(headerConfig.pageName) && windowWidth > 768
-        "
-        class="header-content-text-implant"
-        :class="headerConfig.pageName"
-      >
-        <div>29年專科•專業•專注</div>
-        <div><span>港人首選</span>一站式連鎖牙科品牌</div>
-      </div>
-      <div
-        class="explain_box_mobile"
-        v-if="hideDiv()"
-        :style="{
-          top: isArticle
-            ? windowWidth > 768
-              ? '50px'
-              : '0'
-            : windowWidth > 768
-            ? '110px'
-            : '0',
-          display: showExplain ? 'none' : 'none',
-        }"
-      >
-        <span>優惠只限於網上及電話預約客戶</span>
-      </div>
-      <div
-        v-if="headerConfig.pageName === 'periodontal-test'"
-        class="header-content-text-implant"
-        :class="headerConfig.pageName"
-      >
-        <div>健康牙齒，從<span>牙周病治療</span>開始</div>
-        <div>保持口氣清新、牙周健康</div>
-      </div>
-      <div
-        v-if="
-          [
-            'veneers-test',
-            'action-message',
-            'course-new',
-            'invisalign-test',
-            'orthodontics-test',
-            'index-test',
-          ].includes(headerConfig.pageName)
-        "
-        class="header-content-text-implant"
-        :class="headerConfig.pageName"
-      >
-        <div>全程式預約一體化診療服務，</div>
-        <div>讓每一位顧客享受 <span>健康微笑之旅。</span></div>
-      </div>
-      <!-- pc菜单 -->
-
-      <!-- mb菜单 -->
-
       <nav
         class="navbar navbar-expand-lg navbar-light position-fixed w-100 top-0"
       >
@@ -1298,6 +1238,7 @@ const implantItem = [
   box-sizing: border-box;
   position: relative;
   z-index: 5;
+  margin-top: 94.5px;
   &-bgImg {
     width: 100%;
     box-sizing: border-box;
@@ -2522,8 +2463,8 @@ const implantItem = [
     }
     &-bgImg-implant {
       position: relative;
-      top: 13.5vw;
-      margin-top: 9.2307vw;
+      top: 0;
+      margin-top: 0;
       &.rootCanal-test {
         padding-bottom: 10.65vw;
       }
@@ -2531,28 +2472,28 @@ const implantItem = [
         padding-bottom: 10.65vw;
       }
       &.scaling-and-polishing {
-        padding-bottom: 16vw;
+        padding-bottom: 0;
       }
       &.scaling-and-polishing-test {
-        padding-bottom: 16vw;
+        padding-bottom: 0;
       }
       &.periodontal-test,
       &.orthodontics-test,
       &.invisalign-test,
       &.veneers-test {
-        padding-bottom: 16vw;
+        padding-bottom: 0;
       }
       &.implant {
-        padding-bottom: 14vw;
+        padding-bottom: 0;
       }
       &.course-new {
-        padding-bottom: 13.33vw;
+        padding-bottom: 0;
       }
       &.health-care-voucher {
-        padding-bottom: 27.33vw;
+        padding-bottom: 0;
       }
       &.coverage {
-        padding-bottom: 32vw;
+        padding-bottom: 0;
       }
     }
     &-btn-implant {
@@ -2958,9 +2899,9 @@ const implantItem = [
     padding-bottom: 48px;
   }
 
-.offcanvas{
-  padding-bottom: 54px;
-}
+  .offcanvas {
+    padding-bottom: 54px;
+  }
   .navbar {
     padding-left: 20px;
     padding-right: 20px;
@@ -3030,10 +2971,11 @@ const implantItem = [
     transition: all 0.3s ease;
     transform: translateX(100%);
   }
-   .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover{
-  background: white;
-  color: var(--New-Theme-Color, #d2337d) !important;
- }
+  .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu a:hover {
+    background: white;
+    color: var(--New-Theme-Color, #d2337d) !important;
+    box-shadow: -5px 0px 15px 5px rgba(252, 22, 130, 0.5);
+  }
   .offcanvas-end
     .offcanvas-body
     .navbar-nav
@@ -3117,6 +3059,7 @@ const implantItem = [
   /* 展开时的动画 */
   .phoneMenu-body .collapse-horizontal.show {
     transform: translateX(0) !important;
+    box-shadow: -5px 0px 15px 5px rgba(252, 22, 130, 0.5);
   }
   /* 关闭时的动画 */
   .collapse-horizontal.collapsing {
@@ -3378,11 +3321,11 @@ const implantItem = [
             }
           }
 
-          &:nth-child(8):hover{
+          &:nth-child(8):hover {
             background: none;
           }
 
-    &:nth-child(9):hover {
+          &:nth-child(9):hover {
             background: none;
           }
           .nav-link {

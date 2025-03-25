@@ -731,7 +731,7 @@ const cleaningStepList = [
 
 @media screen and (min-width: 922px) {
   .type-technology {
-    margin-top: 30px;
+    margin-top: 45px;
     margin-bottom: 30px;
   }
   .type-technology-content {

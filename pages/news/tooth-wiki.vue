@@ -440,25 +440,10 @@ const handleClick = (event, _id) => {
 
 
 <style lang="scss" scoped>
-// :deep(.is_new_tooth_wiki) {
-//   display: none !important;
-//   flex-direction: column-reverse;
-//   position: fixed;
-//   right: 150px;
-//   bottom: 300px;
-//   &>div:nth-child(1){
-//     width: 240px;
-//   }
-//   &>div:nth-child(2){
-//     position: absolute;
-//     right: 20px;
-//     top: -15px;
-//     &>svg {
-//       width: 30px;
-//       height: 30px;
-//     }
-//   }
-// }
+.informationPage {
+  margin-top: 30px;
+  padding: 30px 0 0;
+}
 .tabNav {
   font-weight: 400;
   font-size: 1.25rem;

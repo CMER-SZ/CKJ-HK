@@ -647,8 +647,6 @@ const hideDom = ref(false)
   <div>
     <HomeHeaderV2 :headerConfig="headerConfigData" />
     <div class="indexPage">
-      <!-- 最新消息 -->
-      <!-- <LatestNews /> -->
       <!-- 牙科服務 -->
       <serviceCard :isIndexShow="true" />
       <!-- 醫生團隊 -->
@@ -656,9 +654,6 @@ const hideDom = ref(false)
         <div class="index-doctorTeam-t smallPageCon">
           <div class="index_title index_title_2">醫生團隊</div>
         </div>
-        <!-- <div class="index-doctorTeam-tab1 index-doctorTeam-con">
-          <AreaTab />
-        </div> -->
         <div class="index-doctorTeam-tab2 index-doctorTeam-con">
           <div
             class="index-doctorTeam-tab2-in"
@@ -688,165 +683,6 @@ const hideDom = ref(false)
         <div class="team_doctor_everybody">
           <NewDoctor :id="checkId" />
         </div>
-        <!-- <div class="index-doctorTeam-lists index-doctorTeam-con">
-          <div class="pcLists">
-            <section v-if="actDoctorListd.length < 7">
-              <div
-                class="pcLists-in"
-                :class="{ acitve: doctorCur === doctorItem.id }"
-                v-for="doctorItem in actDoctorListd"
-                :key="doctorItem.id"
-                @click="handleDoctorItem(doctorItem.id)"
-              >
-                <div class="pcLists-in-img">
-                  <img
-                    :src="doctorItem.mbImg || ''"
-                    :alt="doctorItem.name"
-                    :title="doctorItem.name"
-                  />
-                </div>
-              </div>
-            </section>
-            <section v-else>
-              <Swiper
-                class="swiperpcLists-in"
-                :slidesPerView="7"
-                @swiper="setDoctorTabSwiperRef_pc"
-              >
-                <SwiperSlide
-                  class="swiperpcLists-in-slide"
-                  v-for="doctorItem in actDoctorListd"
-                  :key="doctorItem.id"
-                >
-                  <div
-                    class="swiperpcLists-in-img"
-                    :class="{ acitve: doctorCur === doctorItem.id }"
-                    @click="handleDoctorItem(doctorItem.id)"
-                  >
-                    <img
-                      :src="doctorItem.mbImg || ''"
-                      :alt="doctorItem.name"
-                      :title="doctorItem.name"
-                    />
-                  </div>
-                </SwiperSlide>
-              </Swiper>
-            </section>
-          </div>
-          <div class="mbLists">
-            <Swiper
-              class="mbLists-in"
-              :slidesPerView="3"
-              @swiper="setDoctorTabSwiperRef_mb"
-            >
-              <SwiperSlide
-                class="mbLists-in-slide"
-                v-for="doctorItem in actDoctorListd"
-                :key="doctorItem.id"
-              >
-                <div
-                  class="mbLists-in-img"
-                  :class="{ acitve: doctorCur === doctorItem.id }"
-                  @click="handleDoctorItem(doctorItem.id)"
-                >
-                  <img
-                    :src="doctorItem.mbImg || ''"
-                    :alt="doctorItem.name"
-                    :title="doctorItem.name"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </div>
-        <div class="index-doctorTeam-detailBox" v-loading="loading">
-          <Swiper
-            :loop="true"
-            :modules="[Autoplay]"
-            :autoplay="{
-              delay: 2000,
-            }"
-            v-if="actDoctorListd.length"
-            class="index-doctorTeam-detail-swiper"
-            @swiper="setDoctorItemSwiper"
-            @slideChange="doctorItemSlideChange"
-            :class="[windowWidth > 768 ? 'swiper-no-swiping' : '']"
-          >
-            <Swiper-slide
-              v-for="doctorItem in actDoctorListd"
-              :key="`d${doctorItem.id}`"
-            >
-              <div
-                class="index-doctorTeam-detail index-doctorTeam-con"
-                :id="`d${doctorItem.id}`"
-              >
-                <div class="index-doctorTeam-detail-l">
-                  <div class="index-doctorTeam-detail-l-in">
-                    <img
-                      :srcset="'https://static.cmereye.com/imgs/2024/02/3305056d2ab78db8.webp 768w, https://static.cmereye.com/imgs/2024/02/d9ed594b3c173297.webp'"
-                      src="https://static.cmereye.com/imgs/2024/02/d9ed594b3c173297.webp"
-                      alt=""
-                    />
-                    <img
-                      :srcset="`${doctorItem.mbImg} 768w, ${doctorItem.imgUrl}`"
-                      :src="doctorItem.imgUrl"
-                      :alt="doctorItem.name"
-                      :title="doctorItem.name"
-                    />
-                  </div>
-                  <div class="index-doctorTeam-detail-l-btn">
-                    <PageAnimBtnTypeTwo str="線上咨詢" />
-                  </div>
-                </div>
-                <div class="index-doctorTeam-detail-r">
-                  <div class="detail-1">
-                    <span>{{ doctorItem.name }}</span>
-                    <span>{{ doctorItem.text }}</span>
-                  </div>
-                  <div class="detail-2" v-if="doctorItem.newOrg">
-                    <span>{{ doctorItem.newOrg }}</span>
-                  </div>
-                  <div
-                    class="detail-3"
-                    v-if="!contentDom && windowWidth < 767 == false"
-                  >
-                    <span
-                      v-for="(jobItem, jobIndex) in doctorItem.newJobs"
-                      :key="jobIndex"
-                      >{{ jobItem }}</span
-                    >
-                  </div>
-                  <div
-                    class="detail-4"
-                    v-if="!contentDom && windowWidth < 767 == false"
-                  >
-                    <span>擅長項目：</span>
-                    <span>
-                      {{ doctorItem.newSkilled }}
-                    </span>
-                  </div>
-                  <div
-                    class="detail-5"
-                    v-if="doctorItem.tags.length > 0"
-                    :style="{
-                      marginTop: windowWidth < 767 == false ? '' : '30px',
-                    }"
-                  >
-                    <span
-                      v-for="(tagItem, tagIndex) in doctorItem.tags"
-                      :key="tagIndex"
-                    >
-                      {{ tagItem }}
-                    </span>
-                  </div>
-                  <div class="detail-6">
-                    <PageAnimBtnTypeTwo str="線上咨詢" />
-                  </div>
-                </div>
-              </div>
-            </Swiper-slide>
-          </Swiper>
-        </div>  -->
       </div>
       <!-- 關於我們 -->
       <AboutUs />
@@ -1381,8 +1217,6 @@ svg:hover path {
   background: #fff;
   position: relative;
   z-index: 1;
-  // padding-bottom: 140px;
-  // overflow: hidden;
 }
 .treatment-data {
   margin-top: 80px;
@@ -2632,7 +2466,7 @@ svg:hover path {
   .indexPage {
     width: 100%;
     background: #fff;
-    // padding: 0 0 90px;
+    margin-top: 35px;
   }
   //醫生團隊
   .index-doctorTeam {
@@ -2662,7 +2496,7 @@ svg:hover path {
         border: 1px solid #00aeff;
         border-radius: 5px;
         & > div {
-          font-size: 4.265vw;
+          font-size: 4.065vw;
           padding: 1.33vw 0;
           letter-spacing: 0.8vw;
           border: none;

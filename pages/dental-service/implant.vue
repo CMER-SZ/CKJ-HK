@@ -1786,7 +1786,7 @@ const problemData = {
   .subheading::after {
     content: '';
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     width: 180%;
     height: 2px;
@@ -2052,7 +2052,7 @@ const problemData = {
       font-style: normal;
       font-weight: 500;
       line-height: 150%;
-      top: 50%;
+      top: 55%;
       transform: translateY(-50%);
       left: 65%;
     }
@@ -2152,7 +2152,7 @@ const problemData = {
       font-weight: 500;
       line-height: 150%;
       position: absolute;
-      top: 50%;
+      top: 55%;
       transform: translateY(-50%);
       left: 45%;
     }
@@ -2324,7 +2324,7 @@ const problemData = {
       line-height: 150%;
       letter-spacing: 0.4265vw;
       position: absolute;
-      top: 50%;
+      top: 55%;
       transform: translateY(-50%);
       left: 50%;
     }

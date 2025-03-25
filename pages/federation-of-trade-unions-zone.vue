@@ -410,6 +410,7 @@ onMounted(() => {
 }
 .health-care-voucher {
   padding-top: 100px;
+  margin-top: 30px;
 }
 .tabNav {
   font-weight: 400;
