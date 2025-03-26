@@ -158,7 +158,6 @@ const hideShowText = computed(() => {
     position: relative;
     margin-top: 110px;
     .pcBox-wrapper {
-      // margin-top: 70px;
       position: relative;
       z-index: 1;
       img {
