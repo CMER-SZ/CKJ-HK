@@ -568,6 +568,56 @@
           </div>
         </div>
       </div>
+      <div class="BranchAddress-Box-mobile d-lg-none">
+        <ul
+          class="nav nav-tabs BranchAddress-Box-pc-navTab position-relative d-flex justify-content-center"
+          id="HospitalAddressPc"
+          role="tablist"
+        >
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="luohu-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#luohu"
+              type="button"
+              role="tab"
+              aria-controls="luohu"
+              aria-selected="true"
+            >
+              羅湖區
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="futian-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#futian"
+              type="button"
+              role="tab"
+              aria-controls="futian"
+              aria-selected="false"
+            >
+              福田區
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link"
+              id="nanshan-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nanshan"
+              type="button"
+              role="tab"
+              aria-controls="nanshan"
+              aria-selected="false"
+            >
+              南山區
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
     <NewAddress class="d-lg-none" />
   </section>
@@ -582,6 +632,8 @@ const carouselItems = [
     title: '深圳愛康健口腔醫院',
     address: '深圳市羅湖區火車站大廈C區1-8樓',
     href: '/contactUs#contactUs',
+    busAddress: '',
+    subwayAddress: '',
   },
   {
     hasCoupon: false,
