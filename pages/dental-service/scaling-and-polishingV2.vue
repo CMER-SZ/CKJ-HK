@@ -467,7 +467,7 @@ const cleaningStepList = [
           </div>
         </section>
       </div>
-      <section class="ckj-container">
+      <section class="ckj-container problem-section">
         <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
       </section>
       <BranchAddress />
@@ -1188,6 +1188,7 @@ const cleaningStepList = [
             display: flex;
             flex-direction: column;
             gap: 4px 0;
+            padding-left: 25px;
             .rating-item {
               display: flex;
               gap: 0 7px;
@@ -1527,6 +1528,9 @@ const cleaningStepList = [
       flex-direction: column;
       margin-bottom: 20px;
     }
+  }
+  .problem-section {
+    margin: 30px 0;
   }
   .banner-in-box {
     position: absolute;

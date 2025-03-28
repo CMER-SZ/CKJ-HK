@@ -182,16 +182,6 @@ const problemData = {
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
     <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <div class="contactUs">
-      <div class="tabNav noTitle smallPageCon">
-        <nuxt-link
-          :to="'/'"
-          title="深圳愛康健口腔醫院"
-          alt="深圳愛康健口腔醫院"
-        >
-          <span>主頁</span>
-        </nuxt-link>
-        <span :title="'聯絡我們'">聯絡我們</span>
-      </div>
       <div class="contact_map"></div>
       <div class="contactUs_one">
         <a id="contactUs" class="hash_link"></a>

@@ -72,25 +72,23 @@
               </i>
               <span>{{ item.address }}</span>
             </div>
-            <a :href="item.href" class="align-items-end">
-              <span>分店詳情</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="11"
-                height="16"
-                viewBox="0 0 11 16"
-                fill="none"
-              >
-                <path
-                  d="M2 13.7998L9.5 7.79911L2 1.7998"
-                  stroke="#F8298A"
-                  stroke-width="2"
-                  stroke-miterlimit="10"
-                  stroke-linecap="square"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
+            <div>
+              <div>
+                <div class="item-route-title">交通路線</div>
+                <div class="item-route">
+                  <div>
+                    <div>巴士路線</div>
+                    <div v-html="$t(item.busRoutes)"></div>
+                  </div>
+                  <div>
+                    <div>地鐵路線</div>
+                    <div v-html="$t(item.metroRoutes)"></div>
+                  </div>
+                </div>
+              </div>
+              <a :href="item.baiduMap">百度地圖</a>
+              <a :href="item.gaoDeMap">高德地圖</a>
+            </div>
           </div>
         </div>
       </div>
@@ -155,6 +153,11 @@ const props = defineProps<{
     title: string
     address: string
     href: string
+    baiduMap: string
+    gaoDeMap: string
+    busRoutes: string
+    metroRoutes: string
+    flag: boolean
   }[]
   itemsPerPage: number
 }>()
@@ -174,6 +177,11 @@ const slidePages = ref<
     title: string
     address: string
     href: string
+    baiduMap: string
+    gaoDeMap: string
+    busRoutes: string
+    metroRoutes: string
+    flag: boolean
   }[][]
 >([])
 
@@ -217,7 +225,7 @@ const goToPage = (index: number) => {
   position: relative;
   max-width: 960px;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .carousel-content {
@@ -228,6 +236,7 @@ const goToPage = (index: number) => {
 .carousel-inner {
   height: 315px;
   margin-bottom: 30px;
+  overflow: visible;
 }
 .slider {
   position: absolute;
@@ -237,10 +246,12 @@ const goToPage = (index: number) => {
   flex-wrap: wrap;
   justify-content: flex-start;
   transition: transform 0.5s ease-in-out;
+  display: none;
 }
 
 .slider-active {
   transform: translateX(0);
+  display: flex;
 }
 
 .carousel-nav {

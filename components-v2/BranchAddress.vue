@@ -1,3 +1,233 @@
+
+<script setup lang="ts">
+const carouselItems = ref([
+  {
+    hasCoupon: true,
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc1.avif',
+    title: '深圳愛康健口腔醫院',
+    address: '深圳市羅湖區火車站大廈C區1-8樓',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_101.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_101.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/b3/j3Yu',
+    gaoDeMap: 'https://surl.amap.com/qYXnDyt1l4WZ',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc2.avif',
+    title: '深圳希華愛康健醫院',
+    address:
+      '深圳市羅湖區南湖街道和平社區和平路火車西站二層G區2層部分、3 - 7層',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_106.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_106.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/91/7oOi',
+    gaoDeMap: 'https://surl.amap.com/pjaJ5kB1xdkP',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc3.avif',
+    title: '恒潔口腔門診部',
+    address:
+      '深圳市羅湖區桂園街道新圍社區深南東路5015號金豐城大廈B座1602、1603',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_102.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_102.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/36/OZ5',
+    gaoDeMap: 'https://surl.amap.com/ai17xY51x1bl',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc4.avif',
+    title: '康輝口腔門診部',
+    address:
+      '深圳市羅湖區建設路深圳火車站皮帶走廊A12-A15.B11-B14及夾層B8--3號鋪',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_103.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_103.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/24/Rxk',
+    gaoDeMap: 'https://surl.amap.com/cCdexAVo895',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc5.avif',
+    title: '富康口腔門診部',
+    address: '深圳市火車站南端二樓走廊(火車站大酒店左側)',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_104.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_104.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/a9/Xgch',
+    gaoDeMap: 'https://surl.amap.com/qYXnDyt1l4WZ',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc6.avif',
+    title: '顏麗口腔診所',
+    address: '深圳市羅湖區羅湖口岸商業城1091號',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_105.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_105.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/d3/Awch',
+    gaoDeMap: 'https://surl.amap.com/cRMQscZ1ogUJ',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl:
+      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc7.avif',
+    title: '恒樂口腔診所',
+    address: '羅湖區火車站綜合大樓夾層A區M層',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_105.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_105.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/d3/Awch',
+    gaoDeMap: 'https://surl.amap.com/cRMQscZ1ogUJ',
+    flag: false,
+  },
+])
+
+const carouselItems2 = ref([
+  {
+    hasCoupon: false,
+    imageUrl: 'https://static.cmereye.com/imgs/2024/03/57dee34750b0c30f.webp',
+    title: '裕亨口腔診所',
+    address: '深圳市福田區福田街道漁農社區裕亨路38號裕亨花園裕亨大廈103',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_203.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_203.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/a8/8R4c',
+    gaoDeMap: 'https://surl.amap.com/cSB9Gvz1n4tm',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl: 'https://static.cmereye.com/imgs/2024/06/ca2430f5e9cbec91.webp',
+    title: '李川口腔診所',
+    address: '深圳市福田區金田路水圍村金莊商業樓2-5樓',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_201.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_201.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/ea/Yhh',
+    gaoDeMap: 'https://surl.amap.com/cV3xAxv1weYU',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl: 'https://static.cmereye.com/imgs/2024/06/ca0cb58aab091e9c.webp',
+    title: '王琦口腔診所',
+    address: '深圳市福田區福田街道漁農社區裕亨路50號海悅華城C107、C108B',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_202.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_202.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/1f/kY0',
+    gaoDeMap: 'https://surl.amap.com/cWYsCwZv13u',
+    flag: false,
+  },
+])
+
+const carouselItems3 = ref([
+  {
+    hasCoupon: false,
+    imageUrl: 'https://static.cmereye.com/imgs/2024/10/8ec6180a704ba790.webp',
+    title: '恒雅口腔門診部',
+    address: '深圳市南山區南海大道與工業八路交匯處',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_301.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_301.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/2e/Pmif',
+    gaoDeMap: 'https://surl.amap.com/mb6zUGYY2x3',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl: 'https://static.cmereye.com/imgs/2024/10/69240bf104904c86.webp',
+    title: '恒美口腔門診部',
+    address: '深圳市南山區商業文化中心區海岸城西座501',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_302.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_302.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/36/4FH',
+    gaoDeMap: 'https://surl.amap.com/mpPe7ioV7Ao',
+    flag: false,
+  },
+  {
+    hasCoupon: false,
+    imageUrl: 'https://static.cmereye.com/imgs/2024/06/0028a94a3ed515e0.webp',
+    title: '沈虹口腔診所',
+    address: '深圳市南山區南海大道海典居裙樓1樓&2樓（海雅百貨對面）',
+    href: '/contactUs#contactUs',
+    busRoutes: 'contactUs.addressLists.address_303.busRoutes',
+    metroRoutes: 'contactUs.addressLists.address_303.metroRoutes',
+    baiduMap: 'https://j.map.baidu.com/b8/Mzj',
+    gaoDeMap: 'https://surl.amap.com/ZFDrBn1wfaW',
+    flag: false,
+  },
+])
+const tabActive = (tab) => {
+  // 获取 所有的mobile-item
+  const mobileItems = document.querySelectorAll('.mobile-item')
+
+  // 遍历mobile-item
+  mobileItems.forEach((item, index) => {
+    if (index === tab) {
+      item.classList.add('mobile-active')
+    } else {
+      item.classList.remove('mobile-active')
+    }
+  })
+
+  // 获取 class mobile-item-luohu
+  const mobileItemLuohu = document.querySelector(
+    '.mobile-item-luohu'
+  ) as HTMLElement | null
+  // 获取 class mobile-item-futian
+  const mobileItemFutian = document.querySelector(
+    '.mobile-item-futian'
+  ) as HTMLElement | null
+  // 获取 class mobile-item-nanshan
+  const mobileItemNanshan = document.querySelector(
+    '.mobile-item-nanshan'
+  ) as HTMLElement | null
+
+  if (tab === 0) {
+    if (mobileItemLuohu) mobileItemLuohu.style.display = 'flex'
+    if (mobileItemFutian) mobileItemFutian.style.display = 'none'
+    if (mobileItemNanshan) mobileItemNanshan.style.display = 'none'
+  } else if (tab === 1) {
+    if (mobileItemLuohu) mobileItemLuohu.style.display = 'none'
+    if (mobileItemFutian) mobileItemFutian.style.display = 'flex'
+    if (mobileItemNanshan) mobileItemNanshan.style.display = 'none'
+  } else if (tab === 2) {
+    if (mobileItemLuohu) mobileItemLuohu.style.display = 'none'
+    if (mobileItemFutian) mobileItemFutian.style.display = 'none'
+    if (mobileItemNanshan) mobileItemNanshan.style.display = 'flex'
+  }
+}
+
+const trafficList = (index, area) => {
+  if (area === 'luoHu') {
+    carouselItems.value[index].flag = !carouselItems.value[index].flag
+  }
+  if (area === 'futian') {
+    carouselItems2.value[index].flag = !carouselItems2.value[index].flag
+  }
+  if (area === 'nanshan') {
+    carouselItems3.value[index].flag = !carouselItems3.value[index].flag
+  }
+}
+</script>
+
 <template>
   <section class="BranchAddress" id="BranchAddress">
     <div class="subheading px-20"><span>分店</span> <span>地址</span></div>
@@ -77,6 +307,8 @@
             <div class="w-100 d-flex flex-wrap justify-content-start">
               <div
                 class="BranchAddress-Box-pc-content-item position-relative d-flex"
+                v-for="item in carouselItems2"
+                :key="item.title"
               >
                 <div
                   class="BranchAddress-Box-pc-content-item-MedicalCoupon position-absolute d-flex align-items-center hidefalse"
@@ -110,15 +342,12 @@
                   <span>醫療券</span>
                 </div>
                 <div class="BranchAddress-Box-pc-content-item-left">
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/03/57dee34750b0c30f.webp"
-                    alt=""
-                  />
+                  <img :src="item.imageUrl" alt="" />
                 </div>
                 <div
                   class="BranchAddress-Box-pc-content-item-right d-flex flex-column"
                 >
-                  <h4>裕亨口腔診所</h4>
+                  <h4>{{ item.title }}</h4>
                   <div>
                     <i
                       ><svg
@@ -132,188 +361,25 @@
                           d="M9 0.799805C11.3869 0.799805 13.6761 1.75373 15.364 3.45173C17.0518 5.14973 18 7.45271 18 9.85405C18 13.68 15.3277 17.8496 10.0523 22.4074C9.75898 22.6609 9.38498 22.8001 8.99827 22.7998C8.61157 22.7995 8.23781 22.6596 7.94492 22.4056L7.596 22.101C2.55415 17.6621 0 13.5946 0 9.85405C0 7.45271 0.948212 5.14973 2.63604 3.45173C4.32387 1.75373 6.61305 0.799805 9 0.799805ZM9 6.37165C8.08194 6.37165 7.20149 6.73854 6.55232 7.39162C5.90316 8.0447 5.53846 8.93046 5.53846 9.85405C5.53846 10.7776 5.90316 11.6634 6.55232 12.3165C7.20149 12.9696 8.08194 13.3365 9 13.3365C9.91806 13.3365 10.7985 12.9696 11.4477 12.3165C12.0968 11.6634 12.4615 10.7776 12.4615 9.85405C12.4615 8.93046 12.0968 8.0447 11.4477 7.39162C10.7985 6.73854 9.91806 6.37165 9 6.37165Z"
                           fill="#F8298A"
                         /></svg></i
-                    ><span
-                      >深圳市福田區福田街道漁農社區裕亨路38號裕亨花園裕亨大廈103</span
-                    >
+                    ><span>{{ item.address }}</span>
                   </div>
-                  <a href="/contactUs#contactUs" class="align-items-end"
-                    ><span>分店詳情</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="16"
-                      viewBox="0 0 11 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M2 13.7998L9.5 7.79911L2 1.7998"
-                        stroke="#F8298A"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                        stroke-linecap="square"
-                        stroke-linejoin="round"
-                      /></svg
-                  ></a>
-                </div>
-              </div>
-              <div
-                class="BranchAddress-Box-pc-content-item position-relative d-flex"
-              >
-                <div
-                  class="BranchAddress-Box-pc-content-item-MedicalCoupon position-absolute d-flex align-items-center hidefalse"
-                  :data-has-coupon="false"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12.2734" r="12" fill="white" />
-                    <rect
-                      x="7.65503"
-                      y="10.5613"
-                      width="7.2"
-                      height="3.36"
-                      transform="rotate(45 7.65503 10.5613)"
-                      fill="#008843"
-                    />
-                    <rect
-                      x="19.8894"
-                      y="8.9375"
-                      width="13.0446"
-                      height="3.36"
-                      transform="rotate(135 19.8894 8.9375)"
-                      fill="#008843"
-                    />
-                  </svg>
-                  <span>醫療券</span>
-                </div>
-                <div class="BranchAddress-Box-pc-content-item-left">
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/06/ca2430f5e9cbec91.webp"
-                    alt=""
-                  />
-                </div>
-                <div
-                  class="BranchAddress-Box-pc-content-item-right d-flex flex-column"
-                >
-                  <h4>李川口腔診所</h4>
                   <div>
-                    <i
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="23"
-                        viewBox="0 0 18 23"
-                        fill="none"
-                      >
-                        <path
-                          d="M9 0.799805C11.3869 0.799805 13.6761 1.75373 15.364 3.45173C17.0518 5.14973 18 7.45271 18 9.85405C18 13.68 15.3277 17.8496 10.0523 22.4074C9.75898 22.6609 9.38498 22.8001 8.99827 22.7998C8.61157 22.7995 8.23781 22.6596 7.94492 22.4056L7.596 22.101C2.55415 17.6621 0 13.5946 0 9.85405C0 7.45271 0.948212 5.14973 2.63604 3.45173C4.32387 1.75373 6.61305 0.799805 9 0.799805ZM9 6.37165C8.08194 6.37165 7.20149 6.73854 6.55232 7.39162C5.90316 8.0447 5.53846 8.93046 5.53846 9.85405C5.53846 10.7776 5.90316 11.6634 6.55232 12.3165C7.20149 12.9696 8.08194 13.3365 9 13.3365C9.91806 13.3365 10.7985 12.9696 11.4477 12.3165C12.0968 11.6634 12.4615 10.7776 12.4615 9.85405C12.4615 8.93046 12.0968 8.0447 11.4477 7.39162C10.7985 6.73854 9.91806 6.37165 9 6.37165Z"
-                          fill="#F8298A"
-                        /></svg></i
-                    ><span>深圳市福田區金田路水圍村金莊商業樓2-5樓</span>
+                    <div>
+                      <div class="item-route-title">交通路線</div>
+                      <div class="item-route">
+                        <div>
+                          <div>巴士路線</div>
+                          <div v-html="$t(item.busRoutes)"></div>
+                        </div>
+                        <div>
+                          <div>地鐵路線</div>
+                          <div v-html="$t(item.metroRoutes)"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <a :href="item.baiduMap">百度地圖</a>
+                    <a :href="item.gaoDeMap">高德地圖</a>
                   </div>
-                  <a href="/contactUs#contactUs" class="align-items-end"
-                    ><span>分店詳情</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="16"
-                      viewBox="0 0 11 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M2 13.7998L9.5 7.79911L2 1.7998"
-                        stroke="#F8298A"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                        stroke-linecap="square"
-                        stroke-linejoin="round"
-                      /></svg
-                  ></a>
-                </div>
-              </div>
-              <div
-                class="BranchAddress-Box-pc-content-item position-relative d-flex"
-              >
-                <div
-                  class="BranchAddress-Box-pc-content-item-MedicalCoupon position-absolute d-flex align-items-center hidefalse"
-                  :data-has-coupon="false"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12.2734" r="12" fill="white" />
-                    <rect
-                      x="7.65503"
-                      y="10.5613"
-                      width="7.2"
-                      height="3.36"
-                      transform="rotate(45 7.65503 10.5613)"
-                      fill="#008843"
-                    />
-                    <rect
-                      x="19.8894"
-                      y="8.9375"
-                      width="13.0446"
-                      height="3.36"
-                      transform="rotate(135 19.8894 8.9375)"
-                      fill="#008843"
-                    />
-                  </svg>
-                  <span>醫療券</span>
-                </div>
-                <div class="BranchAddress-Box-pc-content-item-left">
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/06/ca0cb58aab091e9c.webp"
-                    alt=""
-                  />
-                </div>
-                <div
-                  class="BranchAddress-Box-pc-content-item-right d-flex flex-column"
-                >
-                  <h4>王琦口腔診所</h4>
-                  <div>
-                    <i
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="23"
-                        viewBox="0 0 18 23"
-                        fill="none"
-                      >
-                        <path
-                          d="M9 0.799805C11.3869 0.799805 13.6761 1.75373 15.364 3.45173C17.0518 5.14973 18 7.45271 18 9.85405C18 13.68 15.3277 17.8496 10.0523 22.4074C9.75898 22.6609 9.38498 22.8001 8.99827 22.7998C8.61157 22.7995 8.23781 22.6596 7.94492 22.4056L7.596 22.101C2.55415 17.6621 0 13.5946 0 9.85405C0 7.45271 0.948212 5.14973 2.63604 3.45173C4.32387 1.75373 6.61305 0.799805 9 0.799805ZM9 6.37165C8.08194 6.37165 7.20149 6.73854 6.55232 7.39162C5.90316 8.0447 5.53846 8.93046 5.53846 9.85405C5.53846 10.7776 5.90316 11.6634 6.55232 12.3165C7.20149 12.9696 8.08194 13.3365 9 13.3365C9.91806 13.3365 10.7985 12.9696 11.4477 12.3165C12.0968 11.6634 12.4615 10.7776 12.4615 9.85405C12.4615 8.93046 12.0968 8.0447 11.4477 7.39162C10.7985 6.73854 9.91806 6.37165 9 6.37165Z"
-                          fill="#F8298A"
-                        /></svg></i
-                    ><span
-                      >深圳市福田區福田街道漁農村社區裕亨路50號海悅華城C107、C108B</span
-                    >
-                  </div>
-                  <a href="/contactUs#contactUs" class="align-items-end"
-                    ><span>分店詳情</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="16"
-                      viewBox="0 0 11 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M2 13.7998L9.5 7.79911L2 1.7998"
-                        stroke="#F8298A"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                        stroke-linecap="square"
-                        stroke-linejoin="round"
-                      /></svg
-                  ></a>
                 </div>
               </div>
             </div>
@@ -327,6 +393,8 @@
             <div class="w-100 d-flex flex-wrap justify-content-start">
               <div
                 class="BranchAddress-Box-pc-content-item position-relative d-flex"
+                v-for="item in carouselItems3"
+                :key="item.title"
               >
                 <div
                   class="BranchAddress-Box-pc-content-item-MedicalCoupon position-absolute d-flex align-items-center hidefalse"
@@ -360,15 +428,12 @@
                   <span>醫療券</span>
                 </div>
                 <div class="BranchAddress-Box-pc-content-item-left">
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/10/8ec6180a704ba790.webp"
-                    alt=""
-                  />
+                  <img :src="item.imageUrl" alt="" />
                 </div>
                 <div
                   class="BranchAddress-Box-pc-content-item-right d-flex flex-column"
                 >
-                  <h4>恒雅口腔門診部</h4>
+                  <h4>{{ item.title }}</h4>
                   <div>
                     <i
                       ><svg
@@ -382,186 +447,25 @@
                           d="M9 0.799805C11.3869 0.799805 13.6761 1.75373 15.364 3.45173C17.0518 5.14973 18 7.45271 18 9.85405C18 13.68 15.3277 17.8496 10.0523 22.4074C9.75898 22.6609 9.38498 22.8001 8.99827 22.7998C8.61157 22.7995 8.23781 22.6596 7.94492 22.4056L7.596 22.101C2.55415 17.6621 0 13.5946 0 9.85405C0 7.45271 0.948212 5.14973 2.63604 3.45173C4.32387 1.75373 6.61305 0.799805 9 0.799805ZM9 6.37165C8.08194 6.37165 7.20149 6.73854 6.55232 7.39162C5.90316 8.0447 5.53846 8.93046 5.53846 9.85405C5.53846 10.7776 5.90316 11.6634 6.55232 12.3165C7.20149 12.9696 8.08194 13.3365 9 13.3365C9.91806 13.3365 10.7985 12.9696 11.4477 12.3165C12.0968 11.6634 12.4615 10.7776 12.4615 9.85405C12.4615 8.93046 12.0968 8.0447 11.4477 7.39162C10.7985 6.73854 9.91806 6.37165 9 6.37165Z"
                           fill="#F8298A"
                         /></svg></i
-                    ><span>深圳市南山區南海大道與工業八路交匯處</span>
+                    ><span>{{ item.address }}</span>
                   </div>
-                  <a href="/contactUs#contactUs" class="align-items-end"
-                    ><span>分店詳情</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="16"
-                      viewBox="0 0 11 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M2 13.7998L9.5 7.79911L2 1.7998"
-                        stroke="#F8298A"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                        stroke-linecap="square"
-                        stroke-linejoin="round"
-                      /></svg
-                  ></a>
-                </div>
-              </div>
-              <div
-                class="BranchAddress-Box-pc-content-item position-relative d-flex"
-              >
-                <div
-                  class="BranchAddress-Box-pc-content-item-MedicalCoupon position-absolute d-flex align-items-center hidefalse"
-                  :data-has-coupon="false"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12.2734" r="12" fill="white" />
-                    <rect
-                      x="7.65503"
-                      y="10.5613"
-                      width="7.2"
-                      height="3.36"
-                      transform="rotate(45 7.65503 10.5613)"
-                      fill="#008843"
-                    />
-                    <rect
-                      x="19.8894"
-                      y="8.9375"
-                      width="13.0446"
-                      height="3.36"
-                      transform="rotate(135 19.8894 8.9375)"
-                      fill="#008843"
-                    />
-                  </svg>
-                  <span>醫療券</span>
-                </div>
-                <div class="BranchAddress-Box-pc-content-item-left">
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/10/69240bf104904c86.webp"
-                    alt=""
-                  />
-                </div>
-                <div
-                  class="BranchAddress-Box-pc-content-item-right d-flex flex-column"
-                >
-                  <h4>恒美口腔門診部</h4>
                   <div>
-                    <i
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="23"
-                        viewBox="0 0 18 23"
-                        fill="none"
-                      >
-                        <path
-                          d="M9 0.799805C11.3869 0.799805 13.6761 1.75373 15.364 3.45173C17.0518 5.14973 18 7.45271 18 9.85405C18 13.68 15.3277 17.8496 10.0523 22.4074C9.75898 22.6609 9.38498 22.8001 8.99827 22.7998C8.61157 22.7995 8.23781 22.6596 7.94492 22.4056L7.596 22.101C2.55415 17.6621 0 13.5946 0 9.85405C0 7.45271 0.948212 5.14973 2.63604 3.45173C4.32387 1.75373 6.61305 0.799805 9 0.799805ZM9 6.37165C8.08194 6.37165 7.20149 6.73854 6.55232 7.39162C5.90316 8.0447 5.53846 8.93046 5.53846 9.85405C5.53846 10.7776 5.90316 11.6634 6.55232 12.3165C7.20149 12.9696 8.08194 13.3365 9 13.3365C9.91806 13.3365 10.7985 12.9696 11.4477 12.3165C12.0968 11.6634 12.4615 10.7776 12.4615 9.85405C12.4615 8.93046 12.0968 8.0447 11.4477 7.39162C10.7985 6.73854 9.91806 6.37165 9 6.37165Z"
-                          fill="#F8298A"
-                        /></svg></i
-                    ><span>深圳市南山區商業文化中心區海岸城西座501</span>
+                    <div>
+                      <div class="item-route-title">交通路線</div>
+                      <div class="item-route">
+                        <div>
+                          <div>巴士路線</div>
+                          <div v-html="$t(item.busRoutes)"></div>
+                        </div>
+                        <div>
+                          <div>地鐵路線</div>
+                          <div v-html="$t(item.metroRoutes)"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <a :href="item.baiduMap">百度地圖</a>
+                    <a :href="item.gaoDeMap">高德地圖</a>
                   </div>
-                  <a href="/contactUs#contactUs" class="align-items-end"
-                    ><span>分店詳情</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="16"
-                      viewBox="0 0 11 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M2 13.7998L9.5 7.79911L2 1.7998"
-                        stroke="#F8298A"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                        stroke-linecap="square"
-                        stroke-linejoin="round"
-                      /></svg
-                  ></a>
-                </div>
-              </div>
-              <div
-                class="BranchAddress-Box-pc-content-item position-relative d-flex"
-              >
-                <div
-                  class="BranchAddress-Box-pc-content-item-MedicalCoupon position-absolute d-flex align-items-center hidefalse"
-                  :data-has-coupon="false"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="25"
-                    viewBox="0 0 24 25"
-                    fill="none"
-                  >
-                    <circle cx="12" cy="12.2734" r="12" fill="white" />
-                    <rect
-                      x="7.65503"
-                      y="10.5613"
-                      width="7.2"
-                      height="3.36"
-                      transform="rotate(45 7.65503 10.5613)"
-                      fill="#008843"
-                    />
-                    <rect
-                      x="19.8894"
-                      y="8.9375"
-                      width="13.0446"
-                      height="3.36"
-                      transform="rotate(135 19.8894 8.9375)"
-                      fill="#008843"
-                    />
-                  </svg>
-                  <span>醫療券</span>
-                </div>
-                <div class="BranchAddress-Box-pc-content-item-left">
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/06/0028a94a3ed515e0.webp"
-                    alt=""
-                  />
-                </div>
-                <div
-                  class="BranchAddress-Box-pc-content-item-right d-flex flex-column"
-                >
-                  <h4>沈虹口腔診所</h4>
-                  <div>
-                    <i
-                      ><svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="23"
-                        viewBox="0 0 18 23"
-                        fill="none"
-                      >
-                        <path
-                          d="M9 0.799805C11.3869 0.799805 13.6761 1.75373 15.364 3.45173C17.0518 5.14973 18 7.45271 18 9.85405C18 13.68 15.3277 17.8496 10.0523 22.4074C9.75898 22.6609 9.38498 22.8001 8.99827 22.7998C8.61157 22.7995 8.23781 22.6596 7.94492 22.4056L7.596 22.101C2.55415 17.6621 0 13.5946 0 9.85405C0 7.45271 0.948212 5.14973 2.63604 3.45173C4.32387 1.75373 6.61305 0.799805 9 0.799805ZM9 6.37165C8.08194 6.37165 7.20149 6.73854 6.55232 7.39162C5.90316 8.0447 5.53846 8.93046 5.53846 9.85405C5.53846 10.7776 5.90316 11.6634 6.55232 12.3165C7.20149 12.9696 8.08194 13.3365 9 13.3365C9.91806 13.3365 10.7985 12.9696 11.4477 12.3165C12.0968 11.6634 12.4615 10.7776 12.4615 9.85405C12.4615 8.93046 12.0968 8.0447 11.4477 7.39162C10.7985 6.73854 9.91806 6.37165 9 6.37165Z"
-                          fill="#F8298A"
-                        /></svg></i
-                    ><span
-                      >深圳市南山區南海大道海典居裙樓1樓&2樓（海雅百貨對面）</span
-                    >
-                  </div>
-                  <a href="/contactUs#contactUs" class="align-items-end"
-                    ><span>分店詳情</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="11"
-                      height="16"
-                      viewBox="0 0 11 16"
-                      fill="none"
-                    >
-                      <path
-                        d="M2 13.7998L9.5 7.79911L2 1.7998"
-                        stroke="#F8298A"
-                        stroke-width="2"
-                        stroke-miterlimit="10"
-                        stroke-linecap="square"
-                        stroke-linejoin="round"
-                      /></svg
-                  ></a>
                 </div>
               </div>
             </div>
@@ -569,382 +473,200 @@
         </div>
       </div>
       <div class="BranchAddress-Box-mobile d-lg-none">
-        <ul
-          class="nav nav-tabs BranchAddress-Box-pc-navTab position-relative d-flex justify-content-center"
-          id="HospitalAddressPc"
-          role="tablist"
-        >
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link active"
-              id="luohu-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#luohu"
-              type="button"
-              role="tab"
-              aria-controls="luohu"
-              aria-selected="true"
-            >
-              羅湖區
-            </button>
+        <ul>
+          <li @click="tabActive(0)" class="mobile-item mobile-active">
+            羅湖區
           </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="futian-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#futian"
-              type="button"
-              role="tab"
-              aria-controls="futian"
-              aria-selected="false"
-            >
-              福田區
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="nanshan-tab"
-              data-bs-toggle="tab"
-              data-bs-target="#nanshan"
-              type="button"
-              role="tab"
-              aria-controls="nanshan"
-              aria-selected="false"
-            >
-              南山區
-            </button>
-          </li>
+          <li @click="tabActive(1)" class="mobile-item">福田區</li>
+          <li @click="tabActive(2)" class="mobile-item">南山區</li>
         </ul>
+        <div>
+          <div class="mobile-item-luohu">
+            <div
+              v-for="(item, index) in carouselItems"
+              :key="index"
+              class="luoHu-item"
+            >
+              <div :class="item.hasCoupon ? 'img-coupon' : ''">
+                <img :src="item.imageUrl" alt="" />
+              </div>
+              <div>
+                <div>{{ item.title }}</div>
+                <div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M7 0C8.85652 0 10.637 0.737125 11.9497 2.04922C13.2625 3.36131 14 5.14088 14 6.99646C14 9.95291 11.9215 13.1749 7.81846 16.6968C7.59031 16.8927 7.29943 17.0003 6.99866 17C6.69789 16.9997 6.40719 16.8916 6.17939 16.6954L5.908 16.46C1.98656 13.0299 0 9.8869 0 6.99646C0 5.14088 0.737498 3.36131 2.05025 2.04922C3.36301 0.737125 5.14348 0 7 0ZM7 4.30551C6.28596 4.30551 5.60116 4.58902 5.09625 5.09367C4.59135 5.59832 4.30769 6.28278 4.30769 6.99646C4.30769 7.71014 4.59135 8.3946 5.09625 8.89925C5.60116 9.4039 6.28596 9.68741 7 9.68741C7.71404 9.68741 8.39884 9.4039 8.90375 8.89925C9.40866 8.3946 9.69231 7.71014 9.69231 6.99646C9.69231 6.28278 9.40866 5.59832 8.90375 5.09367C8.39884 4.58902 7.71404 4.30551 7 4.30551Z"
+                        fill="#F8298A"
+                      />
+                    </svg>
+                  </div>
+                  <div>{{ item.address }}</div>
+                </div>
+                <div class="item-traffic">
+                  <div class="traffic-box">
+                    <div
+                      @click="trafficList(index, 'luoHu')"
+                      class="traffic-text"
+                      :class="{ 'item-text-active': item.flag }"
+                    >
+                      交通路線
+                    </div>
+                    <div class="route-traffic" v-if="item.flag">
+                      <div>
+                        <div>巴士路線</div>
+                        <div v-html="$t(item.busRoutes)"></div>
+                      </div>
+                      <div>
+                        <div>地鐵路線</div>
+                        <div
+                          class="route-traffic-list"
+                          v-html="$t(item.metroRoutes)"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a :href="item.baiduMap" target="_blank" class="traffic-text">
+                    百度地圖
+                  </a>
+                  <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
+                    高德地圖
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-item-futian">
+            <div
+              v-for="(item, index) in carouselItems2"
+              :key="index"
+              class="fuTian-item"
+            >
+              <div><img :src="item.imageUrl" alt="" /></div>
+              <div>
+                <div>{{ item.title }}</div>
+                <div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M7 0C8.85652 0 10.637 0.737125 11.9497 2.04922C13.2625 3.36131 14 5.14088 14 6.99646C14 9.95291 11.9215 13.1749 7.81846 16.6968C7.59031 16.8927 7.29943 17.0003 6.99866 17C6.69789 16.9997 6.40719 16.8916 6.17939 16.6954L5.908 16.46C1.98656 13.0299 0 9.8869 0 6.99646C0 5.14088 0.737498 3.36131 2.05025 2.04922C3.36301 0.737125 5.14348 0 7 0ZM7 4.30551C6.28596 4.30551 5.60116 4.58902 5.09625 5.09367C4.59135 5.59832 4.30769 6.28278 4.30769 6.99646C4.30769 7.71014 4.59135 8.3946 5.09625 8.89925C5.60116 9.4039 6.28596 9.68741 7 9.68741C7.71404 9.68741 8.39884 9.4039 8.90375 8.89925C9.40866 8.3946 9.69231 7.71014 9.69231 6.99646C9.69231 6.28278 9.40866 5.59832 8.90375 5.09367C8.39884 4.58902 7.71404 4.30551 7 4.30551Z"
+                        fill="#F8298A"
+                      />
+                    </svg>
+                  </div>
+                  <div>{{ item.address }}</div>
+                </div>
+                <div class="item-traffic">
+                  <div class="traffic-box">
+                    <div
+                      @click="trafficList(index, 'futian')"
+                      class="traffic-text"
+                      :class="{ 'item-text-active': item.flag }"
+                    >
+                      交通路線
+                    </div>
+                    <div class="route-traffic" v-if="item.flag">
+                      <div>
+                        <div>巴士路線</div>
+                        <div v-html="$t(item.busRoutes)"></div>
+                      </div>
+                      <div>
+                        <div>地鐵路線</div>
+                        <div
+                          class="route-traffic-list"
+                          v-html="$t(item.metroRoutes)"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a :href="item.baiduMap" target="_blank" class="traffic-text">
+                    百度地圖
+                  </a>
+                  <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
+                    高德地圖
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mobile-item-nanshan">
+            <div
+              v-for="(item, index) in carouselItems3"
+              :key="index"
+              class="nanShan-item"
+            >
+              <div><img :src="item.imageUrl" alt="" /></div>
+              <div>
+                <div>{{ item.title }}</div>
+                <div>
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="17"
+                      viewBox="0 0 14 17"
+                      fill="none"
+                    >
+                      <path
+                        d="M7 0C8.85652 0 10.637 0.737125 11.9497 2.04922C13.2625 3.36131 14 5.14088 14 6.99646C14 9.95291 11.9215 13.1749 7.81846 16.6968C7.59031 16.8927 7.29943 17.0003 6.99866 17C6.69789 16.9997 6.40719 16.8916 6.17939 16.6954L5.908 16.46C1.98656 13.0299 0 9.8869 0 6.99646C0 5.14088 0.737498 3.36131 2.05025 2.04922C3.36301 0.737125 5.14348 0 7 0ZM7 4.30551C6.28596 4.30551 5.60116 4.58902 5.09625 5.09367C4.59135 5.59832 4.30769 6.28278 4.30769 6.99646C4.30769 7.71014 4.59135 8.3946 5.09625 8.89925C5.60116 9.4039 6.28596 9.68741 7 9.68741C7.71404 9.68741 8.39884 9.4039 8.90375 8.89925C9.40866 8.3946 9.69231 7.71014 9.69231 6.99646C9.69231 6.28278 9.40866 5.59832 8.90375 5.09367C8.39884 4.58902 7.71404 4.30551 7 4.30551Z"
+                        fill="#F8298A"
+                      />
+                    </svg>
+                  </div>
+                  <div>{{ item.address }}</div>
+                </div>
+                <di class="item-traffic">
+                  <div class="traffic-box">
+                    <div
+                      @click="trafficList(index, 'nanshan')"
+                      class="traffic-text"
+                      :class="{ 'item-text-active': item.flag }"
+                    >
+                      交通路線
+                    </div>
+                    <div class="route-traffic" v-if="item.flag">
+                      <div>
+                        <div>巴士路線</div>
+                        <div v-html="$t(item.busRoutes)"></div>
+                      </div>
+                      <div>
+                        <div>地鐵路線</div>
+                        <div v-html="$t(item.metroRoutes)"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <a :href="item.baiduMap" target="_blank" class="traffic-text">
+                    百度地圖
+                  </a>
+                  <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
+                    高德地圖
+                  </a>
+                </di>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <NewAddress class="d-lg-none" />
   </section>
 </template>
 
-<script setup lang="ts">
-const carouselItems = [
-  {
-    hasCoupon: true,
-    imageUrl:
-      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc1.avif',
-    title: '深圳愛康健口腔醫院',
-    address: '深圳市羅湖區火車站大廈C區1-8樓',
-    href: '/contactUs#contactUs',
-    busAddress: '',
-    subwayAddress: '',
-  },
-  {
-    hasCoupon: false,
-    imageUrl:
-      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc2.avif',
-    title: '深圳希華愛康健醫院',
-    address:
-      '深圳市羅湖區南湖街道和平社區和平路火車西站二層G區2層部分、3 - 7層',
-    href: '/contactUs#contactUs',
-  },
-  {
-    hasCoupon: false,
-    imageUrl:
-      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc3.avif',
-    title: '恒潔口腔門診部',
-    address:
-      '深圳市羅湖區桂園街道新圍社區深南東路5015號金豐城大廈B座1602、1603',
-    href: '/contactUs#contactUs',
-  },
-  {
-    hasCoupon: false,
-    imageUrl:
-      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc4.avif',
-    title: '康輝口腔門診部',
-    address:
-      '深圳市羅湖區建設路深圳火車站皮帶走廊A12-A15.B11-B14及夾層B8--3號鋪',
-    href: '/contactUs#contactUs',
-  },
-  {
-    hasCoupon: false,
-    imageUrl:
-      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc5.avif',
-    title: '富康口腔門診部',
-    address: '深圳市火車站南端二樓走廊(火車站大酒店左側)',
-    href: '/contactUs#contactUs',
-  },
-  {
-    hasCoupon: false,
-    imageUrl:
-      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc6.avif',
-    title: '顏麗口腔診所',
-    address: '深圳市羅湖區羅湖口岸商業城1091號',
-    href: '/contactUs#contactUs',
-  },
-  {
-    hasCoupon: false,
-    imageUrl:
-      'https://statichk.cmermedical.com/newCKJ/index/BranchAddress/address-pc7.avif',
-    title: '恒樂口腔診所',
-    address: '深圳市羅湖區羅湖口岸商業城1091號',
-    href: '/contactUs#contactUs',
-  },
-]
-</script>
 
 <style lang="scss" scope>
-// 分店地址
-.BranchAddress {
-  margin-top: 45px;
-  &-addressImg {
-    width: 100%;
-    // max-width: 672px;
-    margin-top: 10px;
-    // margin: 10px 0;
-  }
-}
-.BranchAddress-Box {
-  // padding-top: 16px;
-  // padding-bottom: 18px;
-  // background: var(--Pink-Pale, #ffe9ec);
-
-  &-mobile {
-    .nav-tabs {
-      border-radius: 5px;
-      overflow: hidden;
-      border: none;
-
-      .nav-item {
-        background: var(--White, #fff);
-        padding: 0;
-        border: 1px solid var(--Grey-Lightest, #f2f2f2);
-        button {
-          border: none;
-          width: 110px;
-          color: var(--Grey-Mid, #666);
-          text-align: center;
-          font-family: 'Noto Sans HK';
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: normal;
-          letter-spacing: 1.6px;
-          border-radius: 0;
-          transition: background-color 0.3s ease;
-        }
-
-        .active {
-          color: var(--White, #fff);
-          background: var(--New-Theme-Color, #d2337d);
-        }
-      }
-
-      & > .nav-item:nth-child(1) {
-        border-radius: 5px 0 0 5px;
-        overflow: hidden;
-      }
-      & > .nav-item:nth-child(2) {
-        border-left: none;
-        border-right: none;
-      }
-
-      & > .nav-item:nth-child(3) {
-        border-radius: 0px 5px 5px 0px;
-        overflow: hidden;
-      }
-    }
-
-    // 轮播内容
-    &-content {
-      &-swiper {
-        #HospitalAddress {
-          max-width: 340px;
-        }
-
-        .number-card {
-          padding-left: 15px;
-        }
-
-        &-number {
-          color: var(--Grey-Mid, #666);
-          font-family: 'Noto Sans HK';
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: normal;
-          letter-spacing: 1.6px;
-
-          span {
-            color: var(--New-Theme-Color, #d2337d);
-
-            font-size: 24px;
-            line-height: 32px;
-            letter-spacing: 4.8px;
-          }
-        }
-
-        &-pageControl {
-          gap: 10px;
-          margin: 10px 0;
-
-          .carousel-control-prev,
-          .carousel-control-next,
-          .carousel-indicators {
-            position: static;
-            opacity: 1;
-          }
-
-          .carousel-indicators {
-            padding: 0;
-            margin: 0;
-
-            button {
-              width: 18px;
-              height: 18px;
-              background-color: white;
-              border-radius: 50%;
-              opacity: 1;
-            }
-
-            .active {
-              background-color: var(--New-Theme-Color, #d2337d);
-            }
-          }
-        }
-
-        &-item {
-          border-radius: 5px;
-          background: var(--White, #fff);
-          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
-          padding: 11px 8px 10px 12px;
-          gap: 10px;
-          margin-top: 12px;
-
-          &-left {
-            flex-shrink: 0;
-
-            img {
-              max-width: 103px;
-            }
-
-            & > div {
-              margin-top: 13px;
-              gap: 4px;
-
-              svg {
-                width: 18px;
-                height: 18px;
-              }
-
-              span {
-                color: var(--GHV-Green, #008843);
-                font-family: 'Noto Sans HK';
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 130%;
-              }
-            }
-          }
-
-          &-right {
-            flex-shrink: 0;
-            flex: 1;
-            gap: 7px;
-
-            h4 {
-              color: var(--New-Theme-Color, #d2337d);
-              font-family: 'Noto Sans HK';
-              font-size: 18px;
-              font-style: normal;
-              font-weight: 700;
-              line-height: normal;
-              letter-spacing: 1.8px;
-            }
-
-            & > div {
-              i {
-                flex-shrink: 0;
-
-                width: 18px;
-                height: 17px;
-                margin-right: 2px;
-
-                svg {
-                  vertical-align: top;
-                }
-              }
-
-              span {
-                color: var(--Grey-Mid, #666);
-                font-family: 'Noto Sans HK';
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 350;
-                line-height: 120%;
-              }
-            }
-
-            & > a {
-              width: 150px;
-              display: inline-flex;
-              padding: 2px 20px;
-              height: 37px;
-              gap: 10px;
-              border-radius: 5px;
-              background: var(--New-Theme-Color, #d2337d);
-              color: var(--White, #fff);
-              text-align: center;
-
-              font-family: 'Noto Sans HK';
-              font-size: 16px;
-              font-style: normal;
-              font-weight: 700;
-              line-height: normal;
-              letter-spacing: 1.6px;
-
-              svg {
-                width: 28px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.BranchAddress-address-table {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-.subheading {
-  margin-left: 15px;
-  box-sizing: border-box;
-  padding-left: 12px;
-  border-left: 2px solid var(--New-Theme-Color, #d2337d);
-  span {
-    color: var(--Grey-Dark, #333);
-    font-family: 'Noto Sans HK';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 170%;
-    letter-spacing: 1.8px;
-  }
-
-  span:not(:last-child) {
-    color: var(--New-Theme-Color, #d2337d);
-    font-family: 'Noto Sans HK';
-    font-size: 21px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    /* 31.5px */
-    letter-spacing: 2.1px;
-  }
-}
-
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 992px) {
   .subheading {
     box-sizing: border-box;
     width: fit-content;
@@ -992,14 +714,6 @@ const carouselItems = [
     z-index: -1;
   }
 
-  // 分店地址
-  .BranchAddress {
-    padding-top: 45px;
-    padding-bottom: 30px;
-    &-addressImg {
-      margin-top: 20px;
-    }
-  }
   .BranchAddress {
     .BranchAddress-Box {
       padding-top: 20px;
@@ -1114,10 +828,10 @@ const carouselItems = [
               letter-spacing: 2px;
             }
 
-            gap: 15px;
+            gap: 0;
             width: 470px;
             border-radius: 10px;
-            overflow: hidden;
+            overflow: visible;
             background: var(--White, #fff);
             box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
             // padding: 20px;
@@ -1135,7 +849,9 @@ const carouselItems = [
               flex-shrink: 0;
               flex: 1;
               // gap: 11.5px;
-              padding: 10px 10px 10px 0;
+              padding: 10px 10px 0 0;
+              justify-content: flex-start;
+              position: relative;
               h4 {
                 color: var(--New-Theme-Color, #d2337d);
                 font-family: 'Noto Sans TC';
@@ -1144,10 +860,12 @@ const carouselItems = [
                 font-weight: 700;
                 line-height: 160%;
                 letter-spacing: 2px;
+                padding-left: 15px;
               }
 
-              & > div {
+              & > div:nth-child(2) {
                 margin-top: 7px;
+                padding-left: 15px;
                 display: flex;
                 i {
                   svg {
@@ -1168,37 +886,334 @@ const carouselItems = [
                 }
               }
 
-              a {
-                display: inline-flex;
-                flex: 1;
-                max-width: 180px;
-                // gap: 20px;
-                color: var(--Brand-Color, #f8298a);
-                // padding: 10px 20px;
-                // border-radius: 10px;
-                // border: 2px solid var(--New-Theme-Color, #d2337d);
-                // background: var(--New-Theme-Color, #d2337d);
-                // box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset,
-                //   0px 4px 4px 0px rgba(255, 255, 255, 0.25);
-                // color: var(--White, #fff);
-
-                font-family: 'Noto Sans HK';
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 18px;
-                &:hover {
-                  opacity: 0.8;
+              & > div:nth-child(3) {
+                display: flex;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                gap: 0 7px;
+                justify-content: space-between;
+                margin-right: 10px;
+                & > a {
+                  box-sizing: border-box;
+                  padding: 6px 15.5px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  text-decoration-line: underline;
+                  text-decoration-style: solid;
+                  text-decoration-skip-ink: auto;
+                  text-decoration-thickness: auto;
+                  text-underline-offset: auto;
+                  color: var(--Brand-Color, #f8298a);
+                  text-align: justify;
+                  font-family: 'Noto Sans HK';
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: normal;
+                  letter-spacing: 0px;
+                }
+                .item-route {
+                  cursor: pointer;
+                  display: none;
+                  flex-direction: column;
+                  background: #fff;
+                  padding: 10px 15px;
+                  border-radius: 10px;
+                  box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+                  gap: 10px 0;
+                  & > div {
+                    display: flex;
+                    flex-direction: column;
+                    & > div:nth-child(1) {
+                      color: var(--Theme-Color, #fc1682);
+                      text-align: justify;
+                      font-family: 'Noto Sans HK';
+                      font-size: 16px;
+                      font-style: normal;
+                      font-weight: 700;
+                      line-height: normal;
+                      letter-spacing: 1.6px;
+                    }
+                    & > div:nth-child(2) {
+                      color: var(--Grey-Deep, #4d4d4d);
+                      font-size: 16px;
+                      font-weight: 400;
+                      line-height: 150%; /* 24px */
+                      letter-spacing: 1.6px;
+                    }
+                  }
+                  box-sizing: border-box;
+                  position: absolute;
+                  width: 380px;
+                  left: 0;
+                  top: 100%;
+                  z-index: 25;
+                }
+                .item-route-title:hover {
+                  background: var(--New-Theme-Color, #d2337d);
+                  color: var(--White, #fff);
+                  border-radius: 10px 10px 0 0;
+                }
+                .item-route-title:hover ~ .item-route {
+                  display: flex;
+                  box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
                 }
 
-                svg {
-                  width: 28px;
+                .item-route-title {
+                  cursor: pointer;
+                  box-sizing: border-box;
+                  padding: 6px 15.5px;
+                  color: var(--Brand-Color, #f8298a);
+                  font-family: 'Noto Sans HK';
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: 150%; /* 18px */
+                  letter-spacing: 0;
+                  text-decoration-line: underline;
+                  text-decoration-style: solid;
+                  text-decoration-skip-ink: auto;
+                  text-decoration-thickness: auto;
+                  text-underline-offset: auto;
+                  text-underline-position: from-font;
                 }
               }
             }
           }
         }
       }
+    }
+  }
+  // 分店地址
+  .BranchAddress {
+    padding-top: 45px;
+    padding-bottom: 30px;
+    &-addressImg {
+      margin-top: 20px;
+    }
+  }
+
+  .BranchAddress-address-table {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .BranchAddress-Box {
+    margin-top: 15px;
+  }
+  .BranchAddress-Box-mobile {
+    & > ul {
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+      overflow: hidden;
+      width: fit-content;
+      margin: 0 auto 15px;
+    }
+    .mobile-item {
+      box-sizing: border-box;
+      padding: 8px 26.5px;
+      background: #fff;
+      border-top: 1px solid var(--Grey-Light, #e6e6e6);
+      border-bottom: 1px solid var(--Grey-Light, #e6e6e6);
+      color: var(--Grey-Mid, #666);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.6px;
+    }
+    .mobile-active {
+      background: var(--New-Theme-Color, #d2337d);
+      color: var(--White, #fff);
+      border-color: var(--New-Theme-Color, #d2337d);
+      transition: all 0.3s ease;
+    }
+    .mobile-item:nth-child(1) {
+      border-left: 1px solid var(--Grey-Light, #e6e6e6);
+    }
+    .mobile-item:nth-child(2) {
+      border-left: 1px solid var(--Grey-Light, #e6e6e6);
+      border-right: 1px solid var(--Grey-Light, #e6e6e6);
+    }
+    .mobile-item:nth-child(3) {
+      border-right: 1px solid var(--Grey-Light, #e6e6e6);
+    }
+    & > div {
+      .img-coupon {
+        position: relative;
+      }
+      .img-coupon::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 73.95px;
+        height: 21.75px;
+        background: url('https://static.ckjhk.com/ckj-image/2025032714504501.svg')
+          no-repeat;
+        background-size: contain;
+      }
+      & > div {
+        .luoHu-item,
+        .fuTian-item,
+        .nanShan-item {
+          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+          display: flex;
+          gap: 0 0;
+          & > div:nth-child(1) {
+            min-width: 116px;
+            height: 87px;
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          & > div:nth-child(2) {
+            box-sizing: border-box;
+            padding: 4px 0 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            & > div:nth-child(1) {
+              color: var(--Brand-Color, #f8298a);
+              font-family: 'Noto Sans HK';
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 150%; /* 21px */
+              letter-spacing: 0;
+              padding-left: 10px;
+            }
+            & > div:nth-child(2) {
+              padding-left: 10px;
+              margin-top: 2px;
+              display: flex;
+              gap: 0 4px;
+              & > div:nth-child(2) {
+                color: var(--Grey-Dark, #333);
+                font-family: 'Noto Sans HK';
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 150%; /* 18px */
+                letter-spacing: 0;
+              }
+            }
+          }
+
+          .item-traffic {
+            display: flex;
+            align-items: center;
+            gap: 0 0;
+            position: relative;
+            & > div,
+            & > a {
+              color: var(--Brand-Color, #f8298a);
+              text-align: justify;
+              font-family: 'Noto Sans HK';
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 150%; /* 18px */
+              letter-spacing: 0;
+              text-decoration-line: underline;
+              text-decoration-style: solid;
+              text-decoration-skip-ink: auto;
+              text-decoration-thickness: auto;
+              text-underline-offset: auto;
+              text-underline-position: from-font;
+            }
+            .route-traffic {
+              position: absolute;
+              top: 100%;
+              z-index: 23;
+              left: 0;
+              border-radius: 0px 10px 10px 10px;
+              background: var(--White, #fff);
+              box-sizing: border-box;
+              padding: 10px 15px;
+              box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
+              flex-direction: column;
+              gap: 10px 0;
+              display: flex;
+              & > div {
+                & > div:nth-child(1) {
+                  font-weight: 400;
+                }
+                & > div:nth-child(2) {
+                  color: var(--Grey-Deep, #4d4d4d);
+                }
+              }
+            }
+          }
+          .traffic-text {
+            box-sizing: border-box;
+            padding: 4px 15px;
+          }
+          .item-text-active {
+            display: flex;
+            color: var(--White, #fff);
+            background: var(--New-Theme-Color, #d2337d);
+            border-radius: 10px 10px 0px 0px;
+          }
+        }
+      }
+      .mobile-item-luohu,
+      .mobile-item-futian,
+      .mobile-item-nanshan {
+        display: flex;
+        flex-direction: column;
+        gap: 16px 0;
+      }
+    }
+  }
+  .BranchAddress-addressImg {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .BranchAddress-Box {
+    padding: 0 10px;
+  }
+  .subheading {
+    margin-left: 15px;
+    box-sizing: border-box;
+    padding-left: 12px;
+    border-left: 2px solid var(--New-Theme-Color, #d2337d);
+    span {
+      color: var(--Grey-Dark, #333);
+      font-family: 'Noto Sans HK';
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 170%;
+      letter-spacing: 1.8px;
+    }
+
+    span:not(:last-child) {
+      color: var(--New-Theme-Color, #d2337d);
+      font-family: 'Noto Sans HK';
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+      /* 31.5px */
+      letter-spacing: 2.1px;
     }
   }
 }

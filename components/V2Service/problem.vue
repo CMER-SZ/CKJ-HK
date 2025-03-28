@@ -418,7 +418,7 @@ const activeNames = ref(0)
         font-family: 'Helvetica Neue';
         font-size: 5.33vw;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 160%; /* 32px */
       }
       & > div:nth-child(2) {
@@ -426,7 +426,7 @@ const activeNames = ref(0)
         font-family: 'Noto Sans HK';
         font-size: 3.2vw;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 500;
         line-height: 150%; /* 18px */
         letter-spacing: 0.16vw;
       }

@@ -294,6 +294,7 @@ const submitForm = async () => {
 
   if (!formData.value.acknowledge) {
     tipShow.value = '請勾選私隱政策以繼續提交。'
+    closePopover(3000)
     if (submitPopover.value) {
       submitPopover.value.showPopover()
     }
@@ -305,6 +306,7 @@ const submitForm = async () => {
     !(appointmentForm.value && appointmentForm.value.checkValidity())
   ) {
     tipShow.value = '請選擇診症服務'
+    closePopover(3000)
     submitPopover.value.showPopover()
     return
   }
@@ -378,6 +380,14 @@ const submitForm = async () => {
     console.error('Error:', error)
   }
   isLoading.value = false
+}
+
+const closePopover = (n) => {
+  setTimeout(() => {
+    if (submitPopover.value) {
+      submitPopover.value.hidePopover()
+    }
+  }, n)
 }
 
 const postData = async (_form, _preferential) => {
