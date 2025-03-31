@@ -1012,31 +1012,31 @@ onMounted(() => {
 
 @media screen and (max-width: 991px) {
   .BranchAddress-Box {
-    margin-top: 15px;
+    margin-top: 4vw;
   }
   .BranchAddress-Box-mobile {
     & > ul {
       display: flex;
       justify-content: center;
-      border-radius: 5px;
+      border-radius: 1.33vw;
       overflow: hidden;
       width: fit-content;
-      margin: 0 auto 15px;
+      margin: 0 auto 4vw;
     }
     .mobile-item {
       box-sizing: border-box;
-      padding: 8px 26.5px;
+      padding: 8px 7.065vw;
       background: #fff;
       border-top: 1px solid var(--Grey-Light, #e6e6e6);
       border-bottom: 1px solid var(--Grey-Light, #e6e6e6);
       color: var(--Grey-Mid, #666);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.265vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      letter-spacing: 1.6px;
+      letter-spacing: 0.42vw;
     }
     .mobile-active {
       background: var(--New-Theme-Color, #d2337d);
@@ -1045,14 +1045,14 @@ onMounted(() => {
       transition: all 0.3s ease;
     }
     .mobile-item:nth-child(1) {
-      border-left: 1px solid var(--Grey-Light, #e6e6e6);
+      border-left: 0.265vw solid var(--Grey-Light, #e6e6e6);
     }
     .mobile-item:nth-child(2) {
-      border-left: 1px solid var(--Grey-Light, #e6e6e6);
-      border-right: 1px solid var(--Grey-Light, #e6e6e6);
+      border-left: 0.265vw solid var(--Grey-Light, #e6e6e6);
+      border-right: 0.265vw solid var(--Grey-Light, #e6e6e6);
     }
     .mobile-item:nth-child(3) {
-      border-right: 1px solid var(--Grey-Light, #e6e6e6);
+      border-right: 0.265vw solid var(--Grey-Light, #e6e6e6);
     }
     & > div {
       .img-coupon {
@@ -1063,8 +1063,8 @@ onMounted(() => {
         position: absolute;
         top: 0;
         left: 0;
-        width: 73.95px;
-        height: 21.75px;
+        width: 19.72vw;
+        height: 5.8vw;
         background: url('https://static.ckjhk.com/ckj-image/2025032714504501.svg')
           no-repeat;
         background-size: contain;
@@ -1077,8 +1077,11 @@ onMounted(() => {
           display: flex;
           gap: 0 0;
           & > div:nth-child(1) {
-            min-width: 116px;
-            height: 87px;
+            min-width: 30.93vw;
+            max-width: 30.93vw;
+            height: 23.2vw;
+            max-height: 23.2vw;
+            overflow: hidden;
             & > img {
               width: 100%;
               height: 100%;
@@ -1094,22 +1097,22 @@ onMounted(() => {
             & > div:nth-child(1) {
               color: var(--Brand-Color, #f8298a);
               font-family: 'Noto Sans HK';
-              font-size: 14px;
+              font-size: 3.733vw;
               font-style: normal;
               font-weight: 500;
               line-height: 150%; /* 21px */
               letter-spacing: 0;
-              padding-left: 10px;
+              padding-left: 2.65vw;
             }
             & > div:nth-child(2) {
-              padding-left: 10px;
-              margin-top: 2px;
+              padding-left: 2.65vw;
+              margin-top: 0.53vw;
               display: flex;
-              gap: 0 4px;
+              gap: 0 1.065vw;
               & > div:nth-child(2) {
                 color: var(--Grey-Dark, #333);
                 font-family: 'Noto Sans HK';
-                font-size: 12px;
+                font-size: 3.2vw;
                 font-style: normal;
                 font-weight: 400;
                 line-height: 150%; /* 18px */
@@ -1128,7 +1131,7 @@ onMounted(() => {
               color: var(--Brand-Color, #f8298a);
               text-align: justify;
               font-family: 'Noto Sans HK';
-              font-size: 12px;
+              font-size: 3.2vw;
               font-style: normal;
               font-weight: 500;
               line-height: 150%; /* 18px */
@@ -1148,7 +1151,7 @@ onMounted(() => {
               border-radius: 0px 10px 10px 10px;
               background: var(--White, #fff);
               box-sizing: border-box;
-              padding: 10px 15px;
+              padding: 10px 4vw;
               box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
               flex-direction: column;
               gap: 10px 0;
@@ -1165,7 +1168,7 @@ onMounted(() => {
           }
           .traffic-text {
             box-sizing: border-box;
-            padding: 4px 15px;
+            padding: 4px 4vw;
           }
           .item-text-active {
             display: flex;
@@ -1196,32 +1199,32 @@ onMounted(() => {
   }
 
   .BranchAddress-Box {
-    padding: 0 10px;
+    padding: 0 2.65vw;
   }
   .subheading {
-    margin-left: 15px;
+    margin-left: 4vw;
     box-sizing: border-box;
-    padding-left: 12px;
+    padding-left: 3.2vw;
     border-left: 2px solid var(--New-Theme-Color, #d2337d);
     span {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
-      font-size: 18px;
+      font-size: 4.8vw;
       font-style: normal;
       font-weight: 500;
       line-height: 170%;
-      letter-spacing: 1.8px;
+      letter-spacing: 0.48vw;
     }
 
     span:not(:last-child) {
       color: var(--New-Theme-Color, #d2337d);
       font-family: 'Noto Sans HK';
-      font-size: 21px;
+      font-size: 5.6vw;
       font-style: normal;
       font-weight: 700;
       line-height: 150%;
       /* 31.5px */
-      letter-spacing: 2.1px;
+      letter-spacing: 0.56vw;
     }
   }
 }

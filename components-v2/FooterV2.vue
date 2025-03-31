@@ -131,11 +131,11 @@
     <div class="v2-mobile-footer-bottom">
       <div>
         <div>
-          <div><img src="~/assets/images/2025032411104001.svg" alt="" /></div>
+          <div><img src="https://static.ckjhk.com/ckj-image/2025033117453002.png" alt="" /></div>
           <div>深圳市醫保定點醫院</div>
         </div>
         <div>
-          <div><img src="~/assets/images/2025032411104002.svg" alt="" /></div>
+          <div><img src="https://static.ckjhk.com/ckj-image/2025033117453001.png" alt="" /></div>
           <div>深圳二級口腔醫院</div>
         </div>
       </div>
@@ -289,7 +289,7 @@
       display: flex;
       gap: 0 4.53vw;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 4vw;
     }
     .v2-mobile-footer-bottom {
       width: 100%;
@@ -305,6 +305,15 @@
         align-items: center;
         gap: 0 4vw;
         & > div {
+          &>div:nth-child(1) {
+            width: 6.4vw;
+            height: auto;
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
           display: flex;
           align-items: center;
           gap: 0 0.8vw;

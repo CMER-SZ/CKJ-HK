@@ -722,7 +722,7 @@ const fillingsPhaseList = [
             </div>
           </div>
           <div class="fillings-materiel-content-btn">
-            <PageAnimBtnTypeTwo :str="'以上優惠只限網上預約客戶'" />
+            以上優惠只限網上預約客戶
           </div>
         </div>
       </section>
@@ -1233,33 +1233,35 @@ const fillingsPhaseList = [
       }
       .fillings-materiel-content-btn {
         margin-top: 35px;
-        :deep(.animbtntypetwo-in) {
-          span {
-            background: var(--Brand-Color, #f8298a);
-            box-shadow: 10px 10px 20px #f8298abf;
-            &::after {
-              animation: btntestafterAnima 5.6s infinite;
-            }
-          }
-        }
-        :deep(.animbtntypetwo-in::after) {
-          animation: btntestafterAnima 5.6s infinite;
-        }
-        :deep(.animbtntypetwo::after) {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: -40px;
-          transform: translateY(-50%);
-          border: none !important;
-          width: 61px;
-          height: 60px;
-          border: 10px solid #f8298a;
-          background: url('https://static.ckjhk.com/ckj-image/2e53d06edd29.png')
-            no-repeat;
-          background-size: contain;
-          z-index: 3;
-        }
+        color: var(--White, #fff);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 3px;
+        background: var(--Brand-Color, #f8298a);
+        box-sizing: border-box;
+        padding: 5px 20px 3px 30px;
+        border-radius: 30px;
+        position: relative;
+      }
+
+      .fillings-materiel-content-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -40px;
+        transform: translateY(-50%);
+        border: none !important;
+        width: 61px;
+        height: 60px;
+        border: 10px solid #f8298a;
+        background: url('https://static.ckjhk.com/ckj-image/2e53d06edd29.png')
+          no-repeat;
+        background-size: contain;
+        z-index: 3;
       }
     }
   }
@@ -1268,7 +1270,7 @@ const fillingsPhaseList = [
     box-sizing: border-box;
     padding: 30px 0;
     .fillings-compare-content-table {
-      margin-top: 20px;
+      margin-top: 70px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       & > div {
@@ -1312,10 +1314,39 @@ const fillingsPhaseList = [
         border-top: 7px solid #f8298a;
         border-radius: 10px 10px 0px 0px;
         background: var(--Brand-Color, #f8298a);
+        position: relative;
       }
+
+      & > div:nth-child(2)::after {
+        content: '\\  最常用 /';
+        color: var(--Brand-Color, #f8298a);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        position: absolute;
+        top: -150%;
+        left: 52%;
+        transform: translateX(-50%);
+      }
+      & > div:nth-child(2)::before {
+        content: '';
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 44px;
+        height: 28px;
+        background: url(~/assets/images/group3910.svg) no-repeat;
+        background-size: contain;
+        z-index: 1;
+      }
+
       & > div:nth-child(3) {
         border-radius: 10px 10px 0px 0px;
-        border-top: 4px solid #fff;
+        border-top: 3px solid var(--Grey-Lightest, #f2f2f2);
         background: var(--Blue-Deep, #00aeff);
       }
       & > div:nth-child(2),
@@ -1348,6 +1379,9 @@ const fillingsPhaseList = [
         letter-spacing: 1.8px;
         box-sizing: border-box;
         padding: 10px 0;
+      }
+      & > div:nth-child(3n + 3) {
+        border-right: 3px solid var(--Grey-Lightest, #f2f2f2);
       }
       & > div:nth-child(1),
       & > div:nth-child(4) {
@@ -1392,6 +1426,9 @@ const fillingsPhaseList = [
         width: 100%;
         height: 3px;
         background: #e5e7eba2;
+      }
+      & > div:nth-child(15) {
+        border-bottom: 3px solid var(--Grey-Lightest, #f2f2f2);
       }
     }
   }
@@ -1756,7 +1793,7 @@ const fillingsPhaseList = [
         top: 0;
         right: -1px;
         width: 56px;
-        height: 380px;
+        height: 450px;
         & > img {
           width: 100%;
           height: 100%;
@@ -1853,38 +1890,40 @@ const fillingsPhaseList = [
         }
       }
     }
+
     .fillings-materiel-content-btn {
+      margin-top: 35px;
+      color: var(--White, #fff);
+      text-align: justify;
+      font-family: 'Noto Sans HK';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px; /* 150% */
+      letter-spacing: 1.6px;
+      box-sizing: border-box;
+      padding: 3px 10px 3px 20px;
+      background: var(--Brand-Color, #f8298a);
+      border-radius: 20px;
+      position: relative;
+      width: fit-content;
       margin: 35px auto 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      :deep(.animbtntypetwo-in) {
-        span {
-          background: var(--Brand-Color, #f8298a);
-          box-shadow: 10px 10px 20px #f8298abf;
-          &::after {
-            animation: btntestafterAnima 5.6s infinite;
-          }
-        }
-      }
-      :deep(.animbtntypetwo-in::after) {
-        animation: btntestafterAnima 5.6s infinite;
-      }
-      :deep(.animbtntypetwo::after) {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: -20px;
-        transform: translateY(-50%);
-        border: none !important;
-        width: 43px;
-        height: 42px;
-        border: 5px solid #f8298a;
-        background: url('https://static.ckjhk.com/ckj-image/2e53d06edd29.png')
-          no-repeat;
-        background-size: contain;
-        z-index: 3;
-      }
+    }
+
+    .fillings-materiel-content-btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -25px;
+      transform: translateY(-50%);
+      border: none !important;
+      width: 43px;
+      height: 42px;
+      border: 5px solid #f8298a;
+      background: url('https://static.ckjhk.com/ckj-image/2e53d06edd29.png')
+        no-repeat;
+      background-size: contain;
+      z-index: 3;
     }
   }
 
@@ -1942,6 +1981,7 @@ const fillingsPhaseList = [
         box-sizing: border-box;
         padding: 5px 10px;
         text-align: left;
+        border-right: 1px solid var(--Grey-Lightest, #f2f2f2);
       }
       & > div:nth-child(6),
       & > div:nth-child(5) {
@@ -1981,17 +2021,17 @@ const fillingsPhaseList = [
         transform: translateX(-50%);
         width: 44px;
         height: 29px;
-        background: url(https://static.ckjhk.com/ckj-image/0145b4c806b6.svg)
-          no-repeat;
+        background: url(~/assets/images/group3910.svg) no-repeat;
         background-size: contain;
         z-index: 1;
       }
 
       & > div:nth-child(3) {
         border-radius: 10px 10px 0px 0px;
-        border-top: 4px solid #fff;
         background: var(--Blue-Deep, #00aeff);
+        border-top: 1px solid var(--Grey-Lightest, #f2f2f2);
       }
+
       & > div:nth-child(2),
       & > div:nth-child(3) {
         color: var(--White, #fff);
@@ -2008,6 +2048,7 @@ const fillingsPhaseList = [
         box-sizing: border-box;
         padding: 5px 0;
       }
+
       & > div:nth-child(14) {
         border-radius: 0 0 10px 10px;
         border-bottom: 3px solid #f8298a;
@@ -2069,6 +2110,9 @@ const fillingsPhaseList = [
         width: 100%;
         height: 3px;
         background: #e5e7eba2;
+      }
+      & > div:nth-child(15) {
+        border-bottom: 1px solid var(--Grey-Lightest, #f2f2f2);
       }
     }
   }
@@ -2133,19 +2177,19 @@ const fillingsPhaseList = [
         & > div:nth-child(2) {
           position: relative;
         }
-        & > div:nth-child(2)::after {
-          content: '';
-          position: absolute;
-          width: 2.93vw;
-          height: 6.4vw;
-          background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
-            no-repeat;
-          background-size: cover;
-          top: 50%;
-          right: -2vw;
-          z-index: -1;
-          transform: translateY(-50%);
-        }
+        // & > div:nth-child(2)::after {
+        //   content: '';
+        //   position: absolute;
+        //   width: 2.93vw;
+        //   height: 6.4vw;
+        //   background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
+        //     no-repeat;
+        //   background-size: cover;
+        //   top: 50%;
+        //   right: -2vw;
+        //   z-index: -1;
+        //   transform: translateY(-50%);
+        // }
         & > div:nth-child(3) {
           color: var(--Grey-Dark, #333);
           /* 手機版/MB-Small Text */
@@ -2162,10 +2206,8 @@ const fillingsPhaseList = [
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-      .fillings-step-item:last-child {
-        & > div:nth-child(2)::after {
-          content: none;
+        & > img {
+          transform: scale(1.5);
         }
       }
     }
@@ -2241,10 +2283,10 @@ const fillingsPhaseList = [
       );
       display: flex;
       align-items: center;
-      margin-left: 78px;
+      margin-left: 75px;
       box-sizing: border-box;
       padding: 6px 0 12px;
-      width: 100%;
+      width: 90%;
       justify-content: space-between;
     }
     .fillings-phase-content-item-text {
@@ -2290,18 +2332,42 @@ const fillingsPhaseList = [
       width: 70px;
       height: 70px;
       position: relative;
-      right: -5px;
+      right: 0px;
       & > img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
+    .fillings-phase-content-item:nth-child(4) {
+      .fillings-phase-content-item-l {
+        padding: 20.5px 0px 17.5px 2px;
+        img {
+          transform: scale(1.2);
+        }
+      }
+      .fillings-phase-content-item-float {
+        width: 83px;
+        right: -8px;
+        position: relative;
+        right: 0px;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .fillings-phase-content-item:nth-child(5) {
+      .fillings-phase-content-item-l {
+        padding: 20.5px 0px 17.5px;
+      }
+    }
     .fillings-phase-content-item-float::after {
       content: '';
       position: absolute;
       top: 0;
-      left: -15px;
+      left: -10px;
       background: url(~/assets/images/2025032614245601.svg) no-repeat;
       width: 23px;
       height: 24px;
@@ -2521,7 +2587,7 @@ const fillingsPhaseList = [
     width: 86.665vw;
     left: 50%;
     top: auto;
-    bottom: -65%;
+    bottom: -60%;
     border-radius: 10px;
     transform: translate(-50%, 0%);
     .content-title {
@@ -2578,8 +2644,8 @@ const fillingsPhaseList = [
         letter-spacing: 1.28vw;
       }
       & > div:nth-child(2) {
-        width: 9.5vw;
-        height: 8.03vw;
+        width: 12.5vw;
+        height: 11.03vw;
         & > svg,
         & > img {
           width: 100%;

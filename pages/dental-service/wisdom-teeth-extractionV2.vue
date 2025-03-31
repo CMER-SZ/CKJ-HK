@@ -619,24 +619,103 @@ const listItem = (str) => {
   }
 }
 
-const doctorList = ref([
+const shareList = ref([
   {
-    id: 107,
-    sequence: 1,
-    name: '李川<span>醫生</span>',
-    imageUrl: 'https://static.cmereye.com/imgs/2023/05/d9f1c5bebf5ff081.png',
-    job: '集團常務院長',
+    id: 1,
+    name: '金先生',
+    date: '20/2/25',
+    text: '左邊下排生咗隻智慧齒喺牙肉入面，一直冇理直到痛到瞓唔到😞好在客服即日安排到診所剝牙👍仲要平過香港好多',
   },
   {
-    id: 107,
-    sequence: 1,
-    name: '盧勇輝<span>醫生</span>',
-    imageUrl: 'https://static.cmereye.com/imgs/2023/05/d9f1c5bebf5ff081.png',
-    job: '種植學總監',
+    id: 2,
+    name: '張小姐',
+    date: '5/6/24',
+    text: '原本以為剝智慧齒會痛好耐，感謝張名妃醫生醫術好所以冇咩痛，過咗一個星期已經可以正常進食',
+  },
+  {
+    id: 3,
+    name: '尹先生',
+    date: '18/12/23',
+    text: '做了檢查發現有嚴重牙周病，照醫生建議拔了有問題救不了的牙。現在牙肉不痛刷牙很少有血，之後會考慮做植牙。',
   },
 ])
-</script>
 
+const attentionList = ref([
+  {
+    id: 1,
+    img: 'https://static.ckjhk.com/ckj-image/6bf47a171f68.png',
+    text: '咬緊棉花止血',
+  },
+  {
+    id: 2,
+    img: 'https://static.ckjhk.com/ckj-image/237a1483d4f6.png',
+    text: '避免飲用<br />酒精用品',
+  },
+  {
+    id: 3,
+    img: 'https://static.ckjhk.com/ckj-image/d808e099db61.png',
+    text: '以鹽水漱口<br />清潔',
+  },
+  {
+    id: 4,
+    img: 'https://static.ckjhk.com/ckj-image/00e256449110.png',
+    text: '避免食用過<br />冷或過熱食物',
+  },
+  {
+    id: 5,
+    img: 'https://static.ckjhk.com/ckj-image/6df07a5616a1.png',
+    text: '避免觸碰傷口',
+  },
+  {
+    id: 6,
+    img: 'https://static.ckjhk.com/ckj-image/36ed97dbbb6f.png',
+    text: '避免大力漱口<br />或吐痰',
+  },
+  {
+    id: 7,
+    img: 'https://static.ckjhk.com/ckj-image/f304a9b726b1.png',
+    text: '避免食用堅硬<br />和粗糙的食物',
+  },
+])
+
+const problemList = ref({
+  title: '<span>拔牙及智慧齒脫除</span><span>常見問題</span>',
+  lists: [
+    {
+      Q: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[0].Q',
+      A: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[0].A',
+    },
+    {
+      Q: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[1].Q',
+      A: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[1].A',
+    },
+    {
+      Q: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[2].Q',
+      A: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[2].A',
+    },
+    {
+      Q: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[3].Q',
+      A: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[3].A',
+    },
+    {
+      Q: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[4].Q',
+      A: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[4].A',
+    },
+    {
+      Q: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[5].Q',
+      A: 'pages.dental-service.wisdom-teeth-extraction.problem.lists[5].A',
+    },
+    {
+      Q: '拔牙的恢復時間？',
+      A: '恢復時間因人而異，一般在幾天至一周內逐漸好轉。在術後初期，應避免劇烈運動及食用過硬或過熱的食物，並按照醫師的指示進行口腔護理。',
+    },
+    {
+      Q: '拔牙後要用飲管飲水？',
+      A: '這是錯誤的方法，術後數小時內避免用力漱口或吸管飲料，以免影響血塊的形成。建議在家休息並按醫囑服用藥物，如有異常疼痛或出血應立即聯繫我們。',
+    },
+  ],
+})
+</script>
 <template>
   <div>
     <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
@@ -834,14 +913,64 @@ const doctorList = ref([
               class="d-md-block"
             />創傷小、恢復快，大大減低痛感
           </div>
-          <div>
-            <DoctorV2 :nowType="'105'" />
+          <div class="medic-team-content-list">
+            <!-- <DoctorV2 :nowType="'105'" /> -->
+          </div>
+          <div class="medic-team-content-btn">
+            <PageAnimBtnTypeTwo :str="'即時配對醫生'" />
           </div>
         </div>
       </section>
+      <section class="ckj-container share-content">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>客戶</span><span>分享</span>
+        </div>
+        <div class="share-content-list">
+          <div class="share-content-list-title">
+            <div>30年專科專業為港人服務</div>
+            <div>北上睇牙首選愛康健</div>
+          </div>
+          <div class="share-content-list-content">
+            <div
+              class="share-content-list-item"
+              v-for="item in shareList"
+              :key="item.id"
+            >
+              <div>
+                <div>{{ item.name }}</div>
+                <div>{{ item.date }}</div>
+              </div>
+              <div>{{ item.text }}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container matters-needing-attention">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>拔牙</span><span>後注意事項</span>
+        </div>
+        <div class="matters-needing-attention-content">
+          <div
+            class="matters-needing-attention-item"
+            v-for="item in attentionList"
+            :key="item.id"
+          >
+            <div class="matters-needing-attention-item-img">
+              <img :src="item.img" alt="" />
+            </div>
+            <div
+              v-html="item.text"
+              class="matters-needing-attention-item-text"
+            ></div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container wisdom-teeth-extraction-question-container">
+        <div>
+          <V2ServiceProblem :problem-data="problemList" :v2-versions="true" />
+        </div>
+      </section>
     </div>
-    <!-- <ServiceIntroduce :introduceData="orthodonticsIntroduceData" /> -->
-    <!-- <ServiceProblem :problemData="problemData" /> -->
     <serviceCard />
     <BranchAddress />
     <AppointmentFormV2 />
@@ -1373,6 +1502,163 @@ const doctorList = ref([
   }
   .medic-team {
     margin: 30px 0;
+    .medic-team-content {
+      margin-top: 20px;
+      .medic-team-content-title {
+        box-sizing: border-box;
+        padding: 0 20px;
+        color: var(--Grey-Mid, #666);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.7px;
+      }
+      .medic-team-content-btn {
+        margin: 25px auto;
+        :deep(.animbtntypetwo) {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  .share-content {
+    margin: 30px 0;
+    .share-content-list {
+      .share-content-list-title {
+        margin-top: 20px;
+        margin-bottom: 15px;
+        color: var(--Theme-Color, #fc1682);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.8px;
+      }
+      .share-content-list-content {
+        box-sizing: border-box;
+        padding: 0 15px;
+        gap: 12px 0;
+        display: flex;
+        flex-direction: column;
+        .share-content-list-item {
+          max-width: 290px;
+          border-radius: 5px;
+          border: 1px solid var(--Pink-Mid, #f670ae);
+          background: var(--White, #fff);
+          padding: 10px 15px;
+          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+          display: flex;
+
+          flex-direction: column;
+          & > div:nth-child(1) {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            box-sizing: border-box;
+
+            & > div:nth-child(1) {
+              color: var(--Brand-Color, #f8298a);
+              font-family: 'Noto Sans HK';
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 1.8px;
+            }
+            & > div:nth-child(2) {
+              color: var(--Grey-Mid, #666);
+              text-align: right;
+              font-family: 'Noto Sans HK';
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 160%; /* 19.2px */
+              letter-spacing: 1.2px;
+            }
+          }
+          & > div:nth-child(2) {
+            color: var(--Grey-Deep, #4d4d4d);
+            text-align: justify;
+            font-family: 'Noto Sans HK';
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 18px */
+            letter-spacing: 0.6px;
+          }
+        }
+        .share-content-list-item:nth-child(2) {
+          margin: 0 0 0 auto;
+          border: 1px solid var(--Blue-Deep, #00aeff);
+          & > div:nth-child(1) {
+            & > div:nth-child(1) {
+              color: var(--Blue-Deep, #00aeff);
+            }
+          }
+        }
+      }
+    }
+  }
+  .matters-needing-attention {
+    margin: 30px 0;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-bottom: 40px;
+    .matters-needing-attention-content {
+      box-sizing: border-box;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px 49px;
+      .matters-needing-attention-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        max-width: 74px;
+        gap: 21px 0;
+        .matters-needing-attention-item-img {
+          width: 70px;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .matters-needing-attention-item-text {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 21px */
+          letter-spacing: 0.7px;
+          white-space: nowrap;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .wisdom-teeth-extraction-question-container {
+    margin: 30px 0;
+  }
+
+  :deep(.index-dentalServices) {
+    margin: 30px 0;
+    padding: 0 0 30px 0;
   }
   .banner-in-box {
     position: absolute;
