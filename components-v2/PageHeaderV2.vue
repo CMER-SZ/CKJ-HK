@@ -894,412 +894,8 @@ const implantItem = [
     background-position-y: 10px;
   }
 }
-@media screen and (min-width: 1441px) {
-  .NewHeaderMenu {
-    position: fixed;
-    z-index: 110;
-    width: 100%;
-    background: #fff;
-    top: 0;
-    .a-header-content-in {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      justify-content: center;
-      background: var(---Green, #00a752);
-      box-sizing: border-box;
-      padding: 6.5px 0;
-      color: var(--White, #fff);
-      text-align: center;
-      font-family: 'Noto Sans Hk';
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-      letter-spacing: 1.1px;
-    }
-  }
 
-  .pc_header_menu {
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-    padding-left: clamp(52.5px, 3.645vw, 70px);
-    box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
-    .logo {
-      display: flex;
-      gap: 0 clamp(18.75px, 1.3028vw, 25px);
-      align-items: center;
-      & > a:nth-child(1) {
-        width: clamp(138px, 9.583vw, 184px);
-        height: clamp(27px, 1.875vw, 36px);
-        & > img {
-          width: 100%;
-          height: 100%;
-        }
-      }
-      & > div:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        & > span:nth-child(1) {
-          color: var(--White, #fff);
-          font-size: clamp(10.5px, 0.7295vw, 14px);
-          font-style: normal;
-          font-weight: 400;
-          line-height: 130%; /* 18.2px */
-          letter-spacing: 3.78px;
-          border-radius: 2px;
-          background: var(---Green, #00a752);
-          padding: 2px 6px;
-          box-sizing: border-box;
-        }
-        & > span:nth-child(2) {
-          color: var(--Grey-Deep, #4d4d4d);
-          font-size: clamp(10.5px, 0.7295vw, 14px);
-          font-style: normal;
-          font-weight: 400;
-          line-height: 130%; /* 18.2px */
-          letter-spacing: 1.4px;
-        }
-      }
-      & > div:nth-child(2)::before {
-        content: '';
-        position: absolute;
-        width: 1px;
-        height: 100%;
-        left: clamp(-9.375px, -0.65vw, -12.5px);
-        background: #aaa;
-      }
-    }
-    .menu {
-      display: flex;
-      align-items: center;
-      & > div:nth-child(1) {
-        display: flex;
-        gap: 0 clamp(18.75px, 1.3028vw, 25px);
-        margin-right: clamp(11.25px, 0.78125vw, 15px);
-        .menuItem {
-          position: relative;
-          & > a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            span {
-              color: var(--Grey-Deep, #4d4d4d);
-              text-align: center;
-              font-size: clamp(16.5px, 1.1458vw, 22px);
-              font-style: normal;
-              font-weight: 600;
-              line-height: 160%; /* 35.2px */
-            }
-            span::after {
-              content: '';
-              width: 0;
-              height: 2px;
-              position: absolute;
-              left: 50%;
-              bottom: 10px;
-              transform: translateX(-50%);
-              background: var(--textColor);
-              transition: all 0.3s;
-              border-radius: 2px;
-            }
-          }
-          .menuChild {
-            display: none;
-          }
-        }
-        .menuItem::after {
-          content: '';
-          width: 130%;
-          display: inline-block;
-          z-index: 3;
-          height: 50px;
-          background: transparent;
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        .menuItem:hover {
-          & > a {
-            span {
-              color: #fc1682;
-              position: relative;
-            }
-            span::after {
-              position: absolute;
-              content: '';
-              width: 100%;
-              height: 2px;
-              background: #fc1682;
-              bottom: 2px;
-              left: 50%;
-              transform: translateX(-50%);
-            }
-            svg {
-              path {
-                fill: #fc1682;
-              }
-            }
-          }
-          .menuChild {
-            display: flex;
-            flex-direction: column;
-            background: #fff;
-            position: absolute;
-            top: 100%;
-            z-index: 99;
-            width: 130%;
-            box-sizing: border-box;
-            padding: 0px clamp(15px, 1.04165vw, 20px) 5px;
-            align-items: center;
-            left: 50%;
-            transform: translate(-50%, 10px);
-            filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.15));
-            border-radius: 6px;
-            .menuChild-item {
-              width: 100%;
-              text-align: center;
-              padding: 0;
-              font-weight: 500;
-              font-size: clamp(14px, 1.092vw, 20px);
-              color: #666666;
-              transition: all 0.3s;
-              & > a {
-                display: block;
-                padding: clamp(8px, 0.052vw, 10px) 0 5px;
-              }
-            }
-            .menuChild-item:not(:last-child) {
-              border-bottom: 1px solid var(--indexColor2);
-            }
-            .menuChild-item:hover {
-              color: var(--indexColor1);
-            }
-          }
-          .menuChild::before {
-            content: '';
-            width: 0px;
-            height: 0px;
-            border: clamp(8px, 0.052vw, 10px) solid;
-            border-color: transparent transparent #fff transparent;
-            position: absolute;
-            top: clamp(-14px, -0.092vw, -18px);
-            left: 50%;
-            transform: translateX(-50%);
-          }
-        }
-        .menuItem:nth-child(3):hover {
-          & > a {
-            span {
-              color: #fc1682;
-              position: relative;
-            }
-            span::after {
-              position: absolute;
-              content: '';
-              width: 100%;
-              height: 2px;
-              background: #fc1682;
-              bottom: 2px;
-              left: 50%;
-              transform: translateX(-50%);
-            }
-            svg {
-              path {
-                fill: #fc1682;
-              }
-            }
-          }
-          .menuChild {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 0 34px;
-            flex-direction: column;
-            background: #fff;
-            position: absolute;
-            top: 100%;
-            z-index: 99;
-            width: auto;
-            box-sizing: border-box;
-            padding: clamp(18.75px, 1.3028vw, 25px)
-              clamp(18.75px, 1.3028vw, 25px);
-            align-items: center;
-            left: 50%;
-            transform: translate(-50%, 10px);
-            filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.15));
-            border-radius: 6px;
-            .menuChild-item {
-              width: 100%;
-              text-align: center;
-              padding: 0;
-              font-weight: 500;
-              font-size: clamp(14px, 1.092vw, 20px);
-              color: #666666;
-              transition: all 0.3s;
-              white-space: nowrap;
-              & > a {
-                display: block;
-                padding: clamp(12px, 0.252vw, 16px) 0 5px;
-              }
-            }
-            .menuChild-item:hover {
-              color: var(--indexColor1);
-            }
-            .menuChild-item:nth-last-child(-n + 2) {
-              border-bottom: none;
-            }
-            .menuChild-item:not(:nth-child(n + 6)) {
-              color: var(--Theme-Color, #fc1682);
-              position: relative;
-            }
-            .menuChild-item:not(:nth-child(n + 6))::before {
-              content: '';
-              position: absolute;
-              top: 5px;
-              transform: translateX(-50%);
-              width: 5px;
-              height: 5px;
-              border-radius: 50%;
-              background: var(--Theme-Color, #fc1682);
-            }
-            .menuChild-item:not(:nth-child(3n)) {
-              position: relative;
-            }
-            .menuChild-item:not(:nth-child(3n))::after {
-              content: '';
-              position: absolute;
-              width: 1px;
-              height: 70%;
-              right: clamp(-12.75px, -0.8854vw, -17px);
-              top: 50%;
-              transform: translateY(-50%);
-              border-right: 1px solid var(--indexColor2);
-            }
-          }
-          .menuChild::before {
-            content: '';
-            width: 0px;
-            height: 0px;
-            border: clamp(8px, 0.052vw, 10px) solid;
-            border-color: transparent transparent #fff transparent;
-            position: absolute;
-            top: clamp(-14px, -0.092vw, -18px);
-            left: 50%;
-            transform: translateX(-50%);
-          }
-          .menuChild::after {
-            content: '';
-            animation: menuIconAnim 1.5s 0.5s forwards;
-            background: url(https://static.cmereye.com/imgs/2024/04/4f39b444ca1b0a1d.png)
-              no-repeat;
-            background-position-y: 69.2307692308px;
-            background-size: 100% auto;
-            bottom: 0;
-            content: '';
-            display: block;
-            height: 69.2307692308px;
-            overflow: hidden;
-            position: absolute;
-            right: 30px;
-            width: 100px;
-          }
-        }
-        .menuItem:nth-child(4) {
-          & > a {
-            span {
-              color: #00a752;
-              position: relative;
-            }
-            span::after {
-              bottom: 0px;
-            }
-          }
-        }
-        .menuItem:nth-child(4):hover {
-          & > a {
-            span {
-              color: #00a752;
-              position: relative;
-            }
-            span::after {
-              position: absolute;
-              content: '';
-              background: #00a752;
-              bottom: 2px;
-            }
-            svg {
-              path {
-                fill: #00a752;
-              }
-            }
-          }
-        }
-        .menuItem:nth-child(5) {
-          & > a {
-            span {
-              color: #e60013;
-              position: relative;
-            }
-            span::after {
-              bottom: 0px;
-            }
-          }
-        }
-        .menuItem:nth-child(5):hover {
-          & > a {
-            span {
-              color: #e60013;
-              position: relative;
-            }
-            span::after {
-              position: absolute;
-              content: '';
-              background: #e60013;
-              bottom: 0px;
-            }
-            svg {
-              path {
-                fill: #e60013;
-              }
-            }
-          }
-        }
-        .menuItem:nth-child(8):hover {
-          .menuChild {
-            width: 150%;
-          }
-        }
-        .menuItem:last-child {
-          box-sizing: border-box;
-          padding-top: 5px;
-        }
-        .menuItem:last-child:hover {
-          .menuChild {
-            width: 350%;
-            padding: clamp(7.5px, 0.020825vw, 10px) clamp(15px, 1.04165vw, 20px)
-              5px;
-          }
-        }
-      }
-      .pc_menu_tel {
-        color: var(--White, #fff);
-        font-size: clamp(16.5px, 1.1458vw, 22px);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%; /* 35.2px */
-        box-sizing: border-box;
-        padding: clamp(11.25px, 0.78125vw, 15px) clamp(45px, 3.125vw, 60px)
-          clamp(11.25px, 0.78125vw, 15px) clamp(11.25px, 0.78125vw, 15px);
-        background: var(--Theme-Color, #fc1682);
-      }
-    }
-  }
-}
-@media screen and (min-width: 992px) and (max-width: 1440px) {
+@media screen and (min-width: 992px) {
   .NewHeaderMenu {
     position: fixed;
     z-index: 110;
@@ -1307,10 +903,8 @@ const implantItem = [
     background: #fff;
     top: 0;
     .a-header-content-in {
-      display: flex;
-      align-items: center;
+      display: block;
       width: 100%;
-      justify-content: center;
       background: var(---Green, #00a752);
       box-sizing: border-box;
       padding: 6.5px 0;
@@ -1703,8 +1297,410 @@ const implantItem = [
     }
   }
 }
+/* PC端菜单样式 */
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0;
+    box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
 
-@media screen and (min-width: 768px) and (max-width: 1040px) {
+    & > div {
+      .navbar-brand {
+        width: 21.35vw;
+        max-width: 410px;
+        gap: clamp(4px, 0.7vw, 13.5px);
+
+        .websiteLOGO {
+          width: 9.58vw;
+          max-width: 184px;
+
+          i {
+            color: var(--Grey-Light, #e6e6e6);
+          }
+        }
+      }
+
+      .navbar-nav {
+        anchor-name: --slider-menu;
+
+        &:has(:nth-child(1) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-1;
+          --color: var(--Grey-Dark, #333);
+        }
+
+        & > .nav-item:nth-child(1) {
+          --anchor: --item-1;
+        }
+
+        // 2
+        &:has(:nth-child(2) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-2;
+          --color: var(--Grey-Dark, #333);
+        }
+
+        & > .nav-item:nth-child(2) {
+          --anchor: --item-2;
+        }
+
+        // 3
+        &:has(:nth-child(3) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-3;
+          --color: var(--Grey-Dark, #333);
+        }
+
+        & > .nav-item:nth-child(3) {
+          --anchor: --item-3;
+        }
+
+        // 4
+        &:has(:nth-child(3) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-3;
+          --color: var(--GHV-Green, #008843);
+        }
+
+        & > .nav-item:nth-child(3) {
+          --anchor: --item-3;
+        }
+
+        // 5
+        &:has(:nth-child(4) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-4;
+          --color: #e60013;
+        }
+
+        & > .nav-item:nth-child(4) {
+          --anchor: --item-4;
+        }
+
+        // 6
+        &:has(:nth-child(5) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-5;
+          --color: var(--Grey-Dark, #333);
+        }
+
+        & > .nav-item:nth-child(5) {
+          --anchor: --item-5;
+        }
+
+        &:has(:nth-child(6) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-6;
+          --color: var(--Grey-Dark, #333);
+        }
+
+        & > .nav-item:nth-child(6) {
+          --anchor: --item-6;
+        }
+
+        &:has(:nth-child(7) .nav-link:is(:hover, :focus-visible)) {
+          --target: --item-7;
+          --color: var(--Grey-Dark, #333);
+        }
+
+        & > .nav-item:nth-child(7) {
+          --anchor: --item-7;
+        }
+
+        & > .nav-item:nth-child(8) {
+          bottom: 6px;
+          cursor: pointer;
+
+          &:hover {
+            svg {
+              path {
+                fill: #d2337d;
+              }
+            }
+          }
+        }
+
+        & > .nav-item:nth-child(9) {
+          &:hover {
+            svg {
+              path {
+                fill: #d2337d;
+              }
+            }
+          }
+        }
+
+        .nav-item {
+          height: 70px;
+          display: flex;
+          flex-shrink: 0;
+          align-items: center;
+          position: relative;
+
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            .dropdown-toggle::after {
+              background: url('https://statichk.cmermedical.com/newCKJ/static/hearderDown-white.svg')
+                no-repeat;
+            }
+
+            background: var(--New-Theme-Color, #d2337d);
+
+            & > a {
+              color: var(--White, #fff) !important;
+            }
+
+            .dropdown-menu {
+              display: grid;
+              grid-template-columns: 1fr 1fr 1fr;
+              gap: 9px;
+              padding: 13px 9px;
+              position: absolute;
+              top: calc(100% + 10px);
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 99;
+              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+              border-radius: 10px;
+              border: 2px solid var(--Grey-Light, #e6e6e6);
+              background: var(--White, #fff);
+
+              &::before {
+                position: absolute;
+                left: 50%;
+                top: -12px;
+                transform: translateX(-50%);
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 11.5px solid transparent;
+                border-right: 11.5px solid transparent;
+                border-bottom: 11px solid var(--White, #fff);
+              }
+
+              &::after {
+                position: absolute;
+                top: -12px;
+                content: '';
+                width: 100%;
+                height: 12px;
+                background: transparent;
+              }
+
+              .dropdown-item {
+                color: var(--New-Theme-Color, #d2337d);
+                text-align: center;
+                font-family: 'Noto Sans TC';
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 160%;
+                letter-spacing: 2px;
+                padding: 10px;
+                width: 200px;
+                transition: background-color 0.2s ease;
+
+                &:hover {
+                  border-radius: 5px;
+                  background: var(--New-Theme-Color, #d2337d);
+                  color: white;
+                }
+              }
+
+              .collapse {
+                padding-left: 1rem;
+              }
+
+              .dropdown-submenu {
+                position: relative;
+
+                .dropdown-menu {
+                  position: absolute;
+                  left: 100%;
+                  top: 0;
+                  margin-left: 0.125rem;
+                }
+
+                &:hover {
+                  .dropdown-menu-three {
+                    display: block;
+                  }
+                }
+              }
+            }
+
+            .dropdown-menu-three {
+              display: none;
+            }
+          }
+
+          &:nth-child(8):hover,
+          &:nth-child(9):hover {
+            background: none;
+          }
+
+          .nav-link {
+            anchor-name: var(--anchor);
+            text-decoration: none;
+
+            &:focus-visible {
+              outline: none;
+            }
+
+            padding: 0 clamp(2px, 0.36vw, 7px);
+            white-space: nowrap;
+            color: #333;
+            text-align: center;
+            font-family: 'Noto Sans TC';
+            font-size: clamp(16px, 1.041vw, 20px);
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%;
+            position: relative;
+            letter-spacing: 2px;
+
+            &::after {
+              position: absolute;
+              bottom: -10px;
+              left: 50%;
+              margin-left: 0;
+              transform: translateX(-50%);
+            }
+          }
+
+          & > .dropdown-toggle::after {
+            background: url('https://statichk.cmermedical.com/newCKJ/static/hearderDown.svg')
+              no-repeat;
+            background-size: cover;
+            width: 18px;
+            height: 12px;
+            border: none;
+            bottom: -12px;
+            content: '';
+          }
+
+          &:first-child .nav-link {
+            padding-left: 0;
+          }
+
+          &:last-child .nav-link {
+            padding-right: 0;
+          }
+
+          &:last-child .nav-link {
+            margin-bottom: 6px;
+          }
+        }
+        & > .nav-item:nth-child(3) {
+          .nav-link {
+            color: var(--GHV-Green, #008843);
+          }
+        }
+
+        & > .nav-item:nth-child(4) {
+          .nav-link {
+            color: #e60013;
+          }
+        }
+      }
+
+      .header-appointment {
+        margin-left: 40px;
+        gap: 15px;
+        a {
+          border-radius: 50%;
+          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+        }
+      }
+
+      // 立即预约
+      .pc-phone-number {
+        margin-left: 22px;
+        padding-left: 15px;
+        height: 70px;
+        width: 23.38vw;
+        max-width: 449px;
+        background: var(--Brand-Color, #fc1682);
+        color: var(--White, #fff);
+        font-family: 'Noto Sans TC';
+        font-size: clamp(16px, 1.145vw, 22px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+      }
+    }
+  }
+
+  .navbar-nav .dropdown-menu .dropdown-item[data-bs-toggle='collapse']::after {
+    content: '▼';
+    float: right;
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+
+  .navbar-nav
+    .dropdown-menu
+    .dropdown-item[data-bs-toggle='collapse'].collapsed::after {
+    content: '►';
+  }
+}
+.navbar {
+  background-color: white;
+  opacity: 1;
+  z-index: 990;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 0 5.729vw 0 3.645vw;
+  & > div {
+    .navbar-brand {
+      margin-right: 10px;
+      flex: 1;
+      padding: 0;
+
+      .websiteLOGO {
+        display: block;
+        max-width: 123px;
+      }
+
+      .governmentPoint {
+        span {
+          border-radius: 2px;
+          background: var(---Green, #008843);
+          display: inline-flex;
+          padding: 2px 6px;
+          justify-content: center;
+          align-items: center;
+          gap: 13px;
+          color: #fff;
+          text-align: right;
+          font-family: 'Noto Sans TC';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          letter-spacing: 3.78px;
+        }
+
+        p {
+          color: #333;
+          text-align: center;
+          font-family: 'Noto Sans TC';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          letter-spacing: 1.4px;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+
+      span {
+        width: 20px;
+        height: 20px;
+        background-image: url('@/assets/images/menu-icon.svg');
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
   .NewHeaderMenu {
     position: fixed;
     z-index: 110;
@@ -1712,36 +1708,34 @@ const implantItem = [
     background: #fff;
     top: 0;
     .a-header-content-in {
-      display: flex;
-      align-items: center;
+      display: block;
       width: 100%;
-      justify-content: center;
-      background: var(---Green, #00a752);
-      box-sizing: border-box;
-      padding: 6.5px 0;
       color: var(--White, #fff);
       text-align: center;
       font-family: 'Noto Sans Hk';
-      font-size: 22px;
+      font-size: 3.84615vw;
       font-style: normal;
-      font-weight: 600;
+      font-weight: 500;
       line-height: normal;
-      letter-spacing: 1.1px;
+      letter-spacing: 0.3846vw;
+      background: #00a752;
+      box-sizing: border-box;
+      padding: 2.05vw 0;
     }
   }
   .pc_header_menu {
     display: flex;
     justify-content: space-between;
     box-sizing: border-box;
-    padding-left: clamp(27.5px, 3.645vw, 35px);
+    padding-left: clamp(27.5px, 3.645vw, 30px);
     box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
     .logo {
       display: flex;
       gap: 0 clamp(18.75px, 1.3028vw, 25px);
       align-items: center;
       & > a:nth-child(1) {
-        width: clamp(108px, 9.583vw, 184px);
-        height: clamp(22.7px, 1.875vw, 36px);
+        width: clamp(138px, 9.583vw, 184px);
+        height: clamp(27px, 1.875vw, 36px);
         & > img {
           width: 100%;
           height: 100%;
@@ -1787,7 +1781,7 @@ const implantItem = [
       align-items: center;
       & > div:nth-child(1) {
         display: flex;
-        gap: 0 clamp(8.5px, 0.6028vw, 12px);
+        gap: 0 clamp(10.75px, 1.3028vw, 12px);
         margin-right: clamp(11.25px, 0.78125vw, 15px);
         .menuItem {
           position: relative;
@@ -1798,7 +1792,7 @@ const implantItem = [
             span {
               color: var(--Grey-Deep, #4d4d4d);
               text-align: center;
-              font-size: clamp(8.5px, 0.6458vw, 12px);
+              font-size: clamp(10.5px, 0.8458vw, 16px);
               font-style: normal;
               font-weight: 600;
               line-height: 160%; /* 35.2px */
@@ -1815,10 +1809,6 @@ const implantItem = [
               transition: all 0.3s;
               border-radius: 2px;
             }
-            svg {
-              width: 8px;
-              height: 5px;
-            }
           }
           .menuChild {
             display: none;
@@ -1826,7 +1816,7 @@ const implantItem = [
         }
         .menuItem::after {
           content: '';
-          width: 120%;
+          width: 130%;
           display: inline-block;
           z-index: 3;
           height: 50px;
@@ -1865,7 +1855,7 @@ const implantItem = [
             position: absolute;
             top: 100%;
             z-index: 99;
-            width: 240%;
+            width: 180%;
             box-sizing: border-box;
             padding: 0px clamp(15px, 1.04165vw, 20px) 5px;
             align-items: center;
@@ -2083,7 +2073,7 @@ const implantItem = [
         }
         .menuItem:nth-child(8):hover {
           .menuChild {
-            width: 280%;
+            width: 200%;
           }
         }
         .menuItem:last-child {
@@ -2100,625 +2090,16 @@ const implantItem = [
       }
       .pc_menu_tel {
         color: var(--White, #fff);
-        font-size: clamp(16.5px, 1.1458vw, 22px);
+        font-size: clamp(12.5px, 0.9458vw, 16px);
         font-style: normal;
         font-weight: 400;
         line-height: 160%; /* 35.2px */
         box-sizing: border-box;
-        padding: clamp(11.25px, 0.78125vw, 15px) clamp(45px, 3.125vw, 60px)
-          clamp(11.25px, 0.78125vw, 15px) clamp(11.25px, 0.78125vw, 15px);
+        padding: clamp(8.25px, 0.98125vw, 15px) clamp(25px, 3.125vw, 30px)
+          clamp(8.25px, 0.98125vw, 15px) clamp(11.25px, 0.78125vw, 15px);
         background: var(--Theme-Color, #fc1682);
       }
     }
-  }
-}
-
-.navbar {
-  background-color: white;
-  opacity: 1;
-  z-index: 990;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  & > div {
-    .navbar-brand {
-      margin-right: 10px;
-      flex: 1;
-      padding: 0;
-
-      .websiteLOGO {
-        display: block;
-        max-width: 123px;
-      }
-
-      .governmentPoint {
-        span {
-          border-radius: 2px;
-          background: var(---Green, #008843);
-          display: inline-flex;
-          padding: 2px 6px;
-          justify-content: center;
-          align-items: center;
-          gap: 13px;
-          color: #fff;
-          text-align: right;
-          font-family: 'Noto Sans TC';
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 130%;
-          letter-spacing: 3.78px;
-        }
-
-        p {
-          color: #333;
-          text-align: center;
-          font-family: 'Noto Sans TC';
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 130%;
-          letter-spacing: 1.4px;
-        }
-      }
-    }
-
-    .navbar-toggler {
-      border: none;
-      padding: 0;
-
-      span {
-        width: 20px;
-        height: 20px;
-        background-image: url('@/assets/images/menu-icon.svg');
-      }
-    }
-  }
-}
-
-@media (max-width: 991.98px) {
-  body {
-    padding-bottom: 48px;
-  }
-
-  .navbar {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .navbar-nav .nav-link[data-bs-toggle='collapse']::after {
-    content: url('@/assets/images/toRight.svg');
-    transition: transform 0.3s;
-  }
-  /* 侧边栏 */
-  .offcanvas-end {
-    width: 90% !important;
-    border: none !important;
-    /* 侧边栏顶部样式 */
-    /* 移动端侧边栏底部功能 */
-  }
-  .offcanvas-end .offcanvas-header {
-    box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
-    padding: 17px 24px;
-  }
-  .offcanvas-end .offcanvas-header .offcanvas-title {
-    display: block;
-    max-width: 123px;
-  }
-  .offcanvas-end .offcanvas-header .offcanvas-btn {
-    padding: 0;
-    width: 20px;
-    height: 20px;
-    opacity: 1;
-    background-image: url('@/assets/images/close.svg');
-  }
-  .offcanvas-end .offcanvas-body {
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 16px 0px 16px 0;
-    transition: all 0.3s linear;
-  }
-  .offcanvas-end .offcanvas-body .navbar-nav .nav-item .nav-link {
-    color: var(--Grey-Dark, #333);
-    font-family: 'Noto Sans HK';
-    font-size: 1.125rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.8px;
-    padding: 10px 0;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .offcanvas-end
-    .offcanvas-body
-    .navbar-nav
-    .nav-item
-    .nav-link[aria-expanded='true'] {
-    background: var(--New-Theme-Color, #d2337d);
-    color: var(--White, #fff) !important;
-  }
-  .offcanvas-end .offcanvas-body .navbar-nav .nav-item .secondaryMenu {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    background: var(--New-Theme-Color, #d2337d);
-    padding: 10px 10px;
-    width: 50%;
-    height: 100%;
-    overflow-y: auto;
-    display: block;
-    transition: all 0.3s ease;
-    transform: translateX(100%);
-  }
-  .offcanvas-end
-    .offcanvas-body
-    .navbar-nav
-    .nav-item
-    .secondaryMenu
-    .navbar-nav
-    .nav-item
-    .nav-link {
-    color: var(--White, #fff);
-    font-family: 'Noto Sans HK';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 2.5;
-    letter-spacing: 1.6px;
-    padding: 0;
-  }
-  .offcanvas-end .offcanvas-footer {
-    position: sticky;
-    bottom: 0;
-    background-color: #fff;
-    padding: 10px 24px 21px 24px;
-  }
-  .offcanvas-end .offcanvas-footer .fontSizeEdit span {
-    color: var(--New-Theme-Color, #d2337d);
-    text-align: center;
-    font-family: 'Noto Sans HK';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.6px;
-  }
-  .offcanvas-end .offcanvas-footer .fontSizeEdit button {
-    border: none;
-    background: none;
-    padding: 0 4px;
-    color: var(--Grey-Dark, #333);
-    text-align: center;
-    font-family: 'Noto Sans HK';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-  .offcanvas-end .offcanvas-footer .fontSizeEdit > button:nth-child(3) {
-    font-size: 24px;
-    line-height: 32px;
-    letter-spacing: 4.8px;
-  }
-  .offcanvas-end .offcanvas-footer .changeFont {
-    color: var(--Grey-Dark, #333);
-  }
-  .offcanvas-end .offcanvas-footer .changeFont button {
-    border: none;
-    background: none;
-    color: var(--Grey-Dark, #333);
-    text-align: center;
-    font-family: 'Noto Sans HK';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 1.6px;
-  }
-  .offcanvas-end .offcanvas-footer .changeFont .changeFontActive {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--New-Theme-Color, #d2337d);
-  }
-  .offcanvas-end .offcanvas-footer .changeFont .changeFontActive::before {
-    content: url('https://statichk.cmermedical.com/newCKJ/static/fontChange.svg');
-    width: 20px;
-    height: 20px;
-  }
-  :deep(.offcanvas-backdrop) {
-    background: rgba(200, 51, 137, 0.5);
-  }
-
-  /* 展开时的动画 */
-  .phoneMenu-body .collapse-horizontal.show {
-    transform: translateX(0) !important;
-  }
-  /* 关闭时的动画 */
-  .collapse-horizontal.collapsing {
-    transition: all 0.3s linear;
-  }
-  .BranchAddress {
-    margin-top: 12vw;
-  }
-  .BranchAddress .subheading {
-    margin-left: 20px;
-    margin-bottom: 5.33vw;
-  }
-}
-/* PC端菜单样式 */
-@media (min-width: 992px) {
-  .navbar {
-    padding: 0;
-    box-shadow: 1px 2px 17.1px 0px rgba(252, 22, 130, 0.5);
-
-    & > div {
-      .navbar-brand {
-        width: 21.35vw;
-        max-width: 410px;
-        gap: clamp(4px, 0.7vw, 13.5px);
-
-        .websiteLOGO {
-          width: 9.58vw;
-          max-width: 184px;
-
-          i {
-            color: var(--Grey-Light, #e6e6e6);
-          }
-        }
-      }
-
-      .navbar-nav {
-        anchor-name: --slider-menu;
-        // &::before {
-        //   content: "";
-        //   position: absolute;
-        //   left: anchor(var(--target) left);
-        //   right: anchor(var(--target) right);
-        //   bottom: anchor(var(--target) bottom);
-        //   transition: all 0.3s;
-        //   border-bottom: 0.3rem solid hsl(from var(--color) h s calc(l * 0.8));
-        //   pointer-events: none;
-        // }
-
-        &:has(:nth-child(1) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-1;
-          --color: var(--Grey-Dark, #333);
-        }
-
-        & > .nav-item:nth-child(1) {
-          --anchor: --item-1;
-        }
-
-        // 2
-        &:has(:nth-child(2) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-2;
-          --color: var(--Grey-Dark, #333);
-        }
-
-        & > .nav-item:nth-child(2) {
-          --anchor: --item-2;
-        }
-
-        // 3
-        &:has(:nth-child(3) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-3;
-          --color: var(--Grey-Dark, #333);
-        }
-
-        & > .nav-item:nth-child(3) {
-          --anchor: --item-3;
-        }
-
-        // 4
-        &:has(:nth-child(3) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-3;
-          --color: var(--GHV-Green, #008843);
-        }
-
-        & > .nav-item:nth-child(3) {
-          --anchor: --item-3;
-        }
-
-        // 5
-        &:has(:nth-child(4) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-4;
-          --color: #e60013;
-        }
-
-        & > .nav-item:nth-child(4) {
-          --anchor: --item-4;
-        }
-
-        // 6
-        &:has(:nth-child(5) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-5;
-          --color: var(--Grey-Dark, #333);
-        }
-
-        & > .nav-item:nth-child(5) {
-          --anchor: --item-5;
-        }
-
-        &:has(:nth-child(6) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-6;
-          --color: var(--Grey-Dark, #333);
-        }
-
-        & > .nav-item:nth-child(6) {
-          --anchor: --item-6;
-        }
-
-        &:has(:nth-child(7) .nav-link:is(:hover, :focus-visible)) {
-          --target: --item-7;
-          --color: var(--Grey-Dark, #333);
-        }
-
-        & > .nav-item:nth-child(7) {
-          --anchor: --item-7;
-        }
-
-        // &:has(:nth-child(10) .nav-link:is(:hover, :focus-visible)) {
-        //   --target: --item-10;
-        //   --color:var(--Grey-Dark, #333);
-        // }
-        // & > .nav-item:nth-child(10) {
-        //   --anchor: --item-10;
-        // }
-
-        & > .nav-item:nth-child(8) {
-          bottom: 6px;
-          cursor: pointer;
-
-          &:hover {
-            svg {
-              path {
-                fill: #d2337d;
-              }
-            }
-          }
-        }
-
-        & > .nav-item:nth-child(9) {
-          &:hover {
-            svg {
-              path {
-                fill: #d2337d;
-              }
-            }
-          }
-        }
-
-        .nav-item {
-          height: 70px;
-          display: flex;
-          flex-shrink: 0;
-          align-items: center;
-          position: relative;
-
-          transition: background-color 0.3s ease;
-
-          &:hover {
-            .dropdown-toggle::after {
-              background: url('https://statichk.cmermedical.com/newCKJ/static/hearderDown-white.svg')
-                no-repeat;
-            }
-
-            background: var(--New-Theme-Color, #d2337d);
-
-            & > a {
-              color: var(--White, #fff) !important;
-            }
-
-            .dropdown-menu {
-              display: grid;
-              grid-template-columns: 1fr 1fr 1fr;
-              gap: 9px;
-              padding: 13px 9px;
-              position: absolute;
-              top: calc(100% + 10px);
-              left: 50%;
-              transform: translateX(-50%);
-              z-index: 99;
-              box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
-              border-radius: 10px;
-              border: 2px solid var(--Grey-Light, #e6e6e6);
-              background: var(--White, #fff);
-
-              &::before {
-                position: absolute;
-                left: 50%;
-                top: -12px;
-                transform: translateX(-50%);
-                content: '';
-                width: 0;
-                height: 0;
-                border-left: 11.5px solid transparent;
-                border-right: 11.5px solid transparent;
-                border-bottom: 11px solid var(--White, #fff);
-              }
-
-              &::after {
-                position: absolute;
-                top: -12px;
-                content: '';
-                width: 100%;
-                height: 12px;
-                background: transparent;
-              }
-
-              .dropdown-item {
-                color: var(--New-Theme-Color, #d2337d);
-                text-align: center;
-                font-family: 'Noto Sans TC';
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 700;
-                line-height: 160%;
-                letter-spacing: 2px;
-                padding: 10px;
-                width: 200px;
-                transition: background-color 0.2s ease;
-
-                &:hover {
-                  border-radius: 5px;
-                  background: var(--New-Theme-Color, #d2337d);
-                  color: white;
-                }
-              }
-
-              .collapse {
-                padding-left: 1rem;
-              }
-
-              .dropdown-submenu {
-                position: relative;
-
-                .dropdown-menu {
-                  position: absolute;
-                  left: 100%;
-                  top: 0;
-                  margin-left: 0.125rem;
-                }
-
-                &:hover {
-                  .dropdown-menu-three {
-                    display: block;
-                  }
-                }
-              }
-            }
-
-            .dropdown-menu-three {
-              display: none;
-            }
-          }
-
-          &:nth-child(8):hover,
-          &:nth-child(9):hover {
-            background: none;
-          }
-
-          .nav-link {
-            anchor-name: var(--anchor);
-            text-decoration: none;
-
-            &:focus-visible {
-              outline: none;
-            }
-
-            padding: 0 clamp(2px, 0.36vw, 7px);
-            white-space: nowrap;
-            color: #333;
-            text-align: center;
-            font-family: 'Noto Sans TC';
-            font-size: clamp(16px, 1.041vw, 20px);
-            font-style: normal;
-            font-weight: 700;
-            line-height: 160%;
-            position: relative;
-            letter-spacing: 2px;
-
-            &::after {
-              position: absolute;
-              bottom: -10px;
-              left: 50%;
-              margin-left: 0;
-              transform: translateX(-50%);
-            }
-          }
-
-          & > .dropdown-toggle::after {
-            background: url('https://statichk.cmermedical.com/newCKJ/static/hearderDown.svg')
-              no-repeat;
-            background-size: cover;
-            width: 18px;
-            height: 12px;
-            border: none;
-            bottom: -12px;
-            content: '';
-          }
-
-          &:first-child .nav-link {
-            padding-left: 0;
-          }
-
-          &:last-child .nav-link {
-            padding-right: 0;
-          }
-
-          &:last-child .nav-link {
-            margin-bottom: 6px;
-          }
-        }
-
-        // & > .nav-item:nth-child(1),
-        // & > .nav-item:nth-child(2) {
-        //   .nav-link {
-        //     color: var(--Brand-Color, #fc1682);
-        //   }
-        // }
-
-        & > .nav-item:nth-child(3) {
-          .nav-link {
-            color: var(--GHV-Green, #008843);
-          }
-        }
-
-        & > .nav-item:nth-child(4) {
-          .nav-link {
-            color: #e60013;
-          }
-        }
-      }
-
-      .header-appointment {
-        margin-left: 40px;
-        gap: 15px;
-        a {
-          border-radius: 50%;
-          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
-        }
-      }
-
-      // 立即预约
-      .pc-phone-number {
-        margin-left: 22px;
-        padding-left: 15px;
-        height: 70px;
-        width: 23.38vw;
-        max-width: 449px;
-        background: var(--Brand-Color, #fc1682);
-        color: var(--White, #fff);
-        font-family: 'Noto Sans TC';
-        font-size: clamp(16px, 1.145vw, 22px);
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%;
-      }
-    }
-  }
-
-  .navbar-nav .dropdown-menu .dropdown-item[data-bs-toggle='collapse']::after {
-    content: '▼';
-    float: right;
-    font-size: 0.8rem;
-    transition: transform 0.3s;
-  }
-
-  .navbar-nav
-    .dropdown-menu
-    .dropdown-item[data-bs-toggle='collapse'].collapsed::after {
-    content: '►';
-  }
-}
-
-@media screen and (min-width: 1320px) {
-  .navbar > div {
-    padding-left: clamp(20px, 3.593vw, 69px);
-    padding-right: clamp(20px, 5.72vw, 110px);
-  }
-  .contact-widget {
-    right: 20px;
   }
 }
 </style>

@@ -87,59 +87,58 @@
                 </div>
               </div>
               <a :href="item.baiduMap">百度地圖</a>
-              <a :href="item.gaoDeMap">高德地圖</a>
+              <!-- <a :href="item.gaoDeMap">高德地圖</a> -->
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- 导航栏 -->
-    <div class="carousel-nav">
-      <button @click="prevSlide" class="prev-btn">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="11"
-          height="16"
-          viewBox="0 0 11 16"
-          fill="none"
-        >
-          <path
-            d="M9 1.7998L1.5 7.79911L9 13.7998"
-            stroke="#F8298A"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-      <div
-        v-for="(dot, index) in slidePageCount"
-        :key="index"
-        class="carousel-dot"
-        :class="{ active: currentPage === index }"
-        @click="goToPage(index)"
-      ></div>
-      <button @click="nextSlide" class="next-btn">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="11"
-          height="16"
-          viewBox="0 0 11 16"
-          fill="none"
-        >
-          <path
-            d="M2 13.7998L9.5 7.79911L2 1.7998"
-            stroke="#F8298A"
-            stroke-width="2"
-            stroke-miterlimit="10"
-            stroke-linecap="square"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-    </div>
+  </div>
+  <!-- 导航栏 -->
+  <div class="carousel-nav">
+    <button @click="prevSlide" class="prev-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="11"
+        height="16"
+        viewBox="0 0 11 16"
+        fill="none"
+      >
+        <path
+          d="M9 1.7998L1.5 7.79911L9 13.7998"
+          stroke="#F8298A"
+          stroke-width="2"
+          stroke-miterlimit="10"
+          stroke-linecap="square"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+    <div
+      v-for="(dot, index) in slidePageCount"
+      :key="index"
+      class="carousel-dot"
+      :class="{ active: currentPage === index }"
+      @click="goToPage(index)"
+    ></div>
+    <button @click="nextSlide" class="next-btn">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="11"
+        height="16"
+        viewBox="0 0 11 16"
+        fill="none"
+      >
+        <path
+          d="M2 13.7998L9.5 7.79911L2 1.7998"
+          stroke="#F8298A"
+          stroke-width="2"
+          stroke-miterlimit="10"
+          stroke-linecap="square"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
   </div>
 </template>
 
@@ -154,7 +153,7 @@ const props = defineProps<{
     address: string
     href: string
     baiduMap: string
-    gaoDeMap: string
+    //gaoDeMap: string
     busRoutes: string
     metroRoutes: string
     flag: boolean
@@ -178,7 +177,7 @@ const slidePages = ref<
     address: string
     href: string
     baiduMap: string
-    gaoDeMap: string
+    //gaoDeMap: string
     busRoutes: string
     metroRoutes: string
     flag: boolean
@@ -237,6 +236,7 @@ const goToPage = (index: number) => {
   height: 315px;
   margin-bottom: 30px;
   overflow: visible;
+  z-index: 9;
 }
 .slider {
   position: absolute;

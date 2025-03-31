@@ -80,27 +80,7 @@ onMounted(() => {
   getWindowWidth()
   window.addEventListener('resize', getWindowWidth)
 
-  // setTimeout(() => {
-  //   if (route.path !== '/health-care-voucher') {
-  //     popupAlertCreated()
-  //   }
-  // }, 2000)
-  // 页面自动滚动
 })
-
-// watch(() => route, () => {
-//   if (route.path !== '/health-care-voucher') {
-//     popupAlertCreated()
-//   }
-// })
-
-// const isYahoo = () => {
-//   return checkForYahoo(route.name) ? true : false
-// }
-
-// const checkForYahoo = (inputString) => {
-//   return inputString.includes('yahoo')
-// }
 
 watchEffect(() => {
   if (route.name === 'error') {
@@ -116,13 +96,7 @@ watchEffect(() => {
     <Body
       class="antialiased duration-300 transition-colors text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900 overscroll-y-none"
     >
-      <!-- <div
-        v-if="route.path !== '/health-care-voucher'"
-        id="popup-alert-two"
-      ></div> -->
       <NuxtLayout>
-        <!-- <YahooPageMenuBar v-if="isYahoo()" /> -->
-        <PageMenuBar />
         <NuxtPage />
       </NuxtLayout>
       <noscript
@@ -140,7 +114,6 @@ watchEffect(() => {
 .uwy {
   .userway_buttons_wrapper {
     left: calc(100vw - 50px) !important;
-    // bottom: 100px !important;
     bottom: auto !important;
     top: 110px !important;
     .userway_dark {
@@ -148,15 +121,6 @@ watchEffect(() => {
     }
   }
 }
-
-// :deep(.userway_buttons_wrapper) {
-//   top: auto;
-//   bottom: 100px !important;
-//   left: 34px !important;
-//   right: auto;
-//   -ms-flex-pack: end;
-//   justify-content: end;
-// }
 
 #popup-alert-two {
   & > div {

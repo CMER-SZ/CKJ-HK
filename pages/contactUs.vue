@@ -178,9 +178,9 @@ const problemData = {
 
 <template>
   <div>
-    <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig" />
+    <PageHeaderV2 class="d-none d-md-block" :headerConfig="headerConfig" />
+    <MobileHeaderV2 class="d-sm-none" :headerConfig="headerConfig" />
+    <PagePcBannerNoHome class="d-none d-md-block"  :headerConfig="headerConfig" />
     <div class="contactUs">
       <div class="contact_map"></div>
       <div class="contactUs_one">

@@ -461,94 +461,13 @@ const implantItem = [
 <template>
   <header>
     <div class="header-content">
-      <div class="header-content-bgImg" :class="headerConfig.pageName">
-        <div class="header-content-bgImg-imgInfo bigPageCon">
-          <img
-            :class="['pcBox', headerConfig.pageName]"
-            :src="headerConfig.img"
-            alt="banner"
-          />
-        </div>
-        <img
-          :class="[
-            'mbBox',
-            'header-content-bgImg-mbImg',
-            headerConfig.pageName,
-          ]"
-          :src="headerConfig.mbImg"
-          alt="banner"
-        />
-      </div>
-      <div
-        v-if="
-          [
-            'implant',
-            'rootCanal-test',
-            'scaling-and-polishing-test',
-            'periodontal-test',
-            'orthodontics-test',
-            'invisalign-test',
-            'veneers-test',
-            'action-message',
-            'course-new',
-            'health-care-voucher',
-            'coverage',
-          ].includes(headerConfig.pageName)
-        "
-        class="header-content-bgImg-implant"
-        :class="headerConfig.pageName"
-      >
-        <img
-          :data-cfsrc="headerConfig.img"
-          :srcset="`${headerConfig.mbImg} 768w, ${headerConfig.img}`"
-          :src="headerConfig.img"
-          alt="banner"
-        />
-        <slot name="xxxxxxxxxxx-home"></slot>
-      </div>
-      <div
-        ref="imgBgHeight"
-        class="header-content-bgImgBB pcBox"
-        :class="headerConfig.pageName"
-      >
-        <img
-          :data-cfsrc="headerConfig.img"
-          :srcset="`${headerConfig.mbImg} 768w, ${headerConfig.img}`"
-          :src="headerConfig.img"
-          alt="banner"
-        />
-      </div>
-      <div
-        v-if="
-          [
-            'implant',
-            'rootCanal-test',
-            'scaling-and-polishing-test',
-            'invisalign-test',
-            'veneers-test',
-          ].includes(headerConfig.pageName)
-        "
-        class="header-content-btn-implant"
-      >
-        <PageAnimBtnTypeTwo :str="btnText || '免費網上預約'" />
-      </div>
-      <div
-        v-if="
-          ['periodontal-test', 'orthodontics-test'].includes(
-            headerConfig.pageName
-          )
-        "
-        class="header-content-btn-implant"
-      >
-        <PageAnimBtnTypeTwo :str="'獲取免費諮詢'" />
-      </div>
       <nav
         class="navbar navbar-expand-lg navbar-light position-fixed w-100 top-0"
       >
         <a class="a-header-content-in" href="#contactUsFormNav"
           >👏即日起網上預約領取2000元種植牙現金券！</a
         >
-        <div class="container-fluid position-relative" style="margin-top: 30px">
+        <div class="container-fluid position-relative">
           <div
             class="navbar-brand d-flex align-items-center justify-content-between"
           >
@@ -1131,6 +1050,33 @@ const implantItem = [
           </div>
         </div>
       </nav>
+      <div
+        v-if="
+          [
+            'implant',
+            'rootCanal-test',
+            'scaling-and-polishing-test',
+            'periodontal-test',
+            'orthodontics-test',
+            'invisalign-test',
+            'veneers-test',
+            'action-message',
+            'course-new',
+            'health-care-voucher',
+            'coverage',
+          ].includes(headerConfig.pageName)
+        "
+        class="header-content-bgImg-implant"
+        :class="headerConfig.pageName"
+      >
+        <img
+          :data-cfsrc="headerConfig.img"
+          :srcset="`${headerConfig.mbImg} 768w, ${headerConfig.img}`"
+          :src="headerConfig.img"
+          alt="banner"
+        />
+        <slot name="xxxxxxxxxxx-home"></slot>
+      </div>
     </div>
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
       <div :class="['dialogBox-in', { 'show-in': _bool }]" @click.stop="">
@@ -1868,6 +1814,21 @@ const implantItem = [
     }
   }
 }
+.a-header-content-in {
+  display: block;
+  width: 100%;
+  background: var(---Green, #00a752);
+  box-sizing: border-box;
+  padding: 6.5px 0;
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: 'Noto Sans Hk';
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.1px;
+}
 .header-content {
   .headerBox02 {
     .health_max_width {
@@ -2385,23 +2346,26 @@ const implantItem = [
 }
 
 @media screen and (max-width: 992px) {
-  .a-header-content-in {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    color: var(--White, #fff);
-    text-align: center;
-    font-family: 'Noto Sans Hk';
-    font-size: 3.84615vw;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0.3846vw;
-    background: #00a752;
-    box-sizing: border-box;
-    padding: 2.05vw 0;
-    z-index: 40;
+  .navbar {
+    padding: 0;
+    & > div:nth-child(2) {
+      box-sizing: border-box;
+      padding: 5px 20px;
+    }
+    & > a {
+      color: var(--White, #fff);
+      text-align: center;
+      font-family: 'Noto Sans Hk';
+      font-size: 3.84615vw;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.3846vw;
+      background: #00a752;
+      box-sizing: border-box;
+      padding: 2.05vw 0;
+      width: 100%;
+    }
   }
   .header-content {
     &-bgImg {
@@ -2901,10 +2865,6 @@ const implantItem = [
 
   .offcanvas {
     padding-bottom: 54px;
-  }
-  .navbar {
-    padding-left: 20px;
-    padding-right: 20px;
   }
   .navbar-nav .nav-link[data-bs-toggle='collapse']::after {
     content: url('@/assets/images/toRight.svg');

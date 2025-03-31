@@ -1064,9 +1064,6 @@ const implantItem = [
           </div>
         </nav>
       </div>
-      <div class="explain_page_one" style="display: none">
-        優惠只限於網上及電話預約客戶
-      </div>
       <div class="swiperBox">
         <swiper
           :modules="[Autoplay]"

@@ -174,6 +174,8 @@ const carouselItems3 = ref([
     flag: false,
   },
 ])
+
+
 const tabActive = (tab) => {
   // 获取 所有的mobile-item
   const mobileItems = document.querySelectorAll('.mobile-item')
@@ -226,6 +228,10 @@ const trafficList = (index, area) => {
     carouselItems3.value[index].flag = !carouselItems3.value[index].flag
   }
 }
+
+onMounted(() => {
+  tabActive(0)
+})
 </script>
 
 <template>
@@ -378,7 +384,7 @@ const trafficList = (index, area) => {
                       </div>
                     </div>
                     <a :href="item.baiduMap">百度地圖</a>
-                    <a :href="item.gaoDeMap">高德地圖</a>
+                    <!-- <a :href="item.gaoDeMap">高德地圖</a> -->
                   </div>
                 </div>
               </div>
@@ -464,7 +470,7 @@ const trafficList = (index, area) => {
                       </div>
                     </div>
                     <a :href="item.baiduMap">百度地圖</a>
-                    <a :href="item.gaoDeMap">高德地圖</a>
+                    <!-- <a :href="item.gaoDeMap">高德地圖</a> -->
                   </div>
                 </div>
               </div>
@@ -889,8 +895,10 @@ const trafficList = (index, area) => {
               & > div:nth-child(3) {
                 display: flex;
                 position: absolute;
-                right: 0;
+                right: auto;
+                left: 0;
                 bottom: 0;
+                padding-left: 15px;
                 gap: 0 7px;
                 justify-content: space-between;
                 margin-right: 10px;
@@ -908,7 +916,7 @@ const trafficList = (index, area) => {
                   color: var(--Brand-Color, #f8298a);
                   text-align: justify;
                   font-family: 'Noto Sans HK';
-                  font-size: 12px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 700;
                   line-height: normal;
@@ -967,7 +975,7 @@ const trafficList = (index, area) => {
                   padding: 6px 15.5px;
                   color: var(--Brand-Color, #f8298a);
                   font-family: 'Noto Sans HK';
-                  font-size: 12px;
+                  font-size: 16px;
                   font-style: normal;
                   font-weight: 500;
                   line-height: 150%; /* 18px */
