@@ -552,10 +552,89 @@ const wisdomToothContentList = ref([
   },
 ])
 
-const courseSurgicalExtractionOfTeeth=ref([
-  
+const surgicalExtractionOfTeeth = ref(true)
+const courseSurgicalExtractionOfTeeth = ref([
+  {
+    id: 1,
+    title: '術前評估',
+    text: '詢問病史(長期病患、藥物、過敏史)，必要時檢測血壓、血糖，並進行口腔及CT檢查，制定治療計劃',
+  },
+  {
+    id: 2,
+    title: '拔牙準備',
+    text: '漱口消毒<br class="d-md-block" />注射局部或笑氣麻醉',
+  },
+  {
+    id: 3,
+    title: '拔牙',
+    text: '若牙齒阻生，可能需切開牙齦、分割牙齒後移除，清理創口並縫合',
+  },
+  {
+    id: 4,
+    title: '術後處理',
+    text: '術後輕咬紗布止血，按時服藥',
+  },
 ])
-const courseNonSurgicalToothExtraction=ref([])
+const courseNonSurgicalToothExtraction = ref([
+  {
+    id: 1,
+    title: '術前評估',
+    text: '詢問病史(長期病患、藥物、過敏史)，必要時檢測血壓、血糖，並進行口腔及CT檢查，制定治療計劃',
+  },
+  {
+    id: 2,
+    title: '拔牙準備',
+    text: '漱口消毒<br class="d-md-block" />注射局部或笑氣麻醉',
+  },
+  {
+    id: 3,
+    title: '拔牙',
+    text: '拔牙時輕搖牙齒後取出，清理創口',
+  },
+  {
+    id: 4,
+    title: '術後處理',
+    text: '術後輕咬紗布止血，按時服藥',
+  },
+])
+
+const courseToothExtraction = (str) => {
+  console.log(str)
+
+  if (str === 'Surgical') {
+    surgicalExtractionOfTeeth.value = true
+    listItem(str)
+  } else if (str === 'notSurgical') {
+    surgicalExtractionOfTeeth.value = false
+    listItem(str)
+  }
+}
+
+const listItem = (str) => {
+  if (str === 'Surgical') {
+    return courseSurgicalExtractionOfTeeth.value
+  }
+  if (str === 'notSurgical') {
+    return courseNonSurgicalToothExtraction.value
+  }
+}
+
+const doctorList = ref([
+  {
+    id: 107,
+    sequence: 1,
+    name: '李川<span>醫生</span>',
+    imageUrl: 'https://static.cmereye.com/imgs/2023/05/d9f1c5bebf5ff081.png',
+    job: '集團常務院長',
+  },
+  {
+    id: 107,
+    sequence: 1,
+    name: '盧勇輝<span>醫生</span>',
+    imageUrl: 'https://static.cmereye.com/imgs/2023/05/d9f1c5bebf5ff081.png',
+    job: '種植學總監',
+  },
+])
 </script>
 
 <template>
@@ -708,12 +787,55 @@ const courseNonSurgicalToothExtraction=ref([])
           </div>
           <div>
             <div>
-              <div>智慧齒及手術性拔牙</div>
-              <div>非手術性拔牙</div>
+              <div
+                :class="surgicalExtractionOfTeeth ? 'active-teeth' : ''"
+                @click="courseToothExtraction('Surgical')"
+              >
+                智慧齒及手術性拔牙
+              </div>
+              <div
+                :class="surgicalExtractionOfTeeth ? '' : 'active-teeth'"
+                @click="courseToothExtraction('notSurgical')"
+              >
+                非手術性拔牙
+              </div>
             </div>
             <div>
-
+              <div>
+                <img src="~/assets/images/2025033111372801.svg" />
+              </div>
+              <div>
+                <div
+                  v-for="(item, index) in listItem(
+                    surgicalExtractionOfTeeth ? 'Surgical' : 'notSurgical'
+                  )"
+                  :key="index"
+                >
+                  <div>
+                    <div>{{ item.id }}</div>
+                    <div>
+                      <div>{{ item.title }}</div>
+                      <div v-html="item.text"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container medic-team">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>口腔頜面外科</span><span>醫生</span>
+        </div>
+        <div class="medic-team-content">
+          <div class="medic-team-content-title">
+            口腔頜面外科醫生專業拔牙過程快捷、操作精準、<br
+              class="d-md-block"
+            />創傷小、恢復快，大大減低痛感
+          </div>
+          <div>
+            <DoctorV2 :nowType="'105'" />
           </div>
         </div>
       </section>
@@ -1125,7 +1247,133 @@ const courseNonSurgicalToothExtraction=ref([])
       }
     }
   }
+  .wisdom-teeth-course {
+    margin: 30px 0;
+    .course {
+      margin-top: 20px;
+      background: linear-gradient(
+          0deg,
+          rgba(255, 241, 240, 0) 0%,
+          rgba(255, 241, 240, 0.7) 12.5%,
+          rgba(255, 241, 240, 0.7) 81.99%,
+          rgba(255, 241, 240, 0) 100%
+        ),
+        #fff;
+      box-sizing: border-box;
+      padding: 0 19.5px;
+      .course-text {
+        color: var(--Grey-Deep, #4d4d4d);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.7px;
+      }
+      & > div:nth-child(2) {
+        margin-top: 10px;
+        & > div:nth-child(1) {
+          display: flex;
+          box-sizing: border-box;
+          border-radius: 5px;
+          overflow: hidden;
+          background: var(--White, #fff);
+          & > div {
+            padding: 8px 10px;
+            color: var(--Grey-Mid, #666);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.6px;
+          }
 
+          & > div:nth-child(1) {
+            flex: 5.4;
+          }
+          & > div:nth-child(2) {
+            flex: 4.5;
+          }
+          .active-teeth {
+            color: var(--White, #fff);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.6px;
+            padding: 8px 10px;
+            border: 1px solid var(--Brand-Color, #f8298a);
+            background: var(--Brand-Color, #f8298a);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+        & > div:nth-child(2) {
+          display: flex;
+          gap: 0 10px;
+          align-items: flex-start;
+          margin-top: 10px;
+          & > div:nth-child(1) {
+            min-width: 26px;
+            height: 363px;
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          & > div:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            gap: 10px 0;
+            & > div {
+              background: var(--White, #fff);
+              & > div {
+                display: flex;
+                gap: 0 10px;
+                box-sizing: border-box;
+                padding: 10px;
+                & > div:nth-child(1) {
+                  color: var(--Theme-Color, #fc1682);
+                  font-family: 'Noto Sans HK';
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 150%; /* 24px */
+                }
+                & > div:nth-child(2) {
+                  & > div:nth-child(1) {
+                    color: var(--Grey-Deep, #4d4d4d);
+                    text-align: justify;
+                    font-family: 'Noto Sans HK';
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%; /* 24px */
+                  }
+                  & > div:nth-child(2) {
+                    color: var(--Grey-Deep, #4d4d4d);
+                    font-family: 'Noto Sans HK';
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .medic-team {
+    margin: 30px 0;
+  }
   .banner-in-box {
     position: absolute;
     bottom: 0;
