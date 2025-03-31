@@ -541,9 +541,9 @@ onMounted(() => {
                   <a :href="item.baiduMap" target="_blank" class="traffic-text">
                     百度地圖
                   </a>
-                  <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
+                  <!-- <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
                     高德地圖
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -600,9 +600,9 @@ onMounted(() => {
                   <a :href="item.baiduMap" target="_blank" class="traffic-text">
                     百度地圖
                   </a>
-                  <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
+                  <!-- <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
                     高德地圖
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -656,9 +656,9 @@ onMounted(() => {
                   <a :href="item.baiduMap" target="_blank" class="traffic-text">
                     百度地圖
                   </a>
-                  <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
+                  <!-- <a :href="item.gaoDeMap" target="_blank" class="traffic-text">
                     高德地圖
-                  </a>
+                  </a> -->
                 </di>
               </div>
             </div>
