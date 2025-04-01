@@ -6,7 +6,6 @@
         <p>{{ tipShow }}</p>
       </div>
     </div>
-
     <!-- 表单提交 -->
     <div class="appointmentForm-table ckj-contrain px-20" id="contactUsFormNav">
       <div class="appointmentForm-table-title">

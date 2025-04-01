@@ -175,7 +175,6 @@ const carouselItems3 = ref([
   },
 ])
 
-
 const tabActive = (tab) => {
   // 获取 所有的mobile-item
   const mobileItems = document.querySelectorAll('.mobile-item')
@@ -219,13 +218,37 @@ const tabActive = (tab) => {
 
 const trafficList = (index, area) => {
   if (area === 'luoHu') {
-    carouselItems.value[index].flag = !carouselItems.value[index].flag
+    if (carouselItems.value[index].flag) {
+      carouselItems.value[index].flag = false
+    } else {
+      carouselItems.value.forEach((item, indexa) => {
+        if (index == indexa) {
+          item.flag = true
+        } else {
+          item.flag = false
+        }
+      })
+    }
   }
   if (area === 'futian') {
-    carouselItems2.value[index].flag = !carouselItems2.value[index].flag
+    if (carouselItems2.value[index].flag) {
+      carouselItems2.value[index].flag = false
+    } else {
+      carouselItems2.value.forEach((item) => {
+        item.flag = false
+      })
+      carouselItems2.value[index].flag = true
+    }
   }
   if (area === 'nanshan') {
-    carouselItems3.value[index].flag = !carouselItems3.value[index].flag
+    if (carouselItems3.value[index].flag) {
+      carouselItems3.value[index].flag = false
+    } else {
+      carouselItems3.value.forEach((item) => {
+        item.flag = false
+      })
+      carouselItems3.value[index].flag = true
+    }
   }
 }
 
@@ -1109,6 +1132,8 @@ onMounted(() => {
               margin-top: 0.53vw;
               display: flex;
               gap: 0 1.065vw;
+              height: max-content;
+              min-height: 36px;
               & > div:nth-child(2) {
                 color: var(--Grey-Dark, #333);
                 font-family: 'Noto Sans HK';
@@ -1126,6 +1151,7 @@ onMounted(() => {
             align-items: center;
             gap: 0 0;
             position: relative;
+            padding-left: 10px;
             & > div,
             & > a {
               color: var(--Brand-Color, #f8298a);
@@ -1147,7 +1173,7 @@ onMounted(() => {
               position: absolute;
               top: 100%;
               z-index: 23;
-              left: 0;
+              left: 10px;
               border-radius: 0px 10px 10px 10px;
               background: var(--White, #fff);
               box-sizing: border-box;

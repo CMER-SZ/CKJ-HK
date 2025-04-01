@@ -1735,6 +1735,10 @@ const fillingsPhaseList = [
 }
 
 @media screen and (max-width: 991px) {
+  .fillings {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
   .fillings-key-points {
     margin: 30px 0;
     .fillings-key-points-content {
