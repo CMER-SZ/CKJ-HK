@@ -109,7 +109,7 @@ const hideShowText = computed(() => {
     <div class="text-wrapper" v-if="isShowTextAll">
       <div>
         <div>
-          <div>29年專科•專業•專注</div>
+          <div>30年專科•專業•專注</div>
           <div><span>港人首選</span>一站式連鎖牙科品牌</div>
         </div>
       </div>

@@ -490,31 +490,37 @@ const serviceList = ref([
   {
     id: 1,
     img: 'https://static.ckjhk.com/ckj-image/4819d18eb167.svg',
+    pcImg: 'https://static.ckjhk.com/ckj-image/2025040114545201.png',
     text: '嚴重蛀牙損傷',
   },
   {
     id: 2,
     img: 'https://static.ckjhk.com/ckj-image/bcbc89f69eee.svg',
-    text: '牙周病引起<br class="d-md-block" />鬆動牙',
+    pcImg: 'https://static.ckjhk.com/ckj-image/2025040114545202.png',
+    text: '牙周病引起<br />鬆動牙',
   },
   {
     id: 3,
     img: 'https://static.ckjhk.com/ckj-image/9b9b88a665be.svg',
+    pcImg: 'https://static.ckjhk.com/ckj-image/2025040114545203.png',
     text: '阻生齒及埋伏牙',
   },
   {
     id: 4,
     img: 'https://static.ckjhk.com/ckj-image/b30dadf24a65.svg',
+    pcImg: 'https://static.ckjhk.com/ckj-image/2025040114545204.png',
     text: '多生齒及畸形牙',
   },
   {
     id: 5,
     img: 'https://static.ckjhk.com/ckj-image/75f293bce905.svg',
+    pcImg: 'https://static.ckjhk.com/ckj-image/2025040114545205.png',
     text: '牙齒矯正治療',
   },
   {
     id: 6,
     img: 'https://static.ckjhk.com/ckj-image/83b7b7eb7a0a.svg',
+    pcImg: 'https://static.ckjhk.com/ckj-image/2025040114545206.png',
     text: '準備配戴假牙',
   },
 ])
@@ -562,7 +568,7 @@ const courseSurgicalExtractionOfTeeth = ref([
   {
     id: 2,
     title: '拔牙準備',
-    text: '漱口消毒<br class="d-md-block" />注射局部或笑氣麻醉',
+    text: '漱口消毒<br class="d-md-none" />注射局部或笑氣麻醉',
   },
   {
     id: 3,
@@ -584,7 +590,7 @@ const courseNonSurgicalToothExtraction = ref([
   {
     id: 2,
     title: '拔牙準備',
-    text: '漱口消毒<br class="d-md-block" />注射局部或笑氣麻醉',
+    text: '漱口消毒<br class="d-md-none" />注射局部或笑氣麻醉',
   },
   {
     id: 3,
@@ -764,7 +770,11 @@ const problemList = ref({
               class="wisdom-service-content-list-item"
             >
               <div class="wisdom-service-content-list-item-img">
-                <img :src="item.img" alt="" />
+                <img
+                  :src="item.pcImg"
+                  :srcset="`${item.img} 768w, ${item.pcImg}`"
+                  alt=""
+                />
               </div>
               <div
                 class="wisdom-service-content-list-item-text"
@@ -780,7 +790,7 @@ const problemList = ref({
       </section>
       <section class="ckj-container wisdom-teeth-extraction-charge-item">
         <div class="d-flex flex-row align-items-end subheading">
-          <span>拔牙</span><span>服務</span>
+          <span>愛康健拔牙收費</span><span>項目</span>
         </div>
         <div class="charge-item-content">
           <div>
@@ -805,10 +815,8 @@ const problemList = ref({
           </div>
         </div>
         <div class="charge-item-btn">
-          <div>
-            <PageAnimBtnTypeTwo :str="'網上預約優惠'" />
-          </div>
-          <div>
+          <div>網上預約優惠 智慧齒拔除 減¥300/顆</div>
+          <div class="d-md-none">
             <div>智慧齒拔除</div>
             <div>
               <img
@@ -828,7 +836,7 @@ const problemList = ref({
             <p>智慧齒通常在16至25歲間萌出。</p>
             <p>
               由於它們是最後長出的牙齒，可能因為空間不足<br
-                class="d-md-block"
+                class="d-md-none"
               />或位置不正確而導致多種口腔問題：
             </p>
           </div>
@@ -848,20 +856,20 @@ const problemList = ref({
           <div class="wisdom-tooth-content-text">
             <p>
               為避免智慧齒隱患加劇，牙醫可能會建議及早將它<br
-                class="d-md-block"
+                class="d-md-none"
               />們拔除。
             </p>
           </div>
         </div>
       </section>
-      <section class="ckj-container wisdom-teeth-course">
+      <section class="ckj-container d-md-none wisdom-teeth-course">
         <div class="d-flex flex-row align-items-end subheading">
           <span>拔牙</span><span>過程</span>
         </div>
         <div class="course">
           <div class="course-text">
             拔牙一般無需進行手術，但當牙齒歪生或非常接近<br
-              class="d-md-block"
+              class="d-md-none"
             />神經，便有可能要進行手術式脫牙。
           </div>
           <div>
@@ -903,6 +911,49 @@ const problemList = ref({
           </div>
         </div>
       </section>
+      <div class="d-none d-md-flex bg-course-content">
+        <section class="ckj-container wisdom-teeth-course">
+          <div class="d-flex flex-row align-items-end subheading">
+            <span>拔牙</span><span>過程</span>
+          </div>
+          <div class="course">
+            <div class="course-text">
+              拔牙一般無需進行手術，但當牙齒歪生或非常接近<br
+                class="d-md-none"
+              />神經，便有可能要進行手術式脫牙。
+            </div>
+            <div class="d-none d-md-flex pc-course-content">
+              <div>
+                <div>1.術前評估</div>
+                <div>
+                  詢問病史(長期病患、藥物、過敏史)，<br />必要時檢測血壓、血糖，並進行口腔<br />及CT檢查，制定治療計劃
+                </div>
+              </div>
+              <div>
+                <div>2.拔牙準備</div>
+                <div>漱口消毒<br />注射局部麻醉樂或使用笑氣麻醉</div>
+              </div>
+              <div>
+                <div>
+                  <div>3.智慧齒及手術性拔牙</div>
+                  <div>
+                    若牙齒阻生，可能需切開牙齦、分割<br />牙齒後移除，清理創口並縫合
+                  </div>
+                </div>
+                <div>
+                  <div>3.非手術性拔牙</div>
+                  <div>拔牙時輕搖牙齒後取出，清理創口</div>
+                </div>
+              </div>
+              <div>
+                <div>4.術後處理</div>
+                <div>輕咬紗布止血，按時服藥</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <section class="ckj-container medic-team">
         <div class="d-flex flex-row align-items-end subheading">
           <span>口腔頜面外科</span><span>醫生</span>
@@ -910,7 +961,7 @@ const problemList = ref({
         <div class="medic-team-content">
           <div class="medic-team-content-title">
             口腔頜面外科醫生專業拔牙過程快捷、操作精準、<br
-              class="d-md-block"
+              class="d-md-none"
             />創傷小、恢復快，大大減低痛感
           </div>
           <div class="medic-team-content-list">
@@ -921,30 +972,32 @@ const problemList = ref({
           </div>
         </div>
       </section>
-      <section class="ckj-container share-content">
-        <div class="d-flex flex-row align-items-end subheading">
-          <span>客戶</span><span>分享</span>
-        </div>
-        <div class="share-content-list">
-          <div class="share-content-list-title">
-            <div>30年專科專業為港人服務</div>
-            <div>北上睇牙首選愛康健</div>
+      <div class="bg-share-content">
+        <section class="ckj-container share-content">
+          <div class="d-flex flex-row align-items-end subheading">
+            <span>客戶</span><span>分享</span>
           </div>
-          <div class="share-content-list-content">
-            <div
-              class="share-content-list-item"
-              v-for="item in shareList"
-              :key="item.id"
-            >
-              <div>
-                <div>{{ item.name }}</div>
-                <div>{{ item.date }}</div>
+          <div class="share-content-list">
+            <div class="share-content-list-title">
+              <div>30年專科專業為港人服務</div>
+              <div>北上睇牙首選愛康健</div>
+            </div>
+            <div class="share-content-list-content">
+              <div
+                class="share-content-list-item"
+                v-for="item in shareList"
+                :key="item.id"
+              >
+                <div>
+                  <div>{{ item.name }}</div>
+                  <div>{{ item.date }}</div>
+                </div>
+                <div>{{ item.text }}</div>
               </div>
-              <div>{{ item.text }}</div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <section class="ckj-container matters-needing-attention">
         <div class="d-flex flex-row align-items-end subheading">
           <span>拔牙</span><span>後注意事項</span>
@@ -982,6 +1035,557 @@ const problemList = ref({
 
 <style lang="scss" scoped>
 @media screen and(min-width: 992px) {
+  .wisdom-teeth-extraction {
+    margin-top: 45px;
+  }
+  .wisdom-teeth-extraction-service {
+    padding: 30px 0;
+    .wisdom-service-content {
+      margin: 12px 0;
+      .wisdom-service-content-list {
+        display: flex;
+        justify-content: center;
+        gap: 0 19px;
+        .wisdom-service-content-list-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 140px;
+
+          .wisdom-service-content-list-item-img {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .wisdom-service-content-list-item-text {
+            color: var(--Grey-Dark, #333);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 27px */
+            letter-spacing: 1.8px;
+          }
+        }
+      }
+      .wisdom-service-content-text {
+        margin-top: 10px;
+        color: var(--Brand-Color, #f8298a);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 32px */
+        letter-spacing: 4px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  .wisdom-teeth-extraction-charge-item {
+    padding: 30px 0;
+    .charge-item-content {
+      margin: 20px 0;
+      box-sizing: border-box;
+      border-radius: 10px;
+      overflow: hidden;
+      & > div {
+        box-sizing: border-box;
+        padding: 20px 35px;
+        display: flex;
+        justify-content: space-between;
+        & > div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          font-family: 'Noto Sans HK';
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
+        }
+        & > div:nth-child(2) {
+          color: var(--Brand-Color, #f8298a);
+          text-align: right;
+          font-family: 'Noto Sans HK';
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
+        }
+      }
+      & > div:nth-child(odd) {
+        background: #fff7f8;
+      }
+      & > div:nth-child(1) {
+        background: var(--Brand-Color, #f8298a);
+        border-radius: 5px 5px 0 0;
+        & > div {
+          color: #fff;
+        }
+      }
+      & > div:last-child {
+        border-radius: 0 0 5px 5px;
+      }
+      box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+    }
+    .charge-item-btn {
+      margin: 28px 25px 0 20px;
+      & > div:nth-child(1) {
+        margin: 0 auto;
+        position: relative;
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 57px;
+        background: var(--Brand-Color, #f8298a);
+        padding: 10px 42px 10px 64px;
+        width: fit-content;
+      }
+      & > div:nth-child(1)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -40px;
+        transform: translateY(-50%);
+        border: none !important;
+        width: 104px;
+        height: 104px;
+        border: 5px solid #f8298a;
+        background: url('https://static.ckjhk.com/ckj-image/f2e85ef51231.svg')
+          no-repeat;
+        background-size: contain;
+        z-index: 3;
+      }
+    }
+  }
+  .wisdom-teeth-extraction-wisdom-tooth {
+    padding: 30px 0;
+    .wisdom-tooth-content {
+      margin-top: 20px;
+      & > div:nth-child(1) {
+        color: var(--Grey-Deep, #4d4d4d);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 32px */
+        letter-spacing: 4px;
+      }
+    }
+    .wisdom-tooth-content-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px 35px;
+      position: relative;
+      .wisdom-tooth-content-list-item {
+        width: 455px;
+        display: flex;
+        border-radius: 13.605px;
+        border: 2.721px solid var(--Theme-Color, #fc1682);
+        background: var(--White, #fff);
+        border-left: 25px solid var(--Theme-Color, #fc1682);
+        box-sizing: border-box;
+        padding: 20px;
+        gap: 0 19px;
+        & > div:nth-child(1) {
+          width: 250.327px;
+          & > div:nth-child(1) {
+            color: var(--Theme-Color, #fc1682);
+            text-align: justify;
+            font-family: 'Noto Sans HK';
+            font-size: 19.047px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 28.57px */
+            letter-spacing: 0.952px;
+          }
+          & > div:nth-child(2) {
+            color: var(--Grey-Deep, #4d4d4d);
+            font-family: 'Noto Sans HK';
+            font-size: 16.326px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            letter-spacing: 0.816px;
+          }
+        }
+        & > div:nth-child(2) {
+          width: 117.001px;
+          height: 117.001px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: drop-shadow(0px 0px 6px rgba(252, 22, 130, 0.4));
+          }
+        }
+      }
+      .wisdom-tooth-content-list-item:nth-child(4) {
+        position: absolute;
+        right: 0;
+        top: 65px;
+      }
+
+      .wisdom-tooth-content-list-item:nth-child(5) {
+        position: absolute;
+        right: 0;
+        top: 236px;
+      }
+
+      .wisdom-tooth-content-list-item:nth-child(6) {
+        position: absolute;
+        right: 0;
+        top: 406px;
+      }
+      .wisdom-tooth-content-list-item:nth-child(even) {
+        border: 2.721px solid var(--Blue-Deep, #00aeff);
+        border-left: 25px solid var(--Blue-Deep, #00aeff);
+        & > div:nth-child(1) {
+          & > div:nth-child(1) {
+            color: var(--Blue-Deep, #00aeff);
+          }
+        }
+      }
+    }
+    .wisdom-tooth-content-text {
+      margin-top: 85px;
+      color: var(--Grey-Deep, #4d4d4d);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 32px */
+      letter-spacing: 4px;
+    }
+  }
+  .bg-course-content {
+    background: linear-gradient(
+      173deg,
+      rgba(255, 255, 255, 0) 20.34%,
+      var(--Pink-Pale, #ffe9ec) 113.4%
+    );
+  }
+  .wisdom-teeth-course {
+    padding: 30px 0;
+    .course {
+      .course-text {
+        color: var(--Grey-Deep, #4d4d4d);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 32px */
+        letter-spacing: 4px;
+        margin: 20px 0;
+      }
+    }
+    .pc-course-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 80px 0;
+      margin-top: 55px;
+      & > div:nth-child(1),
+      & > div:nth-child(2),
+      & > div:nth-child(4) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 412px;
+        border-radius: 22px;
+        background: var(--White, #fff);
+        position: relative;
+        & > div:nth-child(1) {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 15px 0;
+          border-radius: 22px;
+          background: var(--Pink-Mid, #f670ae);
+          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+          color: #fff;
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 3px;
+          position: absolute;
+          top: -34px;
+        }
+        & > div:nth-child(2) {
+          padding: 48px 10px 20px 10px;
+          box-sizing: border-box;
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 30px */
+        }
+        box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+      }
+      & > div:nth-child(3) {
+        display: flex;
+        gap: 0 117px;
+        & > div:nth-child(1),
+        & > div:nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 412px;
+          height: fit-content;
+          border-radius: 22px;
+          background: var(--White, #fff);
+          position: relative;
+          & > div:nth-child(1) {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px 0;
+            border-radius: 22px;
+            background: var(--Pink-Mid, #f670ae);
+            box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+            color: #fff;
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 3px;
+            position: absolute;
+            top: -34px;
+          }
+          & > div:nth-child(2) {
+            padding: 48px 10px 20px 10px;
+            box-sizing: border-box;
+            color: var(--Grey-Dark, #333);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 30px */
+          }
+          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+        }
+        & > div:nth-child(2) {
+          & > div:nth-child(1) {
+            background: var(--Blue-Deep, #00aeff);
+          }
+        }
+      }
+
+      & > div:nth-child(1)::after {
+        content: '';
+        position: absolute;
+        background: url('../../assets/images/2025040111263501.svg') no-repeat;
+        width: 100%;
+        height: 70px;
+        bottom: -26%;
+        transform: translateX(-50%);
+        right: -100%;
+        z-index: -1;
+      }
+      & > div:nth-child(2)::after,
+      & > div:nth-child(2)::before {
+        content: '';
+        position: absolute;
+        background: url('../../assets/images/2025040111263502.svg') no-repeat;
+        bottom: -30%;
+        left: -25%;
+        width: 94px;
+        height: 113px;
+      }
+      & > div:nth-child(2)::before {
+        transform: scaleX(-1);
+        right: -25%;
+        left: auto;
+      }
+      & > div:nth-child(3) {
+        position: relative;
+      }
+      & > div:nth-child(3)::after,
+      & > div:nth-child(3)::before {
+        content: '';
+        position: absolute;
+        background: url('../../assets/images/2025040111263503.svg') no-repeat;
+        bottom: -90%;
+        left: 18%;
+        width: 89px;
+        height: 129px;
+      }
+      & > div:nth-child(3)::before {
+        transform: scaleX(-1);
+        left: auto;
+        right: 18%;
+      }
+    }
+  }
+  .medic-team {
+    padding: 30px 0;
+    .medic-team-content {
+      margin: 15px 0;
+      .medic-team-content-title {
+        color: var(--Grey-Deep, #4d4d4d);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 32px */
+        letter-spacing: 4px;
+      }
+
+      .medic-team-content-btn {
+        margin: 15px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .bg-share-content {
+    margin: 0 auto;
+    background: linear-gradient(
+      173deg,
+      rgba(255, 255, 255, 0) 56.34%,
+      var(--Pink-Pale, #ffe9ec) 113.4%
+    );
+  }
+  .share-content {
+    padding: 30px 0;
+    .share-content-list-title {
+      padding: 15px 0;
+      & > div {
+        color: var(--Theme-Color, #fc1682);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%; /* 32px */
+        letter-spacing: 4px;
+      }
+    }
+    .share-content-list-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 30px;
+      .share-content-list-item {
+        border-radius: 10px;
+        border: 1px solid var(--Pink-Mid, #f670ae);
+        background: var(--White, #fff);
+        box-sizing: border-box;
+        padding: 20px;
+        & > div:nth-child(1) {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-bottom: 10px;
+          & > div:nth-child(1) {
+            color: var(--Brand-Color, #f8298a);
+            font-family: 'Noto Sans HK';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 2.4px;
+          }
+          & > div:nth-child(2) {
+            color: var(--Grey-Mid, #666);
+            text-align: right;
+            font-family: 'Noto Sans HK';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 24px */
+            letter-spacing: 1.6px;
+          }
+        }
+        & > div:nth-child(2) {
+          color: var(--Grey-Deep, #4d4d4d);
+          text-align: justify;
+          font-family: 'Noto Sans HK';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 18px; /* 128.571% */
+        }
+      }
+      .share-content-list-item:nth-child(2) {
+        border: 1px solid var(--Blue-Deep, #00aeff);
+        & > div:nth-child(1) {
+          & > div:nth-child(1) {
+            color: var(--Blue-Deep, #00aeff);
+          }
+        }
+      }
+    }
+  }
+  .matters-needing-attention {
+    padding: 30px 0;
+    .matters-needing-attention-content {
+      margin-top: 20px;
+      display: flex;
+      gap: 0 45px;
+      .matters-needing-attention-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 95.288px;
+        .matters-needing-attention-item-img {
+          width: 90.137px;
+          height: 90.137px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .matters-needing-attention-item-text {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 18.027px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 27.041px */
+          letter-spacing: 0.901px;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .wisdom-teeth-extraction-question-container {
+    padding: 30px 0;
+    :deep(.problem) {
+      margin-top: 0;
+    }
+  }
   .banner-in-box {
     position: absolute;
     top: 50%;

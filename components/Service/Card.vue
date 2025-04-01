@@ -52,7 +52,7 @@ const servicesCardPageData = {
           {{ $t(servicesCardPageData.contextIn) }}
         </div>
         <div class="context-in isIndex" v-else>
-          愛康健集團是大灣區專業牙科連鎖機構。<br />12間門診有超過20種牙科治療項目，專注為港服務超過29年。
+          愛康健集團是大灣區專業牙科連鎖機構。<br />12間門診有超過20種牙科治療項目，專注為港服務超過30年。
         </div>
       </div>
       <div :class="{ servicesCard: true, isMenu: isMenu }">

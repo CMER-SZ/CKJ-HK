@@ -188,10 +188,10 @@ let bannerLists = ref([
     mb: 'https://statichk.cmermedical.com/ckj/image/c78a85bb03ad.webp',
   },
   {
-    name: '愛康健裕亨新店開業優惠banner',
-    link: 'https://bit.ly/愛康健裕亨新店開業優惠',
-    pc: 'https://statichk.cmermedical.com/ckj/image/e7d440f4a3c0.avif',
-    mb: 'https://statichk.cmermedical.com/ckj/image/bde7805c9128.avif?v=1.2.2',
+    name: '愛康健裕亨预豹專享優惠',
+    link: 'https://bit.ly/愛康健裕亨预豹專享優惠',
+    pc: 'https://static.ckjhk.com/ckj-image/2025040111011302.webp',
+    mb: 'https://static.ckjhk.com/ckj-image/2025040111011301.webp',
   },
   {
     name: '醫生團隊banner',
