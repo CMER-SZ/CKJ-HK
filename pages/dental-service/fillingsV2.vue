@@ -1494,6 +1494,19 @@ const fillingsPhaseList = [
             height: 100%;
             object-fit: cover;
           }
+          position: relative;
+        }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 21px;
+          height: 63px;
+          background: url('~/assets/images/2025040208530601.png') no-repeat;
+          background-size: cover;
+          top: 50%;
+          right: -15px;
+          z-index: -1;
+          transform: translateY(-50%);
         }
 
         & > div:nth-child(3) {
@@ -1509,6 +1522,11 @@ const fillingsPhaseList = [
           letter-spacing: 4px;
           text-align: center;
         }
+      }
+    }
+    .fillings-step-item:nth-child(5) {
+      & > div:nth-child(2)::after {
+        content: none;
       }
     }
     .fillings-step-item-last {
@@ -1894,7 +1912,12 @@ const fillingsPhaseList = [
         }
       }
     }
-
+    .fillings-materiel-content-lists-item:nth-child(2),
+    .fillings-materiel-content-lists-item:nth-child(4) {
+      & > div:nth-child(1) {
+        background: var(--Brand-Color, #f8298a);
+      }
+    }
     .fillings-materiel-content-btn {
       margin-top: 35px;
       color: var(--White, #fff);
@@ -2070,6 +2093,8 @@ const fillingsPhaseList = [
         letter-spacing: 1.8px;
         box-sizing: border-box;
         padding: 10px 0;
+        position: relative;
+        right: -1px;
       }
       & > div:nth-child(1),
       & > div:nth-child(4) {
@@ -2181,19 +2206,19 @@ const fillingsPhaseList = [
         & > div:nth-child(2) {
           position: relative;
         }
-        // & > div:nth-child(2)::after {
-        //   content: '';
-        //   position: absolute;
-        //   width: 2.93vw;
-        //   height: 6.4vw;
-        //   background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
-        //     no-repeat;
-        //   background-size: cover;
-        //   top: 50%;
-        //   right: -2vw;
-        //   z-index: -1;
-        //   transform: translateY(-50%);
-        // }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 2.93vw;
+          height: 6.4vw;
+          background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
+            no-repeat;
+          background-size: cover;
+          top: 50%;
+          right: -2vw;
+          z-index: -1;
+          transform: translateY(-50%);
+        }
         & > div:nth-child(3) {
           color: var(--Grey-Dark, #333);
           /* 手機版/MB-Small Text */
@@ -2204,6 +2229,11 @@ const fillingsPhaseList = [
           line-height: 5.33vw;
           margin-top: 1.33vw;
           text-align: center;
+        }
+      }
+      .fillings-step-item:nth-child(5) {
+        & > div:nth-child(2)::after {
+          content: none;
         }
       }
       .fillings-step-item-last {
@@ -2387,6 +2417,7 @@ const fillingsPhaseList = [
       gap: 45px 25px;
       box-sizing: border-box;
       padding: 0 30px;
+      justify-items: center;
       & > div {
         width: 90px;
         height: 90px;

@@ -1102,8 +1102,8 @@ onMounted(() => {
           & > div:nth-child(1) {
             min-width: 30.93vw;
             max-width: 30.93vw;
-            height: 23.2vw;
-            max-height: 23.2vw;
+            // height: 23.2vw;
+            // max-height: 23.2vw;
             overflow: hidden;
             & > img {
               width: 100%;
@@ -1195,6 +1195,20 @@ onMounted(() => {
           .traffic-text {
             box-sizing: border-box;
             padding: 4px 4vw;
+            color: var(--Brand-Color, #f8298a);
+            text-align: justify;
+            font-family: 'Noto Sans HK';
+            font-size: 3.2vw;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 18px */
+            letter-spacing: 0;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-underline-position: from-font;
           }
           .item-text-active {
             display: flex;
@@ -1210,6 +1224,9 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         gap: 16px 0;
+        margin: 16px 0 0;
+        position: relative;
+        z-index: 1;
       }
     }
   }
