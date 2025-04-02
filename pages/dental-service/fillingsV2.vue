@@ -728,7 +728,7 @@ const fillingsPhaseList = [
       </section>
       <section class="ckj-container fillings-compare">
         <div class="d-flex flex-row align-items-end subheading">
-          <span>考慮補牙時的</span><span>3大重點</span>
+          <span>補牙</span><span>物料比較</span>
         </div>
         <div class="fillings-compare-content">
           <div class="fillings-compare-content-table">
@@ -1270,7 +1270,7 @@ const fillingsPhaseList = [
     box-sizing: border-box;
     padding: 30px 0;
     .fillings-compare-content-table {
-      margin-top: 70px;
+      margin-top: 75px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       & > div {

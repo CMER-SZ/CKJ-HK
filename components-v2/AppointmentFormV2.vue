@@ -639,7 +639,7 @@ onMounted(() => {
           appearance: none;
           -webkit-appearance: none;
           -moz-appearance: none;
-          background-image: url('/static/img/footer/select-arrowDown.svg');
+          background-image: url('~/assets/images/select-arrowDown.svg');
           background-repeat: no-repeat;
           background-position: right 7px center;
         }
@@ -660,7 +660,7 @@ onMounted(() => {
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-            background-image: url('/static/img/footer/select-code.svg');
+            background-image: url('~/assets/images//select-code.svg');
             background-repeat: no-repeat;
             background-position: right 0px center;
           }

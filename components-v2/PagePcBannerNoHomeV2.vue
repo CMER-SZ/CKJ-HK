@@ -100,7 +100,7 @@ const hideShowText = computed(() => {
         alt="banner"
       />
     </div>
-    <div class="btn-wrapper">
+    <div class="btn-wrapper d-none d-md-block">
       <PageAnimBtnTypeTwo
         :str="btnText || '免費網上預約'"
         :link="headerConfig.linkBtn"
