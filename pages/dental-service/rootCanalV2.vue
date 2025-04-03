@@ -217,39 +217,6 @@ const noteData = {
   ],
 }
 
-const problemData = {
-  title: 'pages.dental-service.rootCanal.problem.title',
-  lists: [
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[0].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[0].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[1].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[1].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[2].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[2].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[3].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[3].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[4].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[4].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[5].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[5].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[6].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[6].A',
-    },
-  ],
-}
 
 let swiperRef = {
   slidePrev: () => { },
@@ -358,6 +325,91 @@ const onMessageNewSlideChange = (swiper: any) => {
 let newsMessageSwiperRef = {
   slideToLoop: (a) => { },
 }
+
+
+const stepDataList = ref([
+  {
+    id: 1,
+    img: 'https://static.cmereye.com/imgs/2023/11/8c25f9c3f1d8c834.jpg',
+    name: '診斷',
+    notText: false,
+  },
+  {
+    id: 2,
+    img: 'https://static.cmereye.com/imgs/2023/10/0b7ef1a0f39e9ca9.jpg',
+    name: '麻醉',
+    notText: false,
+  },
+  {
+    id: 3,
+    img: 'https://static.cmereye.com/imgs/2023/11/b7337bbff6017483.jpg',
+    name: '牙齒分隔',
+    notText: false,
+  },
+  {
+    id: 4,
+    img: 'https://static.cmereye.com/imgs/2023/11/bfd54a465dbc28b8.jpg',
+    name: '計算根管長度',
+    notText: false,
+  },
+  {
+    id: 5,
+    img: 'https://static.cmereye.com/imgs/2023/11/8e3ca8afdfa82d6c.jpg',
+    name: '清理牙根管',
+    notText: false,
+  },
+  {
+    id: 6,
+    img: 'https://static.cmereye.com/imgs/2023/11/8f9ed7b27c9c0fdc.jpg',
+    name: '根管充填',
+    notText: false,
+  },
+  {
+    id: 7,
+    img: 'https://static.cmereye.com/imgs/2023/11/d542e53ca685f034.jpg',
+    name: '修復',
+    notText: false,
+  },
+  {
+    id: 8,
+    img: 'https://static.ckjhk.com/ckj-image/5c1ac98cb00a.png',
+    notText: true,
+  }
+])
+
+const problemData = {
+  title: '<span>杜牙根</span><span>常見問題</span>',
+  lists: [
+    {
+      Q: 'pages.dental-service.rootCanal.problem.lists[0].Q',
+      A: 'pages.dental-service.rootCanal.problem.lists[0].A',
+    },
+    {
+      Q: 'pages.dental-service.rootCanal.problem.lists[1].Q',
+      A: 'pages.dental-service.rootCanal.problem.lists[1].A',
+    },
+    {
+      Q: 'pages.dental-service.rootCanal.problem.lists[2].Q',
+      A: 'pages.dental-service.rootCanal.problem.lists[2].A',
+    },
+    {
+      Q: 'pages.dental-service.rootCanal.problem.lists[3].Q',
+      A: 'pages.dental-service.rootCanal.problem.lists[3].A',
+    },
+    {
+      Q: 'pages.dental-service.rootCanal.problem.lists[4].Q',
+      A: 'pages.dental-service.rootCanal.problem.lists[4].A',
+    },
+    {
+      Q: 'pages.dental-service.rootCanal.problem.lists[5].Q',
+      A: 'pages.dental-service.rootCanal.problem.lists[5].A',
+    },
+    {
+      Q: 'pages.dental-service.rootCanal.problem.lists[6].Q',
+      A: 'pages.dental-service.rootCanal.problem.lists[6].A',
+    },
+  ],
+}
 </script>
 
 <template>
@@ -427,223 +479,74 @@ let newsMessageSwiperRef = {
           </div>
         </div>
       </section>
-    </div>
-
-
-    <div class="pageIn whitebgColor">
-      <div class="index_title pageCon">
-        {{ $t('pages.dental-service.title') }}
-      </div>
-      <ServiceIntroduce :introduce-data="introduceData" />
-      <div class="reason">
-        <div class="dentistryServices-title reason-title">
-          <div class="dentistryServices-title-in bb reason-title-in">
-            {{ reasonData.title }}
-          </div>
+      <section class="ckj-container seven-steps">
+        <div class="seven-steps-title">
+          <div>\ <span>杜牙根治療7步曲</span> /</div>
         </div>
-        <div class="reason-lists">
-          <div v-for="(item, index) in reasonData.reasonLists" :key="index" class="reason-lists-item">
-            <div class="image">
-              <img :src="item.img" alt="" />
-            </div>
-            <div class="text">
-              <span>{{ item.title }}</span>
-              <span>{{ item.context }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="care">
-        <div class="dentistryServices-title care-title">
-          <div class="dentistryServices-title-in bb care-title-in">
-            <span>{{ careData.title[0] }}</span>
-            <span>{{ careData.title[1] }}</span>
-          </div>
-        </div>
-        <div class="care-lists">
-          <div v-for="(careItem, careIndex) in careData.lists" :key="careIndex" class="care-lists-item">
-            <div>
-              <div class="image">
-                <div class="image-in">
-                  <img :src="careItem.img" :alt="careItem.text" />
-                </div>
-              </div>
-              <div class="text">{{ careItem.text }}</div>
-            </div>
-          </div>
-        </div>
-        <div class="care-btn">
-          <!-- <PageAnimBtnTypeTwo :str="'與我們了解更多'" /> -->
-          <PageAnimBtnTypeTwo :str="'與我們了解更多'" />
-        </div>
-      </div>
-      <div class="infoCard">
-        <div class="dentistryServices-title infoCard-title">
-          <div class="dentistryServices-title-in bb infoCard-title-in">
-            什麼是<span>顯微根管治療</span>？
-          </div>
-        </div>
-        <div class="infoCard-content">
-          <div class="infoCard-content-l" v-if="windowWidth > 768">
-            <img src="https://static.cmereye.com/imgs/2023/10/493b437603fc5e0d.jpg" alt="" />
-          </div>
-          <div class="infoCard-content-r">
-            <div v-for="(infoCardItem, infoCardIndex) in infoCardData.lists" :key="infoCardIndex">
-              <div v-if="windowWidth < 768">
-                <img :src="infoCardItem.img" :alt="infoCardItem.text" />
-              </div>
+        <div class="seven-steps-content">
+          <div v-for="item in stepDataList" :key="item.id">
+            <div v-if="!item.notText" class="seven-steps-content-item">
               <div>
-                <span v-if="windowWidth > 768">·</span>
-                <span>{{ infoCardItem.text }}</span>
+                <div>{{ item.id }}</div>
+                <div><img :src="item.img" :alt="item.name"></div>
               </div>
+              <div>{{ item.name }}</div>
+            </div>
+            <div v-if="item.notText" class="seven-steps-content-item">
+              <div><img :src="item.img" :alt="item.name"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="Root_canal_treatment_equipment">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">根管治療設備</div>
+      </section>
+      <section class="ckj-container microroot-canal">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>什麼是</span><span>顯微根管治療</span>
         </div>
-        <div class="Root_canal_treatment_equipment-in">
-          <div class="Root_canal_treatment_equipment-in-l" v-if="windowWidth > 768">
-            <img src="https://static.cmereye.com/imgs/2024/02/33f5319ca2369e70.webp" alt="" />
+        <div class="microroot-canal-content">
+          <div><img src="https://static.ckjhk.com/ckj-image/14db8a4e2307.png" alt=""></div>
+          <div>
+            <ul>
+              <li>顯微根管治療，即在顯微鏡輔助下放大局部來治療根管。 </li>
+              <li>牙科顯微鏡可以在手術中放大畫面，在良好照明環境及視野穩定的前提下，將根管治療推進到可視化階段。 </li>
+              <li>愛康健引進德國蔡司顯微鏡根管治療儀，結合顯微鏡技術和醫學技術，能清楚觀察牙齒的解剖結構和根管形態。</li>
+            </ul>
           </div>
-          <div class="Root_canal_treatment_equipment-in-r" v-if="windowWidth > 768">
-            <img src="https://static.cmereye.com/imgs/2024/02/760462b941be8e2c.webp" alt="" />
-            <span>我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。讓醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。</span>
-          </div>
-          <swiper v-if="windowWidth < 768" :slidesPerView="'auto'" :centeredSlides="true" :spaceBetween="0"
-            class="mySwiper" @swiper="setMessageNewsSwiperRef" @slideChange="onMessageNewSlideChange">
-            <swiper-slide>
-              <div>
-                <img src="https://static.cmereye.com/imgs/2024/08/94d23af3eaa954a4.png" alt="" />
-              </div>
-              <div>
-                我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。
-              </div>
-            </swiper-slide>
-            <swiper-slide>
-              <div>
-                <img src="https://static.cmereye.com/imgs/2024/08/db12cbbf79a68bab.png" alt="" />
-              </div>
-              <div>
-                讓醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。
-              </div>
-            </swiper-slide>
-          </swiper>
-          <!-- <PageSwiperPointLine
-            v-if="windowWidth < 767"
-            :latestNewsNum="2"
-            :latestNewsCurrent="messageCurrtNew"
-            @changeLineCur="handleMessageLineCur"
-          ></PageSwiperPointLine> -->
-          <div class="boxRound-rootCanal" v-if="windowWidth < 767">
-            <div class="message" :style="{ color: triangleColor ? '' : '#FC1682' }" @click="handleMessageLineCur(1)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
-                <path
-                  d="M0.500001 7.13397C-0.166666 7.51887 -0.166666 8.48112 0.5 8.86602L12.5 15.7942C13.1667 16.1791 14 15.698 14 14.9282L14 1.0718C14 0.301996 13.1667 -0.17913 12.5 0.20577L0.500001 7.13397Z"
-                  :fill="triangleColor ? '' : '#FC1682'" />
-              </svg>
-            </div>
-            <div class="message" @click="handleMessageLineCur(2)"
-              :style="{ color: triangleDefault ? '#FC1682' : '#F7C3C3' }">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
-                <path
-                  d="M13.5 7.13397C14.1667 7.51887 14.1667 8.48112 13.5 8.86602L1.5 15.7942C0.833333 16.1791 -7.73604e-07 15.698 -7.39955e-07 14.9282L-1.34273e-07 1.0718C-1.00623e-07 0.301996 0.833333 -0.17913 1.5 0.20577L13.5 7.13397Z"
-                  :fill="triangleDefault ? '#FC1682' : '#F7C3C3'" />
-              </svg>
+        </div>
+      </section>
+      <section class="ckj-container microroot-canal-equipment">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>顯微</span><span>根管治療設備</span>
+        </div>
+        <div class="microroot-canal-equipment-content">
+          <div><img src="https://static.ckjhk.com/ckj-image/63c3347f61dd.jpg" alt=""></div>
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/8286033922e5.jpg" alt=""></div>
+            <div>我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。
             </div>
           </div>
         </div>
-      </div>
-      <div class="step">
-        <div class="step-in">
-          <div class="dentistryServices-title step-title">
-            <div class="dentistryServices-title-in bb step-title-in">
-              {{ stepData.title }}
-            </div>
-          </div>
-          <div class="step-lists">
-            <div v-for="(stepItem, stepIndex) in stepData.lists" :key="stepIndex" class="step-lists-in">
-              <div class="step-lists-in-l">
-                <div class="title">
-                  <img src="@/assets/images/icon_13.png" alt="" />
-                  {{ windowWidth > 768 ? stepItem.title : stepItem.titleNum }}
-                </div>
-                <div class="image"><img :src="stepItem.img" alt="" /></div>
-                <div class="name">{{ stepItem.name }}</div>
-                <div class="context">{{ stepItem.context }}</div>
-              </div>
-              <div class="step-lists-in-r">
-                <img src="@/assets/images/icon_12.png" alt="" />
-              </div>
-            </div>
-            <div class="step-lists-in" v-if="windowWidth > 767">
-              <div class="lastBox-t">
-                <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-                <div>療程最快<span>即日完成 !</span></div>
-                <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-              </div>
-              <div class="lastBox-b">
-                <!-- <span @click="toWhatsApp">立即預約牙齒檢查</span> -->
-                <!-- <PageAnimBtnTypeTwo :str="'立即預約牙齒檢查'" /> -->
-                <PageAnimBtnTypeTwo str="立即預約牙齒檢查" />
-              </div>
-            </div>
-          </div>
-          <div class="step-lists-in step-lists-outside" v-if="windowWidth < 767">
-            <div class="lastBox-t">
-              <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-              <div>療程最快<span>即日完成 !</span></div>
-              <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-            </div>
-            <div class="lastBox-b">
-              <!-- <span @click="toWhatsApp">立即預約牙齒檢查</span> -->
-              <!-- <PageAnimBtnTypeTwo :str="'立即預約牙齒檢查'" /> -->
-              <PageAnimBtnTypeTwo str="立即預約牙齒檢查" />
-            </div>
-          </div>
+      </section>
+      <section class="ckj-container doctor-team">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>牙體牙髓專科</span><span>醫生團隊</span>
         </div>
-      </div>
-      <div class="doctorTeam" ref="doctorTeam">
-        <ServiceSpecializedTeam :doctorData="doctorData" />
-      </div>
-      <div class="note" v-if="windowWidth > 767">
-        <div class="dentistryServices-title note-title">
-          <div class="dentistryServices-title-in bb note-title-in">
-            療程後注意事項
-          </div>
+        <div class="doctor-team-content-text">牙髓病科專科醫生專門診斷和治療牙髓 (牙神經)
+          及根尖周圍組織疾病，精通各種根管治療技術，包括複雜病處理、顯微根管治療、根尖手術等，能應對各種複雜情況。
         </div>
-        <div class="note-content">
-          <div class="note-content-l">
-            <img src="https://static.cmereye.com/imgs/2023/10/9ecad6effa1796bd.jpg" alt="" />
-          </div>
-          <div class="note-content-r">
-            <div v-for="(noteItem, noteIndex) in noteData.lists" :key="noteIndex">
-              <span>·</span>
-              <span>{{ $t(noteItem.name) }}</span>
-            </div>
-          </div>
+        <div class="doctor-team-content">
+          <DoctorV2 :nowType="'104'" />
         </div>
-      </div>
-      <div class="mobile-note-new" v-else>
+        <div class="doctor-team-content-btn">
+          <PageAnimBtnTypeTwo :str="'即時配對醫生'" />
+        </div>
+      </section>
+      <section class="ckj-container root-canal-problem">
         <div>
-          <div>
-            <img src="../../assets/images/announcements.svg" alt="" />
-          </div>
-          <div>
-            <span>根管治療後</span>
-            <span>注意事項</span>
-          </div>
+          <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
         </div>
-        <div class="mobile-note-content">
-          <div v-for="(noteItem, noteIndex) in noteData.listsMobile" :key="noteIndex">
-            <span>·</span>
-            <span>{{ $t(noteItem.name) }}</span>
-          </div>
-        </div>
-      </div>
+      </section>
     </div>
+
     <serviceCard />
     <BranchAddress />
     <AppointmentFormV2 />
@@ -2169,11 +2072,257 @@ let newsMessageSwiperRef = {
     }
   }
 
+  .seven-steps {
+    padding: 30px 0;
+    box-sizing: border-box;
 
+    .seven-steps-title {
+      &>div {
+        color: var(--Grey-Deep, #4D4D4D);
+        text-align: center;
+        font-family: "Noto Sans HK";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 3px;
 
+        &>span {
+          color: var(--Brand-Color, #F8298A);
+        }
+      }
+    }
 
+    .seven-steps-content {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 30px;
 
+      &>div:last-child {
+        grid-column: span 2;
 
+        .seven-steps-content-item {
+          width: 475.864px;
+          height: 210.71px;
+          margin-left: 53px;
+
+          &>div {
+            &>img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .seven-steps-content-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div:nth-child(1) {
+          position: relative;
+
+          &>div:nth-child(1) {
+            position: absolute;
+            z-index: 5;
+            background: url('https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png') no-repeat;
+            background-size: contain;
+
+            top: -0.49vw;
+            left: -0.49vw;
+            width: 3.4375vw;
+            height: 3.4375vw;
+
+            color: var(--White, #FFF);
+            font-family: "Noto Sans HK";
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 3.4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &>div:nth-child(2) {
+            position: relative;
+          }
+
+          &>div:nth-child(2)::after {
+            content: "";
+            position: absolute;
+            width: 21px;
+            height: 63px;
+            background: url(~/assets/images/2025040208530601.png) no-repeat;
+            background-size: cover;
+            top: 50%;
+            right: -15px;
+            z-index: -1;
+            transform: translateY(-50%);
+          }
+
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 10px;
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 2px;
+        }
+      }
+
+      &>div:nth-child(7) {
+        .seven-steps-content-item {
+          &>div:nth-child(1) {
+            background: salmon;
+            &>div:nth-child(2)::after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .microroot-canal {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .microroot-canal-content {
+      margin-top: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 0 15px;
+
+      &>div:nth-child(1) {
+        width: 300px;
+        height: 206.324px;
+
+        &>img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &>div:nth-child(2) {
+        max-width: 645px;
+        padding-left: 25px;
+
+        ul>li {
+          color: var(--Grey-Deep, #4D4D4D);
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 200%;
+          letter-spacing: 1.8px;
+          list-style: disc;
+        }
+      }
+    }
+  }
+
+  .microroot-canal-equipment {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .microroot-canal-equipment-content {
+      margin-top: 20px;
+      gap: 0 35px;
+      display: flex;
+
+      &>div:nth-child(1) {
+        width: 445.124px;
+        height: auto;
+
+        &>img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &>div:nth-child(2) {
+        max-width: 478.164px;
+
+        &>div:nth-child(1) {
+          width: 478.164px;
+          height: 368.948px;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 18px;
+          color: var(--Grey-Deep, #4D4D4D);
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+
+  .doctor-team {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .doctor-team-content-text {
+      margin-top: 15px;
+      color: var(--Grey-Deep, #4D4D4D);
+      text-align: justify;
+      font-family: "Noto Sans HK";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 4px;
+    }
+
+    .doctor-team-content {
+      margin-top: 15px;
+    }
+
+    .doctor-team-content-btn {
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .root-canal-problem {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    :deep(.problem) {
+      margin-top: 0;
+    }
+  }
+
+  :deep(.index-dentalServices) {
+    box-sizing: border-box;
+    padding: 30px 0;
+  }
 
 
 

@@ -929,7 +929,7 @@ const problemList = ref({
             口腔頜面外科醫生專業拔牙過程快捷、操作精準、<br class="d-md-none" />創傷小、恢復快，大大減低痛感
           </div>
           <div class="medic-team-content-list">
-            <!-- <DoctorV2 :nowType="'105'" /> -->
+            <DoctorV2 :nowType="'107'" />
           </div>
           <div class="medic-team-content-btn">
             <PageAnimBtnTypeTwo :str="'即時配對醫生'" />
@@ -1380,6 +1380,7 @@ const problemList = ref({
           background: var(--White, #fff);
           position: relative;
           z-index: 5;
+
           &>div:nth-child(1) {
             width: 100%;
             box-sizing: border-box;
@@ -1501,6 +1502,10 @@ const problemList = ref({
         letter-spacing: 4px;
       }
 
+      .medic-team-content-list {
+        margin-top: 15px;
+      }
+
       .medic-team-content-btn {
         margin: 15px auto;
         display: flex;
@@ -1609,6 +1614,7 @@ const problemList = ref({
       display: flex;
       gap: 0 45px;
       justify-content: center;
+
       .matters-needing-attention-item {
         display: flex;
         flex-direction: column;
@@ -2330,6 +2336,10 @@ const problemList = ref({
         line-height: 150%;
         /* 21px */
         letter-spacing: 0.7px;
+      }
+
+      .medic-team-content-list {
+        margin-top: 15px;
       }
 
       .medic-team-content-btn {
