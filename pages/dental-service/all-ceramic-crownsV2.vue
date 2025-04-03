@@ -2,6 +2,54 @@
 import { useAppState } from '~/stores/appState'
 const appState = useAppState()
 appState.setDentistryService('all-ceramic-crowns')
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper'
+const modules = [Navigation, Pagination, Mousewheel, Keyboard]
+
+let services_include_cur = ref(0)
+let swiperRef: any = {
+  slidePrev: () => {},
+  slideNext: () => {},
+  slideTo: () => {},
+}
+
+const setSwiperRef = (swiper: any) => {
+  swiperRef = swiper
+  services_include_cur.value = swiperRef.activeIndex
+}
+
+const addNum = () => {
+  swiperRef.slideNext()
+  handleProcessBtnClick()
+}
+const subNum = () => {
+  swiperRef.slidePrev()
+  handleProcessBtnClick()
+}
+
+const handleProcessBtnClick = () => {
+  services_include_cur.value = swiperRef.activeIndex
+  const swiperPoints = document.querySelectorAll('.swiper-point')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == services_include_cur.value) {
+      item.classList.add('swiper-point-active')
+    } else {
+      item.classList.remove('swiper-point-active')
+    }
+  })
+}
+
+const handleProcessBtn = (_type: number) => {
+  const swiperPoints = document.querySelectorAll('.swiper-point')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == _type) {
+      item.classList.add('swiper-point-active')
+    } else {
+      item.classList.remove('swiper-point-active')
+    }
+  })
+  swiperRef.slideTo(_type, 0, 'slide')
+}
+
 useHead({
   title: '全瓷牙冠 | 牙科服務',
   meta: [
@@ -151,7 +199,7 @@ const maintainData = {
   ],
 }
 const problemData = {
-  title: '全瓷牙冠和全鋯牙冠常見問題',
+  title: '<span>全瓷/全鋯牙冠</span><span>常見問題</span>',
   lists: [
     {
       Q: '全瓷牙冠和全鋯牙冠的壽命有多長？',
@@ -176,6 +224,75 @@ onMounted(() => {
   getWindowWidth()
   window.addEventListener('resize', getWindowWidth)
 })
+
+const surgicalExtractionOfTeeth = ref(true)
+const courseSurgicalExtractionOfTeeth = ref([
+  {
+    id: 1,
+    title: 'CT檢查及診症',
+  },
+  {
+    id: 2,
+    title: '牙齒磨小為牙冠預留空間',
+  },
+  {
+    id: 3,
+    title: '精準掃描及取模',
+  },
+  {
+    id: 4,
+    title: 'CAD/CAM精密電腦輔助設計及製作<br /><i>(最快2小時完成)</i>',
+  },
+  {
+    id: 5,
+    title: '安裝牙冠',
+  },
+])
+const courseNonSurgicalToothExtraction = ref([
+  {
+    id: 1,
+    title: 'CT檢查及診症',
+  },
+  {
+    id: 2,
+    title: '牙齒磨小為牙冠預留空間',
+  },
+  {
+    id: 3,
+    title: '精準掃描及取模',
+  },
+  {
+    id: 4,
+    title: '制作及安裝臨時牙冠',
+  },
+  {
+    id: 5,
+    title: '牙冠精密製作',
+  },
+  {
+    id: 6,
+    title: '安裝牙冠',
+  },
+])
+
+const courseToothExtraction = (str) => {
+  if (str === 'Surgical') {
+    surgicalExtractionOfTeeth.value = true
+    listItem(str)
+  } else if (str === 'notSurgical') {
+    surgicalExtractionOfTeeth.value = false
+    listItem(str)
+  }
+}
+
+const listItem = (str) => {
+  if (str === 'Surgical') {
+    return courseSurgicalExtractionOfTeeth.value
+  }
+  if (str === 'notSurgical') {
+    return courseNonSurgicalToothExtraction.value
+  }
+}
 </script>
 
 
@@ -284,11 +401,13 @@ onMounted(() => {
             <div>¥4,000/顆</div>
           </div>
           <div>
-            <div>奥地利Cercon氧化鋯全瓷牙冠</div>
+            <div>奥地利Cercon氧化鋯<br class="d-md-none" />全瓷牙冠</div>
             <div><span>\高強度/</span>&nbsp;&nbsp;&nbsp;&nbsp;¥4,500/顆</div>
           </div>
           <div>
-            <div>德國Sirona CAD/CAM玻璃陶瓷全瓷牙冠</div>
+            <div>
+              德國Sirona CAD/<br class="d-md-none" />CAM玻璃陶瓷全瓷牙冠
+            </div>
             <div><span>\即日完成/</span>&nbsp;&nbsp;&nbsp;&nbsp;¥5,500/顆</div>
           </div>
           <div>
@@ -318,26 +437,276 @@ onMounted(() => {
           <div>愛康健牙冠價格已包含檢查費、設計費、材料費、安裝費。</div>
         </div>
       </section>
-      <section class="ckj-container customization-process">
-        <div class="d-flex flex-row align-items-end subheading">
-          <span>牙冠訂製</span><span>過程</span>
-        </div>
-        <div class="customization-process-content">
-          <div>CT檢查及診症</div>
-          <div>牙齒磨小為牙冠預留空間</div>
-          <div>精準掃描及取模</div>
-          <div>
-            <div>CAD/CAM精密電腦輔助<br />設計及製作 (最快2小時完成)</div>
+      <div class="bg-customization-process">
+        <section class="ckj-container customization-process">
+          <div class="d-flex flex-row align-items-end subheading">
+            <span>牙冠訂製</span><span>過程</span>
+          </div>
+          <div class="customization-process-content d-none d-md-flex">
+            <div>CT檢查及診症</div>
+            <div>牙齒磨小為牙冠預留空間</div>
+            <div>精準掃描及取模</div>
             <div>
-              <div>制作及安裝臨時牙冠</div>
-              <div>傳統牙冠製作 (2-3日完成)</div>
+              <div>CAD/CAM精密電腦輔助<br />設計及製作 (最快2小時完成)</div>
+              <div>
+                <div>制作及安裝臨時牙冠</div>
+                <div>傳統牙冠製作 (2-3日完成)</div>
+              </div>
+            </div>
+            <div>安裝牙冠</div>
+          </div>
+          <div class="course d-md-none">
+            <div class="course-text">
+              拔牙一般無需進行手術，但當牙齒歪生或非常接近<br
+                class="d-md-none"
+              />神經，便有可能要進行手術式脫牙。
+            </div>
+            <div>
+              <div>
+                <div
+                  :class="surgicalExtractionOfTeeth ? 'active-teeth' : ''"
+                  @click="courseToothExtraction('Surgical')"
+                >
+                  智慧齒及手術性拔牙
+                </div>
+                <div
+                  :class="surgicalExtractionOfTeeth ? '' : 'active-teeth'"
+                  @click="courseToothExtraction('notSurgical')"
+                >
+                  非手術性拔牙
+                </div>
+              </div>
+              <div>
+                <div class="d-none d-md-flex">
+                  <img :src="'~/assets/images/2025033111372801.svg'" />
+                </div>
+                <div class="d-md-none">
+                  <img
+                    :style="{
+                      height: surgicalExtractionOfTeeth ? '260px' : '280px',
+                    }"
+                    :src="
+                      surgicalExtractionOfTeeth
+                        ? 'https://static.ckjhk.com/ckj-image/2025040216330802.png'
+                        : 'https://static.ckjhk.com/ckj-image/2025040216330801.png'
+                    "
+                  />
+                </div>
+                <div>
+                  <div
+                    v-for="(item, index) in listItem(
+                      surgicalExtractionOfTeeth ? 'Surgical' : 'notSurgical'
+                    )"
+                    :key="index"
+                  >
+                    <div>
+                      <div>{{ item.id }}</div>
+                      <div>
+                        <div v-html="item.title"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div>安裝牙冠</div>
+          <div class="customization-process-text d-none d-md-flex">
+            <div>
+              CAD/CAM技術製作的牙冠較傳統牙冠更密合，減低長期使用二次蛀牙、痠痛、異味發生率
+              👍🏻
+            </div>
+            <div><img src="~/assets/images/2025040211330101.png" alt="" /></div>
+          </div>
+          <div class="d-md-none">
+            <div
+              v-if="surgicalExtractionOfTeeth"
+              class="customization-process-text"
+            >
+              <div>
+                CAD/CAM技術製作的牙冠較傳統牙冠更密合，減低長期使用二次蛀牙、痠痛、異味發生率
+                👍🏻
+              </div>
+              <div>
+                <img src="~/assets/images/2025040211330101.png" alt="" />
+              </div>
+            </div>
+            <div class="customization-process-tradition-text" v-else>
+              2-3日完成
+            </div>
+          </div>
+        </section>
+      </div>
+      <section class="ckj-container species">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>牙冠</span><span>種類</span>
+        </div>
+        <div class="species-content">
+          <div>\ 最多人選擇！ /</div>
+          <div>烤瓷合金牙冠</div>
+          <div>全瓷牙冠</div>
+          <div>金屬牙冠</div>
+          <div>
+            <img
+              src="https://static.ckjhk.com/ckj-image/c53fcc7f7189.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://static.ckjhk.com/ckj-image/a5c26ff1c0e5.png"
+              alt=""
+            />
+          </div>
+          <div>
+            <img
+              src="https://static.ckjhk.com/ckj-image/a2e28e94c7c4.png"
+              alt=""
+            />
+          </div>
+          <div>優點</div>
+          <div>
+            <ul>
+              <li>內層金屬，外層陶瓷</li>
+              <li>可以選擇外層顏色，較美觀</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>仿真度最高，顏色自然</li>
+              <li>適合用於前牙，美觀</li>
+              <li>可根據需要的選擇物料強度</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>耐用度高，適合用於後牙</li>
+              <li>損耗度與真牙非常接近</li>
+              <li>堅固穩定，原牙改動小</li>
+            </ul>
+          </div>
+          <div>缺點</div>
+          <div>
+            <ul>
+              <li>較厚，需磨掉較多原牙</li>
+              <li>顏色不夠自然</li>
+              <li>邊緣有金屬黑影，影響外觀</li>
+              <li>表層易剝落斷裂</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>強度低於金屬</li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>金屬顏色，影響外觀</li>
+              <li>價格較貴</li>
+              <li>有致癌疑慮</li>
+              <li>易發炎或過敏</li>
+            </ul>
+          </div>
         </div>
       </section>
+      <section class="ckj-container crown-maintenance">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>牙冠如何</span><span>維護保養?</span>
+        </div>
+        <div class="crown-maintenance-content">
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/450744fbe886.png"
+                alt=""
+              />
+            </div>
+            <div>每日牙線清潔</div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/060c3c7295fd.png"
+                alt=""
+              />
+            </div>
+            <div>定期檢查</div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/2f3e9454e843.png"
+                alt=""
+              />
+            </div>
+            <div>避免咀嚼硬物</div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container crown-case">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>牙冠</span><span>案例</span>
+        </div>
+        <div class="crown-case-content">
+          <div class="crown-case-content-title">
+            <div>手術前</div>
+            <div>手術後</div>
+          </div>
+          <div>
+            <swiper :modules="modules" class="mySwiper" @swiper="setSwiperRef">
+              <swiper-slide class="swiper-slide-img">
+                <div>
+                  <img
+                    src="https://static.ckjhk.com/ckj-image/c75e70d54395.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://static.ckjhk.com/ckj-image/ff29dc67893c.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://static.ckjhk.com/ckj-image/a62ba03ae963.jpg"
+                    alt=""
+                  />
+                </div>
+              </swiper-slide>
+              <swiper-slide class="swiper-slide-img">
+                <div>
+                  <img
+                    src="https://static.ckjhk.com/ckj-image/43d049eb37e1.jpg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    src="https://static.ckjhk.com/ckj-image/181ec1cb844f.jpg"
+                    alt=""
+                  />
+                </div>
+              </swiper-slide>
+            </swiper>
+          </div>
+          <div class="crown-case-content-btn">
+            <div @click="subNum"></div>
+            <div>
+              <div
+                class="swiper-point swiper-point-active"
+                @click="handleProcessBtn(0)"
+              ></div>
+              <div class="swiper-point" @click="handleProcessBtn(1)"></div>
+            </div>
+            <div @click="addNum"></div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container problem-data">
+        <V2ServiceProblem :problemData="problemData" :v2Versions="true" />
+      </section>
     </div>
-    <div class="pageIn whitebgColor">
+    <!-- <div class="pageIn whitebgColor">
       <div class="index_title pageCon">
         {{ $t('pages.dental-service.title') }}
       </div>
@@ -492,8 +861,7 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </div>
-    <ServiceProblem :problemData="problemData" />
+    </div> -->
     <serviceCard />
     <BranchAddress />
     <AppointmentFormV2 />
@@ -1461,6 +1829,469 @@ onMounted(() => {
       }
     }
   }
+  .bg-customization-process {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 241, 240, 0) 0%,
+      rgba(255, 241, 240, 0.7) 1.5%,
+      rgba(255, 241, 240, 0.7) 42.99%,
+      rgba(255, 241, 240, 0) 100%
+    );
+  }
+  .customization-process {
+    padding: 30px 0;
+    .customization-process-content {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px 0;
+      align-items: center;
+
+      & > div:not(:nth-child(4)) {
+        border-radius: 20px;
+        background: var(--Pink-Mid, #f670ae);
+        box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+        width: 350px;
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+        position: relative;
+      }
+      & > div:nth-child(1)::after,
+      & > div:nth-child(2)::after {
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 25px;
+        background: url('https://static.ckjhk.com/ckj-image/a17694c1f8a8.svg')
+          no-repeat;
+        background-size: contain;
+        bottom: -65%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+      & > div:nth-child(3)::after {
+        position: absolute;
+        content: '';
+        width: 58px;
+        height: 85px;
+        background: url('https://static.ckjhk.com/ckj-image/54595111de02.svg')
+          no-repeat;
+        background-size: contain;
+        bottom: -115%;
+        left: -20%;
+      }
+      & > div:nth-child(3)::before {
+        position: absolute;
+        content: '';
+        width: 51px;
+        height: 58px;
+        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg')
+          no-repeat;
+        background-size: contain;
+        bottom: -61%;
+        right: -20%;
+        transform: rotate(-90deg);
+      }
+      & > div:nth-child(4) {
+        display: flex;
+        gap: 0 120px;
+        align-items: center;
+        position: relative;
+        & > div:nth-child(1) {
+          border-radius: 20px;
+          background: var(--Brand-Color, #f8298a);
+          box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+          color: #fff;
+          text-align: center;
+          font-family: 'Noto Sans TC';
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 160%; /* 32px */
+          letter-spacing: 2px;
+          box-sizing: border-box;
+          padding: 10px 35px;
+        }
+        & > div:nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          gap: 40px 0;
+          & > div {
+            border-radius: 20px;
+            background: var(--Blue-Deep, #00aeff);
+            box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
+            color: #fff;
+            text-align: center;
+            font-family: 'Noto Sans TC';
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 160%; /* 32px */
+            letter-spacing: 2px;
+            box-sizing: border-box;
+            padding: 10px 45px;
+            position: relative;
+          }
+          & > div:nth-child(1)::after {
+            position: absolute;
+            content: '';
+            width: 18px;
+            height: 25px;
+            background: url('https://static.ckjhk.com/ckj-image/a17694c1f8a8.svg')
+              no-repeat;
+            background-size: contain;
+            bottom: -65%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+      & > div:nth-child(4)::after {
+        position: absolute;
+        content: '';
+        width: 51px;
+        height: 84px;
+        background: url('https://static.ckjhk.com/ckj-image/36b7e7a13825.svg')
+          no-repeat;
+        background-size: contain;
+        bottom: -55%;
+        left: 21%;
+      }
+      & > div:nth-child(4)::before {
+        position: absolute;
+        content: '';
+        width: 51px;
+        height: 58px;
+        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg')
+          no-repeat;
+        background-size: contain;
+        bottom: -55%;
+        right: 21%;
+      }
+    }
+
+    .customization-process-text {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0 28px;
+      & > div:nth-child(1) {
+        max-width: 470px;
+        color: var(--Grey-Dark, #333);
+        text-align: justify;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+      }
+      & > div:nth-child(2) {
+        width: 232.228px;
+        height: auto;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .species {
+    padding: 30px 0;
+    .species-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      & > div:nth-child(1),
+      & > div:nth-child(8),
+      & > div:nth-child(12) {
+        grid-column: span 3;
+        text-align: center;
+      }
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      & > div:nth-child(1) {
+        color: var(--Theme-Color, #fc1682);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+      }
+      & > div:nth-child(2) {
+        color: var(--Grey-Dark, #333);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+        border-radius: 20px 0px 0px 0px;
+        background: var(--Grey-Midlight, #adadad);
+        padding: 5px 0;
+        position: relative;
+        z-index: 5;
+        width: 105%;
+        right: 0%;
+      }
+      & > div:nth-child(3) {
+        padding: 5px 0;
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+        border-radius: 20px 20px 0px 0px;
+        background: var(--Brand-Color, #f8298a);
+        position: relative;
+        z-index: 8;
+      }
+      & > div:nth-child(4) {
+        color: var(--Grey-Dark, #333);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+        border-radius: 0px 20px 0px 0px;
+        background: var(--Grey-Midlight, #adadad);
+        padding: 5px 0;
+        position: relative;
+        z-index: 5;
+        width: 105%;
+        left: -5%;
+      }
+      & > div:nth-child(6) {
+        border-left: 5px solid var(--Brand-Color, #f8298a);
+        border-right: 5px solid var(--Brand-Color, #f8298a);
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      & > div:nth-child(8),
+      & > div:nth-child(12) {
+        background: var(--Brand-Color, #f8298a);
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+        box-sizing: border-box;
+        padding: 5px 0;
+      }
+      & > div:nth-child(9),
+      & > div:nth-child(10),
+      & > div:nth-child(11),
+      & > div:nth-child(13),
+      & > div:nth-child(14),
+      & > div:nth-child(15) {
+        box-sizing: border-box;
+        padding: 10px;
+        ul {
+          li {
+            color: #4c4c4c;
+            text-align: justify;
+            font-family: 'Noto Sans HK';
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 200%; /* 36px */
+            letter-spacing: 1.8px;
+            list-style: disc;
+          }
+        }
+      }
+      & > div:nth-child(9),
+      & > div:nth-child(13) {
+        border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(10),
+      & > div:nth-child(14) {
+        border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
+        border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(11),
+      & > div:nth-child(15) {
+        border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(13),
+      & > div:nth-child(14),
+      & > div:nth-child(15) {
+        border-bottom: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(13) {
+        border-radius: 0px 0px 0px 20px;
+      }
+
+      & > div:nth-child(15) {
+        border-radius: 0px 0px 20px 0;
+      }
+      & > div:nth-child(12) {
+        background: var(--Blue-Deep, #00aeff);
+      }
+    }
+  }
+  .crown-maintenance {
+    padding: 30px 0;
+    .crown-maintenance-content {
+      margin-top: 20px;
+      display: flex;
+      gap: 0 7px;
+      justify-content: center;
+      align-items: flex-start;
+      & > div {
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px 0;
+        & > div:nth-child(1) {
+          width: 100px;
+          height: 100px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        & > div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 200%; /* 36px */
+          letter-spacing: 1.8px;
+        }
+      }
+    }
+  }
+  .crown-case {
+    padding: 30px 0;
+    .crown-case-content {
+      margin-top: 15px;
+      .crown-case-content-title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        gap: 0 54px;
+        & > div {
+          width: 453px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--Blue-Deep, #00aeff);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 3px;
+        }
+        & > div:nth-child(2) {
+          color: var(--Brand-Color, #f8298a);
+        }
+      }
+      .swiper-slide-img {
+        display: flex;
+        gap: 15px 54px;
+        justify-content: end;
+        flex-wrap: wrap;
+        & > div {
+          width: 453px;
+          height: 240px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .crown-case-content-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 0 15px;
+        & > div:nth-child(2) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0 15px;
+          & > div {
+            width: 18px;
+            height: 18px;
+            overflow: hidden;
+            border-radius: 50%;
+            background: var(white, #fff);
+            box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+          }
+        }
+        & > div:nth-child(1),
+        & > div:nth-child(3) {
+          width: 30px;
+          height: 30px;
+          overflow: hidden;
+          border-radius: 50%;
+          background: url('~/assets/images/2025040215172701.svg') no-repeat;
+          background-size: cover;
+          box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+        }
+        & > div:nth-child(3) {
+          transform: rotate(180deg);
+          box-shadow: -5.333px -5.333px 5.333px rgba(77, 77, 77, 0.2);
+        }
+
+        .swiper-point-active {
+          background: var(--Pink-Mid, #f670ae);
+          filter: drop-shadow(0px 4px 4px rgba(77, 77, 77, 0.2));
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  .problem-data {
+    padding: 30px 0;
+    :deep(.problem) {
+      margin-top: 20px;
+    }
+  }
+
+  :deep(.index-dentalServices) {
+    padding: 30px 0;
+  }
+
   .banner-in-box {
     position: absolute;
     top: 50%;
@@ -1605,6 +2436,645 @@ onMounted(() => {
   }
 }
 @media screen and (max-width: 991px) {
+  .all-ceramic-crowns {
+    margin: 30px 0;
+  }
+  .all-ceramic-crowns-service {
+    margin: 30px 0;
+    .all-ceramic-crowns-service-content {
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      gap: 0 32.5px;
+      & > div {
+        width: 90px;
+        height: 120.41px;
+        overflow: hidden;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .all-ceramic-crowns-service-content-text {
+      padding: 0 20px;
+      & > p {
+        display: inline;
+      }
+      color: var(--Grey-Dark, #333);
+      text-align: justify;
+      font-family: 'Noto Sans HK';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%; /* 21px */
+      letter-spacing: 0.7px;
+    }
+  }
+  .dental-crown {
+    margin: 30px 0;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 15px;
+    .dental-crown-content {
+      border-radius: 5px;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin: 15px 20px;
+      box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.2);
+      & > div {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 7px 23px;
+        align-items: center;
+        & > div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          font-family: 'Noto Sans HK';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 1.6px;
+        }
+        & > div:nth-child(2) {
+          color: var(--Brand-Color, #f8298a);
+          text-align: right;
+          font-family: 'Noto Sans HK';
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.8px;
+          display: flex;
+          flex-direction: column;
+          & > span {
+            color: var(--Blue-Deep, #00aeff);
+            text-align: right;
+            font-family: 'Noto Sans HK';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.8px;
+          }
+        }
+      }
+      & > div:nth-child(odd) {
+        background: var(--Palest-Pink, #fff7f8);
+      }
+      & > div:nth-child(1) {
+        background: var(--Brand-Color, #f8298a);
+        & > div {
+          color: #fff;
+        }
+      }
+      & > div:nth-child(2) {
+        height: 70px;
+        align-items: flex-start;
+        & > div:nth-child(1) {
+          color: var(--Brand-Color, #f8298a);
+        }
+        & > div:nth-child(2) {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          position: relative;
+          & > div:nth-child(2) {
+            display: flex;
+            align-items: center;
+            gap: 0 15px;
+            & > div:nth-child(1) {
+              position: absolute;
+              background: url('~/assets/images/2025040116505101.svg') no-repeat;
+              background-size: cover;
+              width: 168.5px;
+              height: 26px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #fff;
+              color: var(--White, #fff);
+              text-align: right;
+              font-family: 'Noto Sans HK';
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 0px;
+              box-sizing: border-box;
+              padding: 3px 0;
+              left: -170%;
+              bottom: 0%;
+            }
+            & > div:nth-child(2) {
+              width: 108px;
+              height: 29.4px;
+              margin-top: 5px;
+              & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+    .dental-crown-content-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0 10px;
+      margin: 20px 20px 0;
+      & > div:nth-child(1) {
+        display: flex;
+        position: relative;
+        & > div {
+          width: 53.129px;
+          height: 53.129px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: drop-shadow(0px 0px 12.347px rgba(0, 0, 0, 0.25));
+          }
+        }
+        & > div:nth-child(2) {
+          position: relative;
+          z-index: 5;
+          top: 14px;
+          left: -7px;
+        }
+      }
+      & > div:nth-child(2) {
+        color: var(--Grey-Dark, #333);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.7px;
+      }
+    }
+  }
+  .bg-customization-process {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 241, 240, 0) 0%,
+      rgba(255, 241, 240, 0.7) 12.5%,
+      rgba(255, 241, 240, 0.7) 81.99%,
+      rgba(255, 241, 240, 0) 100%
+    );
+  }
+  .customization-process {
+    margin: 30px 0;
+    .customization-process-content {
+      margin-top: 20px;
+    }
+    .course {
+      margin-top: 20px;
+      background: linear-gradient(
+          0deg,
+          rgba(255, 241, 240, 0) 0%,
+          rgba(255, 241, 240, 0.7) 1.5%,
+          rgba(255, 241, 240, 0.7) 81.99%,
+          rgba(255, 241, 240, 0) 100%
+        ),
+        #fff;
+      box-sizing: border-box;
+      padding: 0 19.5px;
+      .course-text {
+        color: var(--Grey-Deep, #4d4d4d);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.7px;
+      }
+      & > div:nth-child(2) {
+        margin-top: 10px;
+        & > div:nth-child(1) {
+          display: flex;
+          box-sizing: border-box;
+          border-radius: 5px;
+          overflow: hidden;
+          background: var(--White, #fff);
+          & > div {
+            padding: 8px 10px;
+            color: var(--Grey-Mid, #666);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.6px;
+          }
+
+          & > div:nth-child(1) {
+            flex: 5.4;
+          }
+          & > div:nth-child(2) {
+            flex: 4.5;
+          }
+          .active-teeth {
+            color: var(--White, #fff);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.6px;
+            padding: 8px 10px;
+            border: 1px solid var(--Brand-Color, #f8298a);
+            background: var(--Brand-Color, #f8298a);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+        & > div:nth-child(2) {
+          display: flex;
+          gap: 0 10px;
+          align-items: flex-start;
+          margin-top: 10px;
+          & > div:nth-child(2) {
+            width: 27px;
+            height: 260px;
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          & > div:nth-child(3) {
+            display: flex;
+            flex-direction: column;
+            gap: 5px 0;
+            width: 100%;
+            & > div {
+              background: var(--White, #fff);
+              & > div {
+                display: flex;
+                gap: 0 10px;
+                box-sizing: border-box;
+                padding: 10px;
+                & > div:nth-child(1) {
+                  color: var(--Theme-Color, #fc1682);
+                  font-family: 'Noto Sans HK';
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 150%; /* 24px */
+                }
+                & > div:nth-child(2) {
+                  & > div {
+                    color: var(--Grey-Dark, #333);
+                    text-align: justify;
+                    font-family: 'Noto Sans HK';
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 150%; /* 24px */
+                    :deep(i) {
+                      font-style: normal;
+                      color: var(--Brand-Color, #f8298a);
+                      font-family: 'Noto Sans HK';
+                      font-size: 16px;
+                      font-style: normal;
+                      font-weight: 700;
+                      line-height: 150%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .customization-process-text {
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 20px 5px;
+      gap: 0 12px;
+      margin-top: 10px;
+      & > div:nth-child(1) {
+        max-width: 186px;
+        color: var(--Grey-Dark, #333);
+        text-align: justify;
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 18px */
+        letter-spacing: 0.6px;
+      }
+      & > div:nth-child(2) {
+        width: 128.857px;
+        height: 60.811px;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .customization-process-tradition-text {
+      color: var(--Grey-Dark, #333);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.6px;
+      margin-top: 10px;
+    }
+  }
+  .species {
+    margin: 30px 0;
+    .species-content {
+      position: relative;
+      z-index: 1;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      & > div:nth-child(1),
+      & > div:nth-child(8),
+      & > div:nth-child(12) {
+        grid-column: span 3;
+        text-align: center;
+      }
+      & > div {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      & > div:nth-child(1) {
+        color: var(--Theme-Color, #fc1682);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+      }
+      & > div:nth-child(2) {
+        color: var(--Grey-Dark, #333);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.7px;
+        border-radius: 20px 0px 0px 0px;
+        background: var(--Grey-Midlight, #adadad);
+        padding: 5px 0;
+        position: relative;
+        z-index: 5;
+        width: 105%;
+        right: 0%;
+      }
+      & > div:nth-child(3) {
+        padding: 5px 0;
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.7px;
+        border-radius: 10px 10px 0px 0px;
+        background: var(--Brand-Color, #f8298a);
+        position: relative;
+        z-index: 8;
+      }
+      & > div:nth-child(4) {
+        color: var(--Grey-Dark, #333);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%; /* 21px */
+        letter-spacing: 0.7px;
+        border-radius: 0px 10px 0px 0px;
+        background: var(--Grey-Midlight, #adadad);
+        padding: 5px 0;
+        position: relative;
+        z-index: 5;
+        width: 105%;
+        left: -5%;
+      }
+      & > div:nth-child(6) {
+        border-left: 5px solid var(--Brand-Color, #f8298a);
+        border-right: 5px solid var(--Brand-Color, #f8298a);
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      & > div:nth-child(8),
+      & > div:nth-child(12) {
+        background: var(--Brand-Color, #f8298a);
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+        box-sizing: border-box;
+        padding: 5px 0;
+      }
+      & > div:nth-child(9),
+      & > div:nth-child(10),
+      & > div:nth-child(11),
+      & > div:nth-child(13),
+      & > div:nth-child(14),
+      & > div:nth-child(15) {
+        box-sizing: border-box;
+        padding: 10px;
+        padding-left: 22px;
+        ul {
+          li {
+            color: #4c4c4c;
+            text-align: justify;
+            font-family: 'Noto Sans HK';
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%; /* 18px */
+            letter-spacing: 0.6px;
+            list-style: disc;
+          }
+        }
+      }
+      & > div:nth-child(9),
+      & > div:nth-child(13) {
+        border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(10),
+      & > div:nth-child(14) {
+        border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
+        border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(11),
+      & > div:nth-child(15) {
+        border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(13),
+      & > div:nth-child(14),
+      & > div:nth-child(15) {
+        border-bottom: 2px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(13) {
+        border-radius: 0px 0px 0px 0px;
+      }
+
+      & > div:nth-child(15) {
+        border-radius: 0px 0px 0px 0;
+      }
+      & > div:nth-child(12) {
+        background: var(--Blue-Deep, #00aeff);
+      }
+    }
+  }
+
+  .crown-maintenance {
+    margin: 30px 0;
+    .crown-maintenance-content {
+      margin: 10px 30px 0;
+      display: flex;
+      gap: 0 40px;
+      justify-content: center;
+      & > div {
+        max-width: 74px;
+        & > div:nth-child(1) {
+          width: 70px;
+          height: 70px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        & > div:nth-child(2) {
+          white-space: nowrap;
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%; /* 21px */
+          letter-spacing: 0.7px;
+        }
+      }
+    }
+  }
+
+  .crown-case {
+    margin: 30px 0;
+    .crown-case-content {
+      margin-top: 20px;
+      padding: 0 12px;
+      .crown-case-content-title {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 15px;
+        gap: 0 54px;
+        & > div {
+          width: 453px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--Blue-Deep, #00aeff);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 1.8px;
+        }
+        & > div:nth-child(2) {
+          color: var(--Brand-Color, #f8298a);
+        }
+      }
+      .swiper-slide-img {
+        display: flex;
+        gap: 10px;
+        justify-content: end;
+        flex-wrap: wrap;
+        & > div {
+          width: 170px;
+          height: 90px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+      .crown-case-content-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+        gap: 0 10px;
+        & > div:nth-child(2) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0 10px;
+          & > div {
+            width: 12px;
+            height: 12px;
+            overflow: hidden;
+            border-radius: 50%;
+            background: var(white, #fff);
+            box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+          }
+        }
+        & > div:nth-child(1),
+        & > div:nth-child(3) {
+          width: 20px;
+          height: 20px;
+          overflow: hidden;
+          border-radius: 50%;
+          background: url('~/assets/images/2025040215172701.svg') no-repeat;
+          background-size: cover;
+          box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+        }
+        & > div:nth-child(3) {
+          transform: rotate(180deg);
+          box-shadow: -5.333px -5.333px 5.333px rgba(77, 77, 77, 0.2);
+        }
+
+        .swiper-point-active {
+          background: var(--Pink-Mid, #f670ae);
+          filter: drop-shadow(0px 4px 4px rgba(77, 77, 77, 0.2));
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  :deep(.index-dentalServices) {
+    padding: 0 0;
+    margin: 30px 0 45px;
+  }
   .banner-in-box {
     position: absolute;
     bottom: 0;
@@ -1618,7 +3088,6 @@ onMounted(() => {
     bottom: 0;
     transform: translateY(0px);
   }
-
   .banner-image {
     display: none !important;
     position: absolute;

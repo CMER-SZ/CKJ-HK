@@ -491,7 +491,7 @@ onMounted(() => {
               }}</span>
             </div>
             <div class="honor-in smallPageCon">
-              <div class="leftBtn" @click="handleProcessBtn('slidePrev')"></div>
+              <div class="leftBtn" @click="handleProcessBtn('slidePrev')">22222</div>
               <swiper
                 slidesPerView="auto"
                 :loop="true"

@@ -764,22 +764,11 @@ const problemList = ref({
         </div>
         <div class="wisdom-service-content">
           <div class="wisdom-service-content-list">
-            <div
-              v-for="(item, index) in serviceList"
-              :key="index"
-              class="wisdom-service-content-list-item"
-            >
+            <div v-for="(item, index) in serviceList" :key="index" class="wisdom-service-content-list-item">
               <div class="wisdom-service-content-list-item-img">
-                <img
-                  :src="item.pcImg"
-                  :srcset="`${item.img} 768w, ${item.pcImg}`"
-                  alt=""
-                />
+                <img :src="item.pcImg" :srcset="`${item.img} 768w, ${item.pcImg}`" alt="" />
               </div>
-              <div
-                class="wisdom-service-content-list-item-text"
-                v-html="item.text"
-              ></div>
+              <div class="wisdom-service-content-list-item-text" v-html="item.text"></div>
             </div>
           </div>
           <div class="wisdom-service-content-text">
@@ -815,14 +804,11 @@ const problemList = ref({
           </div>
         </div>
         <div class="charge-item-btn">
-          <div>網上預約優惠 智慧齒拔除 減¥300/顆</div>
-          <div class="d-md-none">
+          <div>網上預約優惠</div>
+          <div>
             <div>智慧齒拔除</div>
             <div>
-              <img
-                src="~/assets/images/2025031317413701.svg"
-                alt="减￥300/颗"
-              />
+              <img src="~/assets/images/2025031317413701.svg" alt="减￥300/颗" />
             </div>
           </div>
         </div>
@@ -835,17 +821,11 @@ const problemList = ref({
           <div>
             <p>智慧齒通常在16至25歲間萌出。</p>
             <p>
-              由於它們是最後長出的牙齒，可能因為空間不足<br
-                class="d-md-none"
-              />或位置不正確而導致多種口腔問題：
+              由於它們是最後長出的牙齒，可能因為空間不足<br class="d-md-none" />或位置不正確而導致多種口腔問題：
             </p>
           </div>
           <div class="wisdom-tooth-content-list">
-            <div
-              class="wisdom-tooth-content-list-item"
-              v-for="(item, index) in wisdomToothContentList"
-              :key="index"
-            >
+            <div class="wisdom-tooth-content-list-item" v-for="(item, index) in wisdomToothContentList" :key="index">
               <div>
                 <div>{{ item.name[0] }}</div>
                 <div>{{ item.text }}</div>
@@ -855,9 +835,7 @@ const problemList = ref({
           </div>
           <div class="wisdom-tooth-content-text">
             <p>
-              為避免智慧齒隱患加劇，牙醫可能會建議及早將它<br
-                class="d-md-none"
-              />們拔除。
+              為避免智慧齒隱患加劇，牙醫可能會建議及早將它<br class="d-md-none" />們拔除。
             </p>
           </div>
         </div>
@@ -868,22 +846,15 @@ const problemList = ref({
         </div>
         <div class="course">
           <div class="course-text">
-            拔牙一般無需進行手術，但當牙齒歪生或非常接近<br
-              class="d-md-none"
-            />神經，便有可能要進行手術式脫牙。
+            拔牙一般無需進行手術，但當牙齒歪生或非常接近<br class="d-md-none" />神經，便有可能要進行手術式脫牙。
           </div>
           <div>
             <div>
-              <div
-                :class="surgicalExtractionOfTeeth ? 'active-teeth' : ''"
-                @click="courseToothExtraction('Surgical')"
-              >
+              <div :class="surgicalExtractionOfTeeth ? 'active-teeth' : ''" @click="courseToothExtraction('Surgical')">
                 智慧齒及手術性拔牙
               </div>
-              <div
-                :class="surgicalExtractionOfTeeth ? '' : 'active-teeth'"
-                @click="courseToothExtraction('notSurgical')"
-              >
+              <div :class="surgicalExtractionOfTeeth ? '' : 'active-teeth'"
+                @click="courseToothExtraction('notSurgical')">
                 非手術性拔牙
               </div>
             </div>
@@ -892,12 +863,9 @@ const problemList = ref({
                 <img src="~/assets/images/2025033111372801.svg" />
               </div>
               <div>
-                <div
-                  v-for="(item, index) in listItem(
-                    surgicalExtractionOfTeeth ? 'Surgical' : 'notSurgical'
-                  )"
-                  :key="index"
-                >
+                <div v-for="(item, index) in listItem(
+                  surgicalExtractionOfTeeth ? 'Surgical' : 'notSurgical'
+                )" :key="index">
                   <div>
                     <div>{{ item.id }}</div>
                     <div>
@@ -918,9 +886,7 @@ const problemList = ref({
           </div>
           <div class="course">
             <div class="course-text">
-              拔牙一般無需進行手術，但當牙齒歪生或非常接近<br
-                class="d-md-none"
-              />神經，便有可能要進行手術式脫牙。
+              拔牙一般無需進行手術，但當牙齒歪生或非常接近<br class="d-md-none" />神經，便有可能要進行手術式脫牙。
             </div>
             <div class="d-none d-md-flex pc-course-content">
               <div>
@@ -960,9 +926,7 @@ const problemList = ref({
         </div>
         <div class="medic-team-content">
           <div class="medic-team-content-title">
-            口腔頜面外科醫生專業拔牙過程快捷、操作精準、<br
-              class="d-md-none"
-            />創傷小、恢復快，大大減低痛感
+            口腔頜面外科醫生專業拔牙過程快捷、操作精準、<br class="d-md-none" />創傷小、恢復快，大大減低痛感
           </div>
           <div class="medic-team-content-list">
             <!-- <DoctorV2 :nowType="'105'" /> -->
@@ -983,11 +947,7 @@ const problemList = ref({
               <div>北上睇牙首選愛康健</div>
             </div>
             <div class="share-content-list-content">
-              <div
-                class="share-content-list-item"
-                v-for="item in shareList"
-                :key="item.id"
-              >
+              <div class="share-content-list-item" v-for="item in shareList" :key="item.id">
                 <div>
                   <div>{{ item.name }}</div>
                   <div>{{ item.date }}</div>
@@ -1003,18 +963,11 @@ const problemList = ref({
           <span>拔牙</span><span>後注意事項</span>
         </div>
         <div class="matters-needing-attention-content">
-          <div
-            class="matters-needing-attention-item"
-            v-for="item in attentionList"
-            :key="item.id"
-          >
+          <div class="matters-needing-attention-item" v-for="item in attentionList" :key="item.id">
             <div class="matters-needing-attention-item-img">
               <img :src="item.img" alt="" />
             </div>
-            <div
-              v-html="item.text"
-              class="matters-needing-attention-item-text"
-            ></div>
+            <div v-html="item.text" class="matters-needing-attention-item-text"></div>
           </div>
         </div>
       </section>
@@ -1038,14 +991,18 @@ const problemList = ref({
   .wisdom-teeth-extraction {
     margin-top: 45px;
   }
+
   .wisdom-teeth-extraction-service {
     padding: 30px 0;
+
     .wisdom-service-content {
       margin: 12px 0;
+
       .wisdom-service-content-list {
         display: flex;
         justify-content: center;
         gap: 0 19px;
+
         .wisdom-service-content-list-item {
           display: flex;
           flex-direction: column;
@@ -1059,12 +1016,14 @@ const problemList = ref({
             display: flex;
             align-items: center;
             justify-content: center;
-            & > img {
+
+            &>img {
               width: 100%;
               height: 100%;
               object-fit: contain;
             }
           }
+
           .wisdom-service-content-list-item-text {
             color: var(--Grey-Dark, #333);
             text-align: center;
@@ -1072,11 +1031,13 @@ const problemList = ref({
             font-size: 18px;
             font-style: normal;
             font-weight: 400;
-            line-height: 150%; /* 27px */
+            line-height: 150%;
+            /* 27px */
             letter-spacing: 1.8px;
           }
         }
       }
+
       .wisdom-service-content-text {
         margin-top: 10px;
         color: var(--Brand-Color, #f8298a);
@@ -1085,26 +1046,31 @@ const problemList = ref({
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 4px;
         display: flex;
         justify-content: center;
       }
     }
   }
+
   .wisdom-teeth-extraction-charge-item {
     padding: 30px 0;
+
     .charge-item-content {
       margin: 20px 0;
       box-sizing: border-box;
       border-radius: 10px;
       overflow: hidden;
-      & > div {
+
+      &>div {
         box-sizing: border-box;
         padding: 20px 35px;
         display: flex;
         justify-content: space-between;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
           font-size: 24px;
@@ -1113,7 +1079,8 @@ const problemList = ref({
           line-height: normal;
           letter-spacing: 2.4px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
           text-align: right;
           font-family: 'Noto Sans HK';
@@ -1124,25 +1091,36 @@ const problemList = ref({
           letter-spacing: 2.4px;
         }
       }
-      & > div:nth-child(odd) {
+
+      &>div:nth-child(odd) {
         background: #fff7f8;
       }
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         background: var(--Brand-Color, #f8298a);
         border-radius: 5px 5px 0 0;
-        & > div {
+
+        &>div {
           color: #fff;
         }
       }
-      & > div:last-child {
+
+      &>div:last-child {
         border-radius: 0 0 5px 5px;
       }
+
       box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
     }
+
     .charge-item-btn {
       margin: 28px 25px 0 20px;
-      & > div:nth-child(1) {
-        margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0 20px;
+      justify-content: center;
+
+      &>div:nth-child(1) {
         position: relative;
         color: var(--White, #fff);
         text-align: center;
@@ -1156,7 +1134,8 @@ const problemList = ref({
         padding: 10px 42px 10px 64px;
         width: fit-content;
       }
-      & > div:nth-child(1)::after {
+
+      &>div:nth-child(1)::after {
         content: '';
         position: absolute;
         top: 50%;
@@ -1166,34 +1145,56 @@ const problemList = ref({
         width: 104px;
         height: 104px;
         border: 5px solid #f8298a;
-        background: url('https://static.ckjhk.com/ckj-image/f2e85ef51231.svg')
-          no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/f2e85ef51231.svg') no-repeat;
         background-size: contain;
         z-index: 3;
       }
+
+      &>div:nth-child(2) {
+        display: flex;
+        align-items: flex-end;
+
+        &>div:nth-child(1) {
+          color: var(--Brand-Color, #F8298A);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
+          padding-bottom: 10px;
+        }
+      }
     }
   }
+
   .wisdom-teeth-extraction-wisdom-tooth {
     padding: 30px 0;
+
     .wisdom-tooth-content {
       margin-top: 20px;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
         font-family: 'Noto Sans HK';
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 4px;
       }
     }
+
     .wisdom-tooth-content-list {
       margin-top: 20px;
       display: flex;
       flex-direction: column;
       gap: 8px 35px;
       position: relative;
+
       .wisdom-tooth-content-list-item {
         width: 455px;
         display: flex;
@@ -1204,19 +1205,23 @@ const problemList = ref({
         box-sizing: border-box;
         padding: 20px;
         gap: 0 19px;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           width: 250.327px;
-          & > div:nth-child(1) {
+
+          &>div:nth-child(1) {
             color: var(--Theme-Color, #fc1682);
             text-align: justify;
             font-family: 'Noto Sans HK';
             font-size: 19.047px;
             font-style: normal;
             font-weight: 500;
-            line-height: 150%; /* 28.57px */
+            line-height: 150%;
+            /* 28.57px */
             letter-spacing: 0.952px;
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             color: var(--Grey-Deep, #4d4d4d);
             font-family: 'Noto Sans HK';
             font-size: 16.326px;
@@ -1226,10 +1231,12 @@ const problemList = ref({
             letter-spacing: 0.816px;
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           width: 117.001px;
           height: 117.001px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -1237,6 +1244,7 @@ const problemList = ref({
           }
         }
       }
+
       .wisdom-tooth-content-list-item:nth-child(4) {
         position: absolute;
         right: 0;
@@ -1254,16 +1262,19 @@ const problemList = ref({
         right: 0;
         top: 406px;
       }
+
       .wisdom-tooth-content-list-item:nth-child(even) {
         border: 2.721px solid var(--Blue-Deep, #00aeff);
         border-left: 25px solid var(--Blue-Deep, #00aeff);
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
+          &>div:nth-child(1) {
             color: var(--Blue-Deep, #00aeff);
           }
         }
       }
     }
+
     .wisdom-tooth-content-text {
       margin-top: 85px;
       color: var(--Grey-Deep, #4d4d4d);
@@ -1272,19 +1283,21 @@ const problemList = ref({
       font-size: 20px;
       font-style: normal;
       font-weight: 400;
-      line-height: 160%; /* 32px */
+      line-height: 160%;
+      /* 32px */
       letter-spacing: 4px;
     }
   }
+
   .bg-course-content {
-    background: linear-gradient(
-      173deg,
-      rgba(255, 255, 255, 0) 20.34%,
-      var(--Pink-Pale, #ffe9ec) 113.4%
-    );
+    background: linear-gradient(173deg,
+        rgba(255, 255, 255, 0) 20.34%,
+        var(--Pink-Pale, #ffe9ec) 113.4%);
   }
+
   .wisdom-teeth-course {
     padding: 30px 0;
+
     .course {
       .course-text {
         color: var(--Grey-Deep, #4d4d4d);
@@ -1293,19 +1306,22 @@ const problemList = ref({
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 4px;
         margin: 20px 0;
       }
     }
+
     .pc-course-content {
       flex-direction: column;
       align-items: center;
       gap: 80px 0;
       margin-top: 55px;
-      & > div:nth-child(1),
-      & > div:nth-child(2),
-      & > div:nth-child(4) {
+
+      &>div:nth-child(1),
+      &>div:nth-child(2),
+      &>div:nth-child(4) {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1313,7 +1329,8 @@ const problemList = ref({
         border-radius: 22px;
         background: var(--White, #fff);
         position: relative;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           width: 100%;
           box-sizing: border-box;
           padding: 15px 0;
@@ -1331,7 +1348,8 @@ const problemList = ref({
           position: absolute;
           top: -34px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           padding: 48px 10px 20px 10px;
           box-sizing: border-box;
           color: var(--Grey-Dark, #333);
@@ -1340,15 +1358,19 @@ const problemList = ref({
           font-size: 20px;
           font-style: normal;
           font-weight: 500;
-          line-height: 150%; /* 30px */
+          line-height: 150%;
+          /* 30px */
         }
+
         box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
       }
-      & > div:nth-child(3) {
+
+      &>div:nth-child(3) {
         display: flex;
         gap: 0 117px;
-        & > div:nth-child(1),
-        & > div:nth-child(2) {
+
+        &>div:nth-child(1),
+        &>div:nth-child(2) {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -1357,7 +1379,8 @@ const problemList = ref({
           border-radius: 22px;
           background: var(--White, #fff);
           position: relative;
-          & > div:nth-child(1) {
+          z-index: 5;
+          &>div:nth-child(1) {
             width: 100%;
             box-sizing: border-box;
             padding: 15px 0;
@@ -1375,7 +1398,8 @@ const problemList = ref({
             position: absolute;
             top: -34px;
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             padding: 48px 10px 20px 10px;
             box-sizing: border-box;
             color: var(--Grey-Dark, #333);
@@ -1384,67 +1408,87 @@ const problemList = ref({
             font-size: 20px;
             font-style: normal;
             font-weight: 500;
-            line-height: 150%; /* 30px */
+            line-height: 150%;
+            /* 30px */
           }
+
           box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
         }
-        & > div:nth-child(2) {
-          & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
+          &>div:nth-child(1) {
+            background: var(--Brand-Color, #F8298A);
+          }
+        }
+
+        &>div:nth-child(2) {
+          &>div:nth-child(1) {
             background: var(--Blue-Deep, #00aeff);
           }
         }
       }
 
-      & > div:nth-child(1)::after {
+      &>div:nth-child(1)::after {
         content: '';
         position: absolute;
-        background: url('../../assets/images/2025040111263501.svg') no-repeat;
-        width: 100%;
-        height: 70px;
-        bottom: -26%;
+        background: url('https://static.ckjhk.com/ckj-image/2025040311411001.png') no-repeat;
+        width: 16px;
+        height: 80px;
+        bottom: -35%;
         transform: translateX(-50%);
-        right: -100%;
+        right: 45%;
         z-index: -1;
+        background-size: contain;
       }
-      & > div:nth-child(2)::after,
-      & > div:nth-child(2)::before {
+
+      &>div:nth-child(2)::after,
+      &>div:nth-child(2)::before {
         content: '';
         position: absolute;
-        background: url('../../assets/images/2025040111263502.svg') no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/2025040311411002.png') no-repeat;
         bottom: -30%;
         left: -25%;
         width: 94px;
         height: 113px;
+        background-size: contain;
       }
-      & > div:nth-child(2)::before {
+
+      &>div:nth-child(2)::before {
         transform: scaleX(-1);
         right: -25%;
         left: auto;
       }
-      & > div:nth-child(3) {
+
+      &>div:nth-child(3) {
         position: relative;
       }
-      & > div:nth-child(3)::after,
-      & > div:nth-child(3)::before {
+
+      &>div:nth-child(3)::after,
+      &>div:nth-child(3)::before {
         content: '';
         position: absolute;
-        background: url('../../assets/images/2025040111263503.svg') no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/2025040311411003.png') no-repeat;
         bottom: -90%;
         left: 18%;
-        width: 89px;
-        height: 129px;
+        width: 84px;
+        height: 127.5px;
+        background-size: contain;
       }
-      & > div:nth-child(3)::before {
+
+      &>div:nth-child(3)::before {
         transform: scaleX(-1);
         left: auto;
         right: 18%;
       }
     }
   }
+
   .medic-team {
     padding: 30px 0;
+
     .medic-team-content {
       margin: 15px 0;
+
       .medic-team-content-title {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
@@ -1452,7 +1496,8 @@ const problemList = ref({
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 4px;
       }
 
@@ -1464,45 +1509,52 @@ const problemList = ref({
       }
     }
   }
+
   .bg-share-content {
     margin: 0 auto;
-    background: linear-gradient(
-      173deg,
-      rgba(255, 255, 255, 0) 56.34%,
-      var(--Pink-Pale, #ffe9ec) 113.4%
-    );
+    background: linear-gradient(173deg,
+        rgba(255, 255, 255, 0) 56.34%,
+        var(--Pink-Pale, #ffe9ec) 113.4%);
   }
+
   .share-content {
     padding: 30px 0;
+
     .share-content-list-title {
       padding: 15px 0;
-      & > div {
+
+      &>div {
         color: var(--Theme-Color, #fc1682);
         text-align: center;
         font-family: 'Noto Sans HK';
         font-size: 20px;
         font-style: normal;
         font-weight: 400;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 4px;
       }
     }
+
     .share-content-list-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0 30px;
+
       .share-content-list-item {
         border-radius: 10px;
         border: 1px solid var(--Pink-Mid, #f670ae);
         background: var(--White, #fff);
         box-sizing: border-box;
         padding: 20px;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
           margin-bottom: 10px;
-          & > div:nth-child(1) {
+
+          &>div:nth-child(1) {
             color: var(--Brand-Color, #f8298a);
             font-family: 'Noto Sans HK';
             font-size: 24px;
@@ -1511,60 +1563,72 @@ const problemList = ref({
             line-height: normal;
             letter-spacing: 2.4px;
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             color: var(--Grey-Mid, #666);
             text-align: right;
             font-family: 'Noto Sans HK';
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
-            line-height: 150%; /* 24px */
+            line-height: 150%;
+            /* 24px */
             letter-spacing: 1.6px;
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Grey-Deep, #4d4d4d);
           text-align: justify;
           font-family: 'Noto Sans HK';
           font-size: 14px;
           font-style: normal;
           font-weight: 350;
-          line-height: 18px; /* 128.571% */
+          line-height: 18px;
+          /* 128.571% */
         }
       }
+
       .share-content-list-item:nth-child(2) {
         border: 1px solid var(--Blue-Deep, #00aeff);
-        & > div:nth-child(1) {
-          & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
+          &>div:nth-child(1) {
             color: var(--Blue-Deep, #00aeff);
           }
         }
       }
     }
   }
+
   .matters-needing-attention {
     padding: 30px 0;
+
     .matters-needing-attention-content {
       margin-top: 20px;
       display: flex;
       gap: 0 45px;
+      justify-content: center;
       .matters-needing-attention-item {
         display: flex;
         flex-direction: column;
         align-items: center;
         max-width: 95.288px;
+
         .matters-needing-attention-item-img {
           width: 90.137px;
           height: 90.137px;
           display: flex;
           align-items: center;
           justify-content: center;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: contain;
           }
         }
+
         .matters-needing-attention-item-text {
           color: var(--Grey-Dark, #333);
           text-align: center;
@@ -1572,7 +1636,8 @@ const problemList = ref({
           font-size: 18.027px;
           font-style: normal;
           font-weight: 500;
-          line-height: 150%; /* 27.041px */
+          line-height: 150%;
+          /* 27.041px */
           letter-spacing: 0.901px;
           white-space: nowrap;
         }
@@ -1582,10 +1647,12 @@ const problemList = ref({
 
   .wisdom-teeth-extraction-question-container {
     padding: 30px 0;
+
     :deep(.problem) {
       margin-top: 0;
     }
   }
+
   .banner-in-box {
     position: absolute;
     top: 50%;
@@ -1606,10 +1673,12 @@ const problemList = ref({
     left: 40%;
     top: 50%;
     transform: translate(-50%, -50%);
-    & > div {
+
+    &>div {
       display: flex;
       align-items: flex-end;
     }
+
     .content-title {
       color: var(--White, #fff);
       text-align: right;
@@ -1619,21 +1688,18 @@ const problemList = ref({
       font-size: clamp(40px, 5.7vw, 110px);
       font-style: normal;
       font-weight: 600;
-      line-height: 100%; /* 176px */
+      line-height: 100%;
+      /* 176px */
       letter-spacing: 6.6px;
       position: relative;
       z-index: 6;
       bottom: 0;
 
       border-radius: 0.6942vw 0.6942vw 0px 0px;
-      background: var(
-        --Liner-purple,
-        linear-gradient(
-          269deg,
-          var(--Brand-Color, #fc1682) 10.21%,
-          #710d54 122.73%
-        )
-      );
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
       box-sizing: border-box;
       padding: 0.859375vw 4.7135vw;
       color: var(--White, #fff);
@@ -1652,12 +1718,14 @@ const problemList = ref({
       height: 11.145vw;
       position: relative;
       right: -3.64583vw;
-      & > img {
+
+      &>img {
         width: 100%;
         height: 100%;
         object-fit: contain;
       }
     }
+
     .content-price,
     .content-subscribe {
       width: 100%;
@@ -1674,10 +1742,12 @@ const problemList = ref({
       font-size: 1.927vw;
       font-style: normal;
       font-weight: 900;
-      line-height: 2.2222vw; /* 114.286% */
+      line-height: 2.2222vw;
+      /* 114.286% */
       letter-spacing: 0.29165vw;
       justify-content: center;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         position: relative;
         color: var(--Grey-Dark, #333);
         text-align: right;
@@ -1688,20 +1758,23 @@ const problemList = ref({
         font-size: 1.927vw;
         font-style: normal;
         font-weight: 900;
-        line-height: 2.2222vw; /* 114.286% */
+        line-height: 2.2222vw;
+        /* 114.286% */
         letter-spacing: 0.29165vw;
         top: auto;
       }
 
-      & > div:nth-child(2) {
+      &>div:nth-child(2) {
         width: 10.252083vw;
-        & > svg {
+
+        &>svg {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
     }
+
     .content-subscribe {
       box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
       border-radius: 0px 0px 13.333px 13.333px;
@@ -1712,18 +1785,22 @@ const problemList = ref({
       font-size: 1.38890625vw;
       font-style: normal;
       font-weight: 900;
-      line-height: 1.157vw; /* 83.333% */
+      line-height: 1.157vw;
+      /* 83.333% */
       letter-spacing: 0.1369vw;
     }
   }
 }
+
 @media screen and(max-width: 991px) {
   .wisdom-teeth-extraction-service {
     margin: 30px 0;
+
     .wisdom-service-content {
       display: flex;
       flex-direction: column;
       gap: 18px 0;
+
       .wisdom-service-content-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1731,6 +1808,7 @@ const problemList = ref({
         gap: 24px 10px;
         box-sizing: border-box;
         padding: 0 15px;
+
         .wisdom-service-content-list-item {
           display: flex;
           justify-content: center;
@@ -1738,13 +1816,21 @@ const problemList = ref({
           flex-direction: column;
           position: relative;
           max-width: 94px;
+
           .wisdom-service-content-list-item-img {
             width: 94px;
             height: 94px;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            &>img {
+              width: 80%;
+              height: 100%;
+              object-fit: contain;
+            }
           }
+
           .wisdom-service-content-list-item-text {
             margin-top: 10px;
             color: #000;
@@ -1753,45 +1839,53 @@ const problemList = ref({
             font-size: 14px;
             font-style: normal;
             font-weight: 350;
-            line-height: 150%; /* 21px */
+            line-height: 150%;
+            /* 21px */
             letter-spacing: 0.7px;
             white-space: nowrap;
             position: absolute;
-            top: 75%;
+            top: 80%;
           }
         }
       }
+
       .wisdom-service-content-text {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin-top: 8px;
-        & > p {
+
+        &>p {
           color: var(--Brand-Color, #f8298a);
           text-align: center;
           font-family: 'Noto Sans HK';
           font-size: 14px;
           font-style: normal;
           font-weight: 500;
-          line-height: 150%; /* 21px */
+          line-height: 150%;
+          /* 21px */
           letter-spacing: 0.7px;
         }
       }
     }
   }
+
   .wisdom-teeth-extraction-charge-item {
     margin: 30px 0;
+
     .charge-item-content {
       margin: 15px 15px 0 15px;
       box-sizing: border-box;
       border-radius: 10px;
       overflow: hidden;
-      & > div {
+
+      &>div {
         box-sizing: border-box;
         padding: 7px 23px;
         display: flex;
         justify-content: space-between;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
           font-size: 16px;
@@ -1800,7 +1894,8 @@ const problemList = ref({
           line-height: normal;
           letter-spacing: 1.6px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
           text-align: right;
           font-family: 'Noto Sans HK';
@@ -1811,40 +1906,52 @@ const problemList = ref({
           letter-spacing: 0.8px;
         }
       }
-      & > div:nth-child(odd) {
+
+      &>div:nth-child(odd) {
         background: #fff7f8;
       }
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         background: var(--Brand-Color, #f8298a);
         border-radius: 10px 10px 0 0;
-        & > div {
+
+        &>div {
           color: #fff;
         }
       }
-      & > div:last-child {
+
+      &>div:last-child {
         border-radius: 0 0 10px 10px;
       }
+
       box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
     }
+
     .charge-item-btn {
       margin: 28px 25px 0 20px;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         margin-left: 15px;
+        border-radius: 57px;
+        background: var(--Brand-Color, #F8298A);
+        width: fit-content;
+        box-sizing: border-box;
+        padding: 2px 16px 2px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--White, #FFF);
+        text-align: center;
+        font-family: "Noto Sans HK";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        position: relative;
       }
-      :deep(.animbtntypetwo-in) {
-        span {
-          background: var(--Brand-Color, #f8298a);
-          box-shadow: 10px 10px 20px #f8298abf;
-          padding: 2px 16px 2px 28px;
-          &::after {
-            animation: btntestafterAnima 5.6s infinite;
-          }
-        }
-      }
-      :deep(.animbtntypetwo-in::after) {
-        animation: btntestafterAnima 5.6s infinite;
-      }
-      :deep(.animbtntypetwo::after) {
+
+      &>div:nth-child(1)::after {
         content: '';
         position: absolute;
         top: 50%;
@@ -1853,19 +1960,50 @@ const problemList = ref({
         border: none !important;
         width: 45px;
         height: 45px;
-        border: 5px solid #f8298a;
-        background: url('https://static.ckjhk.com/ckj-image/f2e85ef51231.svg')
-          no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/f2e85ef51231.svg') no-repeat;
         background-size: contain;
         z-index: 3;
       }
-      & > div:nth-child(2) {
-        margin-top: 10px;
+
+      // :deep(.animbtntypetwo-in) {
+      //   span {
+      //     background: var(--Brand-Color, #f8298a);
+      //     box-shadow: 10px 10px 20px #f8298abf;
+      //     padding: 2px 16px 2px 28px;
+
+      //     &::after {
+      //       animation: btntestafterAnima 5.6s infinite;
+      //     }
+      //   }
+      // }
+
+      // :deep(.animbtntypetwo-in::after) {
+      //   animation: btntestafterAnima 5.6s infinite;
+      // }
+
+      // :deep(.animbtntypetwo::after) {
+      //   content: '';
+      //   position: absolute;
+      //   top: 50%;
+      //   left: -20px;
+      //   transform: translateY(-50%);
+      //   border: none !important;
+      //   width: 45px;
+      //   height: 45px;
+      //   border: 5px solid #f8298a;
+      //   background: url('https://static.ckjhk.com/ckj-image/f2e85ef51231.svg') no-repeat;
+      //   background-size: contain;
+      //   z-index: 3;
+      // }
+
+      &>div:nth-child(2) {
+        margin-top: -5px;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: flex-end;
         gap: 0 5px;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           color: var(--Brand-Color, #f8298a);
           text-align: center;
           font-family: 'Noto Sans HK';
@@ -1874,11 +2012,14 @@ const problemList = ref({
           font-weight: 700;
           line-height: normal;
           letter-spacing: 1.6px;
+          padding-bottom: 6px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           width: 166px;
           height: 49.297px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -1887,14 +2028,18 @@ const problemList = ref({
       }
     }
   }
+
   .wisdom-teeth-extraction-wisdom-tooth {
     margin: 30px 0;
+
     .wisdom-tooth-content {
       display: flex;
       flex-direction: column;
       margin-top: 20px;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         text-align: center;
+
         p {
           color: var(--Grey-Deep, #4d4d4d);
           text-align: center;
@@ -1902,16 +2047,19 @@ const problemList = ref({
           font-size: 14px;
           font-style: normal;
           font-weight: 500;
-          line-height: 150%; /* 21px */
+          line-height: 150%;
+          /* 21px */
           letter-spacing: 0.7px;
         }
       }
+
       .wisdom-tooth-content-list {
         box-sizing: border-box;
         padding: 15px 20px;
         display: flex;
         flex-direction: column;
         gap: 6px 0;
+
         .wisdom-tooth-content-list-item {
           display: flex;
           align-items: center;
@@ -1922,18 +2070,21 @@ const problemList = ref({
           border: 2px solid var(--Theme-Color, #fc1682);
           border-left: 20px solid var(--Theme-Color, #fc1682);
           border-radius: 10px;
-          & > div:nth-child(1) {
-            & > div:nth-child(1) {
+
+          &>div:nth-child(1) {
+            &>div:nth-child(1) {
               color: var(--Theme-Color, #fc1682);
               text-align: justify;
               font-family: 'Noto Sans HK';
               font-size: 14px;
               font-style: normal;
               font-weight: 500;
-              line-height: 150%; /* 21px */
+              line-height: 150%;
+              /* 21px */
               letter-spacing: 0.7px;
             }
-            & > div:nth-child(2) {
+
+            &>div:nth-child(2) {
               color: var(--Grey-Deep, #4d4d4d);
               font-family: 'Noto Sans HK';
               font-size: 12px;
@@ -1943,10 +2094,12 @@ const problemList = ref({
               letter-spacing: 0.6px;
             }
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             min-width: 86px;
             height: 86px;
-            & > img {
+
+            &>img {
               width: 100%;
               height: 100%;
               object-fit: contain;
@@ -1954,46 +2107,52 @@ const problemList = ref({
             }
           }
         }
+
         .wisdom-tooth-content-list-item:nth-child(even) {
           border: 2px solid var(--Blue-Deep, #00aeff);
           border-left: 20px solid var(--Blue-Deep, #00aeff);
-          & > div:nth-child(1) {
-            & > div:nth-child(1) {
+
+          &>div:nth-child(1) {
+            &>div:nth-child(1) {
               color: var(--Blue-Deep, #00aeff);
             }
           }
         }
       }
+
       .wisdom-tooth-content-text {
         box-sizing: border-box;
         padding: 0 20px;
-        & > p {
+
+        &>p {
           color: var(--Grey-Deep, #4d4d4d);
           text-align: center;
           font-family: 'Noto Sans HK';
           font-size: 14px;
           font-style: normal;
           font-weight: 500;
-          line-height: 150%; /* 21px */
+          line-height: 150%;
+          /* 21px */
           letter-spacing: 0.7px;
         }
       }
     }
   }
+
   .wisdom-teeth-course {
     margin: 30px 0;
+
     .course {
       margin-top: 20px;
-      background: linear-gradient(
-          0deg,
+      background: linear-gradient(0deg,
           rgba(255, 241, 240, 0) 0%,
           rgba(255, 241, 240, 0.7) 12.5%,
           rgba(255, 241, 240, 0.7) 81.99%,
-          rgba(255, 241, 240, 0) 100%
-        ),
+          rgba(255, 241, 240, 0) 100%),
         #fff;
       box-sizing: border-box;
       padding: 0 19.5px;
+
       .course-text {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
@@ -2001,18 +2160,22 @@ const problemList = ref({
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
+        /* 21px */
         letter-spacing: 0.7px;
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         margin-top: 10px;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           display: flex;
           box-sizing: border-box;
           border-radius: 5px;
           overflow: hidden;
           background: var(--White, #fff);
-          & > div {
+
+          &>div {
             padding: 8px 10px;
             color: var(--Grey-Mid, #666);
             text-align: center;
@@ -2024,12 +2187,14 @@ const problemList = ref({
             letter-spacing: 1.6px;
           }
 
-          & > div:nth-child(1) {
+          &>div:nth-child(1) {
             flex: 5.4;
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             flex: 4.5;
           }
+
           .active-teeth {
             color: var(--White, #fff);
             text-align: center;
@@ -2045,50 +2210,63 @@ const problemList = ref({
             transition: all 0.3s ease-in-out;
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           display: flex;
-          gap: 0 10px;
+          gap: 0 9px;
           align-items: flex-start;
           margin-top: 10px;
-          & > div:nth-child(1) {
+
+          &>div:nth-child(1) {
+            width: 26px;
+            max-width: 26px;
             min-width: 26px;
             height: 363px;
-            & > img {
+
+            &>img {
               width: 100%;
               height: 100%;
               object-fit: cover;
             }
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             display: flex;
             flex-direction: column;
             gap: 10px 0;
-            & > div {
+
+            &>div {
               background: var(--White, #fff);
-              & > div {
+
+              &>div {
                 display: flex;
                 gap: 0 10px;
                 box-sizing: border-box;
                 padding: 10px;
-                & > div:nth-child(1) {
+
+                &>div:nth-child(1) {
                   color: var(--Theme-Color, #fc1682);
                   font-family: 'Noto Sans HK';
                   font-size: 16px;
                   font-style: normal;
                   font-weight: 700;
-                  line-height: 150%; /* 24px */
+                  line-height: 150%;
+                  /* 24px */
                 }
-                & > div:nth-child(2) {
-                  & > div:nth-child(1) {
+
+                &>div:nth-child(2) {
+                  &>div:nth-child(1) {
                     color: var(--Grey-Deep, #4d4d4d);
                     text-align: justify;
                     font-family: 'Noto Sans HK';
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 500;
-                    line-height: 150%; /* 24px */
+                    line-height: 150%;
+                    /* 24px */
                   }
-                  & > div:nth-child(2) {
+
+                  &>div:nth-child(2) {
                     color: var(--Grey-Deep, #4d4d4d);
                     font-family: 'Noto Sans HK';
                     font-size: 12px;
@@ -2098,16 +2276,48 @@ const problemList = ref({
                   }
                 }
               }
+
+
+            }
+
+            // &>div:nth-child(even) {
+            //   &>div {
+            //     background: #b3ff00;
+            //   }
+            // }
+
+            // &>div:nth-child(odd) {
+            //   &>div {
+            //     background: khaki;
+            //   }
+            // }
+
+            &>div:nth-child(1),
+            &>div:nth-child(3) {
+              &>div {
+                max-height: 95px;
+                height: 95px;
+              }
+            }
+
+            &>div:nth-child(2) {
+              &>div {
+                max-height: 77px;
+                height: 77px;
+              }
             }
           }
         }
       }
     }
   }
+
   .medic-team {
     margin: 30px 0;
+
     .medic-team-content {
       margin-top: 20px;
+
       .medic-team-content-title {
         box-sizing: border-box;
         padding: 0 20px;
@@ -2117,19 +2327,24 @@ const problemList = ref({
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
+        /* 21px */
         letter-spacing: 0.7px;
       }
+
       .medic-team-content-btn {
         margin: 25px auto;
+
         :deep(.animbtntypetwo) {
           justify-content: center;
         }
       }
     }
   }
+
   .share-content {
     margin: 30px 0;
+
     .share-content-list {
       .share-content-list-title {
         margin-top: 20px;
@@ -2143,12 +2358,14 @@ const problemList = ref({
         line-height: normal;
         letter-spacing: 1.8px;
       }
+
       .share-content-list-content {
         box-sizing: border-box;
         padding: 0 15px;
         gap: 12px 0;
         display: flex;
         flex-direction: column;
+
         .share-content-list-item {
           max-width: 290px;
           border-radius: 5px;
@@ -2159,13 +2376,14 @@ const problemList = ref({
           display: flex;
 
           flex-direction: column;
-          & > div:nth-child(1) {
+
+          &>div:nth-child(1) {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             box-sizing: border-box;
 
-            & > div:nth-child(1) {
+            &>div:nth-child(1) {
               color: var(--Brand-Color, #f8298a);
               font-family: 'Noto Sans HK';
               font-size: 18px;
@@ -2174,33 +2392,39 @@ const problemList = ref({
               line-height: normal;
               letter-spacing: 1.8px;
             }
-            & > div:nth-child(2) {
+
+            &>div:nth-child(2) {
               color: var(--Grey-Mid, #666);
               text-align: right;
               font-family: 'Noto Sans HK';
               font-size: 12px;
               font-style: normal;
               font-weight: 500;
-              line-height: 160%; /* 19.2px */
+              line-height: 160%;
+              /* 19.2px */
               letter-spacing: 1.2px;
             }
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             color: var(--Grey-Deep, #4d4d4d);
             text-align: justify;
             font-family: 'Noto Sans HK';
             font-size: 12px;
             font-style: normal;
             font-weight: 500;
-            line-height: 150%; /* 18px */
+            line-height: 150%;
+            /* 18px */
             letter-spacing: 0.6px;
           }
         }
+
         .share-content-list-item:nth-child(2) {
           margin: 0 0 0 auto;
           border: 1px solid var(--Blue-Deep, #00aeff);
-          & > div:nth-child(1) {
-            & > div:nth-child(1) {
+
+          &>div:nth-child(1) {
+            &>div:nth-child(1) {
               color: var(--Blue-Deep, #00aeff);
             }
           }
@@ -2208,17 +2432,22 @@ const problemList = ref({
       }
     }
   }
+
   .matters-needing-attention {
     margin: 30px 0;
     box-sizing: border-box;
     padding-top: 15px;
     padding-bottom: 40px;
+
     .matters-needing-attention-content {
+      margin-top: 20px;
       box-sizing: border-box;
       padding: 0 20px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 60px 49px;
+      gap: 60px 40px;
+      justify-items: center;
+
       .matters-needing-attention-item {
         display: flex;
         flex-direction: column;
@@ -2226,18 +2455,21 @@ const problemList = ref({
         position: relative;
         max-width: 74px;
         gap: 21px 0;
+
         .matters-needing-attention-item-img {
           width: 70px;
           height: 70px;
           display: flex;
           justify-content: center;
           align-items: center;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: contain;
           }
         }
+
         .matters-needing-attention-item-text {
           color: var(--Grey-Dark, #333);
           text-align: center;
@@ -2245,7 +2477,8 @@ const problemList = ref({
           font-size: 14px;
           font-style: normal;
           font-weight: 500;
-          line-height: 150%; /* 21px */
+          line-height: 150%;
+          /* 21px */
           letter-spacing: 0.7px;
           white-space: nowrap;
           position: absolute;
@@ -2256,6 +2489,7 @@ const problemList = ref({
       }
     }
   }
+
   .wisdom-teeth-extraction-question-container {
     margin: 30px 0;
   }
@@ -2264,6 +2498,7 @@ const problemList = ref({
     margin: 30px 0;
     padding: 0 0 30px 0;
   }
+
   .banner-in-box {
     position: absolute;
     bottom: 0;
@@ -2277,6 +2512,7 @@ const problemList = ref({
     bottom: 0;
     transform: translateY(0px);
   }
+
   .banner-content {
     display: flex;
     flex-direction: column;
@@ -2287,10 +2523,12 @@ const problemList = ref({
     left: 40%;
     top: 50%;
     transform: translate(-50%, -50%);
-    & > div {
+
+    &>div {
       display: flex;
       align-items: flex-end;
     }
+
     .content-title {
       color: var(--White, #fff);
       text-align: right;
@@ -2300,21 +2538,18 @@ const problemList = ref({
       font-size: clamp(40px, 5.7vw, 110px);
       font-style: normal;
       font-weight: 600;
-      line-height: 100%; /* 176px */
+      line-height: 100%;
+      /* 176px */
       letter-spacing: 6.6px;
       position: relative;
       z-index: 6;
       bottom: 0;
 
       border-radius: 0.6942vw 0.6942vw 0px 0px;
-      background: var(
-        --Liner-purple,
-        linear-gradient(
-          269deg,
-          var(--Brand-Color, #fc1682) 10.21%,
-          #710d54 122.73%
-        )
-      );
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
       box-sizing: border-box;
       padding: 0.859375vw 4.7135vw;
       color: var(--White, #fff);
@@ -2327,6 +2562,7 @@ const problemList = ref({
       letter-spacing: 0.165vw;
       width: 100%;
     }
+
     .content-price,
     .content-subscribe {
       width: 100%;
@@ -2343,10 +2579,12 @@ const problemList = ref({
       font-size: 1.927vw;
       font-style: normal;
       font-weight: 900;
-      line-height: 2.2222vw; /* 114.286% */
+      line-height: 2.2222vw;
+      /* 114.286% */
       letter-spacing: 0.29165vw;
       justify-content: center;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         position: relative;
         color: var(--Grey-Dark, #333);
         text-align: right;
@@ -2357,14 +2595,16 @@ const problemList = ref({
         font-size: 1.927vw;
         font-style: normal;
         font-weight: 900;
-        line-height: 2.2222vw; /* 114.286% */
+        line-height: 2.2222vw;
+        /* 114.286% */
         letter-spacing: 0.29165vw;
         top: auto;
       }
 
-      & > div:nth-child(2) {
+      &>div:nth-child(2) {
         width: 10.252083vw;
-        & > svg {
+
+        &>svg {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -2372,6 +2612,7 @@ const problemList = ref({
       }
     }
   }
+
   .banner-content {
     position: relative;
     align-items: flex-start;
@@ -2382,6 +2623,7 @@ const problemList = ref({
     bottom: -58%;
     border-radius: 10px;
     transform: translate(-50%, 0%);
+
     .content-title {
       display: flex;
       justify-content: center;
@@ -2390,21 +2632,18 @@ const problemList = ref({
       font-size: 40px;
       font-style: normal;
       font-weight: 600;
-      line-height: 100%; /* 72px */
+      line-height: 100%;
+      /* 72px */
       letter-spacing: 2.7px;
       position: relative;
       z-index: 6;
       bottom: 0;
       width: 100%;
       border-radius: 10px 10px 0px 0px;
-      background: var(
-        --Liner-purple,
-        linear-gradient(
-          269deg,
-          var(--Brand-Color, #fc1682) 10.21%,
-          #710d54 122.73%
-        )
-      );
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
       padding: 16.5px 0;
       color: var(--White, #fff);
       text-align: center;
@@ -2413,9 +2652,11 @@ const problemList = ref({
       font-size: 24px;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px; /* 83.333% */
+      line-height: 20px;
+      /* 83.333% */
       letter-spacing: 2.4px;
     }
+
     .content-price,
     .content-subscribe {
       min-height: auto;
@@ -2427,7 +2668,8 @@ const problemList = ref({
       font-weight: 900;
       line-height: 3.73vw;
       letter-spacing: 0.82vw;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         color: var(--Grey-Dark, #333);
         text-align: right;
         text-shadow: 1.3px 1.333px 1.333px #faeaf2,
@@ -2442,23 +2684,27 @@ const problemList = ref({
         position: relative;
       }
 
-      & > div:nth-child(2) {
+      &>div:nth-child(2) {
         width: 40.265vw;
         height: auto;
-        & > img {
+
+        &>img {
           width: 100%;
           height: 100%;
           object-fit: contain;
         }
       }
     }
+
     .content-subscribe {
       padding: 1vw 0 2.65vw 0;
     }
+
     .price-style {
       width: 153px;
       height: 90px;
-      & > img {
+
+      &>img {
         width: 100%;
         height: 100%;
         object-fit: cover;
