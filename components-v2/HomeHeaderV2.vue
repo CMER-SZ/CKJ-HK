@@ -175,41 +175,35 @@ const imgBgHeight = ref({
 
 const isFiexdHeader = ref(false)
 let bannerLists = ref([
-  // {
-  //   name: 'CKJ爱康健聖延限時睇牙優惠banner',
-  //   link: '/health-care-voucher',
-  //   pc: 'https://statichk.cmermedical.com/ckj/image/367b596eaaa1.avif',
-  //   mb: 'https://statichk.cmermedical.com/ckj/image/7c04a9e56ac4.avif',
-  // },
   {
     name: '灣區長者醫療券banner',
     link: '/health-care-voucher',
-    pc: 'https://statichk.cmermedical.com/ckj/image/5634e643f48b.webp',
-    mb: 'https://statichk.cmermedical.com/ckj/image/c78a85bb03ad.webp',
+    pc: 'https://static.ckjhk.com/ckj-image/d25c5ec24fe5.webp',
+    mb: 'https://static.ckjhk.com/ckj-image/008e38b39a5d.webp',
   },
   {
     name: '愛康健裕亨预豹專享優惠',
-    link: 'https://bit.ly/愛康健裕亨预豹專享優惠',
-    pc: 'https://static.ckjhk.com/ckj-image/2025040111011302.webp',
-    mb: 'https://static.ckjhk.com/ckj-image/2025040111011301.webp',
+    link: 'https://bit.ly/裕亨門診睇牙優惠',
+    pc: 'https://static.ckjhk.com/ckj-image/b47e2bfa3127.webp',
+    mb: 'https://static.ckjhk.com/ckj-image/cd05a9adfae3.webp',
+  },
+  // {
+  //   name: '醫生團隊banner',
+  //   link: '/medical-team',
+  //   pc: 'https://static.ckjhk.com/ckj-image/6496eaea84aa.webp',
+  //   mb: 'https://static.ckjhk.com/ckj-image/1b9c12f93b61.webp',
+  // },
+  {
+    name: '深圳希華愛康健医院',
+    link: 'https://www.cplushk.com/',
+    pc: 'https://static.ckjhk.com/ckj-image/d4015c1bca34.webp',
+    mb: 'https://static.ckjhk.com/ckj-image/45ed1d6b2d5b.webp',
   },
   {
-    name: '醫生團隊banner',
-    link: '/medical-team',
-    pc: 'https://statichk.cmermedical.com/ckj/image/6496eaea84aa.webp',
-    mb: 'https://statichk.cmermedical.com/ckj/image/1b9c12f93b61.webp',
-  },
-  {
-    name: '',
+    name: '愛康健30年-慶典',
     link: '',
-    pc: 'https://statichk.cmermedical.com/ckj/image/6d15585d25f4.webp',
-    mb: 'https://statichk.cmermedical.com/ckj/image/1f833657e657.webp',
-  },
-  {
-    name: '福田旗艦店18週年慶典優惠-慶典',
-    link: '',
-    pc: 'https://statichk.cmermedical.com/ckj/image/81fb2f8bb46d.webp',
-    mb: 'https://statichk.cmermedical.com/ckj/image/88548871a742.webp',
+    pc: 'https://static.ckjhk.com/ckj-image/bb476c702d93.webp',
+    mb: 'https://static.ckjhk.com/ckj-image/c4c9dc05eec1.webp',
   },
 ])
 onMounted(() => {
@@ -2945,7 +2939,7 @@ const implantItem = [
 /* PC端菜单样式 */
 @media (min-width: 992px) {
   .swiperBox {
-    margin-top: 115px;
+    margin-top: 120px;
   }
   .navbar {
     padding: 0;

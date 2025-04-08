@@ -446,12 +446,14 @@ const problemData = {
     <div class="root-canal">
       <section class="ckj-container root-canal-therapy">
         <div>
-          <div class="root-canal-therapy-title">
+          <div class="root-canal-therapy-title  subheading flex-row align-items-end">
             <span>什麼是</span><span>杜牙根(根管治療)</span>
           </div>
+          <div><img src="https://static.ckjhk.com/ckj-image/2025040809513201.jpg" alt=""></div>
           <div>杜牙根(根管治療)是治療嚴重蛀牙或牙根受細菌感染的療程，當蛀牙菌的感染深入牙髓，以致牙齒內的神經發炎，便需要以杜牙根療程徹底清除感染的部分。</div>
         </div>
-        <div><img src="https://static.ckjhk.com/ckj-image/c2bd71c74791.png" alt="杜牙根(根管治療)"></div>
+        <div class="d-none d-md-block"><img src="https://static.ckjhk.com/ckj-image/c2bd71c74791.png" alt="杜牙根(根管治療)">
+        </div>
       </section>
       <section class="ckj-container charge-item">
         <div class="d-flex flex-row align-items-end subheading">
@@ -1943,6 +1945,15 @@ const problemData = {
         }
       }
 
+      .subheading {
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      .subheading::after {
+        content: none;
+      }
+
       &>div:nth-child(2) {
         color: var(--Grey-Deep, #4D4D4D);
         text-align: justify;
@@ -2184,6 +2195,7 @@ const problemData = {
         .seven-steps-content-item {
           &>div:nth-child(1) {
             background: salmon;
+
             &>div:nth-child(2)::after {
               content: none;
             }
@@ -2461,6 +2473,126 @@ const problemData = {
 
 /* 992px */
 @media screen and (max-width: 992px) {
+  .root-canal-therapy {
+    margin-bottom: 30px;
+
+    &>div:nth-child(1) {
+      &>div:nth-child(3) {
+        color: var(--Grey-Deep, #4D4D4D);
+        text-align: justify;
+        font-family: "Noto Sans HK";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: 0.7px;
+        box-sizing: border-box;
+        padding: 0 30px;
+      }
+    }
+  }
+
+  .charge-item {
+    margin: 30px 0;
+
+    .charge-item-content {
+      &>div:nth-child(1) {
+        box-sizing: border-box;
+        padding: 15px 0;
+        width: 313px;
+        height: auto;
+        margin: 0 auto;
+
+        &>img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &>div:nth-child(2) {
+        border-radius: 20px;
+        margin: 15px 20px;
+        box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.20);
+        overflow: hidden;
+        box-sizing: border-box;
+
+        &>div {
+          box-sizing: border-box;
+          padding: 7px 23px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &>div {
+            text-align: center;
+            color: var(--White, #FFF);
+            font-family: "Noto Sans HK";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.6px;
+          }
+
+        }
+
+        &>div:nth-child(1) {
+          background: var(--Brand-Color, #F8298A);
+        }
+
+        &>div:nth-child(2) {
+          background: var(--White, #FFF);
+
+          &>div {
+            color: var(--Brand-Color, #F8298A);
+          }
+        }
+
+        &>div:nth-child(3) {
+          background: var(--Palest-Pink, #FFF7F8);
+
+          &>div {
+            color: var(--Blue-Deep, #00AEFF);
+          }
+        }
+      }
+
+      &>div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 1.6px;
+
+          span {
+            color: var(--Brand-Color, #F8298A);
+          }
+        }
+
+        &>div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          font-family: "Noto Sans HK";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          letter-spacing: 0.7px;
+        }
+      }
+
+    }
+  }
+  
+  .seven-steps {}
 
   .banner-in-box {
     position: absolute;

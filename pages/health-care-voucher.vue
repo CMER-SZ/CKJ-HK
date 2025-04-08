@@ -13,9 +13,9 @@ let langCur = ref('chinese_traditional')
 //   return `https://static.cmereye.com/imgs/2024/02/4c1e46eab9adb6de_${locale.value}.webp`
 // }
 const headerConfig = ref({
-  img: `https://static.cmereye.com/imgs/2024/07/1ea1941fc1372858.webp`,
   bg: '',
-  mbImg: `https://static.cmereye.com/imgs/2024/07/cd882e950625e695.webp`,
+  img: 'https://static.ckjhk.com/ckj-image/d25c5ec24fe5.webp',
+  mbImg: 'https://static.ckjhk.com/ckj-image/008e38b39a5d.webp',
   pageName: 'health-care-voucher',
   pcText: [],
   mbText: [],
