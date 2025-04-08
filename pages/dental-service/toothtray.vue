@@ -402,22 +402,22 @@ const advantageData = {
     {
       img: 'https://static.cmereye.com/static/ckj/imgs/toothtray/advantage1.svg',
       name: '專業製作',
-      text: '我們的牙托由資深矯正科醫生根據患者的牙齒模型精確製作，確保每一個牙托都能完美貼合。',
+      text: '愛康健的假牙由資深修復科醫生根據患者的牙齒模型精確製作，確保每一個假牙都能完美貼合。',
     },
     {
       img: 'https://static.cmereye.com/static/ckj/imgs/toothtray/advantage2.svg',
       name: '高品質材料',
-      text: '愛康健使用高品質材料製作牙托，確保牙托耐用且對身體安全無害。',
+      text: '愛康健使用高品質材料製作假牙，確保假牙耐用且對身體安全無害。',
     },
     {
       img: 'https://static.cmereye.com/static/ckj/imgs/toothtray/advantage3.svg',
-      name: '個性化設計',
-      text: '醫生根據個人口腔狀況和需求獨立定製，更符合患者個人的使用習慣和舒適度。',
+      name: '專業保養及\n緊急維修服務',
+      text: '愛康健提供專業假牙保養及緊急維修服務，讓假牙延長其使用壽命。',
     },
     {
-      img: 'https://static.cmereye.com/static/ckj/imgs/toothtray/advantage4.svg',
-      name: '專業保養\n及緊急維修服務',
-      text: '我們提供專業牙托保養及緊急維修服務，讓牙托延長其使用壽命。',
+      img: 'https://static.ckjhk.com/ckj-image/2025040713584801.webp',
+      name: '醫療券付款',
+      text: '愛康健收費合理且接受長者醫療券付款，節省長者醫療開支。',
     },
   ],
 }
@@ -737,7 +737,7 @@ onMounted(() => {
       </div>
       <div class="advantage" v-if="windowWidth > 768">
         <div class="advantage-title dentistryServices-title">
-          <div class="dentistryServices-title-in bb">隱形牙箍四大優點</div>
+          <div class="dentistryServices-title-in bb">愛康健訂製活動假牙及牙橋4大優勢</div>
         </div>
         <div class="advantage-lists">
           <div

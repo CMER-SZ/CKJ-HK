@@ -1,15 +1,15 @@
 <script lang="ts" setup>
+import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper'
 import { useAppState } from '~/stores/appState'
 const appState = useAppState()
 appState.setDentistryService('all-ceramic-crowns')
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper'
-const modules = [Navigation, Pagination, Mousewheel, Keyboard]
+
 
 let services_include_cur = ref(0)
 let swiperRef: any = {
-  slidePrev: () => {},
-  slideNext: () => {},
-  slideTo: () => {},
+  slidePrev: () => { },
+  slideNext: () => { },
+  slideTo: () => { },
 }
 
 const setSwiperRef = (swiper: any) => {
@@ -319,11 +319,7 @@ const listItem = (str) => {
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-image">
-            <img
-              src="https://static.ckjhk.com/ckj-image/8e4cc5dc8367.webp"
-              alt=""
-              loading="lazy"
-            />
+            <img src="https://static.ckjhk.com/ckj-image/8e4cc5dc8367.webp" alt="" loading="lazy" />
           </div>
           <div class="banner-content" style="display: flex">
             <div class="content-title">網上預約限定優惠</div>
@@ -345,22 +341,13 @@ const listItem = (str) => {
         </div>
         <div class="all-ceramic-crowns-service-content">
           <div>
-            <img
-              src="https://static.ckjhk.com/ckj-image/562005c85794.png"
-              alt=""
-            />
+            <img src="https://static.ckjhk.com/ckj-image/562005c85794.png" alt="" />
           </div>
           <div>
-            <img
-              src="https://static.ckjhk.com/ckj-image/f6c3006435b7.png"
-              alt=""
-            />
+            <img src="https://static.ckjhk.com/ckj-image/f6c3006435b7.png" alt="" />
           </div>
           <div>
-            <img
-              src="https://static.ckjhk.com/ckj-image/55f30988628c.png"
-              alt=""
-            />
+            <img src="https://static.ckjhk.com/ckj-image/55f30988628c.png" alt="" />
           </div>
         </div>
         <div class="all-ceramic-crowns-service-content-text">
@@ -384,10 +371,7 @@ const listItem = (str) => {
               <div>
                 <div>網上限定預約優惠</div>
                 <div>
-                  <img
-                    src="https://static.ckjhk.com/ckj-image/7a508b9bfef7.svg"
-                    alt="網上限定預約優惠"
-                  />
+                  <img src="https://static.ckjhk.com/ckj-image/7a508b9bfef7.svg" alt="網上限定預約優惠" />
                 </div>
               </div>
             </div>
@@ -422,16 +406,10 @@ const listItem = (str) => {
         <div class="dental-crown-content-text">
           <div>
             <div>
-              <img
-                src="https://static.ckjhk.com/ckj-image/cc6b0d3f2d32.png"
-                alt=""
-              />
+              <img src="https://static.ckjhk.com/ckj-image/cc6b0d3f2d32.png" alt="" />
             </div>
             <div>
-              <img
-                src="https://static.ckjhk.com/ckj-image/b63632e09538.png"
-                alt=""
-              />
+              <img src="https://static.ckjhk.com/ckj-image/b63632e09538.png" alt="" />
             </div>
           </div>
           <div>愛康健牙冠價格已包含檢查費、設計費、材料費、安裝費。</div>
@@ -457,22 +435,16 @@ const listItem = (str) => {
           </div>
           <div class="course d-md-none">
             <div class="course-text">
-              拔牙一般無需進行手術，但當牙齒歪生或非常接近<br
-                class="d-md-none"
-              />神經，便有可能要進行手術式脫牙。
+              拔牙一般無需進行手術，但當牙齒歪生或非常接近<br class="d-md-none" />神經，便有可能要進行手術式脫牙。
             </div>
             <div>
               <div>
-                <div
-                  :class="surgicalExtractionOfTeeth ? 'active-teeth' : ''"
-                  @click="courseToothExtraction('Surgical')"
-                >
+                <div :class="surgicalExtractionOfTeeth ? 'active-teeth' : ''"
+                  @click="courseToothExtraction('Surgical')">
                   智慧齒及手術性拔牙
                 </div>
-                <div
-                  :class="surgicalExtractionOfTeeth ? '' : 'active-teeth'"
-                  @click="courseToothExtraction('notSurgical')"
-                >
+                <div :class="surgicalExtractionOfTeeth ? '' : 'active-teeth'"
+                  @click="courseToothExtraction('notSurgical')">
                   非手術性拔牙
                 </div>
               </div>
@@ -481,24 +453,17 @@ const listItem = (str) => {
                   <img :src="'~/assets/images/2025033111372801.svg'" />
                 </div>
                 <div class="d-md-none">
-                  <img
-                    :style="{
-                      height: surgicalExtractionOfTeeth ? '260px' : '280px',
-                    }"
-                    :src="
-                      surgicalExtractionOfTeeth
-                        ? 'https://static.ckjhk.com/ckj-image/2025040216330802.png'
-                        : 'https://static.ckjhk.com/ckj-image/2025040216330801.png'
-                    "
-                  />
+                  <img :style="{
+                    height: surgicalExtractionOfTeeth ? '260px' : '280px',
+                  }" :src="surgicalExtractionOfTeeth
+                    ? 'https://static.ckjhk.com/ckj-image/2025040216330802.png'
+                    : 'https://static.ckjhk.com/ckj-image/2025040216330801.png'
+                    " />
                 </div>
                 <div>
-                  <div
-                    v-for="(item, index) in listItem(
-                      surgicalExtractionOfTeeth ? 'Surgical' : 'notSurgical'
-                    )"
-                    :key="index"
-                  >
+                  <div v-for="(item, index) in listItem(
+                    surgicalExtractionOfTeeth ? 'Surgical' : 'notSurgical'
+                  )" :key="index">
                     <div>
                       <div>{{ item.id }}</div>
                       <div>
@@ -518,10 +483,7 @@ const listItem = (str) => {
             <div><img src="~/assets/images/2025040211330101.png" alt="" /></div>
           </div>
           <div class="d-md-none">
-            <div
-              v-if="surgicalExtractionOfTeeth"
-              class="customization-process-text"
-            >
+            <div v-if="surgicalExtractionOfTeeth" class="customization-process-text">
               <div>
                 CAD/CAM技術製作的牙冠較傳統牙冠更密合，減低長期使用二次蛀牙、痠痛、異味發生率
                 👍🏻
@@ -546,22 +508,13 @@ const listItem = (str) => {
           <div>全瓷牙冠</div>
           <div>金屬牙冠</div>
           <div>
-            <img
-              src="https://static.ckjhk.com/ckj-image/c53fcc7f7189.png"
-              alt=""
-            />
+            <img src="https://static.ckjhk.com/ckj-image/c53fcc7f7189.png" alt="" />
           </div>
           <div>
-            <img
-              src="https://static.ckjhk.com/ckj-image/a5c26ff1c0e5.png"
-              alt=""
-            />
+            <img src="https://static.ckjhk.com/ckj-image/a5c26ff1c0e5.png" alt="" />
           </div>
           <div>
-            <img
-              src="https://static.ckjhk.com/ckj-image/a2e28e94c7c4.png"
-              alt=""
-            />
+            <img src="https://static.ckjhk.com/ckj-image/a2e28e94c7c4.png" alt="" />
           </div>
           <div>優點</div>
           <div>
@@ -615,28 +568,19 @@ const listItem = (str) => {
         <div class="crown-maintenance-content">
           <div>
             <div>
-              <img
-                src="https://static.ckjhk.com/ckj-image/450744fbe886.png"
-                alt=""
-              />
+              <img src="https://static.ckjhk.com/ckj-image/450744fbe886.png" alt="" />
             </div>
             <div>每日牙線清潔</div>
           </div>
           <div>
             <div>
-              <img
-                src="https://static.ckjhk.com/ckj-image/060c3c7295fd.png"
-                alt=""
-              />
+              <img src="https://static.ckjhk.com/ckj-image/060c3c7295fd.png" alt="" />
             </div>
             <div>定期檢查</div>
           </div>
           <div>
             <div>
-              <img
-                src="https://static.ckjhk.com/ckj-image/2f3e9454e843.png"
-                alt=""
-              />
+              <img src="https://static.ckjhk.com/ckj-image/2f3e9454e843.png" alt="" />
             </div>
             <div>避免咀嚼硬物</div>
           </div>
@@ -652,39 +596,24 @@ const listItem = (str) => {
             <div>手術後</div>
           </div>
           <div>
-            <swiper :modules="modules" class="mySwiper" @swiper="setSwiperRef">
+            <swiper :modules="[Navigation, Pagination, Mousewheel, Keyboard]" class="mySwiper" @swiper="setSwiperRef">
               <swiper-slide class="swiper-slide-img">
                 <div>
-                  <img
-                    src="https://static.ckjhk.com/ckj-image/c75e70d54395.jpg"
-                    alt=""
-                  />
+                  <img src="https://static.ckjhk.com/ckj-image/c75e70d54395.jpg" alt="" />
                 </div>
                 <div>
-                  <img
-                    src="https://static.ckjhk.com/ckj-image/ff29dc67893c.jpg"
-                    alt=""
-                  />
+                  <img src="https://static.ckjhk.com/ckj-image/ff29dc67893c.jpg" alt="" />
                 </div>
                 <div>
-                  <img
-                    src="https://static.ckjhk.com/ckj-image/a62ba03ae963.jpg"
-                    alt=""
-                  />
+                  <img src="https://static.ckjhk.com/ckj-image/a62ba03ae963.jpg" alt="" />
                 </div>
               </swiper-slide>
               <swiper-slide class="swiper-slide-img">
                 <div>
-                  <img
-                    src="https://static.ckjhk.com/ckj-image/43d049eb37e1.jpg"
-                    alt=""
-                  />
+                  <img src="https://static.ckjhk.com/ckj-image/43d049eb37e1.jpg" alt="" />
                 </div>
                 <div>
-                  <img
-                    src="https://static.ckjhk.com/ckj-image/181ec1cb844f.jpg"
-                    alt=""
-                  />
+                  <img src="https://static.ckjhk.com/ckj-image/181ec1cb844f.jpg" alt="" />
                 </div>
               </swiper-slide>
             </swiper>
@@ -692,10 +621,7 @@ const listItem = (str) => {
           <div class="crown-case-content-btn">
             <div @click="subNum"></div>
             <div>
-              <div
-                class="swiper-point swiper-point-active"
-                @click="handleProcessBtn(0)"
-              ></div>
+              <div class="swiper-point swiper-point-active" @click="handleProcessBtn(0)"></div>
               <div class="swiper-point" @click="handleProcessBtn(1)"></div>
             </div>
             <div @click="addNum"></div>
@@ -888,25 +814,29 @@ const listItem = (str) => {
     margin: 0 auto !important;
   }
 }
+
 .ltimg {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 114px;
   padding-bottom: 100px;
-  background: url(https://static.cmereye.com/imgs/2024/05/4e7cd0b335c399a0.png)
-    no-repeat;
+  background: url(https://static.cmereye.com/imgs/2024/05/4e7cd0b335c399a0.png) no-repeat;
   background-size: 100% 80%;
   background-position: center 200px;
+
   img {
     width: 1080px;
   }
 }
+
 .step {
   margin-top: 106px;
+
   &-in {
     width: 100%;
     margin-top: 7px;
+
     &-list {
       max-width: 1080px;
       margin: 50px auto;
@@ -914,11 +844,14 @@ const listItem = (str) => {
       gap: 70px;
       grid-template-columns: repeat(4, 1fr);
       position: relative;
+
       .lists-in {
         width: auto;
+
         img {
           width: 100%;
         }
+
         h3 {
           color: var(--indexColor1);
           text-align: center;
@@ -929,19 +862,23 @@ const listItem = (str) => {
           line-height: 160%;
           margin-top: 10px;
         }
+
         p {
           margin-top: 10px;
           color: var(--textColor);
-          line-height: 160%; /* 30.4px */
+          line-height: 160%;
+          /* 30.4px */
           letter-spacing: 3.8px;
           font-size: 19px;
           text-align: center;
         }
       }
+
       &:nth-of-type(2) {
         max-width: 810px;
         grid-template-columns: repeat(3, 1fr);
       }
+
       .line {
         width: 100vw;
         height: 0;
@@ -952,11 +889,11 @@ const listItem = (str) => {
         border-bottom: 1px solid var(--indexColor1);
         z-index: -1;
       }
+
       &::before {
         content: '';
         position: absolute;
-        background: url(https://static.cmereye.com/imgs/2024/05/0245d98d5d39cd83.png)
-          no-repeat;
+        background: url(https://static.cmereye.com/imgs/2024/05/0245d98d5d39cd83.png) no-repeat;
         background-size: 100% 100%;
         width: 14px;
         height: 21px;
@@ -964,11 +901,11 @@ const listItem = (str) => {
         left: -50px;
         transform: translateY(-50%);
       }
+
       &::after {
         content: '';
         position: absolute;
-        background: url(https://static.cmereye.com/imgs/2024/05/0245d98d5d39cd83.png)
-          no-repeat;
+        background: url(https://static.cmereye.com/imgs/2024/05/0245d98d5d39cd83.png) no-repeat;
         background-size: 100% 100%;
         width: 14px;
         height: 21px;
@@ -979,8 +916,10 @@ const listItem = (str) => {
     }
   }
 }
+
 .maintain {
   margin-top: 100px;
+
   &-in {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -988,10 +927,12 @@ const listItem = (str) => {
     max-width: 950px;
     width: 100%;
     margin: 20px auto 0;
+
     .list-in {
       img {
         width: 100%;
       }
+
       h3 {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
@@ -1002,6 +943,7 @@ const listItem = (str) => {
         letter-spacing: 3px;
         margin-top: 5px;
       }
+
       p {
         color: var(--Grey-Deep, #4d4d4d);
         font-family: 'Noto Sans HK';
@@ -1015,37 +957,45 @@ const listItem = (str) => {
     }
   }
 }
+
 .foibles {
   margin-top: 100px;
+
   &-text {
     margin-top: 25px;
+
     p {
       color: var(--Black, var(--Grey-Deep, #4d4d4d));
       text-align: center;
       font-size: 19px;
       font-style: normal;
       font-weight: 400;
-      line-height: 160%; /* 30.4px */
+      line-height: 160%;
+      /* 30.4px */
       letter-spacing: 3.8px;
+
       &:last-child {
         color: var(--indexColor1);
       }
     }
   }
+
   &-in {
     display: grid;
     grid-template-columns: 0.65fr 1fr 1fr 1fr;
     width: 100%;
     max-width: 1499px;
     margin: 120px auto 0;
+
     .list-in {
-      & > div {
+      &>div {
         border-bottom: 2px solid #aaa;
         border-right: 2px solid #aaa;
         display: flex;
         justify-content: center;
         flex-direction: column;
       }
+
       .title {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
@@ -1056,13 +1006,16 @@ const listItem = (str) => {
         height: 69px;
         background: #ffcecb;
       }
+
       .img {
+
         // height: 280px;
         img {
           width: 100%;
           height: 100%;
         }
       }
+
       .merit {
         color: var(--Grey-Deep, #4d4d4d);
         font-size: 19px;
@@ -1072,17 +1025,21 @@ const listItem = (str) => {
         letter-spacing: 3.8px;
         height: 227px;
         padding: 0 54px;
+
         .mbl {
           display: none;
         }
+
         .spanLists {
           display: flex;
           justify-content: center;
           flex-direction: column;
         }
+
         span {
           padding-left: 15px;
           position: relative;
+
           &::before {
             content: '·';
             position: absolute;
@@ -1092,6 +1049,7 @@ const listItem = (str) => {
           }
         }
       }
+
       .shortcoming {
         color: var(--Grey-Deep, #4d4d4d);
         font-size: 19px;
@@ -1101,17 +1059,21 @@ const listItem = (str) => {
         letter-spacing: 3.8px;
         height: 260px;
         padding: 0 50px;
+
         .mbl {
           display: none;
         }
+
         .spanLists {
           display: flex;
           justify-content: center;
           flex-direction: column;
         }
+
         span {
           padding-left: 15px;
           position: relative;
+
           &::before {
             content: '·';
             position: absolute;
@@ -1121,14 +1083,17 @@ const listItem = (str) => {
           }
         }
       }
+
       &:nth-of-type(1) {
-        & > div {
+        &>div {
           align-items: center;
         }
+
         .title {
           border: none;
           background: none;
         }
+
         .merit {
           font-size: 23px;
           color: var(--indexColor1);
@@ -1137,16 +1102,20 @@ const listItem = (str) => {
           flex-direction: row;
           letter-spacing: initial;
           padding: 0;
+
           img {
             width: 103px;
           }
+
           span {
             padding-left: 0;
+
             &::before {
               display: none;
             }
           }
         }
+
         .shortcoming {
           font-size: 23px;
           background: #f4f4f4;
@@ -1154,9 +1123,11 @@ const listItem = (str) => {
           flex-direction: row;
           letter-spacing: initial;
           padding: 0;
+
           img {
             width: 48px;
           }
+
           span {
             &::before {
               display: none;
@@ -1164,6 +1135,7 @@ const listItem = (str) => {
           }
         }
       }
+
       &:nth-of-type(2) {
         .title {
           position: relative;
@@ -1172,10 +1144,12 @@ const listItem = (str) => {
           border-top: 2px solid #aaa;
           border-radius: 40px 0 0 0;
           color: #fff;
+
           span {
             position: relative;
             z-index: 1;
           }
+
           &::after {
             content: '';
             position: absolute;
@@ -1191,12 +1165,12 @@ const listItem = (str) => {
             border-right: 7px solid var(--indexColor1);
             border-radius: 40px 40px 0 0;
           }
+
           &::before {
             content: '';
             width: 204px;
             height: 103px;
-            background: url(https://static.cmereye.com/imgs/2024/05/600b314de50aa2ad.png)
-              no-repeat;
+            background: url(https://static.cmereye.com/imgs/2024/05/600b314de50aa2ad.png) no-repeat;
             background-size: 100% 100%;
             position: absolute;
             left: 50%;
@@ -1205,8 +1179,10 @@ const listItem = (str) => {
             transform: translateX(-50%);
           }
         }
+
         .img {
           position: relative;
+
           &::after {
             content: '';
             position: absolute;
@@ -1220,9 +1196,11 @@ const listItem = (str) => {
             border-right: 7px solid var(--indexColor1);
           }
         }
+
         .merit {
           color: var(--indexColor1);
           position: relative;
+
           &::after {
             content: '';
             position: absolute;
@@ -1236,8 +1214,10 @@ const listItem = (str) => {
             border-right: 7px solid var(--indexColor1);
           }
         }
+
         .shortcoming {
           position: relative;
+
           &::after {
             content: '';
             position: absolute;
@@ -1253,11 +1233,13 @@ const listItem = (str) => {
           }
         }
       }
+
       &:nth-of-type(3) {
         .title {
           border-top: 2px solid #aaa;
         }
       }
+
       &:nth-of-type(4) {
         .title {
           border-top: 2px solid #aaa;
@@ -1266,42 +1248,52 @@ const listItem = (str) => {
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 1920px) {
   .ltimg {
     margin-top: 5.9375vw;
     padding-bottom: 5.2083vw;
     background-position: center 10.4167vw;
+
     img {
       width: 56.25vw;
     }
   }
+
   .step {
     margin-top: 5.5208vw;
+
     &-in {
       margin-top: 0.3646vw;
+
       &-list {
         max-width: 56.25vw;
         margin: 2.6042vw auto;
         gap: 3.6458vw;
+
         .lists-in {
           h3 {
             font-size: 1.1979vw;
             margin-top: 0.5208vw;
           }
+
           p {
             margin-top: 0.5208vw;
             letter-spacing: 0.1979vw;
             font-size: 0.9896vw;
           }
         }
+
         &:nth-of-type(2) {
           max-width: 42.1875vw;
         }
+
         &::before {
           width: 0.7292vw;
           height: 1.0938vw;
           left: -2.6042vw;
         }
+
         &::after {
           width: 0.7292vw;
           height: 1.0938vw;
@@ -1310,18 +1302,22 @@ const listItem = (str) => {
       }
     }
   }
+
   .maintain {
     margin-top: 5.2083vw;
+
     &-in {
       gap: 5.8333vw;
       max-width: 49.4792vw;
       margin: 1.0417vw auto 0;
+
       .list-in {
         h3 {
           font-size: 1.5625vw;
           letter-spacing: 0.1563vw;
           margin-top: 0.2604vw;
         }
+
         p {
           font-size: 1.0417vw;
           letter-spacing: 0.2604vw;
@@ -1329,67 +1325,85 @@ const listItem = (str) => {
       }
     }
   }
+
   .foibles {
     margin-top: 5.2083vw;
+
     &-text {
       margin-top: 1.3021vw;
+
       p {
         font-size: 0.9896vw;
         letter-spacing: 0.1979vw;
       }
     }
+
     &-in {
       max-width: 78.0729vw;
       margin: 6.25vw auto 0;
+
       .list-in {
         .title {
           font-size: 1.1979vw;
           height: 3.5938vw;
         }
+
         .img {
           height: 14.5833vw;
         }
+
         .merit {
           font-size: 0.9896vw;
           letter-spacing: 0.1979vw;
           height: 11.8229vw;
           padding: 0 2.8125vw;
+
           span {
             padding-left: 0.7813vw;
+
             &::before {
               font-size: 1.5625vw;
             }
           }
         }
+
         .shortcoming {
           font-size: 0.9896vw;
           letter-spacing: 0.1979vw;
           height: 13.5417vw;
           padding: 0 2.6042vw;
+
           span {
             padding-left: 0.7813vw;
+
             &::before {
               font-size: 1.5625vw;
             }
           }
         }
+
         &:nth-of-type(1) {
           .merit {
             font-size: 1.1979vw;
+
             img {
               width: 5.3646vw;
             }
           }
+
           .shortcoming {
             font-size: 1.1979vw;
+
             img {
               width: 2.5vw;
             }
           }
         }
+
         &:nth-of-type(2) {
           .title {
             border-radius: 2.0833vw 0 0 0;
+
             &::after {
               height: calc(100% + 0.9375vw);
               bottom: -0.1563vw;
@@ -1397,11 +1411,13 @@ const listItem = (str) => {
               border-right: 0.3646vw solid var(--indexColor1);
               border-radius: 2.0833vw 2.0833vw 0 0;
             }
+
             &::before {
               width: 10.625vw;
               height: 5.3646vw;
             }
           }
+
           .img {
             &::after {
               height: calc(100% + 0.2083vw);
@@ -1409,6 +1425,7 @@ const listItem = (str) => {
               border-right: 0.3646vw solid var(--indexColor1);
             }
           }
+
           .merit {
             &::after {
               height: calc(100% + 0.2083vw);
@@ -1416,6 +1433,7 @@ const listItem = (str) => {
               border-right: 0.3646vw solid var(--indexColor1);
             }
           }
+
           .shortcoming {
             &::after {
               height: calc(100% + 0.2083vw);
@@ -1436,6 +1454,7 @@ const listItem = (str) => {
     margin-left: 0 !important;
     margin-right: auto !important;
   }
+
   :deep(.header-content) {
     .explain_box_mobile {
       align-items: flex-end;
@@ -1450,49 +1469,60 @@ const listItem = (str) => {
       top: auto;
       z-index: 35;
     }
+
     .waterBg-implant::after,
     .waterBg-implant::before {
       bottom: -28vw;
     }
   }
+
   .ltimg {
     margin-top: 50px;
     padding: 0 0 60px 10px;
   }
+
   .step {
     &-in {
       padding: 0 30px;
       margin-top: 45px;
+
       &-list {
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
         margin: 30px auto;
+
         .lists-in {
           h3 {
             font-size: 16px;
           }
+
           p {
             font-family: 'Noto Sans HK';
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
-            line-height: 200%; /* 32px */
+            line-height: 200%;
+            /* 32px */
             letter-spacing: 1.6px;
             text-align: left;
             margin-top: 5px;
           }
+
           &:nth-of-type(2) {
             p {
               text-align: center;
             }
           }
         }
+
         &:nth-of-type(2) {
           grid-template-columns: repeat(2, 1fr);
         }
+
         .line {
           display: none;
         }
+
         &::before,
         &::after {
           display: none;
@@ -1500,16 +1530,20 @@ const listItem = (str) => {
       }
     }
   }
+
   .maintain {
     padding: 0 30px;
+
     &-in {
       grid-template-columns: repeat(2, 1fr);
       gap: 30px 45px;
       margin-top: 45px;
+
       .list-in {
         h3 {
           font-size: 20px;
         }
+
         p {
           letter-spacing: 3.75px;
           font-size: 15px;
@@ -1517,37 +1551,45 @@ const listItem = (str) => {
       }
     }
   }
+
   .foibles {
     &-text {
       margin-top: 45px;
       display: flex;
       flex-direction: column;
       align-items: center;
+
       p {
         width: 100%;
         padding: 0 40px;
         font-size: 16px;
+
         &:last-child {
           width: 80%;
         }
       }
     }
+
     &-in {
       grid-template-columns: 1fr;
       padding: 0 30px;
       margin: 100px auto 0;
+
       .list-in {
-        & > div {
+        &>div {
           border-bottom: 1px solid #aaa;
           border-right: 1px solid #aaa;
         }
+
         .title {
           height: 38px;
           font-size: 15px;
         }
+
         .img {
           // height: 126px;
         }
+
         .merit {
           height: auto;
           font-size: 12px;
@@ -1555,6 +1597,7 @@ const listItem = (str) => {
           min-height: 103px;
           flex-direction: row;
           letter-spacing: 1.2px;
+
           .mbl {
             display: flex;
             width: 60px;
@@ -1563,10 +1606,12 @@ const listItem = (str) => {
             flex-direction: column;
             border-right: 1px solid #aaa;
             background: #f4f4f4;
+
             img {
               width: 36px;
               margin-bottom: 5px;
             }
+
             span {
               color: var(--indexColor1);
               text-align: center;
@@ -1576,22 +1621,27 @@ const listItem = (str) => {
               line-height: 130%;
               padding-left: 0;
               letter-spacing: initial;
+
               &::before {
                 display: none;
               }
             }
           }
+
           .spanLists {
             flex: 1;
             padding: 20px 12px;
           }
+
           span {
             padding-left: 10px;
+
             &::before {
               font-size: 20px;
             }
           }
         }
+
         .shortcoming {
           height: auto;
           font-size: 12px;
@@ -1599,6 +1649,7 @@ const listItem = (str) => {
           min-height: 103px;
           flex-direction: row;
           letter-spacing: 1.2px;
+
           .mbl {
             display: flex;
             width: 60px;
@@ -1607,10 +1658,12 @@ const listItem = (str) => {
             flex-direction: column;
             border-right: 1px solid #aaa;
             background: #f4f4f4;
+
             img {
               width: 32px;
               margin-bottom: 5px;
             }
+
             span {
               color: #4c4c4c;
               text-align: center;
@@ -1620,53 +1673,65 @@ const listItem = (str) => {
               line-height: 130%;
               padding-left: 0;
               letter-spacing: initial;
+
               &::before {
                 display: none;
               }
             }
           }
+
           .spanLists {
             flex: 1;
             padding: 20px 12px;
           }
+
           span {
             padding-left: 10px;
+
             &::before {
               font-size: 20px;
             }
           }
         }
+
         &:nth-of-type(1) {
           display: none;
         }
+
         &:nth-of-type(2) {
           border-left: 1px solid #aaa;
+
           .title {
             border-radius: 20px 20px 0 0;
+
             &::after {
               border-left: 5px solid var(--indexColor1);
               border-right: 5px solid var(--indexColor1);
               border-radius: 25px 25px 0 0;
               bottom: -2px;
             }
+
             &::before {
               width: 125px;
               bottom: 90%;
               height: calc(103 / 204 * 125px);
             }
           }
+
           .img {
             &::after {
               border-left: 4px solid var(--indexColor1);
               border-right: 4px solid var(--indexColor1);
             }
           }
+
           .merit {
             &::after {
               border-left: 4px solid var(--indexColor1);
               border-right: 4px solid var(--indexColor1);
             }
           }
+
           .shortcoming {
             &::after {
               border-left: 4px solid var(--indexColor1);
@@ -1675,14 +1740,18 @@ const listItem = (str) => {
             }
           }
         }
+
         &:nth-of-type(3) {
           border-left: 1px solid #aaa;
+
           .title {
             border-top: none;
           }
         }
+
         &:nth-of-type(4) {
           border-left: 1px solid #aaa;
+
           .title {
             border-top: none;
           }
@@ -1698,11 +1767,13 @@ const listItem = (str) => {
   .all-ceramic-crowns-service {
     margin-top: 45px;
     padding: 30px 0;
+
     .all-ceramic-crowns-service-content {
       margin: 20px 0;
       display: flex;
       gap: 0 42px;
     }
+
     .all-ceramic-crowns-service-content-text {
       color: var(--Grey-Dark, #333);
       text-align: center;
@@ -1710,24 +1781,29 @@ const listItem = (str) => {
       font-size: 20px;
       font-style: normal;
       font-weight: 400;
-      line-height: 160%; /* 32px */
+      line-height: 160%;
+      /* 32px */
       letter-spacing: 4px;
     }
   }
+
   .dental-crown {
     padding: 30px 0 45px;
+
     .dental-crown-content {
       margin-top: 20px;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.2);
-      & > div {
+
+      &>div {
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
         padding: 20px 35px;
         align-items: center;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
           font-size: 24px;
@@ -1736,7 +1812,8 @@ const listItem = (str) => {
           line-height: normal;
           letter-spacing: 2.4px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
           font-family: 'Noto Sans HK';
           font-size: 24px;
@@ -1744,7 +1821,8 @@ const listItem = (str) => {
           font-weight: 700;
           line-height: normal;
           letter-spacing: 2.4px;
-          & > span {
+
+          &>span {
             color: var(--Blue-Deep, #00aeff);
             text-align: right;
             font-family: 'Noto Sans HK';
@@ -1756,28 +1834,35 @@ const listItem = (str) => {
           }
         }
       }
-      & > div:nth-child(odd) {
+
+      &>div:nth-child(odd) {
         background: var(--Palest-Pink, #fff7f8);
       }
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         background: var(--Brand-Color, #f8298a);
-        & > div {
+
+        &>div {
           color: #fff;
         }
       }
-      & > div:nth-child(2) {
-        & > div:nth-child(1) {
+
+      &>div:nth-child(2) {
+        &>div:nth-child(1) {
           color: var(--Brand-Color, #f8298a);
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             display: flex;
             align-items: center;
             gap: 0 15px;
-            & > div:nth-child(1) {
+
+            &>div:nth-child(1) {
               background: url('~/assets/images/2025040116505101.svg') no-repeat;
               background-size: contain;
               width: 258px;
@@ -1791,55 +1876,63 @@ const listItem = (str) => {
         }
       }
     }
+
     .dental-crown-content-text {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0 17px;
       margin-top: 20px;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         display: flex;
         position: relative;
-        & > div {
+
+        &>div {
           width: 82px;
           height: 82px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: drop-shadow(0px 0px 12.347px rgba(0, 0, 0, 0.25));
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           position: relative;
           z-index: 5;
           top: 14px;
           left: -7px;
         }
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         color: var(--Grey-Dark, #333);
         text-align: justify;
         font-family: 'Noto Sans TC';
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
       }
     }
   }
+
   .bg-customization-process {
-    background: linear-gradient(
-      0deg,
-      rgba(255, 241, 240, 0) 0%,
-      rgba(255, 241, 240, 0.7) 1.5%,
-      rgba(255, 241, 240, 0.7) 42.99%,
-      rgba(255, 241, 240, 0) 100%
-    );
+    background: linear-gradient(0deg,
+        rgba(255, 241, 240, 0) 0%,
+        rgba(255, 241, 240, 0.7) 1.5%,
+        rgba(255, 241, 240, 0.7) 42.99%,
+        rgba(255, 241, 240, 0) 100%);
   }
+
   .customization-process {
     padding: 30px 0;
+
     .customization-process-content {
       margin-top: 20px;
       display: flex;
@@ -1847,7 +1940,7 @@ const listItem = (str) => {
       gap: 40px 0;
       align-items: center;
 
-      & > div:not(:nth-child(4)) {
+      &>div:not(:nth-child(4)) {
         border-radius: 20px;
         background: var(--Pink-Mid, #f670ae);
         box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
@@ -1862,53 +1955,56 @@ const listItem = (str) => {
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
         position: relative;
       }
-      & > div:nth-child(1)::after,
-      & > div:nth-child(2)::after {
+
+      &>div:nth-child(1)::after,
+      &>div:nth-child(2)::after {
         position: absolute;
         content: '';
         width: 18px;
         height: 25px;
-        background: url('https://static.ckjhk.com/ckj-image/a17694c1f8a8.svg')
-          no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/a17694c1f8a8.svg') no-repeat;
         background-size: contain;
         bottom: -65%;
         left: 50%;
         transform: translateX(-50%);
         z-index: -1;
       }
-      & > div:nth-child(3)::after {
+
+      &>div:nth-child(3)::after {
         position: absolute;
         content: '';
         width: 58px;
         height: 85px;
-        background: url('https://static.ckjhk.com/ckj-image/54595111de02.svg')
-          no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/54595111de02.svg') no-repeat;
         background-size: contain;
         bottom: -115%;
         left: -20%;
       }
-      & > div:nth-child(3)::before {
+
+      &>div:nth-child(3)::before {
         position: absolute;
         content: '';
         width: 51px;
         height: 58px;
-        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg')
-          no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg') no-repeat;
         background-size: contain;
         bottom: -61%;
         right: -20%;
         transform: rotate(-90deg);
       }
-      & > div:nth-child(4) {
+
+      &>div:nth-child(4) {
         display: flex;
         gap: 0 120px;
         align-items: center;
         position: relative;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           border-radius: 20px;
           background: var(--Brand-Color, #f8298a);
           box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
@@ -1918,16 +2014,19 @@ const listItem = (str) => {
           font-size: 20px;
           font-style: normal;
           font-weight: 700;
-          line-height: 160%; /* 32px */
+          line-height: 160%;
+          /* 32px */
           letter-spacing: 2px;
           box-sizing: border-box;
           padding: 10px 35px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           display: flex;
           flex-direction: column;
           gap: 40px 0;
-          & > div {
+
+          &>div {
             border-radius: 20px;
             background: var(--Blue-Deep, #00aeff);
             box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.2);
@@ -1937,19 +2036,20 @@ const listItem = (str) => {
             font-size: 20px;
             font-style: normal;
             font-weight: 700;
-            line-height: 160%; /* 32px */
+            line-height: 160%;
+            /* 32px */
             letter-spacing: 2px;
             box-sizing: border-box;
             padding: 10px 45px;
             position: relative;
           }
-          & > div:nth-child(1)::after {
+
+          &>div:nth-child(1)::after {
             position: absolute;
             content: '';
             width: 18px;
             height: 25px;
-            background: url('https://static.ckjhk.com/ckj-image/a17694c1f8a8.svg')
-              no-repeat;
+            background: url('https://static.ckjhk.com/ckj-image/a17694c1f8a8.svg') no-repeat;
             background-size: contain;
             bottom: -65%;
             left: 50%;
@@ -1957,24 +2057,24 @@ const listItem = (str) => {
           }
         }
       }
-      & > div:nth-child(4)::after {
+
+      &>div:nth-child(4)::after {
         position: absolute;
         content: '';
         width: 51px;
         height: 84px;
-        background: url('https://static.ckjhk.com/ckj-image/36b7e7a13825.svg')
-          no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/36b7e7a13825.svg') no-repeat;
         background-size: contain;
         bottom: -55%;
         left: 21%;
       }
-      & > div:nth-child(4)::before {
+
+      &>div:nth-child(4)::before {
         position: absolute;
         content: '';
         width: 51px;
         height: 58px;
-        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg')
-          no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg') no-repeat;
         background-size: contain;
         bottom: -55%;
         right: 21%;
@@ -1987,7 +2087,8 @@ const listItem = (str) => {
       align-items: center;
       justify-content: center;
       gap: 0 28px;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         max-width: 470px;
         color: var(--Grey-Dark, #333);
         text-align: justify;
@@ -1995,13 +2096,16 @@ const listItem = (str) => {
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         width: 232.228px;
         height: auto;
-        & > img {
+
+        &>img {
           width: 100%;
           height: 100%;
           object-fit: cover;
@@ -2009,40 +2113,48 @@ const listItem = (str) => {
       }
     }
   }
+
   .species {
     padding: 30px 0;
+
     .species-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      & > div:nth-child(1),
-      & > div:nth-child(8),
-      & > div:nth-child(12) {
+
+      &>div:nth-child(1),
+      &>div:nth-child(8),
+      &>div:nth-child(12) {
         grid-column: span 3;
         text-align: center;
       }
-      & > div {
+
+      &>div {
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         color: var(--Theme-Color, #fc1682);
         text-align: center;
         font-family: 'Noto Sans TC';
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: 'Noto Sans TC';
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
         border-radius: 20px 0px 0px 0px;
         background: var(--Grey-Midlight, #adadad);
@@ -2052,7 +2164,8 @@ const listItem = (str) => {
         width: 105%;
         right: 0%;
       }
-      & > div:nth-child(3) {
+
+      &>div:nth-child(3) {
         padding: 5px 0;
         color: var(--White, #fff);
         text-align: center;
@@ -2060,21 +2173,24 @@ const listItem = (str) => {
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
         border-radius: 20px 20px 0px 0px;
         background: var(--Brand-Color, #f8298a);
         position: relative;
         z-index: 8;
       }
-      & > div:nth-child(4) {
+
+      &>div:nth-child(4) {
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: 'Noto Sans TC';
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
         border-radius: 0px 20px 0px 0px;
         background: var(--Grey-Midlight, #adadad);
@@ -2084,17 +2200,20 @@ const listItem = (str) => {
         width: 105%;
         left: -5%;
       }
-      & > div:nth-child(6) {
+
+      &>div:nth-child(6) {
         border-left: 5px solid var(--Brand-Color, #f8298a);
         border-right: 5px solid var(--Brand-Color, #f8298a);
-        & > img {
+
+        &>img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
-      & > div:nth-child(8),
-      & > div:nth-child(12) {
+
+      &>div:nth-child(8),
+      &>div:nth-child(12) {
         background: var(--Brand-Color, #f8298a);
         color: var(--White, #fff);
         text-align: center;
@@ -2102,19 +2221,22 @@ const listItem = (str) => {
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
         box-sizing: border-box;
         padding: 5px 0;
       }
-      & > div:nth-child(9),
-      & > div:nth-child(10),
-      & > div:nth-child(11),
-      & > div:nth-child(13),
-      & > div:nth-child(14),
-      & > div:nth-child(15) {
+
+      &>div:nth-child(9),
+      &>div:nth-child(10),
+      &>div:nth-child(11),
+      &>div:nth-child(13),
+      &>div:nth-child(14),
+      &>div:nth-child(15) {
         box-sizing: border-box;
         padding: 10px;
+
         ul {
           li {
             color: #4c4c4c;
@@ -2123,89 +2245,107 @@ const listItem = (str) => {
             font-size: 18px;
             font-style: normal;
             font-weight: 400;
-            line-height: 200%; /* 36px */
+            line-height: 200%;
+            /* 36px */
             letter-spacing: 1.8px;
             list-style: disc;
           }
         }
       }
-      & > div:nth-child(9),
-      & > div:nth-child(13) {
+
+      &>div:nth-child(9),
+      &>div:nth-child(13) {
         border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(10),
-      & > div:nth-child(14) {
+
+      &>div:nth-child(10),
+      &>div:nth-child(14) {
         border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
         border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(11),
-      & > div:nth-child(15) {
+
+      &>div:nth-child(11),
+      &>div:nth-child(15) {
         border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(13),
-      & > div:nth-child(14),
-      & > div:nth-child(15) {
+
+      &>div:nth-child(13),
+      &>div:nth-child(14),
+      &>div:nth-child(15) {
         border-bottom: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(13) {
+
+      &>div:nth-child(13) {
         border-radius: 0px 0px 0px 20px;
       }
 
-      & > div:nth-child(15) {
+      &>div:nth-child(15) {
         border-radius: 0px 0px 20px 0;
       }
-      & > div:nth-child(12) {
+
+      &>div:nth-child(12) {
         background: var(--Blue-Deep, #00aeff);
       }
     }
   }
+
   .crown-maintenance {
     padding: 30px 0;
+
     .crown-maintenance-content {
       margin-top: 20px;
       display: flex;
       gap: 0 7px;
       justify-content: center;
       align-items: flex-start;
-      & > div {
+
+      &>div {
         width: 140px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 7px 0;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           width: 100px;
           height: 100px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: 'Noto Sans HK';
           font-size: 18px;
           font-style: normal;
           font-weight: 400;
-          line-height: 200%; /* 36px */
+          line-height: 200%;
+          /* 36px */
           letter-spacing: 1.8px;
         }
       }
     }
   }
+
   .crown-case {
     padding: 30px 0;
+
     .crown-case-content {
       margin-top: 15px;
+
       .crown-case-content-title {
         display: flex;
         justify-content: center;
         margin-bottom: 15px;
         gap: 0 54px;
-        & > div {
+
+        &>div {
           width: 453px;
           display: flex;
           align-items: center;
@@ -2219,37 +2359,44 @@ const listItem = (str) => {
           line-height: normal;
           letter-spacing: 3px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
         }
       }
+
       .swiper-slide-img {
         display: flex;
         gap: 15px 54px;
-        justify-content: end;
+        justify-content: flex-end;
         flex-wrap: wrap;
-        & > div {
+
+        &>div {
           width: 453px;
           height: 240px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
         }
       }
+
       .crown-case-content-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 15px;
         gap: 0 15px;
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 0 15px;
-          & > div {
+
+          &>div {
             width: 18px;
             height: 18px;
             overflow: hidden;
@@ -2258,8 +2405,9 @@ const listItem = (str) => {
             box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
           }
         }
-        & > div:nth-child(1),
-        & > div:nth-child(3) {
+
+        &>div:nth-child(1),
+        &>div:nth-child(3) {
           width: 30px;
           height: 30px;
           overflow: hidden;
@@ -2268,7 +2416,8 @@ const listItem = (str) => {
           background-size: cover;
           box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
         }
-        & > div:nth-child(3) {
+
+        &>div:nth-child(3) {
           transform: rotate(180deg);
           box-shadow: -5.333px -5.333px 5.333px rgba(77, 77, 77, 0.2);
         }
@@ -2281,8 +2430,10 @@ const listItem = (str) => {
       }
     }
   }
+
   .problem-data {
     padding: 30px 0;
+
     :deep(.problem) {
       margin-top: 20px;
     }
@@ -2301,6 +2452,7 @@ const listItem = (str) => {
     width: 100%;
     z-index: 10;
   }
+
   .banner-image {
     position: absolute;
     z-index: 3;
@@ -2308,12 +2460,14 @@ const listItem = (str) => {
     left: 49%;
     width: 9.0625vw;
     height: 9.0625vw;
-    & > img {
+
+    &>img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
   }
+
   .banner-content {
     display: flex;
     flex-direction: column;
@@ -2324,10 +2478,12 @@ const listItem = (str) => {
     left: 40%;
     top: 50%;
     transform: translate(-50%, -50%);
-    & > div {
+
+    &>div {
       display: flex;
       align-items: flex-end;
     }
+
     .content-title {
       color: var(--White, #fff);
       text-align: right;
@@ -2337,21 +2493,18 @@ const listItem = (str) => {
       font-size: clamp(40px, 5.7vw, 110px);
       font-style: normal;
       font-weight: 600;
-      line-height: 100%; /* 176px */
+      line-height: 100%;
+      /* 176px */
       letter-spacing: 6.6px;
       position: relative;
       z-index: 6;
       bottom: 0;
 
       border-radius: 0.6942vw 0.6942vw 0px 0px;
-      background: var(
-        --Liner-purple,
-        linear-gradient(
-          269deg,
-          var(--Brand-Color, #fc1682) 10.21%,
-          #710d54 122.73%
-        )
-      );
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
       box-sizing: border-box;
       padding: 0.859375vw 4.7135vw;
       color: var(--White, #fff);
@@ -2370,12 +2523,14 @@ const listItem = (str) => {
       height: 11.145vw;
       position: relative;
       right: -3.64583vw;
-      & > img {
+
+      &>img {
         width: 100%;
         height: 100%;
         object-fit: contain;
       }
     }
+
     .content-price,
     .content-subscribe {
       width: 100%;
@@ -2392,10 +2547,12 @@ const listItem = (str) => {
       font-size: 1.927vw;
       font-style: normal;
       font-weight: 900;
-      line-height: 2.2222vw; /* 114.286% */
+      line-height: 2.2222vw;
+      /* 114.286% */
       letter-spacing: 0.29165vw;
       justify-content: center;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         position: relative;
         color: var(--Grey-Dark, #333);
         text-align: right;
@@ -2406,20 +2563,23 @@ const listItem = (str) => {
         font-size: 1.927vw;
         font-style: normal;
         font-weight: 900;
-        line-height: 2.2222vw; /* 114.286% */
+        line-height: 2.2222vw;
+        /* 114.286% */
         letter-spacing: 0.29165vw;
         top: auto;
       }
 
-      & > div:nth-child(2) {
+      &>div:nth-child(2) {
         width: 10.252083vw;
-        & > svg {
+
+        &>svg {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
     }
+
     .content-subscribe {
       box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
       border-radius: 0px 0px 13.333px 13.333px;
@@ -2430,66 +2590,80 @@ const listItem = (str) => {
       font-size: 1.38890625vw;
       font-style: normal;
       font-weight: 900;
-      line-height: 1.157vw; /* 83.333% */
+      line-height: 1.157vw;
+      /* 83.333% */
       letter-spacing: 0.1369vw;
     }
   }
 }
+
 @media screen and (max-width: 991px) {
   .all-ceramic-crowns {
     margin: 30px 0;
   }
+
   .all-ceramic-crowns-service {
     margin: 30px 0;
+
     .all-ceramic-crowns-service-content {
       display: flex;
       justify-content: center;
       padding: 15px 0;
       gap: 0 32.5px;
-      & > div {
+
+      &>div {
         width: 90px;
         height: 120.41px;
         overflow: hidden;
-        & > img {
+
+        &>img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
     }
+
     .all-ceramic-crowns-service-content-text {
       padding: 0 20px;
-      & > p {
+
+      &>p {
         display: inline;
       }
+
       color: var(--Grey-Dark, #333);
       text-align: justify;
       font-family: 'Noto Sans HK';
       font-size: 14px;
       font-style: normal;
       font-weight: 500;
-      line-height: 150%; /* 21px */
+      line-height: 150%;
+      /* 21px */
       letter-spacing: 0.7px;
     }
   }
+
   .dental-crown {
     margin: 30px 0;
     position: relative;
     z-index: 1;
     padding-bottom: 15px;
+
     .dental-crown-content {
       border-radius: 5px;
       overflow: hidden;
       box-sizing: border-box;
       margin: 15px 20px;
       box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.2);
-      & > div {
+
+      &>div {
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
         padding: 7px 23px;
         align-items: center;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
           font-size: 16px;
@@ -2498,7 +2672,8 @@ const listItem = (str) => {
           line-height: normal;
           letter-spacing: 1.6px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
           text-align: right;
           font-family: 'Noto Sans HK';
@@ -2509,7 +2684,8 @@ const listItem = (str) => {
           letter-spacing: 0.8px;
           display: flex;
           flex-direction: column;
-          & > span {
+
+          &>span {
             color: var(--Blue-Deep, #00aeff);
             text-align: right;
             font-family: 'Noto Sans HK';
@@ -2521,31 +2697,39 @@ const listItem = (str) => {
           }
         }
       }
-      & > div:nth-child(odd) {
+
+      &>div:nth-child(odd) {
         background: var(--Palest-Pink, #fff7f8);
       }
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         background: var(--Brand-Color, #f8298a);
-        & > div {
+
+        &>div {
           color: #fff;
         }
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         height: 70px;
         align-items: flex-start;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           color: var(--Brand-Color, #f8298a);
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
           position: relative;
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             display: flex;
             align-items: center;
             gap: 0 15px;
-            & > div:nth-child(1) {
+
+            &>div:nth-child(1) {
               position: absolute;
               background: url('~/assets/images/2025040116505101.svg') no-repeat;
               background-size: cover;
@@ -2568,11 +2752,13 @@ const listItem = (str) => {
               left: -170%;
               bottom: 0%;
             }
-            & > div:nth-child(2) {
+
+            &>div:nth-child(2) {
               width: 108px;
               height: 29.4px;
               margin-top: 5px;
-              & > img {
+
+              &>img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -2582,70 +2768,78 @@ const listItem = (str) => {
         }
       }
     }
+
     .dental-crown-content-text {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0 10px;
       margin: 20px 20px 0;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         display: flex;
         position: relative;
-        & > div {
+
+        &>div {
           width: 53.129px;
           height: 53.129px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: drop-shadow(0px 0px 12.347px rgba(0, 0, 0, 0.25));
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           position: relative;
           z-index: 5;
           top: 14px;
           left: -7px;
         }
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         color: var(--Grey-Dark, #333);
         text-align: justify;
         font-family: 'Noto Sans HK';
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
+        /* 21px */
         letter-spacing: 0.7px;
       }
     }
   }
+
   .bg-customization-process {
-    background: linear-gradient(
-      0deg,
-      rgba(255, 241, 240, 0) 0%,
-      rgba(255, 241, 240, 0.7) 12.5%,
-      rgba(255, 241, 240, 0.7) 81.99%,
-      rgba(255, 241, 240, 0) 100%
-    );
+    background: linear-gradient(0deg,
+        rgba(255, 241, 240, 0) 0%,
+        rgba(255, 241, 240, 0.7) 12.5%,
+        rgba(255, 241, 240, 0.7) 81.99%,
+        rgba(255, 241, 240, 0) 100%);
   }
+
   .customization-process {
     margin: 30px 0;
+
     .customization-process-content {
       margin-top: 20px;
     }
+
     .course {
       margin-top: 20px;
-      background: linear-gradient(
-          0deg,
+      background: linear-gradient(0deg,
           rgba(255, 241, 240, 0) 0%,
           rgba(255, 241, 240, 0.7) 1.5%,
           rgba(255, 241, 240, 0.7) 81.99%,
-          rgba(255, 241, 240, 0) 100%
-        ),
+          rgba(255, 241, 240, 0) 100%),
         #fff;
       box-sizing: border-box;
       padding: 0 19.5px;
+
       .course-text {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
@@ -2653,18 +2847,22 @@ const listItem = (str) => {
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
+        /* 21px */
         letter-spacing: 0.7px;
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         margin-top: 10px;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           display: flex;
           box-sizing: border-box;
           border-radius: 5px;
           overflow: hidden;
           background: var(--White, #fff);
-          & > div {
+
+          &>div {
             padding: 8px 10px;
             color: var(--Grey-Mid, #666);
             text-align: center;
@@ -2676,12 +2874,14 @@ const listItem = (str) => {
             letter-spacing: 1.6px;
           }
 
-          & > div:nth-child(1) {
+          &>div:nth-child(1) {
             flex: 5.4;
           }
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             flex: 4.5;
           }
+
           .active-teeth {
             color: var(--White, #fff);
             text-align: center;
@@ -2697,49 +2897,60 @@ const listItem = (str) => {
             transition: all 0.3s ease-in-out;
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           display: flex;
           gap: 0 10px;
           align-items: flex-start;
           margin-top: 10px;
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             width: 27px;
             height: 260px;
-            & > img {
+
+            &>img {
               width: 100%;
               height: 100%;
               object-fit: cover;
             }
           }
-          & > div:nth-child(3) {
+
+          &>div:nth-child(3) {
             display: flex;
             flex-direction: column;
             gap: 5px 0;
             width: 100%;
-            & > div {
+
+            &>div {
               background: var(--White, #fff);
-              & > div {
+
+              &>div {
                 display: flex;
                 gap: 0 10px;
                 box-sizing: border-box;
                 padding: 10px;
-                & > div:nth-child(1) {
+
+                &>div:nth-child(1) {
                   color: var(--Theme-Color, #fc1682);
                   font-family: 'Noto Sans HK';
                   font-size: 16px;
                   font-style: normal;
                   font-weight: 700;
-                  line-height: 150%; /* 24px */
+                  line-height: 150%;
+                  /* 24px */
                 }
-                & > div:nth-child(2) {
-                  & > div {
+
+                &>div:nth-child(2) {
+                  &>div {
                     color: var(--Grey-Dark, #333);
                     text-align: justify;
                     font-family: 'Noto Sans HK';
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 500;
-                    line-height: 150%; /* 24px */
+                    line-height: 150%;
+
+                    /* 24px */
                     :deep(i) {
                       font-style: normal;
                       color: var(--Brand-Color, #f8298a);
@@ -2757,13 +2968,15 @@ const listItem = (str) => {
         }
       }
     }
+
     .customization-process-text {
       display: flex;
       box-sizing: border-box;
       padding: 0 20px 5px;
       gap: 0 12px;
       margin-top: 10px;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         max-width: 186px;
         color: var(--Grey-Dark, #333);
         text-align: justify;
@@ -2771,19 +2984,23 @@ const listItem = (str) => {
         font-size: 12px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 18px */
+        line-height: 150%;
+        /* 18px */
         letter-spacing: 0.6px;
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         width: 128.857px;
         height: 60.811px;
-        & > img {
+
+        &>img {
           width: 100%;
           height: 100%;
           object-fit: contain;
         }
       }
     }
+
     .customization-process-tradition-text {
       color: var(--Grey-Dark, #333);
       text-align: center;
@@ -2796,43 +3013,51 @@ const listItem = (str) => {
       margin-top: 10px;
     }
   }
+
   .species {
     margin: 30px 0;
+
     .species-content {
       position: relative;
       z-index: 1;
       margin-top: 10px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      & > div:nth-child(1),
-      & > div:nth-child(8),
-      & > div:nth-child(12) {
+
+      &>div:nth-child(1),
+      &>div:nth-child(8),
+      &>div:nth-child(12) {
         grid-column: span 3;
         text-align: center;
       }
-      & > div {
+
+      &>div {
         display: flex;
         justify-content: center;
         align-items: flex-start;
       }
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         color: var(--Theme-Color, #fc1682);
         text-align: center;
         font-family: 'Noto Sans TC';
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: 'Noto Sans HK';
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
+        /* 21px */
         letter-spacing: 0.7px;
         border-radius: 20px 0px 0px 0px;
         background: var(--Grey-Midlight, #adadad);
@@ -2842,7 +3067,8 @@ const listItem = (str) => {
         width: 105%;
         right: 0%;
       }
-      & > div:nth-child(3) {
+
+      &>div:nth-child(3) {
         padding: 5px 0;
         color: var(--White, #fff);
         text-align: center;
@@ -2850,21 +3076,24 @@ const listItem = (str) => {
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
+        /* 21px */
         letter-spacing: 0.7px;
         border-radius: 10px 10px 0px 0px;
         background: var(--Brand-Color, #f8298a);
         position: relative;
         z-index: 8;
       }
-      & > div:nth-child(4) {
+
+      &>div:nth-child(4) {
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: 'Noto Sans HK';
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 21px */
+        line-height: 150%;
+        /* 21px */
         letter-spacing: 0.7px;
         border-radius: 0px 10px 0px 0px;
         background: var(--Grey-Midlight, #adadad);
@@ -2874,17 +3103,20 @@ const listItem = (str) => {
         width: 105%;
         left: -5%;
       }
-      & > div:nth-child(6) {
+
+      &>div:nth-child(6) {
         border-left: 5px solid var(--Brand-Color, #f8298a);
         border-right: 5px solid var(--Brand-Color, #f8298a);
-        & > img {
+
+        &>img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
-      & > div:nth-child(8),
-      & > div:nth-child(12) {
+
+      &>div:nth-child(8),
+      &>div:nth-child(12) {
         background: var(--Brand-Color, #f8298a);
         color: var(--White, #fff);
         text-align: center;
@@ -2892,20 +3124,23 @@ const listItem = (str) => {
         font-size: 20px;
         font-style: normal;
         font-weight: 700;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
         letter-spacing: 2px;
         box-sizing: border-box;
         padding: 5px 0;
       }
-      & > div:nth-child(9),
-      & > div:nth-child(10),
-      & > div:nth-child(11),
-      & > div:nth-child(13),
-      & > div:nth-child(14),
-      & > div:nth-child(15) {
+
+      &>div:nth-child(9),
+      &>div:nth-child(10),
+      &>div:nth-child(11),
+      &>div:nth-child(13),
+      &>div:nth-child(14),
+      &>div:nth-child(15) {
         box-sizing: border-box;
         padding: 10px;
         padding-left: 22px;
+
         ul {
           li {
             color: #4c4c4c;
@@ -2914,38 +3149,45 @@ const listItem = (str) => {
             font-size: 12px;
             font-style: normal;
             font-weight: 400;
-            line-height: 150%; /* 18px */
+            line-height: 150%;
+            /* 18px */
             letter-spacing: 0.6px;
             list-style: disc;
           }
         }
       }
-      & > div:nth-child(9),
-      & > div:nth-child(13) {
+
+      &>div:nth-child(9),
+      &>div:nth-child(13) {
         border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(10),
-      & > div:nth-child(14) {
+
+      &>div:nth-child(10),
+      &>div:nth-child(14) {
         border-left: 2px solid var(--Grey-Lightest, #f2f2f2);
         border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(11),
-      & > div:nth-child(15) {
+
+      &>div:nth-child(11),
+      &>div:nth-child(15) {
         border-right: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(13),
-      & > div:nth-child(14),
-      & > div:nth-child(15) {
+
+      &>div:nth-child(13),
+      &>div:nth-child(14),
+      &>div:nth-child(15) {
         border-bottom: 2px solid var(--Grey-Lightest, #f2f2f2);
       }
-      & > div:nth-child(13) {
+
+      &>div:nth-child(13) {
         border-radius: 0px 0px 0px 0px;
       }
 
-      & > div:nth-child(15) {
+      &>div:nth-child(15) {
         border-radius: 0px 0px 0px 0;
       }
-      & > div:nth-child(12) {
+
+      &>div:nth-child(12) {
         background: var(--Blue-Deep, #00aeff);
       }
     }
@@ -2953,23 +3195,28 @@ const listItem = (str) => {
 
   .crown-maintenance {
     margin: 30px 0;
+
     .crown-maintenance-content {
       margin: 10px 30px 0;
       display: flex;
       gap: 0 40px;
       justify-content: center;
-      & > div {
+
+      &>div {
         max-width: 74px;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           width: 70px;
           height: 70px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           white-space: nowrap;
           color: var(--Grey-Dark, #333);
           text-align: center;
@@ -2977,7 +3224,8 @@ const listItem = (str) => {
           font-size: 14px;
           font-style: normal;
           font-weight: 500;
-          line-height: 150%; /* 21px */
+          line-height: 150%;
+          /* 21px */
           letter-spacing: 0.7px;
         }
       }
@@ -2986,15 +3234,18 @@ const listItem = (str) => {
 
   .crown-case {
     margin: 30px 0;
+
     .crown-case-content {
       margin-top: 20px;
       padding: 0 12px;
+
       .crown-case-content-title {
         display: flex;
         justify-content: center;
         margin-bottom: 15px;
         gap: 0 54px;
-        & > div {
+
+        &>div {
           width: 453px;
           display: flex;
           align-items: center;
@@ -3008,37 +3259,44 @@ const listItem = (str) => {
           line-height: normal;
           letter-spacing: 1.8px;
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
         }
       }
+
       .swiper-slide-img {
         display: flex;
         gap: 10px;
-        justify-content: end;
+        justify-content: flex-end;
         flex-wrap: wrap;
-        & > div {
+
+        &>div {
           width: 170px;
           height: 90px;
-          & > img {
+
+          &>img {
             width: 100%;
             height: 100%;
             object-fit: cover;
           }
         }
       }
+
       .crown-case-content-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 15px;
         gap: 0 10px;
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 0 10px;
-          & > div {
+
+          &>div {
             width: 12px;
             height: 12px;
             overflow: hidden;
@@ -3047,8 +3305,9 @@ const listItem = (str) => {
             box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
           }
         }
-        & > div:nth-child(1),
-        & > div:nth-child(3) {
+
+        &>div:nth-child(1),
+        &>div:nth-child(3) {
           width: 20px;
           height: 20px;
           overflow: hidden;
@@ -3057,7 +3316,8 @@ const listItem = (str) => {
           background-size: cover;
           box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
         }
-        & > div:nth-child(3) {
+
+        &>div:nth-child(3) {
           transform: rotate(180deg);
           box-shadow: -5.333px -5.333px 5.333px rgba(77, 77, 77, 0.2);
         }
@@ -3075,6 +3335,7 @@ const listItem = (str) => {
     padding: 0 0;
     margin: 30px 0 45px;
   }
+
   .banner-in-box {
     position: absolute;
     bottom: 0;
@@ -3088,6 +3349,7 @@ const listItem = (str) => {
     bottom: 0;
     transform: translateY(0px);
   }
+
   .banner-image {
     display: none !important;
     position: absolute;
@@ -3096,22 +3358,26 @@ const listItem = (str) => {
     height: 46px;
     top: 0;
     left: 15%;
-    & > img {
+
+    &>img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
   }
+
   .banner-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
-    & > div {
+
+    &>div {
       display: flex;
       align-items: flex-end;
     }
+
     .content-title {
       color: var(--White, #fff);
       text-align: right;
@@ -3121,21 +3387,18 @@ const listItem = (str) => {
       font-size: clamp(40px, 5.7vw, 110px);
       font-style: normal;
       font-weight: 600;
-      line-height: 100%; /* 176px */
+      line-height: 100%;
+      /* 176px */
       letter-spacing: 6.6px;
       position: relative;
       z-index: 6;
       bottom: 0;
 
       border-radius: 0.6942vw 0.6942vw 0px 0px;
-      background: var(
-        --Liner-purple,
-        linear-gradient(
-          269deg,
-          var(--Brand-Color, #fc1682) 10.21%,
-          #710d54 122.73%
-        )
-      );
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
       box-sizing: border-box;
       padding: 0.859375vw 4.7135vw;
       color: var(--White, #fff);
@@ -3154,12 +3417,14 @@ const listItem = (str) => {
       height: 11.145vw;
       position: relative;
       right: -3.64583vw;
-      & > img {
+
+      &>img {
         width: 100%;
         height: 100%;
         object-fit: contain;
       }
     }
+
     .content-price,
     .content-subscribe {
       width: 100%;
@@ -3176,10 +3441,12 @@ const listItem = (str) => {
       font-size: 1.927vw;
       font-style: normal;
       font-weight: 900;
-      line-height: 2.2222vw; /* 114.286% */
+      line-height: 2.2222vw;
+      /* 114.286% */
       letter-spacing: 0.29165vw;
       justify-content: center;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         position: relative;
         color: var(--Grey-Dark, #333);
         text-align: right;
@@ -3190,20 +3457,23 @@ const listItem = (str) => {
         font-size: 1.927vw;
         font-style: normal;
         font-weight: 900;
-        line-height: 2.2222vw; /* 114.286% */
+        line-height: 2.2222vw;
+        /* 114.286% */
         letter-spacing: 0.29165vw;
         top: auto;
       }
 
-      & > div:nth-child(2) {
+      &>div:nth-child(2) {
         width: 10.252083vw;
-        & > svg {
+
+        &>svg {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
       }
     }
+
     position: relative;
     align-items: flex-start;
     justify-content: flex-end;
@@ -3213,6 +3483,7 @@ const listItem = (str) => {
     bottom: -65%;
     border-radius: 10px;
     transform: translate(-50%, 0%);
+
     .content-title {
       display: flex;
       justify-content: center;
@@ -3221,21 +3492,18 @@ const listItem = (str) => {
       font-size: 40px;
       font-style: normal;
       font-weight: 600;
-      line-height: 100%; /* 72px */
+      line-height: 100%;
+      /* 72px */
       letter-spacing: 2.7px;
       position: relative;
       z-index: 6;
       bottom: 0;
       width: 100%;
       border-radius: 10px 10px 0px 0px;
-      background: var(
-        --Liner-purple,
-        linear-gradient(
-          269deg,
-          var(--Brand-Color, #fc1682) 10.21%,
-          #710d54 122.73%
-        )
-      );
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
       padding: 16.5px 0;
       color: var(--White, #fff);
       text-align: center;
@@ -3244,9 +3512,11 @@ const listItem = (str) => {
       font-size: 24px;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px; /* 83.333% */
+      line-height: 20px;
+      /* 83.333% */
       letter-spacing: 2.4px;
     }
+
     .content-price,
     .content-subscribe {
       min-height: auto;
@@ -3258,7 +3528,8 @@ const listItem = (str) => {
       font-weight: 900;
       line-height: 3.73vw;
       letter-spacing: 0.82vw;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         color: var(--Grey-Dark, #333);
         text-align: right;
         text-shadow: 1.3px 1.333px 1.333px #faeaf2,
@@ -3273,23 +3544,27 @@ const listItem = (str) => {
         position: relative;
       }
 
-      & > div:nth-child(2) {
+      &>div:nth-child(2) {
         width: 40.265vw;
         height: auto;
-        & > img {
+
+        &>img {
           width: 100%;
           height: 100%;
           object-fit: contain;
         }
       }
     }
+
     .content-subscribe {
       padding: 1vw 0 2.65vw 0;
     }
+
     .price-style {
       width: 153px;
       height: 90px;
-      & > img {
+
+      &>img {
         width: 100%;
         height: 100%;
         object-fit: cover;

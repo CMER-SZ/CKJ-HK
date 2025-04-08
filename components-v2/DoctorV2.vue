@@ -346,6 +346,7 @@ onMounted(() => {
       display: flex;
       flex-wrap: wrap;
       box-sizing: border-box;
+      justify-content: center;
       padding: 0 10px;
 
       .office-btn {

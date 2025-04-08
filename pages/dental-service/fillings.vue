@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { url } from 'node:inspector'
 import { useAppState } from '~/stores/appState'
 const appState = useAppState()
 appState.setDentistryService('fillings')
@@ -86,12 +85,7 @@ const materialData = {
 
 let materialCurrent = ref(1)
 
-const onSlideChange = (swiper: any) => {
-  materialCurrent.value = swiper.realIndex + 1
-}
-
 let windowWidth = ref(1920)
-
 onMounted(() => {
   getWindowWidth()
   window.addEventListener('resize', getWindowWidth)
@@ -102,7 +96,7 @@ const getWindowWidth = () => {
 }
 
 const problemData = {
-  title: 'pages.dental-service.fillings.problem.title',
+  title: '<span>補牙</span><span>常見問題</span>',
   lists: [
     {
       Q: 'pages.dental-service.fillings.problem.lists[0].Q',
@@ -386,62 +380,92 @@ const differData: any = {
     },
   ],
 }
+
+// 植牙6步曲
+const implantStepList = [
+  {
+    id: 1,
+    title: '清除蛀壞部分與脆弱處',
+    img: 'https://static.cmereye.com/imgs/2024/02/7da900517cf80179.jpg',
+    ifImage: true,
+  },
+  {
+    id: 2,
+    title: '清潔消毒牙面並塗黏固劑',
+    img: 'https://static.cmereye.com/imgs/2024/02/3e6bc9ac0edc0d89.jpg',
+    ifImage: true,
+  },
+  {
+    id: 3,
+    title: '修補缺損及牙洞',
+    img: 'https://static.cmereye.com/imgs/2024/02/8233293d90d88e23.jpg',
+    ifImage: true,
+  },
+  {
+    id: 4,
+    title: '穩固填充物',
+    img: 'https://static.cmereye.com/imgs/2024/02/631f4e13fa030aab.jpg',
+    ifImage: true,
+  },
+  {
+    id: 5,
+    title: '牙齒修形及拋光',
+    img: 'https://static.cmereye.com/imgs/2024/02/7a0fb0ea64f3e589.jpg',
+    ifImage: true,
+  },
+  {
+    img: 'https://static.ckjhk.com/ckj-image/ef1c3b8cd6ba.svg',
+    ifImage: false,
+  },
+]
+
+const fillingsPhaseList = [
+  {
+    id: 1,
+    title: '1.脫鈣（初期蛀牙）',
+    text: '出現白色斑點，牙齒表面粗糙',
+    method: '治療方法：氟化治療 ',
+    img: 'https://static.ckjhk.com/ckj-image/b401d219c9ff.png',
+    orientationImage: 'https://static.ckjhk.com/ckj-image/d021a34300ad.png',
+  },
+  {
+    id: 2,
+    title: '2.外層琺瑯質受損',
+    text: '牙齒出現黑色斑點或小洞',
+    method: '治療方法：補牙',
+    img: 'https://static.ckjhk.com/ckj-image/b67a31009914.png',
+    orientationImage: 'https://static.ckjhk.com/ckj-image/299cb29a709e.png',
+  },
+  {
+    id: 3,
+    title: '3.內層象牙質受損',
+    text: '牙齒對冷熱或甜食敏感',
+    method: '治療方法：補牙',
+    img: 'https://static.ckjhk.com/ckj-image/b67a31009914.png',
+    orientationImage: 'https://static.ckjhk.com/ckj-image/6abc46d564e1.png',
+  },
+  {
+    id: 4,
+    title: '4.牙髓及神經受損',
+    text: '持續性的疼痛，牙肉紅腫 ',
+    method: '治療方法：根管治療、牙冠修復',
+    img: 'https://static.ckjhk.com/ckj-image/2fba56d1246c.png',
+    orientationImage: 'https://static.ckjhk.com/ckj-image/1b48ab71c33e.png',
+  },
+  {
+    id: 5,
+    title: '5.殘根',
+    text: '牙冠部分極度損壞，僅剩牙根',
+    method: '治療方法：拔牙及種植牙',
+    img: 'https://static.ckjhk.com/ckj-image/1665fbffc03b.png',
+    orientationImage: 'https://static.ckjhk.com/ckj-image/06994d1f1eff.png',
+  },
+]
 </script>
 
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
-      <template #xxxxxxxxxxx-home>
-        <div class="banner-in-box">
-          <div class="banner-content" style="display: flex">
-            <div class="content-title">網上預約限定優惠</div>
-            <div class="content-price">
-              <div>美國樹脂補牙</div>
-              <div>
-                <img src="~/assets/images/2025031311165802.svg" alt="" />
-              </div>
-            </div>
-            <div class="content-subscribe">
-              <div>其他物料</div>
-              <div>
-                <img src="~/assets/images/2025031311165801.svg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </template>
-    </PageHeader>
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
-      <template #xxxxxxxxxxx-home>
-        <div class="banner-in-box">
-          <div class="banner-image">
-            <img
-              src="https://static.ckjhk.com/ckj-image/f0f71d7dd9c6.webp"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="banner-content" style="display: flex">
-            <div class="content-title">網上預約限定優惠</div>
-            <div class="content-price">
-              <div>美國樹脂補牙</div>
-              <div>
-                <img src="~/assets/images/2025031311165802.svg" alt="" />
-              </div>
-            </div>
-            <div class="content-subscribe">
-              <div>其他物料</div>
-              <div>
-                <img src="~/assets/images/2025031311165801.svg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </template>
-    </PagePcBannerNoHome> -->
-
     <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
@@ -464,7 +488,7 @@ const differData: any = {
         </div>
       </template>
     </MobileHeaderV2>
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
+    <PagePcBannerNoHomeV2 v-if="windowWidth > 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-image">
@@ -491,2549 +515,2077 @@ const differData: any = {
           </div>
         </div>
       </template>
-    </PagePcBannerNoHome>
-
-    <div class="pageIn whitebgColor">
-      <div class="index_title pageCon">
-        {{ $t('pages.dental-service.title') }}
-      </div>
-      <!-- <div class="tabNav pageCon">
-        <nuxt-link :to="'/'" title="深圳愛康健口腔醫院" alt="深圳愛康健口腔醫院"
-          ><span>{{ $t('pages.index.title') }}</span></nuxt-link
-        >
-        <nuxt-link
-          :to="'#'"
-          :title="$t('pages.dental-service.title')"
-          :alt="'pages.dental-service.title'"
-          ><span>{{ $t('pages.dental-service.title') }}</span></nuxt-link
-        >
-        <span :title="$t(orthodonticsIntroduceData.tabNavName)">{{
-          $t(orthodonticsIntroduceData.tabNavName)
-        }}</span>
-      </div> -->
-      <!-- <ServiceIntroduce :introduceData="orthodonticsIntroduceData" /> -->
-      <div class="The_benefits_of_resin_filling_teeth">
-        <div class="dentistryServices-title reason-title">
-          <div class="dentistryServices-title-in bb reason-title-in">
-            {{ The_benefits_of_resin_filling_teeth.title }}
-          </div>
+    </PagePcBannerNoHomeV2>
+    <div class="fillings">
+      <section class="ckj-container fillings-key-points">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>考慮補牙時的</span><span>3大重點</span>
         </div>
-        <div class="The_benefits_of_resin_filling_teeth-img">
-          <img
-            data-cfsrc="https://static.cmereye.com/imgs/2024/02/91c959b48d0683e6.jpg"
-            srcset="
-              https://static.cmereye.com/imgs/2024/08/13cd348fd7b8dddb.jpg 400w,
-              https://static.cmereye.com/imgs/2024/02/91c959b48d0683e6.jpg
-            "
-            src="https://static.cmereye.com/imgs/2024/02/91c959b48d0683e6.jpg"
-            alt=""
-          />
-        </div>
-        <div class="The_benefits_of_resin_filling_teeth-lists">
-          <div
-            class="The_benefits_of_resin_filling_teeth-lists-in"
-            v-for="(item, index) in The_benefits_of_resin_filling_teeth.lists"
-            :key="index"
-          >
-            <div class="The_benefits_of_resin_filling_teeth-lists-in-l">
-              <div>
-                <div>
-                  <span
-                    v-for="(spanitem, spanindex) in item.name"
-                    :key="spanindex"
-                    >{{ spanitem }}</span
-                  >
-                </div>
-              </div>
-            </div>
-            <div class="The_benefits_of_resin_filling_teeth-lists-in-r">
-              {{ item.text }}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-in">
-          <div class="dentistryServices-title step-title">
-            <div class="dentistryServices-title-in bb step-title-in">
-              {{ stepData.title }}
-            </div>
-          </div>
-          <div class="step-lists">
-            <div
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-              class="step-lists-in"
-            >
-              <div class="step-lists-in-l" v-if="windowWidth > 767">
-                <div class="title">
-                  <img src="@/assets/images/icon_13.png" alt="" />
-                  {{ stepItem.title }}
-                </div>
-                <div class="image"><img :src="stepItem.img" alt="" /></div>
-                <div class="name">{{ stepItem.name }}</div>
-              </div>
-              <div class="step-lists-in-l" v-else>
-                <div class="title">
-                  {{ stepItem.title.charAt(1) }}
-                </div>
-                <div class="image"><img :src="stepItem.img" alt="" /></div>
-                <div class="name">{{ stepItem.name }}</div>
-              </div>
-              <div class="step-lists-in-r" v-if="windowWidth > 767">
-                <img src="@/assets/images/icon_12.png" alt="" />
-              </div>
-            </div>
-            <div class="step-lists-in">
-              <div>
-                <div class="lastBox-t" v-if="windowWidth > 767">
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="93"
-                      height="37"
-                      viewBox="0 0 93 37"
-                      fill="none"
-                    >
-                      <path
-                        d="M61.2884 3.61569C61.0125 3.2167 57.6082 -2.72905 49.2665 1.5291C49.2665 1.5291 47.5695 2.19409 46.5 2.19409C45.4305 2.19409 43.7335 1.5291 43.7335 1.5291C35.3962 -2.72905 31.9883 3.21522 31.7116 3.61569C27.3835 9.86291 32.1353 26.4818 36.328 32.7046C43.965 44.0405 43.4306 29.4114 46.5 28.9068C49.5694 29.4114 49.035 44.0405 56.672 32.7046C60.8647 26.4818 65.6165 9.86512 61.2884 3.61569Z"
-                        fill="#FC1682"
-                      />
-                      <path
-                        d="M0.881739 10.0521C1.02388 9.82569 2.77758 6.45108 7.07483 8.86787C7.07483 8.86787 7.94906 9.2453 8.5 9.2453C9.05094 9.2453 9.92517 8.86787 9.92517 8.86787C14.2202 6.45108 15.9757 9.82485 16.1183 10.0521C18.3479 13.5979 15.9 23.0302 13.7401 26.5621C9.8059 32.9959 10.0812 24.693 8.5 24.4065C6.91881 24.693 7.1941 32.9959 3.25989 26.5621C1.10001 23.0302 -1.3479 13.5991 0.881739 10.0521Z"
-                        fill="#FC1682"
-                      />
-                      <path
-                        d="M76.8817 10.0521C77.0239 9.82569 78.7776 6.45108 83.0748 8.86787C83.0748 8.86787 83.9491 9.2453 84.5 9.2453C85.0509 9.2453 85.9252 8.86787 85.9252 8.86787C90.2202 6.45108 91.9757 9.82485 92.1183 10.0521C94.3479 13.5979 91.9 23.0302 89.7401 26.5621C85.8059 32.9959 86.0812 24.693 84.5 24.4065C82.9188 24.693 83.1941 32.9959 79.2599 26.5621C77.1 23.0302 74.6521 13.5991 76.8817 10.0521Z"
-                        fill="#FC1682"
-                      />
-                    </svg>
-                  </div>
-                  <div>最快即日<span>修補牙齒</span></div>
-                </div>
-                <div v-else class="lastBox-t_new_mobile">
-                  <span>最快即日</span>
-                  <span>修補牙齒</span>
-                </div>
-                <div class="lastBox-b">
-                  <!-- <PageAnimBtnTypeTwo :str="'免費網上預約'" /> -->
-                  <PageAnimBtnTypeTwo :str="'免費網上預約'" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="differ">
-        <div class="differ-title dentistryServices-title">
-          <div class="dentistryServices-title-in bb">
-            {{ differData.title }}
-          </div>
-        </div>
-        <div class="differ-tc">
-          <span>補牙材料主要分為複合樹脂</span>
-          <span
-            >（俗稱瓷粉）及銀汞合金（俗稱銀粉）兩種。複合樹脂是現時最常用的材料。</span
-          >
-          <span>由於銀汞合金氧化後會變成銀黑色，</span>
-          <span>因此較少被選用。</span>
-        </div>
-        <div class="differ-lists">
-          <div
-            class="differ-lists-in"
-            v-for="(listDatasItem, listDatasIndex) in differData.listDatas"
-            :key="listDatasIndex"
-          >
-            <div>{{ listDatasItem.name }}</div>
-            <div>
-              <div v-if="listDatasItem.contentType === '1'">
-                <span
-                  v-for="(spanitem, spanindex) in listDatasItem.firstText"
-                  :key="spanindex"
-                >
-                  {{ spanitem }}
-                </span>
-              </div>
-              <div v-else-if="listDatasItem.contentType === '2'">
-                <img :src="listDatasItem.firstText || ''" alt="" />
-              </div>
-              <div v-else>
-                {{ listDatasItem.firstText }}
-              </div>
-            </div>
-            <div>
-              <div v-if="listDatasItem.contentType === '1'">
-                <span
-                  v-for="(spanitem, spanindex) in listDatasItem.secondText"
-                  :key="spanindex"
-                >
-                  {{ spanitem }}
-                </span>
-              </div>
-              <div v-else-if="listDatasItem.contentType === '2'">
-                <img :src="listDatasItem.secondText" alt="" />
-              </div>
-              <div v-else>
-                {{ listDatasItem.secondText }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="introduceJY">
-        <ServiceIntroduceJY :introduceData="introduceJY" />
-      </div>
-      <div class="note">
-        <div class="dentistryServices-title note-title">
-          <div class="dentistryServices-title-in bb note-title-in">
-            {{ noteData.title }}
-          </div>
-        </div>
-        <div class="note-lists">
-          <div
-            v-for="(careItem, careIndex) in noteData.lists"
-            :key="careIndex"
-            class="note-lists-item"
-          >
-            <div>
-              <div class="image">
-                <div class="image-in">
-                  <img :src="careItem.img" :alt="careItem.text" />
-                </div>
-              </div>
-              <div class="text">{{ careItem.text }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="note2">
-        <div
-          class="dentistryServices-title note2-title"
-          v-if="windowWidth > 768"
-        >
-          <div class="dentistryServices-title-in bb note2-title-in">
-            {{ noteData2.title }}
-          </div>
-        </div>
-        <div class="note2-content">
-          <div class="note2-content-l">
-            <img
-              src="https://static.cmereye.com/imgs/2024/09/012753add9d36390.png"
-              alt=""
-              v-if="windowWidth > 768"
-            />
-            <div v-else>
-              <span>補牙的<i>作用</i></span>
-            </div>
-            <!-- <img v-else src="https://static.cmereye.com/imgs/2024/08/226ad56f456f2008.png" alt=""> -->
-          </div>
-          <div class="note2-content-r">
-            <div
-              v-for="(noteItem, noteIndex) in noteData2.lists"
-              :key="noteIndex"
-            >
-              <span>{{ $t(noteItem.name) }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="reason">
-        <div class="dentistryServices-title reason-title">
-          <div class="dentistryServices-title-in bb reason-title-in">
-            {{ reasonData.title }}
-          </div>
-        </div>
-        <div class="reason-tc">
-          {{ reasonData.tText }}
-        </div>
-        <div class="reason-lists">
-          <div
-            v-for="(item, index) in reasonData.reasonLists"
-            :key="index"
-            class="reason-lists-item"
-          >
-            <div class="image">
-              <img v-if="windowWidth > 768" :src="item.img" alt="" />
-              <img v-else :src="item.mb_img" alt="" />
-            </div>
-            <div class="reason-lists-item-r">
-              <div class="title">
-                <span>{{ item.title }}</span>
-              </div>
-              <div class="context">
-                <img src="@/assets/images/icon_41.svg" alt="" />
-                <span>特徵：{{ item.context }}</span>
-                <span></span>
-              </div>
-              <!-- <div class="name" v-if="windowWidth > 768">
-                <img src="@/assets/images/icon_40.svg" alt="" />
-                <span>治療方法：</span>
-              </div> -->
-              <div class="list">
-                <div
-                  class="list-in"
-                  v-for="(itemIn, itemIndex) in item.lists"
-                  :key="itemIndex"
-                >
-                  <!-- <div class="list-in-img"> -->
-                  <!-- <img :src="itemIn.img" alt="" /> -->
-                  <!-- </div> -->
-                  <div class="list-in-text">
-                    <h2>
-                      <img
-                        src="@/assets/images/icon_40.svg"
-                        v-if="windowWidth > 768"
-                        alt=""
-                      />
-                      治療方法：<strong>{{ itemIn.name }}</strong>
-                    </h2>
-                    <p>{{ itemIn.text }}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="reason-bt">
+        <div class="fillings-key-points-content">
           <div>
-            <span v-for="(bitem, bindex) in reasonData.bText" :key="bindex">{{
-              bitem
-            }}</span>
-          </div>
-        </div>
-        <div class="reason-btn">
-          <!-- <PageAnimBtnTypeTwo :str="'了解根管治療資訊'" /> -->
-          <PageAnimBtnTypeTwo :str="'立即WhatsApp查詢'" />
-        </div>
-      </div>
-      <div class="fillings-content-l">
-        <div class="dentistryServices-title fillings-content-1-title">
-          <div
-            class="dentistryServices-title-in bb fillings-content-1-title-in"
-          >
-            <span>容易患上蛀牙的高危人士</span>
-          </div>
-        </div>
-        <div class="fillings-content-1-in">
-          <div
-            v-for="(contentItem, contentIndex) in contentData1"
-            :key="contentIndex"
-          >
-            <img :src="contentItem.img" alt="" />
-            <span>{{ contentItem.text }}</span>
-          </div>
-        </div>
-      </div>
-      <div class="care">
-        <div class="dentistryServices-title care-title">
-          <div class="dentistryServices-title-in bb care-title-in">
-            <span>{{ careData.title[0] }}</span>
-            <span>{{ careData.title[1] }}</span>
-          </div>
-        </div>
-        <div class="care-lists">
-          <div
-            v-for="(careItem, careIndex) in careData.lists"
-            :key="careIndex"
-            class="care-lists-item"
-          >
-            <div>
-              <div class="image">
-                <div class="image-in">
-                  <img :src="careItem.img" :alt="careItem.text" />
-                </div>
-              </div>
-              <div class="text">{{ careItem.text }}</div>
-            </div>
-          </div>
-        </div>
-        <div class="care-btn">
-          <!-- <PageAnimBtnTypeTwo :str="'立即預約免費檢查'" /> -->
-          <PageAnimBtnTypeTwo :str="'立即預約免費檢查'" />
-        </div>
-      </div>
-      <div class="advantage">
-        <div
-          class="advantage-title dentistryServices-title"
-          v-if="windowWidth > 768"
-        >
-          <div class="advantage-title-in dentistryServices-title-in bb">
-            {{ advantageData.title }}
-          </div>
-        </div>
-
-        <div class="advantage-in">
-          <div class="advantage-in-l" v-if="windowWidth > 768">
-            <img
-              src="https://static.cmereye.com/imgs/2024/02/023004e30a0f06d2.webp"
-              :alt="advantageData.title"
-            />
-          </div>
-          <div v-else class="mobile_title_ad">
             <div>
               <img
-                src="https://static.cmereye.com/imgs/2024/08/66bc66a66ae9f037.png"
+                src="https://static.ckjhk.com/ckj-image/2a94410bde53.svg"
                 alt=""
               />
             </div>
             <div>
-              <span>預防蛀牙</span>
-              <span>方法</span>
+              <p>
+                樹脂材料可調配成牙齒自然色，比金屬填料更美觀，尤其適合前牙。
+              </p>
             </div>
           </div>
-          <div class="advantage-in-r">
-            <div
-              v-for="(advantageItem, advantageIndex) in advantageData.lists"
-              :key="advantageIndex"
-            >
-              <div class="name">{{ advantageItem.name.split('.')[1] }}</div>
-              <div class="text">{{ advantageItem.text }}</div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/18942d393901.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <p>
+                樹脂填料能直接粘附牙齒，可保留更多天然牙結構，減少移除牙體。
+              </p>
+            </div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/be84c8e60794.svg"
+                alt=""
+              />
+            </div>
+            <div>
+              <p>
+                樹脂填充物不含金屬，適合對金屬敏感或擔心汞合金健康影響的人。
+              </p>
             </div>
           </div>
         </div>
-      </div>
-      <ServiceProblem :problemData="problemData" />
-      <serviceCard />
-      <BranchAddress />
-      <AppointmentFormV2 />
+      </section>
+      <section class="ckj-container fillings-materiel">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>4大推薦</span><span>補牙物料</span>
+        </div>
+        <div class="fillings-materiel-content">
+          <div class="fillings-materiel-content-title">網上預約專享</div>
+          <div class="fillings-materiel-content-lists">
+            <div>
+              <div class="fillings-materiel-content-lists-item">
+                <div>美國常規樹脂填充</div>
+                <div>
+                  <div>
+                    <div>
+                      <div>耐用度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars2.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div>美觀度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars3.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div>原價 ¥300/顆</div>
+                    <div>
+                      <img
+                        src="https://static.ckjhk.com/ckj-image/00582315ff51.svg"
+                        alt="美國常規樹脂填充"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fillings-materiel-content-lists-item">
+                <div>美國聲波樹脂填充 (一般補牙)</div>
+                <div>
+                  <div>
+                    <div>
+                      <div>耐用度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars4.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div>美觀度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars4.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div>原價 ¥550/顆</div>
+                    <div>
+                      <img
+                        src="https://static.ckjhk.com/ckj-image/096c1081c305.svg"
+                        alt="美國聲波樹脂填充 (一般補牙)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fillings-materiel-content-lists-item">
+                <div>超強納米樹脂填充 (大牙)</div>
+                <div>
+                  <div>
+                    <div>
+                      <div>耐用度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars5.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div>美觀度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars4.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div>原價 ¥800/顆</div>
+                    <div>
+                      <img
+                        src="https://static.ckjhk.com/ckj-image/096c1081c305.svg"
+                        alt="超強納米樹脂填充 (大牙)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fillings-materiel-content-lists-item">
+                <div>美學分層樹脂修復 (門牙、前牙)</div>
+                <div>
+                  <div>
+                    <div>
+                      <div>耐用度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars5.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div>美觀度</div>
+                      <div>
+                        <img
+                          src="https://static.ckjhk.com/ckj-image/stars5.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div>原價 ¥1500/顆</div>
+                    <div>
+                      <img
+                        src="https://static.ckjhk.com/ckj-image/096c1081c305.svg"
+                        alt="美學分層樹脂修復 (門牙、前牙)"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img
+                class="d-none d-md-block"
+                src="https://static.ckjhk.com/ckj-image/2031cae320a4.svg"
+                alt="趋势"
+              />
+              <img
+                class="d-md-none"
+                src="https://static.ckjhk.com/ckj-image/a5fd0197ded9.svg"
+                alt="趋势"
+              />
+            </div>
+          </div>
+          <div class="fillings-materiel-content-btn">
+            以上優惠只限網上預約客戶
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container fillings-compare">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>補牙</span><span>物料比較</span>
+        </div>
+        <div class="fillings-compare-content">
+          <div class="fillings-compare-content-table">
+            <div></div>
+            <div>複合樹脂</div>
+            <div>銀汞合金</div>
+            <div></div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/4da033c70187.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/2ab611c9dd74.png"
+                alt=""
+              />
+            </div>
+            <div>特性</div>
+            <div>主要修復牙齒形狀</div>
+            <div>修補小大臼齒的蛀牙</div>
+            <div>優點</div>
+            <div>
+              <ul>
+                <li>美觀，色澤近似天然牙齒</li>
+                <li>較易粘合牙釉質</li>
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>堅固，能承受較大咬合力</li>
+                <li>耐用，不易磨損</li>
+              </ul>
+            </div>
+            <div>缺點</div>
+            <div>強度遜於銀汞合金</div>
+            <div>氧化後呈銀黑色，影響美觀</div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container fillings-step">
+        <div class="fillings-step-title">\ <i>補牙5步曲</i> /</div>
+        <div class="fillings-step-content">
+          <div
+            class="fillings-step-item"
+            v-for="(item, index) in implantStepList.slice(0, 5)"
+            :key="index"
+          >
+            <div>{{ item.id }}</div>
+            <div>
+              <img :src="item.img" :alt="item.title" />
+            </div>
+            <div>{{ item.title }}</div>
+          </div>
+          <div class="fillings-step-item-last">
+            <img :src="implantStepList[5].img" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container fillings-cause">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>常見</span><span>蛀牙成因</span>
+        </div>
+        <div class="fillings-cause-content">
+          <div class="d-lg-none">
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/8bc77d771ab2.png"
+                alt=""
+              />
+            </div>
+            <div><span>常吃黏性、</span><br /><span>高糖份食物</span></div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/8eed78768218.png"
+                alt=""
+              />
+            </div>
+            <div><span>不當口腔</span><br /><span>衛生習慣</span></div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/f8fa18191bec.png"
+                alt=""
+              />
+            </div>
+            <div><span>藥物或手術</span><br /><span>致唾液減少</span></div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/bc1d758eb55e.png"
+                alt=""
+              />
+            </div>
+            <div><span>牙齒擁擠</span><br /><span>清潔困難</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="ckj-container fillings-phase">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>蛀牙5個階段</span><span>及對應治療方法</span>
+        </div>
+        <div class="fillings-phase-content">
+          <div
+            class="fillings-phase-content-item"
+            v-for="item in fillingsPhaseList"
+            :key="item.id"
+          >
+            <div class="fillings-phase-content-item-l">
+              <img :src="item.orientationImage" :alt="item.title" />
+            </div>
+            <div class="fillings-phase-content-item-r">
+              <div class="fillings-phase-content-item-text">
+                <div>{{ item.title }}</div>
+                <div>{{ item.text }}</div>
+                <div>{{ item.method }}</div>
+              </div>
+              <div class="fillings-phase-content-item-float">
+                <img :src="item.img" :alt="item.title" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container fillings-prevent-tooth-decay">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>預防蛀牙</span><span>方法</span>
+        </div>
+        <div class="fillings-prevent-tooth-decay-content">
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/65b2db68a05a.png"
+                alt=""
+              />
+            </div>
+            <div>定期口腔檢查</div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/8eed78768218.png"
+                alt=""
+              />
+            </div>
+            <div>定期刷牙</div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/d333d87febb7.png"
+                alt=""
+              />
+            </div>
+            <div>
+              使用牙線<br class="d-md-none" />或牙<i class="d-md-none">間</i>刷
+            </div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/fb3a2fe90510.png"
+                alt=""
+              />
+            </div>
+            <div>使用漱口水</div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/8bc77d771ab2.png"
+                alt=""
+              />
+            </div>
+            <div>控制糖分攝入</div>
+          </div>
+          <div>
+            <div>
+              <img
+                src="https://static.ckjhk.com/ckj-image/50e42d71bf1e.png"
+                alt=""
+              />
+            </div>
+            <div>避免咀嚼硬物</div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container fillings-problem">
+        <div>
+          <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
+        </div>
+      </section>
     </div>
+    <BranchAddress />
+    <AppointmentFormV2 />
     <FooterV2 />
-    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar v-else /> -->
     <AsideV2 />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.banner-in-box {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 20.83vw;
-  width: 100%;
-  z-index: 10;
-}
-.banner-image {
-  position: absolute;
-  z-index: 3;
-  top: 3vw;
-  left: 48%;
-  width: 9.0625vw;
-  height: 9.0625vw;
-  & > img {
+@media screen and (min-width: 992px) {
+  .banner-in-box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 20.83vw;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    z-index: 10;
   }
-}
-.banner-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 23.9583vw;
-  position: absolute;
-  left: 40%;
-  top: 55%;
-  transform: translate(-50%, -50%);
-  & > div {
-    display: flex;
-    align-items: flex-end;
-  }
-  .content-title {
-    color: var(--White, #fff);
-    text-align: right;
-    -webkit-text-stroke-width: 0.5;
-    -webkit-text-stroke-color: var(--White, #fff);
-    font-family: 'FakePearl-Regular';
-    font-size: clamp(40px, 5.7vw, 110px);
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%; /* 176px */
-    letter-spacing: 6.6px;
-    position: relative;
-    z-index: 6;
-    bottom: 0;
-
-    border-radius: 0.6942vw 0.6942vw 0px 0px;
-    background: var(
-      --Liner-purple,
-      linear-gradient(
-        269deg,
-        var(--Brand-Color, #fc1682) 10.21%,
-        #710d54 122.73%
-      )
-    );
-    box-sizing: border-box;
-    padding: 0.859375vw 4.7135vw;
-    color: var(--White, #fff);
-    text-align: center;
-    text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
-    font-family: 'Noto Sans HK';
-    font-size: 1.565vw;
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: 0.165vw;
-    width: 100%;
-  }
-
-  .price-style {
-    width: 19.0625vw;
-    height: 11.145vw;
-    position: relative;
-    right: -3.64583vw;
+  .banner-image {
+    position: absolute;
+    z-index: 3;
+    top: 3vw;
+    left: 48%;
+    width: 9.0625vw;
+    height: 9.0625vw;
     & > img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
-  .content-price,
-  .content-subscribe {
-    width: 100%;
-    background: #fff;
-    box-sizing: border-box;
-    padding: 1.0465vw;
+  .banner-content {
     display: flex;
-    gap: 0 0.52vw;
-    min-height: 2.68135vw;
-    box-sizing: border-box;
-    padding: 0.52vw;
+    flex-direction: column;
     align-items: center;
-    font-family: 'Noto Sans HK';
-    font-size: 1.7442vw;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 2.2222vw; /* 114.286% */
-    letter-spacing: 0.29165vw;
     justify-content: center;
-    & > div:nth-child(1) {
-      color: var(--Grey-Dark, #333);
+    width: 23.9583vw;
+    position: absolute;
+    left: 40%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    & > div {
+      display: flex;
+      align-items: flex-end;
+    }
+    .content-title {
+      color: var(--White, #fff);
       text-align: right;
-      text-shadow: 1.3px 1.333px 1.333px #faeaf2,
-        1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
-        -1.33px -1.333px 1.333px #faeaf2;
+      -webkit-text-stroke-width: 0.5;
+      -webkit-text-stroke-color: var(--White, #fff);
+      font-family: 'FakePearl-Regular';
+      font-size: clamp(40px, 5.7vw, 110px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 176px */
+      letter-spacing: 6.6px;
+      position: relative;
+      z-index: 6;
+      bottom: 0;
+
+      border-radius: 0.6942vw 0.6942vw 0px 0px;
+      background: var(
+        --Liner-purple,
+        linear-gradient(
+          269deg,
+          var(--Brand-Color, #fc1682) 10.21%,
+          #710d54 122.73%
+        )
+      );
+      box-sizing: border-box;
+      padding: 0.859375vw 4.7135vw;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
       font-family: 'Noto Sans HK';
-      font-size: 1.744vw;
+      font-size: 1.565vw;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.165vw;
+      width: 100%;
+    }
+
+    .price-style {
+      width: 19.0625vw;
+      height: 11.145vw;
+      position: relative;
+      right: -3.64583vw;
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .content-price,
+    .content-subscribe {
+      width: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1.0465vw;
+      display: flex;
+      gap: 0 0.52vw;
+      min-height: 2.68135vw;
+      box-sizing: border-box;
+      padding: 0.52vw;
+      align-items: center;
+      font-family: 'Noto Sans HK';
+      font-size: 1.7442vw;
       font-style: normal;
       font-weight: 900;
       line-height: 2.2222vw; /* 114.286% */
       letter-spacing: 0.29165vw;
-      top: -0.9vw;
-    }
+      justify-content: center;
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 1.744vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 2.2222vw; /* 114.286% */
+        letter-spacing: 0.29165vw;
+        top: -0.9vw;
+      }
 
-    & > div:nth-child(2) {
-      width: 3.54165vw;
-      & > svg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  }
-  .content-subscribe {
-    box-sizing: border-box;
-    padding: 0;
-    border-radius: 0px 0px 10px 10px;
-    background: var(--White, #fff);
-    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
-  }
-}
-:deep(.header-content) {
-  .explain_box_mobile {
-    background: transparent !important;
-    position: absolute;
-    bottom: 70px;
-    z-index: 38;
-    right: 0;
-    left: 0;
-    top: auto;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin: 0 auto !important;
-  }
-}
-.reason {
-  margin-top: 120px;
-  margin-bottom: 120px;
-  &-tc {
-    width: calc(1016 / 1920 * 100%);
-    max-width: 1016px;
-    margin: 31px auto 52px;
-    text-align: center;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 32px */
-    letter-spacing: 4px;
-    color: var(--textColor);
-    font-family: var(--contextFamily);
-  }
-  &-lists {
-    margin-top: 17px;
-    &-item {
-      width: calc(1616 / 1920 * 100%);
-      max-width: 1616px;
-      margin: 0 auto;
-      padding: 53px 216px;
-      display: flex;
-      align-items: center;
-      border-radius: 350px;
-      &:nth-of-type(odd) {
-        background: #fff1f0;
-      }
-      .image {
-        margin-right: 55px;
-        width: 360px;
-        height: 360px;
-        img {
+      & > div:nth-child(2) {
+        width: 3.54165vw;
+        & > svg {
           width: 100%;
           height: 100%;
+          object-fit: cover;
         }
       }
-      &-r {
-        flex: 1;
-        .title {
-          span {
-            color: #fff;
-            text-align: center;
-            font-size: 35px;
+    }
+    .content-subscribe {
+      box-sizing: border-box;
+      padding: 0;
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
+    }
+  }
+
+  .fillings-key-points {
+    box-sizing: border-box;
+    padding: 30px 0;
+    margin-top: 45px;
+    .fillings-key-points-content {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 30px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px 0;
+        & > div:nth-child(1) {
+          & > img {
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+          }
+        }
+        & > div:nth-child(2) {
+          p {
+            color: #000;
+            font-family: 'Noto Sans HK';
+            font-size: 18px;
             font-style: normal;
             font-weight: 400;
-            line-height: 160%; /* 56px */
-            letter-spacing: 7px;
-            background: var(--indexColor1);
-            border-radius: 50px;
+            line-height: 200%; /* 36px */
+            letter-spacing: 1.8px;
+          }
+        }
+      }
+    }
+  }
+  .fillings-materiel {
+    box-sizing: border-box;
+    padding: 30px 0;
+    .fillings-materiel-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .fillings-materiel-content-title {
+        color: #000;
+        text-align: center;
+        font-family: 'Noto Sans TC';
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%; /* 32px */
+        letter-spacing: 2px;
+        margin: 20px auto;
+      }
+      .fillings-materiel-content-lists {
+        display: flex;
+        justify-content: space-between;
+        & > div:nth-child(1) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px 0;
+        }
+        & > div:nth-child(2) {
+          box-sizing: border-box;
+          padding-top: 60px;
+        }
+        .fillings-materiel-content-lists-item {
+          display: flex;
+          flex-direction: column;
+          gap: 0 0;
+          & > div:nth-child(1) {
+            color: var(--White, #fff);
+            font-family: 'Noto Sans HK';
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 2.4px;
+            box-sizing: border-box;
             padding: 5px 30px;
-            min-width: 363px;
-            display: inline-block;
-            box-shadow: 0px 3.704px 7.409px rgba(252, 22, 130, 0.38);
+            border-radius: 20px;
+            background: var(--Blue-Deep, #00aeff);
+            width: fit-content;
           }
-        }
-        .context {
-          margin-top: 40px;
-          margin-bottom: 20px;
-          display: flex;
-          align-items: center;
-          color: var(--indexColor1);
-          font-size: 30px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 160%; /* 48px */
-          letter-spacing: 3px;
-          & > img {
-            margin-right: 10px;
-            width: 43px;
-          }
-        }
-        .name {
-          color: #00aeff;
-          display: flex;
-          align-items: center;
-          font-size: 30px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 206%;
-          letter-spacing: 3px;
-          & > img {
-            margin-right: 10px;
-            width: 43px;
-          }
-        }
-        .list {
-          padding: 0 50px;
-          &-in {
+          & > div:nth-child(2) {
             display: flex;
-            align-items: center;
-            &:not(:last-child) {
-              margin-bottom: 23px;
+            gap: 0 110px;
+            align-items: flex-end;
+            & > div:nth-child(2) {
+              display: flex;
+              align-items: flex-end;
+              & > div:nth-child(1) {
+                color: var(--Grey-Deep, #4d4d4d);
+                text-align: right;
+                font-family: 'Noto Sans HK';
+                font-size: 24px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 160%; /* 38.4px */
+                position: relative;
+              }
+              & > div:nth-child(1)::after {
+                content: '';
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                top: 25%;
+                left: 50%;
+                transform: rotate(350deg) translate(-50%, -50%);
+                background: #4d4d4d;
+              }
+              & > div:nth-child(2) {
+                position: relative;
+                bottom: -14px;
+                width: 129px;
+                height: auto;
+                & > img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
             }
-            &-img {
-              width: 158px;
-              height: 158px;
-              margin-right: 23px;
-            }
-            &-text {
-              flex: 1;
-              color: #00aeff;
-              font-size: 30px;
-              font-style: normal;
-              font-weight: 400;
-              line-height: 137%; /* 41.1px */
-              letter-spacing: 3px;
-              h2 {
-                font-weight: 500;
+            & > div:nth-child(1) {
+              display: flex;
+              flex-direction: column;
+              gap: 4px 0;
+              & > div {
                 display: flex;
                 align-items: center;
                 gap: 0 10px;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-  &-bt {
-    font-size: 20px;
-    line-height: 160%;
-    color: var(--textColor);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 20px;
-    & > div {
-      width: calc(100% - 60px);
-      max-width: 860px;
-      text-align: center;
-      margin-top: 30px;
-      span {
-        display: inline-block;
-      }
-    }
-  }
-  &-btn {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-  }
-}
-.tabNav {
-  font-weight: 400;
-  font-size: 1.25rem;
-  line-height: 160%;
-  color: #cbcbcb;
-  margin-top: 20px;
-  a {
-    &:not(:last-child)::after {
-      content: '';
-      width: 20px;
-      height: 2px;
-      margin: 0 10px;
-      background: #cbcbcb;
-      display: inline-block;
-      vertical-align: middle;
-      margin-top: -4px;
-    }
-  }
-  & > span {
-    cursor: pointer;
-    color: var(--indexColor1);
-  }
-}
-.material {
-  width: 100%;
-  max-width: 1450px;
-  margin: 96px auto 0;
-  &-context {
-    width: 100%;
-    max-width: 1042px;
-    margin: 35px auto 0;
-    text-align: center;
-    span {
-      font-style: normal;
-      font-weight: 600;
-      font-size: 20px;
-      line-height: 160%;
-      color: #666666;
-    }
-  }
-  &-in {
-    max-width: 1254px;
-    margin: 30px auto 0;
-    .box {
-      width: 100%;
-      .box-in {
-        height: 140px;
-        margin-top: 4px;
-        display: flex;
-        background: var(--indexColor2);
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px;
-        line-height: 160%;
-        color: #666666;
-        padding: 0 40px;
-        box-sizing: border-box;
-        display: flex;
-        align-items: center;
-        &:first-child {
-          background: var(--indexColor1);
-          color: #fff;
-          margin-top: 0;
-          height: 69px;
-          font-weight: 700;
-          font-size: 28px;
-          justify-content: center;
-        }
-        &:last-child {
-          height: 108px;
-        }
-        &:nth-of-type(2) {
-          margin-top: 0;
-        }
-      }
-    }
-    .swiper {
-      .swiper-slide {
-        &:nth-of-type(1) {
-          width: 25.68% !important;
-        }
-        &:nth-of-type(2) {
-          width: 37.16% !important;
-        }
-        &:nth-of-type(3) {
-          width: 37.16% !important;
-        }
-      }
-    }
-    .box-left {
-      margin-right: 2px;
-      border-radius: 60px 0 0 60px;
-      overflow: hidden;
-      display: flex;
-      .box:nth-of-type(1) {
-        .box-in {
-          font-weight: 700;
-          font-size: 28px;
-          justify-content: center;
-        }
-      }
-    }
-    .box-right {
-      border-radius: 0 60px 60px 0;
-      overflow: hidden;
-      margin-left: 2px;
-    }
-  }
-  &-line {
-    width: 120px;
-    margin: 22px auto;
-  }
-}
-.note {
-  margin-top: 100px;
-  &-lists {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: calc(819px / 3 * 2);
-    margin: 60px auto 0;
-    &-item {
-      width: calc(100% / 2);
-      & > div {
-        .image {
-          width: 100%;
-          position: relative;
-          padding: 0 calc((89px / 273px) * 100% / 2);
-          &-in {
-            width: 100%;
-            height: 0;
-            padding-bottom: 100%;
-            background: #fee6f1;
-            margin-bottom: 13px;
-            border-radius: 10px;
-            position: relative;
-            img {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              max-width: 80%;
-              max-height: 80%;
-            }
-          }
-        }
-        .text {
-          text-align: center;
-          font-size: 24px;
-          font-weight: 600;
-          letter-spacing: 3px;
-          white-space: pre-wrap;
-        }
-      }
-      &:nth-of-type(n + 4) {
-        margin-top: 45px;
-      }
-      &:nth-of-type(2n + 2) {
-        & > div {
-          .image {
-            &-in {
-              background: #fff1f0;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-.note2 {
-  margin-top: 100px;
-  &-title {
-    &-in {
-      font-size: 50px;
-      span {
-        color: var(--indexColor1);
-      }
-    }
-  }
-  &-content {
-    display: flex;
-    // align-items: center;
-    width: 100%;
-    max-width: 1340px;
-    margin: 80px auto 0;
-    &-l {
-      width: calc((482 / 1242) * 100%);
-      img {
-        width: 100%;
-      }
-    }
-    &-r {
-      margin-left: calc((42 / 1242) * 100%);
-      flex: 1;
-      & > div {
-        display: flex;
-        margin-bottom: 40px;
-        span {
-          color: #4d4d4d;
-          font-size: 28px;
-          line-height: 160%;
-          font-weight: 600;
-        }
-      }
-    }
-  }
-}
-.care {
-  margin-top: 206px;
-  &-lists {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 819px;
-    margin: 45px auto 0;
-    &-item {
-      width: calc(100% / 3);
-      & > div {
-        .image {
-          width: 100%;
-          position: relative;
-          padding: 0 calc((89px / 273px) * 100% / 2);
-          &-in {
-            width: 100%;
-            height: 0;
-            padding-bottom: 100%;
-            background: #fee6f1;
-            margin-bottom: 13px;
-            border-radius: 10px;
-            position: relative;
-            img {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              max-width: 60%;
-              max-height: 60%;
-            }
-          }
-        }
-        .text {
-          text-align: center;
-          font-size: 24px;
-          font-weight: 600;
-          letter-spacing: 3px;
-          white-space: pre-wrap;
-        }
-      }
-      &:nth-of-type(n + 4) {
-        margin-top: 45px;
-      }
-      &:nth-of-type(2n + 2) {
-        & > div {
-          .image {
-            &-in {
-              background: #fff1f0;
-            }
-          }
-        }
-      }
-    }
-  }
-  &-btn {
-    margin-top: 45px;
-    display: flex;
-    justify-content: center;
-  }
-}
-.fillings-content-1 {
-  margin-top: 106px;
-  &-in {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    margin: 50px auto;
-    max-width: 1300px;
-    & > div {
-      width: 300px;
-      display: flex;
-      flex-direction: column;
-      img {
-        border-radius: 10px;
-        width: 100%;
-      }
-      span {
-        font-size: 30px;
-        line-height: 160%;
-        text-align: center;
-        margin-top: 20px;
-        white-space: pre-wrap;
-        color: var(--textColor);
-      }
-    }
-  }
-}
-.advantage {
-  margin-top: 98px;
-  &-in {
-    display: flex;
-    justify-content: center;
-    max-width: 1100px;
-    width: 100%;
-    margin: 77px auto 0;
-    &-r {
-      flex: 1;
-      margin-left: calc((44 / 1246) * 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      & > div {
-        .name {
-          color: #fff;
-          font-size: 24px;
-          font-weight: 700;
-          background: var(--indexColor1);
-          margin-top: 24px;
-          margin-bottom: 15px;
-          padding: 4px 15px;
-          width: calc((404 / 717) * 100%);
-          clip-path: polygon(0 0, 93% 0, 100% 100%, 0 100%);
-          letter-spacing: 2px;
-        }
-        .text {
-          color: var(--textColor);
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 160%;
-          // text-indent: 15px;
-          padding-left: 15px;
-        }
-      }
-    }
-  }
-}
-.The_benefits_of_resin_filling_teeth {
-  margin-top: 30px;
-  &-img {
-    margin-top: 50px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    img {
-      width: 100%;
-      max-width: 1150px;
-    }
-  }
-  &-lists {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    &-in {
-      width: 100%;
-      max-width: 804px;
-      display: flex;
-      margin-bottom: 30px;
-      align-items: center;
-      &-l {
-        width: calc(182 / 802 * 100%);
-        margin-right: calc(50 / 802 * 100%);
-        & > div {
-          height: 0;
-          padding-bottom: 100%;
-          position: relative;
-          background: var(--indexColor1);
-          color: #fff;
-          font-size: 30px;
-          line-height: 1.6;
-          border-radius: 50%;
-          & > div {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            span {
-              text-align: center;
-            }
-          }
-        }
-      }
-      &-r {
-        flex: 1;
-        font-size: 20px;
-        line-height: 160%;
-        color: var(--textColor);
-      }
-    }
-  }
-}
-.step {
-  width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 241, 240, 0) 0%,
-    rgba(255, 241, 240, 0.7) 12.5%,
-    rgba(255, 241, 240, 0.7) 81.99%,
-    rgba(255, 241, 240, 0) 100%
-  );
-  padding: 61px 0 99px;
-  margin-top: 70px;
-  &-in {
-    width: 100%;
-    max-width: calc(1444px + 122px);
-    margin: 0 auto;
-  }
-  &-lists {
-    margin-top: 98px;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    &-in {
-      display: flex;
-      align-items: center;
-      margin-bottom: 92px;
-      padding: 0 calc((61 / (1444 + 122)) * 100%);
-      width: calc(100% / 3);
-      &:nth-of-type(4),
-      &:nth-of-type(5) {
-        margin-bottom: 0;
-      }
-      &:nth-of-type(5) {
-        .step-lists-in-l {
-          .image {
-            &::after {
-              display: none;
-            }
-          }
-        }
-      }
-      &-l {
-        width: 100%;
-        max-width: 400px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        .title {
-          display: flex;
-          align-items: center;
-          font-size: 35px;
-          font-weight: 700;
-          margin-bottom: 15px;
-          color: #4d4d4d;
-          img {
-            height: auto;
-            margin-right: 15px;
-          }
-        }
-        .image {
-          width: 100%;
-          img {
-            width: 100%;
-            border-radius: 30px;
-          }
-          position: relative;
-          &::after {
-            content: '';
-            position: absolute;
-            right: -17%;
-            top: 50%;
-            transform: translateY(-50%);
-            background: url(@/assets/images/icon_12.png);
-            background-size: 100% 100%;
-            width: 16px;
-            height: 30px;
-          }
-        }
-        .name {
-          width: 100%;
-          color: #fff;
-          font-size: 20px;
-          font-weight: 700;
-          background: var(--indexColor1);
-          margin-top: 24px;
-          margin-bottom: 15px;
-          padding: 8px 15px;
-          clip-path: polygon(0 0, 93% 0, 100% 100%, 0 100%);
-          white-space: pre-wrap;
-        }
-      }
-      &-r {
-        display: none;
-        img {
-          width: 15px;
-          height: auto;
-        }
-      }
-      &:nth-of-type(6) {
-        margin-bottom: 0;
-        align-items: flex-end;
-        justify-content: center;
-        & > div {
-          margin-bottom: 20px;
-        }
-        .lastBox-t {
-          & > div {
-            color: var(--indexColor1);
-            font-size: 50px;
-            font-weight: 700;
-            text-align: center;
-            span {
-              font-size: 50px;
-              line-height: 120%;
-              display: block;
-            }
-            &:nth-of-type(1) {
-              display: flex;
-              justify-content: center;
-              width: 100%;
-              margin-bottom: 15px;
-            }
-          }
-        }
-        .lastBox-b {
-          margin-top: 20px;
-          .bigBan {
-            font-size: 44px;
-            line-height: 1.2;
-          }
-        }
-      }
-      &:nth-of-type(2),
-      &:nth-of-type(5) {
-        .step-lists-in-l {
-          .name {
-            width: 110%;
-            clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
-          }
-        }
-      }
-    }
-  }
-}
-.differ {
-  margin-top: 140px;
-  &-tc {
-    width: 100%;
-    max-width: 1016px;
-    margin: 30px auto 0;
-    text-align: center;
-    span {
-      font-size: 20px;
-      line-height: 1.6;
-      display: inline-block;
-    }
-  }
-  &-lists {
-    width: 100%;
-    max-width: 1251px;
-    margin: 55px auto 0;
-    &-in {
-      display: flex;
-      &:not(:last-child) {
-        margin-bottom: 15px;
-      }
-      &:nth-of-type(1) {
-        & > div {
-          background: none;
-          padding: 0;
-          justify-content: center;
-          align-items: center;
-          min-height: 45px;
-          font-size: 30px;
-          font-weight: 700;
-        }
-      }
-      &:nth-of-type(2) {
-        & > div {
-          background: none;
-          justify-content: center;
-        }
-      }
-      & > div {
-        color: #4d4d4d;
-        font-size: 28px;
-        min-height: 112px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 160%;
-        background: #fee6f1;
-        display: flex;
-        align-items: center;
-        white-space: pre-wrap;
-        span {
-          display: block;
-          &::before {
-            content: '·';
-            display: inline-block;
-            margin-right: 10px;
-            font-size: 30px;
-            vertical-align: middle;
-            margin-top: -2px;
-          }
-        }
-        &:nth-of-type(1) {
-          width: calc((122 / 1251) * 100%);
-          border-radius: 60px 0 0 60px;
-          justify-content: center;
-        }
-        &:nth-of-type(2) {
-          width: calc((562 / 1251) * 100%);
-          margin-left: 2.5px;
-          padding: 0 calc((30 / 1251) * 100%);
-        }
-        &:nth-of-type(3) {
-          width: calc((562 / 1251) * 100%);
-          margin-left: 2.5px;
-          padding: 0 calc((30 / 1251) * 100%);
-          border-radius: 0 60px 60px 0;
-        }
-      }
-    }
-  }
-}
-.introduceJY {
-  margin-top: 100px;
-}
-
-@media (min-width: 768px) and (max-width: 1920px) {
-  .The_benefits_of_resin_filling_teeth {
-    margin-top: 1.5625vw;
-    &-img {
-      margin-top: 2.6042vw;
-      img {
-        max-width: 59.8958vw;
-      }
-    }
-    &-lists {
-      margin-top: 2.6042vw;
-      &-in {
-        max-width: 41.875vw;
-        margin-bottom: 1.5625vw;
-        &-l {
-          & > div {
-            font-size: 1.5625vw;
-          }
-        }
-        &-r {
-          font-size: 1.0417vw;
-        }
-      }
-    }
-  }
-  .step {
-    padding: 3.1771vw 0 5.1563vw;
-    margin-top: 3.6458vw;
-    &-in {
-      max-width: calc(75.2083vw + 6.3542vw);
-    }
-    &-lists {
-      margin-top: 5.1042vw;
-      padding: 0 1.0417vw;
-      &-in {
-        margin-bottom: 4.7917vw;
-        &-l {
-          max-width: 20.8333vw;
-          .title {
-            font-size: 1.8229vw;
-            margin-bottom: 0.7813vw;
-            img {
-              margin-right: 0.7813vw;
-            }
-          }
-          .image {
-            img {
-              border-radius: 1.5625vw;
-            }
-            &::after {
-              width: 0.8333vw;
-              height: 1.5625vw;
-            }
-          }
-          .name {
-            font-size: 1.0417vw;
-            margin-top: 1.25vw;
-            margin-bottom: 0.7813vw;
-            padding: 0.4167vw 0.7813vw;
-          }
-        }
-        &-r {
-          img {
-            width: 0.7813vw;
-          }
-        }
-        &:nth-of-type(6) {
-          & > div {
-            margin-bottom: 1.0417vw;
-          }
-          .lastBox-t {
-            & > div {
-              font-size: 2.6042vw;
-              span {
-                font-size: 2.6042vw;
-              }
-              &:nth-of-type(1) {
-                margin-bottom: 0.7813vw;
-              }
-            }
-          }
-          .lastBox-b {
-            margin-top: 1.0417vw;
-            .bigBan {
-              font-size: 2.2917vw;
-            }
-          }
-        }
-      }
-    }
-  }
-  .differ {
-    margin-top: 7.2917vw;
-    &-tc {
-      max-width: 52.9167vw;
-      margin: 1.5625vw auto 0;
-      span {
-        font-size: 1.0417vw;
-      }
-    }
-    &-lists {
-      max-width: 65.1563vw;
-      margin: 2.8646vw auto 0;
-      &-in {
-        &:not(:last-child) {
-          margin-bottom: 0.7813vw;
-        }
-        &:nth-of-type(1) {
-          & > div {
-            min-height: 2.3438vw;
-            font-size: 1.5625vw;
-          }
-        }
-        & > div {
-          font-size: 1.4583vw;
-          min-height: 5.8333vw;
-          span {
-            &::before {
-              margin-right: 0.5208vw;
-              font-size: 1.5625vw;
-              margin-top: -0.1042vw;
-            }
-          }
-          &:nth-of-type(1) {
-            border-radius: 3.125vw 0 0 3.125vw;
-          }
-          &:nth-of-type(2) {
-            margin-left: 0.1302vw;
-          }
-          &:nth-of-type(3) {
-            margin-left: 0.1302vw;
-            border-radius: 0 3.125vw 3.125vw 0;
-          }
-        }
-      }
-    }
-  }
-  .note {
-    margin-top: 5.2083vw;
-    &-lists {
-      max-width: calc(42.6563vw / 3 * 2);
-      margin: 3.125vw auto 0;
-      &-item {
-        & > div {
-          .image {
-            &-in {
-              margin-bottom: 0.6771vw;
-              border-radius: 0.5208vw;
-            }
-          }
-          .text {
-            font-size: 1.25vw;
-            letter-spacing: 0.1563vw;
-          }
-        }
-        &:nth-of-type(n + 4) {
-          margin-top: 2.3438vw;
-        }
-      }
-    }
-  }
-  .note2 {
-    margin-top: 5.2083vw;
-    &-title {
-      &-in {
-        font-size: 2.6042vw;
-      }
-    }
-    &-content {
-      max-width: 69.7917vw;
-      margin: 4.1667vw auto 0;
-      &-r {
-        & > div {
-          margin-bottom: 2.0833vw;
-          span {
-            font-size: 1.4583vw;
-          }
-        }
-      }
-    }
-  }
-  .reason {
-    margin-top: 6.25vw;
-    &-tc {
-      max-width: 52.9167vw;
-      margin: 1.6146vw auto 2.7083vw;
-      font-size: 1.0417vw;
-      letter-spacing: 0.2083vw;
-    }
-    &-lists {
-      margin-top: 0.8854vw;
-      &-item {
-        max-width: 84.1667vw;
-        padding: 2.7604vw 11.25vw;
-        border-radius: 18.2292vw;
-        .image {
-          margin-right: 2.8646vw;
-          width: 18.75vw;
-          height: 18.75vw;
-        }
-        &-r {
-          .title {
-            span {
-              font-size: 1.8229vw;
-              letter-spacing: 0.3646vw;
-              border-radius: 2.6042vw;
-              padding: 0.2604vw 1.5625vw;
-              min-width: 18.9063vw;
-            }
-          }
-          .context {
-            margin-top: 2.0833vw;
-            margin-bottom: 1.0417vw;
-            font-size: 1.5625vw;
-            letter-spacing: 0.1563vw;
-            & > img {
-              margin-right: 0.5208vw;
-              width: 2.2396vw;
-            }
-          }
-          .name {
-            font-size: 1.5625vw;
-            letter-spacing: 0.1563vw;
-            & > img {
-              margin-right: 0.5208vw;
-              width: 2.2396vw;
-            }
-          }
-          .list {
-            padding: 0 2.6042vw;
-            &-in {
-              &:not(:last-child) {
-                margin-bottom: 1.1979vw;
-              }
-              &-img {
-                width: 8.2292vw;
-                height: 8.2292vw;
-                margin-right: 1.1979vw;
-              }
-              &-text {
-                font-size: 1.5625vw;
-                letter-spacing: 0.1563vw;
-              }
-            }
-          }
-        }
-      }
-    }
-    &-bt {
-      font-size: 1.0417vw;
-      margin-top: 1.0417vw;
-      & > div {
-        width: calc(100% - 3.125vw);
-        max-width: 44.7917vw;
-        margin-top: 1.5625vw;
-      }
-    }
-    &-btn {
-      margin-top: 2.0833vw;
-    }
-  }
-  .fillings-content-1 {
-    margin-top: 5.5208vw;
-    &-in {
-      margin: 2.6042vw auto;
-      max-width: 67.7083vw;
-      & > div {
-        width: 15.625vw;
-        img {
-          border-radius: 0.5208vw;
-        }
-        span {
-          font-size: 1.5625vw;
-          margin-top: 1.0417vw;
-        }
-      }
-    }
-  }
-  .care {
-    margin-top: 10.7292vw;
-    &-lists {
-      max-width: 42.6563vw;
-      margin: 2.3438vw auto 0;
-      &-item {
-        & > div {
-          .image {
-            &-in {
-              margin-bottom: 0.6771vw;
-              border-radius: 0.5208vw;
-            }
-          }
-          .text {
-            font-size: 1.25vw;
-            letter-spacing: 0.1563vw;
-          }
-        }
-        &:nth-of-type(n + 4) {
-          margin-top: 2.3438vw;
-        }
-      }
-    }
-    &-btn {
-      margin-top: 2.3438vw;
-    }
-  }
-  .advantage {
-    margin-top: 5.1042vw;
-    &-in {
-      max-width: 57.2917vw;
-      margin: 4.0104vw auto 0;
-      &-l {
-        width: 24.2188vw;
-      }
-      &-r {
-        & > div {
-          .name {
-            font-size: 1.25vw;
-            margin-top: 1.25vw;
-            margin-bottom: 0.7813vw;
-            padding: 0.2083vw 0.7813vw;
-            letter-spacing: 0.1042vw;
-          }
-          .text {
-            font-size: 1.0417vw;
-            padding-left: 0.7813vw;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  :deep(.explain_box_mobile) {
-    top: 110px !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
-  }
-  :deep(.header-content) {
-    .explain_box_mobile {
-      align-items: flex-end;
-      background: transparent !important;
-      display: flex;
-      justify-content: flex-end;
-      margin: 0 auto !important;
-      left: 0;
-      right: auto;
-      bottom: -20px;
-      position: absolute;
-      top: auto;
-      z-index: 35;
-    }
-  }
-  .tabNav {
-    padding: 30px;
-    font-size: 1rem;
-    margin-top: 0;
-  }
-  .reason {
-    margin-top: 94px;
-    &-tc {
-      margin: 40px auto;
-      padding: 0 30px;
-      font-size: 16px;
-      letter-spacing: 1.6px;
-      width: 100%;
-      line-height: 2;
-    }
-    &-lists {
-      padding: 0 6.4vw;
-      &-item {
-        width: 100%;
-        flex-direction: row;
-        padding: 20.65vw 1.2vw 10.65vw 2vw;
-        border-radius: 38px;
-        position: relative;
-        gap: 0 0.33vw;
-        margin-bottom: 6.4vw;
-        .image {
-          width: 100%;
-          height: auto;
-          margin-right: 0;
-          width: 41.6vw;
-          height: 45.065vw;
-          & > img {
-            width: 100%;
-          }
-        }
-        &-r {
-          width: 100%;
-          .title {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            span {
-              font-size: 5.33vw;
-              letter-spacing: 1.065vw;
-              min-width: auto;
-              width: fit-content;
-              margin: 0 auto;
-              padding: 1.33vw 4.8vw;
-              line-height: 140%;
-            }
-          }
-          .context {
-            margin-top: 0;
-            margin-bottom: 2.65vw;
-            font-size: 4vw;
-            letter-spacing: 0.4vw;
-            align-items: flex-start;
-            position: relative;
-            & > img {
-              width: 5.33vw;
-              position: absolute;
-              left: -25px;
-              top: 6px;
-            }
-          }
-          .name {
-            font-size: 4vw;
-            letter-spacing: 0.4vw;
-
-            & > img {
-              width: 5.3vw;
-            }
-          }
-          .list {
-            padding: 0;
-            margin-top: 0;
-            padding-left: 0;
-            &-in {
-              &:not(:last-child) {
-                margin-bottom: 5.3vw;
-              }
-              &-img {
-                position: absolute;
-                left: 85px;
-                top: 160px;
-                width: 21.33vw;
-                height: 21.33vw;
-                margin-right: 14px;
-              }
-              &-text {
-                font-size: 4vw;
-                letter-spacing: 0.4vw;
-                h2 {
-                  font-size: 4.265vw;
-                  margin-bottom: 10px;
-                  flex-direction: column;
-                  justify-content: flex-start;
-                  align-items: flex-start;
+                & > div:nth-child(1) {
+                  color: var(--Grey-Dark, #333);
+                  font-family: 'Noto Sans TC';
+                  font-size: 20px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: 160%; /* 32px */
+                  letter-spacing: 2px;
+                }
+                & > div:nth-child(2) {
+                  width: 136px;
+                  height: 24px;
+                  & > img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
                 }
               }
             }
           }
         }
       }
-      &-item:nth-of-type(even) {
-        background: #fff1f0;
-      }
-      &-item:nth-of-type(2) {
-        .image {
-          margin-top: 0;
-        }
-        .context {
-          margin-top: 0;
-        }
-        .list-in-img {
-          top: 155px;
+      .fillings-materiel-content-lists-item:nth-child(2),
+      .fillings-materiel-content-lists-item:nth-child(3) {
+        & > div:nth-child(1) {
+          background: var(--Brand-Color, #f8298a);
         }
       }
-      &-item:nth-of-type(4) {
-        .image {
-          position: relative;
-          top: 0;
-          height: 69.865vw;
-        }
-        .list {
-          padding-left: 0;
-        }
-        .list-in:nth-child(1) {
-          .list-in-img {
-            top: 200px;
-          }
-        }
-        .list-in:nth-child(2) {
-          .list-in-img {
-            top: 290px;
-          }
-        }
-      }
-      &-item:nth-of-type(5) {
-        .context {
-          margin-top: 0;
-        }
-        .image {
-          position: relative;
-          top: 0;
-          height: 69.865vw;
-        }
-        .list {
-          padding-left: 0;
-        }
-        .list-in:nth-child(1) {
-          .list-in-img {
-            top: 175px;
-          }
-        }
-        .list-in:nth-child(2) {
-          .list-in-img {
-            top: 290px;
-          }
-        }
-      }
-      & > div::before {
-        content: '1';
-        position: absolute;
-        color: var(--Theme-Color, #fc1682);
+      .fillings-materiel-content-btn {
+        margin-top: 35px;
+        color: var(--White, #fff);
+        text-align: justify;
         font-family: 'Noto Sans HK';
-        font-size: 40px;
+        font-size: 30px;
         font-style: normal;
         font-weight: 700;
-        line-height: 100%;
-        z-index: 5;
-        top: 65px;
-        left: 20px;
+        line-height: normal;
+        letter-spacing: 3px;
+        background: var(--Brand-Color, #f8298a);
+        box-sizing: border-box;
+        padding: 5px 20px 3px 30px;
+        border-radius: 30px;
+        position: relative;
+      }
+
+      .fillings-materiel-content-btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -40px;
+        transform: translateY(-50%);
+        border: none !important;
+        width: 61px;
+        height: 60px;
+        border: 10px solid #f8298a;
+        background: url('https://static.ckjhk.com/ckj-image/2e53d06edd29.png')
+          no-repeat;
+        background-size: contain;
+        z-index: 3;
+      }
+    }
+  }
+
+  .fillings-compare {
+    box-sizing: border-box;
+    padding: 30px 0;
+    .fillings-compare-content-table {
+      margin-top: 75px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--Grey-Deep, #4d4d4d);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 200%; /* 36px */
+        letter-spacing: 1.8px;
+        ul {
+          li {
+            list-style: disc;
+          }
+        }
+      }
+      & > div:nth-child(3n + 2) {
+        border-right: 7px solid #f8298a;
+        border-left: 7px solid #f8298a;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 380px;
+      }
+      & > div:nth-child(6),
+      & > div:nth-child(5) {
+        padding: 0 !important;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      & > div:nth-child(2) {
+        border-radius: 10px 10px 0 0;
+        border-top: 7px solid #f8298a;
+        border-radius: 10px 10px 0px 0px;
+        background: var(--Brand-Color, #f8298a);
+        position: relative;
+      }
+
+      & > div:nth-child(2)::after {
+        content: '\\  最常用 /';
+        color: var(--Brand-Color, #f8298a);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        position: absolute;
+        top: -150%;
+        left: 52%;
+        transform: translateX(-50%);
       }
       & > div:nth-child(2)::before {
-        top: 65px;
-        content: '2';
+        content: '';
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 44px;
+        height: 28px;
+        background: url(~/assets/images/group3910.svg) no-repeat;
+        background-size: contain;
+        z-index: 1;
       }
-      & > div:nth-child(3)::before {
-        top: 65px;
-        content: '3';
-      }
-      & > div:nth-child(4)::before {
-        top: 65px;
-        content: '4';
-      }
-      & > div:nth-child(5)::before {
-        top: 75px;
-        content: '5';
-      }
-    }
-    &-bt {
-      font-size: 16px;
-      line-height: 200%;
-      padding: 0 20px;
-      & > div {
-        margin-top: 20px;
-        &:nth-of-type(1) {
-          span {
-            &:nth-of-type(1) {
-              width: 100%;
-            }
-          }
-        }
-      }
-    }
-  }
-  .material {
-    &-context {
-      padding: 0 30px;
-      margin: 28px auto 0;
-      text-align: center;
-      span {
-        display: block;
-        font-weight: 500;
-        font-size: 15px;
-      }
-    }
-    &-in {
-      width: 100%;
-      margin: 34px 0 0;
-      .box {
-        .box-in {
-          font-weight: 500;
-          font-size: 15px;
-          margin-top: 3px;
-          padding: 0 30px;
-          &:first-child {
-            height: 51.15px;
-            font-weight: 600;
-            font-size: 20px;
-          }
-          &:last-child {
-            height: 80px;
-          }
-        }
-      }
-      .swiper {
-        padding: 0 30px;
-        .swiper-slide {
-          &:nth-of-type(1) {
-            width: 230.56px !important;
-          }
-          &:nth-of-type(2) {
-            width: 92.128% !important;
-          }
-          &:nth-of-type(3) {
-            width: 92.128% !important;
-          }
-        }
-      }
-      .box-left {
-        .box:nth-of-type(1) {
-          .box-in {
-            font-size: 20px;
-          }
-        }
-      }
-    }
-  }
-  .note {
-    margin-top: 10vw;
-    &-lists {
-      width: auto;
-      justify-content: center;
-      margin: 34px 15px 0;
-      &-item {
-        width: calc(100% / 2);
-        max-width: 26.92vw;
-        & > div {
-          .image {
-            padding: 0 5px;
-            &-in {
-              border-radius: 20px;
-            }
-          }
-          .text {
-            white-space: pre-wrap;
-            padding: 0;
-            font-size: 14px;
-            letter-spacing: 1px;
-            color: #4d4d4d;
-          }
-        }
-        &:nth-of-type(n + 4) {
-          margin-top: 30px;
-        }
-      }
-    }
-  }
-  .note2 {
-    margin-top: 75px;
-    position: relative;
-    &-title {
-      &-in {
-        font-size: 26px;
-        span {
-          display: inline-block;
-        }
-      }
-    }
-    &-content {
-      flex-direction: column;
-      align-items: flex-start;
-      margin: 54px auto 0;
-      background: url('https://static.cmereye.com/imgs/2024/08/226ad56f456f2008.png')
-        no-repeat;
-      background-size: 100% 100%;
-      height: 90.33vw;
 
-      &-l {
+      & > div:nth-child(3) {
+        border-radius: 10px 10px 0px 0px;
+        border-top: 3px solid var(--Grey-Lightest, #f2f2f2);
+        background: var(--Blue-Deep, #00aeff);
+      }
+      & > div:nth-child(2),
+      & > div:nth-child(3) {
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 2.4px;
+        box-sizing: border-box;
+        padding: 5px 0;
+      }
+      & > div:nth-child(14) {
+        border-radius: 0 0 10px 10px;
+        border-bottom: 7px solid #f8298a;
+      }
+      & > div:nth-child(3n + 1) {
+        background: var(--Brand-Color, #f8298a);
+
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 200%; /* 36px */
+        letter-spacing: 1.8px;
+        box-sizing: border-box;
+        padding: 10px 0;
+      }
+      & > div:nth-child(3n + 3) {
+        border-right: 3px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(1),
+      & > div:nth-child(4) {
+        background: transparent;
+      }
+
+      & > div:nth-child(7) {
+        border-radius: 10px 0px 0px 0px;
+      }
+      & > div:nth-child(13) {
+        border-radius: 0px 0px 0px 10px;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+      }
+      & > div:nth-child(7),
+      & > div:nth-child(8),
+      & > div:nth-child(9),
+      & > div:nth-child(10),
+      & > div:nth-child(11),
+      & > div:nth-child(12) {
+        position: relative;
+      }
+      & > div:nth-child(8)::after,
+      & > div:nth-child(9)::after,
+      & > div:nth-child(11)::after,
+      & > div:nth-child(12)::after {
+        content: '';
+        position: absolute;
+        left: auto;
+        bottom: 0;
+        right: 0;
         width: 100%;
-        padding: 0 53px;
-        position: absolute;
-        position: absolute;
-        top: 90px;
-        display: flex;
-        justify-content: flex-end;
-        & > div {
-          & > span {
-            color: var(--Grey-Deep, #4d4d4d);
-            font-family: 'FakePearl-Regular';
-            font-size: 26px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 160%; /* 41.6px */
-            i {
-              color: var(--Theme-Color, #fc1682);
-              font-family: 'FakePearl-Regular';
-              font-size: 26px;
-              font-style: normal;
-              font-weight: 600;
-              line-height: 160%;
-            }
-          }
-        }
+        background: #f3f3f3;
+        height: 3px;
       }
-      &-r {
-        margin-left: 0;
-        padding: 75px 30px 0;
-        margin-top: 90px;
-        & > div {
-          margin-bottom: 20px;
-          span {
-            font-size: 16px;
-            font-weight: 500;
-          }
-        }
+      & > div:nth-child(7)::after,
+      & > div:nth-child(10)::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: #e5e7eba2;
+      }
+      & > div:nth-child(15) {
+        border-bottom: 3px solid var(--Grey-Lightest, #f2f2f2);
       }
     }
   }
-  .care {
-    margin-top: 80px;
-    padding-bottom: 0px;
-    &-title {
-      &-in {
-        font-size: 26px;
+  .fillings-step {
+    box-sizing: border-box;
+    padding: 30px 0;
+    .fillings-step-title {
+      color: var(--Grey-Deep, #4d4d4d);
+      text-align: center;
+      font-family: 'Noto Sans HK';
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 3px;
+      & > i {
+        color: var(--Brand-Color, #f8298a);
+        font-family: 'Noto Sans HK';
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 3px;
       }
     }
-    &-lists {
-      width: auto;
-      margin: 34px 15px 0;
-      &-item {
-        width: calc(100% / 3);
-        & > div {
-          .image {
-            padding: 0 5px;
-            &-in {
-              border-radius: 20px;
-            }
-          }
-          .text {
-            white-space: pre-wrap;
-            padding: 0;
-            font-size: 14px;
-            letter-spacing: 1px;
-          }
-        }
-        &:nth-of-type(n + 4) {
-          margin-top: 30px;
-        }
-      }
-    }
-    &-btn {
-      margin-top: 30px;
-    }
-  }
-  .fillings-content-1 {
-    &-in {
-      box-sizing: border-box;
-      padding: 0 30px;
-      // flex-direction: column;
-      // align-items: center;
+    .fillings-step-content {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px 25px;
-      margin-top: 30px;
-      & > div {
-        // width: calc(100% - 100px);
-        width: 100%;
-        span {
-          font-size: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.823vw 1.5625vw;
+      box-sizing: border-box;
+      padding: 35px 0 30px;
+      .fillings-step-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        & > div:nth-child(1) {
+          background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
+            no-repeat;
+          background-size: cover;
+          width: 3.4375vw;
+          height: 3.4375vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 1.771vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 3.4px;
+          position: absolute;
+          top: -0.49vw;
+          left: -0.49vw;
+          z-index: 5;
+        }
+
+        & > div:nth-child(2) {
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          position: relative;
+        }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 21px;
+          height: 63px;
+          background: url('~/assets/images/2025040208530601.png') no-repeat;
+          background-size: cover;
+          top: 50%;
+          right: -15px;
+          z-index: -1;
+          transform: translateY(-50%);
+        }
+
+        & > div:nth-child(3) {
+          margin-top: 0.52vw;
+          width: 100%;
+          color: var(--Grey-Dark, #333);
+          font-family: 'Noto Sans HK';
+          font-size: 20px;
           font-style: normal;
           font-weight: 400;
-          line-height: 130%; /* 20.8px */
-          letter-spacing: 1.6px;
-          margin-top: 10px;
+          line-height: 160%;
+          /* 32px */
+          letter-spacing: 4px;
+          text-align: center;
         }
-        &:not(:last-child) {
-          margin-bottom: 40px;
+      }
+    }
+    .fillings-step-item:nth-child(5) {
+      & > div:nth-child(2)::after {
+        content: none;
+      }
+    }
+    .fillings-step-item-last {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .fillings-cause {
+    box-sizing: border-box;
+    padding: 30px 0;
+    .fillings-cause-content {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 0 18px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        & > div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%; /* 27px */
+          letter-spacing: 1.8px;
         }
       }
     }
   }
-  .advantage {
-    margin-top: 100px;
-    &-in {
-      flex-direction: column;
-      margin: 44px auto 0;
-      padding: 0 30px;
-      &-r {
-        margin-left: 0;
-        margin-top: 8px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0 36px;
-        padding-left: 20px;
-        & > div {
-          position: relative;
-          margin-top: 24px;
-          .name {
+
+  .fillings-phase {
+    box-sizing: border-box;
+    padding: 30px 0;
+    .fillings-phase-content {
+      max-width: 725px;
+      margin: 0 auto;
+      box-sizing: border-box;
+      padding: 25px 0 0;
+      & > div {
+        box-sizing: border-box;
+        padding: 10px 0;
+      }
+      .fillings-phase-content-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 0 16px 0 133px;
+        justify-content: space-between;
+        .fillings-phase-content-item-l {
+          background: url('https://static.ckjhk.com/ckj-image/d1d86bf9ce38.png')
+            no-repeat;
+          background-size: contain;
+          width: 125.177px;
+          height: 148.648px;
+          left: 8px;
+          top: 0;
+          position: absolute;
+          box-sizing: border-box;
+          padding: 36px 18px 24px;
+          & > img {
             width: 100%;
-            font-size: 16px;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            background: transparent;
-            padding: 0;
-            color: var(--Theme-Color, #fc1682);
-            text-align: justify;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        .fillings-phase-content-item-r {
+          .fillings-phase-content-item-text {
+            & > div:nth-child(1) {
+              border-radius: 0px 277.457px 277.457px 0px;
+              background: var(--Brand-Color, #f8298a);
+              box-sizing: border-box;
+              padding: 10px 30px;
+              color: var(--White, #fff);
+              font-family: 'Noto Sans HK';
+              font-size: 24px;
+              font-style: normal;
+              font-weight: 700;
+              line-height: normal;
+              letter-spacing: 2.4px;
+              margin-bottom: 12px;
+              width: fit-content;
+            }
+            & > div:nth-child(2),
+            & > div:nth-child(3) {
+              padding-left: 30px;
+            }
+            & > div:nth-child(2) {
+              color: var(--Grey-Dark, #333);
+              font-family: 'Noto Sans HK';
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 160%; /* 32px */
+              letter-spacing: 4px;
+            }
+            & > div:nth-child(3) {
+              color: var(--Brand-Color, #f8298a);
+              font-family: 'Noto Sans HK';
+              font-size: 20px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 160%;
+              letter-spacing: 4px;
+            }
+          }
+          border-radius: 0px 27.746px 0px 0px;
+          box-sizing: border-box;
+          padding: 15px 16px 15px 0;
+          background: var(
+            --Pale-pink-Grad-Reversed,
+            linear-gradient(
+              0deg,
+              rgba(255, 255, 255, 0) 0%,
+              var(--Pink-Pale, #ffe9ec) 100%
+            )
+          );
+          display: flex;
+          align-items: flex-start;
+          width: 100%;
+          justify-content: space-between;
+          .fillings-phase-content-item-float {
+            width: 131.775px;
+            height: 131.775px;
+            position: relative;
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          .fillings-phase-content-item-float::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -43px;
+            background: url(~/assets/images/2025032614245601.svg) no-repeat;
+            width: 43px;
+            height: 46px;
+            background-size: contain;
+          }
+        }
+      }
+    }
+  }
+
+  .fillings-prevent-tooth-decay {
+    box-sizing: border-box;
+    padding: 30px 0;
+    .fillings-prevent-tooth-decay-content {
+      margin-top: 20px;
+      display: flex;
+      gap: 0 7px;
+      & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & > div:nth-child(1) {
+          box-sizing: border-box;
+          padding: 0 20px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        & > div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 200%; /* 36px */
+          letter-spacing: 1.8px;
+        }
+      }
+    }
+  }
+
+  .fillings-problem {
+    :deep(.problem) {
+      margin-top: 0;
+      box-sizing: border-box;
+      padding: 30px 28px;
+    }
+  }
+
+  @keyframes btntestafterAnima {
+    0% {
+      width: 90%;
+      height: 90%;
+      border: 10px solid #f8298a;
+    }
+    19% {
+      border: 10px solid #f8298abf;
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+    }
+    24% {
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+    }
+    29% {
+      border: 0 solid rgba(185, 217, 252, 0);
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+    }
+    100% {
+      border: 0 solid rgba(185, 217, 252, 0);
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .fillings {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  .fillings-key-points {
+    margin: 30px 0;
+    .fillings-key-points-content {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 21px 0;
+      box-sizing: border-box;
+      padding: 0 20px;
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 0 15px;
+        & > div:nth-child(1) {
+          min-width: 53.129px;
+          height: 53.129px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        & > div:nth-child(2) {
+          color: #000;
+          text-align: justify;
+          font-family: 'Noto Sans HK';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 150%; /* 21px */
+        }
+      }
+    }
+  }
+  .fillings-materiel {
+    margin: 30px 0;
+    .fillings-materiel-content-title {
+      opacity: 0;
+      display: none;
+    }
+    .fillings-materiel-content {
+      box-sizing: border-box;
+      padding: 0 0 0 20px;
+      margin-top: 13.5px;
+    }
+
+    .fillings-materiel-content-lists {
+      position: relative;
+      & > div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        gap: 20px 0;
+      }
+      & > div:nth-child(2) {
+        position: absolute;
+        top: 0;
+        right: -1px;
+        width: 56px;
+        height: 450px;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    .fillings-materiel-content-lists-item {
+      display: flex;
+      flex-direction: column;
+      & > div:nth-child(1) {
+        color: var(--White, #fff);
+        text-align: right;
+        font-family: 'Noto Sans HK';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        box-sizing: border-box;
+        padding: 3px 15px;
+        border-radius: 20px;
+        background: var(--Blue-Deep, #00aeff);
+        width: fit-content;
+      }
+      & > div:nth-child(2) {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 40px 0 0;
+        & > div:nth-child(1) {
+          margin-top: 10px;
+          display: flex;
+          flex-direction: column;
+          gap: 6px 0;
+          padding-left: 16px;
+          & > div {
+            display: flex;
+            align-items: center;
+            gap: 0 7px;
+            & > div:nth-child(1) {
+              color: var(--Grey-Dark, #333);
+              font-family: 'Noto Sans HK';
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 350;
+              line-height: 120%; /* 14.4px */
+            }
+            & > div:nth-child(2) {
+              width: 84px;
+              height: 16px;
+              & > img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+        & > div:nth-child(2) {
+          display: flex;
+          align-items: flex-end;
+          & > div:nth-child(1) {
+            color: var(--Grey-Deep, #4d4d4d);
+            text-align: right;
             font-family: 'Noto Sans HK';
             font-size: 12px;
             font-style: normal;
             font-weight: 700;
-            line-height: 200%; /* 24px */
-            letter-spacing: 1.2px;
-            margin-top: 0;
-            // margin-bottom: 15px;
+            line-height: 160%; /* 19.2px */
+            position: relative;
           }
-          .text {
-            // font-size: 16px;
-            text-indent: 0;
-            padding-left: 0;
+          & > div:nth-child(1)::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: rotate(351deg) translate(-50%, -50%);
+            background: #4d4d4d;
+          }
+          & > div:nth-child(2) {
+            width: 54px;
+            height: auto;
+            position: relative;
+            bottom: -8px;
+            & > img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+    .fillings-materiel-content-lists-item:nth-child(2),
+    .fillings-materiel-content-lists-item:nth-child(4) {
+      & > div:nth-child(1) {
+        background: var(--Brand-Color, #f8298a);
+      }
+    }
+    .fillings-materiel-content-btn {
+      margin-top: 35px;
+      color: var(--White, #fff);
+      text-align: justify;
+      font-family: 'Noto Sans HK';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 24px; /* 150% */
+      letter-spacing: 1.6px;
+      box-sizing: border-box;
+      padding: 3px 10px 3px 20px;
+      background: var(--Brand-Color, #f8298a);
+      border-radius: 20px;
+      position: relative;
+      width: fit-content;
+      margin: 35px auto 0;
+    }
+
+    .fillings-materiel-content-btn::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -25px;
+      transform: translateY(-50%);
+      border: none !important;
+      width: 43px;
+      height: 42px;
+      border: 5px solid #f8298a;
+      background: url('https://static.ckjhk.com/ckj-image/2e53d06edd29.png')
+        no-repeat;
+      background-size: contain;
+      z-index: 3;
+    }
+  }
+
+  .fillings-compare {
+    box-sizing: border-box;
+    padding: 30px 0 0;
+    .fillings-compare-content-table {
+      margin-top: 55px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      box-sizing: border-box;
+      padding: 0 15px;
+      & > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 350;
+        line-height: 150%; /* 18px */
+        ul {
+          padding-left: 25px;
+          li {
+            list-style: disc;
             color: var(--Grey-Deep, #4d4d4d);
             font-family: 'Noto Sans HK';
             font-size: 12px;
             font-style: normal;
-            text-align: justify;
-            font-weight: 400;
-            line-height: 200%;
-            letter-spacing: 1.2px;
+            font-weight: 350;
+            line-height: 150%; /* 18px */
+            text-align: left;
           }
         }
-
-        & > div::before {
-          content: '';
-          background: url('https://static.cmereye.com/imgs/2024/08/017c1f8115058e60.png')
-            no-repeat;
-          position: absolute;
-          left: -14px;
-          top: 7px;
-          width: 9px;
-          height: 11px;
-          background-size: 100% 100%;
-          display: inline-block;
-        }
       }
-      &-l {
+      & > div:nth-child(3n + 2) {
+        border-right: 3px solid #f8298a;
+        border-left: 3px solid #f8298a;
         display: flex;
-        justify-content: center;
-      }
-    }
-  }
-  .mobile_title_ad {
-    // overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    padding-left: 20px;
-    position: relative;
-    & > div:nth-child(1) {
-      & > img {
-        position: relative;
-        z-index: 5;
-      }
-    }
-    & > div:nth-child(2) {
-      display: flex;
-      flex-direction: column;
-      color: var(--Grey-Deep, #4d4d4d);
-      font-family: 'FakePearl-Regular';
-      font-size: 26px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 120%; /* 31.2px */
-      padding-bottom: 10px;
-      & > span:nth-child(2) {
-        color: var(--Theme-Color, #fc1682);
-      }
-    }
-  }
-  .mobile_title_ad::after {
-    position: absolute;
-    bottom: 5px;
-    right: -28px;
-    width: 65%;
-    height: 1px;
-    background: var(--Theme-Color, #fc1682);
-    content: '';
-    z-index: 2;
-  }
-  .The_benefits_of_resin_filling_teeth {
-    margin-top: 30px;
-    &-img {
-      padding: 0 30px;
-    }
-    &-lists {
-      &-in {
-        padding: 0 30px;
-        align-items: flex-start;
-        &-l {
-          width: 60px;
-          height: 60px;
-          padding-top: 5px;
-          & > div {
-            font-size: 16px;
-            line-height: 1.4;
-            letter-spacing: 2px;
-            & > div {
-              flex-direction: column;
-            }
-          }
-        }
-        &-r {
-          font-size: 16px;
-          line-height: 2;
-          text-align: justify;
-        }
-      }
-    }
-  }
-  .step {
-    // background: #fff;
-    // 背景渐变3色
-    background: url('https://static.cmereye.com/imgs/2024/08/6b7abb73df76f85e.png')
-      no-repeat;
-    background-position: center 0;
-    margin-top: 0;
-    padding: 46px 0;
-    &-title {
-      &-in {
-        font-size: 26px;
-      }
-    }
-    &-lists {
-      width: auto;
-      margin: 15.2vw 8vw 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8vw 6.65vw;
-      &-in {
         flex-direction: column;
-        margin-bottom: 8vw;
-        width: 100%;
-        padding: 0;
-        &:nth-of-type(n + 4) {
-          margin-bottom: 8vw;
+        justify-content: center;
+        align-items: center;
+        width: 139.595px;
+        box-sizing: border-box;
+        padding: 5px 10px;
+      }
+      & > div:nth-child(3n + 3) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 139.595px;
+        box-sizing: border-box;
+        padding: 5px 10px;
+        text-align: left;
+        border-right: 1px solid var(--Grey-Lightest, #f2f2f2);
+      }
+      & > div:nth-child(6),
+      & > div:nth-child(5) {
+        padding: 0 !important;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
-        &:nth-of-type(5) {
-          .step-lists-in-r {
-            display: none;
-          }
-        }
-        &-l {
-          width: 38.65vw;
-          position: relative;
-          .title {
-            padding: 0 1.6vw;
-            font-size: 6.93vw;
-            width: 18.65vw;
-            height: 16.53vw;
-            background: url('https://static.cmereye.com/imgs/2024/08/a53173454afef713.png')
-              no-repeat;
-            background-position: center center;
-            background-size: 100% 100%;
-            color: var(--Theme-Color, #fc1682);
-            text-align: center;
-            font-family: 'Noto Serif HK';
-            font-size: 16vw;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 140%; /* 84px */
-            letter-spacing: -0.8vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            z-index: 5;
-            top: -8vw;
-            left: -5.3vw;
-          }
-          .image {
-            padding: 0;
-            border-radius: 12px;
-            border: 1px solid var(--Theme-Color, #fc1682);
-            height: 26.13vw;
-            overflow: hidden;
-            &::after {
-              display: none;
-            }
-            & > img {
-              border-radius: 0;
-              width: 100%;
-              height: 100%;
-            }
-          }
-          .name {
-            margin-top: 6px;
-            padding: 0;
-            width: 100%;
-            font-size: 4.265vw;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            background: transparent;
-            white-space: initial;
-            color: var(--Theme-Color, #fc1682);
-            font-family: 'FakePearl-Regular';
-            font-size: 4.265vw;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 130%; /* 20.8px */
-          }
-        }
-        &-r {
-          display: block;
-          margin-top: 8vw;
-          margin-left: 0;
-          img {
-            transform: rotate(90deg);
-          }
-        }
-        &:nth-of-type(6) {
-          margin-top: 15px;
-          align-items: initial;
-          grid-column: span 2;
-          .lastBox-t {
-            & > div {
-              font-size: 6.93vw;
-              span {
-                font-size: 6.93vw;
-                display: inline-block;
-              }
-              img {
-                width: 5.33vw;
-                height: 5.865vw;
-              }
-            }
-          }
-          .lastBox-b {
-            margin-top: 8vw;
-            display: flex;
-            justify-content: center;
-            .bigBan {
-              font-size: 7.465vw;
-            }
-          }
-        }
+      }
+      & > div:nth-child(2) {
+        border-radius: 10px 10px 0 0;
+        border-top: 3px solid #f8298a;
+        border-radius: 10px 10px 0px 0px;
+        background: var(--Brand-Color, #f8298a);
+        position: relative;
+      }
+      & > div:nth-child(2)::after {
+        content: '\\  最常用 /';
+        color: var(--Brand-Color, #f8298a);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        position: absolute;
+        top: -125%;
+        left: 52%;
+        transform: translateX(-50%);
+      }
+      & > div:nth-child(2)::before {
+        content: '';
+        position: absolute;
+        top: -24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 44px;
+        height: 29px;
+        background: url(~/assets/images/group3910.svg) no-repeat;
+        background-size: contain;
+        z-index: 1;
+      }
 
-        &:nth-of-type(2),
-        &:nth-of-type(5) {
-          .step-lists-in-l {
-            .name {
-              width: 100%;
-              clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            }
-          }
-        }
-        &:nth-of-type(2),
-        &:nth-of-type(4) {
-          position: relative;
-          top: 120px;
-        }
-        &:nth-of-type(n + 4) {
-          margin-bottom: 0px;
-        }
+      & > div:nth-child(3) {
+        border-radius: 10px 10px 0px 0px;
+        background: var(--Blue-Deep, #00aeff);
+        border-top: 1px solid var(--Grey-Lightest, #f2f2f2);
+      }
+
+      & > div:nth-child(2),
+      & > div:nth-child(3) {
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1.6px;
+        box-sizing: border-box;
+        padding: 5px 0;
+      }
+
+      & > div:nth-child(14) {
+        border-radius: 0 0 10px 10px;
+        border-bottom: 3px solid #f8298a;
+      }
+      & > div:nth-child(3n + 1) {
+        background: var(--Brand-Color, #f8298a);
+
+        color: var(--White, #fff);
+        text-align: center;
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 14.4px */
+        letter-spacing: 1.8px;
+        box-sizing: border-box;
+        padding: 10px 0;
+        position: relative;
+        right: -1px;
+      }
+      & > div:nth-child(1),
+      & > div:nth-child(4) {
+        background: transparent;
+      }
+
+      & > div:nth-child(7) {
+        border-radius: 10px 0px 0px 0px;
+      }
+      & > div:nth-child(13) {
+        border-radius: 0px 0px 0px 10px;
+        box-sizing: border-box;
+        margin-bottom: 5px;
+      }
+      & > div:nth-child(7),
+      & > div:nth-child(8),
+      & > div:nth-child(9),
+      & > div:nth-child(10),
+      & > div:nth-child(11),
+      & > div:nth-child(12) {
+        position: relative;
+      }
+      & > div:nth-child(8)::after,
+      & > div:nth-child(9)::after,
+      & > div:nth-child(11)::after,
+      & > div:nth-child(12)::after {
+        content: '';
+        position: absolute;
+        left: auto;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        background: #f3f3f3;
+        height: 3px;
+      }
+      & > div:nth-child(7)::after,
+      & > div:nth-child(10)::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: #e5e7eba2;
+      }
+      & > div:nth-child(15) {
+        border-bottom: 1px solid var(--Grey-Lightest, #f2f2f2);
       }
     }
   }
-  .lastBox-t_new_mobile {
+
+  .fillings-step {
+    margin: 30px 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0 10px;
-    & > span:nth-child(1) {
-      background: url('https://static.cmereye.com/imgs/2024/08/aa858a12d3e1e4fa.png')
-        no-repeat;
-      background-size: 100% 100%;
-      width: 156px;
-      height: 55px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-right: 12px;
-    }
-    & > span {
-      color: var(--Theme-Color, #fc1682);
+    flex-direction: column;
+
+    .fillings-step-title {
+      & > i {
+        color: var(--Brand-Color, #f8298a);
+        font-family: 'Noto Sans HK';
+        font-size: 4.8vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.48vw;
+      }
+
+      color: var(--Grey-Mid, #666);
       text-align: center;
-      font-family: 'FakePearl-Regular';
-      font-size: 26px;
+      font-family: 'Noto Sans HK';
+      font-size: 4.8vw;
       font-style: normal;
-      font-weight: 600;
-      line-height: 160%; /* 41.6px */
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.48vw;
     }
-  }
-  .differ {
-    margin-top: 40px;
-    &-tc {
-      padding: 0 40px;
-      span {
-        font-size: 15px;
-        &:nth-of-type(2) {
-          display: block;
-        }
-      }
-    }
-    &-lists {
-      padding: 0 30px;
-      margin-top: 25px;
-      &-in {
-        &:not(:last-child) {
-          margin-bottom: 4px;
-        }
-        & > div {
-          font-size: 15px;
-          box-sizing: border-box;
-          min-height: auto;
-          span {
-            display: flex;
-            &::before {
-              font-size: 20px;
-              line-height: 1.4;
-              vertical-align: initial;
-            }
-          }
-          &:nth-of-type(1) {
-            border-radius: 20px 0 0 20px;
-            margin-left: 0;
-            padding: 20px 10px;
-            font-size: 15px;
-            width: auto;
-            flex: 1;
-            text-align: center;
-          }
-          &:nth-of-type(2) {
-            padding: 20px 20px 20px 14px;
-            width: calc((127 / 315) * 100%);
-            margin-left: 1px;
-          }
-          &:nth-of-type(3) {
-            border-radius: 0 20px 20px 0;
-            margin-left: 1px;
-            padding: 20px 20px 20px 14px;
-            width: calc((127 / 315) * 100%);
-          }
-        }
-        &:nth-of-type(1) {
-          position: relative;
-          & > div:not(:first-child) {
-            padding: 0;
-            border-radius: 19px;
-            background: var(--Theme-Color, #fc1682);
-            color: var(--White, #fff);
-            text-align: center;
-            font-family: 'FakePearl-Regular';
-            font-size: 15px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 160%; /* 24px */
-            letter-spacing: 1.5px;
-            width: fit-content;
-            line-height: 100%;
-            min-height: fit-content;
-            padding: 5px;
-          }
-          & > div:nth-child(2) {
-            position: absolute;
-            left: 29%;
-            top: 35px;
-          }
-          & > div:nth-child(3) {
-            position: absolute;
-            left: 70%;
-            top: 35px;
-          }
-        }
-        &:nth-of-type(2) {
-          & > div {
-            padding: 0;
-          }
-          & > div:nth-child(1) {
-            width: 70px;
-            min-width: 70px;
-            img {
-              width: 100%;
-            }
-          }
-          & > div:nth-child(2),
-          & > div:nth-child(3) {
-            & > div {
-              width: 38.2vw;
-              img {
-                width: 100%;
-              }
-            }
-          }
-        }
-        &:nth-of-type(3),
-        &:nth-of-type(4),
-        &:nth-of-type(5) {
-          & > div:nth-child(1) {
-            background: #fdd3e3;
-          }
-        }
-      }
-    }
-  }
-  .introduceJY {
-    :deep(.introduce-in) {
-      min-height: 91.73vw;
-    }
-    :deep(.introduce-in-content) {
-      position: absolute;
-      left: 0;
-      padding: 8vw 0 8vw 0;
+
+    .fillings-step-content {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 7.2vw 4.8vw;
       box-sizing: border-box;
-      .introduce-in-content-in {
-        padding-top: 50px;
+      padding: 0 20px;
+      .fillings-step-item {
+        position: relative;
+
         & > div:nth-child(1) {
-          font-size: 6.93vw;
-          margin-bottom: 2.8vw;
+          position: absolute;
+          z-index: 3;
+          top: -1.06vw;
+          left: -1.06vw;
+          color: var(--White, #fff);
+          font-family: 'Noto Sans HK';
+          font-size: 4.8vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.48vw;
+          background: url(https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png)
+            no-repeat;
+          background-size: cover;
+          width: 8vw;
+          height: 8vw;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
         & > div:nth-child(2) {
-          line-height: 1.4;
-          font-size: 4.25vw;
-          padding: 0 8vw;
+          position: relative;
+        }
+        & > div:nth-child(2)::after {
+          content: '';
+          position: absolute;
+          width: 2.93vw;
+          height: 6.4vw;
+          background: url(https://static.ckjhk.com/ckj-image/2025032009130001.png)
+            no-repeat;
+          background-size: cover;
+          top: 50%;
+          right: -2vw;
+          z-index: -1;
+          transform: translateY(-50%);
+        }
+        & > div:nth-child(3) {
+          color: var(--Grey-Dark, #333);
+          /* 手機版/MB-Small Text */
+          font-family: 'Noto Sans HK';
+          font-size: 3.73vw;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 5.33vw;
+          margin-top: 1.33vw;
+          text-align: center;
         }
       }
+      .fillings-step-item:nth-child(5) {
+        & > div:nth-child(2)::after {
+          content: none;
+        }
+      }
+      .fillings-step-item-last {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > img {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+  .fillings-cause {
+    margin: 30px 0;
+    .fillings-cause-content {
+      box-sizing: border-box;
+      padding: 0 15px;
+      display: flex;
+      gap: 0 7px;
+      margin-top: 10px;
+      & > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        & > div:nth-child(2) {
+          span {
+            color: var(--Grey-Dark, #333);
+            text-align: center;
+            font-family: 'Noto Sans HK';
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%; /* 21px */
+            letter-spacing: 0.7px;
+          }
+        }
+      }
+    }
+  }
+  .fillings-phase {
+    margin: 30px 0;
+    .fillings-phase-content {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      padding: 0 12px 0 18px;
+    }
+    .fillings-phase-content-item {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    .fillings-phase-content-item-l {
+      background: url('https://static.ckjhk.com/ckj-image/d1d86bf9ce38.png')
+        no-repeat;
+      background-size: contain;
+      width: 69px;
+      height: 88px;
+      left: 0;
+      top: 0;
+      position: absolute;
+      box-sizing: border-box;
+      padding: 20.5px 10px 17.5px;
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .fillings-phase-content-item-r {
+      border-radius: 0px 10px 0px 0px;
+      background: var(
+        --Pale-pink-Grad-Reversed,
+        linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0) 0%,
+          var(--Pink-Pale, #ffe9ec) 100%
+        )
+      );
+      display: flex;
+      align-items: center;
+      margin-left: 75px;
+      box-sizing: border-box;
+      padding: 6px 0 12px;
+      width: 90%;
+      justify-content: space-between;
+    }
+    .fillings-phase-content-item-text {
+      & > div:nth-child(1) {
+        color: var(--White, #fff);
+        font-family: 'Noto Sans HK';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 250% */
+        letter-spacing: 1.6px;
+        width: fit-content;
+        box-sizing: border-box;
+        padding: 5px 10px 5px 15px;
+        border-radius: 0px 100px 100px 0px;
+        background: var(--Brand-Color, #f8298a);
+        margin-bottom: 7px;
+      }
+      & > div:nth-child(2),
+      & > div:nth-child(3) {
+        padding-left: 10px;
+      }
+      & > div:nth-child(2) {
+        color: var(--Grey-Dark, #333);
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; /* 18px */
+        letter-spacing: 0.6px;
+      }
+      & > div:nth-child(3) {
+        color: var(--Brand-Color, #f8298a);
+        font-family: 'Noto Sans HK';
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0.6px;
+      }
+    }
+    .fillings-phase-content-item-float {
+      width: 70px;
+      height: 70px;
+      position: relative;
+      right: 0px;
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .fillings-phase-content-item:nth-child(4) {
+      .fillings-phase-content-item-l {
+        padding: 20.5px 0px 17.5px 2px;
+        img {
+          transform: scale(1.2);
+        }
+      }
+      .fillings-phase-content-item-float {
+        width: 83px;
+        right: -8px;
+        position: relative;
+        right: 0px;
+        & > img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .fillings-phase-content-item:nth-child(5) {
+      .fillings-phase-content-item-l {
+        padding: 20.5px 0px 17.5px;
+      }
+    }
+    .fillings-phase-content-item-float::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      background: url(~/assets/images/2025032614245601.svg) no-repeat;
+      width: 23px;
+      height: 24px;
+      background-size: contain;
+    }
+  }
+  .fillings-prevent-tooth-decay {
+    margin: 30px 0 45px;
+    .fillings-prevent-tooth-decay-content {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 45px 25px;
+      box-sizing: border-box;
+      padding: 0 30px;
+      justify-items: center;
+      & > div {
+        width: 90px;
+        height: 90px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        & > div:nth-child(1) {
+          box-sizing: border-box;
+          padding: 10px 8px;
+          & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+        & > div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: 'Noto Sans HK';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%; /* 21px */
+          letter-spacing: 0.7px;
+          white-space: nowrap;
+          i {
+            font-style: normal;
+          }
+        }
+      }
+    }
+  }
+  .fillings-problem {
+    margin: 50px 0 30px;
+  }
+  .banner-in-box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 20.83vw;
+    width: 100%;
+    z-index: 10;
+  }
+  .banner-image {
+    position: absolute;
+    z-index: 3;
+    top: 3vw;
+    left: 48%;
+    width: 9.0625vw;
+    height: 9.0625vw;
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 23.9583vw;
+    position: absolute;
+    left: 40%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    & > div {
+      display: flex;
+      align-items: flex-end;
+    }
+    .content-title {
+      color: var(--White, #fff);
+      text-align: right;
+      -webkit-text-stroke-width: 0.5;
+      -webkit-text-stroke-color: var(--White, #fff);
+      font-family: 'FakePearl-Regular';
+      font-size: clamp(40px, 5.7vw, 110px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 176px */
+      letter-spacing: 6.6px;
+      position: relative;
+      z-index: 6;
+      bottom: 0;
+
+      border-radius: 0.6942vw 0.6942vw 0px 0px;
+      background: var(
+        --Liner-purple,
+        linear-gradient(
+          269deg,
+          var(--Brand-Color, #fc1682) 10.21%,
+          #710d54 122.73%
+        )
+      );
+      box-sizing: border-box;
+      padding: 0.859375vw 4.7135vw;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
+      font-family: 'Noto Sans HK';
+      font-size: 1.565vw;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.165vw;
+      width: 100%;
+    }
+
+    .price-style {
+      width: 19.0625vw;
+      height: 11.145vw;
+      position: relative;
+      right: -3.64583vw;
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+    .content-price,
+    .content-subscribe {
+      width: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1.0465vw;
+      display: flex;
+      gap: 0 0.52vw;
+      min-height: 2.68135vw;
+      box-sizing: border-box;
+      padding: 0.52vw;
+      align-items: center;
+      font-family: 'Noto Sans HK';
+      font-size: 1.7442vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 2.2222vw; /* 114.286% */
+      letter-spacing: 0.29165vw;
+      justify-content: center;
+      & > div:nth-child(1) {
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 1.744vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 2.2222vw; /* 114.286% */
+        letter-spacing: 0.29165vw;
+        top: -0.9vw;
+      }
+
+      & > div:nth-child(2) {
+        width: 3.54165vw;
+        & > svg {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .content-subscribe {
+      box-sizing: border-box;
+      padding: 0;
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
     }
   }
   .banner-in-box {
@@ -3044,11 +2596,7 @@ const differData: any = {
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    // padding-left: 20px;
     padding-bottom: 35px;
-    // display: flex;
-    // align-items: flex-start;
-    // justify-content: flex-start;
     top: 0;
     bottom: 0;
     transform: translateY(0px);
@@ -3074,7 +2622,7 @@ const differData: any = {
     width: 86.665vw;
     left: 50%;
     top: auto;
-    bottom: -65%;
+    bottom: -60%;
     border-radius: 10px;
     transform: translate(-50%, 0%);
     .content-title {
@@ -3131,8 +2679,8 @@ const differData: any = {
         letter-spacing: 1.28vw;
       }
       & > div:nth-child(2) {
-        width: 9.5vw;
-        height: 8.03vw;
+        width: 13.5vw;
+        height: 11.03vw;
         & > svg,
         & > img {
           width: 100%;
