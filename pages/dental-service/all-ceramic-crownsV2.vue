@@ -604,6 +604,7 @@ const listItem = (str) => {
                 <div>
                   <img src="https://static.ckjhk.com/ckj-image/ff29dc67893c.jpg" alt="" />
                 </div>
+                <div></div>
                 <div>
                   <img src="https://static.ckjhk.com/ckj-image/a62ba03ae963.jpg" alt="" />
                 </div>
@@ -615,6 +616,8 @@ const listItem = (str) => {
                 <div>
                   <img src="https://static.ckjhk.com/ckj-image/181ec1cb844f.jpg" alt="" />
                 </div>
+                <div></div>
+                <div></div>
               </swiper-slide>
             </swiper>
           </div>
@@ -1967,7 +1970,7 @@ const listItem = (str) => {
         content: '';
         width: 18px;
         height: 25px;
-        background: url('https://static.ckjhk.com/ckj-image/a17694c1f8a8.svg') no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/2025041010261301.png') no-repeat;
         background-size: contain;
         bottom: -65%;
         left: 50%;
@@ -1980,7 +1983,7 @@ const listItem = (str) => {
         content: '';
         width: 58px;
         height: 85px;
-        background: url('https://static.ckjhk.com/ckj-image/54595111de02.svg') no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/2025041010261302.png') no-repeat;
         background-size: contain;
         bottom: -115%;
         left: -20%;
@@ -1991,11 +1994,11 @@ const listItem = (str) => {
         content: '';
         width: 51px;
         height: 58px;
-        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg') no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/2025041010261303.png') no-repeat;
         background-size: contain;
         bottom: -61%;
         right: -20%;
-        transform: rotate(-90deg);
+        transform: rotate(0deg);
       }
 
       &>div:nth-child(4) {
@@ -2063,7 +2066,7 @@ const listItem = (str) => {
         content: '';
         width: 51px;
         height: 84px;
-        background: url('https://static.ckjhk.com/ckj-image/36b7e7a13825.svg') no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/2025041010261304.png') no-repeat;
         background-size: contain;
         bottom: -55%;
         left: 21%;
@@ -2074,10 +2077,11 @@ const listItem = (str) => {
         content: '';
         width: 51px;
         height: 58px;
-        background: url('https://static.ckjhk.com/ckj-image/dc7cbfed0e87.svg') no-repeat;
+        background: url('https://static.ckjhk.com/ckj-image/2025041010261303.png') no-repeat;
         background-size: contain;
         bottom: -55%;
         right: 21%;
+        transform: rotate(90deg);
       }
     }
 
@@ -2599,21 +2603,21 @@ const listItem = (str) => {
 
 @media screen and (max-width: 991px) {
   .all-ceramic-crowns {
-    margin: 30px 0;
+    margin: 8vw 0;
   }
 
   .all-ceramic-crowns-service {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .all-ceramic-crowns-service-content {
       display: flex;
       justify-content: center;
-      padding: 15px 0;
-      gap: 0 32.5px;
+      padding: 4vw 0;
+      gap: 0 8.665vw;
 
       &>div {
-        width: 90px;
-        height: 120.41px;
+        width: 24vw;
+        height: 32.109vw;
         overflow: hidden;
 
         &>img {
@@ -2625,7 +2629,7 @@ const listItem = (str) => {
     }
 
     .all-ceramic-crowns-service-content-text {
-      padding: 0 20px;
+      padding: 0 5.333vw;
 
       &>p {
         display: inline;
@@ -2634,26 +2638,26 @@ const listItem = (str) => {
       color: var(--Grey-Dark, #333);
       text-align: justify;
       font-family: 'Noto Sans HK';
-      font-size: 14px;
+      font-size: 3.733vw;
       font-style: normal;
       font-weight: 500;
       line-height: 150%;
       /* 21px */
-      letter-spacing: 0.7px;
+      letter-spacing: -0.1865vw
     }
   }
 
   .dental-crown {
-    margin: 30px 0;
+    margin: 8vw 0;
     position: relative;
     z-index: 1;
-    padding-bottom: 15px;
+    padding-bottom: 4vw;
 
     .dental-crown-content {
-      border-radius: 5px;
+      border-radius: 1.33vw;
       overflow: hidden;
       box-sizing: border-box;
-      margin: 15px 20px;
+      margin: 4vw 5.333vw;
       box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.2);
 
       &>div {
@@ -2662,26 +2666,28 @@ const listItem = (str) => {
         box-sizing: border-box;
         padding: 7px 23px;
         align-items: center;
+        position: relative;
+
 
         &>div:nth-child(1) {
           color: var(--Grey-Dark, #333);
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.6px;
+          letter-spacing: 0.4265vw;
         }
 
         &>div:nth-child(2) {
           color: var(--Brand-Color, #f8298a);
           text-align: right;
           font-family: 'Noto Sans HK';
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 0.8px;
+          letter-spacing: 0.2.133vw;
           display: flex;
           flex-direction: column;
 
@@ -2689,11 +2695,11 @@ const listItem = (str) => {
             color: var(--Blue-Deep, #00aeff);
             text-align: right;
             font-family: 'Noto Sans HK';
-            font-size: 16px;
+            font-size: 4.265vw;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.2.133vw;
           }
         }
       }
@@ -2722,19 +2728,18 @@ const listItem = (str) => {
           display: flex;
           flex-direction: column;
           align-items: flex-end;
-          position: relative;
 
           &>div:nth-child(2) {
             display: flex;
             align-items: center;
-            gap: 0 15px;
+            gap: 0 4vw;
 
             &>div:nth-child(1) {
               position: absolute;
               background: url('~/assets/images/2025040116505101.svg') no-repeat;
               background-size: cover;
-              width: 168.5px;
-              height: 26px;
+              width: 44.933vw;
+              height: 6.933vw;
               display: flex;
               align-items: center;
               justify-content: center;
@@ -2742,21 +2747,21 @@ const listItem = (str) => {
               color: var(--White, #fff);
               text-align: right;
               font-family: 'Noto Sans HK';
-              font-size: 16px;
+              font-size: 4.265vw;
               font-style: normal;
               font-weight: 700;
               line-height: normal;
               letter-spacing: 0px;
               box-sizing: border-box;
               padding: 3px 0;
-              left: -170%;
-              bottom: 0%;
+              left: 5%;
+              bottom: 12%;
             }
 
             &>div:nth-child(2) {
-              width: 108px;
-              height: 29.4px;
-              margin-top: 5px;
+              width: 28.8vw;
+              height: 7.84vw;
+              margin-top: 3.33vw;
 
               &>img {
                 width: 100%;
@@ -2773,8 +2778,8 @@ const listItem = (str) => {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0 10px;
-      margin: 20px 20px 0;
+      gap: 0 2.665vw;
+      margin: 5.333vw 5.333vw 0;
 
       &>div:nth-child(1) {
         display: flex;
@@ -2795,8 +2800,8 @@ const listItem = (str) => {
         &>div:nth-child(2) {
           position: relative;
           z-index: 5;
-          top: 14px;
-          left: -7px;
+          top: 3.733vw;
+          left: -1.865vw
         }
       }
 
@@ -2804,12 +2809,12 @@ const listItem = (str) => {
         color: var(--Grey-Dark, #333);
         text-align: justify;
         font-family: 'Noto Sans HK';
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
+        letter-spacing: -0.1865vw
       }
     }
   }
@@ -2823,14 +2828,14 @@ const listItem = (str) => {
   }
 
   .customization-process {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .customization-process-content {
-      margin-top: 20px;
+      margin-top: 5.333vw;
     }
 
     .course {
-      margin-top: 20px;
+      margin-top: 5.333vw;
       background: linear-gradient(0deg,
           rgba(255, 241, 240, 0) 0%,
           rgba(255, 241, 240, 0.7) 1.5%,
@@ -2838,40 +2843,40 @@ const listItem = (str) => {
           rgba(255, 241, 240, 0) 100%),
         #fff;
       box-sizing: border-box;
-      padding: 0 19.5px;
+      padding: 0 19.1.33vw;
 
       .course-text {
         color: var(--Grey-Deep, #4d4d4d);
         text-align: center;
         font-family: 'Noto Sans HK';
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
+        letter-spacing: -0.1865vw
       }
 
       &>div:nth-child(2) {
-        margin-top: 10px;
+        margin-top: 2.665vw;
 
         &>div:nth-child(1) {
           display: flex;
           box-sizing: border-box;
-          border-radius: 5px;
+          border-radius: 1.33vw;
           overflow: hidden;
           background: var(--White, #fff);
 
           &>div {
-            padding: 8px 10px;
+            padding: 2.133vw 2.665vw;
             color: var(--Grey-Mid, #666);
             text-align: center;
             font-family: 'Noto Sans HK';
-            font-size: 16px;
+            font-size: 4.265vw;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            letter-spacing: 1.6px;
+            letter-spacing: 0.4265vw;
           }
 
           &>div:nth-child(1) {
@@ -2886,12 +2891,12 @@ const listItem = (str) => {
             color: var(--White, #fff);
             text-align: center;
             font-family: 'Noto Sans HK';
-            font-size: 16px;
+            font-size: 4.265vw;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            letter-spacing: 1.6px;
-            padding: 8px 10px;
+            letter-spacing: 0.4265vw;
+            padding: 2.133vw 2.665vw;
             border: 1px solid var(--Brand-Color, #f8298a);
             background: var(--Brand-Color, #f8298a);
             transition: all 0.3s ease-in-out;
@@ -2900,12 +2905,12 @@ const listItem = (str) => {
 
         &>div:nth-child(2) {
           display: flex;
-          gap: 0 10px;
+          gap: 0 2.665vw;
           align-items: flex-start;
-          margin-top: 10px;
+          margin-top: 2.665vw;
 
           &>div:nth-child(2) {
-            width: 27px;
+            width: 7.2vw;
             height: 260px;
 
             &>img {
@@ -2918,7 +2923,7 @@ const listItem = (str) => {
           &>div:nth-child(3) {
             display: flex;
             flex-direction: column;
-            gap: 5px 0;
+            gap: 1.33vw 0;
             width: 100%;
 
             &>div {
@@ -2926,18 +2931,18 @@ const listItem = (str) => {
 
               &>div {
                 display: flex;
-                gap: 0 10px;
+                gap: 0 2.665vw;
                 box-sizing: border-box;
-                padding: 10px;
+                padding: 2.665vw;
 
                 &>div:nth-child(1) {
                   color: var(--Theme-Color, #fc1682);
                   font-family: 'Noto Sans HK';
-                  font-size: 16px;
+                  font-size: 4.265vw;
                   font-style: normal;
                   font-weight: 700;
                   line-height: 150%;
-                  /* 24px */
+                  /* 6.4vw */
                 }
 
                 &>div:nth-child(2) {
@@ -2945,17 +2950,17 @@ const listItem = (str) => {
                     color: var(--Grey-Dark, #333);
                     text-align: justify;
                     font-family: 'Noto Sans HK';
-                    font-size: 16px;
+                    font-size: 4.265vw;
                     font-style: normal;
                     font-weight: 500;
                     line-height: 150%;
 
-                    /* 24px */
+                    /* 6.4vw */
                     :deep(i) {
                       font-style: normal;
                       color: var(--Brand-Color, #f8298a);
                       font-family: 'Noto Sans HK';
-                      font-size: 16px;
+                      font-size: 4.265vw;
                       font-style: normal;
                       font-weight: 700;
                       line-height: 150%;
@@ -2972,9 +2977,9 @@ const listItem = (str) => {
     .customization-process-text {
       display: flex;
       box-sizing: border-box;
-      padding: 0 20px 5px;
+      padding: 0 5.333vw 1.33vw;
       gap: 0 12px;
-      margin-top: 10px;
+      margin-top: 2.665vw;
 
       &>div:nth-child(1) {
         max-width: 186px;
@@ -3005,22 +3010,22 @@ const listItem = (str) => {
       color: var(--Grey-Dark, #333);
       text-align: center;
       font-family: 'Noto Sans HK';
-      font-size: 16px;
+      font-size: 4.265vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      letter-spacing: 1.6px;
-      margin-top: 10px;
+      letter-spacing: 0.4265vw;
+      margin-top: 2.665vw;
     }
   }
 
   .species {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .species-content {
       position: relative;
       z-index: 1;
-      margin-top: 10px;
+      margin-top: 2.665vw;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
 
@@ -3041,7 +3046,7 @@ const listItem = (str) => {
         color: var(--Theme-Color, #fc1682);
         text-align: center;
         font-family: 'Noto Sans TC';
-        font-size: 20px;
+        font-size: 5.333vw;
         font-style: normal;
         font-weight: 700;
         line-height: 160%;
@@ -3053,15 +3058,15 @@ const listItem = (str) => {
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: 'Noto Sans HK';
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
-        border-radius: 20px 0px 0px 0px;
+        letter-spacing: -0.1865vw;
+        border-radius: 5.333vw 0px 0px 0px;
         background: var(--Grey-Midlight, #adadad);
-        padding: 5px 0;
+        padding: 1.33vw 0;
         position: relative;
         z-index: 5;
         width: 105%;
@@ -3069,17 +3074,17 @@ const listItem = (str) => {
       }
 
       &>div:nth-child(3) {
-        padding: 5px 0;
+        padding: 1.33vw 0;
         color: var(--White, #fff);
         text-align: center;
         font-family: 'Noto Sans HK';
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
-        border-radius: 10px 10px 0px 0px;
+        letter-spacing: -0.1865vw;
+        border-radius: 2.665vw 2.665vw 0px 0px;
         background: var(--Brand-Color, #f8298a);
         position: relative;
         z-index: 8;
@@ -3089,15 +3094,15 @@ const listItem = (str) => {
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: 'Noto Sans HK';
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
-        border-radius: 0px 10px 0px 0px;
+        letter-spacing: -0.1865vw; 
+        border-radius: 0px 2.665vw 0px 0px;
         background: var(--Grey-Midlight, #adadad);
-        padding: 5px 0;
+        padding: 1.33vw 0;
         position: relative;
         z-index: 5;
         width: 105%;
@@ -3105,8 +3110,8 @@ const listItem = (str) => {
       }
 
       &>div:nth-child(6) {
-        border-left: 5px solid var(--Brand-Color, #f8298a);
-        border-right: 5px solid var(--Brand-Color, #f8298a);
+        border-left: 1.33vw solid var(--Brand-Color, #f8298a);
+        border-right: 1.33vw solid var(--Brand-Color, #f8298a);
 
         &>img {
           width: 100%;
@@ -3121,14 +3126,14 @@ const listItem = (str) => {
         color: var(--White, #fff);
         text-align: center;
         font-family: 'Noto Sans TC';
-        font-size: 20px;
+        font-size: 5.333vw;
         font-style: normal;
         font-weight: 700;
         line-height: 160%;
         /* 32px */
         letter-spacing: 2px;
         box-sizing: border-box;
-        padding: 5px 0;
+        padding: 1.33vw 0;
       }
 
       &>div:nth-child(9),
@@ -3138,7 +3143,7 @@ const listItem = (str) => {
       &>div:nth-child(14),
       &>div:nth-child(15) {
         box-sizing: border-box;
-        padding: 10px;
+        padding: 2.665vw;
         padding-left: 22px;
 
         ul {
@@ -3194,10 +3199,10 @@ const listItem = (str) => {
   }
 
   .crown-maintenance {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .crown-maintenance-content {
-      margin: 10px 30px 0;
+      margin: 2.665vw 8vw 0;
       display: flex;
       gap: 0 40px;
       justify-content: center;
@@ -3221,28 +3226,28 @@ const listItem = (str) => {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: 'Noto Sans HK';
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 500;
           line-height: 150%;
           /* 21px */
-          letter-spacing: 0.7px;
+          letter-spacing: -0.1865vw
         }
       }
     }
   }
 
   .crown-case {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .crown-case-content {
-      margin-top: 20px;
+      margin-top: 5.333vw;
       padding: 0 12px;
 
       .crown-case-content-title {
         display: flex;
         justify-content: center;
-        margin-bottom: 15px;
+        margin-bottom: 4vw;
         gap: 0 54px;
 
         &>div {
@@ -3257,7 +3262,7 @@ const listItem = (str) => {
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.8px;
+          letter-spacing: 1.2.133vw;
         }
 
         &>div:nth-child(2) {
@@ -3266,14 +3271,15 @@ const listItem = (str) => {
       }
 
       .swiper-slide-img {
-        display: flex;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.665vw;
         justify-content: flex-end;
-        flex-wrap: wrap;
+        justify-items: center;
 
         &>div {
-          width: 170px;
-          height: 90px;
+          width: 42.665vw;
+          height: 22.665vw;
 
           &>img {
             width: 100%;
@@ -3287,14 +3293,14 @@ const listItem = (str) => {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 15px;
-        gap: 0 10px;
+        margin-top: 4vw;
+        gap: 0 2.665vw;
 
         &>div:nth-child(2) {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 0 10px;
+          gap: 0 2.665vw;
 
           &>div {
             width: 12px;
@@ -3308,8 +3314,8 @@ const listItem = (str) => {
 
         &>div:nth-child(1),
         &>div:nth-child(3) {
-          width: 20px;
-          height: 20px;
+          width: 5.333vw;
+          height: 5.333vw;
           overflow: hidden;
           border-radius: 50%;
           background: url('~/assets/images/2025040215172701.svg') no-repeat;
@@ -3333,7 +3339,7 @@ const listItem = (str) => {
 
   :deep(.index-dentalServices) {
     padding: 0 0;
-    margin: 30px 0 45px;
+    margin: 8vw 0 45px;
   }
 
   .banner-in-box {
@@ -3481,7 +3487,7 @@ const listItem = (str) => {
     left: 50%;
     top: auto;
     bottom: -65%;
-    border-radius: 10px;
+    border-radius: 2.665vw;
     transform: translate(-50%, 0%);
 
     .content-title {
@@ -3499,20 +3505,20 @@ const listItem = (str) => {
       z-index: 6;
       bottom: 0;
       width: 100%;
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 2.665vw 2.665vw 0px 0px;
       background: var(--Liner-purple,
           linear-gradient(269deg,
             var(--Brand-Color, #fc1682) 10.21%,
             #710d54 122.73%));
-      padding: 16.5px 0;
+      padding: 16.1.33vw 0;
       color: var(--White, #fff);
       text-align: center;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       font-family: 'Noto Sans HK';
-      font-size: 24px;
+      font-size: 6.4vw;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px;
+      line-height: 5.333vw;
       /* 83.333% */
       letter-spacing: 2.4px;
     }
@@ -3520,7 +3526,7 @@ const listItem = (str) => {
     .content-price,
     .content-subscribe {
       min-height: auto;
-      gap: 0 8px;
+      gap: 0 2.133vw;
       padding: 2.65vw 0 0 0;
       font-family: 'Noto Sans HK';
       font-size: 4.265vw;
@@ -3562,7 +3568,7 @@ const listItem = (str) => {
 
     .price-style {
       width: 153px;
-      height: 90px;
+      height: 24vw;
 
       &>img {
         width: 100%;

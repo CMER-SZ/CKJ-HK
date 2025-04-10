@@ -69,7 +69,7 @@ const typeList = ref([
   },
   {
     id: '104',
-    name: '牙髓病科',
+    name: '牙體牙髓科',
     status: false,
     doctor: [
       {
@@ -338,39 +338,39 @@ onMounted(() => {
 
 @media screen and (max-width: 991px) {
   .doctor-v2 {
-    margin: 15px 0;
+    margin: 4vw 0;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 5.33vw;
 
     .doctor-administrative-office {
       display: flex;
       flex-wrap: wrap;
       box-sizing: border-box;
       justify-content: center;
-      padding: 0 10px;
+      padding: 0 0.665vw;
 
       .office-btn {
         color: var(--Grey-Mid, #666);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 16px;
+        font-size: 4.265vw;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        letter-spacing: 1.6px;
+        letter-spacing: 0.4265vw;
         box-sizing: border-box;
-        padding: 8px 9px;
+        padding: 2.133vw 2.4vw;
         border-top: 1px solid var(--Grey-Light, #E6E6E6);
         border-right: 1px solid var(--Grey-Light, #E6E6E6);
       }
 
       .office-btn:first-child {
-        border-radius: 5px 0px 0px 0px;
+        border-radius: 1.33vw 0px 0px 0px;
         border-left: 1px solid var(--Grey-Light, #E6E6E6);
       }
 
       .office-btn:nth-child(4) {
-        border-radius: 0px 5px 0px 0px;
+        border-radius: 0px 1.33vw 0px 0px;
       }
 
       .office-btn:nth-child(5),
@@ -380,12 +380,12 @@ onMounted(() => {
       }
 
       .office-btn:nth-child(5) {
-        border-radius: 0px 0px 0px 5px;
+        border-radius: 0px 0px 0px 1.33vw;
         border-left: 1px solid var(--Grey-Light, #E6E6E6);
       }
 
       .office-btn:nth-child(7) {
-        border-radius: 0px 0px 5px 0px;
+        border-radius: 0px 0px 1.33vw 0px;
       }
 
       .office-btn-active {
@@ -398,12 +398,12 @@ onMounted(() => {
 
 
     .doctor-team {
-      margin-top: 15px;
+      margin-top: 4vw;
       display: flex;
-      gap: 0 10px;
-      border-radius: 10px;
+      gap: 0 2.665vw;
+      border-radius: 2.665vw;
       align-items: flex-start;
-      padding-bottom: 50px;
+      padding-bottom: 13.33vw;
       justify-content: center;
 
       .doctor-list {
@@ -413,12 +413,12 @@ onMounted(() => {
         align-items: center;
 
         .img {
-          width: 105px;
-          height: 134px;
+          width: 28vw;
+          height: 35.733vw;
           transition: all 0.3s ease;
           &>img {
-            border-radius: 5px;
-            box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.20);
+            border-radius: 1.33vw;
+            box-shadow: 0px 1.065vw 1.065vw 0px rgba(77, 77, 77, 0.20);
           }
         }
 
@@ -426,16 +426,16 @@ onMounted(() => {
           position: absolute;
           bottom: 0;
           display: flex;
-          left: 5px;
+          left: 1.33vw;
           align-items: flex-end;
           gap: 0;
 
           &>.name-t {
             color: var(--White, #FFF);
             text-align: center;
-            text-shadow: 0px 2px 2px #D2337D;
+            text-shadow: 0px 0.533vw 0.533vw #D2337D;
             font-family: "Noto Sans HK";
-            font-size: 20px;
+            font-size: 5.33vw;
             font-style: normal;
             font-weight: 500;
             line-height: 130%;
@@ -445,7 +445,7 @@ onMounted(() => {
             color: var(--White, #FFF);
             text-align: center;
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.733vw;
             font-style: normal;
             font-weight: 400;
             line-height: 160%;
@@ -454,9 +454,9 @@ onMounted(() => {
         }
 
         .title {
-          height: 40px;
+          height: 10.665vw;
           position: absolute;
-          bottom: -45px;
+          bottom: -12vw;
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -464,7 +464,7 @@ onMounted(() => {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: "Noto Sans HK";
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 500;
           line-height: 150%;

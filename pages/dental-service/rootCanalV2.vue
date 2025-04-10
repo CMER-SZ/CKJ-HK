@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+import { Pagination } from 'swiper'
 import { useAppState } from '~/stores/appState'
 import { toWhatsApp } from '~/assets/js/common'
 import { useElementBounding, useWindowSize } from '@vueuse/core'
 
-import { Pagination } from 'swiper'
 const modules = [Pagination]
 const appState = useAppState()
 appState.setDentistryService('rootCanal-test')
@@ -218,15 +218,49 @@ const noteData = {
 }
 
 
-let swiperRef = {
+let services_include_cur = ref(0)
+let swiperRef: any = {
   slidePrev: () => { },
   slideNext: () => { },
+  slideTo: () => { },
 }
+
 const setSwiperRef = (swiper: any) => {
   swiperRef = swiper
+  services_include_cur.value = swiperRef.activeIndex
 }
-const handleProcessBtn = (_type: string) => {
-  swiperRef[_type]()
+
+const addNum = () => {
+  swiperRef.slideNext()
+  handleProcessBtnClick()
+}
+const subNum = () => {
+  swiperRef.slidePrev()
+  handleProcessBtnClick()
+}
+
+const handleProcessBtnClick = () => {
+  services_include_cur.value = swiperRef.activeIndex
+  const swiperPoints = document.querySelectorAll('.swiper-point')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == services_include_cur.value) {
+      item.classList.add('swiper-point-active')
+    } else {
+      item.classList.remove('swiper-point-active')
+    }
+  })
+}
+
+const handleProcessBtn = (_type: number) => {
+  const swiperPoints = document.querySelectorAll('.swiper-point')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == _type) {
+      item.classList.add('swiper-point-active')
+    } else {
+      item.classList.remove('swiper-point-active')
+    }
+  })
+  swiperRef.slideTo(_type, 0, 'slide')
 }
 
 const doctorData = {
@@ -331,7 +365,7 @@ const stepDataList = ref([
   {
     id: 1,
     img: 'https://static.cmereye.com/imgs/2023/11/8c25f9c3f1d8c834.jpg',
-    name: '診斷',
+    name: 'X光檢查及診斷',
     notText: false,
   },
   {
@@ -367,7 +401,7 @@ const stepDataList = ref([
   {
     id: 7,
     img: 'https://static.cmereye.com/imgs/2023/11/d542e53ca685f034.jpg',
-    name: '修復',
+    name: '(可選) 牙冠修復',
     notText: false,
   },
   {
@@ -410,6 +444,7 @@ const problemData = {
     },
   ],
 }
+
 </script>
 
 <template>
@@ -449,7 +484,7 @@ const problemData = {
           <div class="root-canal-therapy-title  subheading flex-row align-items-end">
             <span>什麼是</span><span>杜牙根(根管治療)</span>
           </div>
-          <div><img src="https://static.ckjhk.com/ckj-image/2025040809513201.jpg" alt=""></div>
+          <div class="d-md-none"><img src="https://static.ckjhk.com/ckj-image/2025040809513201.jpg" alt=""></div>
           <div>杜牙根(根管治療)是治療嚴重蛀牙或牙根受細菌感染的療程，當蛀牙菌的感染深入牙髓，以致牙齒內的神經發炎，便需要以杜牙根療程徹底清除感染的部分。</div>
         </div>
         <div class="d-none d-md-block"><img src="https://static.ckjhk.com/ckj-image/c2bd71c74791.png" alt="杜牙根(根管治療)">
@@ -504,7 +539,7 @@ const problemData = {
         <div class="d-flex flex-row align-items-end subheading">
           <span>什麼是</span><span>顯微根管治療</span>
         </div>
-        <div class="microroot-canal-content">
+        <div class="microroot-canal-content d-none d-md-flex">
           <div><img src="https://static.ckjhk.com/ckj-image/14db8a4e2307.png" alt=""></div>
           <div>
             <ul>
@@ -514,18 +549,53 @@ const problemData = {
             </ul>
           </div>
         </div>
+        <div class="microroot-canal-content d-md-none">
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/2025040814372901.png" alt=""></div>
+            <div>顯微根管治療，即在顯微鏡輔助下放大局部來治療根管。 </div>
+          </div>
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/2025040814372902.png" alt=""></div>
+            <div>牙科顯微鏡可以在手術中放大畫面，在良好照明環境及視野穩定的前提下，將根管治療推進到可視化階段。 </div>
+          </div>
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/2025040814372903.png" alt=""></div>
+            <div>愛康健引進德國蔡司顯微鏡根管治療儀，結合顯微鏡技術和醫學技術，能清楚觀察牙齒的解剖結構和根管形態。</div>
+          </div>
+        </div>
       </section>
       <section class="ckj-container microroot-canal-equipment">
         <div class="d-flex flex-row align-items-end subheading">
           <span>顯微</span><span>根管治療設備</span>
         </div>
-        <div class="microroot-canal-equipment-content">
+        <div class="microroot-canal-equipment-content  d-none d-md-flex">
           <div><img src="https://static.ckjhk.com/ckj-image/63c3347f61dd.jpg" alt=""></div>
           <div>
             <div><img src="https://static.ckjhk.com/ckj-image/8286033922e5.jpg" alt=""></div>
             <div>我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。
             </div>
           </div>
+        </div>
+        <div class="microroot-canal-equipment-content  d-md-none">
+          <swiper :slidesPerView="'auto'" :loop="true" :spaceBetween="30" :modules="modules" class="mySwiper"
+            @swiper="setSwiperRef">
+            <swiper-slide class="swiper-slide-item">
+              <div><img src="https://static.ckjhk.com/ckj-image/63c3347f61dd.jpg" alt=""></div>
+              <div>我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。</div>
+            </swiper-slide>
+            <swiper-slide class="swiper-slide-item">
+              <div><img src="https://static.ckjhk.com/ckj-image/8286033922e5.jpg" alt=""></div>
+              <div>醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。</div>
+            </swiper-slide>
+          </swiper>
+        </div>
+        <div class="crown-case-content-btn">
+          <div @click="subNum"></div>
+          <div>
+            <div class="swiper-point swiper-point-active" @click="handleProcessBtn(0)"></div>
+            <div class="swiper-point" @click="handleProcessBtn(1)"></div>
+          </div>
+          <div @click="addNum"></div>
         </div>
       </section>
       <section class="ckj-container doctor-team">
@@ -2591,8 +2661,330 @@ const problemData = {
 
     }
   }
-  
-  .seven-steps {}
+
+  .seven-steps {
+    margin: 30px 0;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    .seven-steps-title {
+      color: var(--Grey-Mid, #666);
+      text-align: center;
+      font-family: "Noto Sans HK";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.8px;
+
+      span {
+        color: var(--Brand-Color, #F8298A);
+      }
+    }
+
+    .seven-steps-content {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px 16px;
+      position: relative;
+      z-index: 1;
+
+      &>div:last-child {
+        grid-column: span 2;
+
+        .seven-steps-content-item {
+          width: 220.865px;
+          height: 97.798px;
+          margin-left: 0;
+
+          &>div {
+            &>img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .seven-steps-content-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div:nth-child(1) {
+          position: relative;
+
+          &>div:nth-child(1) {
+            position: absolute;
+            z-index: 5;
+            background: url('https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png') no-repeat;
+            background-size: contain;
+
+            top: -1.06vw;
+            left: -1.06vw;
+            width: 8vw;
+            height: 8vw;
+
+            color: var(--White, #FFF);
+            font-family: "Noto Sans HK";
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 1.8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &>div:nth-child(2) {
+            position: relative;
+          }
+
+          &>div:nth-child(2)::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 24px;
+            background: url(/_nuxt/assets/images/2025040208530601.png) no-repeat;
+            background-size: contain;
+            top: 50%;
+            right: -8px;
+            z-index: -1;
+            transform: translateY(-50%);
+          }
+
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 5px;
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 150%;
+          white-space: nowrap;
+        }
+      }
+
+      &>div:nth-child(7) {
+        .seven-steps-content-item {
+
+          &>div:nth-child(1) {
+            background: salmon;
+
+            &>div:nth-child(2)::after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .microroot-canal {
+    margin: 30px 0;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    .microroot-canal-content {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px 0;
+      position: relative;
+      z-index: 1;
+
+      &>div {
+        display: flex;
+        gap: 0 13px;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        &>div:nth-child(1) {
+          width: 150px;
+          padding-left: 7px;
+          padding-top: 7px;
+          height: 100px;
+          position: relative;
+          z-index: 5;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &>div:nth-child(1)::after {
+          content: "";
+          position: absolute;
+          width: 86.01px;
+          height: 86.01px;
+          border-radius: 10px;
+          background: var(--Brand-Color, #F8298A);
+          z-index: -1;
+          top: 0;
+          left: 0;
+        }
+
+        &>div:nth-child(2) {
+          width: 164px;
+          color: var(--Grey-Deep, #4D4D4D);
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+          /* 18px */
+          letter-spacing: 0.6px;
+        }
+      }
+
+      &>div:nth-child(2) {
+        flex-direction: row-reverse;
+
+        &>div:nth-child(1) {
+          padding-left: 0;
+          padding-right: 7px;
+        }
+
+        &>div:nth-child(1)::after {
+          content: "";
+          position: absolute;
+          width: 86.01px;
+          height: 86.01px;
+          border-radius: 10px;
+          background: var(--Brand-Color, #F8298A);
+          z-index: -1;
+          top: 0;
+          left: auto;
+          right: 0;
+        }
+
+      }
+    }
+  }
+
+  .microroot-canal-equipment {
+    margin: 30px 0;
+    box-sizing: border-box;
+    padding:  0 20px;
+
+    .microroot-canal-equipment-content {
+      margin-top: 20px;
+
+      .swiper-slide-item {
+        max-width: 230px;
+
+        &>div:nth-child(1) {
+          width: 230px;
+          height: 230px;
+          border-radius: 10px;
+          overflow: hidden;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 15px;
+          color: #4D4D4D;
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          letter-spacing: 0.6px;
+        }
+      }
+    }
+
+    .crown-case-content-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+      gap: 0 10px;
+
+      &>div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 10px;
+
+        &>div {
+          width: 12px;
+          height: 12px;
+          overflow: hidden;
+          border-radius: 50%;
+          background: var(white, #fff);
+          box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+        }
+      }
+
+      &>div:nth-child(1),
+      &>div:nth-child(3) {
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        border-radius: 50%;
+        background: url('~/assets/images/2025040215172701.svg') no-repeat;
+        background-size: cover;
+        box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+      }
+
+      &>div:nth-child(3) {
+        transform: rotate(180deg);
+        box-shadow: -5.333px -5.333px 5.333px rgba(77, 77, 77, 0.2);
+      }
+
+      .swiper-point-active {
+        background: var(--Pink-Mid, #f670ae);
+        filter: drop-shadow(0px 4px 4px rgba(77, 77, 77, 0.2));
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .doctor-team {
+    margin: 30px 0;
+
+    .doctor-team-content-text {
+      margin: 15px 0;
+      box-sizing: border-box;
+      padding: 0 24px;
+      color: var(--Grey-Mid, #666);
+      text-align: justify;
+      font-family: "Noto Sans HK";
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0.6px;
+    }
+
+    .doctor-team-content-btn {
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  :deep(.index-dentalServices) {
+    padding-top: 0;
+    margin: 30px 0;
+  }
 
   .banner-in-box {
     position: absolute;

@@ -195,13 +195,13 @@ let bannerLists = ref([
   // },
   {
     name: '深圳希華愛康健医院',
-    link: 'https://www.cplushk.com/',
+    link: '/contactUs#contactUs',
     pc: 'https://static.ckjhk.com/ckj-image/d4015c1bca34.webp',
     mb: 'https://static.ckjhk.com/ckj-image/45ed1d6b2d5b.webp',
   },
   {
     name: '愛康健30年-慶典',
-    link: '',
+    link: '/brand/course#course',
     pc: 'https://static.ckjhk.com/ckj-image/bb476c702d93.webp',
     mb: 'https://static.ckjhk.com/ckj-image/c4c9dc05eec1.webp',
   },
