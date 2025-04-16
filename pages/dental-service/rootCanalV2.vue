@@ -2544,32 +2544,32 @@ const problemData = {
 /* 992px */
 @media screen and (max-width: 992px) {
   .root-canal-therapy {
-    margin-bottom: 30px;
+    margin-bottom: 8vw;
 
     &>div:nth-child(1) {
       &>div:nth-child(3) {
         color: var(--Grey-Deep, #4D4D4D);
         text-align: justify;
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%;
         letter-spacing: 0.7px;
         box-sizing: border-box;
-        padding: 0 30px;
+        padding: 0 8vw;
       }
     }
   }
 
   .charge-item {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .charge-item-content {
       &>div:nth-child(1) {
         box-sizing: border-box;
-        padding: 15px 0;
-        width: 313px;
+        padding: 4vw 0;
+        width: 83.465vw;
         height: auto;
         margin: 0 auto;
 
@@ -2581,15 +2581,15 @@ const problemData = {
       }
 
       &>div:nth-child(2) {
-        border-radius: 20px;
-        margin: 15px 20px;
+        border-radius: 5.33vw;
+        margin: 4vw 5.33vw;
         box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.20);
         overflow: hidden;
         box-sizing: border-box;
 
         &>div {
           box-sizing: border-box;
-          padding: 7px 23px;
+          padding: 1.865vw 6.133vw;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -2598,11 +2598,11 @@ const problemData = {
             text-align: center;
             color: var(--White, #FFF);
             font-family: "Noto Sans HK";
-            font-size: 16px;
+            font-size: 4.265vw;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            letter-spacing: 1.6px;
+            letter-spacing: 0.4265vw;
           }
 
         }
@@ -2637,11 +2637,11 @@ const problemData = {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: "Noto Sans HK";
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 1.6px;
+          letter-spacing: 0.4265vw;
 
           span {
             color: var(--Brand-Color, #F8298A);
@@ -2651,7 +2651,7 @@ const problemData = {
         &>div:nth-child(2) {
           color: var(--Grey-Dark, #333);
           font-family: "Noto Sans HK";
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 500;
           line-height: 150%;
@@ -2663,19 +2663,19 @@ const problemData = {
   }
 
   .seven-steps {
-    margin: 30px 0;
+    margin: 8vw 0;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 5.33vw;
 
     .seven-steps-title {
       color: var(--Grey-Mid, #666);
       text-align: center;
       font-family: "Noto Sans HK";
-      font-size: 18px;
+      font-size: 4.8vw;
       font-style: normal;
       font-weight: 700;
       line-height: normal;
-      letter-spacing: 1.8px;
+      letter-spacing: 0.48vw;
 
       span {
         color: var(--Brand-Color, #F8298A);
@@ -2683,10 +2683,10 @@ const problemData = {
     }
 
     .seven-steps-content {
-      margin-top: 20px;
+      margin-top: 5.33vw;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 35px 16px;
+      gap: 9.33vw 4.265vw;
       position: relative;
       z-index: 1;
 
@@ -2694,8 +2694,8 @@ const problemData = {
         grid-column: span 2;
 
         .seven-steps-content-item {
-          width: 220.865px;
-          height: 97.798px;
+          width: 58.893vw;
+          height: 26.079vw;
           margin-left: 0;
 
           &>div {
@@ -2729,11 +2729,11 @@ const problemData = {
 
             color: var(--White, #FFF);
             font-family: "Noto Sans HK";
-            font-size: 18px;
+            font-size: 4.8vw;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            letter-spacing: 1.8px;
+            letter-spacing: 0.48vw;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2746,12 +2746,12 @@ const problemData = {
           &>div:nth-child(2)::after {
             content: "";
             position: absolute;
-            width: 8px;
-            height: 24px;
+            width: 2.133vw;
+            height: 6.4vw;
             background: url(/_nuxt/assets/images/2025040208530601.png) no-repeat;
             background-size: contain;
             top: 50%;
-            right: -8px;
+            right: -2.13vw;
             z-index: -1;
             transform: translateY(-50%);
           }
@@ -2759,11 +2759,11 @@ const problemData = {
         }
 
         &>div:nth-child(2) {
-          margin-top: 5px;
+          margin-top: 1.33vw;
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: "Noto Sans HK";
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 350;
           line-height: 150%;
@@ -2787,29 +2787,29 @@ const problemData = {
   }
 
   .microroot-canal {
-    margin: 30px 0;
+    margin: 8vw 0;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 5.33vw;
 
     .microroot-canal-content {
-      margin-top: 20px;
+      margin-top: 5.33vw;
       display: flex;
       flex-direction: column;
-      gap: 20px 0;
+      gap: 5.33vw 0;
       position: relative;
       z-index: 1;
 
       &>div {
         display: flex;
-        gap: 0 13px;
+        gap: 0 3.465vw;
         align-items: flex-start;
         justify-content: space-between;
 
         &>div:nth-child(1) {
-          width: 150px;
-          padding-left: 7px;
-          padding-top: 7px;
-          height: 100px;
+          width: 40vw;
+          padding-left: 1.865vw;
+          padding-top: 1.865vw;
+          height: 26.65vw;
           position: relative;
           z-index: 5;
 
@@ -2823,9 +2823,9 @@ const problemData = {
         &>div:nth-child(1)::after {
           content: "";
           position: absolute;
-          width: 86.01px;
-          height: 86.01px;
-          border-radius: 10px;
+          width: 22.936vw;
+          height: 22.936vw;
+          border-radius: 2.65vw;
           background: var(--Brand-Color, #F8298A);
           z-index: -1;
           top: 0;
@@ -2833,11 +2833,11 @@ const problemData = {
         }
 
         &>div:nth-child(2) {
-          width: 164px;
+          width: 43.733vw;
           color: var(--Grey-Deep, #4D4D4D);
           text-align: justify;
           font-family: "Noto Sans HK";
-          font-size: 12px;
+          font-size: 3.2vw;
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
@@ -2851,15 +2851,15 @@ const problemData = {
 
         &>div:nth-child(1) {
           padding-left: 0;
-          padding-right: 7px;
+          padding-right: 1.865vw;
         }
 
         &>div:nth-child(1)::after {
           content: "";
           position: absolute;
-          width: 86.01px;
-          height: 86.01px;
-          border-radius: 10px;
+          width: 22.936vw;
+          height: 22.936vw;
+          border-radius: 2.65vw;
           background: var(--Brand-Color, #F8298A);
           z-index: -1;
           top: 0;
@@ -2872,20 +2872,20 @@ const problemData = {
   }
 
   .microroot-canal-equipment {
-    margin: 30px 0;
+    margin: 8vw 0;
     box-sizing: border-box;
-    padding:  0 20px;
+    padding: 0 5.33vw;
 
     .microroot-canal-equipment-content {
-      margin-top: 20px;
+      margin-top: 5.33vw;
 
       .swiper-slide-item {
-        max-width: 230px;
+        max-width: 61.33vw;
 
         &>div:nth-child(1) {
-          width: 230px;
-          height: 230px;
-          border-radius: 10px;
+          width: 61.33vw;
+          height: 61.33vw;
+          border-radius: 2.56vw;
           overflow: hidden;
 
           &>img {
@@ -2896,11 +2896,11 @@ const problemData = {
         }
 
         &>div:nth-child(2) {
-          margin-top: 15px;
+          margin-top: 4vw;
           color: #4D4D4D;
           text-align: justify;
           font-family: "Noto Sans HK";
-          font-size: 12px;
+          font-size: 3.2vw;
           font-style: normal;
           font-weight: 500;
           line-height: 150%;
@@ -2913,18 +2913,18 @@ const problemData = {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-top: 15px;
-      gap: 0 10px;
+      margin-top: 4vw;
+      gap: 0 2.665vw;
 
       &>div:nth-child(2) {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0 10px;
+        gap: 0 2.665vw;
 
         &>div {
-          width: 12px;
-          height: 12px;
+          width: 3.21vw;
+          height: 3.2vw;
           overflow: hidden;
           border-radius: 50%;
           background: var(white, #fff);
@@ -2934,8 +2934,8 @@ const problemData = {
 
       &>div:nth-child(1),
       &>div:nth-child(3) {
-        width: 20px;
-        height: 20px;
+        width: 5.33vw;
+        height: 5.33vw;
         overflow: hidden;
         border-radius: 50%;
         background: url('~/assets/images/2025040215172701.svg') no-repeat;
@@ -2957,16 +2957,16 @@ const problemData = {
   }
 
   .doctor-team {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .doctor-team-content-text {
-      margin: 15px 0;
+      margin: 4vw 0;
       box-sizing: border-box;
-      padding: 0 24px;
+      padding: 0 6.4vw;
       color: var(--Grey-Mid, #666);
       text-align: justify;
       font-family: "Noto Sans HK";
-      font-size: 12px;
+      font-size: 3.2vw;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
@@ -2974,7 +2974,7 @@ const problemData = {
     }
 
     .doctor-team-content-btn {
-      margin: 15px auto;
+      margin: 4vw auto;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -2983,7 +2983,7 @@ const problemData = {
 
   :deep(.index-dentalServices) {
     padding-top: 0;
-    margin: 30px 0;
+    margin: 8vw 0;
   }
 
   .banner-in-box {
@@ -2993,7 +2993,7 @@ const problemData = {
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    padding-bottom: 35px;
+    padding-bottom: 9.33vw;
     top: 0;
     bottom: 0;
     transform: translateY(0px);

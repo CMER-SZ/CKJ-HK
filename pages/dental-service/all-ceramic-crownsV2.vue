@@ -3518,7 +3518,7 @@ const listItem = (str) => {
       font-size: 6.4vw;
       font-style: normal;
       font-weight: 700;
-      line-height: 5.333vw;
+      line-height: 142%;
       /* 83.333% */
       letter-spacing: 2.4px;
     }

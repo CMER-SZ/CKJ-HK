@@ -2192,6 +2192,7 @@ const problemData = {
         font-weight: 400;
         line-height: 160%; /* 30.4px */
         letter-spacing: 1px;
+        color: var(--Theme-Color, #fc1682);
       }
     }
   }
@@ -3610,6 +3611,7 @@ const problemData = {
           line-height: 160%; /* 19.2px */
           letter-spacing: 1.2px;
           padding: 0;
+          color: var(--Theme-Color, #fc1682);
         }
       }
     }

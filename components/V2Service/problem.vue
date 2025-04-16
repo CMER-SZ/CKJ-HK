@@ -14,7 +14,7 @@ defineProps({
     default: false,
   },
 })
-const activeNames = ref(0)
+const activeNames = ref()
 </script>
 
 <template>

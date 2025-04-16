@@ -343,11 +343,17 @@ onMounted(() => {
     padding: 0 5.33vw;
 
     .doctor-administrative-office {
+      // display: grid;
       display: flex;
       flex-wrap: wrap;
+      // grid-template-columns: repeat(4, 1fr);
+      border-radius: 1.33vw;
       box-sizing: border-box;
       justify-content: center;
       padding: 0 0.665vw;
+      max-width: 84vw;
+      overflow: hidden;
+      margin: 0 auto;
 
       .office-btn {
         color: var(--Grey-Mid, #666);
@@ -362,6 +368,7 @@ onMounted(() => {
         padding: 2.133vw 2.4vw;
         border-top: 1px solid var(--Grey-Light, #E6E6E6);
         border-right: 1px solid var(--Grey-Light, #E6E6E6);
+
       }
 
       .office-btn:first-child {
@@ -371,6 +378,28 @@ onMounted(() => {
 
       .office-btn:nth-child(4) {
         border-radius: 0px 1.33vw 0px 0px;
+      }
+
+      .office-btn:nth-child(1),
+      .office-btn:nth-child(2),
+      .office-btn:nth-child(3) {
+        width: 22%;
+        white-space: nowrap;
+      }
+
+      .office-btn:nth-child(4) {
+        width: 34%;
+        white-space: nowrap;
+      }
+
+      .office-btn:nth-child(7) {
+        white-space: nowrap;
+        width: 40%;
+      }
+
+      .office-btn:nth-child(5),
+      .office-btn:nth-child(6) {
+        width: 30%;
       }
 
       .office-btn:nth-child(5),
@@ -391,7 +420,7 @@ onMounted(() => {
       .office-btn-active {
         color: #fff;
         background: var(--Theme-Color, #fc1682);
-        border-top: 1px solid var(--Theme-Color, #fc1682);
+        border: 1px solid var(--Theme-Color, #fc1682);
       }
     }
 
@@ -416,6 +445,7 @@ onMounted(() => {
           width: 28vw;
           height: 35.733vw;
           transition: all 0.3s ease;
+
           &>img {
             border-radius: 1.33vw;
             box-shadow: 0px 1.065vw 1.065vw 0px rgba(77, 77, 77, 0.20);
