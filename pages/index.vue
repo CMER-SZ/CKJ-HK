@@ -210,7 +210,7 @@ const handleDoctorItem = (id: any) => {
   doctorItemSwiper.slideToLoop(_idx)
 }
 let doctorItemSwiper: any = {
-  slideToLoop: (a) => {},
+  slideToLoop: (a) => { },
 }
 
 const setDoctorItemSwiper = (swiper: any) => {
@@ -224,10 +224,10 @@ const doctorItemSlideChange = (swiper) => {
   })
 }
 let doctorTabSwiper_pc = {
-  slideToLoop: (a) => {},
+  slideToLoop: (a) => { },
 }
 let doctorTabSwiper_mb = {
-  slideToLoop: (a) => {},
+  slideToLoop: (a) => { },
 }
 const setDoctorTabSwiperRef_pc = (swiper: any) => {
   doctorTabSwiper_pc = swiper
@@ -309,6 +309,10 @@ const orgLists = [
     'https://static.cmereye.com/static/ckjnewsite/org/org-4013.png',
     'https://static.cmereye.com/imgs/2024/08/649a4dcca06fa45a.png',
     'https://static.cmereye.com/imgs/2024/08/fb3b34ba5e3335e3.png',
+    'https://static.ckjhk.com/ckj-image/2025041716205903.png',
+    'https://static.ckjhk.com/ckj-image/2025041716205902.png',
+    'https://static.ckjhk.com/ckj-image/2025041716205901.png',
+    'https://static.ckjhk.com/ckj-image/2025041716114701.jpg'
   ],
 ]
 const handleorgtabfun = (orgTabIndex) => {
@@ -316,7 +320,7 @@ const handleorgtabfun = (orgTabIndex) => {
   indexOrgSwiperRef.slideToLoop(orgTabIndex)
 }
 let indexOrgSwiperRef = {
-  slideToLoop: (a) => {},
+  slideToLoop: (a) => { },
 }
 const setIndexOrgSwiperRef = (swiper: any) => {
   indexOrgSwiperRef = swiper
@@ -576,7 +580,7 @@ const handleLineCur = (_value: number) => {
 }
 
 let newsSwiperRef = {
-  slideToLoop: (a) => {},
+  slideToLoop: (a) => { },
 }
 const setNewsSwiperRef = (swiper: any) => {
   newsSwiperRef = swiper
@@ -591,7 +595,7 @@ const handleMessageLineCur = (_value: number) => {
 }
 
 let newsMessageSwiperRef = {
-  slideToLoop: (a) => {},
+  slideToLoop: (a) => { },
 }
 const setMessageNewsSwiperRef = (swiper: any) => {
   newsMessageSwiperRef = swiper
@@ -655,24 +659,17 @@ const hideDom = ref(false)
           <div class="index_title index_title_2">醫生團隊</div>
         </div>
         <div class="index-doctorTeam-tab2 index-doctorTeam-con">
-          <div
-            class="index-doctorTeam-tab2-in"
-            :class="`tablang-${changeDentalProfessionList().length}`"
-          >
-            <div
-              :class="[
-                {
-                  'index-doctorTeam-tab2-in-active':
-                    dentalProfessionCur === dentalProfessionItem.id,
-                },
-                `textlang-${dentalProfessionItem.name.length}`,
-              ]"
-              v-for="(
-                dentalProfessionItem, dentalProfessionIndex
-              ) in changeDentalProfessionList()"
-              :key="dentalProfessionIndex"
-              @click="handletab2(dentalProfessionItem.id)"
-            >
+          <div class="index-doctorTeam-tab2-in" :class="`tablang-${changeDentalProfessionList().length}`">
+            <div :class="[
+              {
+                'index-doctorTeam-tab2-in-active':
+                  dentalProfessionCur === dentalProfessionItem.id,
+              },
+              `textlang-${dentalProfessionItem.name.length}`,
+            ]" v-for="(
+dentalProfessionItem, dentalProfessionIndex
+              ) in changeDentalProfessionList()" :key="dentalProfessionIndex"
+              @click="handletab2(dentalProfessionItem.id)">
               {{ dentalProfessionItem.name }}
             </div>
           </div>
@@ -694,124 +691,61 @@ const hideDom = ref(false)
             <div class="index_title index_title_2">最新影片</div>
           </div>
           <nuxt-link to="https://www.youtube.com/@ckjhkofficial">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="44"
-              height="36"
-              viewBox="0 0 44 36"
-              fill="none"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="36" viewBox="0 0 44 36" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
                 d="M41.6583 2.69702C42.341 3.48136 42.8312 4.45663 43.08 5.52523C44 9.46938 44 17.6944 44 17.6944C44 17.6944 44 25.9195 43.08 29.8637C42.8312 30.9323 42.341 31.9075 41.6583 32.6919C40.9756 33.4762 40.1245 34.0421 39.19 34.3329C35.75 35.3889 22 35.3889 22 35.3889C22 35.3889 8.25 35.3889 4.81 34.3329C3.87554 34.0421 3.02438 33.4762 2.34169 32.6919C1.65901 31.9075 1.16876 30.9323 0.92 29.8637C0 25.9195 0 17.6944 0 17.6944C0 17.6944 0 9.46938 0.92 5.52523C1.16876 4.45663 1.65901 3.48136 2.34169 2.69702C3.02438 1.91268 3.87554 1.34678 4.81 1.05596C8.25 0 22 0 22 0C22 0 35.75 0 39.19 1.05596C40.1245 1.34678 40.9756 1.91268 41.6583 2.69702ZM29.0048 17.6954L17.5048 10.2266V25.1641L29.0048 17.6954Z"
-                fill="#FC1682"
-              />
+                fill="#FC1682" />
             </svg>
             <span>@ckjhkofficial</span>
           </nuxt-link>
         </div>
         <div class="Latest_Movies_in smallPageCon">
           <div class="Latest_Movies_in_l">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/Ti7Mms_BJoI?si=t-STRbG6jNVpU3m3"
-              title="YouTube video player"
-              frameborder="0"
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ti7Mms_BJoI?si=t-STRbG6jNVpU3m3"
+              title="YouTube video player" frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-            <span
-              >愛康健超聲波洗牙 ¥88 🦷 超級抵呀！| 北上睇牙 | 大灣區醫療 |
-              洗牙</span
-            >
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <span>愛康健超聲波洗牙 ¥88 🦷 超級抵呀！| 北上睇牙 | 大灣區醫療 |
+              洗牙</span>
           </div>
           <div class="Latest_Movies_in_r">
             <div class="Latest_Movies_in_r_t">
-              <div
-                class="tab-in"
-                :class="{ active: Latest_Movies_cur === 0 }"
-                @click="Latest_Movies_cur = 0"
-              >
+              <div class="tab-in" :class="{ active: Latest_Movies_cur === 0 }" @click="Latest_Movies_cur = 0">
                 優惠推廣
               </div>
-              <div
-                class="tab-in"
-                :class="{ active: Latest_Movies_cur === 1 }"
-                @click="Latest_Movies_cur = 1"
-              >
+              <div class="tab-in" :class="{ active: Latest_Movies_cur === 1 }" @click="Latest_Movies_cur = 1">
                 醫師解難
               </div>
-              <div
-                class="tab-in"
-                :class="{ active: Latest_Movies_cur === 2 }"
-                @click="Latest_Movies_cur = 2"
-              >
+              <div class="tab-in" :class="{ active: Latest_Movies_cur === 2 }" @click="Latest_Movies_cur = 2">
                 到診攻略
               </div>
             </div>
             <div class="Latest_Movies_in_r_b" v-if="windowWidth > 767">
-              <nuxtLink
-                class="list-in"
-                v-for="(item, index) in Latest_Movies[Latest_Movies_cur]"
-                :key="index"
-              >
-                <iframe
-                  width="560"
-                  height="315"
-                  :src="item.url"
-                  title="YouTube video player"
-                  frameborder="0"
+              <nuxtLink class="list-in" v-for="(item, index) in Latest_Movies[Latest_Movies_cur]" :key="index">
+                <iframe width="560" height="315" :src="item.url" title="YouTube video player" frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <span>{{ item.name }}</span>
               </nuxtLink>
             </div>
             <div class="Latest_Movies_in_r_b" v-else>
-              <Swiper
-                class="index-org-content-swiper mobile-style"
-                :loop="true"
-                :modules="[Autoplay]"
-                :autoplay="{
-                  delay: 3000,
-                }"
-                @swiper="setNewsSwiperRef"
-                @slideChange="onSlideChange"
-              >
-                <Swiper-slide
-                  class="index-org-content-swiper-slie"
-                  v-for="(item, index) in Latest_Movies[Latest_Movies_cur]"
-                  :key="index"
-                >
+              <Swiper class="index-org-content-swiper mobile-style" :loop="true" :modules="[Autoplay]" :autoplay="{
+                delay: 3000,
+              }" @swiper="setNewsSwiperRef" @slideChange="onSlideChange">
+                <Swiper-slide class="index-org-content-swiper-slie"
+                  v-for="(item, index) in Latest_Movies[Latest_Movies_cur]" :key="index">
                   <nuxtLink class="list-in">
-                    <iframe
-                      width="560"
-                      height="315"
-                      :src="item.url"
-                      title="YouTube video player"
-                      frameborder="0"
+                    <iframe width="560" height="315" :src="item.url" title="YouTube video player" frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin"
-                      allowfullscreen
-                    ></iframe>
+                      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <span>{{ item.name }}</span>
                   </nuxtLink>
                 </Swiper-slide>
               </Swiper>
             </div>
-            <div
-              class="index-latestNews-line brandConcept-line"
-              v-if="windowWidth < 767"
-            >
-              <PageSwiperPointLine
-                :latestNewsNum="Latest_Movies[Latest_Movies_cur].length"
-                :latestNewsCurrent="currtNew"
-                @changeLineCur="handleLineCur"
-              ></PageSwiperPointLine>
+            <div class="index-latestNews-line brandConcept-line" v-if="windowWidth < 767">
+              <PageSwiperPointLine :latestNewsNum="Latest_Movies[Latest_Movies_cur].length"
+                :latestNewsCurrent="currtNew" @changeLineCur="handleLineCur"></PageSwiperPointLine>
             </div>
           </div>
         </div>
@@ -821,36 +755,19 @@ const hideDom = ref(false)
           <div class="index_title index_title_2">睇牙新資訊</div>
         </div>
         <div class="index-videoBox-tab">
-          <div
-            class="tab-in"
-            :class="{ active: indexNewsCur === 0 }"
-            @click="handleNewsTab(0)"
-          >
+          <div class="tab-in" :class="{ active: indexNewsCur === 0 }" @click="handleNewsTab(0)">
             媒體報導
           </div>
-          <div
-            class="tab-in"
-            :class="{ active: indexNewsCur === 1 }"
-            @click="handleNewsTab(1)"
-          >
+          <div class="tab-in" :class="{ active: indexNewsCur === 1 }" @click="handleNewsTab(1)">
             最新資訊
           </div>
-          <div
-            class="tab-in"
-            :class="{ active: indexNewsCur === 2 }"
-            @click="handleNewsTab(2)"
-          >
+          <div class="tab-in" :class="{ active: indexNewsCur === 2 }" @click="handleNewsTab(2)">
             牙齒百科
           </div>
         </div>
         <div class="index-videoBox-in" v-if="windowWidth > 767">
-          <nuxtLink
-            :to="item.link"
-            class="list-in"
-            :class="`list-in-${indexNewsCur}`"
-            v-for="(item, index) in indexNewsLists[indexNewsCur]"
-            :key="index"
-          >
+          <nuxtLink :to="item.link" class="list-in" :class="`list-in-${indexNewsCur}`"
+            v-for="(item, index) in indexNewsLists[indexNewsCur]" :key="index">
             <div class="image">
               <img :title="item.name" :src="item.img" alt="" />
             </div>
@@ -866,38 +783,17 @@ const hideDom = ref(false)
             <h2 :title="item.name">{{ item.name }}</h2>
             <div class="time" v-if="indexNewsCur === 2">
               <div class="time-l">{{ item.time }}</div>
-              <div
-                class="shareIcon"
-                @click.stop="handleClick($event, item.id)"
-                alt=""
-              >
-                <div
-                  :class="['shareIcon-img', { act: actShowShare === item.id }]"
-                  alt="分享"
-                  title="分享"
-                >
+              <div class="shareIcon" @click.stop="handleClick($event, item.id)" alt="">
+                <div :class="['shareIcon-img', { act: actShowShare === item.id }]" alt="分享" title="分享">
                   <img src="@/assets/images/icon_47.svg" alt="" />
                 </div>
                 <div class="shareIcon-in" v-if="actShowShare === item.id">
-                  <div
-                    class="shareIcon-in-item"
-                    @click="shareFacebook($event, item.id)"
-                    alt="Facebook 分享"
-                    title="Facebook 分享"
-                  >
-                    <img src="@/assets/images/icon_49.svg" alt="" /><span
-                      >Facebook 分享</span
-                    >
+                  <div class="shareIcon-in-item" @click="shareFacebook($event, item.id)" alt="Facebook 分享"
+                    title="Facebook 分享">
+                    <img src="@/assets/images/icon_49.svg" alt="" /><span>Facebook 分享</span>
                   </div>
-                  <div
-                    class="shareIcon-in-item"
-                    @click="copySpecifiedText($event, item.id)"
-                    alt="複製連結"
-                    title="複製連結"
-                  >
-                    <img src="@/assets/images/icon_48.svg" alt="" /><span
-                      >複製連結</span
-                    >
+                  <div class="shareIcon-in-item" @click="copySpecifiedText($event, item.id)" alt="複製連結" title="複製連結">
+                    <img src="@/assets/images/icon_48.svg" alt="" /><span>複製連結</span>
                   </div>
                 </div>
               </div>
@@ -909,26 +805,12 @@ const hideDom = ref(false)
           </nuxtLink>
         </div>
         <div class="index-videoBox-in" v-else>
-          <Swiper
-            class="index-org-content-swiper mobile-style"
-            :loop="true"
-            :modules="[Autoplay]"
-            :autoplay="{
-              delay: 3000,
-            }"
-            @swiper="setMessageNewsSwiperRef"
-            @slideChange="onMessageNewSlideChange"
-          >
-            <Swiper-slide
-              class="index-org-content-swiper-slie"
-              v-for="(item, index) in indexNewsLists[indexNewsCur]"
-              :key="index"
-            >
-              <nuxtLink
-                :to="item.link"
-                class="list-in"
-                :class="`list-in-${indexNewsCur}`"
-              >
+          <Swiper class="index-org-content-swiper mobile-style" :loop="true" :modules="[Autoplay]" :autoplay="{
+            delay: 3000,
+          }" @swiper="setMessageNewsSwiperRef" @slideChange="onMessageNewSlideChange">
+            <Swiper-slide class="index-org-content-swiper-slie" v-for="(item, index) in indexNewsLists[indexNewsCur]"
+              :key="index">
+              <nuxtLink :to="item.link" class="list-in" :class="`list-in-${indexNewsCur}`">
                 <div class="image">
                   <img :title="item.name" :src="item.img" alt="" />
                 </div>
@@ -944,41 +826,21 @@ const hideDom = ref(false)
                 <h2 :title="item.name">{{ item.name }}</h2>
                 <div class="time" v-if="indexNewsCur === 2">
                   <div class="time-l">{{ item.time }}</div>
-                  <div
-                    class="shareIcon"
-                    @click.stop="handleClick($event, item.id)"
-                    alt=""
-                  >
-                    <div
-                      :class="[
-                        'shareIcon-img',
-                        { act: actShowShare === item.id },
-                      ]"
-                      alt="分享"
-                      title="分享"
-                    >
+                  <div class="shareIcon" @click.stop="handleClick($event, item.id)" alt="">
+                    <div :class="[
+                      'shareIcon-img',
+                      { act: actShowShare === item.id },
+                    ]" alt="分享" title="分享">
                       <img src="@/assets/images/icon_47.svg" alt="" />
                     </div>
                     <div class="shareIcon-in" v-if="actShowShare === item.id">
-                      <div
-                        class="shareIcon-in-item"
-                        @click="shareFacebook($event, item.id)"
-                        alt="Facebook 分享"
-                        title="Facebook 分享"
-                      >
-                        <img src="@/assets/images/icon_49.svg" alt="" /><span
-                          >Facebook 分享</span
-                        >
+                      <div class="shareIcon-in-item" @click="shareFacebook($event, item.id)" alt="Facebook 分享"
+                        title="Facebook 分享">
+                        <img src="@/assets/images/icon_49.svg" alt="" /><span>Facebook 分享</span>
                       </div>
-                      <div
-                        class="shareIcon-in-item"
-                        @click="copySpecifiedText($event, item.id)"
-                        alt="複製連結"
-                        title="複製連結"
-                      >
-                        <img src="@/assets/images/icon_48.svg" alt="" /><span
-                          >複製連結</span
-                        >
+                      <div class="shareIcon-in-item" @click="copySpecifiedText($event, item.id)" alt="複製連結"
+                        title="複製連結">
+                        <img src="@/assets/images/icon_48.svg" alt="" /><span>複製連結</span>
                       </div>
                     </div>
                   </div>
@@ -994,15 +856,9 @@ const hideDom = ref(false)
         <div class="index-videoBox-btn smallPageCon" @click="handlevideBoxBtn">
           <span>更多資訊 </span>
         </div>
-        <div
-          class="index-latestNews-line brandConcept-line"
-          v-if="windowWidth < 768"
-        >
-          <PageSwiperPointLine
-            :latestNewsNum="indexNewsLists[indexNewsCur].length"
-            :latestNewsCurrent="messageCurrtNew"
-            @changeLineCur="handleMessageLineCur"
-          ></PageSwiperPointLine>
+        <div class="index-latestNews-line brandConcept-line" v-if="windowWidth < 768">
+          <PageSwiperPointLine :latestNewsNum="indexNewsLists[indexNewsCur].length" :latestNewsCurrent="messageCurrtNew"
+            @changeLineCur="handleMessageLineCur"></PageSwiperPointLine>
         </div>
       </div>
 
@@ -1011,38 +867,19 @@ const hideDom = ref(false)
           <div class="index_title index_title_2">相關機構</div>
         </div>
         <div class="index-org-tag smallPageCon">
-          <div
-            class="index-org-tag-in"
-            :class="{ active: orgTabCur === orgTabIndex }"
-            v-for="(orgTabItem, orgTabIndex) in orgTabLists"
-            :key="orgTabIndex"
-            @click="handleorgtabfun(orgTabIndex)"
-          >
+          <div class="index-org-tag-in" :class="{ active: orgTabCur === orgTabIndex }"
+            v-for="(orgTabItem, orgTabIndex) in orgTabLists" :key="orgTabIndex" @click="handleorgtabfun(orgTabIndex)">
             {{ orgTabItem }}
           </div>
         </div>
         <div class="index-org-content smallPageCon">
-          <Swiper
-            class="index-org-content-swiper"
-            :loop="true"
-            :modules="[Autoplay]"
-            :autoplay="{
-              delay: 3000,
-            }"
-            @swiper="setIndexOrgSwiperRef"
-            @slideChange="onIndexOrgSlideChange"
-          >
-            <Swiper-slide
-              class="index-org-content-swiper-slie"
-              v-for="(orgListItem, orgListIndex) in orgLists"
-              :key="orgListIndex"
-            >
-              <div
-                class="index-org-content-in"
-                :class="`index-org-content-${orgTabCur}`"
-                v-for="(orgItem, orgIndex) in orgListItem"
-                :key="orgIndex"
-              >
+          <Swiper class="index-org-content-swiper" :loop="true" :modules="[Autoplay]" :autoplay="{
+            delay: 3000,
+          }" @swiper="setIndexOrgSwiperRef" @slideChange="onIndexOrgSlideChange">
+            <Swiper-slide class="index-org-content-swiper-slie" v-for="(orgListItem, orgListIndex) in orgLists"
+              :key="orgListIndex">
+              <div class="index-org-content-in" :class="`index-org-content-${orgTabCur}`"
+                v-for="(orgItem, orgIndex) in orgListItem" :key="orgIndex">
                 <img loading="lazy" :src="orgItem" alt="" />
               </div>
             </Swiper-slide>
@@ -1060,21 +897,14 @@ const hideDom = ref(false)
         <div class="index-caseSharing-in">
           <div class="in-top">
             <!-- <CaseSharingVideoItem :caseSharingData="caseSharingTopData" /> -->
-            <iframe
-              src="https://www.youtube.com/embed/Q7sHcjs6oCs?si=JmhIgriXU-qvuOkg"
-              width="100%"
-              height="100%"
-              frameborder="0"
-            ></iframe>
+            <iframe src="https://www.youtube.com/embed/Q7sHcjs6oCs?si=JmhIgriXU-qvuOkg" width="100%" height="100%"
+              frameborder="0"></iframe>
           </div>
           <div class="share-item" v-if="hideDom">
             <div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/07/3a0cf1b5a28d2d34.png"
-                    alt="星級客戶"
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/07/3a0cf1b5a28d2d34.png" alt="星級客戶" />
                 </div>
                 <div>
                   <div class="item-date">17/4/24</div>
@@ -1086,9 +916,7 @@ const hideDom = ref(false)
                 </div>
               </div>
               <div class="item-content">
-                <span
-                  >做得呢行講嘢一定要清楚，點可以畀牙齒問題影響到！植完牙同真牙一樣，咬得到自然胃口好。</span
-                >
+                <span>做得呢行講嘢一定要清楚，點可以畀牙齒問題影響到！植完牙同真牙一樣，咬得到自然胃口好。</span>
                 <span></span>
                 <span>代言已經廿三年，睇我棚牙就知掂！</span>
               </div>
@@ -1119,15 +947,9 @@ const hideDom = ref(false)
             </div>
           </div>
           <div class="in-cen" v-if="hideDom">
-            <div
-              class="in-cen-box"
-              v-for="(caseSharingItem, caseSharingIndex) in caseSharingLists"
-              :key="caseSharingIndex"
-            >
-              <CaseSharingImageItem
-                :userInfo="caseSharingItem"
-                :userIndex="caseSharingIndex"
-              />
+            <div class="in-cen-box" v-for="(caseSharingItem, caseSharingIndex) in caseSharingLists"
+              :key="caseSharingIndex">
+              <CaseSharingImageItem :userInfo="caseSharingItem" :userIndex="caseSharingIndex" />
             </div>
           </div>
         </div>
@@ -1138,38 +960,17 @@ const hideDom = ref(false)
           <span>香港品牌 實力信心</span>
         </div>
         <div class="treatment-data-in smallPageCon">
-          <div
-            class="dataBox"
-            v-for="(treatmentItem, treatmentIndex) in treatmentData"
-            :key="treatmentIndex"
-          >
+          <div class="dataBox" v-for="(treatmentItem, treatmentIndex) in treatmentData" :key="treatmentIndex">
             <div class="num">
-              <img
-                loading="lazy"
-                :src="treatmentItem.bg"
-                :style="{ left: treatmentItem.left, top: treatmentItem.top }"
-                alt=""
-              />
-              <div
-                class="numIn"
-                v-for="(numItem, numIndex) in treatmentItem.num"
-                :key="numIndex"
-              >
+              <img loading="lazy" :src="treatmentItem.bg" :style="{ left: treatmentItem.left, top: treatmentItem.top }"
+                alt="" />
+              <div class="numIn" v-for="(numItem, numIndex) in treatmentItem.num" :key="numIndex">
                 <span v-if="numItem === ','">{{ numItem }}</span>
-                <div
-                  v-else
-                  class="numInAnim"
-                  :class="[{ showNumInAnim: showTreatment }]"
-                  :style="{
-                    'animation-delay': `${
-                      (treatmentItem.num.length - numIndex) * 0.2
+                <div v-else class="numInAnim" :class="[{ showNumInAnim: showTreatment }]" :style="{
+                  'animation-delay': `${(treatmentItem.num.length - numIndex) * 0.2
                     }s`,
-                  }"
-                >
-                  <span
-                    v-for="numInItem in Number(numItem) ? Number(numItem) : 10"
-                    :key="numInItem"
-                  >
+                }">
+                  <span v-for="numInItem in Number(numItem) ? Number(numItem) : 10" :key="numInItem">
                     {{ numInItem === 10 ? 0 : numInItem }}
                   </span>
                 </div>
@@ -1208,18 +1009,22 @@ const hideDom = ref(false)
     transform: none;
   }
 }
+
 svg:hover path {
   cursor: pointer;
   fill: rgba(255, 120, 117, 0.65);
 }
+
 .indexPage {
   width: 100%;
   background: #fff;
   position: relative;
   z-index: 1;
 }
+
 .treatment-data {
   margin-top: 80px;
+
   &-title {
     span {
       color: var(--indexColor1);
@@ -1231,12 +1036,15 @@ svg:hover path {
       display: block;
     }
   }
+
   &-in {
     margin-top: 48px;
     display: flex;
     flex-wrap: wrap;
+
     .dataBox {
       flex: 1;
+
       .num {
         color: var(--indexColor1);
         text-align: center;
@@ -1247,28 +1055,34 @@ svg:hover path {
         display: flex;
         justify-content: center;
         position: relative;
+
         img {
           position: absolute;
         }
+
         .numBold {
           font-family: initial;
           font-weight: bold;
           margin-top: 5px;
         }
+
         .numIn {
           height: 96px;
           overflow: hidden;
           position: relative;
+
           span {
             line-height: 96px;
             display: block;
           }
+
           .numInAnim {
             opacity: 0;
             transition: all 0.3s;
             display: flex;
             flex-direction: column-reverse;
             transform: translateY(-100%);
+
             &.showNumInAnim {
               opacity: 1;
               animation: numAnim 1s ease-in-out forwards;
@@ -1276,6 +1090,7 @@ svg:hover path {
           }
         }
       }
+
       .name {
         color: var(--textColor);
         text-align: center;
@@ -1287,6 +1102,7 @@ svg:hover path {
       }
     }
   }
+
   &-bText {
     color: var(--textColor);
     text-align: center;
@@ -1297,19 +1113,23 @@ svg:hover path {
     margin-top: 30px;
   }
 }
+
 //醫生團隊
 .index-doctorTeam {
   margin: 60px auto 50px;
+
   &-t {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
+
   &-con {
     width: 70%;
     max-width: 1280px;
     margin: 25px auto 0;
   }
+
   &-tab1 {
     :deep(.areaTab) {
       div {
@@ -1319,12 +1139,15 @@ svg:hover path {
       }
     }
   }
+
   &-tab2 {
     margin-top: 30px;
+
     &-in {
       width: 100%;
       display: flex;
-      & > div {
+
+      &>div {
         flex: 1;
         color: #00aeff;
         transition: all 0.3s;
@@ -1336,25 +1159,32 @@ svg:hover path {
         text-align: center;
         letter-spacing: 3px;
         cursor: pointer;
+
         &:nth-of-type(4) {
           flex: 1.3;
         }
+
         &:nth-of-type(5) {
           flex: 1.3;
         }
+
         &:nth-of-type(6) {
           flex: 1.3;
         }
+
         &:nth-of-type(7) {
           flex: 1.7;
         }
+
         &:first-child {
           border-radius: 5px 0 0 5px;
         }
+
         &:last-child {
           border-radius: 0 5px 5px 0;
           border-right: 2px solid #00aeff;
         }
+
         &:hover,
         &.index-doctorTeam-tab2-in-active {
           color: #fff;
@@ -1363,20 +1193,25 @@ svg:hover path {
       }
     }
   }
+
   &-lists {
     width: 100%;
     min-height: 152px;
+
     .pcLists {
       width: 100%;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+
       &-in {
         cursor: pointer;
         margin-bottom: 30px;
+
         &:not(:last-child) {
           margin-right: 30px;
         }
+
         &-img {
           width: 150px;
           height: 150px;
@@ -1385,6 +1220,7 @@ svg:hover path {
           background: rgba(254, 169, 209, 0.5);
           transition: all 0.3s;
         }
+
         &:hover,
         &.acitve {
           .pcLists-in-img {
@@ -1392,16 +1228,19 @@ svg:hover path {
           }
         }
       }
-      & > section {
+
+      &>section {
         max-width: 100%;
         width: 100%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
       }
+
       .swiperpcLists-in {
         width: 100%;
         overflow: visible;
+
         &-img {
           margin: 0 15px;
           height: auto;
@@ -1410,6 +1249,7 @@ svg:hover path {
           background: rgba(254, 169, 209, 0.7);
           transition: all 0.3s;
           cursor: pointer;
+
           &:hover,
           &.acitve {
             background: #ffa8c6;
@@ -1417,13 +1257,16 @@ svg:hover path {
         }
       }
     }
+
     .mbLists {
       width: calc(100% - 40px);
       margin: 0 auto;
       display: none;
+
       &-in {
         width: 100%;
         overflow: visible;
+
         &-img {
           // width: calc(100% - 20px);
           margin: 0 10px;
@@ -1431,6 +1274,7 @@ svg:hover path {
           border-radius: 10px;
           overflow: hidden;
           background: rgba(254, 169, 209, 0.7);
+
           &.acitve {
             background: #ffa8c6;
           }
@@ -1438,17 +1282,21 @@ svg:hover path {
       }
     }
   }
+
   &-detail {
     padding: 20px;
     display: flex;
     margin-top: 50px;
+
     &-l {
       width: calc(434 / 1365 * 100%);
       max-width: 434px;
       position: relative;
       height: max-content;
+
       &-in {
         width: 100%;
+
         &::after {
           content: '';
           position: absolute;
@@ -1461,13 +1309,16 @@ svg:hover path {
           z-index: 0;
         }
       }
+
       img {
         position: relative;
         border-radius: 30px;
         z-index: 1;
+
         &:nth-of-type(1) {
           border: 3px solid var(--indexColor1);
         }
+
         &:nth-of-type(2) {
           position: absolute;
           bottom: 3px;
@@ -1477,6 +1328,7 @@ svg:hover path {
           display: block;
         }
       }
+
       &-btn {
         position: absolute;
         bottom: 0;
@@ -1486,21 +1338,27 @@ svg:hover path {
         width: max-content;
       }
     }
+
     &-r {
       flex: 1;
+
       .detail-1 {
         color: var(--indexColor1);
         padding-left: 20px;
+
         span {
           font-size: 20px;
+
           &:nth-of-type(1) {
             font-size: 35px;
             margin-right: 5px;
           }
         }
       }
+
       .detail-2 {
         color: #fff;
+
         span {
           font-size: 28px;
           padding: 5px 70px 5px 20px;
@@ -1509,21 +1367,25 @@ svg:hover path {
           clip-path: polygon(0 0, 93% 0, 100% 100%, 0 100%);
         }
       }
+
       .detail-3 {
         color: var(--textColor);
         padding-left: 20px;
         font-size: 20px;
         margin-bottom: 30px;
         margin-top: 5px;
+
         span {
           display: block;
         }
       }
+
       .detail-4 {
         color: var(--textColor);
         padding-left: 20px;
         font-size: 20px;
         margin-bottom: 20px;
+
         span {
           display: block;
           display: -webkit-box;
@@ -1534,17 +1396,21 @@ svg:hover path {
           text-overflow: ellipsis;
         }
       }
+
       .detail-5 {
         color: var(--textColor);
         padding-left: 20px;
         font-size: 20px;
+
         span {
           border-bottom: 1px solid var(--textColor);
+
           &:not(:last-child) {
             margin-right: 10px;
           }
         }
       }
+
       .detail-6 {
         margin-top: 30px;
         margin-left: 20px;
@@ -1553,59 +1419,69 @@ svg:hover path {
       }
     }
   }
+
   &-detailBox {
     min-height: 550px;
   }
+
   .index-doctorTeam-detail-swiper {
     // overflow: visible;
     padding-bottom: 40px;
   }
+
   .group_photo {
     max-width: 860px;
     margin: 62px auto 50px;
   }
-  .team_doctor_everybody {
-  }
+
+  .team_doctor_everybody {}
 }
+
 //個案分享
 .index-caseSharing {
   padding: 35px 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 241, 240, 0) 0%,
-    var(--indexColor2) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 241, 240, 0) 0%,
+      var(--indexColor2) 100%);
   margin-top: 80px;
+
   &-title {
     display: flex;
     justify-content: center;
   }
+
   &-in {
     width: 80%;
     max-width: 1046px;
     margin: 45px auto;
+
     .in-top {
       display: flex;
       height: 587px;
     }
+
     .in-cen {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       margin-top: 120px;
+
       &-box {
         width: calc(50% - 8px);
       }
     }
   }
 }
+
 .index-org {
   margin-top: 120px;
+
   &-tag {
     width: 80%;
     max-width: 804px;
     display: flex;
     margin-top: 50px;
+
     &-in {
       flex: 1;
       color: var(--indexColor1);
@@ -1617,13 +1493,16 @@ svg:hover path {
       border-left: 2px solid var(--indexColor1);
       transition: all 0.3s;
       cursor: pointer;
+
       &:first-child {
         border-radius: 5px 0 0 5px;
       }
+
       &:last-child {
         border-radius: 0 5px 5px 0;
         border-right: 2px solid var(--indexColor1);
       }
+
       &:hover,
       &.active {
         color: #fff;
@@ -1631,37 +1510,51 @@ svg:hover path {
       }
     }
   }
+
   &-content {
     max-width: 1200px;
     margin-top: 30px;
+
     &-swiper {
       width: 100%;
+
       &-slie {
         display: flex;
-        justify-content: center;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 22px 26px;
+        justify-items: center;
         flex-wrap: wrap;
+        justify-content: center;
       }
     }
+
     &-in {
-      width: calc((100% - 300px) / 5);
-      margin: 0 30px 40px;
+      // width: calc((100% - 300px) / 5);
+      // margin: 0 30px 40px;
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 9.583vw;
+      height: 6vw;
+      margin: 0;
     }
+
     &-0 {
       align-items: flex-start !important;
     }
   }
 }
+
 .index-videoBox {
   margin-top: 90px;
   margin-bottom: 90px;
   position: relative;
+
   &-tab {
     display: flex;
     justify-content: center;
     margin-top: 37px;
+
     .tab-in {
       border: 2px solid #fdd3e3;
       color: var(--Grey-Deep, #4d4d4d);
@@ -1675,15 +1568,19 @@ svg:hover path {
       padding: 3px 30px 0;
       position: relative;
       transition: all 0.3s;
+
       &:not(:last-child) {
         border-right: none;
       }
+
       &:first-child {
         border-radius: 5px 0 0 5px;
       }
+
       &:last-child {
         border-radius: 0 5px 5px 0;
       }
+
       &::after {
         content: '';
         position: absolute;
@@ -1698,15 +1595,18 @@ svg:hover path {
         opacity: 0;
         transition: all 0.3s;
       }
+
       &.active {
         color: #fff;
         background: var(--indexColor1);
+
         &::after {
           opacity: 1;
         }
       }
     }
   }
+
   &-in {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1714,10 +1614,12 @@ svg:hover path {
     max-width: 1187px;
     margin: 50px auto;
     gap: 31px;
+
     .list-in {
       width: 100%;
       display: flex;
       flex-direction: column;
+
       .image {
         width: 100%;
         height: 0;
@@ -1725,6 +1627,7 @@ svg:hover path {
         margin-bottom: 10px;
         position: relative;
         overflow: hidden;
+
         img {
           position: absolute;
           width: 100%;
@@ -1734,12 +1637,14 @@ svg:hover path {
           transform: translate(-50%, -50%);
           transition: all 0.3s;
         }
+
         &:hover {
           img {
             transform: translate(-50%, -50%) scale(1.1);
           }
         }
       }
+
       h2 {
         color: var(--Theme-Color, #fc1682);
         font-size: 20px;
@@ -1755,13 +1660,15 @@ svg:hover path {
         padding: 0 20px;
         font-family: 'Noto Sans HK', Serif;
       }
+
       p {
         color: var(--Grey-Mid, #666);
         text-overflow: ellipsis;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
-        line-height: 200%; /* 32px */
+        line-height: 200%;
+        /* 32px */
         letter-spacing: 1.6px;
         margin-top: 10px;
         padding: 0 20px;
@@ -1774,6 +1681,7 @@ svg:hover path {
         padding: 0 20px;
         flex: 1;
       }
+
       .time {
         width: 100%;
         margin-top: 10px;
@@ -1781,16 +1689,20 @@ svg:hover path {
         justify-content: space-between;
         align-items: center;
         padding: 0 20px;
+
         &-l {
           color: var(--Grey-Mid, #666);
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
-          line-height: 200%; /* 32px */
+          line-height: 200%;
+          /* 32px */
           letter-spacing: 1.6px;
         }
+
         .shareIcon {
           position: relative;
+
           &-img {
             width: 30px;
             height: 30px;
@@ -1801,14 +1713,17 @@ svg:hover path {
             position: relative;
             border: 2px solid #aaa;
             z-index: 21;
-            & > img {
+
+            &>img {
               width: 16px;
               height: auto;
             }
+
             &.act {
               border: none;
             }
           }
+
           &-in {
             position: absolute;
             z-index: 20;
@@ -1823,19 +1738,23 @@ svg:hover path {
             justify-content: flex-end;
             filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
             padding: 12px 0;
+
             &-item {
               display: flex;
               align-items: center;
               padding: 5px 10px;
               margin: 0 2px;
               border-radius: 3px;
-              & > img {
+
+              &>img {
                 width: 20px;
                 margin-right: 5px;
               }
-              & > span {
+
+              &>span {
                 font-size: 14px;
               }
+
               &:hover {
                 background: #f6f6f6;
               }
@@ -1843,15 +1762,18 @@ svg:hover path {
           }
         }
       }
+
       .logo {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
+
         &-image {
           max-width: 100px;
           max-height: 59px;
         }
+
         &-text {
           display: flex;
           flex-direction: column;
@@ -1860,37 +1782,45 @@ svg:hover path {
           font-size: 16px;
           font-style: normal;
           font-weight: 400;
-          line-height: 200%; /* 32px */
+          line-height: 200%;
+          /* 32px */
           letter-spacing: 1.6px;
         }
       }
+
       .btn {
         display: flex;
         justify-content: center;
         margin-top: 20px;
         margin-bottom: 20px;
       }
+
       &.list-in-1 {
         .image {
           padding-bottom: 100%;
         }
+
         h2 {
           -webkit-line-clamp: 1;
           line-clamp: 1;
         }
+
         p {
           -webkit-line-clamp: 2;
           line-clamp: 2;
         }
       }
+
       &.list-in-2 {
         .image {
           padding-bottom: calc(562 / 1000 * 100%);
         }
+
         h2 {
           -webkit-line-clamp: 2;
           line-clamp: 2;
         }
+
         p {
           -webkit-line-clamp: 5;
           line-clamp: 5;
@@ -1898,11 +1828,13 @@ svg:hover path {
       }
     }
   }
+
   &-btn {
     position: absolute;
     inset: 0;
     top: 65px;
     pointer-events: none;
+
     span {
       float: right;
       display: inline-block;
@@ -1915,6 +1847,7 @@ svg:hover path {
       position: relative;
       pointer-events: auto;
       cursor: pointer;
+
       &::before {
         content: '';
         height: 0;
@@ -1924,6 +1857,7 @@ svg:hover path {
         bottom: 0;
         left: 0;
       }
+
       &::after {
         content: '》';
         font-size: 28px;
@@ -1931,19 +1865,24 @@ svg:hover path {
     }
   }
 }
+
 .Latest_Movies {
   margin-top: 60px;
+
   &_t {
     display: flex;
     justify-content: space-between;
+
     a {
       display: flex;
       align-items: center;
+
       svg {
         width: 44px;
         height: 35px;
         margin-right: 10px;
       }
+
       span {
         color: #4d4d4d;
         text-align: center;
@@ -1954,14 +1893,17 @@ svg:hover path {
       }
     }
   }
+
   &_in {
     margin-top: 38px;
     display: flex;
+
     &_l {
       margin-right: 33px;
       width: 540px;
       display: flex;
       flex-direction: column;
+
       span {
         padding: 15px 20px 0;
         color: var(--Grey-Deep, #4d4d4d);
@@ -1972,14 +1914,17 @@ svg:hover path {
         line-height: 160%;
         display: block;
       }
+
       iframe {
         width: 540px;
         height: 303px;
       }
     }
+
     &_r {
       &_t {
         display: flex;
+
         .tab-in {
           border: 2px solid #fdd3e3;
           color: var(--Grey-Deep, #4d4d4d);
@@ -1993,15 +1938,19 @@ svg:hover path {
           padding: 3px 30px 0;
           position: relative;
           transition: all 0.3s;
+
           &:not(:last-child) {
             border-right: none;
           }
+
           &:first-child {
             border-radius: 5px 0 0 5px;
           }
+
           &:last-child {
             border-radius: 0 5px 5px 0;
           }
+
           &::after {
             content: '';
             position: absolute;
@@ -2016,26 +1965,31 @@ svg:hover path {
             opacity: 0;
             transition: all 0.3s;
           }
+
           &.active {
             color: #fff;
             background: var(--indexColor1);
+
             &::after {
               opacity: 1;
             }
           }
         }
       }
+
       &_b {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 34px;
         margin-top: 43px;
+
         .list-in {
           iframe {
             width: 375px;
             height: 211px;
             max-width: 100%;
           }
+
           span {
             padding: 15px 20px 0;
             color: var(--Grey-Deep, #4d4d4d);
@@ -2051,47 +2005,64 @@ svg:hover path {
     }
   }
 }
+
 @media (min-width: 768px) and (max-width: 1920px) {
   .index-org {
     margin-top: 6.25vw;
+
     &-tag {
       max-width: 41.875vw;
       margin-top: 2.6042vw;
+
       &-in {
         padding: 0.2604vw;
         font-size: 1.25vw;
+
         &:first-child {
           border-radius: 0.2604vw 0 0 0.2604vw;
         }
+
         &:last-child {
           border-radius: 0 0.2604vw 0.2604vw 0;
         }
       }
     }
+
     &-content {
       max-width: 62.5vw;
       margin-top: 1.5625vw;
+
       &-in {
-        width: calc((100% - 15.625vw) / 5);
-        margin: 0 1.5625vw 2.0833vw;
+        // width: calc((100% - 15.625vw) / 5);
+        // margin: 0 1.5625vw 2.0833vw;
+
+        width: 9.583vw;
+        height: 6vw;
+        margin: 0;
       }
     }
   }
+
   .index-videoBox {
     margin-top: 4.6875vw;
     margin-bottom: 4.6875vw;
+
     &-tab {
       margin-top: 1.9271vw;
+
       .tab-in {
         font-size: 1.3542vw;
         letter-spacing: 2.6px;
         padding: 0.1563vw 1.5625vw 0;
+
         &:first-child {
           border-radius: 0.2604vw 0 0 0.2604vw;
         }
+
         &:last-child {
           border-radius: 0 0.2604vw 0.2604vw 0;
         }
+
         &::after {
           width: 1.25vw;
           height: 0.625vw;
@@ -2101,114 +2072,144 @@ svg:hover path {
         }
       }
     }
+
     &-in {
       max-width: 61.8229vw;
       margin: 2.6042vw auto;
       gap: 1.6146vw;
+
       .list-in {
         .image {
           margin-bottom: 0.5208vw;
         }
+
         h2 {
           font-size: 1.0417vw;
           padding: 0 1.0417vw;
         }
+
         p {
           font-size: 0.8333vw;
           margin-top: 0.5208vw;
           padding: 0 1.0417vw;
         }
+
         .time {
           margin-top: 0.5208vw;
           padding: 0 1.0417vw;
+
           &-l {
             font-size: 0.8333vw;
           }
         }
+
         .logo {
           padding: 0.5208vw 1.0417vw;
+
           &-image {
             max-width: 5.2083vw;
             max-height: 3.0729vw;
           }
+
           &-text {
             font-size: 0.8333vw;
           }
         }
+
         .btn {
           margin-top: 1.0417vw;
         }
       }
     }
+
     &-btn {
       top: 4.1667vw;
+
       span {
         font-size: 1.5625vw;
         letter-spacing: 0.1563vw;
+
         &::after {
           font-size: 1.4583vw;
         }
       }
     }
   }
+
   .index-caseSharing {
     padding: 1.8229vw 0;
     margin-top: 4.1667vw;
+
     &-in {
       width: 70%;
       max-width: 54.4792vw;
       margin: 2.3438vw auto;
+
       .in-top {
         display: flex;
         height: 30.2vw;
       }
+
       .in-cen {
         margin-top: 6.25vw;
+
         &-box {
           width: calc(50% - 0.4167vw);
         }
       }
     }
   }
+
   .treatment-data {
     margin-top: 4.1667vw;
+
     &-title {
       span {
         font-size: 1.8229vw;
       }
     }
+
     &-in {
       margin-top: 2.5vw;
+
       .dataBox {
         .num {
           font-size: 3.125vw;
+
           .numBold {
             margin-top: 0.2604vw;
           }
+
           .numIn {
             height: 5vw;
+
             span {
               line-height: 5vw;
             }
           }
         }
+
         .name {
           font-size: 1.4583vw;
           margin-top: -0.5208vw;
         }
       }
     }
+
     &-bText {
       font-size: 1.0417vw;
       margin-top: 1.5625vw;
     }
   }
+
   .index-doctorTeam {
     margin: 3.125vw auto 2.6042vw;
+
     &-con {
       max-width: 66.6667vw;
       margin: 1.3021vw auto 0;
     }
+
     &-tab1 {
       :deep(.areaTab) {
         div {
@@ -2216,36 +2217,45 @@ svg:hover path {
         }
       }
     }
+
     &-tab2 {
       margin-top: 1.5208vw;
+
       &-in {
-        & > div {
+        &>div {
           padding: 0.2604vw 0;
           font-size: 0.9375vw;
           letter-spacing: 0.1563vw;
+
           &:first-child {
             border-radius: 0.2604vw 0 0 0.2604vw;
           }
+
           &:last-child {
             border-radius: 0 0.2604vw 0.2604vw 0;
           }
         }
       }
     }
+
     &-lists {
       min-height: 7.9167vw;
+
       .pcLists {
         &-in {
           margin-bottom: 1.5625vw;
+
           &:not(:last-child) {
             margin-right: 1.5625vw;
           }
+
           &-img {
             width: 7.8125vw;
             height: 7.8125vw;
             border-radius: 0.5208vw;
           }
         }
+
         .swiperpcLists-in {
           &-img {
             margin: 0 0.7813vw;
@@ -2253,8 +2263,10 @@ svg:hover path {
           }
         }
       }
+
       .mbLists {
         width: calc(100% - 2.0833vw);
+
         &-in {
           &-img {
             margin: 0 0.5208vw;
@@ -2263,11 +2275,14 @@ svg:hover path {
         }
       }
     }
+
     &-detail {
       padding: 1.0417vw;
       margin-top: 2.6042vw;
+
       &-l {
         max-width: 22.6042vw;
+
         &-in {
           &::after {
             top: -1.0417vw;
@@ -2275,47 +2290,57 @@ svg:hover path {
             border-radius: 1.5625vw;
           }
         }
+
         img {
           border-radius: 1.5625vw;
         }
       }
+
       &-r {
         .detail-1 {
           padding-left: 1.0417vw;
+
           span {
             font-size: 1.0417vw;
+
             &:nth-of-type(1) {
               font-size: 1.8229vw;
               margin-right: 0.2604vw;
             }
           }
         }
+
         .detail-2 {
           span {
             font-size: 1.4583vw;
             padding: 0.2604vw 3.6458vw 0.2604vw 1.0417vw;
           }
         }
+
         .detail-3 {
           padding-left: 1.0417vw;
           font-size: 1.0417vw;
           margin-bottom: 1.5625vw;
           margin-top: 0.2604vw;
         }
+
         .detail-4 {
           padding-left: 1.0417vw;
           font-size: 1.0417vw;
           margin-bottom: 1.0417vw;
         }
+
         .detail-5 {
           padding-left: 1.0417vw;
           font-size: 1.0417vw;
+
           span {
             &:not(:last-child) {
               margin-right: 0.5208vw;
             }
           }
         }
+
         .detail-6 {
           margin-top: 1.5625vw;
           margin-left: 1.0417vw;
@@ -2323,15 +2348,19 @@ svg:hover path {
         }
       }
     }
+
     &-detailBox {
       min-height: 28.6458vw;
     }
+
     .index-doctorTeam-detail-swiper {
       padding-bottom: 2.0833vw;
     }
   }
+
   .Latest_Movies {
     margin-top: 50px;
+
     &_t {
       a {
         svg {
@@ -2339,37 +2368,46 @@ svg:hover path {
           height: 1.8229vw;
           margin-right: 0.5208vw;
         }
+
         span {
           font-size: 1.1458vw;
         }
       }
     }
+
     &_in {
       margin-top: 1.9792vw;
+
       &_l {
         margin-right: 1.7188vw;
         width: 28.125vw;
+
         span {
           padding: 0.7813vw 1.0417vw 0;
           font-size: 1.0417vw;
         }
+
         iframe {
           width: 28.125vw;
           height: 15.7813vw;
         }
       }
+
       &_r {
         &_t {
           .tab-in {
             font-size: 1.3542vw;
             letter-spacing: 0.1354vw;
             padding: 0.1563vw 1.5625vw 0;
+
             &:first-child {
               border-radius: 0.2604vw 0 0 0.2604vw;
             }
+
             &:last-child {
               border-radius: 0 0.2604vw 0.2604vw 0;
             }
+
             &::after {
               width: 1.25vw;
               height: 0.625vw;
@@ -2379,14 +2417,17 @@ svg:hover path {
             }
           }
         }
+
         &_b {
           gap: 1.7708vw;
           margin-top: 2.2396vw;
+
           .list-in {
             iframe {
               width: 19.5313vw;
               height: 10.9896vw;
             }
+
             span {
               padding: 0.7813vw 1.0417vw 0;
               font-size: 1.0417vw;
@@ -2402,40 +2443,51 @@ svg:hover path {
   .treatment-data {
     margin-top: 70px;
     overflow: hidden;
+
     &-title {
       span {
         font-size: 20px;
       }
     }
+
     &-in {
       padding: 0 20px;
       margin-top: 60px;
+
       .dataBox {
         width: 50%;
+
         &:not(:last-child) {
           margin-bottom: 62px;
         }
+
         .num {
           font-size: 35px;
+
           img {
             width: 100px;
           }
+
           .numIn {
             height: 50px;
+
             span {
               line-height: 50px;
             }
           }
         }
+
         .name {
           font-size: 24px;
         }
+
         &:nth-of-type(1) {
           img {
             left: 15% !important;
             top: -60% !important;
           }
         }
+
         &:nth-of-type(2) {
           img {
             left: -5% !important;
@@ -2443,12 +2495,14 @@ svg:hover path {
             width: 50%;
           }
         }
+
         &:nth-of-type(3) {
           img {
             left: 5% !important;
             top: -50% !important;
           }
         }
+
         &:nth-of-type(4) {
           img {
             width: 70%;
@@ -2458,28 +2512,34 @@ svg:hover path {
         }
       }
     }
+
     &-bText {
       font-size: 16px;
       margin-top: 0px;
     }
   }
+
   .indexPage {
     width: 100%;
     background: #fff;
     margin-top: 35px;
   }
+
   //醫生團隊
   .index-doctorTeam {
     margin: 50px 0 0;
     width: 100%;
+
     &-con {
       width: 100%;
     }
+
     &-t {
       flex-direction: column;
       align-items: flex-start;
       box-sizing: border-box;
     }
+
     &-tab1 {
       :deep(.areaTab) {
         div {
@@ -2487,54 +2547,67 @@ svg:hover path {
         }
       }
     }
+
     &-tab2 {
       padding: 0 30px;
       margin-top: 20px;
+
       &-in {
         display: flex;
         flex-wrap: wrap;
         border: 1px solid #00aeff;
         border-radius: 5px;
-        & > div {
+
+        &>div {
           font-size: 4.065vw;
           padding: 1.33vw 0;
           letter-spacing: 0.8vw;
           border: none;
+
           &:not(:nth-of-type(n + 4)) {
             border-right: 1px solid #00aeff;
           }
+
           &:not(:nth-of-type(n + 5)) {
             border-bottom: 1px solid #00aeff;
           }
+
           &:nth-of-type(n + 6) {
             border-left: 1px solid #00aeff;
           }
+
           &.textlang-3,
           &.textlang-4 {
             min-width: calc(100% / 4);
           }
+
           &:first-child {
             border-radius: 0;
           }
+
           &:last-child {
             border-right: none;
             border-radius: 0;
           }
+
           &:hover {
             color: #00aeff;
             background: #fff;
           }
+
           &.index-doctorTeam-tab2-in-active {
             color: #fff;
             background: #00aeff;
           }
         }
+
         &.tablang-1,
         &.tablang-2,
         &.tablang-3,
         &.tablang-4 {
-          & > div {
+          &>div {
             border-bottom: none;
+
             &:last-child {
               border-right: none;
             }
@@ -2542,33 +2615,42 @@ svg:hover path {
         }
       }
     }
+
     &-lists {
       margin-top: 20px;
       min-height: 96px;
       overflow: hidden;
+
       .pcLists {
         display: none;
       }
+
       .mbLists {
         display: block;
       }
     }
+
     &-detail {
       flex-direction: column;
       padding: 0;
       margin-top: 30px;
+
       &-l {
         width: 100%;
+
         &-in {
           &::after {
             display: none;
           }
         }
+
         img {
           border-radius: 0;
+
           &:nth-of-type(1) {
             border: none;
           }
+
           &:nth-of-type(2) {
             height: 100%;
             max-height: 90%;
@@ -2578,17 +2660,21 @@ svg:hover path {
             transform: translateX(-50%);
           }
         }
+
         &-btn {
           display: none;
         }
       }
+
       &-r {
         .detail-1 {
           margin: 5px 0;
           padding: 0 30px;
+
           span {
             font-size: 18px;
             display: inline-block;
+
             &:nth-of-type(1) {
               font-size: 30px;
               letter-spacing: 2px;
@@ -2596,6 +2682,7 @@ svg:hover path {
             }
           }
         }
+
         .detail-2 {
           span {
             width: 100%;
@@ -2604,72 +2691,84 @@ svg:hover path {
             clip-path: polygon(0 0, 85% 0, 90% 100%, 0 100%);
           }
         }
+
         .detail-3 {
           margin-top: 10px;
           padding: 0 30px;
           font-size: 16px;
         }
+
         .detail-4 {
           font-size: 16px;
           padding: 0 30px;
           margin-bottom: 30px;
+
           span {
             text-align: justify;
           }
         }
+
         .detail-5 {
           font-size: 12px;
           padding: 0 30px;
           display: flex;
           justify-content: center;
         }
+
         .detail-6 {
           display: flex;
           justify-content: center;
           margin-left: 0;
+
           span {
             font-size: 28px;
           }
         }
       }
     }
+
     .group_photo {
       max-width: 100%;
       margin: 24px auto;
     }
   }
+
   //個案分享
   .index-caseSharing {
     background: none;
     background: linear-gradient(0, #fee6f1 0%, rgba(255, 241, 240, 0) 100%);
     padding: 0;
     margin-top: 40px;
+
     &-in {
       width: 100%;
       margin: 15px auto 0;
       // padding: 20px 30px;
       padding: 20px 0;
+
       .in-top {
         display: flex;
         width: 100%;
         height: 56vw;
       }
+
       .in-cen {
         margin-top: 34px;
         flex-direction: column;
+
         &-box {
           width: 100%;
         }
       }
+
       .in-bottom {
         width: 100%;
-        background: linear-gradient(
-          0deg,
-          rgba(255, 241, 240, 0.7) 41.54%,
-          rgba(255, 241, 240, 0) 137.31%
-        );
+        background: linear-gradient(0deg,
+            rgba(255, 241, 240, 0.7) 41.54%,
+            rgba(255, 241, 240, 0) 137.31%);
         padding: 20px 0;
         margin-top: 0;
+
         span {
           width: 137px;
           height: 40px;
@@ -2681,6 +2780,7 @@ svg:hover path {
           box-shadow: 1px 1px 4px rgba(255, 163, 158, 0.45);
           color: #666666;
           transition: all 0.3s;
+
           &:hover {
             background: var(--indexColor3);
             color: #ffffff;
@@ -2690,37 +2790,50 @@ svg:hover path {
       }
     }
   }
+
   .index-org {
     margin-top: 90px;
+
     &-tag {
       width: 100%;
       max-width: calc(100% - 60px);
       margin-top: 30px;
+
       &-in {
         font-size: 4.265vw;
         padding: 1.33vw;
       }
     }
+
     &-content {
       max-width: calc(100% - 20px);
       justify-content: flex-start;
+
       &-swiper {
         &-slie {
           justify-content: initial;
+          gap: 5.865vw;
         }
       }
+
       &-in {
-        margin: 0 10px 30px;
-        width: calc((100% - 60px) / 3);
+        margin: 0;
+        width: 27.465vw;
+        height: 18vw;
+
         img {
-          max-height: 70px;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
         }
       }
     }
   }
+
   .index-videoBox {
     &-tab {
       margin-top: 30px;
+
       .tab-in {
         border: 1px solid #fdd3e3;
         letter-spacing: 1.588px;
@@ -2728,10 +2841,12 @@ svg:hover path {
         padding: 3px 16px 0;
       }
     }
+
     &-in {
       grid-template-columns: repeat(1, 1fr);
       margin: 30px 30px 0 30px;
     }
+
     &-btn {
       position: relative;
       inset: auto;
@@ -2744,32 +2859,36 @@ svg:hover path {
         float: initial;
         font-size: 20px;
         margin-left: 10px;
+
         &::before {
           border-bottom: 1px solid var(--indexColor1);
         }
+
         &::after {
           font-size: 18px;
         }
       }
     }
+
     .index-latestNews-line {
       width: 45%;
       margin: 0 auto;
     }
   }
+
   .Latest_Movies {
     margin-top: 70px;
     max-width: 100vw;
     overflow: hidden;
     opacity: 0.8;
-    background: linear-gradient(
-      270deg,
-      rgba(255, 241, 240, 0) 0%,
-      rgba(255, 241, 240, 1) 100%
-    );
+    background: linear-gradient(270deg,
+        rgba(255, 241, 240, 0) 0%,
+        rgba(255, 241, 240, 1) 100%);
     padding: 20px 0;
     box-sizing: border-box;
+
     &_t {
+
       // width: 100vw;
       // margin-left: -30px;
       a {
@@ -2777,33 +2896,40 @@ svg:hover path {
           width: 32px;
           height: 26px;
         }
+
         span {
           font-size: 18px;
           padding-right: 30px;
         }
       }
     }
+
     &_in {
       margin: 30px 30px 0;
       flex-direction: column;
+
       // margin-top: ;
       &_l {
         width: 84%;
         margin: 0;
+
         span {
           color: var(--indexColor1);
           padding-left: 0;
         }
+
         iframe {
           width: 100%;
           height: calc(153 / 315 * 100vw);
         }
       }
+
       &_r {
         &_t {
           justify-content: center;
           margin-top: 30px;
           margin-left: -50px;
+
           .tab-in {
             border: 1px solid #fdd3e3;
             letter-spacing: 1.588px;
@@ -2811,24 +2937,28 @@ svg:hover path {
             padding: 3px 16px 0;
           }
         }
+
         &_b {
           grid-template-columns: repeat(1, 1fr);
           gap: 25px;
           margin-top: 30px;
           width: 84%;
+
           .list-in {
             iframe {
               width: 100%;
               height: calc(153 / 315 * 100vw);
             }
-            span {
-            }
+
+            span {}
           }
         }
       }
+
       .index-latestNews-line {
         margin: 20px 0;
         margin-left: -60px;
+
         .point {
           width: calc(100% - 365px) !important;
           margin: 0px auto;
@@ -2836,11 +2966,13 @@ svg:hover path {
       }
     }
   }
+
   .share-item {
     display: flex;
     flex-direction: column;
     gap: 15px 0;
-    & > div:nth-child(1) {
+
+    &>div:nth-child(1) {
       max-width: 74.35vw;
       margin-left: 0;
       padding: 10px 15px;
@@ -2849,42 +2981,51 @@ svg:hover path {
       flex-direction: column;
       gap: 10px 0;
       background: var(--White, #fff);
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         display: flex;
         justify-content: space-between;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           width: 29.48vw;
-          & > img {
+
+          &>img {
             width: 100%;
           }
         }
-        & > div:nth-child(2) {
-          & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
+          &>div:nth-child(2) {
             display: flex;
             flex-direction: column;
-            & > span:nth-child(1) {
+
+            &>span:nth-child(1) {
               color: var(--Theme-Color, #fc1682);
               font-family: 'FakePearl-Regular';
               font-size: 5.12vw;
               font-style: normal;
               font-weight: 600;
-              line-height: 160%; /* 32px */
+              line-height: 160%;
+              /* 32px */
             }
-            & > span {
+
+            &>span {
               color: var(--Grey-Mid, #666);
               font-family: 'Noto Sans HK';
               font-size: 3.07vw;
               font-style: normal;
               font-weight: 500;
-              line-height: 160%; /* 19.2px */
+              line-height: 160%;
+              /* 19.2px */
               letter-spacing: 1.2px;
             }
           }
         }
       }
     }
-    & > div:nth-child(2),
-    & > div:nth-child(3) {
+
+    &>div:nth-child(2),
+    &>div:nth-child(3) {
       background: var(--White, #fff);
       padding: 10px 15px;
       box-sizing: border-box;
@@ -2892,50 +3033,61 @@ svg:hover path {
       display: flex;
       flex-direction: column;
       gap: 6px 0;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         display: flex;
         justify-content: space-between;
-        & > div:nth-child(1) {
+
+        &>div:nth-child(1) {
           display: flex;
           flex-direction: column;
         }
       }
     }
-    & > div:nth-child(2) {
+
+    &>div:nth-child(2) {
       margin-left: auto;
       margin-right: 0;
+
       .item-title {
         color: var(--Theme-Color, #fc1682);
       }
     }
   }
+
   .item-title {
     color: var(--Blue-Deep, #00aeff);
     font-family: 'FakePearl-Regular';
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
-    line-height: 160%; /* 32px */
+    line-height: 160%;
+    /* 32px */
   }
+
   .item-tag {
     color: var(--Grey-Pale, #aaa);
     font-family: 'Noto Sans HK';
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 160%; /* 19.2px */
+    line-height: 160%;
+    /* 19.2px */
     letter-spacing: 1.2px;
   }
+
   .item-date {
     color: var(--Grey-Mid, #666);
     font-family: 'Noto Sans HK';
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 160%; /* 19.2px */
+    line-height: 160%;
+    /* 19.2px */
     letter-spacing: 1.2px;
     text-align: right;
   }
+
   .item-content {
     color: var(--Grey-Deep, #4d4d4d);
     text-align: justify;
@@ -2943,11 +3095,13 @@ svg:hover path {
     font-size: 3.07vw;
     font-style: normal;
     font-weight: 500;
-    line-height: 160%; /* 19.2px */
+    line-height: 160%;
+    /* 19.2px */
     letter-spacing: 1.2px;
     display: flex;
     flex-direction: column;
-    & > span {
+
+    &>span {
       line-height: 160%;
       min-height: 19.19px;
     }

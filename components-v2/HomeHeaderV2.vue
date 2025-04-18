@@ -1058,41 +1058,7 @@ const implantItem = [
           </div>
         </nav>
       </div>
-      <div class="swiperBox">
-        <swiper
-          :modules="[Autoplay]"
-          :loop="true"
-          :autoplay="{ delay: 3000 }"
-          :speed="1000"
-          @swiper="setBannerSwiperRef"
-          @slideChange="changebanner"
-        >
-          <SwiperSlide v-for="(item, index) in bannerLists" :key="index">
-            <nuxt-link
-              :to="item.link === '' ? 'javaScript:void(0)' : item.link"
-              :title="item.name"
-              :alt="item.name"
-            >
-              <img
-                :srcset="`${item.mb} 768w, ${item.pc}`"
-                :src="item.pc"
-                :alt="item.name"
-                :title="item.name"
-                class="w-100"
-              />
-            </nuxt-link>
-          </SwiperSlide>
-        </swiper>
-      </div>
-      <div class="header-content-btn-implant bannerLine">
-        <div class="bannerLine-in">
-          <PageSwiperPointLine
-            :latestNewsNum="bannerLists.length"
-            :latestNewsCurrent="bannerCurrent"
-            @changeLineCur="handleBannerLineCur"
-          ></PageSwiperPointLine>
-        </div>
-      </div>
+      <HomeBannerV2 />
     </div>
 
     <div :class="['dialogBox', { show: _bool }]" @click="_bool = false">
