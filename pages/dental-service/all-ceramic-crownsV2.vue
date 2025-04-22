@@ -202,16 +202,16 @@ const problemData = {
   title: '<span>全瓷/全鋯牙冠</span><span>常見問題</span>',
   lists: [
     {
-      Q: '全瓷牙冠和全鋯牙冠的壽命有多長？',
-      A: '全瓷和全鋯牙冠的壽命通常可達10年以上，具體壽命取決於多種因素，如個人口腔衛生習慣、牙冠的照護和維護、以及咀嚼習慣等。',
+      Q: '優質牙冠的準則?',
+      A: '美觀自然： 色澤逼真，透光性好，與真牙無異。生物相容性好： 不含金屬，不易引起過敏反應，對牙齦無刺激。堅固耐用： 具有良好的抗壓強度和耐磨性，使用壽命長。精準密合： 採用數位化設計和製作，確保牙冠與牙齒完美貼合。',
     },
     {
-      Q: '我應該選擇哪一種牙冠？',
-      A: '選擇哪種牙冠主要取決於您的具體需要和偏好：\n如果您重視外觀和自然感，尤其是在前牙區域，全瓷牙冠可能是較好的選擇。\n如果您需要一個更強壯且耐用的解決方案，尤其是在承受較大咬合力的後牙區域，全鋯牙冠可能會是更合適的選擇。',
+      Q: '為什麼做牙冠是需要磨牙?',
+      A: '提供空間： 牙冠是一種覆蓋在牙齒上的修復體，需要一定的空間才能安裝。如果不磨牙，牙冠會使牙齒變大，影響美觀和咬合。創造固位形： 牙醫需要將牙齒修磨成特定的形狀，例如：略微收斂的圓錐形，以便牙冠能夠牢固地粘接在牙齒上，不易脫落。改善外形和咬合： 如果牙齒有缺損、變形或咬合不良等問題，通過修磨可以改善牙齒的外形和咬合關係，使牙冠更好地發揮功能。\n\n現時部份材料可做成超薄牙冠，加上粘合劑的技術進步，磨牙量可大幅減少。',
     },
     {
-      Q: '如果全瓷牙冠或全鋯牙冠損壞了怎麼辦？',
-      A: '及時就醫：如果牙冠破裂、鬆動或脫落，應盡快聯絡牙醫評估。\n臨時措施：在等待修復之前，可以使用藥局提供的臨時牙冠黏合劑作為暫時解決方案。\n修復或更換：牙醫會評估是否可以修復牙冠或需要完全更換。',
+      Q: '杜牙根後一定要做牙冠嗎?',
+      A: '如果杜牙根後，牙齒的剩餘結構較少，牙齒變得脆弱，容易斷裂，那麼強烈建議做牙冠。牙冠可以提供額外的保護，防止牙齒崩裂。',
     },
   ],
 }
@@ -434,18 +434,18 @@ const listItem = (str) => {
             <div>安裝牙冠</div>
           </div>
           <div class="course d-md-none">
-            <div class="course-text">
+            <!-- <div class="course-text">
               拔牙一般無需進行手術，但當牙齒歪生或非常接近<br class="d-md-none" />神經，便有可能要進行手術式脫牙。
-            </div>
+            </div> -->
             <div>
               <div>
                 <div :class="surgicalExtractionOfTeeth ? 'active-teeth' : ''"
                   @click="courseToothExtraction('Surgical')">
-                  智慧齒及手術性拔牙
+                  CAD/CAM技術牙冠
                 </div>
                 <div :class="surgicalExtractionOfTeeth ? '' : 'active-teeth'"
                   @click="courseToothExtraction('notSurgical')">
-                  非手術性拔牙
+                  傳統牙冠
                 </div>
               </div>
               <div>
@@ -2843,7 +2843,6 @@ const listItem = (str) => {
           rgba(255, 241, 240, 0) 100%),
         #fff;
       box-sizing: border-box;
-      padding: 0 19.1.33vw;
 
       .course-text {
         color: var(--Grey-Deep, #4d4d4d);
@@ -2857,9 +2856,10 @@ const listItem = (str) => {
         letter-spacing: -0.1865vw
       }
 
-      &>div:nth-child(2) {
+      &>div:nth-child(1) {
         margin-top: 2.665vw;
-
+        box-sizing: border-box;
+        padding: 0 5.333vw;
         &>div:nth-child(1) {
           display: flex;
           box-sizing: border-box;
@@ -2923,7 +2923,7 @@ const listItem = (str) => {
           &>div:nth-child(3) {
             display: flex;
             flex-direction: column;
-            gap: 1.33vw 0;
+            gap: 2.23vw 0;
             width: 100%;
 
             &>div {

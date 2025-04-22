@@ -415,33 +415,21 @@ const problemData = {
   title: '<span>杜牙根</span><span>常見問題</span>',
   lists: [
     {
-      Q: 'pages.dental-service.rootCanal.problem.lists[0].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[0].A',
+      Q:'什麼情況下需要做杜牙根？',
+      A:'嚴重蛀牙，已經侵犯到牙髓（牙神經）。牙髓炎，牙齒出現持續性疼痛，對冷熱刺激敏感。根尖周炎，牙根尖周圍的組織發炎，引起牙齒鬆動、腫脹。牙齒外傷，導致牙髓受損。其他原因，例如牙齒隱裂、牙周病等，導致牙髓壞死。'
     },
     {
-      Q: 'pages.dental-service.rootCanal.problem.lists[1].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[1].A',
+      Q:'杜牙根需要做幾次？',
+      A:'杜牙根的次數取決於牙齒的具體情況。有些簡單的病例可能一次完成，但大多數情況下需要2-3次。' 
     },
     {
-      Q: 'pages.dental-service.rootCanal.problem.lists[2].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[2].A',
+      Q:'杜牙根後可以維持多久？',
+      A:'如果杜牙根治療成功，並且做好日常的口腔護理，牙齒可以維持很長時間，甚至終身。'
     },
     {
-      Q: 'pages.dental-service.rootCanal.problem.lists[3].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[3].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[4].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[4].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[5].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[5].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[6].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[6].A',
-    },
+      Q:'杜牙根後注意事項?',
+      A:'避免咀嚼食物或咬硬物，以免損壞治療後的牙齒。<br /><br />·避免用治療後的牙齒咬開堅硬的食物，例如堅果、糖果等。<br />·在治療後的前幾天內，嘗試避免刷牙或使用牙線，以免影響治療區域的恢復。<br />·如果需要刷牙，可以使用軟毛刷，輕柔地刷牙，避免刷太用力或刷到治療區域。<br />·如果感覺到疼痛或不適，可以使用過濾口的冰水或冰袋敷在治療區域附近，以減輕疼痛和腫脹。<br />·如醫生處方止痛藥，應按照指示使用。<br />·定期到口腔醫院進行檢查和清潔，以確保治療後的牙齒保持健康。<br />其他牙科服務' 
+    }
   ],
 }
 
@@ -518,7 +506,7 @@ const problemData = {
       </section>
       <section class="ckj-container seven-steps">
         <div class="seven-steps-title">
-          <div>\ <span>杜牙根治療7步曲</span> /</div>
+          <div>\ <span>杜牙根治療步驟</span> /</div>
         </div>
         <div class="seven-steps-content">
           <div v-for="item in stepDataList" :key="item.id">
