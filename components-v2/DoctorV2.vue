@@ -14,6 +14,7 @@ const typeList = ref([
     id: '101',
     name: '種植科',
     status: false,
+    teamPhoto: 'https://statichk.cmermedical.com/ckj/image/2025011310040501.png',
     doctor: [
       {
         name: '李川',
@@ -175,22 +176,30 @@ onMounted(() => {
 
 <template>
   <div class="doctor-v2">
+    <div class="doctor-team-photo d-lg-none" v-if="typeList[num].teamPhoto">
+      <img :src="typeList[num].teamPhoto" alt="">
+    </div>
     <div class="doctor-administrative-office">
       <div v-for="(item, index) in typeList" :key="index" @click="handletab2(item.id, index)"
         :class="item.status ? 'office-btn-active' : ''" :data-srt="item.id" class="office-btn">
         {{ item.name }}
       </div>
     </div>
+    <div class="doctor-team-photo d-none d-lg-block" v-if="typeList[num].teamPhoto">
+      <img :src="typeList[num].teamPhoto" alt="">
+    </div>
     <div class="doctor-team">
       <div class="doctor-list" v-for="(doctor, index) in typeList[num].doctor" :key="index">
-        <div class="img">
-          <img :src="doctor.img" alt="">
+        <div>
+          <div class="img">
+            <img :src="doctor.img" alt="">
+          </div>
+          <div class="name">
+            <div class="name-t">{{ doctor.name }}</div>
+            <div class="name-b">{{ doctor.appellation }}</div>
+          </div>
+          <div class="title" v-html="doctor.title"></div>
         </div>
-        <div class="name">
-          <div class="name-t">{{ doctor.name }}</div>
-          <div class="name-b">{{ doctor.appellation }}</div>
-        </div>
-        <div class="title" v-html="doctor.title"></div>
       </div>
     </div>
   </div>
@@ -204,7 +213,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px 0;
+    gap: 30px 0;
 
     .doctor-administrative-office {
       display: flex;
@@ -258,6 +267,17 @@ onMounted(() => {
 
       .office-btn:last-child {
         border-right: none;
+      }
+    }
+
+    .doctor-team-photo {
+      width: 820px;
+      height: auto;
+
+      &>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
 
@@ -338,9 +358,7 @@ onMounted(() => {
 
 @media screen and (max-width: 991px) {
   .doctor-v2 {
-    margin: 4vw 0;
-    box-sizing: border-box;
-    padding: 0 5.33vw;
+    margin: 4vw 0 0;
 
     .doctor-administrative-office {
       // display: grid;
@@ -424,6 +442,9 @@ onMounted(() => {
       }
     }
 
+    .doctor-team-photo {
+      margin: 4vw 0;
+    }
 
 
     .doctor-team {
@@ -432,8 +453,9 @@ onMounted(() => {
       gap: 0 2.665vw;
       border-radius: 2.665vw;
       align-items: flex-start;
-      padding-bottom: 13.33vw;
       justify-content: center;
+      box-sizing: border-box;
+      padding: 0 5.33vw 13.33vw;
 
       .doctor-list {
         position: relative;

@@ -27,6 +27,56 @@ const bannerListV2 = ref([
     mb: 'https://static.ckjhk.com/ckj-image/c4c9dc05eec1.webp',
   },
 ])
+
+
+let services_include_cur_banner = ref(0)
+let swiperRefBanner: any = {
+  slidePrev: () => { },
+  slideNext: () => { },
+  slideTo: () => { },
+}
+
+const setswiperRefBannerHomeBanner = (swiper: any) => {
+
+  swiperRefBanner = swiper
+  console.log('setswiperRefBannerHomeBanner', swiperRefBanner.activeIndex);
+  services_include_cur_banner.value = swiperRefBanner.activeIndex
+}
+
+const addNumBanner = () => {
+  if (swiperRefBanner.activeIndex >= bannerListV2.value.length - 1) {
+    swiperRefBanner.slideTo(0)
+  }
+  swiperRefBanner.slideNext()
+  handleProcessBtnClick(swiperRefBanner.activeIndex)
+}
+const subNumBanner = () => {
+  if (swiperRefBanner.activeIndex <= 0) {
+    swiperRefBanner.slideTo(3)
+  }
+  swiperRefBanner.slidePrev()
+  handleProcessBtnClick(swiperRefBanner.activeIndex)
+}
+
+
+const handleLineCurBanner = (_value: number) => {
+  console.log(_value, 58);
+
+  swiperRefBanner.slideTo(_value)
+  handleProcessBtnClick(swiperRefBanner.activeIndex)
+}
+
+const handleProcessBtnClick = (i) => {
+  services_include_cur_banner.value = swiperRefBanner.activeIndex
+  const swiperPoints = document.querySelectorAll('.swiper-pagination-bullet-banner')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == i) {
+      item.classList.add('swiper-pagination-bullet-banner-active')
+    } else {
+      item.classList.remove('swiper-pagination-bullet-banner-active')
+    }
+  })
+}
 </script>
 
 <template>
@@ -34,7 +84,8 @@ const bannerListV2 = ref([
     <Swiper class="indexSwiper" :modules="[Autoplay, Navigation, Pagination]" :slides-per-view="1"
       :autoplay="{ delay: 6000, disableOnInteraction: false }"
       :pagination="{ el: '.swiper-pagination', clickable: true }"
-      :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }" :loop="true">
+      :navigation="{ nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }" :loop="true"
+      @swiper="setswiperRefBannerHomeBanner">
       <SwiperSlide v-for="(item, index) in bannerListV2" :key="index">
         <div class="position-relative">
           <img :src="item.pc" :alt="item.name" loading="lazy" :srcset="`${item.mb} 400w, ${item.mb} 640w, ${item.pc}`"
@@ -48,7 +99,7 @@ const bannerListV2 = ref([
     <div class="position-absolute swiper-Title z-2">
       <div class="swiper-Title-Box d-flex align-items-end justify-content-end align-items-lg-center ">
         <div>
-          <div class="swiper-button-prev">
+          <div class="swiper-button-prev" @click="subNumBanner">
             <svg width=" 13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 15L2.5 8.99931L10 3" stroke="#D2337D" stroke-width="4" stroke-miterlimit="10"
                 stroke-linecap="square" stroke-linejoin="round" />
@@ -56,9 +107,12 @@ const bannerListV2 = ref([
           </div>
 
           <div class="swiper-pagination">
+            <span v-for="(item, index) in bannerListV2" :key="index" @click="handleLineCurBanner(index)"
+              :class="index == 0 ? 'swiper-pagination-bullet-banner-active' : ''"
+              class="swiper-pagination-bullet-banner"></span>
           </div>
 
-          <div class="swiper-button-next">
+          <div class="swiper-button-next" @click="addNumBanner">
             <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3 15L10.5 8.99931L3 3" stroke="#D2337D" stroke-width="4" stroke-miterlimit="10"
                 stroke-linecap="square" stroke-linejoin="round" />
@@ -175,12 +229,14 @@ const bannerListV2 = ref([
       align-items: center;
     }
 
-    .swiper-pagination-bullet {
+    .swiper-pagination-bullet-banner {
       width: 18px;
       height: 18px;
       background: #fff;
       opacity: 1;
       margin: 0;
+      border-radius: 50%;
+      box-shadow: rgba(0, 0, 0, 0.3) 3px 2px 2px;
     }
 
     .swiper-pagination {
@@ -191,7 +247,7 @@ const bannerListV2 = ref([
       margin: 0 10px;
     }
 
-    .swiper-pagination-bullet-active {
+    .swiper-pagination-bullet-banner-active {
       background: #d2337d;
     }
 
@@ -267,7 +323,7 @@ const bannerListV2 = ref([
             width: auto;
           }
 
-          .swiper-pagination-bullets .swiper-pagination-bullet {
+          .swiper-pagination-bullet-banners .swiper-pagination-bullet-banner {
             width: 18px;
             height: 18px;
           }
@@ -275,7 +331,7 @@ const bannerListV2 = ref([
       }
     }
 
-    .swiper-pagination-bullet {
+    .swiper-pagination-bullet-banner {
       width: 12px;
       height: 12px;
       margin: 0 2px !important;
@@ -369,7 +425,7 @@ const bannerListV2 = ref([
       align-items: center;
     }
 
-    .swiper-pagination-bullet {
+    .swiper-pagination-bullet-banner {
       width: 3.2vw;
       height: 3.2vw;
       background: #fff;
@@ -385,7 +441,7 @@ const bannerListV2 = ref([
       margin: 0 2.13vw;
     }
 
-    .swiper-pagination-bullet-active {
+    .swiper-pagination-bullet-banner-active {
       background: #d2337d;
     }
 
