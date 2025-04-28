@@ -19,11 +19,7 @@ const activeNames = ref()
 
 <template>
   <div class="problem">
-    <div
-      class="d-flex flex-row mb-3 align-items-end subheading"
-      v-if="v2Versions"
-      v-html="problemData.title"
-    >
+    <div class="d-flex flex-row mb-3 align-items-end subheading" v-if="v2Versions" v-html="problemData.title">
     </div>
     <!-- <div class="dentistryServices-title problem-title" v-else>
       <div class="dentistryServices-title-in bb problem-title-in">
@@ -32,11 +28,8 @@ const activeNames = ref()
     </div> -->
     <div class="problem-in pageCon ckj-contrain">
       <el-collapse v-model="activeNames" accordion>
-        <el-collapse-item
-          v-for="(problemItem, problemIndex) in problemData.lists"
-          :key="problemIndex"
-          :name="problemIndex"
-        >
+        <el-collapse-item v-for="(problemItem, problemIndex) in problemData.lists" :key="problemIndex"
+          :name="problemIndex">
           <template #title>
             <div class="problem-in-title">
               <div>Q</div>
@@ -46,91 +39,59 @@ const activeNames = ref()
               </div>
             </div>
           </template>
-          <div
-            class="problem-in-context"
-          >
-            <span
-              :style="{
-                display:
-                  $t(problemItem.Q) == '誰是牙周病高危一族？'
-                    ? 'none'
-                    : 'block',
-              }"
-              >A</span
-            >
-            <div
-              class="risk_group"
-              v-if="$t(problemItem.Q) == '誰是牙周病高危一族？'"
-            >
+          <div class="problem-in-context">
+            <span :style="{
+              display:
+                $t(problemItem.Q) == '誰是牙周病高危一族？'
+                  ? 'none'
+                  : 'block',
+            }">A</span>
+            <div class="risk_group" v-if="$t(problemItem.Q) == '誰是牙周病高危一族？'">
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/cc6965e73ac20a7c.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/cc6965e73ac20a7c.png" alt="" />
                 </div>
                 <div>吸煙人士</div>
               </div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/82bc7bc8d1b7f798.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/82bc7bc8d1b7f798.png" alt="" />
                 </div>
                 <div>糖尿病患者</div>
               </div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/3094a7678ce6bb14.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/3094a7678ce6bb14.png" alt="" />
                 </div>
                 <div>長期服用藥物</div>
               </div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/52774259a391577f.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/52774259a391577f.png" alt="" />
                 </div>
                 <div>孕婦</div>
               </div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/d9852c16d65a15ce.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/d9852c16d65a15ce.png" alt="" />
                 </div>
                 <div>衛生意識薄弱</div>
               </div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/6e5bbfe0fc991979.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/6e5bbfe0fc991979.png" alt="" />
                 </div>
                 <div>飲食不均衡</div>
               </div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/b96537aa679013ac.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/b96537aa679013ac.png" alt="" />
                 </div>
                 <div>壓力大</div>
               </div>
               <div>
                 <div>
-                  <img
-                    src="https://static.cmereye.com/imgs/2024/08/bd40104a82d20991.png"
-                    alt=""
-                  />
+                  <img src="https://static.cmereye.com/imgs/2024/08/bd40104a82d20991.png" alt="" />
                 </div>
                 <div>家族遺傳</div>
               </div>
@@ -146,20 +107,22 @@ const activeNames = ref()
 <style lang="scss" scoped>
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url(https://statichk.cmermedical.com/ckj/font/helveticaneue-thin.woff2)
-    format('woff2');
+  src: url(https://statichk.cmermedical.com/ckj/font/helveticaneue-thin.woff2) format('woff2');
 }
+
 .risk_group {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px 10px;
   width: 80%;
   margin: 24px auto;
-  & > div {
+
+  &>div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    & > div:nth-child(2) {
+
+    &>div:nth-child(2) {
       margin-top: 7px;
       color: var(--Grey-Deep, #4d4d4d);
       text-align: center;
@@ -167,31 +130,38 @@ const activeNames = ref()
       font-size: 22px;
       font-style: normal;
       font-weight: 600;
-      line-height: 130%; /* 20.8px */
+      line-height: 130%;
+      /* 20.8px */
     }
   }
 }
+
 .problem {
   margin-top: 98px;
+
   &-in {
     margin-top: 20px;
     width: 100%;
     max-width: 960px;
+
     &-title {
       display: flex;
       justify-content: space-between;
       align-items: center;
       width: 100%;
-      & > div:nth-of-type(1) {
+
+      &>div:nth-of-type(1) {
         color: var(--Brand-Color, #f8298a);
         text-align: center;
         font-family: 'Helvetica Neue';
         font-size: 30px;
         font-style: normal;
         font-weight: 500;
-        line-height: 130%; /* 39px */
+        line-height: 130%;
+        /* 39px */
       }
-      & > div:nth-of-type(2) {
+
+      &>div:nth-of-type(2) {
         font-style: normal;
         font-weight: 700;
         font-size: 24px;
@@ -201,13 +171,16 @@ const activeNames = ref()
         flex: 1;
         text-align: center;
       }
-      & > div:nth-of-type(3) {
+
+      &>div:nth-of-type(3) {
         margin-right: 0;
       }
     }
+
     &-context {
       display: flex;
-      & > span:first-child {
+
+      &>span:first-child {
         color: var(--Brand-Color, #f8298a);
         text-align: center;
         font-family: 'Helvetica Neue';
@@ -218,7 +191,8 @@ const activeNames = ref()
         margin-left: 0;
         margin-top: 0;
       }
-      & > span:last-child {
+
+      &>span:last-child {
         flex: 1;
         font-style: normal;
         font-weight: 600;
@@ -231,33 +205,40 @@ const activeNames = ref()
     }
   }
 }
+
 :deep(.el-collapse) {
   border: none;
 }
+
 :deep(.el-collapse-item) {
   margin-bottom: 15px;
   border: none;
 }
+
 :deep(.el-collapse-item__wrap) {
   box-shadow: rgba(77, 77, 77, 0.2) 0px 2px 4px 1px;
   border-radius: 0 0 10px 10px;
   transition: all 0.3s ease;
+
   .problem-in-context {
     box-sizing: border-box;
     padding: 10px 28px;
     display: flex;
     gap: 0 23px;
-    & > span:nth-child(2) {
+
+    &>span:nth-child(2) {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
       font-size: 20px;
       font-style: normal;
       font-weight: 400;
-      line-height: 160%; /* 32px */
+      line-height: 160%;
+      /* 32px */
       letter-spacing: 4px;
     }
   }
 }
+
 :deep(.el-collapse-item__header) {
   padding: 0;
   background: var(--indexColor2);
@@ -267,6 +248,7 @@ const activeNames = ref()
   height: auto;
   border-radius: 10px;
   box-shadow: 0 2px 4px 2px #4d4d4d33;
+
   .problem-in-title {
     display: flex;
     align-items: center;
@@ -274,7 +256,8 @@ const activeNames = ref()
     box-sizing: border-box;
     padding: 0 28px;
     min-height: 50px;
-    & > div:nth-of-type(2) {
+
+    &>div:nth-of-type(2) {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
       font-size: 24px;
@@ -283,15 +266,24 @@ const activeNames = ref()
       line-height: normal;
       letter-spacing: 2.4px;
       text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 80%;
+      margin-left: 0;
+      margin-right: auto;
     }
   }
 }
+
 :deep(.el-collapse-item__header.is-active) {
   background: var(--indexColor1);
-  .problem-in-title > div:nth-of-type(1) {
+
+  .problem-in-title>div:nth-of-type(1) {
     color: var(--indexColor2);
   }
-  .problem-in-title > div:nth-of-type(2) {
+
+  .problem-in-title>div:nth-of-type(2) {
     color: #ffffff;
   }
 
@@ -300,50 +292,62 @@ const activeNames = ref()
     height: 2.4px;
     background: #fff;
     transition: all 0.3s;
-    & > img {
+
+    &>img {
       display: none;
     }
   }
 }
+
 :deep(.el-collapse-item__content) {
   overflow: none;
   padding-bottom: 5px;
 }
+
 :deep(.problem-in-context) {
   transition: all 0.3s ease;
 }
+
 :deep(.el-icon) {
   display: none;
 }
+
 @media (min-width: 992) {
   .problem {
     margin-top: 5.1042vw;
+
     &-in {
       margin-top: 1.8229vw;
       max-width: 960px;
+
       &-title {
-        & > div:nth-of-type(1) {
+        &>div:nth-of-type(1) {
           font-size: 2.0833vw;
         }
-        & > div:nth-of-type(2) {
+
+        &>div:nth-of-type(2) {
           font-size: 1.25vw;
           max-width: calc(100% - 3.6458vw);
           text-align: left;
         }
-        & > div:nth-of-type(3) {
+
+        &>div:nth-of-type(3) {
           margin-right: 1.6667vw;
         }
       }
+
       &-context {
-        & > span:first-child {
+        &>span:first-child {
           font-size: 2.0833vw;
         }
-        & > span:last-child {
+
+        &>span:last-child {
           font-size: 1.0417vw;
         }
       }
     }
   }
+
   :deep(.el-collapse-item__header) {
     border-radius: 10px;
   }
@@ -358,8 +362,9 @@ const activeNames = ref()
     padding: 2.665vw 0;
     width: 100%;
     margin: 3.5vw auto 0;
-    & > div {
-      & > div:nth-child(2) {
+
+    &>div {
+      &>div:nth-child(2) {
         margin-top: 3px;
         font-size: 3.2vw;
         text-align: center;
@@ -367,105 +372,127 @@ const activeNames = ref()
       }
     }
   }
+
   .problem {
     margin-top: 20px;
+
     &-title {
       &-in {
         font-size: 26px;
       }
     }
+
     &-in {
       margin-top: 20px;
       width: calc(100% - 60px);
+
       &-title {
-        & > div:nth-of-type(1) {
+        &>div:nth-of-type(1) {
           font-size: 26px;
           // margin-left: 3px;
         }
-        & > div:nth-of-type(2) {
+
+        &>div:nth-of-type(2) {
           font-size: 16px;
           // margin-left: 0px;
           text-align: left;
         }
-        & > div:nth-of-type(3) {
+
+        &>div:nth-of-type(3) {
           width: 13px;
           margin-right: 8px;
         }
       }
+
       &-context {
-        & > span:first-child {
+        &>span:first-child {
           // margin-left: 16px;
           font-size: 26px;
           line-height: normal;
         }
-        & > span:last-child {
+
+        &>span:last-child {
           // padding: 20px 17px 20px 14px;
           font-size: 16px;
         }
       }
     }
   }
+
   :deep(.el-collapse-item__header) {
     // height: 43px;
     border-radius: 2.65vw;
     min-height: 11.465vw;
     box-sizing: border-box;
+
     .problem-in-title {
       height: auto;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         color: var(--Brand-Color, #f8298a);
         text-align: center;
         font-family: 'Helvetica Neue';
         font-size: 5.33vw;
         font-style: normal;
         font-weight: 600;
-        line-height: 160%; /* 32px */
+        line-height: 160%;
+        /* 32px */
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         color: var(--Grey-Dark, #333);
         font-family: 'Noto Sans HK';
         font-size: 3.2vw;
         font-style: normal;
         font-weight: 500;
-        line-height: 150%; /* 18px */
+        line-height: 150%;
+        /* 18px */
         letter-spacing: 0.16vw;
       }
+
       box-sizing: border-box;
       padding: 1.3vw 2.13vw;
       display: flex;
       gap: 0 4vw;
     }
   }
+
   :deep(.el-collapse-item__wrap) {
     .problem-in-context {
       padding: 2.13vw 2.65vw;
       box-sizing: border-box;
       gap: 0 4.9vw;
-      & > span:nth-child(1) {
+
+      &>span:nth-child(1) {
         color: var(--Brand-Color, #f8298a);
         text-align: center;
         font-family: 'Helvetica Neue';
         font-size: 4.8vw;
         font-style: normal;
         font-weight: 500;
-        line-height: 160%; /* 25.6px */
+        line-height: 160%;
+        /* 25.6px */
       }
-      & > span:nth-child(2) {
+
+      &>span:nth-child(2) {
         color: var(--Grey-Dark, #333);
         text-align: justify;
         font-family: 'Noto Sans HK';
         font-size: 3.2vw;
         font-style: normal;
         font-weight: 350;
-        line-height: 150%; /* 18px */
+        line-height: 150%;
+        /* 18px */
         letter-spacing: 0.163vw;
       }
     }
   }
+
   :deep(.el-collapse-item) {
     margin-bottom: 1.3vw;
     border: none;
   }
+
   :deep(.el-collapse-item__content) {
     padding-bottom: 0;
   }

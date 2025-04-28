@@ -23,10 +23,22 @@ const typeList = ref([
         title: '集團常務院長',
       },
       {
+        name: '鞏賢平',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/2025040315380202.png',
+        title: '口腔醫院院長',
+      },
+      {
         name: '盧勇輝',
         appellation: '醫生',
         img: 'https://static.ckjhk.com/ckj-image/2025040315151502.png',
         title: '種植學總監',
+      },
+      {
+        name: '代堂華',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/22d0718f8299.png',
+        title: '醫院種植科醫生',
       }
     ]
   },
@@ -34,18 +46,31 @@ const typeList = ref([
     id: '102',
     name: '修復科',
     status: false,
+    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/533cd5d2e1944a98.jpg',
     doctor: [
       {
-        name: '李川',
+        name: '鞏賢平',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151501.png',
-        title: '集團常務院長',
+        img: 'https://static.ckjhk.com/ckj-image/2025040315380202.png',
+        title: '口腔醫院院長',
       },
       {
-        name: '盧勇輝',
+        name: '劉鑫',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151502.png',
-        title: '種植學總監',
+        img: 'https://static.ckjhk.com/ckj-image/19dffce4efa9.png',
+        title: '裕亨口腔診所<br class="d-flex d-lg-none" />院長',
+      },
+      {
+        name: '李格',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/67e09e7c12ca.png',
+        title: '恒美口腔門診<br class="d-flex d-lg-none" />院長',
+      },
+      {
+        name: '韋秋紅',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/74ffa2e38131.png',
+        title: '雅健/恒樂口腔<br class="d-flex d-lg-none" />門診院長',
       }
     ]
   },
@@ -53,18 +78,31 @@ const typeList = ref([
     id: '103',
     name: '矯正科',
     status: false,
+    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/dce268191178f65d.jpg',
     doctor: [
       {
-        name: '李川',
+        name: '熊國平',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151501.png',
-        title: '集團常務院長',
+        img: 'https://static.ckjhk.com/ckj-image/55c4393e1b2b.png',
+        title: '主任醫師',
       },
       {
-        name: '盧勇輝',
+        name: '陸卉',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151502.png',
-        title: '種植學總監',
+        img: 'https://static.ckjhk.com/ckj-image/4b36c636ce93.png',
+        title: '醫院副主任醫生',
+      },
+      {
+        name: '杜藝平',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/257361e1e9d5.png',
+        title: '醫院正畸科主任',
+      },
+      {
+        name: '李高華',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/b054c8409e9c.png',
+        title: '集團正畸<br />培訓主任',
       }
     ]
   },
@@ -90,6 +128,12 @@ const typeList = ref([
         appellation: '醫生',
         img: 'https://static.ckjhk.com/ckj-image/2025040315380201.png',
         title: '口腔醫院<br />綜合科總監',
+      },
+      {
+        name: '韋秋紅',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/74ffa2e38131.png',
+        title: '雅健/恒樂口腔門診<br />院長',
       }
     ]
   },
@@ -97,18 +141,31 @@ const typeList = ref([
     id: '105',
     name: '牙周病科',
     status: false,
+    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/43f7fdfa344a8b78.jpg',
     doctor: [
       {
-        name: '李川',
+        name: '曾紅艷',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151501.png',
-        title: '集團常務院長',
+        img: 'https://static.ckjhk.com/ckj-image/511baa5fcb99.png',
+        title: '集團牙周學科<br />帶頭人',
       },
       {
-        name: '盧勇輝',
+        name: '林露露',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151502.png',
-        title: '種植學總監',
+        img: 'https://static.ckjhk.com/ckj-image/1809c04037b9.png',
+        title: '恒潔口腔門診<br class="d-flex d-lg-none" />院長',
+      },
+      {
+        name: '嚴思',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/30cc6e2a3936.png',
+        title: '執業醫師',
+      },
+      {
+        name: '劉鵬宇',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/3da365d67430.png',
+        title: '執業醫師',
       }
     ]
   },
@@ -116,18 +173,31 @@ const typeList = ref([
     id: '106',
     name: '兒童牙科',
     status: false,
+    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/1877a39445db8018.jpg',
     doctor: [
       {
-        name: '李川',
+        name: '林露露',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151501.png',
-        title: '集團常務院長',
+        img: 'https://static.ckjhk.com/ckj-image/1809c04037b9.png',
+        title: '恒潔口腔門診<br class="d-flex d-lg-none" />院長',
       },
       {
-        name: '盧勇輝',
+        name: '王冉',
         appellation: '醫生',
-        img: 'https://static.ckjhk.com/ckj-image/2025040315151502.png',
-        title: '種植學總監',
+        img: 'https://static.ckjhk.com/ckj-image/8f6ef78ca07d.png',
+        title: '恒雅口腔門診<br class="d-flex d-lg-none" />副主任',
+      },
+      {
+        name: '李紅枝',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/e975797194d3.png',
+        title: '主治醫師',
+      },
+      {
+        name: '李少鈺',
+        appellation: '醫生',
+        img: 'https://static.ckjhk.com/ckj-image/dbc339fdab8b.png',
+        title: '主治醫師',
       }
     ]
   },
@@ -284,7 +354,7 @@ onMounted(() => {
     .doctor-team {
 
       display: flex;
-      gap: 0 50px;
+      gap: 0 25px;
       border-radius: 10px;
       align-items: flex-start;
       padding-bottom: 50px;
@@ -296,8 +366,8 @@ onMounted(() => {
         align-items: center;
 
         .img {
-          width: 228.571px;
-          height: 300px;
+          width: 186.571px;
+          height: 250px;
 
           &>img {
             border-radius: 10px;
@@ -317,7 +387,7 @@ onMounted(() => {
             color: #FFF;
             text-shadow: 0px 4px 4px #FC1682;
             font-family: "Noto Sans HK";
-            font-size: 40px;
+            font-size: 35px;
             font-style: normal;
             font-weight: 500;
             line-height: 160%;
@@ -326,7 +396,7 @@ onMounted(() => {
           &>.name-b {
             color: #FFF;
             font-family: "Noto Sans HK";
-            font-size: 24px;
+            font-size: 18px;
             font-style: normal;
             font-weight: 500;
             line-height: 160%;
@@ -345,11 +415,14 @@ onMounted(() => {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: "Noto Sans HK";
-          font-size: 24px;
+          font-size: 20px;
           font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: 2.4px;
+          letter-spacing: 2px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
         }
       }
     }
@@ -464,8 +537,8 @@ onMounted(() => {
         align-items: center;
 
         .img {
-          width: 28vw;
-          height: 35.733vw;
+          width: 21vw;
+          height: 26.733vw;
           transition: all 0.3s ease;
 
           &>img {
@@ -487,7 +560,7 @@ onMounted(() => {
             text-align: center;
             text-shadow: 0px 0.533vw 0.533vw #D2337D;
             font-family: "Noto Sans HK";
-            font-size: 5.33vw;
+            font-size: 3.73vw;
             font-style: normal;
             font-weight: 500;
             line-height: 130%;
@@ -497,10 +570,10 @@ onMounted(() => {
             color: var(--White, #FFF);
             text-align: center;
             font-family: "Noto Sans HK";
-            font-size: 3.733vw;
+            font-size: 2.833vw;
             font-style: normal;
             font-weight: 400;
-            line-height: 160%;
+            line-height: 120%;
             padding-bottom: 0;
           }
         }
@@ -516,11 +589,15 @@ onMounted(() => {
           color: var(--Grey-Dark, #333);
           text-align: center;
           font-family: "Noto Sans HK";
-          font-size: 3.733vw;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%;
+          font-size: 3.033vw;
           font-style: normal;
           font-weight: 500;
           line-height: 150%;
           letter-spacing: 0.7px;
+          white-space: nowrap;
         }
       }
     }

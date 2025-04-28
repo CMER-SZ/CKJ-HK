@@ -94,27 +94,28 @@ let doctorItemSwiper: any = {
 
 
 let orgTabCur = ref(0)
-const orgTabLists = ['監管單位', '戰略合作', '媒體合作', '服務客戶']
+const orgTabLists = ['服務客戶', '媒體合作', '戰略合作', '監管單位']
 const orgLists = [
   [
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2001.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2002.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2003.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2004.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2005.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2006.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2007.png',
-  ],
-  [
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1001.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1002.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1003.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1004.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1005.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1006.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1007.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1008.png',
-    'https://statichk.cmermedical.com/ckj/image/org-1009.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4001.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4002.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4003.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4004.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4005.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4006.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4007.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4008.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4009.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4010.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4011.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4012.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-4013.png',
+    'https://static.cmereye.com/imgs/2024/08/649a4dcca06fa45a.png',
+    'https://static.cmereye.com/imgs/2024/08/fb3b34ba5e3335e3.png',
+    'https://static.ckjhk.com/ckj-image/2025041716205903.png',
+    'https://static.ckjhk.com/ckj-image/2025041716205902.png',
+    'https://static.ckjhk.com/ckj-image/2025041716205901.png',
+    'https://static.ckjhk.com/ckj-image/2025041716114701.jpg'
   ],
   [
     'https://static.cmereye.com/imgs/2024/05/10fa105dea15be81.png',
@@ -138,25 +139,25 @@ const orgLists = [
     'https://static.cmereye.com/static/ckjnewsite/org/org-3013.png',
   ],
   [
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4001.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4002.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4003.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4004.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4005.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4006.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4007.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4008.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4009.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4010.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4011.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4012.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-4013.png',
-    'https://static.cmereye.com/imgs/2024/08/649a4dcca06fa45a.png',
-    'https://static.cmereye.com/imgs/2024/08/fb3b34ba5e3335e3.png',
-    'https://static.ckjhk.com/ckj-image/2025041716205903.png',
-    'https://static.ckjhk.com/ckj-image/2025041716205902.png',
-    'https://static.ckjhk.com/ckj-image/2025041716205901.png',
-    'https://static.ckjhk.com/ckj-image/2025041716114701.jpg'
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1001.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1002.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1003.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1004.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1005.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1006.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1007.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1008.png',
+    'https://statichk.cmermedical.com/ckj/image/org-1009.png',
+  ],
+
+  [
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2001.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2002.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2003.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2004.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2005.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2006.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2007.png',
   ],
 ]
 const handleorgtabfun = (orgTabIndex) => {
@@ -347,94 +348,94 @@ const handleProcessBtnClick = () => {
         </div>
         <div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/implant">
               <div><img src="https://static.ckjhk.com/ckj-image/1381e9540ac1.png" alt=""></div>
               <div><span>種植牙</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/scaling-and-polishing">
               <div><img src="https://static.ckjhk.com/ckj-image/b2eef97c5cb8.png" alt=""></div>
               <div><span>活動假牙</span><span>及牙橋</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/fillings">
               <div><img src="https://static.ckjhk.com/ckj-image/df725f68ae52.png" alt=""></div>
               <div><span>洗牙</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/veneers">
               <div><img src="https://static.ckjhk.com/ckj-image/3226530ad1ac.png" alt=""></div>
               <div><span>補牙</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/toothtray">
               <div><img src="https://static.ckjhk.com/ckj-image/12306b9549f2.png" alt=""></div>
               <div><span>杜牙根</span><span class="service_item_sub">(根管治療)</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/rootCanal">
               <div><img src="https://static.ckjhk.com/ckj-image/23c019aefe2b.png" alt=""></div>
               <div><span>牙冠</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/orthodontics">
               <div><img src="https://static.ckjhk.com/ckj-image/0f03be1d7f26.png" alt=""></div>
               <div><span>拔牙及</span><span>智慧齒拔除</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/invisiblebraces">
               <div><img src="https://static.ckjhk.com/ckj-image/38875c2bba26.png" alt=""></div>
               <div><span>牙周治療</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/all-ceramic-crowns">
               <div><img src="https://static.ckjhk.com/ckj-image/2025031009582001.png" alt=""></div>
               <div><span>牙齒美白</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
-              <div><img src="https://static.ckjhk.com/ckj-image/a30e76a0828c.png" alt=""></div>
+            <nuxt-link to="/dental-service/children-dentistry">
+              <div><img src="https://static.ckjhk.com/ckj-image/82b023da1bc7.png" alt=""></div>
               <div><span>瓷牙貼片</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/wisdom-teeth-extraction">
               <div><img src="https://static.ckjhk.com/ckj-image/62682fc283e1.png" alt=""></div>
               <div><span>箍牙</span><span class="service_item_sub">(牙齒矯正)</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/periodontal">
               <div><img src="https://static.ckjhk.com/ckj-image/9dfa76a2e948.png" alt=""></div>
               <div><span>隱形牙套</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/teeth-whitening">
               <div><img src="https://static.ckjhk.com/ckj-image/f2015ea8d422.png" alt=""></div>
               <div><span>兒童牙科</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="/dental-service/general-oral-examination">
               <div><img src="https://static.ckjhk.com/ckj-image/1622aad56701.png" alt=""></div>
               <div><span>口腔檢查</span></div>
-            </a>
+            </nuxt-link>
           </div>
           <div class="service_item">
-            <a href="#">
+            <nuxt-link to="">
               <div><img src="https://static.ckjhk.com/ckj-image/0d1c24437adc.png" alt=""></div>
               <div><span>長者牙科</span></div>
-            </a>
+            </nuxt-link>
           </div>
         </div>
       </div>
@@ -2695,7 +2696,7 @@ svg:hover path {
     }
 
     .doctor-team-content-btn {
-      margin: 15px auto;
+      margin: 35px auto;
       display: flex;
       justify-content: center;
       align-items: center;
