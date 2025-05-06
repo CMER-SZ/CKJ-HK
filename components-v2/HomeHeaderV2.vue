@@ -444,7 +444,7 @@ const implantItem = [
         ]"
       >
         <a class="a-header-content-in" href="#contactUsFormNav"
-          >👏即日起網上預約領取2000元種植牙現金券！</a
+          ><i style="color:red;font-style: normal;">❤</i> 感恩愛牙節 🦷 進口種植牙 ¥3689/顆 起❗</a
         >
 
         <nav class="navbar navbar-expand-lg navbar-light w-100">
