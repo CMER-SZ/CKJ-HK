@@ -4,6 +4,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper'
 import { useAppState } from '~/stores/appState'
 import type { CollapseModelValue } from 'element-plus'
 import { Scrollbar } from 'swiper'
+import { tr } from 'element-plus/es/locale'
 const appState = useAppState()
 appState.setDentistryService('toothtray')
 useHead({
@@ -686,7 +687,7 @@ const handleProcessBtnClick = () => {
 
 const typesOfDentures = ref(false)
 
-const isTypesOfDentures = () => {
+const isTypesOfDentures = (i:number) => {
   typesOfDentures.value = !typesOfDentures.value
 }
 const scrollContainer = ref<HTMLElement | null>(null)
@@ -715,6 +716,8 @@ onMounted(() => {
   getWindowWidth()
   numExpandedHeight()
   window.addEventListener('resize', getWindowWidth)
+
+  isTypesOfDentures(0)
 })
 </script>
 
@@ -844,15 +847,15 @@ onMounted(() => {
         <div class="d-flex flex-row  d-lg-none align-items-end subheading"><span
             style="color: var(--Brand-Color, #F8298A);font-size: 18px;line-height: 150%;">種類比較</span>
         </div>
-        <div class="tooth_tray_compare_kind_tab">
+        <div class="tooth_tray_compare_kind_tab  d-lg-none">
           <div class="tooth_tray_compare_kind_btn"
-            :class="[typesOfDentures ? 'tooth_tray_compare_kind_btn_active' : '']" @click="isTypesOfDentures">固定式假牙
+            :class="[typesOfDentures ? 'tooth_tray_compare_kind_btn_active' : '']" @click="isTypesOfDentures(1)">固定式假牙
           </div>
           <div class="tooth_tray_compare_kind_btn"
-            :class="[typesOfDentures ? '' : 'tooth_tray_compare_kind_btn_active']" @click="isTypesOfDentures">活動式假牙
+            :class="[typesOfDentures ? '' : 'tooth_tray_compare_kind_btn_active']" @click="isTypesOfDentures(2)">活動式假牙
           </div>
         </div>
-        <div class="tooth_tray_compare_kind_table">
+        <div class="tooth_tray_compare_kind_table   d-lg-none">
           <div class="table_row_one">類別</div>
           <div v-if="typesOfDentures" class="table_pink_title_box">牙套</div>
           <div v-if="typesOfDentures" class="table_pink_title_box">牙橋</div>
@@ -919,6 +922,74 @@ onMounted(() => {
           <div class="table_row_one">傷口大小</div>
           <div v-if="typesOfDentures" class="table_two_col">價格比種植牙便宜</div>
           <div v-if="!typesOfDentures" class="table_two_col">最便宜的重建牙齒方法</div>
+        </div>
+        <div class="tooth_tray_compare_kind_table  d-none d-lg-grid ">
+          <div class="table_row_one">類別</div>
+          <div class="table_pink_title_box">牙套</div>
+          <div class="table_pink_title_box">牙橋</div>
+          <div class="table_blue_title_box">局部牙托</div>
+          <div class="table_blue_title_box">全口牙托</div>
+          <div   class="table_img_box"><img
+              src="https://static.ckjhk.com/ckj-image/38eaaaf7a9d8.png" alt=""></div>
+          <div   class="table_img_box"><img
+              src="https://static.ckjhk.com/ckj-image/a0f40df6ff84.png" alt=""></div>
+          <div  class="table_img_box"><img
+              src="https://static.ckjhk.com/ckj-image/a1b900a60f44.png" alt=""></div>
+          <div  class="table_img_box"><img
+              src="https://static.ckjhk.com/ckj-image/2d5e51390162.png" alt=""></div>
+          <div class="table_row_one">適用人士</div>
+          <div   class="table_box_general">
+            <span>牙根健康</span>
+            <span>牙齒損耗範圍太大</span>
+            <span>已接受杜牙根治療</span>
+          </div>
+          <div   class="table_box_general">
+            <span>缺牙兩旁尚有健康牙齒</span>
+            <span>已拔走整隻牙齒</span>
+          </div>
+          <div  class="table_box_general">
+            <span>口腔內尚有健康牙齒</span>
+          </div>
+          <div  class="table_box_general">
+            <span>口腔內已無健康牙齒</span>
+          </div>
+          <div class="table_row_one">物料</div>
+          <div   class="table_two_col">全金屬、全鋯、全瓷</div>
+          <div  class="table_two_col">
+            <span>金屬支架或金屬勾</span>
+            <span>牙齒部分多由塑膠材料製造</span>
+          </div>
+          <div class="table_row_one">優點</div>
+          <div   class="table_box_general">
+            <span>保留真牙牙根</span>
+          </div>
+          <div   class="table_box_general">
+            <span>提高假牙穩定度</span>
+          </div>
+          <div  class="table_two_col">自由裝取</div>
+          <div class="table_row_one">缺點</div>
+          <div   class="table_box_general">需修磨牙齒</div>
+          <div   class="table_box_general"><span>需修磨兩側牙齒，若其中一顆牙齒出現問題，需重新製作整組牙橋</span></div>
+          <div  class="table_box_general">
+            <span>易磨損口腔內璧，造成潰瘍及疼痛</span>
+            <span>適應期較長</span>
+          </div>
+          <div  class="table_box_general">
+            <span>咬合感覺與真牙的感覺相差甚大，適應期長</span>
+            <span>易晃動及移位</span>
+          </div>
+          <div class="table_row_one">清潔方法</div>
+          <div   class="table_two_col">
+            <span>缺牙兩旁尚有健康牙齒</span>
+            <span>已拔走整隻牙齒</span>
+          </div>
+          <div  class="table_two_col">
+            <span>軟毛牙刷輕刷牙托表面</span>
+            <span>假牙清潔片輔助清潔</span>
+          </div>
+          <div class="table_row_one">傷口大小</div>
+          <div   class="table_two_col">價格比種植牙便宜</div>
+          <div  class="table_two_col">最便宜的重建牙齒方法</div>
         </div>
       </section>
       <section class="tooth_tray_flow_custom_made_bg">
@@ -1052,13 +1123,14 @@ onMounted(() => {
         </div>
       </section>
       <section class="tooth_tray_flow_share_bg">
-        <Swiper :slidesPerView="windowWidth > 768 ? 3 : 2" :spaceBetween="windowWidth > 768 ? 30 : 14" @swiper="setSwiperRef" :navigation="{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }" :autoplay="{ delay: 3000, disableOnInteraction: false }" :pagination="{
-          el: '.swiper-pagination',
-          clickable: true
-        }" class="testimonial-swiper">
+        <Swiper :slidesPerView="windowWidth > 768 ? 3 : 2" :spaceBetween="windowWidth > 768 ? 30 : 14"
+          @swiper="setSwiperRef" :navigation="{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+          }" :autoplay="{ delay: 3000, disableOnInteraction: false }" :pagination="{
+            el: '.swiper-pagination',
+            clickable: true
+          }" class="testimonial-swiper">
           <swiper-slide v-for="(item, index) in testimonials" :key="index">
             <div class="swiper_share_item">
               <img :src="item.img" />

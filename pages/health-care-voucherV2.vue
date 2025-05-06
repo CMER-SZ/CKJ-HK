@@ -555,7 +555,7 @@ const handleProcessBtnClick = () => {
             <div class="brief_introduction_content_info">
               <div><span>醫院地址：</span><span>深圳市羅湖區羅湖火車站大廈C區1樓大堂（出關後步行4分鐘）</span></div>
               <div><span>醫院營業時間：</span><span>上午9:00-下午6:00（假日照常）</span></div>
-              <div><span>查詢及預約電話：</span><a href="tel://852 69338128">(852) 6933 8128</a></div>
+              <div><span>查詢及預約電話：</span><a href="tel: 852 69338128">(852) 6933 8128</a></div>
             </div>
           </div>
           <div class="brief_introduction_content_btn" @click="showMoreInfo = !showMoreInfo" v-if="!showMoreInfo">
@@ -585,7 +585,7 @@ const handleProcessBtnClick = () => {
               href="https://bit.ly/%E6%84%9B%E5%BA%B7%E5%81%A5%E9%95%B7%E8%80%85%E9%86%AB%E7%99%82%E5%88%B8%E9%A0%90%E7%B4%84"
               target="_blank">
               網上查詢</a>
-            <span>或致電</span><a href="tel://852 69338128" target="_blank">69338128 </a><span>進行登記預約。</span><br /><br />
+            <span>或致電</span><a href="tel: 852 69338128" target="_blank">69338128 </a><span>進行登記預約。</span><br /><br />
           </div>
           <div>
             長者亦可親身前往該院一樓大堂接待處，待醫院職員安排分診。完成分診後，長者可前往五樓、六樓或七樓出示有效香港身份證或由入境事務處發出的《豁免登記證明書》進行身份認證及掛號。在接受牙科治療後，長者可按醫院指示到收費專窗使用醫療券支付服務費用。
@@ -1126,6 +1126,11 @@ const handleProcessBtnClick = () => {
           line-height: 160%;
           letter-spacing: 2px;
         }
+      }
+      &>div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        gap: 15px 0;
       }
 
       .medical_voucher_items {
