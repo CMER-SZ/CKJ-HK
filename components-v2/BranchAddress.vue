@@ -1141,11 +1141,11 @@ onMounted(() => {
     span {
       color: var(--Grey-Dark, #333);
       font-family: 'Noto Sans HK';
-      font-size: 4.8vw;
+      font-size: 4.265vw;
       font-style: normal;
       font-weight: 500;
       line-height: 170%;
-      letter-spacing: 0.48vw;
+      letter-spacing: 0.4265vw;
     }
 
     span:not(:last-child) {
@@ -1157,6 +1157,16 @@ onMounted(() => {
       line-height: 150%;
       /* 31.5px */
       letter-spacing: 0.56vw;
+    }
+
+    .span_colours {
+      color: var(--New-Theme-Color, #d2337d);
+      font-family: 'Noto Sans HK';
+      font-size: 4.8vw !important;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 170%;
+      letter-spacing: 0.48vw !important;
     }
   }
 }

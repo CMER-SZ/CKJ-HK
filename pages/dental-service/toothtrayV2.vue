@@ -628,7 +628,7 @@ const flow_custom_made_tab_lists_two = ref([
 const expandedHeight = ref(0)
 
 const numExpandedHeight = () => {
-  return windowWidth.value > 768 ? expandedHeight.value = 200 : expandedHeight.value = 135
+  return windowWidth.value > 768 ? expandedHeight.value = 170 : expandedHeight.value = 125
 }
 
 const numColorBlockHeight = () => {
@@ -686,19 +686,32 @@ const handleProcessBtnClick = () => {
 
 
 const typesOfDentures = ref(false)
-
-const isTypesOfDentures = (i:number) => {
+const index_active = ref(0)
+const ITEM_WIDTH = ref(194);
+const isTypesOfDentures = (i: number) => {
+  index_active.value = i
   typesOfDentures.value = !typesOfDentures.value
 }
 const scrollContainer = ref<HTMLElement | null>(null)
 const scrollRight = () => {
   if (scrollContainer.value) {
-    scrollContainer.value.scrollLeft += 194;
+    scrollContainer.value.scrollLeft += ITEM_WIDTH.value;
+    nextTick();
+    updateActiveIndex();
   }
 }
 const scrollLeft = () => {
   if (scrollContainer.value) {
-    scrollContainer.value.scrollLeft -= 194;
+    scrollContainer.value.scrollLeft -= ITEM_WIDTH.value;
+    nextTick();
+    updateActiveIndex();
+  }
+}
+
+const updateActiveIndex = () => {
+  if (scrollContainer.value) {
+    const index = Math.round(scrollContainer.value.scrollLeft / ITEM_WIDTH.value) + 1;
+    scrollActiveIndex.value = index;
   }
 }
 
@@ -706,7 +719,7 @@ const scrollActiveIndex = ref(1)
 const scrollToItem = (i: number) => {
   scrollActiveIndex.value = i
   if (scrollContainer.value) {
-    scrollContainer.value.scrollLeft = i * 194;
+    scrollContainer.value.scrollLeft = i * ITEM_WIDTH.value;
   }
 }
 
@@ -718,6 +731,7 @@ onMounted(() => {
   window.addEventListener('resize', getWindowWidth)
 
   isTypesOfDentures(0)
+  updateActiveIndex()
 })
 </script>
 
@@ -844,8 +858,9 @@ onMounted(() => {
           <span style="color: var(--Grey-Dark, #333);font-size:24px;">假牙及牙橋</span><span
             style="color: var(--Brand-Color, #F8298A);font-size:30px;line-height: 130%;">種類比較</span>
         </div>
-        <div class="d-flex flex-row  d-lg-none align-items-end subheading"><span
-            style="color: var(--Brand-Color, #F8298A);font-size: 18px;line-height: 150%;">種類比較</span>
+        <div class="d-flex flex-row  d-lg-none align-items-end subheading">
+          <span style="color: var(--Grey-Dark, #333);font-size:16px;">假牙</span><span
+            style="color: var(--Brand-Color, #F8298A);font-size: 18px;line-height: 140%;">種類比較</span>
         </div>
         <div class="tooth_tray_compare_kind_tab  d-lg-none">
           <div class="tooth_tray_compare_kind_btn"
@@ -929,67 +944,63 @@ onMounted(() => {
           <div class="table_pink_title_box">牙橋</div>
           <div class="table_blue_title_box">局部牙托</div>
           <div class="table_blue_title_box">全口牙托</div>
-          <div   class="table_img_box"><img
-              src="https://static.ckjhk.com/ckj-image/38eaaaf7a9d8.png" alt=""></div>
-          <div   class="table_img_box"><img
-              src="https://static.ckjhk.com/ckj-image/a0f40df6ff84.png" alt=""></div>
-          <div  class="table_img_box"><img
-              src="https://static.ckjhk.com/ckj-image/a1b900a60f44.png" alt=""></div>
-          <div  class="table_img_box"><img
-              src="https://static.ckjhk.com/ckj-image/2d5e51390162.png" alt=""></div>
+          <div class="table_img_box"><img src="https://static.ckjhk.com/ckj-image/38eaaaf7a9d8.png" alt=""></div>
+          <div class="table_img_box"><img src="https://static.ckjhk.com/ckj-image/a0f40df6ff84.png" alt=""></div>
+          <div class="table_img_box"><img src="https://static.ckjhk.com/ckj-image/a1b900a60f44.png" alt=""></div>
+          <div class="table_img_box"><img src="https://static.ckjhk.com/ckj-image/2d5e51390162.png" alt=""></div>
           <div class="table_row_one">適用人士</div>
-          <div   class="table_box_general">
+          <div class="table_box_general">
             <span>牙根健康</span>
             <span>牙齒損耗範圍太大</span>
             <span>已接受杜牙根治療</span>
           </div>
-          <div   class="table_box_general">
+          <div class="table_box_general">
             <span>缺牙兩旁尚有健康牙齒</span>
             <span>已拔走整隻牙齒</span>
           </div>
-          <div  class="table_box_general">
+          <div class="table_box_general">
             <span>口腔內尚有健康牙齒</span>
           </div>
-          <div  class="table_box_general">
+          <div class="table_box_general">
             <span>口腔內已無健康牙齒</span>
           </div>
           <div class="table_row_one">物料</div>
-          <div   class="table_two_col">全金屬、全鋯、全瓷</div>
-          <div  class="table_two_col">
+          <div class="table_two_col">全金屬、全鋯、全瓷</div>
+          <div class="table_two_col">
             <span>金屬支架或金屬勾</span>
             <span>牙齒部分多由塑膠材料製造</span>
           </div>
           <div class="table_row_one">優點</div>
-          <div   class="table_box_general">
+          <div class="table_box_general">
             <span>保留真牙牙根</span>
           </div>
-          <div   class="table_box_general">
+          <div class="table_box_general">
             <span>提高假牙穩定度</span>
           </div>
-          <div  class="table_two_col">自由裝取</div>
+          <div class="table_two_col">自由裝取</div>
           <div class="table_row_one">缺點</div>
-          <div   class="table_box_general">需修磨牙齒</div>
-          <div   class="table_box_general"><span>需修磨兩側牙齒，若其中一顆牙齒出現問題，需重新製作整組牙橋</span></div>
-          <div  class="table_box_general">
+          <div class="table_box_general">需修磨牙齒</div>
+          <div class="table_box_general"><span>需修磨兩側牙齒，若其中一顆牙齒出現問題，需重新製作整組牙橋</span></div>
+          <div class="table_box_general">
             <span>易磨損口腔內璧，造成潰瘍及疼痛</span>
             <span>適應期較長</span>
           </div>
-          <div  class="table_box_general">
+          <div class="table_box_general">
             <span>咬合感覺與真牙的感覺相差甚大，適應期長</span>
             <span>易晃動及移位</span>
           </div>
           <div class="table_row_one">清潔方法</div>
-          <div   class="table_two_col">
+          <div class="table_two_col">
             <span>缺牙兩旁尚有健康牙齒</span>
             <span>已拔走整隻牙齒</span>
           </div>
-          <div  class="table_two_col">
+          <div class="table_two_col">
             <span>軟毛牙刷輕刷牙托表面</span>
             <span>假牙清潔片輔助清潔</span>
           </div>
           <div class="table_row_one">傷口大小</div>
-          <div   class="table_two_col">價格比種植牙便宜</div>
-          <div  class="table_two_col">最便宜的重建牙齒方法</div>
+          <div class="table_two_col">價格比種植牙便宜</div>
+          <div class="table_two_col">最便宜的重建牙齒方法</div>
         </div>
       </section>
       <section class="tooth_tray_flow_custom_made_bg">
@@ -1141,7 +1152,7 @@ onMounted(() => {
           </swiper-slide>
         </Swiper>
         <!-- Navigation -->
-        <div class="flex justify-center mt-4">
+        <div class="flex justify-center mt-4 d-flex flex-row  d-lg-none">
           <div class="swiper-button-prev" @click="subNum">
             <svg width=" 13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M10 15L2.5 8.99931L10 3" stroke="#D2337D" stroke-width="4" stroke-miterlimit="10"
@@ -1825,7 +1836,7 @@ onMounted(() => {
           display: flex;
           align-items: center;
           cursor: pointer;
-          border-radius: 0px 10px 10px 0px;
+          border-radius: 10px 10px 0px 0px;
           background: var(--White, #FFF);
           height: 50px;
           box-sizing: border-box;
@@ -1892,10 +1903,10 @@ onMounted(() => {
         }
 
         .flow_custom_made_tab_item-content {
-          margin-top: 10px;
-          padding: 15px;
+          margin-top: 0;
+          padding: 0 15px 15px 15px;
           transition: all 0.3s ease;
-          border-radius: 10px;
+          border-radius: 0 0 10px 10px;
           background: var(--White, #FFF);
 
           &>div {
@@ -1912,7 +1923,7 @@ onMounted(() => {
 
             color: var(--Grey-Deep, #4D4D4D);
             font-family: "Noto Sans HK";
-            font-size: 18px;
+            font-size: 17px;
             font-style: normal;
             font-weight: 700;
             line-height: 200%;
@@ -2246,18 +2257,18 @@ onMounted(() => {
   }
 
   .tooth_tray_new_technique {
-    margin: 30px 0 0;
+    margin: 8vw 0 0;
 
     .tooth_tray_table {
       box-sizing: border-box;
-      padding: 0 15px;
+      padding: 0 4vw;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       box-sizing: border-box;
-
+      margin-top: 3.2vw;
 
       &>div:nth-child(3n + 1) {
-        width: 65px;
+        width: 17.33vw;
         border: 1px solid var(--Brand-Color, #F8298A);
         background: var(--Brand-Color, #F8298A);
         display: flex;
@@ -2266,23 +2277,23 @@ onMounted(() => {
         color: var(--White, #FFF);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 500;
         line-height: 150%;
         box-sizing: border-box;
-        padding: 6px 0;
-        border-bottom: 3px solid var(--Brand-Color, #F8298A);
+        padding: 1.6vw 0;
+        border-bottom: 0.8vw solid var(--Brand-Color, #F8298A);
       }
 
       &>div:nth-child(3n + 2),
       &>div:nth-child(3n + 3) {
-        width: 140px;
+        width: 37.33vw;
         background: var(--White, #fff);
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -2313,11 +2324,11 @@ onMounted(() => {
         color: var(--Brand-Color, #F8298A);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
-        margin-bottom: 20px;
+        margin-bottom: 3.33vw;
       }
 
       &>div:nth-child(5) {
@@ -2327,11 +2338,11 @@ onMounted(() => {
         color: var(--White, #FFF);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 16px;
+        font-size: 4.265vw;
         font-style: normal;
         font-weight: 700;
         line-height: 150%;
-        letter-spacing: 1.6px;
+        letter-spacing: 0.4265vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2343,11 +2354,11 @@ onMounted(() => {
       &>div:nth-child(5)::after {
         content: "";
         position: absolute;
-        top: -24px;
+        top: -3.3vw;
         left: 50%;
         transform: translateX(-50%);
-        width: 19.791px;
-        height: 12.007px;
+        width: 4.744vw;
+        height: 3.201vw;
         background: url(/_nuxt/assets/images/group3910.svg) no-repeat;
         background-size: contain;
         z-index: 1;
@@ -2359,11 +2370,11 @@ onMounted(() => {
         color: var(--White, #FFF);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 16px;
+        font-size: 4.265vw;
         font-style: normal;
         font-weight: 700;
         line-height: 150%;
-        letter-spacing: 1.6px;
+        letter-spacing: 0.4265vw;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2457,33 +2468,33 @@ onMounted(() => {
   }
 
   .tooth_tray_share_food {
-    margin: 7px 0 30px;
+    margin: 1.865vw 0 8vw;
 
     .tooth_tray_share_food_content {
-      margin-top: 7px;
+      margin-top: 1.865vw;
       box-sizing: border-box;
-      padding: 0 30px;
+      padding: 0 8vw;
       color: var(--Grey-Deep, #4D4D4D);
       text-align: justify;
       font-family: "Noto Sans HK";
-      font-size: 12px;
+      font-size: 3.2vw;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.16vw;
     }
   }
 
   .tooth_tray_service {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .tooth_tray_step {
-      margin-top: 20px;
+      margin-top: 5.33vw;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 7.2vw 4.8vw;
       box-sizing: border-box;
-      padding: 0 20px;
+      padding: 0 5.33vw;
 
       .fillings-step-item {
         position: relative;
@@ -2531,27 +2542,28 @@ onMounted(() => {
           display: flex;
           flex-direction: column;
           box-sizing: border-box;
-          padding: 0 6px;
+          padding: 0 1.6vw;
 
           &>span:nth-child(1) {
             color: var(--Brand-Color, #F8298A);
             text-align: center;
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.733vw;
             font-style: normal;
             font-weight: 600;
             line-height: 150%;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.1865vw;
           }
 
           &>span:nth-child(2) {
             color: #000;
             font-family: "Noto Sans HK";
-            font-size: 12px;
+            font-size: 3.2vw;
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.13vw;
+            text-align: center;
           }
         }
       }
@@ -2621,19 +2633,20 @@ onMounted(() => {
       padding: 0 15px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      max-width: 92vw;
 
       &>div {
-        width: 140px;
+        width: 37.33vw;
         border-bottom: 0.2px solid var(--Grey-Light, #E6E6E6);
         border-right: 0.2px solid var(--Grey-Light, #E6E6E6);
         box-sizing: border-box;
-        padding: 5px 3px;
+        padding: 5px 0.8vw;
         display: flex;
         align-items: center;
         justify-content: center;
         color: var(--Grey-Dark, #333);
         font-family: "Noto Sans HK";
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -2646,13 +2659,13 @@ onMounted(() => {
           justify-content: flex-start;
           color: var(--Grey-Dark, #333);
           font-family: "Noto Sans HK";
-          font-size: 12px;
+          font-size: 3.2vw;
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
           letter-spacing: 0px;
           width: 100%;
-          padding-left: 12px;
+          padding-left: 3.2vw;
           position: relative;
         }
 
@@ -2660,11 +2673,11 @@ onMounted(() => {
           content: '·';
           position: absolute;
           left: 1px;
-          top: 9px;
+          top: 2.4vw;
           transform: translateY(-50%);
           color: var(--Grey-Dark, #333);
           font-family: "Noto Sans HK";
-          font-size: 12px;
+          font-size: 3.2vw;
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
@@ -2678,7 +2691,7 @@ onMounted(() => {
 
       .table_two_col {
         grid-column: span 2;
-        width: calc(140px * 2);
+        width: calc(37.33vw * 2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -2705,13 +2718,13 @@ onMounted(() => {
       }
 
       .table_row_one {
-        width: 65px;
+        width: 17.33vw;
         border: 1px solid var(--Pink-Mid, #F670AE);
         background: var(--Brand-Color, #F8298A);
         color: var(--White, #FFF);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -2722,7 +2735,7 @@ onMounted(() => {
       }
 
       &>div:nth-child(1) {
-        border-radius: 20px 0px 0px 0px;
+        border-radius: 5.33vw 0px 0px 0px;
       }
 
       .table_pink_title_box {
@@ -2731,7 +2744,7 @@ onMounted(() => {
         color: var(--White, #FFF);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -2744,7 +2757,7 @@ onMounted(() => {
         color: var(--White, #FFF);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 12px;
+        font-size: 3.2vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
@@ -2752,15 +2765,15 @@ onMounted(() => {
       }
 
       &>div:nth-child(5) {
-        border-radius: 0px 20px 0px 0px;
+        border-radius: 0px 5.33vw 0px 0px;
       }
 
       &>div:nth-child(30) {
-        border-radius: 0px 0px 0px 20px;
+        border-radius: 0px 0px 0px 5.33vw;
       }
 
       &>div:nth-child(32) {
-        border-radius: 0px 0px 20px 0px;
+        border-radius: 0px 0px 5.33vw 0px;
       }
     }
   }
@@ -2769,12 +2782,12 @@ onMounted(() => {
     background: linear-gradient(0deg, rgba(255, 241, 240, 0.00) 0%, rgba(255, 241, 240, 0.70) 12.5%, rgba(255, 241, 240, 0.70) 81.99%, rgba(255, 241, 240, 0.00) 100%);
 
     .tooth_tray_flow_custom_made {
-      margin: 30px 0;
+      margin: 8vw 0;
 
       .flow_custom_made_tab {
-        margin: 20px auto;
+        margin: 5.33vw auto;
         box-sizing: border-box;
-        padding: 0 20px;
+        padding: 0 5.33vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -2785,14 +2798,14 @@ onMounted(() => {
 
           /* 桌面版/PC-頂部目錄 */
           font-family: "Noto Sans TC";
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: 150%;
           /* 24px */
           letter-spacing: 1px;
           box-sizing: border-box;
-          padding: 5.5px 40px;
+          padding: 1.465vw 10.665vw;
           background: var(--White, #FFF);
         }
 
@@ -2801,7 +2814,7 @@ onMounted(() => {
           color: var(--White, #FFF);
           text-align: center;
           font-family: "Noto Sans TC";
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: 150%;
@@ -2813,14 +2826,14 @@ onMounted(() => {
 
         .flow_custom_made_tab_text:nth-child(1) {
           border-right: 1px solid var(--Grey-Light, #E6E6E6);
-          border-radius: 5px 0 0 5px;
+          border-radius: 1.33vw 0 0 1.33vw;
           border: 1px solid var(--Grey-Light, #E6E6E6);
           border-right: none;
         }
 
         .flow_custom_made_tab_text:nth-child(2) {
           border-left: 1px solid var(--Grey-Light, #E6E6E6);
-          border-radius: 0 5px 5px 0;
+          border-radius: 0 1.33vw 1.33vw 0;
           border: 1px solid var(--Grey-Light, #E6E6E6);
           border-left: none;
         }
@@ -2829,17 +2842,17 @@ onMounted(() => {
 
       .flow_custom_made_tab_collapse {
         box-sizing: border-box;
-        padding: 0 20px;
+        padding: 0 5.33vw;
 
         .wrapper {
           animation: identifier 0.5s ease forwards;
         }
 
         .flow_custom_made_tab_item {
-          margin: 3px 0;
+          margin: 0.8vw 0;
           display: flex;
           width: 100%;
-          gap: 0 3px;
+          gap: 0 0.8vw;
         }
 
         .flow_custom_made_tab_item:nth-child(1) {
@@ -2884,44 +2897,44 @@ onMounted(() => {
           display: flex;
           align-items: center;
           cursor: pointer;
-          border-radius: 0px 5px 5px 0px;
+          border-radius: 0px 1.33vw 1.33vw 0px;
           background: var(--White, #FFF);
-          height: 40px;
+          height: 10.65vw;
           box-sizing: border-box;
-          padding: 9px 11px;
+          padding: 2.4vw 2.933vw;
           display: flex;
           align-items: center;
           justify-content: flex-start;
-          gap: 0 9px;
+          gap: 0 2.4vw;
           position: relative;
 
           &>div:nth-child(1) {
             color: var(--Theme-Color, #FC1682);
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.733vw;
             font-style: normal;
             font-weight: 600;
             line-height: 150%;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.1865vw;
           }
 
           &>div:nth-child(2) {
             color: var(--Grey-Dark, #333);
             text-align: justify;
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.733vw;
             font-style: normal;
             font-weight: 600;
             line-height: 150%;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.1865vw;
           }
 
           &>div:nth-child(3) {
             position: absolute;
-            right: 11px;
+            right: 2.93vw;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 18px;
+            font-size: 4.8vw;
             color: var(--Theme-Color, #FC1682);
             font-weight: 900;
             transition: all 0.3s ease;
@@ -2929,8 +2942,8 @@ onMounted(() => {
         }
 
         .color-block {
-          width: 27px;
-          height: 40px;
+          width: 7.2vw;
+          height: 37.33vw;
           background-color: #ff60a7;
           transition: all 0.3s ease;
           clip-path: polygon(50% 15%, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
@@ -2942,15 +2955,15 @@ onMounted(() => {
         }
 
         .flow_custom_made_tab_item-header span {
-          margin-left: 10px;
-          font-size: 16px;
+          margin-left: 2.65vw;
+          font-size: 4.265vw;
         }
 
         .flow_custom_made_tab_item-content {
           margin-top: 0;
-          padding: 0px 30px 9px 30px;
+          padding: 0px 8vw 2.4vw 8vw;
           transition: all 0.3s ease;
-          border-radius: 10px;
+          border-radius: 0 0 2.665vw;
           background: var(--White, #FFF);
 
           &>div {
@@ -2958,22 +2971,22 @@ onMounted(() => {
               color: var(--Theme-Color, #FC1682);
               text-align: justify;
               font-family: "Noto Sans HK";
-              font-size: 12px;
+              font-size: 3vw;
               font-style: normal;
               font-weight: 400;
               line-height: 150%;
               /* 18px */
-              letter-spacing: 0.6px;
+              letter-spacing: 0.06vw;
             }
 
             color: var(--Grey-Deep, #4D4D4D);
             font-family: "Noto Sans HK";
-            font-size: 12px;
+            font-size: 3vw;
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
             /* 18px */
-            letter-spacing: 0.6px;
+            letter-spacing: 0.16vw;
           }
         }
       }
@@ -2981,13 +2994,13 @@ onMounted(() => {
   }
 
   .tooth_tray_flow_advantage {
-    margin: 30px 0 70px;
+    margin: 8vw 0 18.665vw;
 
     .tooth_tray_flow_advantage_content {
-      margin-top: 20px;
-      margin-left: 20px;
+      margin-top: 5.33vw;
+      margin-left: 5.33vw;
       display: flex;
-      gap: 0 14px;
+      gap: 0 3.733vw;
       width: 720px;
       overflow-x: scroll;
       overflow-y: hidden;
@@ -2997,14 +3010,14 @@ onMounted(() => {
       padding-right: 370px;
 
       &>div {
-        width: 180px;
-        min-width: 180px;
-        height: 298px;
+        width: 48vw;
+        min-width: 48vw;
+        height: 79.465vw;
         border-radius: 10px;
         border: 2px solid var(--Pink-Mid, #FFA5CF);
         background: linear-gradient(194deg, #FEE6F1 3.13%, rgba(254, 230, 241, 0.00) 49.04%), var(--White, #FFF);
         box-sizing: border-box;
-        padding: 14px 17px 18px 21px;
+        padding: 3.733vw 4.53vw 4.8vw 5.6vw;
         display: flex;
         flex-direction: column;
 
@@ -3025,20 +3038,20 @@ onMounted(() => {
         }
 
         &>div:nth-child(2) {
-          margin: 8px 0 12px;
+          margin: 2.13vw 0 3.2vw;
           color: var(--Theme-Color, #FC1682);
           text-align: center;
           font-family: "Noto Sans HK";
-          font-size: 18px;
+          font-size: 4.8vw;
           font-style: normal;
           font-weight: 700;
           line-height: 120%;
           /* 21.6px */
-          letter-spacing: 1.8px;
+          letter-spacing: 0.48vw;
 
           span {
-            font-size: 16px;
-            letter-spacing: 1.6px;
+            font-size: 4.265vw;
+            letter-spacing: 0.4265vw;
           }
         }
 
@@ -3046,12 +3059,12 @@ onMounted(() => {
           color: var(--Grey-Dark, #333);
           text-align: justify;
           font-family: "Noto Sans HK";
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
           /* 21px */
-          letter-spacing: 0.7px;
+          letter-spacing: 0.1865vw;
         }
       }
 
@@ -3066,9 +3079,9 @@ onMounted(() => {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0 10px;
+      gap: 0 2.65vw;
       position: absolute;
-      margin: 20px auto;
+      margin: 5.33vw auto;
       width: 100%;
 
       .scroll_button {
@@ -3105,10 +3118,10 @@ onMounted(() => {
   }
 
   .tooth_tray_flow_share {
-    margin: 30px 0 0;
+    margin: 8vw 0 0;
 
     .tooth_tray_flow_share_content {
-      margin-top: 20px;
+      margin-top: 5.33vw;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -3118,13 +3131,13 @@ onMounted(() => {
         color: var(--Theme-Color, #FC1682);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 18px;
+        font-size: 4.8vw;
         font-style: normal;
         font-weight: 700;
         line-height: 120%;
         /* 21.6px */
-        letter-spacing: 1.8px;
-        padding-bottom: 24px;
+        letter-spacing: 0.48vw;
+        padding-bottom: 6.4vw;
       }
 
       &>div:first-child,
@@ -3132,11 +3145,11 @@ onMounted(() => {
         color: #FDD3E3;
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 48px;
+        font-size: 12.8vw;
         font-style: normal;
         font-weight: 700;
         line-height: 100%;
-        letter-spacing: 9.6px;
+        letter-spacing: 2.56vw;
       }
     }
   }
@@ -3144,20 +3157,20 @@ onMounted(() => {
   .tooth_tray_flow_share_bg {
     background: linear-gradient(184deg, var(--Pink-Pale, #FFE9EC) 13.58%, rgba(255, 255, 255, 0.00) 96.98%);
     box-sizing: border-box;
-    padding: 85px 0 50px;
+    padding: 22.665vw 0 13.33vw;
     position: relative;
     // margin-left: 20px;
-
+    &>div:nth-child(2) {
+      position: relative;
+      z-index: 1;
+    }
     :deep(.swiper) {
       max-width: 100%;
-      margin: 0 auto 0 20px;
+      margin: 0 auto 0 5.33vw;
       overflow: initial;
     }
 
     .swiper_share_item {
-      // width: 180px;
-      // min-width: 180px;
-      // height: 225px;
       border-radius: 10px;
       border: 2px solid var(--Pink-Mid, #FFA5CF);
       background: linear-gradient(191deg, #FFF 3.08%, rgba(255, 255, 255, 0.00) 98.82%), var(--White, #FFF);
@@ -3167,51 +3180,51 @@ onMounted(() => {
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
-      padding: 75px 15px 15px;
+      padding: 20vw 4vw 4vw;
       position: relative;
 
       &>img {
         position: absolute;
-        width: 124px;
-        height: 124px;
+        width: 33.065vw;
+        height: 33.065vw;
         object-fit: cover;
-        top: -65px;
+        top: -17.33vw;
       }
 
       h3 {
         color: var(--Grey-Dark, #333);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 600;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
+        letter-spacing: 0.1865vw;
       }
 
       p:nth-child(3) {
         color: var(--Brand-Color, #F8298A);
         text-align: center;
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 600;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
+        letter-spacing: 0.1865vw;
       }
 
       p:nth-child(4) {
         color: var(--Grey-Dark, #333);
         text-align: justify;
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
+        letter-spacing: 0.1865vw;
       }
     }
 
@@ -3233,13 +3246,13 @@ onMounted(() => {
       position: initial;
       display: flex;
       align-items: center;
-      gap: 0 10px;
-      margin: 0 10px;
+      gap: 0 2.665vw;
+      margin: 0 2.665vw;
     }
 
     .swiper-pagination-bullet {
-      width: 18px;
-      height: 18px;
+      width: 4.8vw;
+      height: 4.8vw;
       background: #fff;
       box-shadow: 0px 0px 2.665vw rgba(0, 0, 0, 0.3);
       opacity: 1;
@@ -3261,10 +3274,10 @@ onMounted(() => {
       background: #fff;
       box-shadow: 0px 0px 2.665vw rgba(0, 0, 0, 0.3);
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      min-width: 30px;
-      min-height: 30px;
+      width: 8vw;
+      height: 8vw;
+      min-width: 8vw;
+      min-height: 8vw;
       top: initial;
       margin-top: initial;
       position: initial;
@@ -3273,7 +3286,7 @@ onMounted(() => {
 
     .swiper-button-prev:hover,
     .swiper-button-next:hover {
-      box-shadow: (0px 0px 10px rgba(0, 0, 0, 0.3));
+      box-shadow: (0px 0px 2.65vw rgba(0, 0, 0, 0.3));
       background: #d2337d;
 
       svg {
@@ -3295,7 +3308,13 @@ onMounted(() => {
     letter-spacing: 0.48vw;
 
     span {
+      font-family: "Noto Sans HK";
       color: var(--Brand-Color, #F8298A);
+      font-size: 3.733vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.48vw;
     }
   }
 }

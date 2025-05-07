@@ -424,8 +424,12 @@ const handleProcessBtnClick = () => {
     <div class="new-health-care-voucher">
       <section class="senior_citizen_discount_bg">
         <section class="ckj-container senior_citizen_discount">
-          <div class="d-flex flex-row align-items-end subheading">
+          <div class="d-flex flex-row  d-none d-lg-flex align-items-end subheading">
             <span>65歲及以上</span><span>香港長者睇牙優惠</span>
+          </div>
+          <div class="d-flex flex-row  d-lg-none align-items-end subheading">
+            <span style="color: var(--Brand-Color, #F8298A);font-size: 18px;line-height: 150%;">65歲及以上</span>
+            <span style="font-size: 16px;color: var(--Grey-Dark, #333);">香港長者睇牙優惠</span>
           </div>
           <div class="senior_citizen_discount_content">
             <div class="senior_items">
@@ -497,8 +501,12 @@ const handleProcessBtnClick = () => {
         </section>
       </section>
       <section class="ckj-container medical_voucher">
-        <div class="d-flex flex-row align-items-end subheading">
+        <div class="d-flex flex-row  d-none d-lg-flex align-items-end subheading">
           <span style="color: var(--GHV-Green, #01A853);">醫療券</span><span>牙科項目</span>
+        </div>
+        <div class="d-flex flex-row  d-lg-none align-items-end subheading">
+          <span style="color: var(--GHV-Green, #01A853);font-size: 18px;line-height: 150%;">醫療券</span>
+          <span style="font-size: 16px;color: var(--Grey-Dark, #333);">牙科項目</span>
         </div>
         <div class="medical_voucher_content">
           <div>
@@ -546,8 +554,12 @@ const handleProcessBtnClick = () => {
         </div>
       </section>
       <section class="ckj-container brief_introduction">
-        <div class="d-flex flex-row align-items-end subheading">
-          <span>深圳愛康健口腔醫院</span><span>簡介</span>
+        <div class="d-flex flex-row  d-none d-lg-flex align-items-end subheading">
+          <span class="span_colours">深圳愛康健口腔醫院</span><span>簡介</span>
+        </div>
+        <div class="d-flex flex-row  d-lg-none align-items-end subheading">
+          <span style="color: var(--Brand-Color, #F8298A);font-size: 18px;line-height: 150%;">深圳愛康健口腔醫院</span>
+          <span style="font-size: 16px;color: var(--Grey-Dark, #333);">簡介</span>
         </div>
         <div class="brief_introduction_content">
           <div class="brief_introduction_content_box1">
@@ -657,7 +669,7 @@ const handleProcessBtnClick = () => {
           <span style="color: var(--GHV-Green, #01A853);font-size: 18px;">「長者醫療券大灣區試點計劃」</span><span>新聞</span>
         </div>
         <div class="d-flex flex-row  d-lg-none align-items-end subheading">
-          <span style="font-size: 16px;color: var(--GHV-Green, #01A853);">「長者醫療券大灣區試點計劃」</span><span
+          <span style="font-size: 18px;color: var(--GHV-Green, #01A853);">「長者醫療券大灣區試點計劃」</span><span
             style="color: var(--Grey-Dark, #333);font-size: 16px;line-height: 150%;">新聞</span>
         </div>
         <div>
@@ -1124,13 +1136,15 @@ const handleProcessBtnClick = () => {
           font-style: normal;
           font-weight: 700;
           line-height: 160%;
-          letter-spacing: 2px;
+          letter-spacing: 1.6px;
         }
       }
+
       &>div:nth-child(2) {
         display: flex;
         flex-direction: column;
         gap: 15px 0;
+        padding: 15px 0;
       }
 
       .medical_voucher_items {
@@ -1162,7 +1176,7 @@ const handleProcessBtnClick = () => {
             font-style: normal;
             font-weight: 400;
             line-height: 160%;
-            letter-spacing: 4px;
+            letter-spacing: 3.5px;
           }
         }
       }
@@ -1716,21 +1730,22 @@ const handleProcessBtnClick = () => {
     background: var(--Pale-Pink-Grad, linear-gradient(184deg, rgba(255, 255, 255, 0.00) 13.58%, var(--Pink-Pale, #FFE9EC) 96.98%));
 
     .senior_citizen_discount {
-      margin: 30px 0;
+      margin: 8vw 0;
 
       .senior_citizen_discount_content {
-        margin: 15px 5.33vw;
-        height: 500px;
+        margin: 4vw 5.33vw 21.865vw;
+        height: 133.33vw;
         display: flex;
-        gap: 15px;
+        gap: 4vw;
         position: relative;
         flex-direction: column;
         justify-content: space-between;
 
         .senior_items {
-          width: 160px;
+          width: 42.65vw;
           height: fit-content;
           border-radius: 10px;
+          padding: 2.65vw 0;
           border: 2px solid var(--Pink-Mid, #FFA5CF);
           background: linear-gradient(90deg, var(--White, #FFF) 0%, rgba(255, 250, 250, 0.50) 26.5%, rgba(255, 250, 250, 0.50) 70.33%, var(--White, #FFF) 96.35%), var(--White, #FFF);
 
@@ -1738,21 +1753,21 @@ const handleProcessBtnClick = () => {
             color: var(--Grey-Deep, #4D4D4D);
             text-align: center;
             font-family: "Noto Sans HK";
-            font-size: 18px;
+            font-size: 4.8vw;
             font-style: normal;
             font-weight: 700;
             line-height: 120%;
-            letter-spacing: 1.8px;
+            letter-spacing: 0.48vw;
             position: relative;
-            margin-bottom: 10px;
+            margin-bottom: 2.65vw;
           }
 
           .senior_items_title::after {
             position: absolute;
             content: '';
             display: inline-block;
-            width: 142px;
-            bottom: -5px;
+            width: 37.865vw;
+            bottom: -1.33vw;
             z-index: 3;
             left: 50%;
             transform: translateX(-50%);
@@ -1765,7 +1780,7 @@ const handleProcessBtnClick = () => {
             content: '';
             display: inline-block;
             width: 20%;
-            bottom: -5px;
+            bottom: -1.33vw;
             z-index: 4;
             left: 50%;
             transform: translateX(-50%);
@@ -1783,48 +1798,48 @@ const handleProcessBtnClick = () => {
           .senior_items_num {
             color: var(--Brand-Color, #F8298A);
             font-family: "Noto Sans HK";
-            font-size: 24px;
+            font-size: 6.4vw;
             font-style: normal;
             font-weight: 700;
             line-height: normal;
-            letter-spacing: 2.4px;
+            letter-spacing: 0.64vw;
           }
 
           .senior_items_text_red {
             color: var(--Brand-Color, #F8298A);
             font-family: "Noto Sans HK";
-            font-size: 18px;
+            font-size: 4.8vw;
             font-style: normal;
             font-weight: 700;
             line-height: 120%;
-            letter-spacing: 1.8px;
+            letter-spacing: 0.48vw;
           }
 
           .senior_items_text {
             color: var(--Grey-Deep, #4D4D4D);
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.733vw;
             font-style: normal;
             font-weight: 600;
             line-height: 150%;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.186vw;
           }
 
           .senior_items_text_slow {
             color: var(--Grey-Deep, #4D4D4D);
             text-align: center;
             font-family: "Noto Sans HK";
-            font-size: 12px;
+            font-size: 3.2vw;
             font-style: normal;
             font-weight: 500;
             line-height: 150%;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.16vw;
           }
 
           .senior_items_bottom_line {
-            padding-bottom: 8px;
+            padding-bottom: 2.13vw;
             border-bottom: 1.28px dashed var(--Brand-Color, #F8298A);
-            margin-bottom: 10px;
+            margin-bottom: 3.73vw;
           }
 
 
@@ -1832,15 +1847,15 @@ const handleProcessBtnClick = () => {
             border-radius: 5px;
             background: var(--Brand-Color, #F8298A);
             box-sizing: border-box;
-            padding: 3px 10px;
-            margin-bottom: 5px;
+            padding: 0.8vw 3.733vw;
+            margin-bottom: 1.33vw;
             color: var(--White, #FFF);
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.73vw;
             font-style: normal;
             font-weight: 600;
             line-height: 150%;
-            letter-spacing: 0.7px;
+            letter-spacing: 0.1865vw;
           }
         }
 
@@ -1853,12 +1868,12 @@ const handleProcessBtnClick = () => {
 
         .senior_items:nth-child(5) {
           top: auto;
-          bottom: 0;
+          bottom: -17.5vw;
         }
       }
 
       .senior_citizen_discount_btn {
-        margin: 15px auto 20px;
+        margin: 5px auto 20px;
         padding-bottom: 20px;
 
         :deep(.animbtntypetwo) {
@@ -1870,44 +1885,45 @@ const handleProcessBtnClick = () => {
 
   .medical_voucher {
     padding: 0;
-    margin: 30px auto;
+    margin: 8vw auto;
 
     .medical_voucher_content {
-      margin-top: 30px;
+      margin-top: 8vw;
       display: flex;
       flex-direction: column;
-      gap: 10px 0;
+      gap: 2.665vw 0;
 
       &>div:nth-child(1) {
         border-radius: 10px;
         border: 1px solid var(---Green, #00A752);
         background: rgba(1, 168, 83, 0.07);
         box-sizing: border-box;
-        padding: 10px;
-        margin: 0 10px;
+        padding: 2.665vw;
+        margin: 0 2.665vw;
         display: flex;
         flex-direction: column;
-        gap: 15px 0;
-        max-width: 600px;
+        gap: 4vw 0;
+        max-width: 100%;
 
         &>div:last-child {
           color: var(--GHV-Green, #01A853);
           text-align: justify;
           font-family: "Noto Sans HK";
-          font-size: 12px;
+          font-size: 3.2vw;
           font-style: normal;
           font-weight: 500;
           line-height: 150%;
-          letter-spacing: 0.6px;
+          letter-spacing: 0.16vw;
         }
       }
 
       &>div:nth-child(2) {
+        margin: 0 2.66vw;
         box-sizing: border-box;
-        padding: 0 10px;
+        padding: 0 2.66vw;
         display: flex;
         flex-direction: column;
-        gap: 10px 0;
+        gap: 2.66vw 0;
       }
 
       .medical_voucher_items {
@@ -1916,30 +1932,30 @@ const handleProcessBtnClick = () => {
 
         .medical_voucher_items_title {
           box-sizing: border-box;
-          padding: 0 15px;
+          padding: 0 4vw;
           color: var(--White, #FFF);
           font-family: "Noto Sans HK";
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 600;
           line-height: 150%;
-          letter-spacing: 0.7px;
+          letter-spacing: 0.1865vw;
           width: fit-content;
-          border-radius: 30px;
+          border-radius: 8vw;
           background: var(--GHV-Green, #01A853);
         }
 
         .medical_voucher_items_list {
-          padding-left: 10px;
+          padding-left: 2.665vw;
 
           &>div {
             color: var(--Grey-Dark, #333);
             font-family: "Noto Sans HK";
-            font-size: 12px;
+            font-size: 3.2vw;
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
-            letter-spacing: 0.6px;
+            letter-spacing: 0.16vw;
           }
         }
       }
@@ -1947,43 +1963,43 @@ const handleProcessBtnClick = () => {
   }
 
   .brief_introduction {
-    margin: 30px 0;
+    margin: 8vw 0;
 
     .brief_introduction_content {
-      margin: 0 30px;
+      margin: 0 8vw;
     }
 
     .brief_introduction_content_box1 {
-      margin: 30px auto;
+      margin: 8vw auto;
 
       .brief_introduction_content_info {
         display: flex;
         flex-direction: column;
-        margin-top: 30px;
+        margin-top: 8vw;
 
         &>div {
           &>span:nth-child(1) {
             color: var(--Grey-Deep, #4D4D4D);
             text-align: justify;
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.733vw;
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
             /* 21px */
-            letter-spacing: 0.5px;
+            letter-spacing: 0.13vw;
           }
 
           &>span:nth-child(2),
           &>a {
             color: var(--Theme-Color, #FC1682);
             font-family: "Noto Sans HK";
-            font-size: 14px;
+            font-size: 3.733vw;
             font-style: normal;
             font-weight: 400;
             line-height: 150%;
             /* 21px */
-            letter-spacing: 0.5px;
+            letter-spacing: 0.133vw;
           }
         }
       }
@@ -1993,32 +2009,32 @@ const handleProcessBtnClick = () => {
       color: var(--Grey-Deep, #4D4D4D);
       text-align: justify;
       font-family: "Noto Sans HK";
-      font-size: 14px;
+      font-size: 3.733vw;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
-      letter-spacing: 0.7px;
+      letter-spacing: 0.1865vw;
     }
 
     .brief_introduction_content_btn {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 8vw;
     }
   }
 
   .method_step {
     .method_step_content {
-      margin: 0 30px;
+      margin: 4vw 8vw 0;
       color: var(--Grey-Deep, #4D4D4D);
       text-align: justify;
       font-family: "Noto Sans HK";
-      font-size: 14px;
+      font-size: 3.733vw;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
       /* 21px */
-      letter-spacing: 0.7px;
+      letter-spacing: 0.1865vw;
 
       &>div {
         a {
@@ -2029,27 +2045,27 @@ const handleProcessBtnClick = () => {
   }
 
   .see_a_doctor_flow {
-    margin: 30px auto;
+    margin: 8vw auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px 0;
+    gap: 6.667vw 0;
     box-sizing: border-box;
-    padding: 0 30px;
+    padding: 0 8vw;
 
     .bg_text {
       color: var(--White, #FFF);
       text-align: center;
       font-family: "Noto Sans TC";
-      font-size: 14px;
+      font-size: 3.733vw;
       font-style: normal;
       font-weight: 600;
       line-height: 150%;
       /* 21px */
-      letter-spacing: 0.7px;
+      letter-spacing: 0.1865vw;
 
       border-radius: 5px;
-      padding: 4px 20px;
+      padding: 1.065vw 5.33vw;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -2070,19 +2086,19 @@ const handleProcessBtnClick = () => {
     }
 
     &>div:nth-child(2) {
-      gap: 0 79.5px;
+      gap: 0 21.2vw;
     }
 
     &>div:nth-child(3) {
-      gap: 0 29.5px;
+      gap: 0 7.865vw;
     }
 
     &>div:nth-child(5) {
-      gap: 0 79.5px;
+      gap: 0 21.2vw;
     }
 
     &>div:nth-child(6) {
-      gap: 0 170px;
+      gap: 0 45.33vw;
     }
 
     &>div {
@@ -2094,8 +2110,8 @@ const handleProcessBtnClick = () => {
       content: '';
       position: absolute;
       display: inline-block;
-      width: 171px;
-      height: 17px;
+      width: 45.6vw;
+      height: 4.53vw;
       background: url('https://static.ckjhk.com/ckj-image/3ba4d18c6ac3.svg') no-repeat;
       background-size: cover;
       bottom: -68%;
@@ -2112,8 +2128,8 @@ const handleProcessBtnClick = () => {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 7px;
-        height: 17px;
+        width: 1.865vw;
+        height: 4.53vw;
         background: url('https://static.ckjhk.com/ckj-image/ceba626974a3.svg') no-repeat;
         background-size: cover;
         bottom: -65%;
@@ -2131,8 +2147,8 @@ const handleProcessBtnClick = () => {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 28.295px;
-        height: 38.5px;
+        width: 7.5453vw;
+        height: 10.265vw;
         background: url('https://static.ckjhk.com/ckj-image/da511156228a.svg') no-repeat;
         background-size: cover;
         bottom: -80%;
@@ -2144,8 +2160,8 @@ const handleProcessBtnClick = () => {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 7px;
-        height: 17px;
+        width: 1.865vw;
+        height: 4.53vw;
         background: url('https://static.ckjhk.com/ckj-image/ceba626974a3.svg') no-repeat;
         background-size: cover;
         bottom: 20%;
@@ -2163,8 +2179,8 @@ const handleProcessBtnClick = () => {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 28.295px;
-        height: 38.5px;
+        width: 7.5453vw;
+        height: 10.265vw;
         background: url('https://static.ckjhk.com/ckj-image/da511156228a.svg') no-repeat;
         background-size: cover;
         bottom: -141%;
@@ -2182,8 +2198,8 @@ const handleProcessBtnClick = () => {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 7px;
-        height: 17px;
+        width: 1.865vw;
+        height: 4.53vw;
         background: url('https://static.ckjhk.com/ckj-image/ceba626974a3.svg') no-repeat;
         background-size: cover;
         bottom: -68%;
@@ -2195,8 +2211,8 @@ const handleProcessBtnClick = () => {
         content: '';
         position: absolute;
         display: inline-block;
-        width: 28.295px;
-        height: 91.56px;
+        width: 7.5453vw;
+        height: 24.416vw;
         background: url('https://static.ckjhk.com/ckj-image/311219214d38.svg') no-repeat;
         background-size: cover;
         bottom: -330%;
@@ -2210,8 +2226,8 @@ const handleProcessBtnClick = () => {
       content: '';
       position: absolute;
       display: inline-block;
-      width: 7px;
-      height: 17px;
+      width: 1.865vw;
+      height: 4.53vw;
       background: url('https://static.ckjhk.com/ckj-image/ceba626974a3.svg') no-repeat;
       background-size: cover;
       bottom: -68%;
@@ -2221,12 +2237,12 @@ const handleProcessBtnClick = () => {
   }
 
   .apply_for_path {
-    margin: 30px auto;
+    margin: 8vw auto;
 
     .apply_for_path_iframe {
-      width: 272px;
-      height: 153px;
-      margin: 15px auto;
+      width: 72.533vw;
+      height: 40.8vw;
+      margin: 4vw auto;
       box-sizing: border-box;
 
       &>iframe {
@@ -2237,21 +2253,21 @@ const handleProcessBtnClick = () => {
 
     .apply_for_path_content {
       box-sizing: border-box;
-      padding: 0 30px;
+      padding: 0 8vw;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 15px 0;
+      gap: 4vw 0;
 
       &>a {
         color: var(--GHV-Green, #01A853);
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
+        letter-spacing: 0.1865vw;
         text-decoration-line: underline;
         text-decoration-style: solid;
         text-decoration-skip-ink: auto;
@@ -2263,18 +2279,18 @@ const handleProcessBtnClick = () => {
       &>div {
         color: var(--Grey-Deep, #4D4D4D);
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
         /* 21px */
-        letter-spacing: 0.7px;
+        letter-spacing: 0.1865vw;
       }
     }
   }
 
   .about_link {
-    margin: 30px auto;
+    margin: 8vw auto;
 
     ul {
       display: flex;
@@ -2283,10 +2299,10 @@ const handleProcessBtnClick = () => {
       align-items: flex-start;
       gap: 0;
       margin-top: 0;
-      padding-left: 30px;
+      padding-left: 8vw;
 
       li {
-        margin-left: 20px;
+        margin-left: 5.33vw;
         box-sizing: border-box;
         padding: 0;
         list-style: disc;
@@ -2296,11 +2312,11 @@ const handleProcessBtnClick = () => {
           color: var(--Brand-Color, #F8298A);
           text-align: center;
           font-family: "Noto Sans HK";
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
-          letter-spacing: 0.7px;
+          letter-spacing: 0.1865vw;
           text-decoration-line: underline;
           text-decoration-style: solid;
           text-decoration-skip-ink: auto;
@@ -2313,16 +2329,16 @@ const handleProcessBtnClick = () => {
   }
 
   .news_content_list {
-    margin: 30px auto;
+    margin: 8vw auto;
 
     &>div:nth-child(3) {
 
       .news_content_list_item {
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
         display: flex;
         flex-direction: column;
-        gap: 15px 0;
+        gap: 4vw 0;
       }
 
       .news_content_list_item_img {
@@ -2332,15 +2348,15 @@ const handleProcessBtnClick = () => {
 
       .news_content_list_item_text {
         box-sizing: border-box;
-        padding: 0 30px;
+        padding: 0 8vw;
         color: var(--Grey-Deep, #4D4D4D);
         text-align: justify;
         font-family: "Noto Sans HK";
-        font-size: 14px;
+        font-size: 3.733vw;
         font-style: normal;
         font-weight: 400;
         line-height: 150%;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.1865vw;
       }
 
       .news_content_list_item_text_one {
@@ -2354,8 +2370,8 @@ const handleProcessBtnClick = () => {
       }
 
       .news_content_list_item_iframe {
-        width: 272px;
-        height: 152.32px;
+        width: 72.533vw;
+        height: 40.618vw;
         margin: 0 auto;
 
         &>iframe {
@@ -2376,8 +2392,8 @@ const handleProcessBtnClick = () => {
   .animbtntypetwo {
     &-in {
       &>span {
-        font-size: 20px;
-        padding: 8px 30px;
+        font-size: 5.33vw;
+        padding: 2.133vw 8vw;
       }
 
       &::after {
@@ -2386,8 +2402,8 @@ const handleProcessBtnClick = () => {
 
       &.smallmb {
         &>span {
-          font-size: 16px;
-          padding: 5px 20px;
+          font-size: 4.265vw;
+          padding: 1.33vw 5.33vw;
         }
       }
     }
@@ -4907,30 +4923,31 @@ const handleProcessBtnClick = () => {
 
       :deep(.swiper-slide) {
         .image {
-          width: 315px;
-          height: 315px;
+          width: 84vw;
+          height: 84vw;
+          margin: 0 auto;
 
           img {
-            object-fit: cover;
+            object-fit: contain;
             width: 100%;
             height: 100%;
           }
         }
 
         h2 {
-          margin: 10px 0;
+          margin: 2.665vw 0;
           overflow: hidden;
           color: var(--Brand-Color, #F8298A);
           text-align: justify;
           text-overflow: ellipsis;
           white-space: nowrap;
           font-family: "Noto Sans HK";
-          font-size: 16px;
+          font-size: 4.265vw;
           font-style: normal;
           font-weight: 700;
           line-height: 150%;
           /* 24px */
-          letter-spacing: 1.6px;
+          letter-spacing: 0.265vw;
         }
 
         div:nth-child(3) {
@@ -4938,14 +4955,11 @@ const handleProcessBtnClick = () => {
           color: var(--Grey-Mid, #666);
           text-align: justify;
           text-overflow: ellipsis;
-
           font-family: "Noto Sans HK";
-          font-size: 14px;
+          font-size: 3.733vw;
           font-style: normal;
           font-weight: 400;
           line-height: 150%;
-
-
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
