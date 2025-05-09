@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay, Navigation, Pagination } from 'swiper'
 import gsap from 'gsap'
-import { Autoplay } from 'swiper'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useAppState } from '~/stores/appState'
 import doctorLists_cs from '~/assets/js/doctor'
@@ -28,72 +29,9 @@ useHead({
   ],
 })
 
-const caseSharingLists = [
-  {
-    name: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.name',
-    skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.skill',
-    text: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.text',
-    context: 'pages.index.caseSharing.caseSharingLists.caseSharing_1.context',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/06/72a1864e2021e804.jpg',
-  },
-  {
-    name: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.name',
-    skill: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.skill',
-    text: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.text',
-    context: 'pages.index.caseSharing.caseSharingLists.caseSharing_2.context',
-    imgUrl: 'https://static.cmereye.com/imgs/2023/06/f1fab4a43cdea943.jpg',
-  },
-]
 
-const caseSharingTopData = {
-  type: 'pages.index.caseSharing.caseSharingTopData.type',
-  name: 'pages.index.caseSharing.caseSharingTopData.name',
-  skill: 'pages.index.caseSharing.caseSharingTopData.skill',
-  process: 'pages.index.caseSharing.caseSharingTopData.process',
-  text: 'pages.index.caseSharing.caseSharingTopData.text',
-  imgUrl: 'https://static.cmereye.com/imgs/2023/06/b6685121c74c93e0.png',
-}
 
-//医生模块轮播图事件
-let doctorTeamCurrent = ref(1)
-const onSlideDoctorTeamSwiperChange = (swiper: any) => {
-  doctorTeamCurrent.value = swiper.realIndex + 1
-}
 
-let areaTabCurNum = computed(() => {
-  return appState.areaTabCurNum
-})
-
-const treatmentData = [
-  {
-    name: '接診人數',
-    num: '259,376',
-    bg: 'https://static.cmereye.com/static/ckj/imgs/svg/icon_16_1.svg',
-    left: '30%',
-    top: '-31%',
-  },
-  {
-    name: '已修復牙冠',
-    num: '25,295',
-    bg: 'https://static.cmereye.com/static/ckj/imgs/svg/icon_16_3.svg',
-    left: '15%',
-    top: '50%',
-  },
-  {
-    name: '種植牙數',
-    num: '27,008',
-    bg: 'https://static.cmereye.com/imgs/2024/01/5bc753351f96d0d0.png',
-    left: '15%',
-    top: '-10%',
-  },
-  {
-    name: '全瓷貼面數',
-    num: '3,336',
-    bg: 'https://static.cmereye.com/static/ckj/imgs/svg/icon_16_4.svg',
-    left: '53%',
-    top: '-3%',
-  },
-]
 let showTreatment = ref(false)
 const scrollWatch = () => {
   let _dome: any = document.getElementsByClassName('treatment-data')
@@ -113,15 +51,7 @@ onMounted(() => {
   window.addEventListener('scroll', scrollWatch)
 })
 
-watch(
-  areaTabCurNum,
-  (newValue, oldValue) => {
-    changeAreaTabCur(newValue)
-  },
-  {
-    deep: true,
-  }
-)
+
 
 const headerConfigData = {
   img: 'https://static.cmereye.com/imgs/2024/02/5605cbd7689de37c.jpg',
@@ -133,52 +63,13 @@ const headerConfigData = {
 }
 
 let dentalProfessionCur = ref('0')
-const dentalProfessionList = [
-  {
-    id: '101',
-    name: '種植科',
-  },
-  {
-    id: '102',
-    name: '修復科',
-  },
-  {
-    id: '103',
-    name: '矯正科',
-  },
-  {
-    id: '104',
-    name: '牙髓病科',
-  },
-  {
-    id: '105',
-    name: '牙周病科',
-  },
-  {
-    id: '106',
-    name: '兒童牙科',
-  },
-  {
-    id: '107',
-    name: '口腔頜面外科',
-  },
-]
+
 
 let doctorCur = ref('')
 
 let actDoctorListd: any = ref([])
 
-const changleDoctorLists: any = () => {
-  let a = doctorLists_cs[appState.areaTabCurNum]
-  let b =
-    a.filter((temp: any) => {
-      return (
-        temp.dentalProfessionId.includes(dentalProfessionCur.value) &&
-        temp.isIndexShow
-      )
-    }) || []
-  actDoctorListd.value = b
-}
+
 let loading = ref(false)
 const checkId = ref('101')
 const handletab2 = async (id: string, dpc: Boolean = false) => {
@@ -188,7 +79,6 @@ const handletab2 = async (id: string, dpc: Boolean = false) => {
   loading.value = true
   setTimeout(() => {
     dentalProfessionCur.value = id
-    changleDoctorLists()
     doctorCur.value =
       actDoctorListd.value.length > 0 ? actDoctorListd.value[0].id : ''
     nextTick(() => {
@@ -197,102 +87,15 @@ const handletab2 = async (id: string, dpc: Boolean = false) => {
     loading.value = false
   }, 500)
 }
-const changeAreaTabCur = (_idx: any) => {
-  if (_idx === 3) {
-    handletab2('102', true)
-  } else {
-    handletab2('101', true)
-  }
-}
-const handleDoctorItem = (id: any) => {
-  doctorCur.value = id
-  let _idx = actDoctorListd.value.findIndex((item) => item.id === id) || 0
-  doctorItemSwiper.slideToLoop(_idx)
-}
+
 let doctorItemSwiper: any = {
   slideToLoop: (a) => { },
 }
 
-const setDoctorItemSwiper = (swiper: any) => {
-  doctorItemSwiper = swiper
-}
-const doctorItemSlideChange = (swiper) => {
-  nextTick(() => {
-    doctorCur.value = actDoctorListd.value[swiper.realIndex].id || ''
-    doctorTabSwiper_pc.slideToLoop(swiper.realIndex)
-    doctorTabSwiper_mb.slideToLoop(swiper.realIndex)
-  })
-}
-let doctorTabSwiper_pc = {
-  slideToLoop: (a) => { },
-}
-let doctorTabSwiper_mb = {
-  slideToLoop: (a) => { },
-}
-const setDoctorTabSwiperRef_pc = (swiper: any) => {
-  doctorTabSwiper_pc = swiper
-}
-const setDoctorTabSwiperRef_mb = (swiper: any) => {
-  doctorTabSwiper_mb = swiper
-}
-const changeDentalProfessionList = () => {
-  let _lists: any = []
-  if (doctorLists_cs[appState.areaTabCurNum].length > 0) {
-    for (var i = 0; i < doctorLists_cs[appState.areaTabCurNum].length; i++) {
-      if (doctorLists_cs[appState.areaTabCurNum][i].isIndexShow) {
-        _lists = [
-          ..._lists,
-          ...doctorLists_cs[appState.areaTabCurNum][i].dentalProfessionId,
-        ]
-        _lists = [...new Set(_lists)]
-      }
-    }
-  }
-  return dentalProfessionList.filter((item) => _lists.includes(item.id)) || []
-}
 
 let orgTabCur = ref(0)
-const orgTabLists = ['監管單位', '戰略合作', '媒體合作', '服務客戶']
+const orgTabLists = ['服務客戶', '媒體合作', '戰略合作', '監管單位']
 const orgLists = [
-  [
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2001.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2002.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2003.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2004.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2005.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2006.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-2007.png',
-  ],
-  [
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1001.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1002.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1003.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1004.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1005.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1006.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1007.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-1008.png',
-    'https://statichk.cmermedical.com/ckj/image/org-1009.png',
-  ],
-  [
-    'https://static.cmereye.com/imgs/2024/05/10fa105dea15be81.png',
-    'https://static.cmereye.com/imgs/2024/04/0a0cc588677cf1ab.png',
-    'https://static.cmereye.com/imgs/2024/04/746c9bc800d9bd68.png',
-    'https://static.cmereye.com/imgs/2024/04/9dd67f204905f590.png',
-    'https://static.cmereye.com/imgs/2024/04/438936f0a5412fd7.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3002.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3003.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3004.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3005.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3006.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3007.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3008.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3009.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3010.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3011.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3012.png',
-    'https://static.cmereye.com/static/ckjnewsite/org/org-3013.png',
-  ],
   [
     'https://static.cmereye.com/static/ckjnewsite/org/org-4001.png',
     'https://static.cmereye.com/static/ckjnewsite/org/org-4002.png',
@@ -314,6 +117,48 @@ const orgLists = [
     'https://static.ckjhk.com/ckj-image/2025041716205901.png',
     'https://static.ckjhk.com/ckj-image/2025041716114701.jpg'
   ],
+  [
+    'https://static.cmereye.com/imgs/2024/05/10fa105dea15be81.png',
+    'https://static.cmereye.com/imgs/2024/04/0a0cc588677cf1ab.png',
+    'https://static.cmereye.com/imgs/2024/04/746c9bc800d9bd68.png',
+    'https://static.cmereye.com/imgs/2024/04/9dd67f204905f590.png',
+    'https://static.cmereye.com/imgs/2024/04/438936f0a5412fd7.png',
+    'https://static.ckjhk.com/ckj-image/2025042415011202.png',
+    'https://static.ckjhk.com/ckj-image/2025042415011201.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3002.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3003.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3004.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3005.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3006.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3007.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3008.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3009.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3010.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3011.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3012.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-3013.png',
+  ],
+  [
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1001.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1002.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1003.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1004.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1005.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1006.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1007.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-1008.png',
+    'https://statichk.cmermedical.com/ckj/image/org-1009.png',
+  ],
+
+  [
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2001.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2002.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2003.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2004.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2005.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2006.png',
+    'https://static.cmereye.com/static/ckjnewsite/org/org-2007.png',
+  ],
 ]
 const handleorgtabfun = (orgTabIndex) => {
   orgTabCur.value = orgTabIndex
@@ -329,194 +174,8 @@ const onIndexOrgSlideChange = (swiper) => {
   orgTabCur.value = swiper.realIndex ? Number(swiper.realIndex) : 0
 }
 
-const doctorTeam = ref(null)
-const { top, bottom } = useElementBounding(doctorTeam)
-const { height } = useWindowSize()
-
-let Latest_Movies_cur = ref(0)
-const Latest_Movies = ref([
-  [
-    {
-      link: 'https://youtu.be/0UslK-Xrm5o',
-      url: 'https://www.youtube.com/embed/0UslK-Xrm5o?si=bpyjiRhIMOLrIM1Q',
-      name: '🛍️ 潮流興北上消費，超值吃喝玩樂睇牙！🎤 咪咪姐推薦實力牙科 🦷 北上睇牙 | 大灣區醫療',
-    },
-    {
-      link: 'https://youtu.be/Hxm0arbKJbc',
-      url: 'https://www.youtube.com/embed/Hxm0arbKJbc?si=1Xat0Ooo-lIWqyaS',
-      name: '愛康健超聲波洗牙 ¥88 🦷 超級抵呀！| 北上睇牙 | 大灣區醫療 | 洗牙',
-    },
-  ],
-  [
-    {
-      link: 'https://youtu.be/izyVofSiVas',
-      url: 'https://www.youtube.com/embed/izyVofSiVas?si=VJ-9jtOD1Nx2Ctpz',
-      name: '【什麼是種植牙「即剝即種」?】愛康健齒科 | 植牙 | 牙科常見問題 | 鞏賢平醫生',
-    },
-    {
-      link: 'https://youtu.be/sVCzNLe7i_s',
-      url: 'https://www.youtube.com/embed/sVCzNLe7i_s?si=JpX5VvPxZz7AexFD',
-      name: '【新種植牙新技術】愛康健齒科 | 植牙 | 牙科常見問題 | 鞏賢平醫生',
-    },
-  ],
-  [
-    {
-      link: 'https://youtu.be/7pDm-bLWrSM',
-      url: 'https://www.youtube.com/embed/7pDm-bLWrSM?si=79EOTWDF5JRtovIu',
-      name: '【愛康健王琦口腔診所】福田口岸最近牙科診所 | 覆診方便 | 過馬路即到 | 港人北上睇牙首選 🦷',
-    },
-    {
-      link: 'https://youtu.be/OEMkvjgnhtw',
-      url: 'https://www.youtube.com/embed/OEMkvjgnhtw?si=7MpoHt3ny6um6KTv',
-      name: '【愛康健李川口腔診所】福田旗艦店 | 4層26個診症間 | 北上睇牙唔使等 🦷',
-    },
-  ],
-])
-
-let actShowShare = ref('')
-const handleClick = (event, _id) => {
-  event.preventDefault()
-  if (actShowShare.value === _id) {
-    actShowShare.value = ''
-  } else {
-    actShowShare.value = _id
-  }
-}
-
-let saveData = ref({
-  newLists_0: [],
-  newLists_1: [],
-  newLists_2: [],
-})
-let indexNewsCur = ref(0)
-let indexNewsLists = ref([[] as any, [] as any, [] as any])
-const handleNewsTab = (idx) => {
-  if (indexNewsCur.value === idx) return
-  indexNewsCur.value = idx
-  getNewsLists(idx)
-}
-const formatDate = (dateString) => {
-  let _date = new Date(dateString)
-  if (_date.getTime() > Date.now() - 86400000 * 2) {
-    if (Math.floor((Date.now() - _date.getTime()) / 1000 / 60 / 60)) {
-      return (
-        Math.floor((Date.now() - _date.getTime()) / 1000 / 60 / 60) + '小時前'
-      )
-    } else {
-      return '剛剛'
-    }
-  } else if (_date.getTime() > Date.now() - 86400000 * 7) {
-    return (
-      Math.floor((Date.now() - _date.getTime()) / 1000 / 60 / 60 / 24) + '天前'
-    )
-  } else {
-    var date = new Date(dateString)
-    var year = date.getFullYear()
-    var month = ('0' + (date.getMonth() + 1)).slice(-2)
-    var day = ('0' + date.getDate()).slice(-2)
-    return year + '年' + month + '月' + day + '日'
-  }
-}
-const getNewsLists = async (idx = 0) => {
-  if (indexNewsLists.value[idx].length) return
-  let a = [
-    {
-      idx: 0,
-      id: 14,
-      url: '/news/article/',
-    },
-    {
-      idx: 1,
-      id: 15,
-      url: '/news/news-information/',
-    },
-    {
-      idx: 2,
-      id: 16,
-      url: '/news/news-tooth-wiki/',
-    },
-  ]
-  let b: any = a.find((item) => item.idx === idx)
-  let c = 16
-  if (b) {
-    c = b.id
-  } else return
-  const _res: any = await useFetch(
-    `https://admin.ckjhk.com/api.php/list/${c}/page/1/num/3`
-  )
-  let res = JSON.parse(_res.data.value) || null
-  if (res) {
-    // console.log(res)
-    indexNewsLists.value[idx] = res.data.map((item) => {
-      return {
-        id: item.id || '',
-        logo:
-          (item.ext_news_logo.indexOf('/static/upload/image') !== -1
-            ? `https://admin.ckjhk.com${item.ext_news_logo}`
-            : item.ext_news_logo) || '',
-        img:
-          (item.ico.indexOf('/static/upload/image') !== -1
-            ? `https://admin.ckjhk.com${item.ico}`
-            : item.ico) || '',
-        desc: item.ext_news_desc || '',
-        name: item.title || '',
-        logoText: item.tags || '',
-        time:
-          idx === 2
-            ? formatDate(item.update_time)
-            : formatDate(item.ext_news_time),
-        link: `${b.url}${item.id}`,
-      }
-    })
-  }
-}
-const shareFacebook = (event, id) => {
-  event.preventDefault()
-  window.open(
-    `https://www.facebook.com/sharer/sharer.php?u=https://www.ckjhk.com/news/news-tooth-wiki/${id}`
-  )
-}
-function copySpecifiedText(event, text) {
-  event.preventDefault()
-  if (navigator.clipboard) {
-    navigator.clipboard
-      .writeText(`https://www.ckjhk.com/news/news-tooth-wiki/${text}`)
-      .then(
-        function () {
-          ElMessage({
-            showClose: true,
-            message: '已複製到剪切板',
-            type: 'success',
-          })
-        },
-        function (err) {
-          ElMessage({
-            showClose: true,
-            message: '操作異常，請刷新頁面試試',
-            type: 'warning',
-          })
-        }
-      )
-  } else {
-    alert('您的瀏覽器不支持此功能，請更新瀏覽器')
-  }
-}
-
-const router = useRouter()
-const handlevideBoxBtn = () => {
-  // router.push('')
-  let _arr = ['/news/coverage', '/news/information', '/news/tooth-wiki']
-  router.push(_arr[indexNewsCur.value])
-}
-onMounted(() => {
-  handletab2('101')
-  nextTick(() => {
-    getNewsLists(0)
-  })
-})
-
 const problemData = {
-  title: 'pages.index.common_problem.title',
+  title: '<span>常見</span><span>問題</span>',
   lists: [
     {
       Q: '深圳哪裡有分店？',
@@ -612,259 +271,268 @@ onMounted(() => {
 // 临时隐藏  contentDom
 const contentDom = ref(false)
 
-const groupPhoto = ref([
-  'https://statichk.cmermedical.com/ckj/image/2025011310040501.png',
-  'https://static.cmereye.com/imgs/2024/11/533cd5d2e1944a98.jpg',
-  'https://static.cmereye.com/imgs/2024/11/dce268191178f65d.jpg',
-  '',
-  'https://static.cmereye.com/imgs/2024/11/43f7fdfa344a8b78.jpg',
-  'https://static.cmereye.com/imgs/2024/11/1877a39445db8018.jpg',
-  '',
+const hideDom = ref(false)
+
+
+const ddsasd = ref([
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001001.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001002.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001003.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001004.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001005.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001006.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001007.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001008.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001009.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001010.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001011.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001012.jpg",
+  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001013.jpg"
 ])
 
-const checkGroupPhoto = () => {
-  switch (checkId.value) {
-    case '101':
-      return groupPhoto.value[0]
-    case '102':
-      return groupPhoto.value[1]
-    case '103':
-      return groupPhoto.value[2]
-    case '104':
-      return groupPhoto.value[3]
-    case '105':
-      return groupPhoto.value[4]
-    case '106':
-      return groupPhoto.value[5]
-    case '107':
-      return groupPhoto.value[6]
 
-    default:
-      return groupPhoto.value[0]
-  }
+let services_include_cur = ref(0)
+let swiperRef: any = {
+  slidePrev: () => { },
+  slideNext: () => { },
+  slideTo: () => { },
 }
 
-const hideDom = ref(false)
+const setSwiperRef = (swiper: any) => {
+  swiperRef = swiper
+  services_include_cur.value = swiperRef.activeIndex
+}
+
+const addNum = () => {
+  if (swiperRef.activeIndex >= ddsasd.value.length - 1) {
+    swiperRef.slideTo(0)
+  }
+  swiperRef.slideNext()
+  handleProcessBtnClick()
+}
+const subNum = () => {
+  if (swiperRef.activeIndex <= 0) {
+    swiperRef.slideTo(ddsasd.value.length - 1)
+  }
+  swiperRef.slidePrev()
+  handleProcessBtnClick()
+}
+
+
+const handleLineCurStrength = (_value: number) => {
+  swiperRef.slideTo(_value - 1)
+  handleProcessBtnClick()
+}
+
+const handleProcessBtnClick = () => {
+  services_include_cur.value = swiperRef.activeIndex
+  const swiperPoints = document.querySelectorAll('.swiper-pagination-bullet')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == services_include_cur.value) {
+      item.classList.add('swiper-pagination-bullet-active')
+    } else {
+      item.classList.remove('swiper-pagination-bullet-active')
+    }
+  })
+}
 </script>
 
 <template>
   <div>
     <HomeHeaderV2 :headerConfig="headerConfigData" />
     <div class="indexPage">
-      <!-- 牙科服務 -->
-      <serviceCard :isIndexShow="true" />
-      <!-- 醫生團隊 -->
-      <div class="index-doctorTeam" ref="doctorTeam">
-        <div class="index-doctorTeam-t smallPageCon">
-          <div class="index_title index_title_2">醫生團隊</div>
+
+      <div class="service-item-pc">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>牙科</span><span>服務</span>
         </div>
-        <div class="index-doctorTeam-tab2 index-doctorTeam-con">
-          <div class="index-doctorTeam-tab2-in" :class="`tablang-${changeDentalProfessionList().length}`">
-            <div :class="[
-              {
-                'index-doctorTeam-tab2-in-active':
-                  dentalProfessionCur === dentalProfessionItem.id,
-              },
-              `textlang-${dentalProfessionItem.name.length}`,
-            ]" v-for="(
-dentalProfessionItem, dentalProfessionIndex
-              ) in changeDentalProfessionList()" :key="dentalProfessionIndex"
-              @click="handletab2(dentalProfessionItem.id)">
-              {{ dentalProfessionItem.name }}
-            </div>
+        <div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/implant">
+              <div><img src="https://static.ckjhk.com/ckj-image/1381e9540ac1.png" alt=""></div>
+              <div><span>種植牙</span></div>
+            </nuxt-link>
           </div>
-        </div>
-        <div class="group_photo" v-if="checkGroupPhoto()" v-loading="loading">
-          <img :src="checkGroupPhoto()" alt="" />
-        </div>
-        <div class="team_doctor_everybody">
-          <NewDoctor :id="checkId" />
-        </div>
-      </div>
-      <!-- 關於我們 -->
-      <AboutUs />
-      <!-- 品牌理念 -->
-      <brandConcept-test />
-      <div class="Latest_Movies">
-        <div class="Latest_Movies_t smallPageCon">
-          <div class="Latest_Movies_t_title">
-            <div class="index_title index_title_2">最新影片</div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/scaling-and-polishing">
+              <div><img src="https://static.ckjhk.com/ckj-image/b2eef97c5cb8.png" alt=""></div>
+              <div><span>活動假牙</span><span>及牙橋</span></div>
+            </nuxt-link>
           </div>
-          <nuxt-link to="https://www.youtube.com/@ckjhkofficial">
-            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="36" viewBox="0 0 44 36" fill="none">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M41.6583 2.69702C42.341 3.48136 42.8312 4.45663 43.08 5.52523C44 9.46938 44 17.6944 44 17.6944C44 17.6944 44 25.9195 43.08 29.8637C42.8312 30.9323 42.341 31.9075 41.6583 32.6919C40.9756 33.4762 40.1245 34.0421 39.19 34.3329C35.75 35.3889 22 35.3889 22 35.3889C22 35.3889 8.25 35.3889 4.81 34.3329C3.87554 34.0421 3.02438 33.4762 2.34169 32.6919C1.65901 31.9075 1.16876 30.9323 0.92 29.8637C0 25.9195 0 17.6944 0 17.6944C0 17.6944 0 9.46938 0.92 5.52523C1.16876 4.45663 1.65901 3.48136 2.34169 2.69702C3.02438 1.91268 3.87554 1.34678 4.81 1.05596C8.25 0 22 0 22 0C22 0 35.75 0 39.19 1.05596C40.1245 1.34678 40.9756 1.91268 41.6583 2.69702ZM29.0048 17.6954L17.5048 10.2266V25.1641L29.0048 17.6954Z"
-                fill="#FC1682" />
-            </svg>
-            <span>@ckjhkofficial</span>
-          </nuxt-link>
-        </div>
-        <div class="Latest_Movies_in smallPageCon">
-          <div class="Latest_Movies_in_l">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ti7Mms_BJoI?si=t-STRbG6jNVpU3m3"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <span>愛康健超聲波洗牙 ¥88 🦷 超級抵呀！| 北上睇牙 | 大灣區醫療 |
-              洗牙</span>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/fillings">
+              <div><img src="https://static.ckjhk.com/ckj-image/df725f68ae52.png" alt=""></div>
+              <div><span>洗牙</span></div>
+            </nuxt-link>
           </div>
-          <div class="Latest_Movies_in_r">
-            <div class="Latest_Movies_in_r_t">
-              <div class="tab-in" :class="{ active: Latest_Movies_cur === 0 }" @click="Latest_Movies_cur = 0">
-                優惠推廣
-              </div>
-              <div class="tab-in" :class="{ active: Latest_Movies_cur === 1 }" @click="Latest_Movies_cur = 1">
-                醫師解難
-              </div>
-              <div class="tab-in" :class="{ active: Latest_Movies_cur === 2 }" @click="Latest_Movies_cur = 2">
-                到診攻略
-              </div>
-            </div>
-            <div class="Latest_Movies_in_r_b" v-if="windowWidth > 767">
-              <nuxtLink class="list-in" v-for="(item, index) in Latest_Movies[Latest_Movies_cur]" :key="index">
-                <iframe width="560" height="315" :src="item.url" title="YouTube video player" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <span>{{ item.name }}</span>
-              </nuxtLink>
-            </div>
-            <div class="Latest_Movies_in_r_b" v-else>
-              <Swiper class="index-org-content-swiper mobile-style" :loop="true" :modules="[Autoplay]" :autoplay="{
-                delay: 3000,
-              }" @swiper="setNewsSwiperRef" @slideChange="onSlideChange">
-                <Swiper-slide class="index-org-content-swiper-slie"
-                  v-for="(item, index) in Latest_Movies[Latest_Movies_cur]" :key="index">
-                  <nuxtLink class="list-in">
-                    <iframe width="560" height="315" :src="item.url" title="YouTube video player" frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <span>{{ item.name }}</span>
-                  </nuxtLink>
-                </Swiper-slide>
-              </Swiper>
-            </div>
-            <div class="index-latestNews-line brandConcept-line" v-if="windowWidth < 767">
-              <PageSwiperPointLine :latestNewsNum="Latest_Movies[Latest_Movies_cur].length"
-                :latestNewsCurrent="currtNew" @changeLineCur="handleLineCur"></PageSwiperPointLine>
-            </div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/veneers">
+              <div><img src="https://static.ckjhk.com/ckj-image/3226530ad1ac.png" alt=""></div>
+              <div><span>補牙</span></div>
+            </nuxt-link>
           </div>
-        </div>
-      </div>
-      <div class="index-videoBox">
-        <div class="index-videoBox-t smallPageCon">
-          <div class="index_title index_title_2">睇牙新資訊</div>
-        </div>
-        <div class="index-videoBox-tab">
-          <div class="tab-in" :class="{ active: indexNewsCur === 0 }" @click="handleNewsTab(0)">
-            媒體報導
+          <div class="service_item">
+            <nuxt-link to="/dental-service/toothtray">
+              <div><img src="https://static.ckjhk.com/ckj-image/12306b9549f2.png" alt=""></div>
+              <div><span>杜牙根</span><span class="service_item_sub">(根管治療)</span></div>
+            </nuxt-link>
           </div>
-          <div class="tab-in" :class="{ active: indexNewsCur === 1 }" @click="handleNewsTab(1)">
-            最新資訊
+          <div class="service_item">
+            <nuxt-link to="/dental-service/rootCanal">
+              <div><img src="https://static.ckjhk.com/ckj-image/23c019aefe2b.png" alt=""></div>
+              <div><span>牙冠</span></div>
+            </nuxt-link>
           </div>
-          <div class="tab-in" :class="{ active: indexNewsCur === 2 }" @click="handleNewsTab(2)">
-            牙齒百科
+          <div class="service_item">
+            <nuxt-link to="/dental-service/orthodontics">
+              <div><img src="https://static.ckjhk.com/ckj-image/0f03be1d7f26.png" alt=""></div>
+              <div><span>拔牙及</span><span>智慧齒拔除</span></div>
+            </nuxt-link>
           </div>
-        </div>
-        <div class="index-videoBox-in" v-if="windowWidth > 767">
-          <nuxtLink :to="item.link" class="list-in" :class="`list-in-${indexNewsCur}`"
-            v-for="(item, index) in indexNewsLists[indexNewsCur]" :key="index">
-            <div class="image">
-              <img :title="item.name" :src="item.img" alt="" />
-            </div>
-            <div class="logo" v-if="indexNewsCur === 0">
-              <div class="logo-image">
-                <img :src="item.logo" :title="item.logoText" alt="" />
-              </div>
-              <div class="logo-text">
-                <span>{{ item.time }}</span>
-                <span>{{ item.logoText }}</span>
-              </div>
-            </div>
-            <h2 :title="item.name">{{ item.name }}</h2>
-            <div class="time" v-if="indexNewsCur === 2">
-              <div class="time-l">{{ item.time }}</div>
-              <div class="shareIcon" @click.stop="handleClick($event, item.id)" alt="">
-                <div :class="['shareIcon-img', { act: actShowShare === item.id }]" alt="分享" title="分享">
-                  <img src="@/assets/images/icon_47.svg" alt="" />
-                </div>
-                <div class="shareIcon-in" v-if="actShowShare === item.id">
-                  <div class="shareIcon-in-item" @click="shareFacebook($event, item.id)" alt="Facebook 分享"
-                    title="Facebook 分享">
-                    <img src="@/assets/images/icon_49.svg" alt="" /><span>Facebook 分享</span>
-                  </div>
-                  <div class="shareIcon-in-item" @click="copySpecifiedText($event, item.id)" alt="複製連結" title="複製連結">
-                    <img src="@/assets/images/icon_48.svg" alt="" /><span>複製連結</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p :title="item.desc">{{ item.desc }}</p>
-            <div class="btn">
-              <PageAnimBtnTypeTwo str="查看全文" :link="item.link" />
-            </div>
-          </nuxtLink>
-        </div>
-        <div class="index-videoBox-in" v-else>
-          <Swiper class="index-org-content-swiper mobile-style" :loop="true" :modules="[Autoplay]" :autoplay="{
-            delay: 3000,
-          }" @swiper="setMessageNewsSwiperRef" @slideChange="onMessageNewSlideChange">
-            <Swiper-slide class="index-org-content-swiper-slie" v-for="(item, index) in indexNewsLists[indexNewsCur]"
-              :key="index">
-              <nuxtLink :to="item.link" class="list-in" :class="`list-in-${indexNewsCur}`">
-                <div class="image">
-                  <img :title="item.name" :src="item.img" alt="" />
-                </div>
-                <div class="logo" v-if="indexNewsCur === 0">
-                  <div class="logo-image">
-                    <img :src="item.logo" :title="item.logoText" alt="" />
-                  </div>
-                  <div class="logo-text">
-                    <span>{{ item.time }}</span>
-                    <span>{{ item.logoText }}</span>
-                  </div>
-                </div>
-                <h2 :title="item.name">{{ item.name }}</h2>
-                <div class="time" v-if="indexNewsCur === 2">
-                  <div class="time-l">{{ item.time }}</div>
-                  <div class="shareIcon" @click.stop="handleClick($event, item.id)" alt="">
-                    <div :class="[
-                      'shareIcon-img',
-                      { act: actShowShare === item.id },
-                    ]" alt="分享" title="分享">
-                      <img src="@/assets/images/icon_47.svg" alt="" />
-                    </div>
-                    <div class="shareIcon-in" v-if="actShowShare === item.id">
-                      <div class="shareIcon-in-item" @click="shareFacebook($event, item.id)" alt="Facebook 分享"
-                        title="Facebook 分享">
-                        <img src="@/assets/images/icon_49.svg" alt="" /><span>Facebook 分享</span>
-                      </div>
-                      <div class="shareIcon-in-item" @click="copySpecifiedText($event, item.id)" alt="複製連結"
-                        title="複製連結">
-                        <img src="@/assets/images/icon_48.svg" alt="" /><span>複製連結</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <p :title="item.desc">{{ item.desc }}</p>
-                <div class="btn">
-                  <PageAnimBtnTypeTwo str="查看全文" :link="item.link" />
-                </div>
-              </nuxtLink>
-            </Swiper-slide>
-          </Swiper>
-        </div>
-        <div class="index-videoBox-btn smallPageCon" @click="handlevideBoxBtn">
-          <span>更多資訊 </span>
-        </div>
-        <div class="index-latestNews-line brandConcept-line" v-if="windowWidth < 768">
-          <PageSwiperPointLine :latestNewsNum="indexNewsLists[indexNewsCur].length" :latestNewsCurrent="messageCurrtNew"
-            @changeLineCur="handleMessageLineCur"></PageSwiperPointLine>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/invisiblebraces">
+              <div><img src="https://static.ckjhk.com/ckj-image/38875c2bba26.png" alt=""></div>
+              <div><span>牙周治療</span></div>
+            </nuxt-link>
+          </div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/all-ceramic-crowns">
+              <div><img src="https://static.ckjhk.com/ckj-image/2025031009582001.png" alt=""></div>
+              <div><span>牙齒美白</span></div>
+            </nuxt-link>
+          </div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/children-dentistry">
+              <div><img src="https://static.ckjhk.com/ckj-image/82b023da1bc7.png" alt=""></div>
+              <div><span>瓷牙貼片</span></div>
+            </nuxt-link>
+          </div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/wisdom-teeth-extraction">
+              <div><img src="https://static.ckjhk.com/ckj-image/62682fc283e1.png" alt=""></div>
+              <div><span>箍牙</span><span class="service_item_sub">(牙齒矯正)</span></div>
+            </nuxt-link>
+          </div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/periodontal">
+              <div><img src="https://static.ckjhk.com/ckj-image/9dfa76a2e948.png" alt=""></div>
+              <div><span>隱形牙套</span></div>
+            </nuxt-link>
+          </div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/teeth-whitening">
+              <div><img src="https://static.ckjhk.com/ckj-image/f2015ea8d422.png" alt=""></div>
+              <div><span>兒童牙科</span></div>
+            </nuxt-link>
+          </div>
+          <div class="service_item">
+            <nuxt-link to="/dental-service/general-oral-examination">
+              <div><img src="https://static.ckjhk.com/ckj-image/1622aad56701.png" alt=""></div>
+              <div><span>口腔檢查</span></div>
+            </nuxt-link>
+          </div>
+          <div class="service_item">
+            <nuxt-link to="">
+              <div><img src="https://static.ckjhk.com/ckj-image/0d1c24437adc.png" alt=""></div>
+              <div><span>長者牙科</span></div>
+            </nuxt-link>
+          </div>
         </div>
       </div>
 
+      <section class="ckj-container doctor-team">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>7大</span><span>專科醫生團隊</span>
+        </div>
+        <div class="doctor-team-content-text">全方位涵蓋口腔專科醫療服務，並由經驗豐富的專家醫生團隊執行，70%醫生執業超過10年。
+        </div>
+        <div class="doctor-team-content">
+          <DoctorV2 :nowType="'101'" />
+        </div>
+        <div class="doctor-team-content-btn">
+          <PageAnimBtnTypeTwo :str="'獲取免費諮詢'" />
+        </div>
+      </section>
+
+      <!-- 实力 -->
+      <section class="container strength">
+        <div class="subheading">
+          <span>30年</span>
+          <span>實力牙科</span>
+        </div>
+        <div class="d-none d-lg-flex strength-intro">
+          <p>愛康健集團由香港主板上市醫療集團管理，30年大灣區專業牙科連鎖機構，</p>
+          <p>醫療品質受香港政府認可。</p>
+          <p>12間深圳口岸店提供超過20種牙科治療項目，一站式服務港人超過100萬人次！</p>
+        </div>
+        <div class="strength-content">
+          <Swiper class="mySwiper" @swiper="setSwiperRef" :modules="[Autoplay, Navigation, Pagination]"
+            :slides-per-view="1" :loop="true" :speed="800" :autoplay="{
+              delay: 6000,
+              disableOnInteraction: false
+            }">
+            <SwiperSlide v-for="(img, index) in ddsasd" :key="index">
+              <img class="d-block mx-auto wp-image-589" decoding="async" loading="lazy" :src="img"
+                :srcset="`${img} 400w, ${img} 640w, ${img}`" sizes="(max-width: 992px) 100vw, 1216px"
+                alt="Carousel image" />
+            </SwiperSlide>
+          </Swiper>
+          <div class="position-absolute swiper-Title z-2">
+            <div class="swiper-Title-Box d-flex align-items-end justify-content-end align-items-lg-center ">
+              <div>
+                <div class="swiper-button-prev" @click="subNum">
+                  <svg width=" 13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 15L2.5 8.99931L10 3" stroke="#D2337D" stroke-width="4" stroke-miterlimit="10"
+                      stroke-linecap="square" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div class="swiper-pagination">
+                  <div v-for="(item, index) in ddsasd" :key="index" @click="handleLineCurStrength(index + 1)"
+                    :class="index == 0 ? 'swiper-pagination-bullet-active' : ''" class="swiper-pagination-bullet"></div>
+                </div>
+
+                <div class="swiper-button-next" @click="addNum">
+                  <svg width="13" height="18" viewBox="0 0 13 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 15L10.5 8.99931L3 3" stroke="#D2337D" stroke-width="4" stroke-miterlimit="10"
+                      stroke-linecap="square" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="strength-list">
+          <div class="listText">
+            <div><span>香港管理</span><span>30年專科</span></div>
+            <div>
+              愛康健是香港知名深圳牙科品牌，30年專科經驗，實力與信譽兼備。
+            </div>
+          </div>
+          <div class="listText">
+            <div><span>13間口岸店</span><span>一站式牙科</span></div>
+            <div>
+              集團有1家醫院、6間門診及6間診所，門店覆蓋羅湖、福田、深圳灣、蓮塘口岸。
+            </div>
+          </div>
+          <div class="listText">
+            <div><span>100萬+港人</span><span>信心之選</span></div>
+            <div>
+              提供一站式高品質牙科服務，設備符合國際標準，價格合理透明。
+            </div>
+          </div>
+          <div class="listText">
+            <div><span>港府認可</span><span>可用醫療券</span></div>
+            <div>
+              2024年獲香港政府認可，成為大灣區長者醫療券計劃唯一口腔專科醫院。
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div class="index-org">
-        <div class="index-org-t smallPageCon">
-          <div class="index_title index_title_2">相關機構</div>
+        <div class="subheading">
+          <span>相關</span>
+          <span>機構</span>
         </div>
         <div class="index-org-tag smallPageCon">
           <div class="index-org-tag-in" :class="{ active: orgTabCur === orgTabIndex }"
@@ -886,118 +554,38 @@ dentalProfessionItem, dentalProfessionIndex
           </Swiper>
         </div>
       </div>
-
-      <!-- 個案分享 -->
-      <div class="index-caseSharing">
-        <div class="index-caseSharing-title">
-          <div class="index_title">
-            {{ $t('pages.index.caseSharing.title') }}
-          </div>
+      <!-- kol -->
+      <section class="container kol-video">
+        <div class="subheading">
+          <span>咪咪姐</span>
+          <span>23年用後感</span>
         </div>
-        <div class="index-caseSharing-in">
-          <div class="in-top">
-            <!-- <CaseSharingVideoItem :caseSharingData="caseSharingTopData" /> -->
-            <iframe src="https://www.youtube.com/embed/Q7sHcjs6oCs?si=JmhIgriXU-qvuOkg" width="100%" height="100%"
-              frameborder="0"></iframe>
-          </div>
-          <div class="share-item" v-if="hideDom">
-            <div>
-              <div>
-                <div>
-                  <img src="https://static.cmereye.com/imgs/2024/07/3a0cf1b5a28d2d34.png" alt="星級客戶" />
-                </div>
-                <div>
-                  <div class="item-date">17/4/24</div>
-                  <div>
-                    <span>朱咪咪 Mimi</span>
-                    <span>星級客戶</span>
-                    <span>種植牙療程</span>
-                  </div>
-                </div>
-              </div>
-              <div class="item-content">
-                <span>做得呢行講嘢一定要清楚，點可以畀牙齒問題影響到！植完牙同真牙一樣，咬得到自然胃口好。</span>
-                <span></span>
-                <span>代言已經廿三年，睇我棚牙就知掂！</span>
-              </div>
-            </div>
-            <div>
-              <div>
-                <div>
-                  <span class="item-title">Tommy Chan</span>
-                  <span class="item-tag">根管治療(杜牙根)療程客戶</span>
-                </div>
-                <div class="item-date">13/6/24</div>
-              </div>
-              <div class="item-content">
-                蛀牙痛到死，差啲以為要剝牙😱好在牙醫建議杜牙根就得，手術快脆又留到隻牙！😁
-              </div>
-            </div>
-            <div>
-              <div>
-                <div>
-                  <span class="item-title">余小姐</span>
-                  <span class="item-tag">矯齒(箍牙)療程客戶</span>
-                </div>
-                <div class="item-date">22/4/24</div>
-              </div>
-              <div class="item-content">
-                中學開始就包包面，兩年前的起心肝去左箍牙。杜醫生手勢好又跟得足，而家啲牙齊得尼又瘦到面，好滿意呀。
-              </div>
-            </div>
-          </div>
-          <div class="in-cen" v-if="hideDom">
-            <div class="in-cen-box" v-for="(caseSharingItem, caseSharingIndex) in caseSharingLists"
-              :key="caseSharingIndex">
-              <CaseSharingImageItem :userInfo="caseSharingItem" :userIndex="caseSharingIndex" />
-            </div>
-          </div>
+        <div class="video-list">
+          <iframe src="https://www.youtube.com/embed/Q7sHcjs6oCs?si=JmhIgriXU-qvuOkg" width="100%" height="100%"
+            frameborder="0"></iframe>
         </div>
-      </div>
-      <div class="treatment-data" v-if="contentDom">
-        <div class="treatment-data-title">
-          <span>早期深圳二級口腔醫院</span>
-          <span>香港品牌 實力信心</span>
-        </div>
-        <div class="treatment-data-in smallPageCon">
-          <div class="dataBox" v-for="(treatmentItem, treatmentIndex) in treatmentData" :key="treatmentIndex">
-            <div class="num">
-              <img loading="lazy" :src="treatmentItem.bg" :style="{ left: treatmentItem.left, top: treatmentItem.top }"
-                alt="" />
-              <div class="numIn" v-for="(numItem, numIndex) in treatmentItem.num" :key="numIndex">
-                <span v-if="numItem === ','">{{ numItem }}</span>
-                <div v-else class="numInAnim" :class="[{ showNumInAnim: showTreatment }]" :style="{
-                  'animation-delay': `${(treatmentItem.num.length - numIndex) * 0.2
-                    }s`,
-                }">
-                  <span v-for="numInItem in Number(numItem) ? Number(numItem) : 10" :key="numInItem">
-                    {{ numInItem === 10 ? 0 : numInItem }}
-                  </span>
-                </div>
-              </div>
-              <span class="numBold">+</span>
-            </div>
-            <div class="name">{{ treatmentItem.name }}</div>
+        <a class="d-none d-lg-flex video-user-id" target="_blank"
+          href="https://www.youtube.com/channel/UC4AQD5eeOiHIGd3QYFGK4aA">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="36" viewBox="0 0 44 36" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M41.6583 3.27625C42.341 4.06058 42.8312 5.03586 43.08 6.10446C44 10.0486 44 18.2737 44 18.2737C44 18.2737 44 26.4987 43.08 30.4429C42.8312 31.5115 42.341 32.4868 41.6583 33.2711C40.9756 34.0555 40.1245 34.6213 39.19 34.9122C35.75 35.9681 22 35.9681 22 35.9681C22 35.9681 8.25 35.9681 4.81 34.9122C3.87554 34.6213 3.02438 34.0555 2.34169 33.2711C1.65901 32.4868 1.16876 31.5115 0.92 30.4429C0 26.4987 0 18.2737 0 18.2737C0 18.2737 0 10.0486 0.92 6.10446C1.16876 5.03586 1.65901 4.06058 2.34169 3.27625C3.02438 2.4919 3.87554 1.92599 4.81 1.63518C8.25 0.579224 22 0.579224 22 0.579224C22 0.579224 35.75 0.579224 39.19 1.63518C40.1245 1.92599 40.9756 2.4919 41.6583 3.27625ZM17.5039 10.8058V25.7433L29.0039 18.2746L17.5039 10.8058Z"
+                fill="#D2337D" />
+            </svg>
           </div>
+          <div>@ckjhkofficial</div>
+        </a>
+      </section>
+      <section class="ckj-container root-canal-problem">
+        <div>
+          <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
         </div>
-        <div class="treatment-data-bText">*以上數據由2019年開始統計至今</div>
-      </div>
-      <ServiceProblem :problem-data="problemData" />
+      </section>
       <!-- 聯絡我們 -->
       <BranchAddress />
       <AppointmentFormV2 />
     </div>
-    <!-- <div style="position: fixed; top: 50%; left: 0;z-index: 9999;">{{top}} --- {{bottom}} --- {{(top<(height / 3 * 2)) && (bottom > 0)}}</div> -->
-    <!-- <PageAdbox /> -->
     <FooterV2 />
-    <!-- <PageNavbar
-      :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
-    /> -->
-    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar
-      v-else
-      :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
-    /> -->
     <AsideV2 />
   </div>
 </template>
@@ -1473,77 +1061,7 @@ svg:hover path {
   }
 }
 
-.index-org {
-  margin-top: 120px;
 
-  &-tag {
-    width: 80%;
-    max-width: 804px;
-    display: flex;
-    margin-top: 50px;
-
-    &-in {
-      flex: 1;
-      color: var(--indexColor1);
-      padding: 5px;
-      font-size: 24px;
-      text-align: center;
-      border-top: 2px solid var(--indexColor1);
-      border-bottom: 2px solid var(--indexColor1);
-      border-left: 2px solid var(--indexColor1);
-      transition: all 0.3s;
-      cursor: pointer;
-
-      &:first-child {
-        border-radius: 5px 0 0 5px;
-      }
-
-      &:last-child {
-        border-radius: 0 5px 5px 0;
-        border-right: 2px solid var(--indexColor1);
-      }
-
-      &:hover,
-      &.active {
-        color: #fff;
-        background: var(--indexColor1);
-      }
-    }
-  }
-
-  &-content {
-    max-width: 1200px;
-    margin-top: 30px;
-
-    &-swiper {
-      width: 100%;
-
-      &-slie {
-        display: flex;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 22px 26px;
-        justify-items: center;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    &-in {
-      // width: calc((100% - 300px) / 5);
-      // margin: 0 30px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 9.583vw;
-      height: 6vw;
-      margin: 0;
-    }
-
-    &-0 {
-      align-items: flex-start !important;
-    }
-  }
-}
 
 .index-videoBox {
   margin-top: 90px;
@@ -2007,41 +1525,41 @@ svg:hover path {
 }
 
 @media (min-width: 768px) and (max-width: 1920px) {
-  .index-org {
-    margin-top: 6.25vw;
+  // .index-org {
+  //   margin-top: 6.25vw;
 
-    &-tag {
-      max-width: 41.875vw;
-      margin-top: 2.6042vw;
+  //   &-tag {
+  //     max-width: 41.875vw;
+  //     margin-top: 2.6042vw;
 
-      &-in {
-        padding: 0.2604vw;
-        font-size: 1.25vw;
+  //     &-in {
+  //       padding: 0.2604vw;
+  //       font-size: 1.25vw;
 
-        &:first-child {
-          border-radius: 0.2604vw 0 0 0.2604vw;
-        }
+  //       &:first-child {
+  //         border-radius: 0.2604vw 0 0 0.2604vw;
+  //       }
 
-        &:last-child {
-          border-radius: 0 0.2604vw 0.2604vw 0;
-        }
-      }
-    }
+  //       &:last-child {
+  //         border-radius: 0 0.2604vw 0.2604vw 0;
+  //       }
+  //     }
+  //   }
 
-    &-content {
-      max-width: 62.5vw;
-      margin-top: 1.5625vw;
+  //   &-content {
+  //     max-width: 62.5vw;
+  //     margin-top: 1.5625vw;
 
-      &-in {
-        // width: calc((100% - 15.625vw) / 5);
-        // margin: 0 1.5625vw 2.0833vw;
+  //     &-in {
+  //       // width: calc((100% - 15.625vw) / 5);
+  //       // margin: 0 1.5625vw 2.0833vw;
 
-        width: 9.583vw;
-        height: 6vw;
-        margin: 0;
-      }
-    }
-  }
+  //       width: 9.583vw;
+  //       height: 6vw;
+  //       margin: 0;
+  //     }
+  //   }
+  // }
 
   .index-videoBox {
     margin-top: 4.6875vw;
@@ -2791,44 +2309,7 @@ svg:hover path {
     }
   }
 
-  .index-org {
-    margin-top: 90px;
 
-    &-tag {
-      width: 100%;
-      max-width: calc(100% - 60px);
-      margin-top: 30px;
-
-      &-in {
-        font-size: 4.265vw;
-        padding: 1.33vw;
-      }
-    }
-
-    &-content {
-      max-width: calc(100% - 20px);
-      justify-content: flex-start;
-
-      &-swiper {
-        &-slie {
-          justify-content: initial;
-          gap: 5.865vw;
-        }
-      }
-
-      &-in {
-        margin: 0;
-        width: 27.465vw;
-        height: 18vw;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-      }
-    }
-  }
 
   .index-videoBox {
     &-tab {
@@ -3104,6 +2585,894 @@ svg:hover path {
     &>span {
       line-height: 160%;
       min-height: 19.19px;
+    }
+  }
+}
+
+@media screen and (min-width: 991px) {
+
+  .service-item-pc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    margin: 0 auto;
+    max-width: 1000px;
+
+    &>div:nth-child(2) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px 20px;
+      margin-top: 15px;
+    }
+
+    .service_item {
+      // margin-bottom: 45px;
+      color: var(--White, #FFF);
+      text-align: center;
+
+      /* 桌面版/PC-頂部目錄 */
+      font-family: "Noto Sans TC";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 160%;
+      /* 32px */
+      letter-spacing: 2px;
+      box-sizing: border-box;
+      padding: 15px 0;
+
+      &>a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px 0;
+        width: 210px;
+        color: var(--Grey-Dark, #333);
+
+
+        &>div:nth-child(1) {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          background: #FFE9EC;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    .service_item:hover {
+      border-radius: 10px;
+      background: var(--New-Theme-Color, #D2337D);
+      box-sizing: border-box;
+
+      &>a {
+        width: 210px;
+
+        &>div:nth-child(1) {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          background: #fff;
+
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      div {
+        color: #fff;
+      }
+    }
+  }
+
+  .doctor-team {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .doctor-team-content-text {
+      margin-top: 15px;
+      color: var(--Grey-Deep, #4D4D4D);
+      text-align: center;
+      font-family: "Noto Sans HK";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 2px;
+    }
+
+    .doctor-team-content {
+      margin-top: 15px;
+    }
+
+    .doctor-team-content-btn {
+      margin: 35px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .strength {
+    max-width: 100%;
+    background: var(--Pale-Pink-Grad, linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, var(--Pink-Pale, #FFE9EC) 100%));
+  }
+
+  .swiper-Title {
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+
+    &-Box {
+      .swiper-paginationEdit {
+        max-width: 162px;
+        height: 30px;
+
+        .swiper-pagination {
+          position: static;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .strength-intro {
+    margin: 15px auto 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &>p {
+      color: var(--Grey-Dark, #333);
+      text-align: center;
+      font-family: "Noto Sans TC";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 160%;
+      /* 32px */
+      letter-spacing: 2px;
+    }
+  }
+
+  .strength-content {
+    max-width: 820px;
+    height: 480px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+
+    .swiper-strength-Title {
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .swiper-Title-Box {
+      &>div {
+        display: flex;
+        align-items: center;
+      }
+
+      .swiper-pagination-bullet {
+        width: 18px;
+        height: 18px;
+        background: #fff;
+        opacity: 1;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .swiper-pagination {
+        position: initial;
+        display: flex;
+        align-items: center;
+        gap: 0 10px;
+        margin: 0 10px;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #d2337d;
+      }
+
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        content: none;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        background: #fff;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+        top: initial;
+        margin-top: initial;
+        position: initial;
+        transition: background-color 0.3s ease;
+      }
+
+      .swiper-button-prev:hover,
+      .swiper-button-next:hover {
+        box-shadow: (0px 0px 10px rgba(0, 0, 0, 0.3));
+        background: #d2337d;
+
+        svg {
+          path {
+            stroke: white;
+          }
+        }
+      }
+    }
+  }
+
+  .strength-list {
+    justify-content: center;
+    display: flex;
+    gap: 0 20px;
+    position: relative;
+    top: -45px;
+    z-index: 70;
+  }
+
+  .listText {
+    max-width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background: var(--White, #FFF);
+    box-shadow: 0px 4px 4px 0px rgba(77, 77, 77, 0.20);
+    box-sizing: border-box;
+    padding: 20px;
+
+    &>div:nth-child(1) {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      color: #8A5E1B;
+      text-align: center;
+      /* 桌面版/PC-H3 */
+      font-family: "Noto Sans HK";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      /* 28.8px */
+      letter-spacing: 2.4px;
+
+      &>span:nth-child(2) {
+        color: #8A5E1B;
+        font-family: "Noto Sans HK";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: 2px;
+      }
+    }
+
+    &>div:nth-child(2) {
+      color: var(--Grey-Dark, #333);
+      text-align: justify;
+      /* PC-16pt Text */
+      font-family: "Noto Sans HK";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      /* 24px */
+      letter-spacing: 1.6px;
+      margin-top: 17px;
+    }
+  }
+
+  .listText {
+    &>div:nth-child(1)::after {
+      content: '';
+      background: url(https://static.ckjhk.com/ckj-image/2025030715124001.png) no-repeat;
+      background-size: cover;
+      width: 187.203px;
+      min-height: 78.934px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .listText:nth-child(1) {
+    &>div:nth-child(1) {
+      &>span {
+        color: #8A5E1B;
+        font-family: "Noto Sans HK";
+        font-size: 16.116px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 1.612px;
+      }
+
+      &>span:nth-child(2) {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%;
+        letter-spacing: 2.4px;
+      }
+    }
+  }
+
+  .index-org {
+    margin-top: 0;
+    box-sizing: border-box;
+    padding: 30px 0;
+
+    &-tag {
+      max-width: 504px;
+      display: flex;
+      margin-top: 0;
+      box-sizing: border-box;
+      padding: 10px 0;
+      width: 100%;
+
+      &-in {
+        flex: 1;
+        color: var(--indexColor1);
+        padding: 5px;
+        font-size: 24px;
+        text-align: center;
+        border-top: 2px solid var(--indexColor1);
+        border-bottom: 2px solid var(--indexColor1);
+        border-left: 2px solid var(--indexColor1);
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:first-child {
+          border-radius: 5px 0 0 5px;
+        }
+
+        &:last-child {
+          border-radius: 0 5px 5px 0;
+          border-right: 2px solid var(--indexColor1);
+        }
+
+        &:hover,
+        &.active {
+          color: #fff;
+          background: var(--indexColor1);
+        }
+
+        &.active {
+          position: relative;
+
+          // 三角形
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--indexColor1);
+            width: 0;
+            height: 0;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    &-content {
+      max-width: 960px;
+      margin-top: 0;
+      width: 58vw;
+
+      &-swiper {
+        width: 100%;
+
+        &-slie {
+          width: 100%;
+          display: flex;
+          grid-template-columns: repeat(5, 1fr);
+          gap: 22px 26px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      &-in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 170px;
+        width: 9.583vw;
+        height: auto;
+        margin: 0;
+      }
+
+      &-0 {
+        align-items: flex-start !important;
+      }
+    }
+  }
+
+
+  .kol-video {
+    position: relative;
+
+    .video-list {
+      width: 672px;
+      height: 378px;
+      margin: 30px auto 0;
+    }
+
+    .video-user-id {
+      position: absolute;
+      top: 10px;
+      right: 10vw;
+      display: flex !important;
+      align-items: center;
+      gap: 0 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .indexPage {
+    margin: 0;
+  }
+
+  .service-item-pc {
+    margin: 30px 0;
+
+    &>div:nth-child(2) {
+      margin-top: 2.665vw;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5.33vw 3.465vw;
+      box-sizing: border-box;
+      padding: 0 5.33vw;
+
+      .service_item {
+        &>a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          &>div:nth-child(1) {
+            width: 18.2665vw;
+            height: 18.265vw;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          &>div:nth-child(2) {
+            min-height: 34px;
+
+            span {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              color: var(--Grey-Dark, #333);
+              text-align: center;
+              font-family: "Noto Sans HK";
+              font-size: 3.733vw;
+              font-style: normal;
+              font-weight: 700;
+              line-height: 120%;
+            }
+
+
+            .service_item_sub {
+              color: var(--Grey-Dark, #333);
+              font-family: "Noto Sans HK";
+              font-size: 3.733vw;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 150%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .doctor-team-content-text {
+    margin-top: 14px;
+    color: var(--Grey-Mid, #666);
+    text-align: justify;
+
+    /* 手機版/MB-14Pt字 */
+    font-family: "Noto Sans HK";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 21px */
+    letter-spacing: 0.7px;
+    box-sizing: border-box;
+    padding: 0 5.33vw;
+  }
+
+  .doctor-team {
+    margin: 30px 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 56.4%, var(--Pink-Pale, #FFE9EC) 82.58%);
+    padding-bottom: 5.33vw;
+  }
+
+  .doctor-team-content-btn {
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .strength {
+    padding: 0;
+  }
+
+  .strength-content {
+    box-sizing: border-box;
+    margin: 15px 20px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .strength-list {
+    box-sizing: border-box;
+    padding: 0 5.33vw;
+    margin: 6.4vw 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6.5vw 0;
+
+    .listText {
+      display: flex;
+      justify-content: space-between;
+      gap: 0 5.33vw;
+      align-items: center;
+
+      &>div:nth-child(1) {
+        background: url("https://static.ckjhk.com/ckj-image/2025030715124001.png") no-repeat center;
+        background-size: cover;
+        min-width: 130.334px;
+        width: 130.334px;
+        height: 59.112px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &>span {
+          color: #8A5E1B;
+          text-align: center;
+          color: #8A5E1B;
+          font-family: "Noto Sans HK";
+          font-size: 18.104px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+
+        &>span:last-child {
+          color: #8A5E1B;
+          font-family: "Noto Sans HK";
+          font-size: 12.069px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 1.207px;
+        }
+      }
+
+      &>div:nth-child(2) {
+        color: var(--Grey-Dark, #333);
+        text-align: justify;
+        font-family: "Noto Sans HK";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        /* 21px */
+        letter-spacing: 0.7px;
+      }
+    }
+
+    .listText:first-child {
+      &>div:nth-child(1) {
+        &>span {
+          color: #8A5E1B;
+          font-family: "Noto Sans HK";
+          font-size: 12.069px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 1.207px;
+        }
+
+        &>span:last-child {
+          color: #8A5E1B;
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 18.104px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+      }
+    }
+  }
+
+  .medium {
+    margin-top: 50px;
+  }
+
+  .medium-tabs {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px auto 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid var(--Grey-Light, #e6e6e6);
+    background: var(--White, #fff);
+
+    .medium-list {
+      color: var(--Grey-Mid, #666);
+      text-align: center;
+
+      /* 手機版/MB-Body Text Bold */
+      font-family: "Noto Sans HK";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 1.6px;
+      box-sizing: border-box;
+      padding: 8px;
+      border: 1px solid var(--Grey-Light, #e6e6e6);
+      border-right: 1px solid var(--Grey-Light, #e6e6e6);
+      transition: all 0.3s ease-in;
+    }
+
+    .medium-list:last-child {
+      border-right: none;
+    }
+  }
+
+  .strength-content {
+
+    .swiper-Title {
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0;
+      bottom: 3.933vw;
+
+      &-Box {
+        &>div {
+          display: flex;
+          align-items: center;
+        }
+
+        .swiper-paginationEdit {
+          height: 0;
+
+          .swiper-pagination {
+            position: static;
+            width: auto;
+          }
+        }
+      }
+    }
+
+    :deep(.swiper-wrapper) {
+      .swiper-slide {
+        position: relative;
+      }
+    }
+
+    :deep(.swiper-wrapper) {
+      .swiper-slide::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+      }
+    }
+  }
+
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    display: none;
+  }
+
+  .swiper-pagination-bullet {
+    width: 3.2vw;
+    height: 3.2vw;
+    background: #fff;
+    opacity: 1;
+    margin: 0;
+  }
+
+  .swiper-pagination {
+    position: initial;
+    display: flex;
+    align-items: center;
+    gap: 0 1.6vw;
+    margin: 0 2.13vw;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #d2337d;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    background: #fff;
+    border-radius: 50%;
+    width: 8vw;
+    height: 8vw;
+    min-width: 8vw;
+    min-height: 8vw;
+    top: initial;
+    margin-top: initial;
+    position: initial;
+    transition: background-color 0.3s ease;
+  }
+
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    box-shadow: (0px 0px 2.665vw rgba(0, 0, 0, 0.3));
+    background: #d2337d;
+
+    svg {
+      path {
+        stroke: white;
+      }
+    }
+  }
+
+  .index-org {
+    margin-top: 0;
+    margin: 30px 0;
+
+    &-tag {
+      max-width: 100%;
+      display: flex;
+      margin-top: 0;
+      box-sizing: border-box;
+      padding: 4vw 4.265vw;
+
+      &-in {
+        flex: 1;
+        color: var(--indexColor1);
+        padding: 5px;
+        font-size: 24px;
+        text-align: center;
+        border-top: 2px solid var(--indexColor1);
+        border-bottom: 2px solid var(--indexColor1);
+        border-left: 2px solid var(--indexColor1);
+        transition: all 0.3s;
+        cursor: pointer;
+
+        font-size: 4.265vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+        /* 24px */
+        letter-spacing: 0.4265vw;
+
+        &:first-child {
+          border-radius: 5px 0 0 5px;
+        }
+
+        &:last-child {
+          border-radius: 0 5px 5px 0;
+          border-right: 2px solid var(--indexColor1);
+        }
+
+        &:hover,
+        &.active {
+          color: #fff;
+          background: var(--indexColor1);
+        }
+
+        &.active {
+          position: relative;
+
+          // 三角形
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: var(--indexColor1);
+            width: 0;
+            height: 0;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+    &-content {
+      max-width: 100%;
+      margin-top: 0;
+      box-sizing: border-box;
+      padding: 0 2.65vw;
+
+      &-swiper {
+        width: 100%;
+
+        &-slie {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 22px 26px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+      }
+
+      &-in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        height: auto;
+        margin: 0;
+      }
+
+      &-0 {
+        align-items: flex-start !important;
+      }
+    }
+  }
+
+  .kol-video {
+    margin-top: 10.665vw;
+    padding: 0;
+  }
+
+  .video-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 5.33vw;
+
+    &>iframe {
+      width: 72.533vw;
+      height: 40.8vw;
+      margin: 2.665vw auto 0;
     }
   }
 }

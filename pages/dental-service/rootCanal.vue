@@ -1,9 +1,9 @@
 <script lang="ts" setup>
+import { Pagination } from 'swiper'
 import { useAppState } from '~/stores/appState'
 import { toWhatsApp } from '~/assets/js/common'
 import { useElementBounding, useWindowSize } from '@vueuse/core'
 
-import { Pagination } from 'swiper'
 const modules = [Pagination]
 const appState = useAppState()
 appState.setDentistryService('rootCanal-test')
@@ -217,49 +217,50 @@ const noteData = {
   ],
 }
 
-const problemData = {
-  title: 'pages.dental-service.rootCanal.problem.title',
-  lists: [
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[0].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[0].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[1].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[1].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[2].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[2].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[3].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[3].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[4].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[4].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[5].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[5].A',
-    },
-    {
-      Q: 'pages.dental-service.rootCanal.problem.lists[6].Q',
-      A: 'pages.dental-service.rootCanal.problem.lists[6].A',
-    },
-  ],
+
+let services_include_cur = ref(0)
+let swiperRef: any = {
+  slidePrev: () => { },
+  slideNext: () => { },
+  slideTo: () => { },
 }
 
-let swiperRef = {
-  slidePrev: () => {},
-  slideNext: () => {},
-}
 const setSwiperRef = (swiper: any) => {
   swiperRef = swiper
+  services_include_cur.value = swiperRef.activeIndex
 }
-const handleProcessBtn = (_type: string) => {
-  swiperRef[_type]()
+
+const addNum = () => {
+  swiperRef.slideNext()
+  handleProcessBtnClick()
+}
+const subNum = () => {
+  swiperRef.slidePrev()
+  handleProcessBtnClick()
+}
+
+const handleProcessBtnClick = () => {
+  services_include_cur.value = swiperRef.activeIndex
+  const swiperPoints = document.querySelectorAll('.swiper-point')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == services_include_cur.value) {
+      item.classList.add('swiper-point-active')
+    } else {
+      item.classList.remove('swiper-point-active')
+    }
+  })
+}
+
+const handleProcessBtn = (_type: number) => {
+  const swiperPoints = document.querySelectorAll('.swiper-point')
+  swiperPoints.forEach((item: any, index: number) => {
+    if (index == _type) {
+      item.classList.add('swiper-point-active')
+    } else {
+      item.classList.remove('swiper-point-active')
+    }
+  })
+  swiperRef.slideTo(_type, 0, 'slide')
 }
 
 const doctorData = {
@@ -355,47 +356,87 @@ const onMessageNewSlideChange = (swiper: any) => {
     triangleColor.value = false
   }
 }
-
 let newsMessageSwiperRef = {
-  slideToLoop: (a) => {},
+  slideToLoop: (a) => { },
 }
+
+
+const stepDataList = ref([
+  {
+    id: 1,
+    img: 'https://static.cmereye.com/imgs/2023/11/8c25f9c3f1d8c834.jpg',
+    name: 'X光檢查及診斷',
+    notText: false,
+  },
+  {
+    id: 2,
+    img: 'https://static.cmereye.com/imgs/2023/10/0b7ef1a0f39e9ca9.jpg',
+    name: '麻醉',
+    notText: false,
+  },
+  {
+    id: 3,
+    img: 'https://static.cmereye.com/imgs/2023/11/b7337bbff6017483.jpg',
+    name: '牙齒分隔',
+    notText: false,
+  },
+  {
+    id: 4,
+    img: 'https://static.cmereye.com/imgs/2023/11/bfd54a465dbc28b8.jpg',
+    name: '計算根管長度',
+    notText: false,
+  },
+  {
+    id: 5,
+    img: 'https://static.cmereye.com/imgs/2023/11/8e3ca8afdfa82d6c.jpg',
+    name: '清理牙根管',
+    notText: false,
+  },
+  {
+    id: 6,
+    img: 'https://static.cmereye.com/imgs/2023/11/8f9ed7b27c9c0fdc.jpg',
+    name: '根管充填',
+    notText: false,
+  },
+  {
+    id: 7,
+    img: 'https://static.cmereye.com/imgs/2023/11/d542e53ca685f034.jpg',
+    name: '(可選) 牙冠修復',
+    notText: false,
+  },
+  {
+    id: 8,
+    img: 'https://static.ckjhk.com/ckj-image/5c1ac98cb00a.png',
+    notText: true,
+  }
+])
+
+const problemData = {
+  title: '<span>杜牙根</span><span>常見問題</span>',
+  lists: [
+    {
+      Q:'什麼情況下需要做杜牙根？',
+      A:'嚴重蛀牙，已經侵犯到牙髓（牙神經）。牙髓炎，牙齒出現持續性疼痛，對冷熱刺激敏感。根尖周炎，牙根尖周圍的組織發炎，引起牙齒鬆動、腫脹。牙齒外傷，導致牙髓受損。其他原因，例如牙齒隱裂、牙周病等，導致牙髓壞死。'
+    },
+    {
+      Q:'杜牙根需要做幾次？',
+      A:'杜牙根的次數取決於牙齒的具體情況。有些簡單的病例可能一次完成，但大多數情況下需要2-3次。' 
+    },
+    {
+      Q:'杜牙根後可以維持多久？',
+      A:'如果杜牙根治療成功，並且做好日常的口腔護理，牙齒可以維持很長時間，甚至終身。'
+    },
+    {
+      Q:'杜牙根後注意事項?',
+      A:'避免咀嚼食物或咬硬物，以免損壞治療後的牙齒。<br /><br />·避免用治療後的牙齒咬開堅硬的食物，例如堅果、糖果等。<br />·在治療後的前幾天內，嘗試避免刷牙或使用牙線，以免影響治療區域的恢復。<br />·如果需要刷牙，可以使用軟毛刷，輕柔地刷牙，避免刷太用力或刷到治療區域。<br />·如果感覺到疼痛或不適，可以使用過濾口的冰水或冰袋敷在治療區域附近，以減輕疼痛和腫脹。<br />·如醫生處方止痛藥，應按照指示使用。<br />·定期到口腔醫院進行檢查和清潔，以確保治療後的牙齒保持健康。<br />其他牙科服務' 
+    }
+  ],
+}
+
 </script>
 
 <template>
   <div>
-    <!-- <PageHeader v-if="windowWidth < 768" :headerConfig="headerConfig">
-      <template #xxxxxxxxxxx-home>
-        <div class="banner-in-box">
-          <div class="banner-content" style="display: flex">
-            <div class="content-title">與你一齊守護健康牙齒</div>
-            <div class="content-price">
-              <div>杜牙根</div>
-            </div>
-          </div>
-        </div>
-      </template>
-    </PageHeader>
-    <PageNewHeaderMenu v-if="windowWidth > 768" :headerConfig="headerConfig" />
-    <PagePcBannerNoHome v-if="windowWidth > 768" :headerConfig="headerConfig">
-      <template #xxxxxxxxxxx-home>
-        <div class="banner-in-box">
-          <div class="banner-image">
-            <img
-              src="https://static.ckjhk.com/ckj-image/a1ed0bfa1d61.webp"
-              alt=""
-              loading="lazy"
-            />
-          </div>
-          <div class="banner-content" style="display: flex">
-            <div class="content-title">與你一齊守護健康牙齒</div>
-            <div class="content-price">
-              <div>杜牙根</div>
-            </div>
-          </div>
-        </div>
-      </template>
-    </PagePcBannerNoHome> -->
-
     <PageHeaderV2 v-if="windowWidth > 768" :headerConfig="headerConfig" />
     <MobileHeaderV2 v-if="windowWidth < 768" :headerConfig="headerConfig">
       <template #xxxxxxxxxxx-home>
@@ -413,11 +454,7 @@ let newsMessageSwiperRef = {
       <template #xxxxxxxxxxx-home>
         <div class="banner-in-box">
           <div class="banner-image">
-            <img
-              src="https://static.ckjhk.com/ckj-image/a1ed0bfa1d61.webp"
-              alt=""
-              loading="lazy"
-            />
+            <img src="https://static.ckjhk.com/ckj-image/a1ed0bfa1d61.webp" alt="" loading="lazy" />
           </div>
           <div class="banner-content" style="display: flex">
             <div class="content-title">與你一齊守護健康牙齒</div>
@@ -429,436 +466,156 @@ let newsMessageSwiperRef = {
       </template>
     </PagePcBannerNoHome>
 
-    <div class="pageIn whitebgColor">
-      <div class="index_title pageCon">
-        {{ $t('pages.dental-service.title') }}
-      </div>
-      <ServiceIntroduce :introduce-data="introduceData" />
-      <div class="reason">
-        <div class="dentistryServices-title reason-title">
-          <div class="dentistryServices-title-in bb reason-title-in">
-            {{ reasonData.title }}
+    <div class="root-canal">
+      <section class="ckj-container root-canal-therapy">
+        <div>
+          <div class="root-canal-therapy-title  subheading flex-row align-items-end">
+            <span>什麼是</span><span>杜牙根(根管治療)</span>
           </div>
+          <div class="d-md-none"><img src="https://static.ckjhk.com/ckj-image/2025040809513201.jpg" alt=""></div>
+          <div>杜牙根(根管治療)是治療嚴重蛀牙或牙根受細菌感染的療程，當蛀牙菌的感染深入牙髓，以致牙齒內的神經發炎，便需要以杜牙根療程徹底清除感染的部分。</div>
         </div>
-        <div class="reason-lists">
-          <div
-            v-for="(item, index) in reasonData.reasonLists"
-            :key="index"
-            class="reason-lists-item"
-          >
-            <div class="image">
-              <img :src="item.img" alt="" />
-            </div>
-            <div class="text">
-              <span>{{ item.title }}</span>
-              <span>{{ item.context }}</span>
-            </div>
-          </div>
+        <div class="d-none d-md-block"><img src="https://static.ckjhk.com/ckj-image/c2bd71c74791.png" alt="杜牙根(根管治療)">
         </div>
-      </div>
-      <div class="care">
-        <div class="dentistryServices-title care-title">
-          <div class="dentistryServices-title-in bb care-title-in">
-            <span>{{ careData.title[0] }}</span>
-            <span>{{ careData.title[1] }}</span>
-          </div>
+      </section>
+      <section class="ckj-container charge-item">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>愛康健杜牙根</span><span>收費項目</span>
         </div>
-        <div class="care-lists">
-          <div
-            v-for="(careItem, careIndex) in careData.lists"
-            :key="careIndex"
-            class="care-lists-item"
-          >
+        <div class="charge-item-content">
+          <div><img src="https://static.ckjhk.com/ckj-image/ba66d4b13ce0.png" alt=""></div>
+          <div>
             <div>
-              <div class="image">
-                <div class="image-in">
-                  <img :src="careItem.img" :alt="careItem.text" />
-                </div>
+              <div>項目</div>
+              <div>價錢</div>
+            </div>
+            <div>
+              <div>前牙杜牙根</div>
+              <div>￥2,000/顆</div>
+            </div>
+            <div>
+              <div>後牙杜牙根</div>
+              <div>￥3,000/顆</div>
+            </div>
+          </div>
+          <div>
+            <div>愛康健杜牙根價格<span>已包含麻醉及3張X光片。</span></div>
+            <div>*有可能因牙齒的實際複雜程度而添加額外治療項目。</div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container seven-steps">
+        <div class="seven-steps-title">
+          <div>\ <span>杜牙根治療步驟</span> /</div>
+        </div>
+        <div class="seven-steps-content">
+          <div v-for="item in stepDataList" :key="item.id">
+            <div v-if="!item.notText" class="seven-steps-content-item">
+              <div>
+                <div>{{ item.id }}</div>
+                <div><img :src="item.img" :alt="item.name"></div>
               </div>
-              <div class="text">{{ careItem.text }}</div>
+              <div>{{ item.name }}</div>
+            </div>
+            <div v-if="item.notText" class="seven-steps-content-item">
+              <div><img :src="item.img" :alt="item.name"></div>
             </div>
           </div>
         </div>
-        <div class="care-btn">
-          <!-- <PageAnimBtnTypeTwo :str="'與我們了解更多'" /> -->
-          <PageAnimBtnTypeTwo :str="'與我們了解更多'" />
+      </section>
+      <section class="ckj-container microroot-canal">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>什麼是</span><span>顯微根管治療</span>
         </div>
-      </div>
-      <div class="infoCard">
-        <div class="dentistryServices-title infoCard-title">
-          <div class="dentistryServices-title-in bb infoCard-title-in">
-            什麼是<span>顯微根管治療</span>？
+        <div class="microroot-canal-content d-none d-md-flex">
+          <div><img src="https://static.ckjhk.com/ckj-image/14db8a4e2307.png" alt=""></div>
+          <div>
+            <ul>
+              <li>顯微根管治療，即在顯微鏡輔助下放大局部來治療根管。 </li>
+              <li>牙科顯微鏡可以在手術中放大畫面，在良好照明環境及視野穩定的前提下，將根管治療推進到可視化階段。 </li>
+              <li>愛康健引進德國蔡司顯微鏡根管治療儀，結合顯微鏡技術和醫學技術，能清楚觀察牙齒的解剖結構和根管形態。</li>
+            </ul>
           </div>
         </div>
-        <div class="infoCard-content">
-          <div class="infoCard-content-l" v-if="windowWidth > 768">
-            <img
-              src="https://static.cmereye.com/imgs/2023/10/493b437603fc5e0d.jpg"
-              alt=""
-            />
+        <div class="microroot-canal-content d-md-none">
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/2025040814372901.png" alt=""></div>
+            <div>顯微根管治療，即在顯微鏡輔助下放大局部來治療根管。 </div>
           </div>
-          <div class="infoCard-content-r">
-            <div
-              v-for="(infoCardItem, infoCardIndex) in infoCardData.lists"
-              :key="infoCardIndex"
-            >
-              <div v-if="windowWidth < 768">
-                <img :src="infoCardItem.img" :alt="infoCardItem.text" />
-              </div>
-              <div>
-                <span v-if="windowWidth > 768">·</span>
-                <span>{{ infoCardItem.text }}</span>
-              </div>
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/2025040814372902.png" alt=""></div>
+            <div>牙科顯微鏡可以在手術中放大畫面，在良好照明環境及視野穩定的前提下，將根管治療推進到可視化階段。 </div>
+          </div>
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/2025040814372903.png" alt=""></div>
+            <div>愛康健引進德國蔡司顯微鏡根管治療儀，結合顯微鏡技術和醫學技術，能清楚觀察牙齒的解剖結構和根管形態。</div>
+          </div>
+        </div>
+      </section>
+      <section class="ckj-container microroot-canal-equipment">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>顯微</span><span>根管治療設備</span>
+        </div>
+        <div class="microroot-canal-equipment-content  d-none d-md-flex">
+          <div><img src="https://static.ckjhk.com/ckj-image/63c3347f61dd.jpg" alt=""></div>
+          <div>
+            <div><img src="https://static.ckjhk.com/ckj-image/8286033922e5.jpg" alt=""></div>
+            <div>我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。
             </div>
           </div>
         </div>
-      </div>
-      <div class="Root_canal_treatment_equipment">
-        <div class="dentistryServices-title">
-          <div class="dentistryServices-title-in bb">根管治療設備</div>
-        </div>
-        <div class="Root_canal_treatment_equipment-in">
-          <div
-            class="Root_canal_treatment_equipment-in-l"
-            v-if="windowWidth > 768"
-          >
-            <img
-              src="https://static.cmereye.com/imgs/2024/02/33f5319ca2369e70.webp"
-              alt=""
-            />
-          </div>
-          <div
-            class="Root_canal_treatment_equipment-in-r"
-            v-if="windowWidth > 768"
-          >
-            <img
-              src="https://static.cmereye.com/imgs/2024/02/760462b941be8e2c.webp"
-              alt=""
-            />
-            <span
-              >我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。讓醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。</span
-            >
-          </div>
-          <swiper
-            v-if="windowWidth < 768"
-            :slidesPerView="'auto'"
-            :centeredSlides="true"
-            :spaceBetween="0"
-            class="mySwiper"
-            @swiper="setMessageNewsSwiperRef"
-            @slideChange="onMessageNewSlideChange"
-          >
-            <swiper-slide>
-              <div>
-                <img
-                  src="https://static.cmereye.com/imgs/2024/08/94d23af3eaa954a4.png"
-                  alt=""
-                />
-              </div>
-              <div>
-                我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。
-              </div>
+        <div class="microroot-canal-equipment-content  d-md-none">
+          <swiper :slidesPerView="'auto'" :loop="true" :spaceBetween="30" :modules="modules" class="mySwiper"
+            @swiper="setSwiperRef">
+            <swiper-slide class="swiper-slide-item">
+              <div><img src="https://static.ckjhk.com/ckj-image/63c3347f61dd.jpg" alt=""></div>
+              <div>我們使用德國蔡司顯微鏡根管治療儀，一款結合顯微鏡與醫學技術的設備，大幅提升牙醫治療根管的精準度。</div>
             </swiper-slide>
-            <swiper-slide>
-              <div>
-                <img
-                  src="https://static.cmereye.com/imgs/2024/08/db12cbbf79a68bab.png"
-                  alt=""
-                />
-              </div>
-              <div>
-                讓醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。
-              </div>
+            <swiper-slide class="swiper-slide-item">
+              <div><img src="https://static.ckjhk.com/ckj-image/8286033922e5.jpg" alt=""></div>
+              <div>醫生能夠清楚觀察牙齒結構和根管形態，無論進行常規治療或顯微外科手術，都能更好地保留客人健康牙齒組織。</div>
             </swiper-slide>
           </swiper>
-          <!-- <PageSwiperPointLine
-            v-if="windowWidth < 767"
-            :latestNewsNum="2"
-            :latestNewsCurrent="messageCurrtNew"
-            @changeLineCur="handleMessageLineCur"
-          ></PageSwiperPointLine> -->
-          <div class="boxRound-rootCanal" v-if="windowWidth < 767">
-            <div
-              class="message"
-              :style="{ color: triangleColor ? '' : '#FC1682' }"
-              @click="handleMessageLineCur(1)"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="16"
-                viewBox="0 0 14 16"
-                fill="none"
-              >
-                <path
-                  d="M0.500001 7.13397C-0.166666 7.51887 -0.166666 8.48112 0.5 8.86602L12.5 15.7942C13.1667 16.1791 14 15.698 14 14.9282L14 1.0718C14 0.301996 13.1667 -0.17913 12.5 0.20577L0.500001 7.13397Z"
-                  :fill="triangleColor ? '' : '#FC1682'"
-                />
-              </svg>
-            </div>
-            <div
-              class="message"
-              @click="handleMessageLineCur(2)"
-              :style="{ color: triangleDefault ? '#FC1682' : '#F7C3C3' }"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="16"
-                viewBox="0 0 14 16"
-                fill="none"
-              >
-                <path
-                  d="M13.5 7.13397C14.1667 7.51887 14.1667 8.48112 13.5 8.86602L1.5 15.7942C0.833333 16.1791 -7.73604e-07 15.698 -7.39955e-07 14.9282L-1.34273e-07 1.0718C-1.00623e-07 0.301996 0.833333 -0.17913 1.5 0.20577L13.5 7.13397Z"
-                  :fill="triangleDefault ? '#FC1682' : '#F7C3C3'"
-                />
-              </svg>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="step">
-        <div class="step-in">
-          <div class="dentistryServices-title step-title">
-            <div class="dentistryServices-title-in bb step-title-in">
-              {{ stepData.title }}
-            </div>
+        <div class="crown-case-content-btn">
+          <div @click="subNum"></div>
+          <div>
+            <div class="swiper-point swiper-point-active" @click="handleProcessBtn(0)"></div>
+            <div class="swiper-point" @click="handleProcessBtn(1)"></div>
           </div>
-          <div class="step-lists">
-            <div
-              v-for="(stepItem, stepIndex) in stepData.lists"
-              :key="stepIndex"
-              class="step-lists-in"
-            >
-              <div class="step-lists-in-l">
-                <div class="title">
-                  <img src="@/assets/images/icon_13.png" alt="" />
-                  {{ windowWidth > 768 ? stepItem.title : stepItem.titleNum }}
-                </div>
-                <div class="image"><img :src="stepItem.img" alt="" /></div>
-                <div class="name">{{ stepItem.name }}</div>
-                <div class="context">{{ stepItem.context }}</div>
-              </div>
-              <div class="step-lists-in-r">
-                <img src="@/assets/images/icon_12.png" alt="" />
-              </div>
-            </div>
-            <div class="step-lists-in" v-if="windowWidth > 767">
-              <div class="lastBox-t">
-                <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-                <div>療程最快<span>即日完成 !</span></div>
-                <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-              </div>
-              <div class="lastBox-b">
-                <!-- <span @click="toWhatsApp">立即預約牙齒檢查</span> -->
-                <!-- <PageAnimBtnTypeTwo :str="'立即預約牙齒檢查'" /> -->
-                <PageAnimBtnTypeTwo str="立即預約牙齒檢查" />
-              </div>
-            </div>
-          </div>
-          <div
-            class="step-lists-in step-lists-outside"
-            v-if="windowWidth < 767"
-          >
-            <div class="lastBox-t">
-              <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-              <div>療程最快<span>即日完成 !</span></div>
-              <div><img src="@/assets/images/icon_13.png" alt="" /></div>
-            </div>
-            <div class="lastBox-b">
-              <!-- <span @click="toWhatsApp">立即預約牙齒檢查</span> -->
-              <!-- <PageAnimBtnTypeTwo :str="'立即預約牙齒檢查'" /> -->
-              <PageAnimBtnTypeTwo str="立即預約牙齒檢查" />
-            </div>
-          </div>
+          <div @click="addNum"></div>
         </div>
-      </div>
-      <div class="doctorTeam" ref="doctorTeam">
-        <ServiceSpecializedTeam :doctorData="doctorData" />
-      </div>
-      <div class="note" v-if="windowWidth > 767">
-        <div class="dentistryServices-title note-title">
-          <div class="dentistryServices-title-in bb note-title-in">
-            療程後注意事項
-          </div>
+      </section>
+      <section class="ckj-container doctor-team">
+        <div class="d-flex flex-row align-items-end subheading">
+          <span>牙體牙髓專科</span><span>醫生團隊</span>
         </div>
-        <div class="note-content">
-          <div class="note-content-l">
-            <img
-              src="https://static.cmereye.com/imgs/2023/10/9ecad6effa1796bd.jpg"
-              alt=""
-            />
-          </div>
-          <div class="note-content-r">
-            <div
-              v-for="(noteItem, noteIndex) in noteData.lists"
-              :key="noteIndex"
-            >
-              <span>·</span>
-              <span>{{ $t(noteItem.name) }}</span>
-            </div>
-          </div>
+        <div class="doctor-team-content-text">牙髓病科專科醫生專門診斷和治療牙髓 (牙神經)
+          及根尖周圍組織疾病，精通各種根管治療技術，包括複雜病處理、顯微根管治療、根尖手術等，能應對各種複雜情況。
         </div>
-      </div>
-      <div class="mobile-note-new" v-else>
+        <div class="doctor-team-content">
+          <DoctorV2 :nowType="'104'" />
+        </div>
+        <div class="doctor-team-content-btn">
+          <PageAnimBtnTypeTwo :str="'即時配對醫生'" />
+        </div>
+      </section>
+      <section class="ckj-container root-canal-problem">
         <div>
-          <div>
-            <img src="../../assets/images/announcements.svg" alt="" />
-          </div>
-          <div>
-            <span>根管治療後</span>
-            <span>注意事項</span>
-          </div>
+          <V2ServiceProblem :problem-data="problemData" :v2-versions="true" />
         </div>
-        <div class="mobile-note-content">
-          <div
-            v-for="(noteItem, noteIndex) in noteData.listsMobile"
-            :key="noteIndex"
-          >
-            <span>·</span>
-            <span>{{ $t(noteItem.name) }}</span>
-          </div>
-        </div>
-      </div>
-      <!-- <ServiceProblem :problem-data="problemData" /> -->
-      <serviceCard />
-      <BranchAddress />
-      <AppointmentFormV2 />
+      </section>
     </div>
+
+    <serviceCard />
+    <BranchAddress />
+    <AppointmentFormV2 />
     <FooterV2 />
-    <!-- <PageNavbar
-      :showDialogBox="top < (height / 3) * 2 && bottom > height / 3"
-    /> -->
-    <!-- <PageNewNavbarSide v-if="windowWidth > 768" />
-    <PageNavbar v-else /> -->
     <AsideV2 />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.banner-in-box {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 20.83vw;
-  width: 100%;
-  z-index: 10;
-}
-.banner-image {
-  position: absolute;
-  z-index: 3;
-  top: 4vw;
-  left: 50%;
-  width: 9.0625vw;
-  height: 9.0625vw;
-  & > img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-.banner-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 23.9583vw;
-  position: absolute;
-  left: 40%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  & > div {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-  }
-  .content-title {
-    color: var(--White, #fff);
-    text-align: right;
-    -webkit-text-stroke-width: 0.5;
-    -webkit-text-stroke-color: var(--White, #fff);
-    font-family: 'FakePearl-Regular';
-    font-size: clamp(40px, 5.7vw, 110px);
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%; /* 176px */
-    letter-spacing: 6.6px;
-    position: relative;
-    z-index: 6;
-    bottom: 0;
-
-    border-radius: 0.6942vw 0.6942vw 0px 0px;
-    background: var(
-      --Liner-purple,
-      linear-gradient(
-        269deg,
-        var(--Brand-Color, #fc1682) 10.21%,
-        #710d54 122.73%
-      )
-    );
-    box-sizing: border-box;
-    padding: 0.859375vw 0;
-    color: var(--White, #fff);
-    text-align: center;
-    text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
-    font-family: 'Noto Sans HK';
-    font-size: 1.565vw;
-    font-style: normal;
-    font-weight: 700;
-    letter-spacing: 0.165vw;
-    width: 100%;
-  }
-
-  .price-style {
-    width: 19.0625vw;
-    height: 11.145vw;
-    position: relative;
-    right: -3.64583vw;
-    & > img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-  .content-price {
-    width: 100%;
-    background: #fff;
-    box-sizing: border-box;
-    padding: 1.0465vw;
-    display: flex;
-    gap: 0 0.52vw;
-    min-height: 4.78135vw;
-    box-sizing: border-box;
-    padding: 0.52vw;
-    align-items: center;
-    font-family: 'Noto Sans HK';
-    font-size: 1.7442vw;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 2.2222vw; /* 114.286% */
-    letter-spacing: 0.29165vw;
-    justify-content: center;
-    border-radius: 0px 0px 10px 10px;
-    background: var(--White, #fff);
-    box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
-    & > div:nth-child(1) {
-      position: relative;
-      color: var(--Grey-Dark, #333);
-      text-align: right;
-      text-shadow: 1.3px 1.333px 1.333px #faeaf2,
-        1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
-        -1.33px -1.333px 1.333px #faeaf2;
-      font-family: 'Noto Sans HK';
-      font-size: 1.744vw;
-      font-style: normal;
-      font-weight: 900;
-      line-height: 2.2222vw; /* 114.286% */
-      letter-spacing: 0.29165vw;
-      top: auto;
-    }
-  }
-}
 :deep(.header-content) {
   .explain_box_mobile {
     background: transparent !important;
@@ -874,22 +631,28 @@ let newsMessageSwiperRef = {
     margin: 0 auto !important;
   }
 }
+
 .reason {
   margin-top: 188px;
+
   &-lists {
     width: 100%;
     max-width: 1656px;
     display: flex;
     margin: 116px auto 0;
+
     &-item {
       padding: 0 55px;
       width: calc(100% / 3);
+
       .image {
         position: relative;
+
         img {
           width: 100%;
         }
       }
+
       .text {
         font-style: normal;
         text-align: center;
@@ -899,9 +662,11 @@ let newsMessageSwiperRef = {
         align-items: center;
         position: relative;
         z-index: 1;
+
         span {
           font-size: 35px;
           font-weight: 900;
+
           &:nth-of-type(1) {
             color: #fff;
             border-radius: 30px;
@@ -909,11 +674,9 @@ let newsMessageSwiperRef = {
             text-align: center;
             width: max-content;
             padding: 0 40px;
-            filter: drop-shadow(
-              0px 3.7044363021850586px 7.408872604370117px
-                rgba(252, 22, 130, 0.38)
-            );
+            filter: drop-shadow(0px 3.7044363021850586px 7.408872604370117px rgba(252, 22, 130, 0.38));
           }
+
           &:nth-of-type(2) {
             color: var(--indexColor1);
             white-space: pre-wrap;
@@ -924,21 +687,26 @@ let newsMessageSwiperRef = {
     }
   }
 }
+
 .care {
   margin-top: 206px;
+
   &-lists {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     max-width: 819px;
     margin: 127px auto 0;
+
     &-item {
       width: calc(100% / 3);
-      & > div {
+
+      &>div {
         .image {
           width: 100%;
           position: relative;
           padding: 0 calc((89px / 273px) * 100% / 2);
+
           &-in {
             width: 100%;
             height: 0;
@@ -947,6 +715,7 @@ let newsMessageSwiperRef = {
             margin-bottom: 13px;
             border-radius: 10px;
             position: relative;
+
             img {
               position: absolute;
               top: 50%;
@@ -957,6 +726,7 @@ let newsMessageSwiperRef = {
             }
           }
         }
+
         .text {
           text-align: center;
           font-size: 24px;
@@ -964,11 +734,13 @@ let newsMessageSwiperRef = {
           white-space: nowrap;
         }
       }
+
       &:nth-of-type(n + 4) {
         margin-top: 90px;
       }
+
       &:nth-of-type(2n + 2) {
-        & > div {
+        &>div {
           .image {
             &-in {
               background: #fee6f1;
@@ -978,44 +750,55 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   &-btn {
     margin-top: 106px;
     display: flex;
     justify-content: center;
   }
 }
+
 .infoCard {
   margin-top: 230px;
+
   &-title {
     &-in {
       font-size: 50px;
+
       span {
         color: var(--indexColor1);
       }
     }
   }
+
   &-content {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 1242px;
     margin: 60px auto 0;
+
     &-l {
       width: calc((509 / 1242) * 100%);
+
       img {
         width: 100%;
       }
     }
+
     &-r {
       margin-left: calc((56 / 1242) * 100%);
       flex: 1;
-      & > div {
+
+      &>div {
         display: flex;
+
         span {
           color: #4d4d4d;
           font-size: 28px;
           line-height: 160%;
           font-weight: 600;
+
           &:nth-of-type(1) {
             min-width: 30px;
           }
@@ -1024,35 +807,39 @@ let newsMessageSwiperRef = {
     }
   }
 }
+
 .step {
   width: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 241, 240, 0) 0%,
-    rgba(255, 241, 240, 0.7) 12.5%,
-    rgba(255, 241, 240, 0.7) 81.99%,
-    rgba(255, 241, 240, 0) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(255, 241, 240, 0) 0%,
+      rgba(255, 241, 240, 0.7) 12.5%,
+      rgba(255, 241, 240, 0.7) 81.99%,
+      rgba(255, 241, 240, 0) 100%);
   padding: 61px 0 140px;
   margin-top: 140px;
+
   &-in {
     width: 100%;
     max-width: 1444px;
     margin: 0 auto;
   }
+
   &-lists {
     margin-top: 98px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     &-in {
       display: flex;
       align-items: center;
       margin-bottom: 92px;
+
       &:nth-of-type(7),
       &:nth-of-type(8) {
         margin-bottom: 0;
       }
+
       &:nth-of-type(3),
       &:nth-of-type(6),
       &:nth-of-type(7) {
@@ -1060,12 +847,14 @@ let newsMessageSwiperRef = {
           display: none;
         }
       }
+
       &-l {
         width: 100%;
         max-width: 400px;
         height: 100%;
         display: flex;
         flex-direction: column;
+
         .title {
           display: flex;
           align-items: center;
@@ -1073,18 +862,22 @@ let newsMessageSwiperRef = {
           font-weight: 700;
           margin-bottom: 15px;
           color: #666666;
+
           img {
             height: auto;
             margin-right: 15px;
           }
         }
+
         .image {
           width: 100%;
+
           img {
             width: 100%;
             border-radius: 30px;
           }
         }
+
         .name {
           color: #fff;
           font-size: 20px;
@@ -1095,6 +888,7 @@ let newsMessageSwiperRef = {
           padding: 8px 15px;
           clip-path: polygon(0 0, 80% 0, 85% 100%, 0 100%);
         }
+
         .context {
           font-size: 20px;
           font-weight: 700;
@@ -1102,26 +896,32 @@ let newsMessageSwiperRef = {
           padding: 0 15px;
         }
       }
+
       &-r {
         margin-left: 50px;
+
         img {
           width: 15px;
           height: auto;
         }
       }
+
       &:nth-of-type(8) {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         .lastBox-t {
           display: flex;
           align-items: flex-end;
-          & > div {
+
+          &>div {
             color: var(--indexColor1);
             font-size: 75px;
             font-weight: 700;
+
             // span {
             //   font-size: 85px;
             // }
@@ -1129,12 +929,14 @@ let newsMessageSwiperRef = {
               padding-bottom: 25px;
               margin-right: 30px;
             }
+
             &:nth-of-type(3) {
               padding-bottom: 25px;
               margin-left: 30px;
             }
           }
         }
+
         .lastBox-b {
           margin-top: 15px;
         }
@@ -1142,38 +944,48 @@ let newsMessageSwiperRef = {
     }
   }
 }
+
 .note {
   margin-top: 140px;
+
   &-title {
     &-in {
       font-size: 50px;
+
       span {
         color: var(--indexColor1);
       }
     }
   }
+
   &-content {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: 1286px;
     margin: 80px auto 0;
+
     &-l {
       width: calc((482 / 1242) * 100%);
+
       img {
         width: 100%;
       }
     }
+
     &-r {
       margin-left: calc((42 / 1242) * 100%);
       flex: 1;
-      & > div {
+
+      &>div {
         display: flex;
+
         span {
           color: #4d4d4d;
           font-size: 28px;
           line-height: 160%;
           font-weight: 600;
+
           &:nth-of-type(1) {
             min-width: 30px;
           }
@@ -1182,25 +994,32 @@ let newsMessageSwiperRef = {
     }
   }
 }
+
 .Root_canal_treatment_equipment {
   width: 100%;
   max-width: calc(1284px + 60px);
   margin: 140px auto 0;
+
   &-in {
     display: flex;
     margin-top: 53px;
+
     &-l {
       width: calc(595 / 1284 * 100%);
       margin-right: calc(53 / 1284 * 100%);
+
       img {
         width: 100%;
       }
     }
+
     &-r {
       flex: 1;
+
       img {
         width: 100%;
       }
+
       span {
         width: 100%;
         text-align: justify;
@@ -1213,53 +1032,44 @@ let newsMessageSwiperRef = {
     }
   }
 }
+
 .doctorTeam {
   margin-top: 140px;
 }
+
 @keyframes btnAnim {
   0% {
     clip-path: polygon(-10% 0, 0 0, -10% 100%, -20% 100%);
   }
+
   50% {
     clip-path: polygon(50% 0, 60% 0, 50% 100%, 40% 100%);
   }
+
   100% {
     clip-path: polygon(110% 0, 120% 0, 110% 100%, 100% 100%);
   }
 }
+
 @keyframes btnAnim2 {
   0% {
     width: 100%;
     height: 100%;
     opacity: 0;
   }
+
   50% {
     width: 100%;
     height: 100%;
     opacity: 1;
   }
+
   90% {
     width: 130%;
     height: 160%;
     opacity: 0;
   }
-  100% {
-    width: 130%;
-    height: 160%;
-    opacity: 0;
-  }
-}
-@keyframes btnAnim3 {
-  0% {
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-  }
-  60% {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-  }
+
   100% {
     width: 130%;
     height: 160%;
@@ -1267,44 +1077,49 @@ let newsMessageSwiperRef = {
   }
 }
 
-// @media (min-width: 768px) and (max-width: 1200px) {
-//   .reason {
-//     &-lists {
-//       &-item {
-//         .image {
-//           div {
-//             font-size: 4vw;
-//             width: 9vw;
-//             height: calc(9vw + 3px);
-//             background-size: 100% 100%;
-//           }
-//         }
-//         .text {
-//           font-size: 3vw;
-//         }
-//       }
-//     }
-//   }
-// }
+@keyframes btnAnim3 {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  60% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    width: 130%;
+    height: 160%;
+    opacity: 0;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 1920px) {
   .reason {
     margin-top: 9.7917vw;
+
     &-lists {
       max-width: 86.25vw;
       margin: 6.0417vw auto 0;
+
       &-item {
         padding: 0 2.8646vw;
+
         .text {
           margin-top: -2.3438vw;
+
           span {
             font-size: 1.8229vw;
+
             &:nth-of-type(1) {
               border-radius: 1.5625vw;
               padding: 0 2.0833vw;
-              filter: drop-shadow(
-                0px 0.1929vw 0.3859vw rgba(252, 22, 130, 0.38)
-              );
+              filter: drop-shadow(0px 0.1929vw 0.3859vw rgba(252, 22, 130, 0.38));
             }
+
             &:nth-of-type(2) {
               margin-top: 2.2917vw;
             }
@@ -1313,46 +1128,57 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   .care {
     margin-top: 10.7292vw;
+
     &-lists {
       max-width: 42.6563vw;
       margin: 6.6146vw auto 0;
+
       &-item {
-        & > div {
+        &>div {
           .image {
             &-in {
               margin-bottom: 0.6771vw;
               border-radius: 0.5208vw;
             }
           }
+
           .text {
             font-size: 1.25vw;
           }
         }
+
         &:nth-of-type(n + 4) {
           margin-top: 4.6875vw;
         }
       }
     }
+
     &-btn {
       margin-top: 5.5208vw;
     }
   }
+
   .infoCard {
     margin-top: 11.9792vw;
+
     &-title {
       &-in {
         font-size: 2.6042vw;
       }
     }
+
     &-content {
       max-width: 64.6875vw;
       margin: 3.125vw auto 0;
+
       &-r {
-        & > div {
+        &>div {
           span {
             font-size: 1.4583vw;
+
             &:nth-of-type(1) {
               min-width: 1.5625vw;
             }
@@ -1361,11 +1187,14 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   .Root_canal_treatment_equipment {
     max-width: calc(66.875vw + 3.125vw);
     margin: 7.2917vw auto 0;
+
     &-in {
       margin-top: 2.7604vw;
+
       &-r {
         span {
           font-size: 1.4583vw;
@@ -1374,61 +1203,77 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   .step {
     padding: 3.1771vw 0 7.2917vw;
     margin-top: 7.2917vw;
+
     &-in {
       max-width: 75.2083vw;
     }
+
     &-lists {
       margin-top: 5.1042vw;
+
       &-in {
         margin-bottom: 4.7917vw;
+
         &-l {
           max-width: 20.8333vw;
+
           .title {
             font-size: 1.8229vw;
             margin-bottom: 0.7813vw;
+
             img {
               margin-right: 0.7813vw;
             }
           }
+
           .image {
             img {
               border-radius: 1.5625vw;
             }
           }
+
           .name {
             font-size: 1.0417vw;
             margin-top: 1.25vw;
             margin-bottom: 0.7813vw;
             padding: 0.4167vw 0.7813vw;
           }
+
           .context {
             font-size: 1.0417vw;
             padding: 0 0.7813vw;
           }
         }
+
         &-r {
           margin-left: 2.6042vw;
+
           img {
             width: 0.7813vw;
           }
         }
+
         &:nth-of-type(8) {
           .lastBox-t {
-            & > div {
+            &>div {
               font-size: 3.9063vw;
+
               &:nth-of-type(1) {
                 padding-bottom: 1.3021vw;
                 margin-right: 1.5625vw;
               }
+
               &:nth-of-type(3) {
                 padding-bottom: 1.3021vw;
                 margin-left: 1.5625vw;
               }
             }
           }
+
           .lastBox-b {
             margin-top: 0.7813vw;
           }
@@ -1436,20 +1281,25 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   .note {
     margin-top: 7.2917vw;
+
     &-title {
       &-in {
         font-size: 2.6042vw;
       }
     }
+
     &-content {
       max-width: 66.9792vw;
       margin: 4.1667vw auto 0;
+
       &-r {
-        & > div {
+        &>div {
           span {
             font-size: 1.4583vw;
+
             &:nth-of-type(1) {
               min-width: 1.5625vw;
             }
@@ -1459,15 +1309,18 @@ let newsMessageSwiperRef = {
     }
   }
 }
+
 @media only screen and (max-width: 768px) {
   :deep(.explain_box_mobile) {
     top: 0 !important;
     margin-left: 0 !important;
     margin-right: auto !important;
   }
+
   :deep(.pageIn) {
     margin-top: 30px;
   }
+
   :deep(.header-content) {
     .explain_box_mobile {
       align-items: flex-end;
@@ -1482,69 +1335,87 @@ let newsMessageSwiperRef = {
       top: auto;
       z-index: 35;
     }
+
     .waterBg-implant::after,
     .waterBg-implant::before {
       bottom: -28vw;
     }
   }
+
   .reason {
     margin-top: 54px;
+
     &-title {
       &-in {
         font-size: 26px;
       }
     }
+
     &-lists {
       flex-direction: column;
       gap: 0;
       margin: 50px auto 0;
       padding: 0 4vw;
+
       &-item {
         width: 42.6vw;
         padding: 0 0;
+
         .text {
           margin-top: -34px;
+
           span {
             font-size: 4.226vw;
+
             &:nth-of-type(1) {
               padding: 8px 40px;
             }
+
             &:nth-of-type(2) {
               margin-top: 20px;
               white-space: normal;
             }
           }
         }
+
         // &:not(:last-child) {
         //   margin-bottom: 35px;
         // }
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         margin: 0 0 0 auto;
       }
-      & > div:nth-child(2),
-      & > div:nth-child(3) {
+
+      &>div:nth-child(2),
+      &>div:nth-child(3) {
         margin-top: -65px;
       }
     }
   }
+
   .care {
     margin-top: 80px;
     padding-bottom: 0px;
+
     &-title {
       &-in {
         font-size: 26px;
       }
     }
+
     &-lists {
       width: auto;
       margin: 34px 15px 0;
+
       &-item {
         width: calc(100% / 3);
-        & > div {
+
+        &>div {
           .image {
             padding: 0 5px;
           }
+
           .text {
             white-space: pre-wrap;
             font-size: 14px;
@@ -1552,57 +1423,70 @@ let newsMessageSwiperRef = {
             color: #4d4d4d;
           }
         }
+
         &:nth-of-type(1) {
-          & > div {
+          &>div {
             .text {
               padding: 0 0;
             }
           }
         }
+
         &:nth-of-type(3) {
-          & > div {
+          &>div {
             .text {
               padding: 0 15px;
             }
           }
         }
+
         &:nth-of-type(n + 4) {
           margin-top: 30px;
         }
       }
     }
+
     &-btn {
       margin-top: 30px;
     }
   }
+
   .infoCard {
     margin-top: 80px;
+
     &-title {
       &-in {
         font-size: 26px;
+
         span {
           display: inline-block;
         }
       }
     }
+
     &-content {
       flex-direction: column;
       align-items: flex-start;
       margin: 0 auto 0;
+
       &-l {
         width: 100%;
         padding: 0 53px;
       }
+
       &-r {
         width: 100vw;
         margin-left: 0;
         padding: 9.065vw 6.665vw 0;
-        & > div {
+
+        &>div {
           display: flex;
           flex-direction: column;
           width: 41.825vw;
-          & > div:nth-child(2) {
+
+          &>div:nth-child(2) {
             margin-top: 1.6vw;
+
             span {
               color: var(--Grey-Deep, #4d4d4d);
               text-align: justify;
@@ -1610,21 +1494,25 @@ let newsMessageSwiperRef = {
               font-size: 3.2vw;
               font-style: normal;
               font-weight: 500;
-              line-height: 160%; /* 19.2px */
+              line-height: 160%;
+              /* 19.2px */
               letter-spacing: 1.2px;
             }
           }
         }
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           margin: 0 0 0 auto;
         }
-        & > div:nth-child(2),
-        & > div:nth-child(3) {
+
+        &>div:nth-child(2),
+        &>div:nth-child(3) {
           margin-top: -110px;
         }
       }
     }
   }
+
   .step::after {
     content: '';
     display: block;
@@ -1635,14 +1523,13 @@ let newsMessageSwiperRef = {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(
-      0deg,
-      rgba(255, 241, 240, 0) 0%,
-      rgba(255, 241, 240, 0.7) 12.5%,
-      rgba(255, 241, 240, 0.7) 81.99%,
-      rgba(255, 241, 240, 0) 100%
-    );
+    background: linear-gradient(0deg,
+        rgba(255, 241, 240, 0) 0%,
+        rgba(255, 241, 240, 0.7) 12.5%,
+        rgba(255, 241, 240, 0.7) 81.99%,
+        rgba(255, 241, 240, 0) 100%);
   }
+
   .step {
     // background: linear-gradient(
     //   0deg,
@@ -1655,11 +1542,13 @@ let newsMessageSwiperRef = {
     background: transparent;
     margin-top: 40px;
     padding: 46px 0;
+
     &-title {
       &-in {
         font-size: 26px;
       }
     }
+
     &-lists {
       width: auto;
       margin: 57px 8vw 0;
@@ -1667,9 +1556,11 @@ let newsMessageSwiperRef = {
       grid-template-columns: repeat(2, 1fr);
       justify-items: center;
       gap: 0 20px;
+
       &-in {
         width: calc(140 / 375 * 100vw);
         margin-bottom: 0;
+
         // &:nth-of-type(n + 4) {
         //   margin-bottom: 30px;
         // }
@@ -1681,6 +1572,7 @@ let newsMessageSwiperRef = {
         // }
         &-l {
           position: relative;
+
           .title {
             position: absolute;
             padding: 0 6px;
@@ -1694,26 +1586,30 @@ let newsMessageSwiperRef = {
             font-size: 60px;
             font-style: normal;
             font-weight: 400;
-            line-height: 140%; /* 84px */
+            line-height: 140%;
+            /* 84px */
             letter-spacing: -3px;
             display: flex;
             justify-content: center;
-            background: url('https://static.cmereye.com/imgs/2024/08/a53173454afef713.png')
-              no-repeat;
+            background: url('https://static.cmereye.com/imgs/2024/08/a53173454afef713.png') no-repeat;
             background-size: 100% 100%;
             display: inline-block;
             background-position-x: 5px;
-            & > img {
+
+            &>img {
               display: none;
             }
           }
+
           .image {
             padding: 0 6px;
+
             img {
               border-radius: 12px;
               border: 2px solid var(--Theme-Color, #fc1682);
             }
           }
+
           .name {
             margin: 0;
             margin-top: 6px;
@@ -1727,8 +1623,10 @@ let newsMessageSwiperRef = {
             font-size: 16px;
             font-style: normal;
             font-weight: 600;
-            line-height: 130%; /* 20.8px */
+            line-height: 130%;
+            /* 20.8px */
           }
+
           .context {
             // font-size: 16px;
             padding-left: 5px;
@@ -1738,23 +1636,29 @@ let newsMessageSwiperRef = {
             font-size: 12px;
             font-style: normal;
             font-weight: 500;
-            line-height: 160%; /* 19.2px */
+            line-height: 160%;
+            /* 19.2px */
             letter-spacing: 1.2px;
           }
         }
+
         &-r {
           display: none;
           margin-top: 30px;
           margin-left: 0;
+
           img {
             transform: rotate(90deg);
           }
         }
+
         &:nth-of-type(8) {
           margin-top: 15px;
+
           .lastBox-t {
-            & > div {
+            &>div {
               font-size: 28px;
+
               // span {
               //   font-size: 34px;
               // }
@@ -1762,75 +1666,94 @@ let newsMessageSwiperRef = {
                 width: 14px;
                 height: 16px;
               }
+
               &:nth-of-type(1) {
                 padding-bottom: 10px;
                 margin-right: 7px;
               }
+
               &:nth-of-type(3) {
                 padding-bottom: 10px;
                 margin-left: 7px;
               }
             }
           }
+
           .lastBox-b {
             margin-top: 20px;
           }
         }
       }
-      & > div:nth-child(odd) {
+
+      &>div:nth-child(odd) {
         margin-top: 60px;
       }
-      & > div:nth-child(7) {
+
+      &>div:nth-child(7) {
         margin-top: 20px;
       }
-      & > div:nth-child(even) {
+
+      &>div:nth-child(even) {
         margin-top: 120px;
       }
     }
   }
+
   .step-lists-outside {
     margin-top: 40px;
     width: 100%;
-    & > div:nth-child(1) {
+
+    &>div:nth-child(1) {
       display: none;
     }
+
     :deep(.lastBox-b) {
       margin: 0 auto;
+
       .animbtntypetwo {
         justify-content: center;
       }
+
       .animbtntypetwo-in {
-        & > span {
+        &>span {
           font-size: 5.33vw;
         }
       }
     }
   }
+
   .note {
     margin-top: 34px;
+
     &-title {
       &-in {
         font-size: 26px;
+
         span {
           display: inline-block;
         }
       }
     }
+
     &-content {
       flex-direction: column;
       align-items: flex-start;
       margin: 72px auto 0;
+
       &-l {
         width: 100%;
         padding: 0 53px;
       }
+
       &-r {
         margin-left: 0;
         padding: 35px 30px 0;
-        & > div {
+
+        &>div {
           span {
             font-size: 16px;
             font-weight: 500;
+
             &:nth-of-type(1) {
               min-width: 15px;
             }
@@ -1839,32 +1762,39 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   .mobile-note-new {
     margin-top: 60px;
     margin-left: 30px;
-    & > div:nth-child(1) {
+
+    &>div:nth-child(1) {
       display: flex;
       align-items: flex-end;
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         position: relative;
         z-index: 6;
       }
-      & > div:nth-child(2) {
+
+      &>div:nth-child(2) {
         position: relative;
         display: flex;
         flex-direction: column;
         padding-bottom: 20px;
         flex: 1;
         width: 100%;
-        & > span:nth-child(1) {
+
+        &>span:nth-child(1) {
           color: var(--Grey-Deep, #4d4d4d);
           font-family: 'FakePearl-Regular';
           font-size: 20px;
           font-style: normal;
           font-weight: 600;
-          line-height: 126%; /* 25.2px */
+          line-height: 126%;
+          /* 25.2px */
         }
-        & > span:nth-child(2) {
+
+        &>span:nth-child(2) {
           color: var(--Theme-Color, #fc1682);
           font-family: 'FakePearl-Regular';
           font-size: 26px;
@@ -1874,7 +1804,8 @@ let newsMessageSwiperRef = {
           letter-spacing: 2.6px;
         }
       }
-      & > div:nth-child(2)::after {
+
+      &>div:nth-child(2)::after {
         display: inline-block;
         width: 120%;
         height: 1px;
@@ -1886,13 +1817,15 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   .mobile-note-content {
     margin-top: 25px;
     margin-right: 30px;
     display: grid;
     gap: 10px 36px;
     grid-template-columns: repeat(2, 1fr);
-    & > div {
+
+    &>div {
       padding-left: 12px;
       color: var(--Grey-Deep, #4d4d4d);
       text-align: justify;
@@ -1900,14 +1833,18 @@ let newsMessageSwiperRef = {
       font-size: 12px;
       font-style: normal;
       font-weight: 500;
-      line-height: 200%; /* 24px */
+      line-height: 200%;
+      /* 24px */
       letter-spacing: 1.2px;
-      & > span:nth-child(1) {
+
+      &>span:nth-child(1) {
         display: none;
       }
+
       position: relative;
     }
-    & > div::before {
+
+    &>div::before {
       content: '';
       background: url('../../assets/images/triangle.svg') no-repeat;
       background-size: 100% 100%;
@@ -1919,13 +1856,16 @@ let newsMessageSwiperRef = {
       left: -2px;
     }
   }
+
   .Root_canal_treatment_equipment {
     margin-top: 60px;
+
     &-in {
       margin-top: 30px;
       padding: 0 5.33vw;
       flex-direction: column;
       position: relative;
+
       :deep(.swiper-slide) {
         width: 71.733vw;
         border-top: 1px solid #fc1682;
@@ -1933,7 +1873,8 @@ let newsMessageSwiperRef = {
         border-bottom: 1px solid #fc1682;
         box-sizing: border-box;
         padding: 5.33vw;
-        & > div:nth-child(2) {
+
+        &>div:nth-child(2) {
           margin-top: 16px;
           min-height: 33.0665vw;
           color: #4d4d4d;
@@ -1942,18 +1883,23 @@ let newsMessageSwiperRef = {
           font-size: 3.2vw;
           font-style: normal;
           font-weight: 400;
-          line-height: 160%; /* 19.2px */
+          line-height: 160%;
+          /* 19.2px */
           letter-spacing: 1.2px;
         }
       }
+
       :deep(.swiper-slide:last-child) {
         border-right: 1px solid #fc1682;
       }
+
       &-l {
         width: 100%;
       }
+
       &-r {
         margin-top: 20px;
+
         span {
           font-size: 16px;
           line-height: 200%;
@@ -1963,19 +1909,24 @@ let newsMessageSwiperRef = {
       }
     }
   }
+
   :deep(.swiper) {
     margin: 0;
   }
+
   :deep(.point) {
     margin-top: 20px;
     width: 19.733vw;
+
     .boxLine {
       display: none;
     }
+
     .boxLine-current {
       display: none;
     }
   }
+
   .boxRound-rootCanal {
     position: absolute;
     bottom: -14vw;
@@ -1984,55 +1935,1168 @@ let newsMessageSwiperRef = {
     width: 19.733vw;
     height: 9.33vw;
     border: 1px solid #fc1682;
-    & > div {
+
+    &>div {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2.4vw;
       box-sizing: border-box;
-      & > svg {
+
+      &>svg {
         fill: #f7c3c3;
       }
     }
-    & > div:nth-child(1) {
+
+    &>div:nth-child(1) {
       border-right: 1px solid #fc1682;
     }
   }
+
   .doctorTeam {
     margin-top: 30px;
   }
+
+}
+</style>
+
+<style lang="scss" scoped>
+@media screen and (min-width:991px) {
+  .root-canal-therapy {
+    margin-top: 42px;
+    box-sizing: border-box;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: flex-end;
+
+    &>div:nth-child(1) {
+      position: absolute;
+      z-index: 2;
+      width: 467px;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 34px 0;
+
+      &>div:nth-child(1) {
+        &>span:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          font-family: "Noto Sans HK";
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
+        }
+
+        &>span:nth-child(2) {
+          color: var(--Brand-Color, #F8298A);
+          font-family: "Noto Sans HK";
+          font-size: 30px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 3px;
+        }
+      }
+
+      .subheading {
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      .subheading::after {
+        content: none;
+      }
+
+      &>div:nth-child(2) {
+        color: var(--Grey-Deep, #4D4D4D);
+        text-align: justify;
+        font-family: "Noto Sans HK";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;
+        /* 32px */
+        letter-spacing: 4px;
+      }
+    }
+
+    &>div:nth-child(2) {
+      position: relative;
+      z-index: 1;
+      right: 0;
+      width: 555px;
+      height: 277px;
+
+      &>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .charge-item {
+    box-sizing: border-box;
+    padding: 30px 0;
+
+    &>div:nth-child(2) {
+      &>div {
+        margin-top: 20px;
+      }
+
+      &>div:nth-child(1) {
+        width: 556px;
+        height: 410px;
+        margin: 20px auto 0;
+
+        &>img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &>div:nth-child(2) {
+        border-radius: 20px;
+        box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.20);
+        overflow: hidden;
+
+        &>div {
+          box-sizing: border-box;
+          padding: 20px 35px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          ;
+
+          &>div {
+            color: var(--White, #FFF);
+            text-align: center;
+            font-family: "Noto Sans HK";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 2.4px;
+          }
+
+        }
+
+        &>div:nth-child(1) {
+          background: var(--Brand-Color, #F8298A);
+        }
+
+        &>div:nth-child(2) {
+          background: var(--White, #FFF);
+
+          &>div {
+            color: var(--Brand-Color, #F8298A);
+          }
+        }
+
+        &>div:nth-child(3) {
+          background: var(--Palest-Pink, #FFF7F8);
+
+          &>div {
+            color: var(--Blue-Deep, #00AEFF);
+          }
+        }
+      }
+
+      &>div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 2.4px;
+
+          span {
+            color: var(--Brand-Color, #F8298A);
+          }
+        }
+
+        &>div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          font-family: "Noto Sans HK";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+
+  .seven-steps {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .seven-steps-title {
+      &>div {
+        color: var(--Grey-Deep, #4D4D4D);
+        text-align: center;
+        font-family: "Noto Sans HK";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 3px;
+
+        &>span {
+          color: var(--Brand-Color, #F8298A);
+        }
+      }
+    }
+
+    .seven-steps-content {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 30px;
+
+      &>div:last-child {
+        grid-column: span 2;
+
+        .seven-steps-content-item {
+          width: 475.864px;
+          height: 210.71px;
+          margin-left: 53px;
+
+          &>div {
+            &>img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .seven-steps-content-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div:nth-child(1) {
+          position: relative;
+
+          &>div:nth-child(1) {
+            position: absolute;
+            z-index: 5;
+            background: url('https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png') no-repeat;
+            background-size: contain;
+
+            top: -0.49vw;
+            left: -0.49vw;
+            width: 3.4375vw;
+            height: 3.4375vw;
+
+            color: var(--White, #FFF);
+            font-family: "Noto Sans HK";
+            font-size: 34px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 3.4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &>div:nth-child(2) {
+            position: relative;
+          }
+
+          &>div:nth-child(2)::after {
+            content: "";
+            position: absolute;
+            width: 21px;
+            height: 63px;
+            background: url(~/assets/images/2025040208530601.png) no-repeat;
+            background-size: cover;
+            top: 50%;
+            right: -15px;
+            z-index: -1;
+            transform: translateY(-50%);
+          }
+
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 10px;
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 2px;
+        }
+      }
+
+      &>div:nth-child(7) {
+        .seven-steps-content-item {
+          &>div:nth-child(1) {
+            background: salmon;
+
+            &>div:nth-child(2)::after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .microroot-canal {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .microroot-canal-content {
+      margin-top: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 0 15px;
+
+      &>div:nth-child(1) {
+        width: 300px;
+        height: 206.324px;
+
+        &>img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &>div:nth-child(2) {
+        max-width: 645px;
+        padding-left: 25px;
+
+        ul>li {
+          color: var(--Grey-Deep, #4D4D4D);
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 200%;
+          letter-spacing: 1.8px;
+          list-style: disc;
+        }
+      }
+    }
+  }
+
+  .microroot-canal-equipment {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .microroot-canal-equipment-content {
+      margin-top: 20px;
+      gap: 0 35px;
+      display: flex;
+
+      &>div:nth-child(1) {
+        width: 445.124px;
+        height: auto;
+
+        &>img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &>div:nth-child(2) {
+        max-width: 478.164px;
+
+        &>div:nth-child(1) {
+          width: 478.164px;
+          height: 368.948px;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 18px;
+          color: var(--Grey-Deep, #4D4D4D);
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          letter-spacing: 4px;
+        }
+      }
+    }
+  }
+
+  .doctor-team {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    .doctor-team-content-text {
+      margin-top: 15px;
+      color: var(--Grey-Deep, #4D4D4D);
+      text-align: justify;
+      font-family: "Noto Sans HK";
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      letter-spacing: 4px;
+    }
+
+    .doctor-team-content {
+      margin-top: 15px;
+    }
+
+    .doctor-team-content-btn {
+      margin: 15px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .root-canal-problem {
+    padding: 30px 0;
+    box-sizing: border-box;
+
+    :deep(.problem) {
+      margin-top: 0;
+    }
+  }
+
+  :deep(.index-dentalServices) {
+    box-sizing: border-box;
+    padding: 30px 0;
+  }
+
+
+
+
   .banner-in-box {
     position: absolute;
-    bottom: 0;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 20.83vw;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .banner-image {
+    position: absolute;
+    z-index: 3;
+    top: 4vw;
+    left: 50%;
+    width: 9.0625vw;
+    height: 9.0625vw;
+
+    &>img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 23.9583vw;
+    position: absolute;
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &>div {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .content-title {
+      color: var(--White, #fff);
+      text-align: right;
+      -webkit-text-stroke-width: 0.5;
+      -webkit-text-stroke-color: var(--White, #fff);
+      font-family: 'FakePearl-Regular';
+      font-size: clamp(40px, 5.7vw, 110px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      /* 176px */
+      letter-spacing: 6.6px;
+      position: relative;
+      z-index: 6;
+      bottom: 0;
+
+      border-radius: 0.6942vw 0.6942vw 0px 0px;
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
+      box-sizing: border-box;
+      padding: 0.859375vw 0;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
+      font-family: 'Noto Sans HK';
+      font-size: 1.565vw;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.165vw;
+      width: 100%;
+    }
+
+    .price-style {
+      width: 19.0625vw;
+      height: 11.145vw;
+      position: relative;
+      right: -3.64583vw;
+
+      &>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .content-price {
+      width: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1.0465vw;
+      display: flex;
+      gap: 0 0.52vw;
+      min-height: 4.78135vw;
+      box-sizing: border-box;
+      padding: 0.52vw;
+      align-items: center;
+      font-family: 'Noto Sans HK';
+      font-size: 1.7442vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 2.2222vw;
+      /* 114.286% */
+      letter-spacing: 0.29165vw;
+      justify-content: center;
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
+
+      &>div:nth-child(1) {
+        position: relative;
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 1.744vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 2.2222vw;
+        /* 114.286% */
+        letter-spacing: 0.29165vw;
+        top: auto;
+      }
+    }
+  }
+}
+
+/* 992px */
+@media screen and (max-width: 992px) {
+  .root-canal-therapy {
+    margin-bottom: 8vw;
+
+    &>div:nth-child(1) {
+      &>div:nth-child(3) {
+        color: var(--Grey-Deep, #4D4D4D);
+        text-align: justify;
+        font-family: "Noto Sans HK";
+        font-size: 3.733vw;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: 0.7px;
+        box-sizing: border-box;
+        padding: 0 8vw;
+      }
+    }
+  }
+
+  .charge-item {
+    margin: 8vw 0;
+
+    .charge-item-content {
+      &>div:nth-child(1) {
+        box-sizing: border-box;
+        padding: 4vw 0;
+        width: 83.465vw;
+        height: auto;
+        margin: 0 auto;
+
+        &>img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &>div:nth-child(2) {
+        border-radius: 5.33vw;
+        margin: 4vw 5.33vw;
+        box-shadow: 0px 6.761px 6.761px 0px rgba(77, 77, 77, 0.20);
+        overflow: hidden;
+        box-sizing: border-box;
+
+        &>div {
+          box-sizing: border-box;
+          padding: 1.865vw 6.133vw;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          &>div {
+            text-align: center;
+            color: var(--White, #FFF);
+            font-family: "Noto Sans HK";
+            font-size: 4.265vw;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.4265vw;
+          }
+
+        }
+
+        &>div:nth-child(1) {
+          background: var(--Brand-Color, #F8298A);
+        }
+
+        &>div:nth-child(2) {
+          background: var(--White, #FFF);
+
+          &>div {
+            color: var(--Brand-Color, #F8298A);
+          }
+        }
+
+        &>div:nth-child(3) {
+          background: var(--Palest-Pink, #FFF7F8);
+
+          &>div {
+            color: var(--Blue-Deep, #00AEFF);
+          }
+        }
+      }
+
+      &>div:nth-child(3) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div:nth-child(1) {
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 4.265vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+          letter-spacing: 0.4265vw;
+
+          span {
+            color: var(--Brand-Color, #F8298A);
+          }
+        }
+
+        &>div:nth-child(2) {
+          color: var(--Grey-Dark, #333);
+          font-family: "Noto Sans HK";
+          font-size: 3.733vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          letter-spacing: 0.7px;
+        }
+      }
+
+    }
+  }
+
+  .seven-steps {
+    margin: 8vw 0;
+    box-sizing: border-box;
+    padding: 0 5.33vw;
+
+    .seven-steps-title {
+      color: var(--Grey-Mid, #666);
+      text-align: center;
+      font-family: "Noto Sans HK";
+      font-size: 4.8vw;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.48vw;
+
+      span {
+        color: var(--Brand-Color, #F8298A);
+      }
+    }
+
+    .seven-steps-content {
+      margin-top: 5.33vw;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9.33vw 4.265vw;
+      position: relative;
+      z-index: 1;
+
+      &>div:last-child {
+        grid-column: span 2;
+
+        .seven-steps-content-item {
+          width: 58.893vw;
+          height: 26.079vw;
+          margin-left: 0;
+
+          &>div {
+            &>img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+
+      .seven-steps-content-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &>div:nth-child(1) {
+          position: relative;
+
+          &>div:nth-child(1) {
+            position: absolute;
+            z-index: 5;
+            background: url('https://static.cmereye.com/imgs/2024/11/3b0a5e9326c68638.png') no-repeat;
+            background-size: contain;
+
+            top: -1.06vw;
+            left: -1.06vw;
+            width: 8vw;
+            height: 8vw;
+
+            color: var(--White, #FFF);
+            font-family: "Noto Sans HK";
+            font-size: 4.8vw;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.48vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &>div:nth-child(2) {
+            position: relative;
+          }
+
+          &>div:nth-child(2)::after {
+            content: "";
+            position: absolute;
+            width: 2.133vw;
+            height: 6.4vw;
+            background: url(/_nuxt/assets/images/2025040208530601.png) no-repeat;
+            background-size: contain;
+            top: 50%;
+            right: -2.13vw;
+            z-index: -1;
+            transform: translateY(-50%);
+          }
+
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 1.33vw;
+          color: var(--Grey-Dark, #333);
+          text-align: center;
+          font-family: "Noto Sans HK";
+          font-size: 3.733vw;
+          font-style: normal;
+          font-weight: 350;
+          line-height: 150%;
+          white-space: nowrap;
+        }
+      }
+
+      &>div:nth-child(7) {
+        .seven-steps-content-item {
+
+          &>div:nth-child(1) {
+            background: salmon;
+
+            &>div:nth-child(2)::after {
+              content: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .microroot-canal {
+    margin: 8vw 0;
+    box-sizing: border-box;
+    padding: 0 5.33vw;
+
+    .microroot-canal-content {
+      margin-top: 5.33vw;
+      display: flex;
+      flex-direction: column;
+      gap: 5.33vw 0;
+      position: relative;
+      z-index: 1;
+
+      &>div {
+        display: flex;
+        gap: 0 3.465vw;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        &>div:nth-child(1) {
+          width: 40vw;
+          padding-left: 1.865vw;
+          padding-top: 1.865vw;
+          height: 26.65vw;
+          position: relative;
+          z-index: 5;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &>div:nth-child(1)::after {
+          content: "";
+          position: absolute;
+          width: 22.936vw;
+          height: 22.936vw;
+          border-radius: 2.65vw;
+          background: var(--Brand-Color, #F8298A);
+          z-index: -1;
+          top: 0;
+          left: 0;
+        }
+
+        &>div:nth-child(2) {
+          width: 43.733vw;
+          color: var(--Grey-Deep, #4D4D4D);
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 3.2vw;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 150%;
+          /* 18px */
+          letter-spacing: 0.6px;
+        }
+      }
+
+      &>div:nth-child(2) {
+        flex-direction: row-reverse;
+
+        &>div:nth-child(1) {
+          padding-left: 0;
+          padding-right: 1.865vw;
+        }
+
+        &>div:nth-child(1)::after {
+          content: "";
+          position: absolute;
+          width: 22.936vw;
+          height: 22.936vw;
+          border-radius: 2.65vw;
+          background: var(--Brand-Color, #F8298A);
+          z-index: -1;
+          top: 0;
+          left: auto;
+          right: 0;
+        }
+
+      }
+    }
+  }
+
+  .microroot-canal-equipment {
+    margin: 8vw 0;
+    box-sizing: border-box;
+    padding: 0 5.33vw;
+
+    .microroot-canal-equipment-content {
+      margin-top: 5.33vw;
+
+      .swiper-slide-item {
+        max-width: 61.33vw;
+
+        &>div:nth-child(1) {
+          width: 61.33vw;
+          height: 61.33vw;
+          border-radius: 2.56vw;
+          overflow: hidden;
+
+          &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &>div:nth-child(2) {
+          margin-top: 4vw;
+          color: #4D4D4D;
+          text-align: justify;
+          font-family: "Noto Sans HK";
+          font-size: 3.2vw;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          letter-spacing: 0.6px;
+        }
+      }
+    }
+
+    .crown-case-content-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4vw;
+      gap: 0 2.665vw;
+
+      &>div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 2.665vw;
+
+        &>div {
+          width: 3.21vw;
+          height: 3.2vw;
+          overflow: hidden;
+          border-radius: 50%;
+          background: var(white, #fff);
+          box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+        }
+      }
+
+      &>div:nth-child(1),
+      &>div:nth-child(3) {
+        width: 5.33vw;
+        height: 5.33vw;
+        overflow: hidden;
+        border-radius: 50%;
+        background: url('~/assets/images/2025040215172701.svg') no-repeat;
+        background-size: cover;
+        box-shadow: 0px 5.333px 5.333px rgba(77, 77, 77, 0.2);
+      }
+
+      &>div:nth-child(3) {
+        transform: rotate(180deg);
+        box-shadow: -5.333px -5.333px 5.333px rgba(77, 77, 77, 0.2);
+      }
+
+      .swiper-point-active {
+        background: var(--Pink-Mid, #f670ae);
+        filter: drop-shadow(0px 4px 4px rgba(77, 77, 77, 0.2));
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+
+  .doctor-team {
+    margin: 8vw 0;
+
+    .doctor-team-content-text {
+      margin: 4vw 0;
+      box-sizing: border-box;
+      padding: 0 6.4vw;
+      color: var(--Grey-Mid, #666);
+      text-align: justify;
+      font-family: "Noto Sans HK";
+      font-size: 3.2vw;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      letter-spacing: 0.6px;
+    }
+
+    .doctor-team-content-btn {
+      margin: 4vw auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  :deep(.index-dentalServices) {
+    padding-top: 0;
+    margin: 8vw 0;
+  }
+
+  .banner-in-box {
+    position: absolute;
     left: 0;
     height: 100vw;
     width: 100%;
     z-index: 22;
     box-sizing: border-box;
-    // padding-left: 20px;
-    padding-bottom: 35px;
-    // display: flex;
-    // align-items: flex-start;
-    // justify-content: flex-start;
+    padding-bottom: 9.33vw;
     top: 0;
     bottom: 0;
     transform: translateY(0px);
   }
+
   .banner-image {
     display: none !important;
+  }
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 23.9583vw;
     position: absolute;
-    z-index: 10;
-    width: 166px;
-    height: 46px;
-    top: 0;
-    left: 15%;
-    & > img {
+    left: 40%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    &>div {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .content-title {
+      color: var(--White, #fff);
+      text-align: right;
+      -webkit-text-stroke-width: 0.5;
+      -webkit-text-stroke-color: var(--White, #fff);
+      font-family: 'FakePearl-Regular';
+      font-size: clamp(40px, 5.7vw, 110px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%;
+      /* 176px */
+      letter-spacing: 6.6px;
+      position: relative;
+      z-index: 6;
+      bottom: 0;
+
+      border-radius: 0.6942vw 0.6942vw 0px 0px;
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
+      box-sizing: border-box;
+      padding: 0.859375vw 0;
+      color: var(--White, #fff);
+      text-align: center;
+      text-shadow: 0px 5.333px 5.333px rgba(0, 0, 0, 0.25);
+      font-family: 'Noto Sans HK';
+      font-size: 1.565vw;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.165vw;
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+    }
+
+    .price-style {
+      width: 19.0625vw;
+      height: 11.145vw;
+      position: relative;
+      right: -3.64583vw;
+
+      &>img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .content-price {
+      width: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 1.0465vw;
+      display: flex;
+      gap: 0 0.52vw;
+      min-height: 4.78135vw;
+      box-sizing: border-box;
+      padding: 0.52vw;
+      align-items: center;
+      font-family: 'Noto Sans HK';
+      font-size: 1.7442vw;
+      font-style: normal;
+      font-weight: 900;
+      line-height: 2.2222vw;
+      /* 114.286% */
+      letter-spacing: 0.29165vw;
+      justify-content: center;
+      border-radius: 0px 0px 10px 10px;
+      background: var(--White, #fff);
+      box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
+
+      &>div:nth-child(1) {
+        position: relative;
+        color: var(--Grey-Dark, #333);
+        text-align: right;
+        text-shadow: 1.3px 1.333px 1.333px #faeaf2,
+          1.33px -1.333px 1.333px #faeaf2, -1.33px 1.333px 1.333px #faeaf2,
+          -1.33px -1.333px 1.333px #faeaf2;
+        font-family: 'Noto Sans HK';
+        font-size: 1.744vw;
+        font-style: normal;
+        font-weight: 900;
+        line-height: 2.2222vw;
+        /* 114.286% */
+        letter-spacing: 0.29165vw;
+        top: auto;
+      }
     }
   }
+
   .banner-content {
     position: relative;
     align-items: flex-start;
@@ -2043,6 +3107,7 @@ let newsMessageSwiperRef = {
     bottom: -75%;
     border-radius: 10px;
     transform: translate(-50%, 0%);
+
     .content-title {
       display: flex;
       justify-content: center;
@@ -2051,21 +3116,18 @@ let newsMessageSwiperRef = {
       font-size: 40px;
       font-style: normal;
       font-weight: 600;
-      line-height: 100%; /* 72px */
+      line-height: 100%;
+      /* 72px */
       letter-spacing: 2.7px;
       position: relative;
       z-index: 6;
       bottom: 0;
       width: 100%;
       border-radius: 10px 10px 0px 0px;
-      background: var(
-        --Liner-purple,
-        linear-gradient(
-          269deg,
-          var(--Brand-Color, #fc1682) 10.21%,
-          #710d54 122.73%
-        )
-      );
+      background: var(--Liner-purple,
+          linear-gradient(269deg,
+            var(--Brand-Color, #fc1682) 10.21%,
+            #710d54 122.73%));
       padding: 16.5px 0;
       color: var(--White, #fff);
       text-align: center;
@@ -2074,9 +3136,11 @@ let newsMessageSwiperRef = {
       font-size: 20px;
       font-style: normal;
       font-weight: 700;
-      line-height: 20px; /* 83.333% */
+      line-height: 20px;
+      /* 83.333% */
       letter-spacing: 2px;
     }
+
     .content-price {
       min-height: 13.665vw;
       gap: 0 8px;
@@ -2084,7 +3148,8 @@ let newsMessageSwiperRef = {
       border-radius: 0px 0px 10px 10px;
       background: var(--White, #fff);
       box-shadow: 0px 4px 4px rgba(77, 77, 77, 0.2);
-      & > div:nth-child(1) {
+
+      &>div:nth-child(1) {
         color: var(--Grey-Dark, #333);
         text-align: right;
         text-shadow: 1.3px 1.333px 1.333px #faeaf2,
