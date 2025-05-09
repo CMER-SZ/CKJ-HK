@@ -11,42 +11,21 @@
       <div class="appointmentForm-table-title">
         <span> <i>AI智能</i>預約及查詢系統 </span>
       </div>
-      <form
-        ref="appointmentForm"
-        class="needs-validation"
-        :class="{ 'was-validated': wasValidated }"
-        novalidate
-        @submit.prevent="submitForm"
-      >
+      <form ref="appointmentForm" class="needs-validation" :class="{ 'was-validated': wasValidated }" novalidate
+        @submit.prevent="submitForm">
         <div class="appointmentForm-table-Box d-flex flex-column">
           <!-- 姓名和预约日期 -->
-          <div
-            class="d-flex justify-content-between appointmentForm-table-Box-name"
-          >
+          <div class="d-flex justify-content-between appointmentForm-table-Box-name">
             <div class="form-group position-relative">
               <label for="name">姓名:</label>
-              <input
-                type="text"
-                id="name"
-                class="form-control"
-                v-model="formData.name"
-                pattern="^[A-Za-z\u4e00-\u9fa5\s]+$"
-                required
-                placeholder="請填寫"
-              />
+              <input type="text" id="name" class="form-control" v-model="formData.name"
+                pattern="^[A-Za-z\u4e00-\u9fa5\s]+$" required placeholder="請填寫" />
               <div class="invalid-feedback">請輸入姓名</div>
             </div>
             <div class="form-group position-relative">
               <label for="appointment-date">預約日期:</label>
-              <input
-                ref="appointmentDate"
-                class="form-control"
-                placeholder="請填寫"
-                type="date"
-                id="appointment-date"
-                v-model="formData.appointmentDate"
-                required
-              />
+              <input ref="appointmentDate" class="form-control" placeholder="請填寫" type="date" id="appointment-date"
+                v-model="formData.appointmentDate" required />
               <div class="invalid-feedback">請選擇預約日期</div>
             </div>
           </div>
@@ -55,28 +34,18 @@
           <div class="form-group position-relative">
             <label for="service-type">診症服務（最多4項）</label>
             <div id="service-buttons" class="d-flex flex-wrap service-buttons">
-              <span
-                v-for="service in services"
-                :key="service"
-                class="service-button"
-                :class="{ selected: selectedServices.includes(service) }"
-                @click="toggleService(service)"
-              >
+              <span v-for="service in services" :key="service" class="service-button"
+                :class="{ selected: selectedServices.includes(service) }" @click="toggleService(service)">
                 {{ service }}
               </span>
             </div>
-            <div
-              class="invalid-feedback selectFeedBack"
-              v-if="showServiceError"
-            >
+            <div class="invalid-feedback selectFeedBack" v-if="showServiceError">
               請選擇診症服務
             </div>
           </div>
 
           <!-- 诊症区域和WhatsApp电话 -->
-          <div
-            class="d-flex justify-content-start appointmentForm-table-Box-option"
-          >
+          <div class="d-flex justify-content-start appointmentForm-table-Box-option">
             <div class="form-group position-relative">
               <label for="phone-number">診症區域:</label>
               <div class="custom-phone-input position-relative">
@@ -90,24 +59,13 @@
             <div class="form-group position-relative">
               <label for="phone-number">WhatsApp電話:</label>
               <div class="custom-phone-input">
-                <select
-                  class="area-code position-absolute"
-                  v-model="formData.areaCode"
-                >
+                <select class="area-code position-absolute" v-model="formData.areaCode">
                   <option value="+852">+852</option>
                   <option value="+86">+86</option>
                   <option value="+886">+886</option>
                 </select>
-                <input
-                  type="tel"
-                  class="position-absolute w-100"
-                  id="phone-number"
-                  v-model="formData.phoneNumber"
-                  maxlength="16"
-                  placeholder="請填寫"
-                  pattern="\d{8,15}"
-                  required
-                />
+                <input type="tel" class="position-absolute w-100" id="phone-number" v-model="formData.phoneNumber"
+                  maxlength="16" placeholder="請填寫" pattern="\d{8,15}" required />
                 <div class="invalid-feedback">請填寫正確的號碼</div>
               </div>
             </div>
@@ -116,57 +74,30 @@
           <!-- 备注 -->
           <div class="form-group position-relative">
             <label for="notes">備注（非必填）</label>
-            <textarea
-              class="form-control"
-              id="notes"
-              v-model="formData.notes"
-              rows="1"
-              placeholder="請填寫"
-            ></textarea>
+            <textarea class="form-control" id="notes" v-model="formData.notes" rows="1" placeholder="請填寫"></textarea>
           </div>
 
           <!-- 复选框 -->
-          <div
-            class="form-group form-radio-group d-lg-flex justify-content-center align-items-center"
-          >
-            <div
-              class="d-lg-flex flex-wrap justify-content-start align-items-center"
-            >
+          <div class="form-group form-radio-group d-lg-flex justify-content-center align-items-center">
+            <div class="d-lg-flex flex-wrap justify-content-start align-items-center">
               <label class="form-check p-0 d-flex align-items-center">
-                <input
-                  class="form-check-input custom-radio"
-                  type="checkbox"
-                  v-model="formData.careVoucher"
-                />
+                <input class="form-check-input custom-radio" type="checkbox" v-model="formData.careVoucher" />
                 <span class="form-check-label">使用長者醫療券</span>
               </label>
               <label class="form-check p-0 d-flex align-items-center">
-                <input
-                  class="form-check-input custom-radio"
-                  type="checkbox"
-                  v-model="formData.discountCoupon"
-                />
+                <input class="form-check-input custom-radio" type="checkbox" v-model="formData.discountCoupon" />
                 <span class="form-check-label">領取2000元種植牙現金券</span>
               </label>
               <label class="form-check p-0 d-flex align-items-center">
-                <input
-                  class="form-check-input custom-radio"
-                  type="checkbox"
-                  v-model="formData.acknowledge"
-                  required
-                />
-                <span class="form-check-label"
-                  >本人已閱讀並同意有關<a href=""> 私隱政策</a> 聲明</span
-                >
+                <input class="form-check-input custom-radio" type="checkbox" v-model="formData.acknowledge" required />
+                <span class="form-check-label">本人已閱讀並同意有關<a href=""> 私隱政策</a> 聲明</span>
               </label>
             </div>
           </div>
 
           <!-- 提交按钮 -->
-          <button
-            type="submit"
-            class="Appointment-form-btn mx-auto w-100 d-flex justify-content-center align-items-center"
-          >
+          <button type="submit"
+            class="Appointment-form-btn mx-auto w-100 d-flex justify-content-center align-items-center">
             <span>立即預約</span>
           </button>
           <p class="text-center form-mobile-tip">
@@ -177,12 +108,8 @@
     </div>
 
     <!-- Spinner 加载动画 -->
-    <div
-      ref="overlay"
-      class="position-fixed top-0 start-0 w-100 h-100 bg-white"
-      :class="{ 'd-none': !isLoading }"
-      style="z-index: 99"
-    >
+    <div ref="overlay" class="position-fixed top-0 start-0 w-100 h-100 bg-white" :class="{ 'd-none': !isLoading }"
+      style="z-index: 99">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="spinner-border" role="status">
           <span class="visually-hidden">加载中...</span>
@@ -192,12 +119,13 @@
   </div>
 </template>
 
-<script setup >
+<script setup>
 import { ref, onMounted } from 'vue'
 import { useAppState } from '~/stores/appState'
 const appState = useAppState()
 const route = useRoute()
 const router = useRouter()
+
 const services = ref([
   '種植牙',
   '活動假牙及牙橋',
@@ -238,6 +166,117 @@ const submitPopover = ref(null)
 const appointmentForm = ref(null)
 const appointmentDate = ref(null)
 const overlay = ref(null)
+
+const servicesListEnAndCn = [
+  {
+    name: '/dental-service/implant',
+    label: '種植牙',
+  },
+  {
+    name: '/dental-service/scaling-and-polishing',
+    label: '洗牙',
+  },
+  {
+    name: '/dental-service/fillings',
+    label: '補牙',
+  },
+  {
+    name: '/dental-service/veneers',
+    label: '瓷牙貼片',
+  },
+  {
+    name: '/dental-service/toothtray',
+    label: '活動假牙及牙橋',
+  },
+  {
+    name: '/dental-service/rootCanal',
+    label: '杜牙根(根管治療)',
+  },
+  {
+    name: '/dental-service/orthodontics',
+    label: '箍牙(牙齒矯正)',
+  },
+  {
+    name: '/dental-service/invisiblebraces',
+    label: '隱形牙套',
+  },
+  {
+    name: '/dental-service/all-ceramic-crowns',
+    label: '牙冠',
+  },
+  {
+    name: '/dental-service/children-dentistry',
+    label: '兒童牙科',
+  },
+  {
+    name: '/dental-service/wisdom-teeth-extraction',
+    label: '拔牙及智慧齒拔除',
+  },
+  {
+    name: '/dental-service/periodontal',
+    label: '牙周治療',
+  },
+  {
+    name: '/dental-service/teeth-whitening',
+    label: '牙齒美白',
+  },
+  {
+    name: '/dental-service/general-oral-examination',
+    label: '口腔檢查',
+  },
+  {
+    name: '/health-care-voucher',
+    label: '長者牙科',
+  },
+]
+// 默认选中的服务
+// const defineServices = () => {
+//   const queryServices = route.path
+//   servicesListEnAndCn.forEach((item) => {
+//     formData.value.careVoucher = false
+//     formData.value.discountCoupon = false
+
+//     if (item.name === '/health-care-voucher') {
+//       formData.value.careVoucher = true
+//       formData.value.discountCoupon = false
+//     } else if (item.name === '/health-care-voucherV2') {
+//       formData.value.careVoucher = true
+//       formData.value.discountCoupon = false
+//     } else if (item.name === '/dental-service/implant') {
+//       formData.value.careVoucher = false
+//       formData.value.discountCoupon = true
+//     } else if (queryServices.includes(item.name)) {
+//       selectedServices.value.push(item.label)
+//     } else {
+//       selectedServices.value = []
+//       formData.value.careVoucher = false
+//       formData.value.discountCoupon = false
+//     }
+//   })
+// }
+const defineServices = () => {
+  const queryServices = route.path
+  selectedServices.value = [] // 清空之前的选中服务
+  formData.value.careVoucher = false
+  formData.value.discountCoupon = false
+
+  servicesListEnAndCn.forEach((item) => {
+    if (queryServices.includes(item.name)) {
+      selectedServices.value.push(item.label)
+
+      if (
+        item.name === '/health-care-voucher' ||
+        item.name === '/health-care-voucherV2'
+      ) {
+        formData.value.careVoucher = true
+      }
+
+      if (item.name === '/dental-service/implant') {
+        formData.value.discountCoupon = true
+      }
+    }
+  })
+}
 
 const toggleService = (service) => {
   const index = selectedServices.value.indexOf(service)
@@ -402,8 +441,8 @@ const postData = async (_form, _preferential) => {
   診症區域：${_form.area}
   使用長者醫療券：${(_form.careVoucher = _form.careVoucher ? '是' : '否')}
   領取2000元種植牙現金券:${(_form.discountCoupon = _form.discountCoupon
-    ? '是'
-    : '否')}
+          ? '是'
+          : '否')}
   提交時間：${new Date().toLocaleString()}
   备注信息：服务器离线由备用服务推送`,
     },
@@ -484,7 +523,7 @@ const errorserver = async (_form, _preferential) => {
 onMounted(() => {
   const today = new Date().toISOString().split('T')[0]
   appointmentDate.value.setAttribute('min', today)
-
+  defineServices()
   if (appointmentDate.value) {
     appointmentDate.value.addEventListener('click', () => {
       appointmentDate.value.showPicker()
@@ -545,6 +584,7 @@ onMounted(() => {
   &-title {
     text-align: center;
     position: relative;
+
     i {
       font-style: normal;
     }
@@ -572,13 +612,15 @@ onMounted(() => {
       font-size: 18px;
       font-style: normal;
       font-weight: 500;
-      line-height: 150%; /* 27px */
+      line-height: 150%;
+      /* 27px */
     }
   }
 
   &-Box {
     gap: 13px;
     margin-top: 40px;
+
     .form-group {
       .invalid-feedback {
         position: absolute;
@@ -626,7 +668,7 @@ onMounted(() => {
     &-option {
       gap: 7px;
 
-      & > .form-group:nth-child(1) {
+      &>.form-group:nth-child(1) {
         width: 90px;
 
         .area-address {
@@ -645,7 +687,7 @@ onMounted(() => {
         }
       }
 
-      & > .form-group:nth-child(2) {
+      &>.form-group:nth-child(2) {
         flex: 1;
 
         .custom-phone-input {
@@ -722,11 +764,14 @@ onMounted(() => {
       }
 
       div {
-        & > .form-check:nth-child(1),
-        & > .form-check:nth-child(2) {
+
+        &>.form-check:nth-child(1),
+        &>.form-check:nth-child(2) {
           cursor: pointer;
+
           .custom-radio {
             border: 2px solid #4caf50;
+
             &:checked {
               &::after {
                 background-color: #4caf50;
@@ -745,8 +790,9 @@ onMounted(() => {
           }
         }
 
-        & > .form-check:nth-child(3) {
+        &>.form-check:nth-child(3) {
           cursor: pointer;
+
           .custom-radio {
             border: 2px solid var(--New-Theme-Color, #d2337d);
 
@@ -756,6 +802,7 @@ onMounted(() => {
               }
             }
           }
+
           span {
             color: var(--Grey-Mid, #666);
             text-align: center;
@@ -764,6 +811,7 @@ onMounted(() => {
             font-style: normal;
             font-weight: 350;
             line-height: 120%;
+
             a {
               color: var(--New-Theme-Color, #d2337d);
             }
@@ -1012,6 +1060,7 @@ onMounted(() => {
     &-Box {
       gap: 16px;
       margin-top: 32px;
+
       .form-group {
         label {
           font-size: 24px;
@@ -1040,7 +1089,7 @@ onMounted(() => {
       &-option {
         gap: 28px;
 
-        & > .form-group:nth-child(1) {
+        &>.form-group:nth-child(1) {
           width: 390px;
 
           .area-address {
@@ -1060,7 +1109,7 @@ onMounted(() => {
           }
         }
 
-        & > .form-group:nth-child(2) {
+        &>.form-group:nth-child(2) {
           flex: 1;
 
           .custom-phone-input {
@@ -1121,11 +1170,14 @@ onMounted(() => {
         div {
           gap: 10px 86px;
           width: 700px;
-          & > .form-check:nth-child(1),
-          & > .form-check:nth-child(2) {
+
+          &>.form-check:nth-child(1),
+          &>.form-check:nth-child(2) {
             cursor: pointer;
+
             .custom-radio {
               border: 5px solid #4caf50;
+
               &:checked {
                 &::after {
                   background-color: #4caf50;
@@ -1142,8 +1194,9 @@ onMounted(() => {
             }
           }
 
-          & > .form-check:nth-child(3) {
+          &>.form-check:nth-child(3) {
             cursor: pointer;
+
             .custom-radio {
               border: 5px solid var(--New-Theme-Color, #d2337d);
 
@@ -1153,6 +1206,7 @@ onMounted(() => {
                 }
               }
             }
+
             span {
               font-family: 'Noto Sans HK';
               font-size: 24px;
@@ -1160,6 +1214,7 @@ onMounted(() => {
               font-weight: 700;
               line-height: normal;
               letter-spacing: 2.4px;
+
               a {
                 color: var(--New-Theme-Color, #d2337d);
                 text-decoration: underline;

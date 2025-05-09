@@ -933,7 +933,8 @@ const careData = {
       <ServiceProblem :problemData="problemData" />
       <serviceCard />
       <BranchAddress />
-      <ContactForm-new2 class="contactForm" />
+      <AppointmentFormV2 />
+      <!-- <ContactForm-new2 class="contactForm" /> -->
     </div>
     <FooterV2 />
     <!-- <PageNewNavbarSide v-if="windowWidth > 768" />

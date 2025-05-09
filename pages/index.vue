@@ -432,7 +432,7 @@ const handleProcessBtnClick = () => {
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="">
+            <nuxt-link to="/health-care-voucher">
               <div><img src="https://static.ckjhk.com/ckj-image/0d1c24437adc.png" alt=""></div>
               <div><span>長者牙科</span></div>
             </nuxt-link>
