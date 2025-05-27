@@ -2481,26 +2481,6 @@ const problemData = {
                 letter-spacing: 1.627vw;
               }
             }
-            & > span::before {
-              content: '立即預約牙科服務';
-              position: absolute;
-              z-index: 5;
-              left: 0;
-              text-align: center;
-              font-family: 'Noto Sans HK';
-              font-size: 6.236vw;
-              font-style: normal;
-              font-weight: 900;
-              line-height: normal;
-              letter-spacing: 1vw;
-              white-space: nowrap;
-              top: -3.858vw;
-              left: -4.9vw;
-              color: #fff;
-              transform: scale(1.1);
-              text-shadow: -0.5vw -0.5vw 1px #f8298a, 0.5vw -0.5vw 1px #f8298a,
-                0.5vw 0.5vw 1px #f8298a, -0.5vw 0.5vw 1px #f8298a;
-            }
           }
 
           ul {
