@@ -57,7 +57,7 @@
               alt=""
             />
           </a>
-          <a class="wechat-media">
+          <div class="wechat-media">
             <img src="~/assets/images/navIcon_3.png" alt="" />
             <div class="wechat-active-show">
               <div class="weChat-img">
@@ -67,7 +67,7 @@
                 />
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -113,7 +113,7 @@
           alt=""
         />
       </a>
-      <a class="wechat-media">
+      <div class="wechat-media">
         <img
           src="~/assets/images/2025032416102001.svg"
           alt=""
@@ -126,7 +126,7 @@
             />
           </div>
         </div>
-      </a>
+      </div>
     </div>
     <div class="v2-mobile-footer-bottom">
       <div>

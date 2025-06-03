@@ -275,19 +275,19 @@ const hideDom = ref(false)
 
 
 const ddsasd = ref([
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001001.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001002.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001003.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001004.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001005.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001006.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001007.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001008.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001009.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001010.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001011.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001012.jpg",
-  "https://static.cmereye.com/static/ckj/imgs/environment/de/1001013.jpg"
+  "https://static.ckjhk.com/ckj-image/df566ad5da34.avif",
+  "https://static.ckjhk.com/ckj-image/654dba2f1be9.avif",
+  "https://static.ckjhk.com/ckj-image/c1692ebd18e7.avif",
+  "https://static.ckjhk.com/ckj-image/071af8a414e5.avif",
+  "https://static.ckjhk.com/ckj-image/ff4b9fd9b8e1.avif",
+  "https://static.ckjhk.com/ckj-image/9693bb98cf05.avif",
+  "https://static.ckjhk.com/ckj-image/453809e1f6d9.avif",
+  "https://static.ckjhk.com/ckj-image/f263e13f34d8.avif",
+  "https://static.ckjhk.com/ckj-image/0b540c385893.avif",
+  "https://static.ckjhk.com/ckj-image/98a30fe03a9a.avif",
+  "https://static.ckjhk.com/ckj-image/bc73f5555721.avif",
+  "https://static.ckjhk.com/ckj-image/e1451c9866e2.avif",
+  "https://static.ckjhk.com/ckj-image/4dec968715d7.avif"
 ])
 
 

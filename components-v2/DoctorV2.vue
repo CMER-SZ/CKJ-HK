@@ -14,7 +14,7 @@ const typeList = ref([
     id: '101',
     name: '種植科',
     status: false,
-    teamPhoto: 'https://statichk.cmermedical.com/ckj/image/2025011310040501.png',
+    teamPhoto: 'https://static.ckjhk.com/ckj-image/ffca67be82b4.avif',
     doctor: [
       {
         name: '李川',
@@ -46,7 +46,7 @@ const typeList = ref([
     id: '102',
     name: '修復科',
     status: false,
-    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/533cd5d2e1944a98.jpg',
+    teamPhoto: 'https://static.ckjhk.com/ckj-image/ee440c9eecb5.avif',
     doctor: [
       {
         name: '鞏賢平',
@@ -78,7 +78,7 @@ const typeList = ref([
     id: '103',
     name: '矯正科',
     status: false,
-    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/dce268191178f65d.jpg',
+    teamPhoto: 'https://static.ckjhk.com/ckj-image/3da566c6f0eb.avif',
     doctor: [
       {
         name: '熊國平',
@@ -141,7 +141,7 @@ const typeList = ref([
     id: '105',
     name: '牙周病科',
     status: false,
-    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/43f7fdfa344a8b78.jpg',
+    teamPhoto: 'https://static.ckjhk.com/ckj-image/af1bcc19e404.avif',
     doctor: [
       {
         name: '曾紅艷',
@@ -173,7 +173,7 @@ const typeList = ref([
     id: '106',
     name: '兒童牙科',
     status: false,
-    teamPhoto: 'https://static.cmereye.com/imgs/2024/11/1877a39445db8018.jpg',
+    teamPhoto: 'https://static.ckjhk.com/ckj-image/beb9e39b7b51.avif',
     doctor: [
       {
         name: '林露露',
@@ -247,7 +247,7 @@ onMounted(() => {
 <template>
   <div class="doctor-v2">
     <div class="doctor-team-photo d-lg-none" v-if="typeList[num].teamPhoto">
-      <img :src="typeList[num].teamPhoto" alt="">
+      <img :src="typeList[num].teamPhoto" :alt="typeList[num].name">
     </div>
     <div class="doctor-administrative-office">
       <div v-for="(item, index) in typeList" :key="index" @click="handletab2(item.id, index)"
@@ -256,13 +256,13 @@ onMounted(() => {
       </div>
     </div>
     <div class="doctor-team-photo d-none d-lg-block" v-if="typeList[num].teamPhoto">
-      <img :src="typeList[num].teamPhoto" alt="">
+      <img :src="typeList[num].teamPhoto" :alt="typeList[num].name">
     </div>
     <div class="doctor-team">
       <div class="doctor-list" v-for="(doctor, index) in typeList[num].doctor" :key="index">
         <div>
           <div class="img">
-            <img :src="doctor.img" alt="">
+            <img :src="doctor.img" :alt="typeList[num].name">
           </div>
           <div class="name">
             <div class="name-t">{{ doctor.name }}</div>

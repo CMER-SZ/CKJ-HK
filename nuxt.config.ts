@@ -12,6 +12,10 @@ export default defineNuxtConfig({
     strict: true,
     typeCheck: true,
   },
+  routeRules: {
+    // 确保 robots.txt 作为静态文件提供
+    '/robots.txt': { static: true },
+  },
   hooks: {
     'pages:extend'(pages) {
       let _pages = JSON.parse(
@@ -97,8 +101,19 @@ export default defineNuxtConfig({
         ],
       }),
     ],
+    build: {
+      cssCodeSplit: true,
+      minify: 'esbuild', // 启用JS压缩
+      assetsInlineLimit: 4096 // <4KB资源转base64
+    },
   },
-
+  postcss: {
+    plugins: {
+      'cssnano': {
+        preset: 'default' // 自动压缩CSS
+      }
+    }
+  },
   // app config
   app: {
     head: {
@@ -178,11 +193,6 @@ export default defineNuxtConfig({
         prependPath: true,
         changeOrigin: true,
       },
-      // "/ding": {
-      //   target: 'https://oapi.dingtalk.com/',
-      //   prependPath: true,
-      //   changeOrigin: true,
-      // },
       '/sendmail': {
         target: 'https://api.mailersend.com',
         prependPath: true,
