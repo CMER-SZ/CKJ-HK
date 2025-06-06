@@ -373,7 +373,7 @@ const implantItem = [
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link dropdown-toggle">dddd{{
+              <a class="nav-link dropdown-toggle">{{
                 $t('components.header.menuLists.menu_dental_service.name')
               }}</a>
               <ul class="dropdown-menu">
