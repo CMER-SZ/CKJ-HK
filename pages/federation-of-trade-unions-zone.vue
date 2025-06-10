@@ -234,7 +234,7 @@ onMounted(() => {
       </div>
       <div class="content">
         <div class="imgone">
-          <img src="https://statichk.cmermedical.com/ckj/image/2ec9eaa43305.webp" alt="">
+          <img src="https://static.ckjhk.com/ckj-image/2025060917145901.webp" alt="">
         </div>
         <div class="nob">
           <section>
