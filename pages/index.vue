@@ -354,73 +354,73 @@ const handleProcessBtnClick = () => {
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/scaling-and-polishing">
+            <nuxt-link to="/dental-service/toothtray">
               <div><img src="https://static.ckjhk.com/ckj-image/b2eef97c5cb8.png" alt=""></div>
               <div><span>活動假牙</span><span>及牙橋</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/fillings">
+            <nuxt-link to="/dental-service/scaling-and-polishing">
               <div><img src="https://static.ckjhk.com/ckj-image/df725f68ae52.png" alt=""></div>
               <div><span>洗牙</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/veneers">
+            <nuxt-link to="/dental-service/fillings">
               <div><img src="https://static.ckjhk.com/ckj-image/3226530ad1ac.png" alt=""></div>
               <div><span>補牙</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/toothtray">
+            <nuxt-link to="/dental-service/rootCanal">
               <div><img src="https://static.ckjhk.com/ckj-image/12306b9549f2.png" alt=""></div>
               <div><span>杜牙根</span><span class="service_item_sub">(根管治療)</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/rootCanal">
+            <nuxt-link to="/dental-service/all-ceramic-crowns">
               <div><img src="https://static.ckjhk.com/ckj-image/23c019aefe2b.png" alt=""></div>
               <div><span>牙冠</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/orthodontics">
+            <nuxt-link to="/dental-service/wisdom-teeth-extraction">
               <div><img src="https://static.ckjhk.com/ckj-image/0f03be1d7f26.png" alt=""></div>
               <div><span>拔牙及</span><span>智慧齒拔除</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/invisiblebraces">
+            <nuxt-link to="/dental-service/periodontal">
               <div><img src="https://static.ckjhk.com/ckj-image/38875c2bba26.png" alt=""></div>
               <div><span>牙周治療</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/all-ceramic-crowns">
+            <nuxt-link to="/dental-service/teeth-whitening">
               <div><img src="https://static.ckjhk.com/ckj-image/2025031009582001.png" alt=""></div>
               <div><span>牙齒美白</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/children-dentistry">
+            <nuxt-link to="/dental-service/veneers">
               <div><img src="https://static.ckjhk.com/ckj-image/82b023da1bc7.png" alt=""></div>
               <div><span>瓷牙貼片</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/wisdom-teeth-extraction">
+            <nuxt-link to="/dental-service/orthodontics">
               <div><img src="https://static.ckjhk.com/ckj-image/62682fc283e1.png" alt=""></div>
               <div><span>箍牙</span><span class="service_item_sub">(牙齒矯正)</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/periodontal">
+            <nuxt-link to="/dental-service/invisiblebraces">
               <div><img src="https://static.ckjhk.com/ckj-image/9dfa76a2e948.png" alt=""></div>
               <div><span>隱形牙套</span></div>
             </nuxt-link>
           </div>
           <div class="service_item">
-            <nuxt-link to="/dental-service/teeth-whitening">
+            <nuxt-link to="/dental-service/children-dentistry">
               <div><img src="https://static.ckjhk.com/ckj-image/f2015ea8d422.png" alt=""></div>
               <div><span>兒童牙科</span></div>
             </nuxt-link>
