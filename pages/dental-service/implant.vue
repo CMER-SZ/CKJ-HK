@@ -236,9 +236,9 @@ const problemData = {
           <div class="banner-content" style="display: flex">
             <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div>歐美<br />種植牙</div>
+              <div>進口種植牙</div>
               <div>
-                <img src="~/assets/images/2025031216072401.svg" alt="" />
+                <img src="~/assets/images/2025062316185201.svg" alt="" />
               </div>
             </div>
             <div class="content-subscribe">
@@ -262,9 +262,9 @@ const problemData = {
           <div class="banner-content" style="display: flex">
             <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div>歐美<br />種植牙</div>
+              <div>進口種植牙</div>
               <div>
-                <img src="~/assets/images/2025031216072401.svg" alt="" />
+                <img src="~/assets/images/2025062316185201.svg" alt="" />
               </div>
             </div>
             <div class="content-subscribe">
@@ -869,9 +869,10 @@ const problemData = {
         font-weight: 900;
         line-height: 2.2222vw; /* 114.286% */
         letter-spacing: 0.29165vw;
+        padding-top: 0.63vw;
       }
       & > div:nth-child(2) {
-        width: 15.2604vw;
+        width: 11.2604vw;
         & > svg {
           width: 100%;
           height: 100%;
@@ -1025,7 +1026,7 @@ const problemData = {
         }
 
         & > div:nth-child(2) {
-          width: 15.2604vw;
+          width: 11.2604vw;
 
           & > img {
             width: 100%;
@@ -2633,10 +2634,11 @@ const problemData = {
         font-weight: 900;
         line-height: 6.23vw;
         letter-spacing: 0.82vw;
+        padding-top: 3.33vw;
       }
 
       & > div:nth-child(2) {
-        width: 58.665vw;
+        width: 41.565vw;
         height: 13.0665vw;
         & > svg {
           width: 100%;

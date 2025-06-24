@@ -318,9 +318,6 @@ const postData = async (_form, _preferential) => {
   預約日期：${_form.dayOne}
   診症區域：${_form.area}
   使用長者醫療券：${(_form.careVoucher = _form.careVoucher ? '是' : '否')}
-  領取2000元種植牙現金券:${(_form.discountCoupon = _form.discountCoupon
-    ? '是'
-    : '否')}
   提交時間：${new Date().toLocaleString()}
   备注信息：服务器离线由备用服务推送`,
     },
@@ -378,8 +375,6 @@ const errorserver = async (_form, _preferential) => {
         <p>使用長者醫療券：${(_form.careVoucher = _form.careVoucher
           ? '是'
           : '否')}</p>
-        <p<p>領取2000元種植牙現金券:${(_form.discountCoupon =
-          _form.discountCoupon ? '是' : '否')}</p>
         <p>优惠信息：${_preferential ? _preferential.text : '無'}</p><br/>
         <p>提交時間：${new Date().toLocaleString()}</p>
         <p>备注信息：服务器离线由备用服务推送</p>`,
@@ -539,17 +534,7 @@ let privacyPolicy = ref(true)
                     v-model="form.careVoucher"
                   />
                 </div>
-                <div class="care_voucher">
-                  <label for="care_discount_coupon"
-                    >領取2000元種植牙現金券</label
-                  >
-                  <input
-                    type="checkbox"
-                    value="true"
-                    id="care_discount_coupon"
-                    v-model="form.discountCoupon"
-                  />
-                </div>
+                
               </div>
               <div class="privacyPolicy-label">*為必填</div>
             </div>

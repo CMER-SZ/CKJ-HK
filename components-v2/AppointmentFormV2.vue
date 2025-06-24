@@ -85,10 +85,6 @@
                 <span class="form-check-label">使用長者醫療券</span>
               </label>
               <label class="form-check p-0 d-flex align-items-center">
-                <input class="form-check-input custom-radio" type="checkbox" v-model="formData.discountCoupon" />
-                <span class="form-check-label">領取2000元種植牙現金券</span>
-              </label>
-              <label class="form-check p-0 d-flex align-items-center">
                 <input class="form-check-input custom-radio" type="checkbox" v-model="formData.acknowledge" required />
                 <span class="form-check-label">本人已閱讀並同意有關<a href=""> 私隱政策</a> 聲明</span>
               </label>
@@ -440,9 +436,6 @@ const postData = async (_form, _preferential) => {
   預約日期：${_form.dayOne}
   診症區域：${_form.area}
   使用長者醫療券：${(_form.careVoucher = _form.careVoucher ? '是' : '否')}
-  領取2000元種植牙現金券:${(_form.discountCoupon = _form.discountCoupon
-          ? '是'
-          : '否')}
   提交時間：${new Date().toLocaleString()}
   备注信息：服务器离线由备用服务推送`,
     },
@@ -501,8 +494,6 @@ const errorserver = async (_form, _preferential) => {
         <p>使用長者醫療券：${(_form.careVoucher = _form.careVoucher
           ? '是'
           : '否')}</p>
-        <p<p>領取2000元種植牙現金券:${(_form.discountCoupon =
-          _form.discountCoupon ? '是' : '否')}</p>
         <p>优惠信息：${_preferential ? _preferential.text : '無'}</p><br/>
         <p>提交時間：${new Date().toLocaleString()}</p>
         <p>备注信息：服务器离线由备用服务推送</p>`,

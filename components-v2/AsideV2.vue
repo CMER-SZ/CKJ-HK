@@ -279,13 +279,6 @@ onMounted(() => {
           <nuxt-link
             class="whatsApp-normal"
             id="navMbWhatsapp"
-            :to="'https://api.whatsapp.com/send/?phone=85269338128&text=立即領取2000元種植牙現金券'"
-          >
-            <span>種牙現金券</span>
-          </nuxt-link>
-          <nuxt-link
-            class="whatsApp-normal"
-            id="navMbWhatsapp"
             :to="'https://api.whatsapp.com/send/?phone=85269338128&text=Hello愛康健,想預約超聲波洗牙'"
           >
             <span>預約洗牙</span>

@@ -260,7 +260,7 @@ const cleaningStepList = [
             <div class="content-price">
               <div>超聲波洗牙</div>
               <div>
-                <img src="~/assets/images/2025031309501301.svg" alt="" />
+                <img src="~/assets/images/2025062316193201.svg?t=2" alt="" />
               </div>
             </div>
             <div class="content-subscribe">
@@ -286,7 +286,7 @@ const cleaningStepList = [
             <div class="content-price">
               <div>超聲波洗牙</div>
               <div>
-                <img src="~/assets/images/2025031309501301.svg" alt="" />
+                <img src="~/assets/images/2025062316193201.svg" alt="" />
               </div>
             </div>
             <div class="content-subscribe">
@@ -359,7 +359,7 @@ const cleaningStepList = [
                   <div class="price">
                     <div v-if="item.id === '1101'" :class="`price-${item.id}`">
                       <img
-                        src="https://static.ckjhk.com/ckj-image/882025032115375801.png"
+                        src="~/assets/images/2025062316191901.svg"
                         alt=""
                       />
                     </div>
