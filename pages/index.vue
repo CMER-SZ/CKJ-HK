@@ -557,11 +557,12 @@ const handleProcessBtnClick = () => {
       <!-- kol -->
       <section class="container kol-video">
         <div class="subheading">
-          <span>咪咪姐</span>
-          <span>23年用後感</span>
+          <span>三十年成就</span>
+          <span>「牙科宗師」</span>
+          <span>地位</span>
         </div>
         <div class="video-list">
-          <iframe src="https://www.youtube.com/embed/Q7sHcjs6oCs?si=JmhIgriXU-qvuOkg" width="100%" height="100%"
+          <iframe src="https://www.youtube.com/embed/NN8yE0bOZgM?si=SYpCAPg8J_KiKnit" width="100%" height="100%"
             frameborder="0"></iframe>
         </div>
         <a class="d-none d-lg-flex video-user-id" target="_blank"
