@@ -1346,7 +1346,7 @@ onMounted(() => {
       }
       & > a:nth-child(2)::after {
         content: '';
-        background: url('https://static.cmereye.com/imgs/2024/07/435b0baf462e8715.gif')
+        background: url('https://static.ckjhk.com/page-images/2025070714054501.gif')
           no-repeat;
         filter: drop-shadow(0 -3px 5px rgba(252, 22, 130, 0.3));
         position: absolute;

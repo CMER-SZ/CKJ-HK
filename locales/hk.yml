@@ -18,6 +18,8 @@ components:
         name: 牙科服務
       health-care-voucher:
         name: 長者醫療券
+      summer-activities:
+        name: 最新優惠
       federation-of-trade-unions-zone:
         name: 工聯會專區
       menu_news:

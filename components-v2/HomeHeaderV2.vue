@@ -184,8 +184,8 @@ let bannerLists = ref([
   {
     name: '愛康健裕亨预豹專享優惠',
     link: 'https://bit.ly/裕亨門診睇牙優惠',
-    pc: 'https://static.ckjhk.com/ckj-image/b47e2bfa3127.webp',
-    mb: 'https://static.ckjhk.com/ckj-image/cd05a9adfae3.webp',
+    pc: 'https://static.ckjhk.com/page-images/ce0dd33167f6.webp',
+    mb: 'https://static.ckjhk.com/page-images/60c96514b3bf.webp',
   },
   // {
   //   name: '醫生團隊banner',
@@ -460,7 +460,12 @@ const implantItem = [
             </div>
             <div class="collapse navbar-collapse d-lg-block" id="navbarNav">
               <ul class="navbar-nav ms-auto d-flex align-items-center">
-                <li class="nav-item dropdown">
+                <li class="nav-item">
+                  <a class="nav-link" target="_blank" href="https://www.ckjhk.com/promotion/">{{
+                    $t('components.header.menuLists.summer-activities.name')
+                  }}</a>
+                </li>
+                <li class=" nav-item dropdown">
                   <div class="nav-link dropdown-toggle">{{ $t('components.header.menuLists.menu_brand.name') }}
                   </div>
                   <ul class="dropdown-menu">
@@ -584,8 +589,8 @@ const implantItem = [
                     </svg></a>
                 </li>
                 <li class="nav-item">
-                  <div class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="30" viewBox="0 0 22 30"
-                      fill="none">
+                  <div class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="30"
+                      viewBox="0 0 22 30" fill="none">
                       <path
                         d="M2.20002 9.94H6.19002C6.17002 10.41 6.15002 10.83 6.13002 11.2H6.78002V11.94H6.07002C6.05002 12.16 6.02002 12.35 6.00002 12.53H6.47002V13.16H5.88002C5.83002 13.34 5.77002 13.48 5.72002 13.58L6.14002 13.89C5.52002 14.24 4.88002 14.54 4.21002 14.79L6.73002 14.61C7.19002 14.37 7.64002 14.11 8.11002 13.84L8.88002 14.36C7.63002 15.11 6.28002 15.73 4.79002 16.18C6.27002 16.11 7.72002 16 9.13002 15.86C8.88002 15.64 8.61002 15.44 8.35002 15.24L9.12002 14.75C10.1 15.49 10.86 16.14 11.39 16.69L10.6 17.24C10.38 17 10.14 16.76 9.89002 16.52C8.86002 16.59 7.89002 16.66 6.96002 16.74V18.14C6.96002 18.8 6.59002 19.14 5.87002 19.14H4.85002L4.65002 18.22C4.96002 18.26 5.26002 18.28 5.55002 18.28C5.75002 18.28 5.86002 18.15 5.86002 17.91V16.82C4.48002 16.89 3.20002 16.95 2.02002 17L1.82002 16.12C2.10002 16.14 2.37002 16.16 2.66002 16.16C3.51002 15.97 4.41002 15.68 5.35002 15.28C4.39002 15.3 3.45002 15.33 2.53002 15.38L2.37002 14.66C2.73002 14.66 2.99002 14.62 3.14002 14.58C3.54002 14.44 3.94002 14.26 4.36002 14.05C4.29002 14.05 4.22002 14.06 4.16002 14.06H3.74002L3.54002 13.48H4.10002C4.53002 13.47 4.82002 13.41 4.95002 13.29C4.97002 13.27 5.00002 13.22 5.02002 13.17H1.38002C1.49002 12.74 1.57002 12.33 1.64002 11.92H0.87002V11.19H1.76002L1.83002 10.31C1.67002 10.45 1.52002 10.59 1.36002 10.71L0.77002 9.99C1.43002 9.51 2.01002 8.85 2.48002 8L3.43002 8.2C3.33002 8.38 3.24002 8.55 3.14002 8.7H6.63002V9.49H2.58002C2.45002 9.65 2.32002 9.79 2.20002 9.93V9.94ZM4.64002 17.7C3.74002 18.24 2.64002 18.7 1.34002 19.06L0.93002 18.17C2.20002 17.88 3.23002 17.5 4.05002 17.03L4.64002 17.7ZM2.45002 12.53H3.80002C3.57002 12.37 3.36002 12.25 3.14002 12.17L3.38002 11.83H2.58002C2.53002 12.07 2.50002 12.31 2.45002 12.53ZM2.71002 10.59C2.69002 10.82 2.67002 11.05 2.65002 11.26H3.91002C3.71002 11.14 3.51002 11.03 3.32002 10.95L3.56002 10.59H2.71002ZM5.15002 12.53C5.17002 12.33 5.19002 12.1 5.21002 11.83H3.59002C3.89002 11.95 4.17002 12.11 4.42002 12.29L4.26002 12.53H5.15002ZM5.28002 10.59H3.70002C4.02002 10.73 4.31002 10.89 4.58002 11.08L4.46002 11.26H5.25002L5.29002 10.59H5.28002ZM7.03002 11.3L6.44002 10.51C7.16002 9.82 7.64002 9 7.91002 8.01L8.94002 8.18C8.84002 8.5 8.74002 8.82 8.62002 9.1H11.67V10.01H10.9C10.68 10.85 10.34 11.57 9.86002 12.15C10.44 12.53 11.1 12.85 11.84 13.08L11.25 13.94C10.45 13.64 9.75002 13.27 9.18002 12.82C8.60002 13.28 7.90002 13.62 7.08002 13.84L6.56002 13.01C7.32002 12.82 7.94002 12.54 8.44002 12.16C8.09002 11.8 7.80002 11.4 7.56002 11L8.27002 10.59C8.51002 10.94 8.79002 11.25 9.10002 11.54C9.46002 11.08 9.74002 10.58 9.92002 10H8.13002C7.82002 10.47 7.46002 10.9 7.04002 11.28L7.03002 11.3ZM11.58 18.25L11.06 19.05C9.98002 18.49 8.87002 18.04 7.73002 17.71L8.23002 16.95C9.45002 17.3 10.57 17.73 11.58 18.25Z"
                         fill="#333333" />
@@ -659,6 +664,14 @@ const implantItem = [
                     <nuxt-link class="nav-link active" aria-current="page" to="/">{{
                       $t('components.header.menuLists.menu_index.name')
                     }}</nuxt-link>
+                  </li>
+                  <li class="nav-item">
+                    <a target="_blank" href="https://www.ckjhk.com/promotion/"
+                      class="nav-link d-flex justify-content-between">{{
+                        $t(
+                          'components.header.menuLists.summer-activities.name'
+                        )
+                      }}</a>
                   </li>
                   <li class="nav-item">
                     <div class="nav-link d-flex justify-content-between" data-bs-toggle="collapse"
@@ -3098,9 +3111,11 @@ const implantItem = [
             .dropdown-toggle::after {
               background: url('https://statichk.cmermedical.com/newCKJ/static/hearderDown-white.svg') no-repeat;
             }
+
             .nav-link {
               color: var(--White, #fff) !important;
             }
+
             background: var(--New-Theme-Color, #d2337d);
 
             &>a {

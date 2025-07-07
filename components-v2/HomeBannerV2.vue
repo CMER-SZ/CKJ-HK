@@ -11,8 +11,8 @@ const bannerListV2 = ref([
   {
     name: '愛康健裕亨预豹專享優惠',
     link: 'https://bit.ly/裕亨門診睇牙優惠',
-    pc: 'https://static.ckjhk.com/ckj-image/b47e2bfa3127.webp',
-    mb: 'https://static.ckjhk.com/ckj-image/cd05a9adfae3.webp',
+    pc: 'https://static.ckjhk.com/page-images/ce0dd33167f6.webp',
+    mb: 'https://static.ckjhk.com/page-images/60c96514b3bf.webp',
   },
   {
     name: '深圳希華愛康健医院',
@@ -23,8 +23,8 @@ const bannerListV2 = ref([
   {
     name: '愛康健30年-慶典',
     link: '/brand/course#course',
-    pc: 'https://static.ckjhk.com/ckj-image/bb476c702d93.webp',
-    mb: 'https://static.ckjhk.com/ckj-image/c4c9dc05eec1.webp',
+    pc: 'https://static.ckjhk.com/page-images/65cc6a95fa1a.webp',
+    mb: 'https://static.ckjhk.com/page-images/2eb14f85650f.webp',
   },
 ])
 
