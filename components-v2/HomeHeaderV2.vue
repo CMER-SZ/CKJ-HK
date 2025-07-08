@@ -3022,7 +3022,7 @@ const implantItem = [
         // 4
         &:has(:nth-child(3) .nav-link:is(:hover, :focus-visible)) {
           --target: --item-3;
-          --color: var(--GHV-Green, #008843);
+          --color: var(--Grey-Dark, #333);
         }
 
         &>.nav-item:nth-child(3) {
@@ -3032,7 +3032,7 @@ const implantItem = [
         // 5
         &:has(:nth-child(4) .nav-link:is(:hover, :focus-visible)) {
           --target: --item-4;
-          --color: #e60013;
+          --color: var(--GHV-Green, #008843);
         }
 
         &>.nav-item:nth-child(4) {
@@ -3042,7 +3042,7 @@ const implantItem = [
         // 6
         &:has(:nth-child(5) .nav-link:is(:hover, :focus-visible)) {
           --target: --item-5;
-          --color: var(--Grey-Dark, #333);
+          --color: #e60013;
         }
 
         &>.nav-item:nth-child(5) {
@@ -3076,7 +3076,6 @@ const implantItem = [
         // }
 
         &>.nav-item:nth-child(8) {
-          bottom: 6px;
           cursor: pointer;
 
           &:hover {
@@ -3206,14 +3205,6 @@ const implantItem = [
             }
           }
 
-          &:nth-child(8):hover {
-            background: none;
-          }
-
-          &:nth-child(9):hover {
-            background: none;
-          }
-
           .nav-link {
             anchor-name: var(--anchor);
             text-decoration: none;
@@ -3275,11 +3266,17 @@ const implantItem = [
 
         &>.nav-item:nth-child(3) {
           .nav-link {
-            color: var(--GHV-Green, #008843);
+            color: var(--Grey-Dark, #333);
           }
         }
 
         &>.nav-item:nth-child(4) {
+          .nav-link {
+            color: var(--GHV-Green, #008843);
+          }
+        }
+
+        &>.nav-item:nth-child(5) {
           .nav-link {
             color: #e60013;
           }
