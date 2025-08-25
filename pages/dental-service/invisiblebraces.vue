@@ -338,7 +338,7 @@ onMounted(() => {
           <div class="banner-content" style="display: flex">
             <div class="content-title">網上預約限定優惠</div>
             <div class="content-price">
-              <div>超聲波洗牙</div>
+              <div>隱形矯正</div>
               <div>
                 <img src="~/assets/images/2025031316212701.svg" alt="" />
               </div>
