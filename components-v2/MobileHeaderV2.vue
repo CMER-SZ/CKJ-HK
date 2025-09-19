@@ -466,7 +466,7 @@ const implantItem = [
           進口種植牙 ¥3689/顆 起❗</a>
         <div class="container-fluid position-relative">
           <div class="navbar-brand d-flex align-items-center justify-content-between">
-            <nuxt-link to="/" class="websiteLOGO"><img src="@/assets/images/LOGO-PC.svg" alt="" /> </nuxt-link><i
+            <a href="/" class="websiteLOGO"><img src="@/assets/images/LOGO-PC.svg" alt="" /> </a><i
               class="d-none d-lg-block" style="font-style: normal">|</i>
             <div class="governmentPoint">
               <span>香港長者醫療券</span>
@@ -484,19 +484,19 @@ const implantItem = [
                 </a>
                 <ul class="dropdown-menu">
                   <li>
-                    <nuxt-link class="dropdown-item" to="/brand/course#course">{{
+                    <a class="dropdown-item" href="/brand/course#course">{{
                       $t('components.header.menuLists.menu_brand.history')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/brand/course#activity">{{
+                    <a class="dropdown-item" href="/brand/course#activity">{{
                       $t('components.header.menuLists.menu_brand.activity')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/brand/course#honor">{{
+                    <a class="dropdown-item" href="/brand/course#honor">{{
                       $t('components.header.menuLists.menu_brand.honor')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                 </ul>
               </li>
@@ -506,22 +506,26 @@ const implantItem = [
                 }}</a>
                 <ul class="dropdown-menu">
                   <li v-for="item in implantItem" :key="item.name">
-                    <nuxt-link class="dropdown-item" :to="item.link">
-                      {{ $t(item.name) }}</nuxt-link>
+                    <!-- <nuxt-link class="dropdown-item" :to="item.link">
+                      {{ $t(item.name) }}</nuxt-link> -->
+                      <a :href="item.link" class="dropdown-item">{{ $t(item.name) }}</a>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <nuxt-link class="nav-link" to="/health-care-voucher">{{
+                <!-- <nuxt-link class="nav-link" to="/health-care-voucher">{{
                   $t('components.header.menuLists.health-care-voucher.name')
-                }}</nuxt-link>
+                }}</nuxt-link> -->
+                 <a href="/health-care-voucher" class="nav-link" >{{
+                  $t('components.header.menuLists.health-care-voucher.name')
+                }}</a>
               </li>
               <li class="nav-item">
-                <nuxt-link class="nav-link" to="/federation-of-trade-unions-zone">{{
+                <a class="nav-link" href="/federation-of-trade-unions-zone">{{
                   $t(
                     'components.header.menuLists.federation-of-trade-unions-zone.name'
                   )
-                }}</nuxt-link>
+                }}</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle">{{
@@ -529,19 +533,19 @@ const implantItem = [
                 }}</a>
                 <ul class="dropdown-menu">
                   <li>
-                    <nuxt-link class="dropdown-item" to="/news/coverage">{{
+                    <a class="dropdown-item" href="/news/coverage">{{
                       $t('components.header.menuLists.menu_news.coverage')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/news/information">{{
+                    <a class="dropdown-item" href="/news/information">{{
                       $t('components.header.menuLists.menu_news.information')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/news/tooth-wiki">{{
+                    <a class="dropdown-item" href="/news/tooth-wiki">{{
                       $t('components.header.menuLists.menu_news.tooth-wiki')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                 </ul>
               </li>
@@ -551,19 +555,19 @@ const implantItem = [
                 }}</a>
                 <ul class="dropdown-menu">
                   <li>
-                    <nuxt-link class="dropdown-item" to="/medical-team">{{
+                    <a class="dropdown-item" href="/medical-team">{{
                       $t('components.areaTabs.luohu')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/medical-team">{{
+                    <a class="dropdown-item" href="/medical-team">{{
                       $t('components.areaTabs.futian')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/medical-team">{{
+                    <a class="dropdown-item" href="/medical-team">{{
                       $t('components.areaTabs.nanshan')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                 </ul>
               </li>
@@ -573,21 +577,21 @@ const implantItem = [
                 }}</a>
                 <ul class="dropdown-menu">
                   <li>
-                    <nuxt-link class="dropdown-item" to="/contactUs#contactUs">{{
+                    <a class="dropdown-item" href="/contactUs#contactUs">{{
                       $t(
                         'components.header.menuLists.menu_contactUs.come_route'
                       )
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/contactUs#appeal">{{
+                    <a class="dropdown-item" href="/contactUs#appeal">{{
                       $t('components.header.menuLists.menu_contactUs.appeal')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                   <li>
-                    <nuxt-link class="dropdown-item" to="/contactUs#Q&A">{{
+                    <a class="dropdown-item" href="/contactUs#Q&A">{{
                       $t('components.header.menuLists.menu_contactUs.Q&A')
-                    }}</nuxt-link>
+                    }}</a>
                   </li>
                 </ul>
               </li>

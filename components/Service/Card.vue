@@ -62,12 +62,12 @@ const servicesCardPageData = {
           v-for="(item, index) in servicesCardLists"
           :key="index"
         >
-          <nuxt-link :to="item.link">
+          <a :href="item.link">
             <div class="servicesCard-in-image">
               <img :src="item.imgUrl" alt="" />
             </div>
             <div class="servicesCard-in-name">{{ $t(item.name) }}</div>
-          </nuxt-link>
+          </a>
         </div>
       </div>
     </div>
