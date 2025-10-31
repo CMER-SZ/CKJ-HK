@@ -612,7 +612,7 @@ const careData = {
               </div>
             </div>
             <a
-              href="https://wa.me/85269338128?text=Hello%E6%84%9B%E5%BA%B7%E5%81%A5,%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%89%99%E7%A7%91%E6%9C%8D%E5%8B%99"
+              href="https://wa.me/69122011?text=Hello%E6%84%9B%E5%BA%B7%E5%81%A5,%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%89%99%E7%A7%91%E6%9C%8D%E5%8B%99"
               target="_blank"
               >網上及WhatApp預約專享</a
             >
@@ -677,7 +677,7 @@ const careData = {
             </div>
           </div>
           <a
-            href="https://wa.me/85269338128?text=Hello%E6%84%9B%E5%BA%B7%E5%81%A5,%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%89%99%E7%A7%91%E6%9C%8D%E5%8B%99"
+            href="https://wa.me/69122011?text=Hello%E6%84%9B%E5%BA%B7%E5%81%A5,%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E7%89%99%E7%A7%91%E6%9C%8D%E5%8B%99"
             target="_blank"
             >網上及WhatApp預約專享</a
           >

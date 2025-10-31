@@ -892,6 +892,15 @@ contactUs:
         （假日照常应诊）
       busRoutes: '福田口岸：203路、B618路、B685路、B689路、B858路、B957路、M204路、M441路、M499路'
       metroRoutes: '地铁4号线「福田口岸站」A出口'
+    address_204:
+      name: ''
+      tabname: ''
+      address: ''
+      time: |
+        9:00-17:30 
+        （假日照常应诊）
+      busRoutes: '渔农村站：B957；福田口岸公交总站：26、362、B685、B905、M499、B957'
+      metroRoutes: '地铁4号线福田口岸站A出口'
     address_301:
       name: '恒雅口腔门诊部（南山）'
       tabname: '恒雅口腔门诊部'

@@ -471,7 +471,7 @@ const implantItem = [
             </div>
             <div class="collapse navbar-collapse d-lg-block" id="navbarNav">
               <ul class="navbar-nav ms-auto d-flex align-items-center">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <a
                     class="nav-link"
                     target="_blank"
@@ -480,7 +480,7 @@ const implantItem = [
                       $t('components.header.menuLists.summer-activities.name')
                     }}</a
                   >
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                   <div class="nav-link dropdown-toggle">
                     {{ $t('components.header.menuLists.menu_brand.name') }}
@@ -702,7 +702,7 @@ const implantItem = [
               </ul>
               <div class="header-appointment d-flex align-items-center">
                 <a
-                  href="https://wa.me/85269338128?text=Hello愛康健,我想查詢牙科服務"
+                  href="https://wa.me/69122011?text=Hello愛康健,我想查詢牙科服務"
                   target="_blank"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -839,7 +839,7 @@ const implantItem = [
                       }}</nuxt-link
                     >
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a
                       target="_blank"
                       href="https://www.ckjhk.com/promotion/"
@@ -848,7 +848,7 @@ const implantItem = [
                         $t('components.header.menuLists.summer-activities.name')
                       }}</a
                     >
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <div
                       class="nav-link d-flex justify-content-between"

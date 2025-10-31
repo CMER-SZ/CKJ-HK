@@ -338,11 +338,11 @@ const implantItem = [
         </div>
         <div class="collapse navbar-collapse d-lg-block" id="navbarNav">
           <ul class="navbar-nav ms-auto d-flex align-items-center">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" target="_blank" href="https://www.ckjhk.com/promotion/">{{
                 $t('components.header.menuLists.summer-activities.name')
               }}</a>
-            </li>
+            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle">{{ $t('components.header.menuLists.menu_brand.name') }}
               </a>
@@ -493,7 +493,7 @@ const implantItem = [
             </li>
           </ul>
           <div class="header-appointment d-flex align-items-center">
-            <a href="https://wa.me/85269338128?text=Hello愛康健,我想查詢牙科服務" target="_blank"><svg
+            <a href="https://wa.me/69122011?text=Hello愛康健,我想查詢牙科服務" target="_blank"><svg
                 xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43" fill="none">
                 <rect width="42.875" height="42.875" rx="21.4375" fill="#01A853" />
                 <path

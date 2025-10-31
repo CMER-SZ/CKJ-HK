@@ -31,7 +31,7 @@ const headerConfig = {
   pageName: 'implant',
   pcText: ['享受失而復得的喜悅', '重拾完整人生之旅'],
   mbText: ['享受失而復得的喜悅', '重拾完整人生之旅'],
-  linkBtn: `https://wa.me/85269338128?text=取得種植牙免費CT檢查`,
+  linkBtn: `https://wa.me/69122011?text=取得種植牙免費CT檢查`,
 }
 
 let windowWidth = ref(1920)

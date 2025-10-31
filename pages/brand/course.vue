@@ -681,6 +681,23 @@ onMounted(() => {
                 <span>醫療服務</span>
               </div>
             </a>
+
+              <div class="other-brand-wrap"
+           
+            >
+              <div class="other-brand-box">
+                <img
+                  loading="lazy"
+                  src="https://statichk.cmermedical.com/ckjhk/brand/brand1.webp"
+                  alt=""
+                />
+              </div>
+              <div>
+                <span>信報財經新聞</span>
+                <span>卓越大灣區牙科醫療<br>服務機構大獎</span>
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1281,7 +1298,7 @@ onMounted(() => {
         font-weight: 700;
         font-size: 20px;
         line-height: 160%;
-        text-align: center;
+        // text-align: center;
         color: #4c4c4c;
         white-space: pre-wrap;
         &:last-child {
@@ -1292,7 +1309,7 @@ onMounted(() => {
           // max-width: 120px;
         }
       }
-      & > div:nth-child(2) {
+      & > div span:nth-child(1) {
         color: var(--Grey-Deep, #4d4d4d);
         font-family: 'FakePearl-Regular';
         font-size: 26px;
@@ -1303,9 +1320,49 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        text-wrap: nowrap;
+       
+      }
+      & > div span:nth-child(2) {
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'FakePearl-Regular';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 41.6px */
+        letter-spacing: 2.6px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+       
+      }
+       & > div span:nth-child(3) {
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'FakePearl-Regular';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 41.6px */
+        letter-spacing: 2.6px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+       
       }
     }
   }
+}
+
+.other-brand-box{
+  width: 163px;
+    height: 162px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 100%;
+    flex-shrink: 0;
+
 }
 @media (min-width: 1451px) and (max-width: 1920px) {
   .sidebar_1 {
@@ -1392,16 +1449,118 @@ onMounted(() => {
   }
   .brand {
     &-in {
-      & > div,
-      & > a {
-        padding: 0 2vw;
+grid-template-columns: repeat(2, 1fr);
+        & > div,
+    & > a {
+      justify-content: center;
+      // flex: 1;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      & > div {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 160%;
+        // text-align: center;
+        color: #4c4c4c;
+        white-space: pre-wrap;
+        flex-shrink: 0;
+        &:last-child {
+          padding: 0 5px;
+        }
+        img {
+          // margin: 0 auto;
+          // max-width: 120px;
+        }
+      }
+      & > div span:nth-child(1) {
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'FakePearl-Regular';
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 41.6px */
+        letter-spacing: 2.6px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-wrap: nowrap;
+       
+      }
+      & > div span:nth-child(2) {
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'FakePearl-Regular';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 41.6px */
+        letter-spacing: 2.6px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+       
+      }
+       & > div span:nth-child(3) {
+        color: var(--Grey-Deep, #4d4d4d);
+        font-family: 'FakePearl-Regular';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%; /* 41.6px */
+        letter-spacing: 2.6px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+       
       }
     }
+    }
+    
   }
+
 }
 
 //md
 @media only screen and (max-width: 768px) {
+  .honor {
+  margin-top: 20px;
+  &-bg {
+    padding: 70px 0 106px;
+    background: linear-gradient(
+      270deg,
+      rgba(255, 241, 240, 0) 2.6%,
+      rgba(255, 241, 240, 0.7) 23.89%,
+      rgba(255, 241, 240, 0.7) 75.33%,
+      rgba(255, 241, 240, 0) 97.4%
+    );
+  }
+  &-new_text {
+    color: var(--Black, #4d4d4d);
+    text-align: center;
+    font-family: 'FakePearl-Regular';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 44.8px */
+    margin: 50px auto 80px;
+  }
+}
+  .other-brand-wrap{
+    width: 37vw;
+  }
+  .other-brand-box{
+  width: 18vw !important;
+    height: 18vw !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 100%;
+    flex-shrink: 0;
+
+}
   .new_course_bg {
     margin-top: 60px;
     width: 100%;
@@ -1800,6 +1959,7 @@ onMounted(() => {
       // flex-wrap: wrap;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px 0px;
+      width: min-content;
       // justify-content: center;
       padding: 35px 0;
       box-sizing: border-box;
@@ -1809,6 +1969,7 @@ onMounted(() => {
         // flex: initial;
         // width: calc(100% / 3);
         // padding: 0 8.5px 10px;
+        width: 100%;
         gap: 0 5px;
         padding: 0;
         & > div:nth-child(1) {
@@ -1819,7 +1980,41 @@ onMounted(() => {
             width: 100%;
           }
         }
-        & > div:nth-child(2) {
+           & > div span:nth-child(1) {
+          min-width: 19.23vw;
+          display: flex;
+          text-align: left;
+          font-weight: 600;
+          line-height: 130%; /* 12.12px */
+          font-size: 3vw;
+          padding: 0;
+          flex-direction: column;
+          letter-spacing: 0;
+          & > span {
+            display: inline;
+            color: var(--Grey-Deep, #4d4d4d);
+            font-family: 'FakePearl-Regular';
+            font-style: normal;
+          }
+        }
+        & > div span:nth-child(2) {
+          min-width: 19.23vw;
+          display: flex;
+          text-align: left;
+          font-weight: 600;
+          line-height: 130%; /* 12.12px */
+          font-size: 2.3vw;
+          padding: 0;
+          flex-direction: column;
+          letter-spacing: 0;
+          & > span {
+            display: inline;
+            color: var(--Grey-Deep, #4d4d4d);
+            font-family: 'FakePearl-Regular';
+            font-style: normal;
+          }
+        }
+         & > div span:nth-child(3) {
           min-width: 19.23vw;
           display: flex;
           text-align: left;
