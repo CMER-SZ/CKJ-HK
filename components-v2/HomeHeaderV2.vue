@@ -702,7 +702,7 @@ const implantItem = [
               </ul>
               <div class="header-appointment d-flex align-items-center">
                 <a
-                  href="https://wa.me/69122011?text=Hello愛康健,我想查詢牙科服務"
+                  href="https://wa.me/85269939217?text=Hello愛康健,我想查詢牙科服務"
                   target="_blank"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"

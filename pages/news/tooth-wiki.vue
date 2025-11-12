@@ -273,13 +273,13 @@ const handleClick = (event, _id) => {
         牙齒百科
       </div>
       <div class="tabNav noTitle smallPageCon">
-        <nuxt-link
-          :to="'/'"
+        <a
+          href="/"
           title="深圳愛康健口腔醫院"
           alt="深圳愛康健口腔醫院"
         >
           <span>主頁</span>
-        </nuxt-link>
+        </a>
         <nuxt-link :to="''">
           <span>睇牙新資訊</span>
         </nuxt-link>

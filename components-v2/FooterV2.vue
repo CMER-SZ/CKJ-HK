@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="v2-footer-in-bottom">
-      <nuxt-link to="/privacyPolicy">私隱政策</nuxt-link>
+      <a href="/privacyPolicy">私隱政策</a>
       <i>&</i>
       <nuxt-link to="/disclaimer">免責條款</nuxt-link>
       <span>©2025

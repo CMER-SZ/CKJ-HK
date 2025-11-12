@@ -631,7 +631,7 @@ const implantItem = [
               </li>
             </ul>
             <div class="header-appointment d-flex align-items-center">
-              <a href="https://wa.me/69122011?text=Hello愛康健,我想查詢牙科服務" target="_blank"><svg
+              <a href="https://wa.me/85269939217?text=Hello愛康健,我想查詢牙科服務" target="_blank"><svg
                   xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43" fill="none">
                   <rect width="42.875" height="42.875" rx="21.4375" fill="#01A853" />
                   <path
@@ -672,8 +672,8 @@ const implantItem = [
           <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-              <nuxt-link to="/" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="@/assets/images/LOGO-PC.svg"
-                  alt="" /> </nuxt-link><button type="button" class="btn-close text-reset offcanvas-btn"
+              <a href="/" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="@/assets/images/LOGO-PC.svg"
+                  alt="" /> </a><button type="button" class="btn-close text-reset offcanvas-btn"
                 data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body phoneMenu-body position-relative">

@@ -33,7 +33,7 @@ const headerConfig = {
     '愛牙愛己，愛康健細心守護您牙齒健康',
   ],
   mbText: ['定期洗牙', '全方位清潔口腔盲點'],
-  linkBtn: `https://wa.me/69122011?text=Hello愛康健我想預約洗牙`,
+  linkBtn: `https://wa.me/85269939217?text=Hello愛康健我想預約洗牙`,
 }
 
 const orthodonticsIntroduceData = {
@@ -413,7 +413,7 @@ const cleaningStepList = [
           <div class="type-technology-btn">
             <PageAnimBtnTypeTwoV2
               :str="'WhatsApp預約洗牙'"
-              :link="'https://wa.me/69122011?text=Hello愛康健我想預約洗牙'"
+              :link="'https://wa.me/85269939217?text=Hello愛康健我想預約洗牙'"
             />
           </div>
         </div>

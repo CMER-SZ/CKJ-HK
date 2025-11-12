@@ -325,9 +325,9 @@ onMounted(() => {
         <!-- <div id="translate"></div> -->
       </div>
       <div class="tabNav noTitle smallPageCon">
-        <nuxt-link :to="'/'" title="深圳愛康健口腔醫院" alt="深圳愛康健口腔醫院">
+        <a href="'/'" title="深圳愛康健口腔醫院" alt="深圳愛康健口腔醫院">
           <span>{{$t('components.footer.nav_index')}}</span>
-        </nuxt-link>
+        </a>
         <span>{{$t('components.header.menuLists.health-care-voucher.name')}}</span>
       </div>
       <div class="content">

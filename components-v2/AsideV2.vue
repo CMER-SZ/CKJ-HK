@@ -152,9 +152,9 @@ onMounted(() => {
 <template>
   <div>
     <div class="mobile-sider d-flex flex-column align-items-end">
-      <nuxt-link to="/health-care-voucher" class="vertical-text">
+      <a href="/health-care-voucher" class="vertical-text">
         <span>醫療券</span>專區
-      </nuxt-link>
+      </a>
       <div
         id="scrollToTopBtn"
         class="scrollToTopBtn d-flex align-items-center"
@@ -167,7 +167,7 @@ onMounted(() => {
     <aside class="d-none d-lg-block">
       <div class="contact-widget">
         <a
-          href="https://wa.me/69122011?text=Hello愛康健,我想查詢牙科服務"
+          href="https://wa.me/85269939217?text=Hello愛康健,我想查詢牙科服務"
           id="YYDB"
           target="_blank"
           class="contact-button"
@@ -279,7 +279,7 @@ onMounted(() => {
           <nuxt-link
             class="whatsApp-normal"
             id="navMbWhatsapp"
-            :to="'https://api.whatsapp.com/send/?phone=69122011&text=Hello愛康健,想預約超聲波洗牙'"
+            :to="'https://api.whatsapp.com/send/?phone=85269939217&text=Hello愛康健,想預約超聲波洗牙'"
           >
             <span>預約洗牙</span>
           </nuxt-link>

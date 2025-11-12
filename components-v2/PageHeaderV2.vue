@@ -493,7 +493,7 @@ const implantItem = [
             </li>
           </ul>
           <div class="header-appointment d-flex align-items-center">
-            <a href="https://wa.me/69122011?text=Hello愛康健,我想查詢牙科服務" target="_blank"><svg
+            <a href="https://wa.me/85269939217?text=Hello愛康健,我想查詢牙科服務" target="_blank"><svg
                 xmlns="http://www.w3.org/2000/svg" width="43" height="43" viewBox="0 0 43 43" fill="none">
                 <rect width="42.875" height="42.875" rx="21.4375" fill="#01A853" />
                 <path
@@ -534,16 +534,16 @@ const implantItem = [
         <div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <nuxt-link to="/" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="@/assets/images/LOGO-PC.svg"
-                alt="" /> </nuxt-link><button type="button" class="btn-close text-reset offcanvas-btn"
+            <a href="/" class="offcanvas-title" id="offcanvasNavbarLabel"><img src="@/assets/images/LOGO-PC.svg"
+                alt="" /> </a><button type="button" class="btn-close text-reset offcanvas-btn"
               data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body phoneMenu-body position-relative">
             <ul class="navbar-nav justify-content-end flex-grow-1" id="accordionMenu">
               <li class="nav-item">
-                <nuxt-link class="nav-link active" aria-current="page" to="/">{{
+                <a class="nav-link active" aria-current="page" href="/">{{
                   $t('components.header.menuLists.menu_index.name')
-                }}</nuxt-link>
+                }}</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link d-flex justify-content-between" data-bs-toggle="collapse"
@@ -586,9 +586,9 @@ const implantItem = [
                 </div>
               </li>
               <li class="nav-item">
-                <nuxt-link to="/health-care-voucher" class="nav-link d-flex justify-content-between">{{
+                <a href="/health-care-voucher" class="nav-link d-flex justify-content-between">{{
                   $t('components.header.menuLists.health-care-voucher.name')
-                }}</nuxt-link>
+                }}</a>
               </li>
               <li class="nav-item">
                 <nuxt-link to="/federation-of-trade-unions-zone" class="nav-link d-flex justify-content-between">{{

@@ -78,13 +78,13 @@ onMounted(() => {
     <div class="main">
       <div class="index_title smallPageCon">聯絡我們</div>
       <div class="tabNav noTitle smallPageCon">
-        <nuxt-link
-          :to="'/'"
+        <a
+          href="'/'"
           title="深圳愛康健口腔醫院"
           alt="深圳愛康健口腔醫院"
         >
           <span>{{ $t('pages.index.title') }}</span>
-        </nuxt-link>
+        </a>
         <span :title="'聯絡我們'">聯絡我們</span>
       </div>
       <div class="message-success">
@@ -132,13 +132,13 @@ onMounted(() => {
             </div>
             <li>
               <ul>
-                <nuxt-link to="/dental-service/scaling-and-polishing"
-                  >超聲波洗牙 ¥88/次</nuxt-link
+                <a href="/dental-service/scaling-and-polishing"
+                  >超聲波洗牙 ¥88/次</a
                 >
               </ul>
               <ul>
-                <nuxt-link to="/dental-service/teeth-whitening"
-                  >藍光美白療程 ¥980/次</nuxt-link
+                <a href="/dental-service/teeth-whitening"
+                  >藍光美白療程 ¥980/次</a
                 >
               </ul>
             </li>

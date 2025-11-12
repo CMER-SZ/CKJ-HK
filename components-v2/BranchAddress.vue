@@ -272,7 +272,7 @@ onMounted(() => {
   <section class="BranchAddress" id="BranchAddress">
     <div class="subheading px-20"><span>分店</span> <span>地址</span></div>
     <img class="BranchAddress-addressImg ckj-contrain d-block mx-auto"
-      src="https://statichk.cmermedical.com/newCKJ/index/BranchAddress/index-address-pc.webp" alt="" />
+      src="https://ckjhk.com/dental-service/implant/static/map.webp?V2" alt="" />
     <div class="container-fluid BranchAddress-Box px-20">
       <div class="BranchAddress-Box-pc d-none d-lg-block">
         <ul class="nav nav-tabs BranchAddress-Box-pc-navTab position-relative d-flex justify-content-center"

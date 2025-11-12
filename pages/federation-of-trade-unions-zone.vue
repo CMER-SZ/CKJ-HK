@@ -227,9 +227,9 @@ onMounted(() => {
         <div class="index_title health-care-voucher-title">工聯會專區</div>
       </div>
       <div class="tabNav noTitle smallPageCon">
-        <nuxt-link :to="'/'" title="深圳愛康健口腔醫院" alt="深圳愛康健口腔醫院">
+        <a href="'/'" title="深圳愛康健口腔醫院" alt="深圳愛康健口腔醫院">
           <span>{{ $t('components.footer.nav_index') }}</span>
-        </nuxt-link>
+        </a>
         <span>工聯會專區</span>
       </div>
       <div class="content">
@@ -271,7 +271,7 @@ onMounted(() => {
         </div>
         <section class="pbeford_btn">
           <div class="animBtn">
-            <PageAnimBtnTypeTwo link="https://api.whatsapp.com/send/?phone=85269122011&text=[工聯會專區]我是會員想預約洗牙"
+            <PageAnimBtnTypeTwo link="https://api.whatsapp.com/send/?phone=85269939217&text=[工聯會專區]我是會員想預約洗牙"
               str="立即預約會員洗牙" />
           </div>
         </section>
@@ -334,7 +334,7 @@ onMounted(() => {
           </section>
           <!-- <section v-else-if="item.type === 'animBtn'">
             <div class="animBtn">
-              <PageAnimBtnTypeTwo link="https://api.whatsapp.com/send/?phone=85269122011&text=[工聯會專區]我是會員想預約洗牙"
+              <PageAnimBtnTypeTwo link="https://api.whatsapp.com/send/?phone=85269939217&text=[工聯會專區]我是會員想預約洗牙"
                 :str="item.text" />
             </div>
           </section> -->

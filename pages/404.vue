@@ -39,7 +39,7 @@ onMounted(() => {
         alt=""
       />
     </div>
-    <nuxt-link to="/" class="black">{{ _s + 1 }}返回首頁</nuxt-link>
+    <a href="/" class="black">{{ _s + 1 }}返回首頁</a>
     <div class="menus">
       <serviceCard :isIndexShow="true" />
     </div>

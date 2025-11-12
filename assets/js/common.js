@@ -1,4 +1,4 @@
-const whatsAppNum = "69122011"
+const whatsAppNum = "85269939217"
 
 const phoneNum = "+852 38925049"
 const smallPhoneNum = "3892 5049"

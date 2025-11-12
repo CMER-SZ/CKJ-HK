@@ -550,9 +550,8 @@ let privacyPolicy = ref(true)
                   <div :class="['radio-in', { act: privacyPolicy }]"></div>
                   <div>
                     <i>*</i>本人已閱讀並同意有關
-                    <nuxt-link to="/privacyPolicy?from=2" target="_blank"
-                      >私隱政策</nuxt-link
-                    >
+                    <a href="/privacyPolicy?from=2" target="_blank"
+                      >私隱政策</a>
                     聲明。
                   </div>
                 </span>

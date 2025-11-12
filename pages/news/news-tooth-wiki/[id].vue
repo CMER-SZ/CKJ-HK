@@ -301,13 +301,13 @@ if (process.server) {
     <div class="pageIn whitebgColor articlePage">
       <div class="index_title pageCon articlePage-title">牙齒百科</div>
       <div class="tabNav noTitle pageCon">
-        <nuxt-link
-          :to="'/'"
+        <a
+          href="/"
           title="深圳愛康健口腔醫院"
           alt="深圳愛康健口腔醫院"
         >
           <span>主頁</span>
-        </nuxt-link>
+        </a>
         <nuxt-link :to="''">
           <span>睇牙新資訊</span>
         </nuxt-link>

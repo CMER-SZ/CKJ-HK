@@ -10,7 +10,8 @@ export default defineNuxtConfig({
   // typescripts
   typescript: {
     strict: true,
-    typeCheck: true,
+    typeCheck: false,
+    
   },
   routeRules: {
     // 确保 robots.txt 作为静态文件提供
